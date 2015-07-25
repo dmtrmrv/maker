@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Primer
+ * @package Maker
  */
 
 get_header(); ?>
@@ -32,7 +32,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php primer_posts_navigation(); ?>
+			<?php maker_posts_navigation(); ?>
 
 		<?php else : ?>
 

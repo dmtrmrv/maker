@@ -42,8 +42,8 @@ module.exports = {
 		],
 		overwrite: true,
 		replacements: [ {
-			from: /^define\( 'PRIMER_VERSION'.*$/m,
-			to: 'define( \'PRIMER_VERSION\', \'<%= package.version %>\' );'
+			from: /^define\( 'MAKER_VERSION'.*$/m,
+			to: 'define( \'MAKER_VERSION\', \'<%= package.version %>\' );'
 		} ]
 	},
 
@@ -55,7 +55,7 @@ module.exports = {
 		],
 		overwrite: true,
 		replacements: [ {
-			from: /primer_/g,
+			from: /maker_/g,
 			to: '<%= package.name %>_'
 		} ]
 	},
@@ -68,7 +68,7 @@ module.exports = {
 		],
 		overwrite: true,
 		replacements: [ {
-			from: /primer-/g,
+			from: /maker-/g,
 			to: '<%= package.name %>-'
 		} ]
 	},
@@ -79,7 +79,7 @@ module.exports = {
 		],
 		overwrite: true,
 		replacements: [ {
-			from: /'primer'/g,
+			from: /'maker'/g,
 			to: '\'<%= package.name %>\''
 		} ]
 	},
@@ -90,7 +90,7 @@ module.exports = {
 		],
 		overwrite: true,
 		replacements: [ {
-			from: /PRIMER/g,
+			from: /MAKER/g,
 			to: function() {
 				return '<%= package.name.toUpperCase() %>';
 			}
@@ -106,25 +106,25 @@ module.exports = {
 		overwrite: true,
 		replacements: [ {
 			// DocBlocks. Space before string.
-			from: / Primer/g,
+			from: / Maker/g,
 			to: function() {
 				var name = '<%= package.fullname %>';
 				return ' ' + name;
 			}
 		}, {
 			// DocBlocks. Space after string.
-			from: /Primer /g,
+			from: /Maker /g,
 			to: function() {
 				var name = '<%= package.fullname %>';
 				return name + ' ';
 			}
 		}, {
 			// DocBlocks. Space before and lowercase.
-			from: / primer/g,
+			from: / maker/g,
 			to: ' <%= package.name %>'
 		}, {
 			// Theme name in footer.
-			from: /'Primer'/g,
+			from: /'Maker'/g,
 			to: function() {
 				var name = '<%= package.fullname %>';
 				return '\'' + name + '\'';
@@ -138,13 +138,13 @@ module.exports = {
 		],
 		overwrite: true,
 		replacements: [ {
-			from: /primer/g,
+			from: /maker/g,
 			to: '<%= package.name %>'
 		}, {
-			from: /Primer/g,
+			from: /Maker/g,
 			to: '<%= package.fullname %>'
 		}, {
-			from: /PRIMER/g,
+			from: /MAKER/g,
 			to: function() {
 				return '<%= package.name.toUpperCase() %>';
 			}

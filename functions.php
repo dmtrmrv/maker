@@ -1,14 +1,14 @@
 <?php
 /**
- * Primer functions and definitions
+ * Maker functions and definitions
  *
- * @package Primer
+ * @package Maker
  */
 
 /**
  * The current version of the theme.
  */
-define( 'PRIMER_VERSION', '1.0.0' );
+define( 'MAKER_VERSION', '1.0.0' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -17,7 +17,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 729; /* pixels */
 }
 
-if ( ! function_exists( 'primer_setup' ) ) :
+if ( ! function_exists( 'maker_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -25,15 +25,15 @@ if ( ! function_exists( 'primer_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function primer_setup() {
+function maker_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Primer, use a find and replace
-	 * to change 'primer' to the name of your theme in all the template files
+	 * If you're building a theme based on Maker, use a find and replace
+	 * to change 'maker' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'primer', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'maker', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -53,13 +53,13 @@ function primer_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'primer-thumbnail', '729', '432', true );
+	add_image_size( 'maker-thumbnail', '729', '432', true );
 
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'primer' ),
-		'footer' => __( 'Footer Menu', 'primer' )
+		'primary' => __( 'Primary Menu', 'maker' ),
+		'footer' => __( 'Footer Menu', 'maker' )
 	) );
 
 	/*
@@ -79,7 +79,7 @@ function primer_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'primer_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'maker_custom_background_args', array(
 		'default-color' => 'fafafa',
 		'default-image' => '',
 	) ) );
@@ -90,17 +90,17 @@ function primer_setup() {
 	 */
 	add_editor_style( array( 'editor-style.css' ) );
 }
-endif; // primer_setup
-add_action( 'after_setup_theme', 'primer_setup' );
+endif; // maker_setup
+add_action( 'after_setup_theme', 'maker_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function primer_widgets_init() {
+function maker_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'primer' ),
+		'name'          => __( 'Sidebar', 'maker' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -109,61 +109,61 @@ function primer_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 }
-add_action( 'widgets_init', 'primer_widgets_init' );
+add_action( 'widgets_init', 'maker_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function primer_scripts() {
+function maker_scripts() {
 
 	wp_enqueue_style(
-		'primer-fontello',
+		'maker-fontello',
 		get_template_directory_uri() . '/fonts/fontello/css/fontello.css',
 		array()
 	);
 
 	wp_enqueue_style(
-		'primer-style',
+		'maker-style',
 		get_stylesheet_uri()
 	);
 
 	wp_enqueue_script(
-		'primer-navigation',
+		'maker-navigation',
 		get_template_directory_uri() . '/js/navigation.js',
 		array(),
-		PRIMER_VERSION,
+		MAKER_VERSION,
 		true
 	);
 
 	wp_enqueue_script(
-		'primer-skip-link-focus-fix', 
+		'maker-skip-link-focus-fix', 
 		get_template_directory_uri() . '/js/skip-link-focus-fix.js',
 		array(),
-		PRIMER_VERSION,
+		MAKER_VERSION,
 		true
 	);
 
 	wp_enqueue_script(
-		'primer-gallery-captions',
+		'maker-gallery-captions',
 		get_template_directory_uri() . '/js/gallery-captions.js',
 		array(),
-		PRIMER_VERSION,
+		MAKER_VERSION,
 		true
 	);
 	
 	wp_enqueue_script(
-		'primer-fitvids',
+		'maker-fitvids',
 		get_template_directory_uri() . '/js/jquery.fitvids.js',
 		array( 'jquery' ),
-		PRIMER_VERSION,
+		MAKER_VERSION,
 		true
 	);
 	
 	wp_enqueue_script(
-		'primer-custom',
+		'maker-custom',
 		get_template_directory_uri() . '/js/custom.js',
 		array( 'jquery' ),
-		PRIMER_VERSION,
+		MAKER_VERSION,
 		true
 	);
 
@@ -186,7 +186,7 @@ function primer_scripts() {
 		wp_deregister_style( 'contact-form-7' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'primer_scripts' );
+add_action( 'wp_enqueue_scripts', 'maker_scripts' );
 
 /**
  * Implement the Custom Header feature.

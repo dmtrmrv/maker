@@ -1,8 +1,8 @@
 <?php
 /**
- * Primer Theme Customizer
+ * Maker Theme Customizer
  *
- * @package Primer
+ * @package Maker
  */
 
 /**
@@ -10,80 +10,80 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function primer_customize_register( $wp_customize ) {
+function maker_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	// Change section title from 'Site Title & Tagline' to 'Header'.
-	$wp_customize->get_section( 'title_tagline' )->title = __( 'Header', 'primer' );
+	$wp_customize->get_section( 'title_tagline' )->title = __( 'Header', 'maker' );
 
 	// Logo.
-	$wp_customize->add_setting( 'primer_logo', array( 
-		'sanitize_callback' => 'primer_sanitize_image'
+	$wp_customize->add_setting( 'maker_logo', array( 
+		'sanitize_callback' => 'maker_sanitize_image'
 	) );
 
 	$wp_customize -> add_control(
 		new WP_Customize_Image_Control (
 			$wp_customize,
-			'primer_logo',
+			'maker_logo',
 			array(
-				'label'   => __( 'Logo', 'primer' ),
+				'label'   => __( 'Logo', 'maker' ),
 				'section' => 'title_tagline'
 			)
 		)
 	);
 
 	// Display Title.
-	$wp_customize->add_setting( 'primer_display_title', array( 
+	$wp_customize->add_setting( 'maker_display_title', array( 
 		'default' => true,
-		'sanitize_callback' => 'primer_sanitize_checkbox'
+		'sanitize_callback' => 'maker_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'primer_display_title', array( 
-		'label'   => __( 'Display Title', 'primer' ),
+	$wp_customize->add_control( 'maker_display_title', array( 
+		'label'   => __( 'Display Title', 'maker' ),
 		'section' => 'title_tagline',
 		'type'    => 'checkbox',
 	) );
 
 	// Display Tagline.
-	$wp_customize->add_setting( 'primer_display_tagline', array( 
+	$wp_customize->add_setting( 'maker_display_tagline', array( 
 		'default' => true,
-		'sanitize_callback' => 'primer_sanitize_checkbox'
+		'sanitize_callback' => 'maker_sanitize_checkbox'
 	) );
 
-	$wp_customize->add_control( 'primer_display_tagline', array( 
-		'label'   => __( 'Display Tagline', 'primer' ),
+	$wp_customize->add_control( 'maker_display_tagline', array( 
+		'label'   => __( 'Display Tagline', 'maker' ),
 		'section' => 'title_tagline',
 		'type'    => 'checkbox',
 	) );
 
 	// Accent Color.
-	$wp_customize->add_setting( 'primer_accent_color', array(
+	$wp_customize->add_setting( 'maker_accent_color', array(
 		'default'           => '#3498db',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	// Footer Text.
-	$wp_customize->add_section( 'primer_footer' , array(
-		'title'    => __( 'Footer', 'primer' ),
+	$wp_customize->add_section( 'maker_footer' , array(
+		'title'    => __( 'Footer', 'maker' ),
 		'priority' => 130,
 	) );
 
-	$wp_customize->add_setting( 'primer_footer_text', array(
+	$wp_customize->add_setting( 'maker_footer_text', array(
 		'default'           => '',
-		'sanitize_callback' => 'primer_sanitize_text',
+		'sanitize_callback' => 'maker_sanitize_text',
 	) );
 
 	$wp_customize->add_control(
 		new Textarea_Custom_Control(
 			$wp_customize,
-			'primer_footer_text',
+			'maker_footer_text',
 			array(
-				'label'       => __( 'Footer Text', 'primer' ),
-				'section'     => 'primer_footer',
+				'label'       => __( 'Footer Text', 'maker' ),
+				'section'     => 'maker_footer',
 				'type'        => 'text',
-				'description' => __( 'You may use [year] shortcode to display current year.', 'primer' ),
+				'description' => __( 'You may use [year] shortcode to display current year.', 'maker' ),
 			)
 		)
 	);
@@ -91,20 +91,20 @@ function primer_customize_register( $wp_customize ) {
 	$wp_customize -> add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'primer_accent_color',
+			'maker_accent_color',
 			array(
-				'label'   => __( 'Accent Color', 'primer' ),
+				'label'   => __( 'Accent Color', 'maker' ),
 				'section' => 'colors'
 			)
 		)
 	);
 }
-add_action( 'customize_register', 'primer_customize_register' );
+add_action( 'customize_register', 'maker_customize_register' );
 
 /**
  * Sanitizes Text.
  */
-function primer_sanitize_text( $input ) {
+function maker_sanitize_text( $input ) {
 	global $allowedtags;
 	return wp_kses( $input , $allowedtags );
 }
@@ -112,7 +112,7 @@ function primer_sanitize_text( $input ) {
 /**
  * Sanitizes Checkbox.
  */
-function primer_sanitize_checkbox( $input ) {
+function maker_sanitize_checkbox( $input ) {
 	if ( $input == 1 ) {
 		return 1;
 	} else {
@@ -123,7 +123,7 @@ function primer_sanitize_checkbox( $input ) {
 /**
  * Sanitizes Image Upload.
  */
-function primer_sanitize_image( $input ) {
+function maker_sanitize_image( $input ) {
 	$output = '';
 
 	$filetype = wp_check_filetype( $input );
@@ -137,9 +137,9 @@ function primer_sanitize_image( $input ) {
 /**
  * Outputs custom styles to the header.
  */
-function primer_custom_style_header_output() {
+function maker_custom_style_header_output() {
 	// Don't print any styles if no color, or if it is set to default.
-	$color = get_theme_mod( 'primer_accent_color' );
+	$color = get_theme_mod( 'maker_accent_color' );
 	if ( ! $color || $color == '#3498db' ) {
 		return;
 	}
@@ -151,12 +151,12 @@ function primer_custom_style_header_output() {
 	
 	echo '<style type="text/css">' . $style . '</style>';
 }
-add_action( 'wp_head' ,'primer_custom_style_header_output' );
+add_action( 'wp_head' ,'maker_custom_style_header_output' );
 
 /**
  * Binds js handlers to make theme customizer preview reload changes asynchronously.
  */
-function primer_customize_preview_js() {
-	wp_enqueue_script( 'primer_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function maker_customize_preview_js() {
+	wp_enqueue_script( 'maker_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'primer_customize_preview_js' );
+add_action( 'customize_preview_init', 'maker_customize_preview_js' );

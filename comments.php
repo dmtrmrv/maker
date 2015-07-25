@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package Primer
+ * @package Maker
  */
 
 /*
@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 		<h3 class="comments-title">
 			<?php
 				printf(
-					_nx( 'One Comment', '%s Comments', get_comments_number(), 'Comments title', 'primer' ),
+					_nx( 'One Comment', '%s Comments', get_comments_number(), 'Comments title', 'maker' ),
 					number_format_i18n( get_comments_number() )
 				);
 			?>
@@ -36,14 +36,14 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'style'       => 'ul',
-					'callback'    => 'primer_comment_display',
+					'callback'    => 'maker_comment_display',
 					'short_ping'  => true,
 					'avatar_size' => '96'
 				) );
 			?>
 		</ul><!-- .comment-list -->
 
-		<?php primer_comment_navigation( 'comment-nav-below' ); ?>
+		<?php maker_comment_navigation( 'comment-nav-below' ); ?>
 
 	<?php endif; // have_comments() ?>
 
@@ -51,14 +51,14 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'primer' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'maker' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form( array( 
-		'title_reply'          => __( 'Leave a Comment', 'primer' ),
-		'title_reply_to'       => __( 'Reply to %s', 'primer' ),
-		'cancel_reply_link'    => __( 'Cancel', 'primer' ),
-		'label_submit'         => __( 'Submit Comment', 'primer' ),
+		'title_reply'          => __( 'Leave a Comment', 'maker' ),
+		'title_reply_to'       => __( 'Reply to %s', 'maker' ),
+		'cancel_reply_link'    => __( 'Cancel', 'maker' ),
+		'label_submit'         => __( 'Submit Comment', 'maker' ),
 	) ); ?>
 
 </div><!-- #comments -->

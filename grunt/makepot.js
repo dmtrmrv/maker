@@ -2,7 +2,7 @@ module.exports = {
 	target: {
 		options: {
 			domainPath: '/languages/',
-			potFilename: 'primer.pot',
+			potFilename: 'maker.pot',
 			type: 'wp-theme',
 			updateTimestamp: false
 		}

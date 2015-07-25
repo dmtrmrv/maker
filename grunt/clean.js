@@ -6,6 +6,6 @@ module.exports = {
 		src: '../build/'
 	},
 	pot: {
-		src: './languages/primer.pot'
+		src: './languages/maker.pot'
 	}
 }

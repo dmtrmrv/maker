@@ -18,11 +18,11 @@ module.exports = {
 			'!./.DS_Store',
 			'!./**/.DS_Store'
 		],
-		dest: '../build/primer',
+		dest: '../build/maker',
 		expand: true
 	},
 	pot: {
-		src: './languages/primer.pot',
+		src: './languages/maker.pot',
 		dest: './languages/<%= package.name %>.pot'
 	}
 }

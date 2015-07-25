@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Primer
+ * @package Maker
  */
 ?>
 
@@ -9,22 +9,22 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php primer_entry_meta_header(); ?>
+			<?php maker_entry_meta_header(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<?php primer_post_thumbnail(); ?>
+	<?php maker_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'primer' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'maker' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
-	<?php primer_entry_meta_footer(); ?>
+	<?php maker_entry_meta_footer(); ?>
 	
 </article><!-- #post-## -->

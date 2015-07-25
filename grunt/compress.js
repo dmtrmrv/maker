@@ -1,7 +1,7 @@
 module.exports = {
 	release: {
 		options: {
-			archive: '../build/primer.zip'
+			archive: '../build/maker.zip'
 		},
 		src: [
 			'./**',

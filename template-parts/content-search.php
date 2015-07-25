@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Primer
+ * @package Maker
  */
 ?>
 
@@ -14,17 +14,17 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php primer_entry_meta_header(); ?>
+			<?php maker_entry_meta_header(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php primer_post_thumbnail(); ?>
+	<?php maker_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<?php primer_entry_meta_footer(); ?>
+	<?php maker_entry_meta_footer(); ?>
 	
 </article><!-- #post-## -->

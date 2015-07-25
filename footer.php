@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package Primer
+ * @package Maker
  */
 ?>
 
@@ -17,7 +17,7 @@
 			<?php endif; ?>
 			
 			<div class="site-info">
-				<?php primer_footer_text(); ?>
+				<?php maker_footer_text(); ?>
 			</div><!-- .site-info -->
 		</div><!-- .column -->
 	</footer><!-- #colophon -->
