@@ -1,0 +1,46 @@
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	margin: 0 0 ( $font__size-body-px * $font__line-height-body ) 0; // Can't wait to remove this. Bleh!
+	margin: 0 0 1.5rem 0;
+	color: $color__headings;
+	font-family: $font__headings;
+	font-weight: bold;
+	@include line-height( 1.5 );
+}
+
+h1 {
+	@include font-size( 1.5 ); // 24
+
+}
+
+h2 {
+	@include font-size( 1.25 );  // 20
+}
+
+h3 {
+	@include font-size( 1.125 ); // 18
+}
+
+h4 {
+	@include font-size( 1 ); // 16
+}
+
+h5 {
+	@include font-size( 0.75 ); // 12
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+h6 {
+	@include font-size( 0.75 ); // 12
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: normal;
+}

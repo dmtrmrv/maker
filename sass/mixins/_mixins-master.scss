@@ -1,0 +1,52 @@
+// Rem output with px fallback.
+@mixin font-size( $sizeValue: 1 ) {
+	font-size: ( $sizeValue * $font__size-body ) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Line-height otuput with px fallback.
+@mixin line-height( $sizeValue: $font__line-height-body ) {
+	line-height: ( $sizeValue * $font__size-body ) * 1px;
+	line-height: $sizeValue * 1rem;
+}
+
+// Center block.
+@mixin center-block {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		display: table;
+		clear: both;
+		content: '';
+	}
+}
+
+@mixin clearfix-before() {
+	&:before {
+		display: table;
+		clear: both;
+		content: '';
+	}
+}
+
+@mixin clearfix-after() {
+	&:after {
+		display: table;
+		clear: both;
+		content: '';
+	}
+}
+
+
+@mixin focus() {
+	// Default
+	outline: thin dotted;
+	// WebKit
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}

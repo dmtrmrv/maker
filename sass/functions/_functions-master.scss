@@ -1,0 +1,13 @@
+// Calculate em value minus px based on font size.
+@function em_minus_px( $em, $px, $base: $font__size-body-px ) {	
+	@return ( $em - ( $px / $base ) );
+}
+
+// Workaround for cssglyphs in Sass lists. ( github.com/sass/sass/issues/659 )
+@function char($icon-code) {
+  @if function-exists("selector-append") {
+    @return unquote("\"\\#{$icon-code}\"");
+  }
+
+  @return str-slice("\x", 1, 1) + $icon-code;
+}

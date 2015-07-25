@@ -1,0 +1,22 @@
+/* Code */
+
+pre {
+	overflow: auto;
+	max-width: 100%;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	background: $color__background-pre;
+	font-family: $font__pre;
+	line-height: $font__line-height-pre;
+	word-wrap: initial;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt,
+var {
+	@include font-size( 0.9375 );
+	font-family: $font__code;
+}

@@ -1,0 +1,76 @@
+/* Contact Form 7 */
+
+input[type='submit'].wpcf7-submit {
+	@include button-color( $color__button-accent );
+}
+
+.wpcf7 {
+	margin: 0;
+	padding: 0;
+}
+
+.wpcf7-response-output {
+	@extend %alert;
+}
+
+.wpcf7 .screen-reader-response {
+	@extend .screen-reader-text;
+}
+
+.wpcf7-mail-sent-ok {
+	@extend %alert-success;
+}
+
+.wpcf7-mail-sent-ng {
+	@extend %alert-danger;
+}
+
+.wpcf7-spam-blocked {
+	@extend %alert-warning;
+}
+
+.wpcf7-validation-errors {
+	@extend %alert-warning;
+}
+
+.wpcf7-form-control-wrap {
+	position: relative;
+}
+
+.wpcf7-not-valid-tip {
+	display: block;
+	color: $color__danger;
+	font-size: 1em;
+}
+
+.use-floating-validation-tip .wpcf7-not-valid-tip {
+	@extend %alert;
+	@extend %alert-danger;
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 1em;
+}
+
+.wpcf7-list-item {
+	margin-left: 0.5em;
+	display: block;
+}
+
+.wpcf7-display-none {
+	display: none;
+}
+
+.wpcf7 img.ajax-loader {
+	margin-left: 1.5em;
+	border: none;
+	vertical-align: middle;
+}
+
+.wpcf7 .ajax-error {
+	display: none;
+}
+
+.wpcf7 .placeheld {
+	color: $color__gray-dark;
+}

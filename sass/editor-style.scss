@@ -1,0 +1,92 @@
+/*
+Theme Name: Primer
+Description: Used to style the TinyMCE editor.
+*/
+
+/**
+ * Table of Contents
+ * 
+ * 0.1 - Normalize
+ * 0.2 - Typography
+ *       Headings
+ *       Copy
+ *       Links
+ *       Blockquotes
+ *       Lists
+ *       Tables
+ *       Code
+ * 0.3 - Repeatable Patterns
+ *       Images
+ *       Lines
+ *       Media
+ *       Captions
+ *       Alignments
+ *       Clearings
+ * 0.4 - Content
+ *       Galleries
+ */
+
+// Dependencies, variables, mixins and functions.
+
+@import 'susy';
+
+@import 'variables/variables';
+
+@import 'functions/functions-master';
+
+@import 'mixins/mixins-master';
+
+// Editor styles start here.
+
+@import 'editor/editor-normalize';
+
+/**
+ * Typography
+ */
+
+@import 'typography/headings';
+
+@import 'typography/copy';
+
+@import 'typography/links';
+
+@import 'typography/blockquotes';
+
+@import 'typography/lists';
+
+@import 'editor/editor-tables';
+
+@import 'typography/code';
+
+
+/**
+ * Repeatable Patterns
+ */
+
+@import 'patterns/images';
+
+@import 'patterns/lines';
+
+@import 'editor/editor-media';
+
+@import 'editor/editor-captions';
+
+@import 'patterns/alignments';
+
+@import 'patterns/clearings';
+
+/**
+ * Content
+ */
+
+.mce-content-body {
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+	    -ms-hyphens: auto;
+	        hyphens: auto;
+}
+
+@import 'content/galleries';
+
+@import 'editor/editor-galleries';

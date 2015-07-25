@@ -1,0 +1,77 @@
+/* Buttons */
+
+// Regular button. 
+@mixin button-size-regular() {
+	@include font-size( 1 );
+	height: 3em;
+	padding: em_minus_px( 0.75em, 3px ) 2em em_minus_px( 0.75em, 1px );
+}
+
+@mixin button-color( $colors ) {
+	border-color: map-get( $colors, border );
+	color: map-get( $colors, text );
+	background-color: map-get( $colors, background );
+	@if map-has-key( $colors, hover_background ) {
+		&:hover,
+		&:focus {
+			opacity: 1;
+			background: map-get( $colors, hover_background );
+		}
+	}
+}
+
+%button_core {
+	@include button-size-regular();
+	@include button-color( $color__button );
+	display: inline-block;
+	margin-bottom: 0;
+	border: 2px solid ;
+	border-radius: 3px;
+	-webkit-appearance: none;
+	background-image: none;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-decoration: none;
+	cursor: pointer;
+	// touch-action: manipulation;
+	&:hover,
+	&:focus {
+		opacity: 0.8;
+		text-decoration: none;
+	}
+	&:active {
+		outline: 0;
+	}
+	&:focus {
+		@include focus;
+	}
+}
+
+%button-border {
+	@include button-color( $color__button-border );
+}
+%button-accent {
+	@include button-color( $color__button-accent );
+}
+%button-success {
+	@include button-color( $color__button-success );
+}
+%button-info {
+	@include button-color( $color__button-info );
+}
+%button-warning {
+	@include button-color( $color__button-warning );
+}
+%button-danger {
+	@include button-color( $color__button-danger );
+}
+
+button,
+.button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	@extend %button_core;
+}

@@ -1,0 +1,29 @@
+/**
+ * Pages
+ */
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin-bottom: 1.5em;
+	background-color: $color__gray-lighter;
+	word-wrap: break-word;
+	@media screen and ( min-width: $sm ) {
+		margin-bottom: 3em;
+	}
+}
+
+.blog,
+.archive,
+.search {
+	.hentry {
+		padding-bottom: em_minus_px( 1.5em, 2px );
+		border-bottom: 2px solid $color__gray-light;
+	}
+}
+
+@import 'page-404';
+
+@import 'page-fullwidth';

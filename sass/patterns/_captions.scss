@@ -1,0 +1,19 @@
+/* Captions */
+
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 0.5em;
+	img[class*='wp-image-'] {
+		@include center-block;
+	}
+	.wp-caption-text {
+		@include font-size( 0.75 );
+		display: block;
+		margin: 1em 0;
+		color: $color__gray-dark;
+		font-family: $font__main;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 2em;
+	}
+}

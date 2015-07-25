@@ -1,0 +1,32 @@
+/* Galleries. Editor modification */
+
+// Gray background that appears when user clicks on a gallery.
+.wpview-wrap[data-wpview-type='gallery'] {
+	display: inline-block;
+	width: auto;
+	margin-bottom: 1.5em;
+}
+
+.gallery {
+	margin: 0;
+	padding: 0;
+	.gallery-item {
+		padding: 0;
+		text-align: left;
+	}
+	.gallery-caption {
+		@include font-size( 0.75 );
+		@include line-height( 1.125 );
+		box-sizing: border-box;
+		margin: 0;
+		font-weight: normal;
+	}
+}
+
+.gallery:after {
+	@include clearfix;
+}
+
+.gallery:after {
+	@include clearfix-after;
+}

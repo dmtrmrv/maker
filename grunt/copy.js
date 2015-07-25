@@ -1,0 +1,28 @@
+module.exports = {
+	release: {
+		src: [
+			'./**',
+			'!./node_modules/**',
+			'!./package.json',
+			'!./.csscomb.json',
+			'!./Gruntfile.js',
+			'!./grunt/**',
+			'!./sass/**',
+			'!./fonts/fontello/css/fontello-*.css',
+			'!./fonts/fontello/css/animation.css',
+			'!./fonts/fontello/config.json',
+			'!./fonts/fontello/demo.html',
+			'!./fonts/fontello/README.txt',
+			'!./*.sublime-workspace',
+			'!./*.sublime-project',
+			'!./.DS_Store',
+			'!./**/.DS_Store'
+		],
+		dest: '../build/primer',
+		expand: true
+	},
+	pot: {
+		src: './languages/primer.pot',
+		dest: './languages/<%= package.name %>.pot'
+	}
+}

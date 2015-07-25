@@ -1,0 +1,68 @@
+/* Toggle Hamburger */
+
+$dash_height: ( 2 / $font__size-body ) * 1em;
+$dash_width: 1em;
+
+.menu-toggle {
+	float: right;
+	position: relative;
+	width: 1.5em;
+	height: 1.5em;
+	margin-top: 1.5em;
+	padding: 0;
+	border-color: transparent;
+	background-color: transparent;
+	text-align: left;
+	text-indent: -9999px;
+}
+
+.menu-toggle-icon {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1em;
+	height: $dash_height;
+	margin-top: ( $dash_height / ( -2 ) ) ;
+	margin-left: ( $dash_width / ( -2 ) ) ;
+	background-color: $color__gray-darker;
+	&:before,
+	&:after {
+		display: block;
+		position: absolute;
+		width: 1em;
+		height: $dash_height;
+		background-color: $color__gray-darker;
+		content: '';
+		transition: transform 0.3s, top 0.3s;
+	}
+	&:before {
+		top: ( $dash_height * ( -3 ) );
+	}
+	&:after {
+		top: ( $dash_height * 3 );
+	}
+}
+
+.menu-toggle.toggled {
+	.menu-toggle-icon {
+		background-color: transparent;
+		&:before,
+		&:after {
+			top: 0;
+			background-color: $color__gray-darker;
+		}
+		&:before {
+			transform: rotate( 225deg );
+		}
+		&:after {
+			transform: rotate( -225deg );
+		}
+	}
+}
+
+@media screen and ( min-width: $sm ) {
+	.menu-toggle {
+		display: none;
+	}
+}

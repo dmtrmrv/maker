@@ -1,0 +1,28 @@
+/* Tables */
+
+table {
+	width: 100%;
+	margin-bottom: em_minus_px( 1.5em, 1px );
+	padding: 0;
+}
+
+td, th {
+	padding: em_minus_px( 0.75em, 1px ) 0.75em 0.75em;
+	border-bottom: 1px solid $color__gray;
+	text-align: left;
+}
+
+thead th {
+	@include font-size( 0.75 );
+	@include line-height( 1.5 );
+	padding: 1em 1em em_minus_px( 1em, 2px, $font__size-body-px * 0.75 );
+	border-bottom: 2px solid $color__gray-dark;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+@media screen and ( min-width: $sm ) {
+	table {
+		margin-bottom: em_minus_px( 3em, 1px );
+	}
+}

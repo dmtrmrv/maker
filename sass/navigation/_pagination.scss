@@ -1,0 +1,33 @@
+/* Posts Navigation (Newer/Older Post) */
+
+.posts-navigation {
+	overflow: hidden;
+	margin: 0 0 1.5em;
+	word-wrap: break-word;
+	a {
+		@extend %button_core;
+		@extend %button-border;
+		float: left;
+		&:before,
+		&:after {
+			@extend %icon;
+			margin: 0 0.5em;
+		}
+	}
+	.nav-previous a {
+		margin-right: 1em;
+		padding-left: 0.5em;
+		&:before {
+			content: '\e802';
+		}
+	}
+	.nav-next a {
+		padding-right: 0.5em;
+		&:after {
+			content: '\e803';
+		}
+	}
+	@media screen and ( min-width: $sm ) {
+		margin: 0 0 3em;
+	}
+}

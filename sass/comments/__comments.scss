@@ -1,0 +1,148 @@
+/**
+ * Comments
+ */
+
+.comment-list,
+.children {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.comment-list {
+	margin-left: 0;
+	padding-top: em_minus_px( 1.5em, 2px );
+	border-top: 2px solid $color__background-hr;
+}
+
+.children {
+	margin-left: 5%;
+}
+
+.comment-body {
+	word-wrap: break-word;
+	position: relative;
+	margin: 0 0 em_minus_px( 1.5em, 2px ) 0;
+	border-bottom: 2px solid $color__background-hr;
+	.pingback & {
+		margin: 0 0 1.5em 0;
+		padding: 1.5em;
+		border-bottom: none;
+		background-color: $color__gray-light;
+		.edit-link {
+			display: block;
+			float: right;
+		}
+	}
+}
+
+.comment-meta {
+	margin: 0 0 1.5em 0;
+}
+
+.comment-author {
+	img {
+		display: block;
+		float: left;
+		clear: left;
+		width: 3em;
+		height: 3em;
+		border-radius: 50%;
+	}
+}
+
+.comment-author .author-name,
+.comment-metadata {
+	display: block;
+	margin-left: $font__size-body-px * 4.5;
+	margin-left: 4.5rem;
+}
+
+.author-name span {
+	color: $color__gray;
+}
+
+.comment-metadata {
+	@include font-size( 0.875 );
+	@include line-height( 1.5 );
+	margin-bottom: $font__size-body-px * $font__line-height-body; // Can't wait to remove this. Bleh! 
+	margin-bottom: 1.5rem;
+	time,
+	.edit-link a {
+		margin-right: 0.5em;
+	}
+}
+
+.reply {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.comment-content {
+	@extend .clear;
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comment-awaiting-moderation {
+	color: $color__gray;
+}
+
+.comment-reply-title small {
+	@include font-size();
+	@include line-height();
+	float: right;
+	font-weight: normal;
+	line-height: inherit;
+	a {
+		color: $color__danger;
+		&:before {
+			@extend %icon;
+			margin: 0 0.5em;
+			content: '\e801';
+		}
+	}
+}
+
+.required {
+	color: $color__danger;
+}
+
+.comment-form {
+	.submit {
+		@include button-color( $color__button-accent );
+	}
+	textarea {
+		min-height: 13.5em;
+	}
+}
+
+.comment-notes,
+.form-allowed-tags {
+	@extend .screen-reader-text;
+}
+
+@media screen and ( min-width: $sm ) {
+	.children {
+		margin-left: 5%;
+	}
+
+	.comments-title,
+	.comment-reply-title {
+		@include font-size( 1.5 ); // 24
+	}
+
+	.comment-list,
+	.form-submit {
+		margin-bottom: em_minus_px( 3em, 2px );
+	}
+}
+
+@import 'comment-navigation';

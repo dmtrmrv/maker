@@ -1,0 +1,33 @@
+/* Footer Menu */
+
+.footer-navigation {
+	@extend .clear;
+	width: 100%;
+	margin: 0 0 1.5em;
+	ul {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		display: block;
+	}
+	a {
+		display: block;
+		padding: 0;
+	}
+	@media screen and ( min-width: ( $xs ) ) {
+		ul {
+			float: left;
+			margin-left: -0.75em;
+		}
+		li {
+			float: left;
+		}
+		a {
+			padding: 0 0.75em;
+		}
+	}
+}

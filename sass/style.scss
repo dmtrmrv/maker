@@ -1,0 +1,120 @@
+/*
+Theme Name: Primer
+Theme URI: http://underscores.me/
+Author: ThemePatio
+Author URI: http://themepatio.com
+Description: Primer theme by ThemePatio. Created on top of Underscores.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: primer
+Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, accessibility-ready, blavatar, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging, seasonal
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Primer is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/**
+ * Table of Contents
+ * 
+ * 0.1 - Normalize
+ * 0.2 - Typography
+ *       Headings
+ *       Copy
+ *       Links
+ *       Blockquotes
+ *       Lists
+ *       Tables
+ *       Code
+ * 0.3 - Repeatable Patterns
+ *       Forms
+ *       Buttons
+ *       Images
+ *       Icons     
+ *       Lines
+ *       Alerts
+ *       Media
+ *       Captions
+ *       Alignments
+ *       Accessibility
+ *       Clearings
+ * 0.4 - Structure
+ * 0.5 - Header
+ * 0.6 - Navigation
+ *       Primary Menu
+ *       Footer Menu
+ *       Social Menu
+ *       Pagination
+ * 0.7 - Content
+ *       Post Thumbnail
+ *       Entry Title
+ *       Entry Meta
+ *       Entry Content
+ *       Galleries
+ *       Post Formats
+ *       Post Navigation
+ * 0.8 - Pages
+ *       Fullwidth 
+ *       404 Page
+ * 0.9 - Comments
+ *       Comment Navigation
+ * 1.0 - Widgets
+ *       Content sidebar widgets
+ *       Footer sidebar widgets
+ * 1.1 - Footer
+ * 1.2 - Plugins
+ *       Jetpack
+ *       Contact Form 7
+ * 1.3 - Multisite
+ * 1.4 - Print
+ * 1.5 - Media Queries
+ */
+
+// Dependencies, variables, mixins and functions.
+
+@import 'susy';
+
+@import 'variables/variables';
+
+@import 'functions/functions-master';
+
+@import 'mixins/mixins-master';
+
+// Theme Styles start here
+
+@import 'normalize';
+
+@import 'typography/_typography';
+
+@import 'patterns/_patterns';
+
+@import 'structure';
+
+@import 'header';
+
+@import 'navigation/_navigation';
+
+@import 'content/_content';
+
+@import 'pages/_pages';
+
+@import 'comments/_comments';
+
+@import 'widgets/_widgets';
+
+@import 'footer';
+
+@import 'plugins/_plugins';
+
+@import 'multisite';
+
+@import 'print';
+
+/**
+ * Media Queries
+ */

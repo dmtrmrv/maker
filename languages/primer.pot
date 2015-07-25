@@ -1,0 +1,343 @@
+# Copyright (C) 2015 ThemePatio
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Primer 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2015-04-02 06:47:47+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.5.2\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"Looks like the page you are looking for has been moved or does not exist. "
+"But there are still couple of things you can do. Click on the site logo to "
+"go to the homepage or try searching."
+msgstr ""
+
+#: comments.php:54
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:58
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php:59
+msgid "Reply to %s"
+msgstr ""
+
+#: comments.php:60
+msgid "Cancel"
+msgstr ""
+
+#: comments.php:61
+msgid "Submit Comment"
+msgstr ""
+
+#: functions.php:61 header.php:34
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:62
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:103
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer.php:19
+msgid "Header"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Display Title"
+msgstr ""
+
+#: inc/customizer.php:56
+msgid "Display Tagline"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Footer Text"
+msgstr ""
+
+#: inc/customizer.php:86
+msgid "You may use [year] shortcode to display current year."
+msgstr ""
+
+#: inc/customizer.php:96
+msgid "Accent Color"
+msgstr ""
+
+#: inc/extras.php:52
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:23 inc/template-tags.php:321
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:56 inc/template-tags.php:335
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:78
+#. translators: used between list items, there is a space after the comma
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:115
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:115
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:115
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:122 inc/template-tags.php:142
+#: inc/template-tags.php:401 inc/template-tags.php:426
+#. translators: used between list items, there is a space after the comma
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:163
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:165
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:167
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:169
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:171
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:193
+msgid "Archives: %s"
+msgstr ""
+
+#: inc/template-tags.php:197
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:199
+msgid "Archives"
+msgstr ""
+
+#: inc/template-tags.php:319
+msgid "Older"
+msgstr ""
+
+#: inc/template-tags.php:320
+msgid "Newer"
+msgstr ""
+
+#: inc/template-tags.php:339
+msgid "Previous Post:"
+msgstr ""
+
+#: inc/template-tags.php:340
+msgid "Next Post:"
+msgstr ""
+
+#: inc/template-tags.php:373
+msgid "Comment navigation"
+msgstr ""
+
+#: inc/template-tags.php:375
+msgid "Previous"
+msgstr ""
+
+#: inc/template-tags.php:376
+msgid "Next"
+msgstr ""
+
+#: inc/template-tags.php:377
+msgid "Page %s of %s"
+msgstr ""
+
+#: inc/template-tags.php:408
+msgid "Post Author"
+msgstr ""
+
+#: inc/template-tags.php:430
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:464
+msgid "%1$s theme by %2$s"
+msgstr ""
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:20 template-parts/content-single.php:22
+#: template-parts/content.php:32
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:25
+#. translators: %s: Name of current post
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Primer"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://underscores.me/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Primer theme by ThemePatio. Created on top of Underscores."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemePatio"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themepatio.com"
+msgstr ""
+
+#: comments.php:29
+msgctxt "Comments title"
+msgid "One Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:167
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:169
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:171
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:174
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:176
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:178
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:180
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:182
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:184
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:186
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:188
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:190
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:423
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""

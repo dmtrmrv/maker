@@ -1,0 +1,99 @@
+/**
+ * Widgets
+ */
+
+.widget {
+	margin: 0 0 1.5em;
+	padding: 1.5em;
+	background-color: $color__gray-light;
+	word-wrap: break-word;
+	@media screen and ( min-width: $sm ) {
+		margin: 0 0 3em;
+	}
+	select {
+		max-width: 100%;
+	}
+	&:not( .widget_text ) {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	}
+}
+
+.widget_search {
+	padding: 0;
+	background-color: transparent;
+	.search-submit {
+		display: none;
+	}
+}
+
+.widget_calendar {
+	caption {
+		@include font-size( 0.625 );
+		@include line-height( 1.5 );
+		color: #fff;
+		background-color: $color__gray-dark;
+		font-weight: normal;
+		letter-spacing: ( 1em / 16 );
+		text-transform: uppercase;
+	}
+	table {
+		max-width: 100%;
+		margin-bottom: 0;
+	}
+	td,
+	th {
+		@include font-size( 0.75 );
+		padding: 0 ;
+		line-height: 2em;
+		text-align: center;
+	}
+	td, {
+		line-height: em_minus_px( 2em, 1px, $font__size-body-px * 0.75 );
+	}
+	th {
+		line-height: em_minus_px( 2em, 2px, $font__size-body-px * 0.75 );
+	}
+	tfoot td:first-child {
+		padding-left: 0.75em;
+		text-align: left;
+	}
+	tfoot td:last-child {
+		padding-right: 0.75em;
+		text-align: right;
+	}
+}
+
+.widget_rss {
+	.widget-title {
+		a:first-child {
+			display: none;
+		}
+	}
+	li {
+		margin-bottom: 1.5em;
+	}
+	a {
+		display: block;
+	}
+	cite {
+		margin: 0;
+		color: $color__gray;
+	}
+	.rss-date {
+		@include font-size( 0.75 );
+		@include line-height( 1.5 );
+		display: block;
+		margin: 0;
+		color: $color__gray;
+	}
+}
+
+.widget.widget_nav_menu {
+	ul ul {
+		margin-left: 1em;
+	}
+}

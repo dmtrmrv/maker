@@ -1,0 +1,23 @@
+// Breakpoints.
+$xs: 360px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1128px;
+
+// Susy Mobile (Default).
+$susy: (
+	columns: 12,
+	gutters: 36/49,
+	math: fluid,
+	output: float,
+	gutter-position: after
+);
+
+$susy-static: (
+	columns: 12,
+	column-width: 49px,
+	gutters: 36/49,
+	math: static,
+	output: float,
+	gutter-position: after,
+);

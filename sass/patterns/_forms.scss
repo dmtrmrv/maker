@@ -1,0 +1,83 @@
+/* Forms */
+
+// Styles from underscores.
+// These properties are set to 'inherit' in normalize.
+// Needs testing. But very likely this is not needed.
+
+// button,
+// input,
+// select,
+// textarea
+// {
+// color: $color__text-main;
+// font-family: $font__main;
+// line-height: $font__line-height-body;
+// }
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+textarea {
+	@include font-size( 1 );
+	@include line-height( 1.5 );
+	width: 100%;
+	padding: em_minus_px( 0.75em, 2px ) 1em;
+	border: 2px solid map-get( $color__forms, border );
+	border-radius: 3px;
+	-webkit-appearance: none;
+	color: map-get( $color__forms, text );
+	background-color: map-get( $color__forms, background );
+	box-shadow: none;
+	vertical-align: middle;
+	&:focus {
+		outline: 0;
+		background: map-get( $color__forms, focus_background );
+	}
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'] {
+	height: 3em; // IE Damn You!
+}
+
+label {
+	color: $color__gray-dark;
+}
+
+// Placeholder text color - selectors need to be separate to work.
+::-webkit-input-placeholder {
+	color: map-get( $color__forms, placeholder );
+}
+
+:-moz-placeholder {
+	color: map-get( $color__forms, placeholder );
+}
+
+::-moz-placeholder {
+	opacity: 1; // Since FF19 lowers the opacity of the placeholder by default.
+	color: map-get( $color__forms, placeholder );
+}
+
+// Only works if if set as 'input:-ms-input-placeholder' not just 'input:-ms-input-placeholder'.
+input:-ms-input-placeholder {
+	color: map-get( $color__forms, placeholder );
+}
+
+.post-password-form {
+	position: relative;
+}
+
+.post-password-form label {
+	display: block;
+}
+
+.post-password-form input[type='submit'] {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}

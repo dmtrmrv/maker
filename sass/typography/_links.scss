@@ -1,0 +1,19 @@
+/* Links */
+
+a {
+	color: $color__link;
+	background-color: transparent; // Do not remove. !normalize
+	text-decoration: none;
+	transition: opacity 0.3s;
+	-webkit-backface-visibility: hidden;
+	
+	&:hover,
+	&:active {
+		outline: 0; // Do not remove. !normalize
+		opacity: 0.6;
+	}
+	
+	&:focus {
+		@include focus();
+	}
+}

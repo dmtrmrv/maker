@@ -1,0 +1,56 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+
+# OS or Editor folders
+.DS_Store
+Icon
+
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+.jscs.json
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Komodo
+*.komodoproject
+.komodotools
+
+#Sublime
+*.sublime-project
+*.sublime-workspace
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+.idea
+cache
+
+# Node.js / Grunt
+node_modules
+.sass-cache
+npm-debug.log
+
+# Fontello Temp
+fonts/fontello/css/animation.css
+fonts/fontello/css/fontello-*.css
+fonts/fontello/demo.html
+fonts/fontello/config.json
+fonts/fontello/README.txt
+fonts/*.zip

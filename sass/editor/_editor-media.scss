@@ -1,0 +1,98 @@
+/* Media. Editor modifications */
+
+.wpview-wrap {
+	.toolbar .dashicons {
+		box-sizing: content-box;
+	}
+}
+
+.wp-smiley {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	border: none;
+}
+
+embed,
+iframe,
+object,
+video {
+	max-width: 100%;
+	margin-bottom: 1.5em;
+	vertical-align: middle;
+}
+
+p > embed,
+p > iframe,
+p > object,
+p > video {
+	margin-bottom: 0;
+}
+
+.mejs-container {
+	margin: 0;
+}
+
+// Gray background that appears when user clicks on a media element.
+.wpview-wrap[data-wpview-type='playlist'],
+.wpview-wrap[data-wpview-type='audio'],
+.wpview-wrap[data-wpview-type='video'],
+.wpview-wrap[data-wpview-type='embedURL'] {
+	margin-bottom: 1.5em;
+	padding: 2px 2px 2px 2px;
+	iframe {
+		margin-bottom: 0;
+	}
+}
+
+.mce-content-body {
+	.mejs-time {
+		padding-top: 11px;
+	}
+	.wp-playlist {
+		@include font-size( 1 );
+		@include line-height( 1.5 );
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+	.wp-playlist-tracks {
+		margin-top: 1.5em;
+	}
+	.wp-playlist-light {
+		color: $color__text-main;
+		background-color: transparent;
+	}
+	.wp-playlist-current-item {
+		height: 4.5em;
+		margin-bottom: 1.5em;
+		img {
+			max-width: 4.5em;
+			margin-right: 1.5em;
+		}
+	}
+	.wp-playlist-item,
+	.wp-playlist-item-length {
+		padding: em_minus_px( 0.75em, 2px ) 0.75em 0.75em;
+	}
+	.wp-playlist-item {
+		border-bottom: 1px solid $color__gray-light;
+	}
+	.wp-playlist-caption,
+	[class*='wp-playlist-item-'] {
+		@include font-size( 1 );
+		@include line-height( 1.5 );
+		color: $color__gray;
+		font-style: normal;
+		text-transform: none;
+	}
+	.wp-playlist-item-title {
+		color: $color__text-main;
+	}
+	.wp-playlist-playing {
+		border-bottom: 1px solid $color__gray-light;
+		background-color: $color__gray-light;
+		font-weight: normal;
+	}
+}

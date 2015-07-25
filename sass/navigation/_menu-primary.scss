@@ -1,0 +1,78 @@
+/* Primary Menu */
+
+.main-navigation {
+	width: 100%;
+	ul {
+		display: none;
+		margin: 0 0 1.5em 0;
+		padding: 0;
+		list-style: none;
+		ul {
+			display: block;
+			margin: 0;
+			padding: 0 0 0 1em;
+		}
+	}
+	&.toggled {
+		ul {
+			display: block;
+		}
+	}
+	a {
+		display: block;
+		padding: 0.75em 0.75em 0.75em 0;
+		color: $color__gray-darker;
+	}
+}
+
+@media screen and ( min-width: $sm ) {
+	.main-navigation {
+		width: auto;
+		ul {
+			display: block;
+			float: right;
+			margin: 0 -0.75em;
+			padding: 0.75em 0;
+			list-style: none;
+			ul {
+				float: left;
+				position: absolute;
+				z-index: 99999;
+				top: 3em;
+				left: -999em;
+				padding: 0;
+				background-color: #ffffff;
+				box-shadow: 0 2px 25px 3px rgba( 0, 0, 0, 0.1 );
+				ul {
+					top: 0;
+					left: -999em;
+				}
+				li {
+					box-shadow: 0 13px 0 -12px $color__gray-light;
+					&:last-child {
+						box-shadow: none;
+					}
+					&:hover>ul {
+						left: 100%;
+					}
+				}
+				a {
+					width: 12em;
+					padding: 0.75em 1em;
+				}
+			}
+			li:hover>ul {
+				left: auto;
+			}
+		}
+		li {
+			float: left;
+			position: relative;
+		}
+		a {
+			padding: 0.75em;
+		}
+	}
+}
+
+@import 'toggle';

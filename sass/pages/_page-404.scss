@@ -1,0 +1,27 @@
+/* 404 */
+
+.error-404 {
+	margin: 15% 0 25%;
+	text-align: center;
+}
+.not-found {
+	.search-form {
+		position: relative;
+		margin-bottom: 1.5em;
+	}
+	.search-field {
+		padding-right: 10em;
+	}
+	.search-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+@media screen and ( min-width: $sm ) {
+	.error404 .content-area {
+			float: none;
+			margin: 0 auto;
+	}
+}

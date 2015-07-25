@@ -1,0 +1,87 @@
+/**
+ * Header
+ */
+
+.site-header {
+	@extend .clear;
+	padding: 0;
+	background-color: #fff;
+}
+
+@include with-layout( $susy-static ) {
+	.site-branding {
+		display: inline-block;
+		max-width: span( 3 );
+		line-height: 0;
+	}
+}
+
+a.site-logo-link {
+	display: inline-block;
+	height: 3em;
+	margin: 0.75em 0;
+	img {
+		display: inline-block;
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		max-height: 3em;
+		margin: 0;
+		vertical-align: middle;
+	}
+	// Helper to center Logo vertically.
+	&:before {
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		content: '';
+	}
+	@media screen and ( min-width: $sm ) {
+		height: 4.5em;
+		margin: 0;
+		img {
+			max-height: 4.5em;
+		}
+	}
+}
+
+.site-title {
+	margin-bottom: 0;
+	padding: 1em 0;
+	a {
+		color: $color__text-main;
+	}
+}
+
+.site-description {
+	@include font-size( 0.75 );
+	margin-top: -2em;
+	margin-bottom: 1em;
+	padding-top: 0;
+	color: $color__gray;
+	font-weight: normal;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.site-title.screen-reader-text + .site-description {
+	margin-top: 0;
+	padding: 2em 0 1em;
+}
+
+.site-logo-link + .site-title.screen-reader-text + .site-description {
+	padding: 0;
+}
+.main-navigation {
+	float: right;
+}
+
+@media screen and ( min-width: $sm ) {
+	.site-header {
+		padding: 1.5em 0;
+	}
+
+	.site-description {
+		margin-bottom: 0;
+	}
+}

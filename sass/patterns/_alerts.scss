@@ -1,0 +1,30 @@
+/* Alerts */
+
+%alert {
+	min-height: 3em;
+	margin: 0 0 1.5em;
+	padding: em_minus_px( 0.75em, 2px ) 1.5em;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+}
+
+%alert-success {
+	border-color: $color__success;
+	background-color: lighten( $color__success, 35% );
+}
+
+%alert-info {
+	border-color: $color__info;
+	background-color: lighten( $color__info, 35% );
+}
+
+%alert-warning {
+	border-color: $color__warning;
+	background-color: lighten( $color__warning, 35% );
+}
+
+%alert-danger {
+	border-color: $color__danger;
+	background-color: lighten( $color__danger, 35% );
+}

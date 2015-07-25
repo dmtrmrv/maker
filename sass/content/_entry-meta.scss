@@ -1,0 +1,62 @@
+/* Entry Meta */
+
+.entry-meta {
+	@extend .clear;
+	margin-bottom: 1.5em;
+}
+
+.entry-meta > span {
+	@include font-size( 0.75 );
+	line-height: 2;
+	display: block;
+	float: left;
+	margin-right: 1em;
+	color: $color__gray;
+	letter-spacing: ( 1 / $font__size-body ) * 1em;
+	text-transform: uppercase;
+	&:after {
+		margin-left: 1em;
+		content: '/';
+	}
+	&:last-child {
+		&:after {
+			margin: 0;
+			content: '';
+		}
+	}
+}
+
+.entry-footer {
+	margin-bottom: 1.5em;
+	.blog &,
+	.search &,
+	.archive & {
+		display: none;
+	}
+}
+
+.tags-links {
+	a {
+		display: inline-block;
+		margin-right: 0.5em;
+		&:before {
+			color: $color__gray;
+			content: '#';
+		}
+	}
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline-block;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}

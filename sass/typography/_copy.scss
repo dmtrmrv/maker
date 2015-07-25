@@ -1,0 +1,27 @@
+/* Copy */
+
+p {
+	margin: 0 0 1.5em;
+}
+
+em,
+i {
+	@extend dfn;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+acronym {
+	@extend abbr[title];
+}
+
+ins {
+	@extend mark;
+}
+
+big {
+	@include font-size( 1.125 );
+	@include line-height( 1 );
+}

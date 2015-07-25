@@ -1,0 +1,11 @@
+/* Entry Content */
+
+.entry-content {
+	@extend .clear;
+}
+
+.entry-content,
+.entry-summary {
+	word-wrap: break-word;
+	hyphens: auto;
+}

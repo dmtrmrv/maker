@@ -1,0 +1,96 @@
+// Grays.
+$color__gray-darker:  #58585b;
+$color__gray-dark:    #939393;
+$color__gray:         #d1d1d1;
+$color__gray-light:   #f0f0f0;
+$color__gray-lighter: #fafafa;
+
+// State colors.
+$color__success: #1fc281;
+$color__info:    #00b9f2;
+$color__warning: #f4cc31;
+$color__danger:  #e83337;
+
+// Theme.
+$color__accent: #3498DB;
+
+// Body.
+$color__background-body: $color__gray-lighter;
+
+// Text.
+$color__text-main: $color__gray-darker;
+$color__headings:  $color__gray-darker;
+
+// Links.
+$color__link: $color__accent;
+$color__link-visited: $color__accent;
+$color__link-hover: $color__accent;
+
+// Accessibility.
+$color__text-screen:       #21759b;
+$color__background-screen: #f1f1f1;
+
+// Elements.
+$color__border-abbr:    $color__gray-dark;
+$color__background-hr:  $color__gray-light;
+$color__background-pre: $color__gray-light;
+$color__background-ins: $color__gray-light;
+
+//Forms.
+$color__forms: (
+	text:             $color__text-main, 
+	border:           $color__gray-light, 
+	background:       #fff,
+	focus_background: $color__gray-light,
+	placeholder:      $color__gray
+);
+
+// Button Default.
+$color__button: (
+	text:       $color__text-main, 
+	border:     $color__gray, 
+	background: $color__gray,
+);
+
+// Button Border.
+$color__button-border: (
+	text:             $color__text-main, 
+	border:           $color__gray-light, 
+	background:       transparent,
+	hover_background: $color__gray-light
+);
+
+// Button Accent.
+$color__button-accent: (
+	text:       #fff, 
+	border:     $color__accent, 
+	background: $color__accent,
+);
+
+// Button Success.
+$color__button-success: (
+	text:       #fff, 
+	border:     $color__success, 
+	background: $color__success,
+);
+
+// Button Info.
+$color__button-info: (
+	text:       #fff, 
+	border:     $color__info, 
+	background: $color__info,
+);
+
+// Button Warning.
+$color__button-warning: (
+	text:       #fff, 
+	border:     $color__warning, 
+	background: $color__warning,
+);
+
+// Button Danger.
+$color__button-danger: (
+	text:       #fff, 
+	border:     $color__danger, 
+	background: $color__danger,
+);
