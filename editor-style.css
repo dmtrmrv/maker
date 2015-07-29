@@ -38,7 +38,7 @@ Description: Used to style the TinyMCE editor.
 
 html {
 	box-sizing: border-box;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 
 	-webkit-text-size-adjust: 100%;
@@ -46,10 +46,10 @@ html {
 }
 
 body {
-	max-width: 729px;
+	max-width: 474px;
 	margin: 3em 5%;
 	color: #58585b;
-	background: #fafafa;
+	background: #fff;
 	font-family: inherit;
 	line-height: 1.5;
 }
@@ -189,7 +189,7 @@ h6 {
 	margin: 0 0 24px 0;
 	margin: 0 0 1.5rem 0;
 	color: #58585b;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	line-height: 24px;
 	line-height: 1.5rem;
@@ -277,7 +277,7 @@ q {
 	margin: 0 0 24px 24px;
 	margin: 0 0 1.5rem 1.5rem;
 	color: #939393;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
 	font-style: italic;
@@ -302,7 +302,7 @@ cite {
 	display: block;
 	margin: 24px 0;
 	margin: 1.5rem 0;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-size: 10px;
 	font-size: 0.625rem;
 	font-style: normal;
@@ -358,7 +358,7 @@ dd {
 
 .mce-item-table td,
 .mce-item-table th {
-	border-bottom: 1px solid #d1d1d1;
+	border-bottom: 1px solid #ababab;
 }
 
 .mce-item-table thead th {
@@ -376,7 +376,7 @@ table {
 td,
 th {
 	padding: 0.6875em 0.75em 0.75em;
-	border-bottom: 1px solid #d1d1d1;
+	border-bottom: 1px solid #ababab;
 	text-align: left;
 }
 
@@ -536,7 +536,7 @@ p > video {
 
 .mce-content-body .wp-playlist-caption,
 .mce-content-body [class*='wp-playlist-item-'] {
-	color: #d1d1d1;
+	color: #ababab;
 	font-size: 16px;
 	font-size: 1rem;
 	font-style: normal;
@@ -573,7 +573,7 @@ p > video {
 	margin: 1em 0;
 	padding: 0;
 	color: #939393;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;
 	font-weight: normal;

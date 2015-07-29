@@ -65,69 +65,154 @@ function the_post_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'maker_entry_meta_header' ) ) :
+if ( ! function_exists( 'maker_entry_category' ) ):
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Displays categories.
+ *
+ * @param  string  $before String to output before the author name
+ * @param  string  $after  String to output after the author name
+ * @param  boolean $echo   Display the whole thing or just return it
+ * @return string
  */
-function maker_entry_meta_header() {
-	/**
-	 * Category. Hidden from page.
-	 */
-	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'maker' ) );
-		if ( $categories_list && maker_categorized_blog() ) {
-			printf( '<span class="cat-links">%s</span>', $categories_list );
-		}
-	}
-
-	/**
-	 * Time. 
-	 */
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	printf( '<span class="posted-on"><a href="%1$s" rel="bookmark">%2$s</a></span>', esc_url( get_permalink() ), $time_string );
-
-	/**
-	 * Author.
-	 */
-	echo '<span class="byline">';
-		printf(
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+function maker_entry_category( $before = '', $after = '', $echo = true ) {
+	/* translators: used between list items, there is a space after the comma */
+	$categories_list = get_the_category_list( __( ', ', 'maker' ) );
+	
+	if ( $categories_list && maker_categorized_blog() ) {
+		$html = sprintf(
+			'<span class="entry-meta-item cat-links">%s%s%s</span>',
+			$before,
+			$categories_list,
+			$after
 		);
-	echo '</span>';
 
-	/**
-	 * Comments.
-	 */
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'maker' ), __( '1 Comment', 'maker' ), __( '% Comments', 'maker' ) );
-		echo '</span>';
+		if ( true == $echo ) {
+			echo $html;
+		}
+
+		return $html;
 	}
-
-	/**
-	 * Edit Link.
-	 */
-	edit_post_link( __( 'Edit', 'maker' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
-if ( ! function_exists( 'maker_entry_meta_footer' ) ) :
+if ( ! function_exists( 'maker_entry_author' ) ):
+/**
+ * Displays author.
+ *
+ * Displays link to all posts written by an author of the current post.
+ * 
+ * @param  string  $before String to output before the author name
+ * @param  string  $after  String to output after the author name
+ * @param  boolean $echo   Display the whole thing or just return it
+ * @return string
+ */
+function maker_entry_author( $before = '', $after = '', $echo = true ) {
+	// Build a string.
+	$html =  sprintf(
+		'<span class="entry-meta-item byline">%s<span class="author vcard"><a class="url fn n" href="%s">%s</a></span>%s</span>',
+		$before,
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_html( get_the_author() ),
+		$after
+	);
+
+	if ( true == $echo ) {
+		echo $html;
+	}
+	
+	return $html;
+}
+endif;
+
+if ( ! function_exists( 'maker_entry_date' ) ) :
+	/**
+	 * Displays Date of the current post.
+	 *
+	 * @param  string  $before String to output before the author name
+	 * @param  string  $after  String to output after the author name
+	 * @param  boolean $echo   Display the whole thing or just return it
+	 * @return string
+	 */
+	function maker_entry_date( $before = '', $after = '', $echo = true ) {
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		$html = sprintf( '<span class="entry-meta-item posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a>%4$s</span>',
+			$before,
+			esc_url( get_permalink() ),
+			$time_string,
+			$after
+		);
+
+		if ( true == $echo ) {
+			echo $html;
+		}
+
+		return $html;
+	}
+endif;
+
+if ( ! function_exists( 'maker_entry_comments_link' ) ) : 
+function maker_entry_comments_link( $before = '', $after = '' ) {
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		if ( intval( get_comments_number() ) == 0 ) {
+			return;
+		}
+		echo '<span class="entry-meta-item comments-link">' . $before;
+		comments_popup_link(
+			__( 'Leave a comment', 'maker' ),
+			__( 'One Comment', 'maker' ),
+			__( '% Comments', 'maker' )
+		);
+		echo $after . '</span>';
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_entry_meta_before_content' ) ) :
+/**
+ * Prints HTML with meta information for the current post.
+ */
+function maker_entry_meta_before_content() {
+	// Only display meta on posts.
+	if ( 'post' == get_post_type() ) {
+
+		echo '<div class="entry-meta">';
+
+		// Category. Hidden from page.
+		maker_entry_category();
+
+		// Author.
+		maker_entry_author();
+
+		// Date.
+		maker_entry_date();
+
+		// Comments.
+		maker_entry_comments_link ();
+
+		// Edit Link.
+		edit_post_link( __( 'Edit', 'maker' ), '<span class="entry-meta-item edit-link">', '</span>' );
+
+		echo '</div>';
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_entry_meta_after_content' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function maker_entry_meta_footer() {
+function maker_entry_meta_after_content() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -336,8 +421,8 @@ function maker_post_navigation() {
 	);
 
 	$navigation = '';
-	$previous   = get_previous_post_link( '<div class="nav-previous"><span>' . __( 'Previous Post:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
-	$next       = get_next_post_link( '<div class="nav-next"><span>' . __( 'Next Post:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
+	$previous   = get_previous_post_link( '<div class="nav-previous"><span>' . __( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
+	$next       = get_next_post_link( '<div class="nav-next"><span>' . __( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
 
 	// Only add markup if there's somewhere to navigate to.
 	if ( $previous || $next ) {

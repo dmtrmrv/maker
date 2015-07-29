@@ -5,7 +5,6 @@
 .site-header {
 	@extend .clear;
 	padding: 0;
-	background-color: #fff;
 }
 
 @include with-layout( $susy-static ) {
@@ -78,7 +77,7 @@ a.site-logo-link {
 
 @media screen and ( min-width: $sm ) {
 	.site-header {
-		padding: 1.5em 0;
+		padding: 3em 0;
 	}
 
 	.site-description {

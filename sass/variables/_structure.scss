@@ -1,8 +1,8 @@
 // Breakpoints.
-$xs: 360px;
-$sm: 768px;
-$md: 1024px;
-$lg: 1128px;
+$xs: 415px;  // Phablets bigger than iPhone 6 plus.
+$sm: 768px;  // iPad (vertical).
+$md: 1024px; // Small Desktops, iPad (horizontal) and bigger.
+$lg: 1128px; // Desktops.
 
 // Susy Mobile (Default).
 $susy: (

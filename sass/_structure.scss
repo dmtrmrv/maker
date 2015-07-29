@@ -10,28 +10,36 @@
 	padding-right: 5%;
 	padding-left: 5%;
 	@media screen and ( min-width: $lg ) {
-		max-width: 1128px
+		max-width: 1128px;
 	}
 }
 
 .site-content {
 	@extend .wrap;
-	padding-top: 1.5em;
-	@media screen and ( min-width: $sm) {
-		padding-top: 3em;
-	}
 }
 
-.content-area,
-.widget-area {
-	@include span( 12 );
-}
-
-@media screen and ( min-width: $sm ) {
-	.content-area {
+.content-area {
+	width: 100%;
+	@media screen and ( min-width: $md ) {
 		@include span( 9 );
+		max-width: span( 9 );
+		.no-sidebar & {
+			width: 100%;
+			max-width: 100%;
+		}
 	}
-	.widget-area {
+}
+
+.widget-area {
+	@include with-layout( $susy-static ) {
+		max-width: span( 6 );
+	}
+	width: 100%;
+	margin: 0 0 3em;
+	@media screen and ( min-width: $sm ) {
+		width: span( 6 );
+	}
+	@media screen and ( min-width: $md ) {
 		@include span( 3 last );
 	}
 }

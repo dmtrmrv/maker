@@ -5,6 +5,8 @@
 }
 
 #infinite-handle {
+	border-top: 2px solid $color__background-hr;
+	padding-top: 3em;
 	margin-bottom: 1.5em;
 	button {
 		@extend %button-border;

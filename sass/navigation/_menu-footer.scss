@@ -19,6 +19,7 @@
 		padding: 0;
 	}
 	@media screen and ( min-width: ( $xs ) ) {
+		@include span( 7 wide no-gutters );
 		ul {
 			float: left;
 			margin-left: -0.75em;

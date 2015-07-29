@@ -5,15 +5,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	<?php maker_post_thumbnail(); ?>
+
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php maker_entry_meta_header(); ?>
-		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<?php maker_post_thumbnail(); ?>
+	<?php maker_entry_meta_before_content(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -25,6 +24,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php maker_entry_meta_footer(); ?>
+	<?php maker_entry_meta_after_content(); ?>
 	
 </article><!-- #post-## -->

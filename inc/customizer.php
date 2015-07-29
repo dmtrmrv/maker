@@ -144,8 +144,17 @@ function maker_custom_style_header_output() {
 		return;
 	}
 
-	// Build and display styles.
-	$style = "a { color: $color }";
+	// Build and print styles.
+	$style = "";
+	$style .= "a,";
+	$style .= ".entry-meta-item.cat-links a,";
+	$style .= ".entry-meta-item a:hover,";
+	$style .= ".entry-meta-item a:focus,";
+	$style .= ".widget a:hover,";
+	$style .= ".widget a:focus,";
+	$style .= ".tags-links a:hover,";
+	$style .= ".tags-links a:focus";
+	$style .= "{ color: $color }";
 	$style .= ".comment-form .submit,";
 	$style .= "input[type='submit'].wpcf7-submit { background-color: $color; border-color: $color; }";
 	

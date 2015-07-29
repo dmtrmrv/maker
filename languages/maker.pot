@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Maker 1.0.0\n"
+"Project-Id-Version: Maker 0.0.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2015-04-02 06:47:47+00:00\n"
 "MIME-Version: 1.0\n"
@@ -92,11 +92,11 @@ msgstr ""
 msgid "Accent Color"
 msgstr ""
 
-#: inc/extras.php:52
+#: inc/extras.php:76
 msgid "Page %s"
 msgstr ""
 
-#: inc/template-tags.php:23 inc/template-tags.php:321
+#: inc/template-tags.php:23 inc/template-tags.php:406
 msgid "Posts navigation"
 msgstr ""
 
@@ -108,111 +108,111 @@ msgstr ""
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:56 inc/template-tags.php:335
+#: inc/template-tags.php:56 inc/template-tags.php:420
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:78
+#: inc/template-tags.php:79
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:115
+#: inc/template-tags.php:172
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:115
-msgid "1 Comment"
+#: inc/template-tags.php:173
+msgid "One Comment"
 msgstr ""
 
-#: inc/template-tags.php:115
+#: inc/template-tags.php:174
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:122 inc/template-tags.php:142
-#: inc/template-tags.php:401 inc/template-tags.php:426
+#: inc/template-tags.php:204 inc/template-tags.php:227
+#: inc/template-tags.php:486 inc/template-tags.php:511
 #. translators: used between list items, there is a space after the comma
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:161
+#: inc/template-tags.php:246
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:163
+#: inc/template-tags.php:248
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:165
+#: inc/template-tags.php:250
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:252
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:254
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:171
+#: inc/template-tags.php:256
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:278
 msgid "Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:197
+#: inc/template-tags.php:282
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:199
+#: inc/template-tags.php:284
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:319
+#: inc/template-tags.php:404
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:320
+#: inc/template-tags.php:405
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:339
-msgid "Previous Post:"
+#: inc/template-tags.php:424
+msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:340
-msgid "Next Post:"
+#: inc/template-tags.php:425
+msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:373
+#: inc/template-tags.php:458
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:375
+#: inc/template-tags.php:460
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:376
+#: inc/template-tags.php:461
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:377
+#: inc/template-tags.php:462
 msgid "Page %s of %s"
 msgstr ""
 
-#: inc/template-tags.php:408
+#: inc/template-tags.php:493
 msgid "Post Author"
 msgstr ""
 
-#: inc/template-tags.php:430
+#: inc/template-tags.php:515
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:464
+#: inc/template-tags.php:549
 msgid "%1$s theme by %2$s"
 msgstr ""
 
@@ -240,14 +240,13 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:20 template-parts/content-single.php:22
-#: template-parts/content.php:32
+#: template-parts/content-page.php:20 template-parts/content-single.php:21
+#: template-parts/content.php:22
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content.php:25
-#. translators: %s: Name of current post
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#: template-parts/content.php:18
+msgid "Continue reading %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -277,67 +276,67 @@ msgid_plural "%s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:252
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:254
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:171
+#: inc/template-tags.php:256
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags.php:174
+#: inc/template-tags.php:259
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/template-tags.php:176
+#: inc/template-tags.php:261
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/template-tags.php:178
+#: inc/template-tags.php:263
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/template-tags.php:180
+#: inc/template-tags.php:265
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/template-tags.php:182
+#: inc/template-tags.php:267
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/template-tags.php:184
+#: inc/template-tags.php:269
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/template-tags.php:186
+#: inc/template-tags.php:271
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/template-tags.php:188
+#: inc/template-tags.php:273
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/template-tags.php:190
+#: inc/template-tags.php:275
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:423
+#: inc/template-tags.php:508
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""

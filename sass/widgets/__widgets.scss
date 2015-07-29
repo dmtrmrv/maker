@@ -4,10 +4,8 @@
 
 .widget {
 	margin: 0 0 1.5em;
-	padding: 1.5em;
-	background-color: $color__gray-light;
 	word-wrap: break-word;
-	@media screen and ( min-width: $sm ) {
+	@media screen and ( min-width: $xs ) {
 		margin: 0 0 3em;
 	}
 	select {
@@ -20,11 +18,17 @@
 			list-style: none;
 		}
 	}
+	a {
+		color: $color__gray;
+		&:hover,
+		&:focus {
+			opacity: 1;
+			color: $color__accent;
+		}
+	}
 }
 
 .widget_search {
-	padding: 0;
-	background-color: transparent;
 	.search-submit {
 		display: none;
 	}

@@ -9,22 +9,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+	
+	<?php maker_post_thumbnail(); ?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php maker_entry_meta_header(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
+	<header class="entry-header">
+		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>		
 	</header><!-- .entry-header -->
 
-	<?php maker_post_thumbnail(); ?>
+	<?php maker_entry_meta_before_content(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<?php maker_entry_meta_footer(); ?>
+	<?php maker_entry_meta_after_content(); ?>
 	
 </article><!-- #post-## -->

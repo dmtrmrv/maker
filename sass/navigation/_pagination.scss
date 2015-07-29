@@ -1,9 +1,11 @@
 /* Posts Navigation (Newer/Older Post) */
 
 .posts-navigation {
-	overflow: hidden;
-	margin: 0 0 1.5em;
+	@extend .clear;
+	margin: 0 auto 3em;
 	word-wrap: break-word;
+	padding-top: 3em;
+	border-top: 2px	solid $color__background-hr;
 	a {
 		@extend %button_core;
 		@extend %button-border;
@@ -12,10 +14,11 @@
 		&:after {
 			@extend %icon;
 			margin: 0 0.5em;
+			color: darken( $color__background-hr, 7% );
 		}
 	}
 	.nav-previous a {
-		margin-right: 1em;
+		margin-right: 1.5em;
 		padding-left: 0.5em;
 		&:before {
 			content: '\e802';
@@ -26,8 +29,5 @@
 		&:after {
 			content: '\e803';
 		}
-	}
-	@media screen and ( min-width: $sm ) {
-		margin: 0 0 3em;
 	}
 }

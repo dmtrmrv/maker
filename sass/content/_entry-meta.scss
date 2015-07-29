@@ -2,32 +2,62 @@
 
 .entry-meta {
 	@extend .clear;
-	margin-bottom: 1.5em;
+	@include with-layout( $susy-static ) {
+		max-width: span( 6 );
+	}
+	margin: 0 auto 1.5em;
+	@media screen and ( min-width: $sm ) {
+		@include span( 3 of 12 );
+	}
+	@media screen and ( min-width: $md ) {
+		@include span( 3 of 9 );
+	}
 }
 
-.entry-meta > span {
-	@include font-size( 0.75 );
-	line-height: 2;
+.entry-meta-item {
 	display: block;
-	float: left;
-	margin-right: 1em;
-	color: $color__gray;
-	letter-spacing: ( 1 / $font__size-body ) * 1em;
-	text-transform: uppercase;
-	&:after {
-		margin-left: 1em;
-		content: '/';
-	}
-	&:last-child {
-		&:after {
-			margin: 0;
-			content: '';
+	color: $color__gray-darker;
+	a {
+		color: $color__gray;
+		&:hover,
+		&:focus {
+			opacity: 1;
+			color: $color__accent;
 		}
 	}
 }
 
+.entry-meta-item.cat-links {
+	@include font-size( 0.875 );
+	display: block;
+	font-weight: bold;
+	line-height: 1.7142857143;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	@media screen and ( min-width: $sm ) {
+		display: block;
+		margin: 1.7142857143em 0;
+	}
+	a {
+		color: $color__accent;
+	}
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: block;
+}
+
 .entry-footer {
 	margin-bottom: 1.5em;
+	@media screen and ( min-width: $md ) {
+		@include span( 3 );
+	}
 	.blog &,
 	.search &,
 	.archive & {
@@ -39,21 +69,16 @@
 	a {
 		display: inline-block;
 		margin-right: 0.5em;
+		color: $color__gray;
+		&:hover,
+		&:focus {
+			opacity: 1;
+			color: $color__accent;
+		}
 		&:before {
-			color: $color__gray;
 			content: '#';
 		}
 	}
-}
-
-.byline,
-.updated:not(.published) {
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline-block;
 }
 
 .page-links {

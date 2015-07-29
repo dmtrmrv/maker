@@ -1,6 +1,7 @@
 /* Post Navigation (Next/Previous Post) */
 
 .post-navigation {
+	@extend .clear;
 	overflow: hidden;
 	margin: 0 0 1.5em;
 	word-wrap: break-word;

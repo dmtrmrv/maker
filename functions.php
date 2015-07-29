@@ -8,13 +8,13 @@
 /**
  * The current version of the theme.
  */
-define( 'MAKER_VERSION', '1.0.0' );
+define( 'MAKER_VERSION', '0.0.1' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 729; /* pixels */
+	$content_width = 474; /* pixels */
 }
 
 if ( ! function_exists( 'maker_setup' ) ) :

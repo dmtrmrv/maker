@@ -7,20 +7,22 @@
 }
 
 .hentry {
-	margin-bottom: 1.5em;
-	background-color: $color__gray-lighter;
 	word-wrap: break-word;
-	@media screen and ( min-width: $sm ) {
-		margin-bottom: 3em;
-	}
 }
 
-.blog,
-.archive,
-.search {
-	.hentry {
-		padding-bottom: em_minus_px( 1.5em, 2px );
-		border-bottom: 2px solid $color__gray-light;
+.post-list-item {
+	@extend .clear;
+	margin-bottom: 1.5em;
+}
+
+.post-single-item {
+	margin-bottom: 1.5em;
+}
+
+.page-single-item {
+	margin-bottom: 1.5em;
+	@media screen and ( min-width: $sm ) {
+		margin-bottom: 3em;
 	}
 }
 

@@ -19,9 +19,33 @@ function maker_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Adds a class if there are no widgets in a sidebar.
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'maker_body_classes' );
+
+/**
+ * Adds custom classes to the array of post classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function maker_post_classes( $classes ) {
+	if ( is_home() || is_search() || is_archive() ) {
+		$classes[] = 'post-list-item';
+	} elseif ( is_singular( 'post' ) ) {
+		$classes[] = 'post-single-item';
+	} elseif ( is_singular( 'page' ) ) {
+		$classes[] = 'page-single-item';
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', 'maker_post_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
