@@ -92,8 +92,12 @@ msgstr ""
 msgid "Accent Color"
 msgstr ""
 
-#: inc/extras.php:76
+#: inc/extras.php:90
 msgid "Page %s"
+msgstr ""
+
+#: inc/jetpack.php:36
+msgid "Load More"
 msgstr ""
 
 #: inc/template-tags.php:23 inc/template-tags.php:406

@@ -35,17 +35,31 @@ add_filter( 'body_class', 'maker_body_classes' );
  * @return array
  */
 function maker_post_classes( $classes ) {
-	if ( is_home() || is_search() || is_archive() ) {
+	if ( is_home() || is_archive() ) {
 		$classes[] = 'post-list-item';
 	} elseif ( is_singular( 'post' ) ) {
 		$classes[] = 'post-single-item';
 	} elseif ( is_singular( 'page' ) ) {
 		$classes[] = 'page-single-item';
+	} elseif ( is_search() ) {
+		$classes[] = 'search-results-item';
 	}
 
 	return $classes;
 }
 add_filter( 'post_class', 'maker_post_classes' );
+
+
+if ( ! function_exists( 'maker_excerpt' ) ):
+/**
+ * Custom excerpt.
+ */
+function maker_excerpt( $more ) {
+	global $post;
+	return ' ...';
+}
+add_filter( 'excerpt_more', 'maker_excerpt' );
+endif;
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**

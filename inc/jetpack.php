@@ -16,12 +16,24 @@ function maker_jetpack_setup() {
 		'render'    => 'maker_infinite_scroll_render',
 		'type'      => 'click'
 	) );
+
+	add_filter( 'infinite_scroll_js_settings', 'maker_load_more_text' );
 }
 add_action( 'after_setup_theme', 'maker_jetpack_setup' );
 
 function maker_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'template-parts/content', get_post_format() );
+		if ( is_search() ) :
+			get_template_part( 'template-parts/content-search' );
+		else :
+			get_template_part( 'template-parts/content', get_post_format() );
+		endif;
 	}
+}
+
+function maker_load_more_text( $settings ) {
+	$settings['text'] = __( 'Load More', 'maker' );
+
+	return $settings;
 }

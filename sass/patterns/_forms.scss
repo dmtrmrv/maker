@@ -81,3 +81,24 @@ input:-ms-input-placeholder {
 	right: 0;
 	bottom: 0;
 }
+
+.search-form {
+	position: relative;
+	margin-bottom: 1.5em;
+	@media screen and ( min-width: $sm ) {
+		margin-bottom: 3em;
+	}
+}
+
+.search-submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+}
+
+input[type='submit'].search-submit {
+	@extend %button-accent;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}

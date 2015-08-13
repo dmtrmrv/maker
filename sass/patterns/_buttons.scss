@@ -49,6 +49,14 @@
 	}
 }
 
+button,
+.button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	@extend %button_core;
+}
+
 %button-border {
 	@include button-color( $color__button-border );
 }
@@ -66,12 +74,4 @@
 }
 %button-danger {
 	@include button-color( $color__button-danger );
-}
-
-button,
-.button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-	@extend %button_core;
 }

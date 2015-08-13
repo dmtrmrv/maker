@@ -153,9 +153,11 @@ function maker_custom_style_header_output() {
 	$style .= ".widget a:hover,";
 	$style .= ".widget a:focus,";
 	$style .= ".tags-links a:hover,";
-	$style .= ".tags-links a:focus";
+	$style .= ".tags-links a:focus,";
+	$style .= ".search .entry-title a";
 	$style .= "{ color: $color }";
 	$style .= ".comment-form .submit,";
+	$style .= "input[type='submit'].search-submit,";
 	$style .= "input[type='submit'].wpcf7-submit { background-color: $color; border-color: $color; }";
 	
 	echo '<style type="text/css">' . $style . '</style>';

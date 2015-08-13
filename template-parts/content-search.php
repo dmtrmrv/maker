@@ -9,19 +9,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-	<?php maker_post_thumbnail(); ?>
 
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>		
+	<header class="search-results-item-header">
+		<?php the_title( sprintf( '<h1 class="search-results-item-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php maker_entry_meta_before_content(); ?>
-
-	<div class="entry-summary">
+	<div class="search-results-item-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
-
-	<?php maker_entry_meta_after_content(); ?>
 	
 </article><!-- #post-## -->

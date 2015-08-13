@@ -1,0 +1,35 @@
+.search {
+	.search-form {
+		@include with-layout( $susy-static ) {
+			max-width: span( 9 );
+		}
+	}
+	.content-area .search-field {
+		padding-right: 10em;
+	}
+}
+
+.search-results-item {
+	margin-bottom: 3em;
+}
+
+.search-results-item-header,
+.search-results-item-title {
+	@include with-layout( $susy-static ) {
+		max-width: span( 8 );
+	}
+	float: none;
+	width: 100%;
+}
+
+.search-results-item-title {
+	@include font-size( 1.25 );
+	margin: 0 0 1.2em;
+	line-height: 1.2em;
+}
+
+.search-results-item-summary {
+	@include with-layout( $susy-static ) {
+		max-width: span( 8 );
+	}
+}
