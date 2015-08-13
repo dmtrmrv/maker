@@ -15,10 +15,11 @@ td, th {
 thead th {
 	@include font-size( 0.75 );
 	@include line-height( 1.5 );
-	padding: 1em 1em em_minus_px( 1em, 2px, $font__size-body-px * 0.75 );
+	padding: em_minus_px( 1em, 1px, $font__size-body-px * 0.75 ) 1em em_minus_px( 1em, 1px, $font__size-body-px * 0.75 );
 	border-bottom: 2px solid $color__gray-dark;
 	font-weight: bold;
 	text-transform: uppercase;
+	background-color: $color__gray-light;
 }
 
 @media screen and ( min-width: $sm ) {

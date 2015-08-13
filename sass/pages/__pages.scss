@@ -16,14 +16,13 @@
 }
 
 .post-single-item {
+	@extend .clear;
 	margin-bottom: 1.5em;
 }
 
 .page-single-item {
+	@extend .clear;
 	margin-bottom: 1.5em;
-	@media screen and ( min-width: $sm ) {
-		margin-bottom: 3em;
-	}
 }
 
 @import 'page-404';

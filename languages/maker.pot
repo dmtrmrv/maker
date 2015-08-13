@@ -240,7 +240,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:20 template-parts/content-single.php:21
+#: template-parts/content-page.php:21 template-parts/content-single.php:21
 #: template-parts/content.php:22
 msgid "Pages:"
 msgstr ""
@@ -267,6 +267,10 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://themepatio.com"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Fullwidth"
 msgstr ""
 
 #: comments.php:29

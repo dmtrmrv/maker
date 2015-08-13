@@ -14,7 +14,7 @@
 
 	<?php maker_entry_meta_before_content(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content post-single-item-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

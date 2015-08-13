@@ -253,7 +253,6 @@ a {
 	color: #3498db;
 	background-color: transparent;
 	text-decoration: none;
-	transition: opacity 0.3s;
 
 	-webkit-backface-visibility: hidden;
 }
@@ -272,11 +271,12 @@ a:focus {
 
 /* Blockquotes */
 
-blockquote,
-q {
-	margin: 0 0 24px 24px;
-	margin: 0 0 1.5rem 1.5rem;
-	color: #939393;
+blockquote {
+	margin: 0 0 1.3333333333em 0;
+	padding: 1.22222em 0 1.27778em;
+	border-top: 2px solid #939393;
+	border-bottom: 1px solid #ababab;
+	color: #58585b;
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -287,21 +287,17 @@ q {
 }
 
 blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:after {
 	content: '';
 }
 
-blockquote p,
-q p {
+blockquote p {
 	margin: 0;
 }
 
-cite {
+blockquote cite {
 	display: block;
-	margin: 24px 0;
-	margin: 1.5rem 0;
+	margin: 1.2em 0 -1.2em 0;
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 	font-size: 10px;
 	font-size: 0.625rem;
@@ -312,8 +308,12 @@ cite {
 	text-transform: uppercase;
 }
 
-cite:before {
-	content: '\2014\2002';
+blockquote.alignleft {
+	width: 50%;
+}
+
+blockquote.alignright {
+	width: 50%;
 }
 
 /* Lists */
@@ -381,8 +381,9 @@ th {
 }
 
 thead th {
-	padding: 1em 1em 0.83333em;
+	padding: 0.91667em 1em 0.91667em;
 	border-bottom: 2px solid #939393;
+	background-color: #f0f0f0;
 	font-size: 12px;
 	font-size: 0.75rem;
 	font-weight: bold;
@@ -601,13 +602,23 @@ p > video {
 blockquote.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 0.5em 1.5em 0.5em 0;
+	margin: 8px 24px 8px 0;
+	margin: 0.5rem 1.5rem 0.5rem 0;
 }
 
 blockquote.alignright,
 img.alignright,
 .wp-caption.alignright {
-	margin: 0.5em 0 0.5em 1.5em;
+	margin: 8px 0 0.5rem 1.5rem;
+	margin: 0.5rem 0 0.5rem 1.5rem;
+}
+
+blockquote.alignleft {
+	margin: 0 1.5em 0.9375em 0;
+}
+
+blockquote.alignright {
+	margin: 0 0 0.9375em 1.5em;
 }
 
 /* Clearings */

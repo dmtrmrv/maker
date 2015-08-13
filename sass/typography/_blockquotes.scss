@@ -1,12 +1,13 @@
 /* Blockquotes */
 
-blockquote,
-q {
+blockquote {
 	@include font-size( 1.125 );
 	@include line-height( 1.5 );
-	margin: 0 0 ( $font__size-body-px * $font__line-height-body ) ( $font__size-body-px * $font__line-height-body );
-	margin: 0 0 1.5rem 1.5rem;
-	color: $color__gray-dark;
+	margin: 0 0 1.3333333333em 0;
+	padding: em_minus_px( 1.3333333333em, 2px, 18px ) 0 em_minus_px( 1.3333333333em, 1px, 18px );
+	border-top: 2px solid $color__gray-dark;
+	border-bottom: 1px solid $color__gray;
+	color: $color__gray-darker;
 	font-family: $font__blockquote;
 	font-style: italic;
 	quotes: '' '';
@@ -17,19 +18,20 @@ q {
 	p {
 		margin: 0;
 	}
-}
-
-cite {
-	@include font-size( 0.625 );
-	@include line-height( 1.5 );
-	display: block;
-	margin: ( $font__size-body-px * $font__line-height-body ) 0;
-	margin: 1.5rem 0;
-	font-family: $font__main;
-	font-style: normal;
-	letter-spacing: ( 1em / 16 );
-	text-transform: uppercase;
-	&:before {
-		content: '\2014\2002';
+	cite {
+		@include font-size( 0.625 );
+		@include line-height( 1.5 );
+		display: block;
+		margin: 1.2em 0 -1.2em 0;
+		font-family: $font__main;
+		font-style: normal;
+		letter-spacing: ( 1em / 16 );
+		text-transform: uppercase;
+	}
+	&.alignleft {
+		width: 50%;
+	}
+	&.alignright {
+		width: 50%;
 	}
 }

@@ -6,8 +6,8 @@
 
 #infinite-handle {
 	border-top: 2px solid $color__background-hr;
-	padding-top: 3em;
-	margin-bottom: 1.5em;
+	padding-top: em_minus_px( 3em, 2px );
+	margin-bottom: 3em;
 	button {
 		@extend %button-border;
 	}
@@ -15,13 +15,6 @@
 
 .infinite-loader {
 	display: block;
-	margin-bottom: 1.5em;
+	margin-bottom: 3em;
 	height: 3em;
-}
-
-@media screen and ( min-width: $sm ) {
-	#infinite-handle,
-	.infinite-loader {
-		margin-bottom: 3em;
-	}	
 }

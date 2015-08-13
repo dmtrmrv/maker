@@ -14,6 +14,12 @@
 	}
 }
 
+.no-sidebar .entry-meta {
+	@media screen and ( min-width: $md ) {
+		@include span( 3 of 12 );
+	}
+}
+
 .entry-meta-item {
 	display: block;
 	color: $color__gray-darker;
@@ -36,7 +42,7 @@
 	text-transform: uppercase;
 	@media screen and ( min-width: $sm ) {
 		display: block;
-		margin: 1.7142857143em 0;
+		// margin: 1.7142857143em 0;
 	}
 	a {
 		color: $color__accent;

@@ -4,7 +4,7 @@
 	@extend .clear;
 	margin: 0 auto 3em;
 	word-wrap: break-word;
-	padding-top: 3em;
+	padding-top: em_minus_px( 3em, 2px );
 	border-top: 2px	solid $color__background-hr;
 	a {
 		@extend %button_core;
