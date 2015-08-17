@@ -1,25 +1,26 @@
-/* Fullwidth */
+/* Centered */
 
-.page-template-fullwidth {
+.page-template-centered {
 	.hentry {
 		@extend .clear;
 		margin-bottom: 3em;
 	}
 	.content-area {
+		@extend .clear;
+		float: none;
 		width: 100%;
 		max-width: 100%;
-		float: none;
-		margin-right: 0;
+		margin: 0 auto;
+		padding: 0;
 	}
 	.entry-header,
-	.entry-content {
-		width: 100%;
-		max-width: 100%;
-	}
-
+	.entry-content,
 	.comments-area {
+		@extend .clear;
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}
+		width: 100%;
+		margin: 0 auto;
 	}
 }

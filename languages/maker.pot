@@ -24,24 +24,16 @@ msgid ""
 "go to the homepage or try searching."
 msgstr ""
 
-#: comments.php:54
+#: comments.php:52
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:58
-msgid "Leave a Comment"
-msgstr ""
-
-#: comments.php:59
+#: comments.php:56
 msgid "Reply to %s"
 msgstr ""
 
-#: comments.php:60
+#: comments.php:57
 msgid "Cancel"
-msgstr ""
-
-#: comments.php:61
-msgid "Submit Comment"
 msgstr ""
 
 #: functions.php:61 header.php:34
@@ -52,7 +44,7 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:111
 msgid "Sidebar"
 msgstr ""
 
@@ -92,7 +84,7 @@ msgstr ""
 msgid "Accent Color"
 msgstr ""
 
-#: inc/extras.php:90
+#: inc/extras.php:93
 msgid "Page %s"
 msgstr ""
 
@@ -274,10 +266,14 @@ msgid "http://themepatio.com"
 msgstr ""
 
 #. Template Name of the plugin/theme
+msgid "Centered"
+msgstr ""
+
+#. Template Name of the plugin/theme
 msgid "Fullwidth"
 msgstr ""
 
-#: comments.php:29
+#: comments.php:27
 msgctxt "Comments title"
 msgid "One Comment"
 msgid_plural "%s Comments"

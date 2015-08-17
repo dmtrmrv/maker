@@ -20,10 +20,10 @@
 }
 
 .comment-body {
-	word-wrap: break-word;
 	position: relative;
 	margin: 0 0 em_minus_px( 1.5em, 2px ) 0;
 	border-bottom: 2px solid $color__background-hr;
+	word-wrap: break-word;
 	.pingback & {
 		margin: 0 0 1.5em 0;
 		padding: 1.5em;
@@ -129,20 +129,18 @@
 	@extend .screen-reader-text;
 }
 
-@media screen and ( min-width: $sm ) {
-	.children {
-		margin-left: 5%;
-	}
+.comments-title,
+.comment-reply-title {
+	@include font-size( 1.5 ); // 24
+}
 
-	.comments-title,
-	.comment-reply-title {
-		@include font-size( 1.5 ); // 24
-	}
+.comment-list,
+.form-submit {
+	margin-bottom: em_minus_px( 4.5em, 2px );
+}
 
-	.comment-list,
-	.form-submit {
-		margin-bottom: em_minus_px( 3em, 2px );
-	}
+.no-comments {
+	margin-bottom: 4.5em;
 }
 
 @import 'comment-navigation';

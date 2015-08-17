@@ -145,7 +145,7 @@ function maker_custom_style_header_output() {
 	}
 
 	// Build and print styles.
-	$style = "";
+	$style  = "";
 	$style .= "a,";
 	$style .= ".entry-meta-item.cat-links a,";
 	$style .= ".entry-meta-item a:hover,";
@@ -153,8 +153,8 @@ function maker_custom_style_header_output() {
 	$style .= ".widget a:hover,";
 	$style .= ".widget a:focus,";
 	$style .= ".tags-links a:hover,";
-	$style .= ".tags-links a:focus,";
-	$style .= ".search .entry-title a";
+	$style .= ".tags-links a:focus";
+	// $style .= ".search .entry-title a";
 	$style .= "{ color: $color }";
 	$style .= ".comment-form .submit,";
 	$style .= "input[type='submit'].search-submit,";

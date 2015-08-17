@@ -2,10 +2,16 @@
 
 .posts-navigation {
 	@extend .clear;
+	@include with-layout( $susy-static ) {
+		max-width: span( 6 );
+	}
+	@media screen and ( min-width: $md ) {
+		max-width: 100%;
+	}
 	margin: 0 auto 3em;
-	word-wrap: break-word;
 	padding-top: em_minus_px( 3em, 2px );
 	border-top: 2px	solid $color__background-hr;
+	word-wrap: break-word;
 	a {
 		@extend %button_core;
 		@extend %button-border;

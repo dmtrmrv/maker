@@ -14,7 +14,7 @@ define( 'MAKER_VERSION', '0.0.1' );
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 474; /* pixels */
+	$content_width = 984;
 }
 
 if ( ! function_exists( 'maker_setup' ) ) :
@@ -53,8 +53,8 @@ function maker_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'maker-thumbnail', '729', '432', true );
-
+	add_image_size( 'maker-thumbnail',           '729', '432', true );
+	add_image_size( 'maker-thumbnail-fullwidth', '984', '576', true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -67,7 +67,11 @@ function maker_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
 	) );
 
 	/*
@@ -75,7 +79,11 @@ function maker_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link'
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -172,8 +180,8 @@ function maker_scripts() {
 	}
 
 	/*
-	 * We have styles for Jetpack infinite scroll.
-	 * Let's save one request and some bandwidth. Shall we?
+	 * Disable infinite scroll styles.
+	 * Let's save one request and some bandwidth.
 	 */
 	if ( wp_style_is( 'the-neverending-homepage', 'registered' ) ) {
 		wp_deregister_style( 'the-neverending-homepage' );

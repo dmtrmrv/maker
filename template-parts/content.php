@@ -25,7 +25,5 @@
 		?>
 
 	</div><!-- .entry-content -->
-
-	<?php maker_entry_meta_after_content(); ?>
 	
 </article><!-- #post-## -->

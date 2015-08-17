@@ -1,25 +1,5 @@
 /* Entry Meta */
 
-.entry-meta {
-	@extend .clear;
-	@include with-layout( $susy-static ) {
-		max-width: span( 6 );
-	}
-	margin: 0 auto 1.5em;
-	@media screen and ( min-width: $sm ) {
-		@include span( 3 of 12 );
-	}
-	@media screen and ( min-width: $md ) {
-		@include span( 3 of 9 );
-	}
-}
-
-.no-sidebar .entry-meta {
-	@media screen and ( min-width: $md ) {
-		@include span( 3 of 12 );
-	}
-}
-
 .entry-meta-item {
 	display: block;
 	color: $color__gray-darker;
@@ -54,21 +34,8 @@
 	display: none;
 }
 
-.single .byline,
 .group-blog .byline {
 	display: block;
-}
-
-.entry-footer {
-	margin-bottom: 1.5em;
-	@media screen and ( min-width: $md ) {
-		@include span( 3 );
-	}
-	.blog &,
-	.search &,
-	.archive & {
-		display: none;
-	}
 }
 
 .tags-links {

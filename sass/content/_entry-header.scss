@@ -1,25 +1,7 @@
 /* Entry Title */
 
-.entry-header {
-	@include with-layout( $susy-static ) {
-		max-width: span( 6 );
-	}
-	margin: 0 auto;
-	@media screen and (min-width: $sm) {
-		float: right;
-		width: span( 9 );
-		max-width: 100%;
-		margin: 0;
-		padding-right: span( 2 wide );
-	}
-	@media screen and ( min-width: $md ) {
-		width: span( 6 of 9 );
-		padding-right: 0;
-	}
-}
-
 .entry-title {
-	/* 19px bottom margin to make text jump back into baseline grid */
+	// 19px bottom margin to make text jump back into baseline grid
 	margin: -0.25em 0 0.625em 0;
 	font-size: 2em;
 	line-height: 1.125;
@@ -29,23 +11,5 @@
 		&:focus {
 			text-decoration: none;
 		}
-	}
-}
-
-.no-sidebar .entry-header {
-	@media screen and ( min-width: $md ) {
-		width: span( 9 of 12 );
-		padding-right: span( 3 of 12 wide );
-	}
-}
-
-.page-single-item .entry-header {
-	max-width: 100%;
-	@media screen and ( min-width: $sm ) {
-		float: left;
-		padding-right: 0;
-	}
-	@media screen and ( min-width: $md ) {
-		width: span( 9 of 9 )
 	}
 }

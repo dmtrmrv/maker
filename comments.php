@@ -20,8 +20,6 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
-
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
@@ -55,10 +53,8 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php comment_form( array( 
-		'title_reply'          => __( 'Leave a Comment', 'maker' ),
-		'title_reply_to'       => __( 'Reply to %s', 'maker' ),
-		'cancel_reply_link'    => __( 'Cancel', 'maker' ),
-		'label_submit'         => __( 'Submit Comment', 'maker' ),
+		'title_reply_to'    => __( 'Reply to %s', 'maker' ),
+		'cancel_reply_link' => __( 'Cancel', 'maker' ),
 	) ); ?>
 
 </div><!-- #comments -->

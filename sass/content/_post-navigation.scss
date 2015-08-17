@@ -1,14 +1,8 @@
 /* Post Navigation (Next/Previous Post) */
 
 .post-navigation {
-	@extend .clear;
-	overflow: hidden;
-	margin: 0 0 1.5em;
-	word-wrap: break-word;
+	margin-bottom: 4.5em;
 	span {
 		color: $color__gray;
-	}
-	@media screen and ( min-width: $sm ) {
-		margin: 0 0 3em;
 	}
 }

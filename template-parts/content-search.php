@@ -9,13 +9,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<header class="search-results-item-header">
-		<?php the_title( sprintf( '<h1 class="search-results-item-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+	<header class="entry-header">
+		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div class="search-results-item-summary">
+	<div class="entry-summary">
 		<?php the_excerpt(); ?>
+		<a href="<?php the_permalink(); ?>"><?php _e( 'Continue Reading', 'maker' ); ?></a>
 	</div><!-- .entry-summary -->
 	
 </article><!-- #post-## -->
+

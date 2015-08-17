@@ -10,23 +10,18 @@
 	word-wrap: break-word;
 }
 
-.post-list-item {
-	@extend .clear;
-	margin-bottom: 1.5em;
-}
+@import 'post';
 
-.post-single-item {
-	@extend .clear;
-	margin-bottom: 1.5em;
-}
+@import 'page';
 
-.page-single-item {
-	@extend .clear;
-	margin-bottom: 1.5em;
-}
+@import 'page-fullwidth';
+
+@import 'page-centered';
 
 @import 'page-search';
 
 @import 'page-404';
 
-@import 'page-fullwidth';
+// Page Home
+
+// Portfolio Item

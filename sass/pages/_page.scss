@@ -1,0 +1,23 @@
+/* Default Page */
+
+.page-template-default {
+	.hentry {
+		margin-bottom: 1.5em;
+		@extend .clear;
+	}
+	.entry-header,
+	.entry-content,
+	.comments-area {
+		clear: both;
+		@include with-layout( $susy-static ) {
+			max-width: span( 6 );
+		}
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		@media screen and (min-width: $md) {
+			float: left;
+			margin-left: 0;
+		}
+	}
+}

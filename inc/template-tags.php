@@ -210,7 +210,7 @@ endif;
 
 if ( ! function_exists( 'maker_entry_meta_after_content' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta after page content.
  */
 function maker_entry_meta_after_content() {
 	// Hide category and tag text for pages.
@@ -385,11 +385,19 @@ function maker_post_thumbnail() {
 
 	if ( is_singular() ) {
 		echo '<div class="post-thumbnail">';
-			the_post_thumbnail( 'maker-thumbnail' );
+			if ( is_active_sidebar( 'sidebar-1' ) ) {
+				the_post_thumbnail( 'maker-thumbnail' );
+			} else {
+				the_post_thumbnail( 'maker-thumbnail-fullwidth' );
+			}
 		echo '</div>';
 	} else {
 		printf( '<a class="post-thumbnail" href="%s">', esc_url( apply_filters( 'the_permalink', get_permalink() ) ) );
-			the_post_thumbnail( 'maker-thumbnail' );
+			if ( is_active_sidebar( 'sidebar-1' ) ) {
+				the_post_thumbnail( 'maker-thumbnail' );
+			} else {
+				the_post_thumbnail( 'maker-thumbnail-fullwidth' );
+			}
 		echo '</a>';	
 	}
 }

@@ -1,35 +1,30 @@
 .search {
-	.search-form {
-		@include with-layout( $susy-static ) {
-			max-width: span( 9 );
-		}
-	}
+	// Do not need padding on a search field in widgets.
 	.content-area .search-field {
 		padding-right: 10em;
 	}
-}
-
-.search-results-item {
-	margin-bottom: 3em;
-}
-
-.search-results-item-header,
-.search-results-item-title {
-	@include with-layout( $susy-static ) {
-		max-width: span( 8 );
+	.hentry {
+		margin-bottom: 3em;
 	}
-	float: none;
-	width: 100%;
-}
-
-.search-results-item-title {
-	@include font-size( 1.25 );
-	margin: 0 0 1.2em;
-	line-height: 1.2em;
-}
-
-.search-results-item-summary {
-	@include with-layout( $susy-static ) {
-		max-width: span( 8 );
+	.entry-title {
+		@include font-size( 1.25 );
+		margin: 0 0 1.2em;
+		line-height: 1.2em;
+		a {
+			color: $color__text-main;
+		}
+	}
+	.search-form,
+	.entry-header,
+	.entry-summary {
+		@include with-layout( $susy-static ) {
+			max-width: span( 6 );
+		}
+		margin-right: auto;
+		margin-left: auto;
+		@media screen and ( min-width: $md ) {
+			max-width: 100%;
+			margin-left: 0;
+		}
 	}
 }

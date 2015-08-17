@@ -1,7 +1,9 @@
 <?php
 /**
- * The template for displaying all pages.
- *
+ * The template for displaying full width pages.
+ * 
+ * Template Name: Centered
+ * 
  * @package Maker
  */
 
@@ -25,8 +27,6 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 			
 		</div>
-
-		<?php get_sidebar(); ?>
 
 	</div><!-- #content -->
 </div><!-- #main -->
