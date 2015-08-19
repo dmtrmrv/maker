@@ -73,18 +73,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_filter( 'wp_title', 'maker_wp_title', 10, 2 );
 
-	/**
-	 * Title shim for sites older than WordPress 4.1.
-	 *
-	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.3 is released.
-	 */
-	function maker_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-	add_action( 'wp_head', 'maker_render_title' );
 endif;
 
 /**
