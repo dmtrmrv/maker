@@ -21,3 +21,11 @@ $susy-static: (
 	output: float,
 	gutter-position: after,
 );
+
+$susy-portfolio-grid: (
+	columns: 12,
+	gutters: 24/60,
+	math: fluid,
+	output: float,
+	gutter-position: after
+)

@@ -84,7 +84,7 @@ msgstr ""
 msgid "Accent Color"
 msgstr ""
 
-#: inc/extras.php:93
+#: inc/extras.php:69
 msgid "Page %s"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Load More"
 msgstr ""
 
-#: inc/template-tags.php:23 inc/template-tags.php:406
+#: inc/template-tags.php:23 inc/template-tags.php:414 inc/template-tags.php:626
 msgid "Posts navigation"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:56 inc/template-tags.php:420
+#: inc/template-tags.php:56 inc/template-tags.php:428
 msgid "Post navigation"
 msgstr ""
 
@@ -126,7 +126,7 @@ msgid "% Comments"
 msgstr ""
 
 #: inc/template-tags.php:204 inc/template-tags.php:227
-#: inc/template-tags.php:486 inc/template-tags.php:511
+#: inc/template-tags.php:494 inc/template-tags.php:519
 #. translators: used between list items, there is a space after the comma
 msgid "Edit"
 msgstr ""
@@ -168,48 +168,56 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:404
+#: inc/template-tags.php:412
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:405
+#: inc/template-tags.php:413
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:424
+#: inc/template-tags.php:432
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:425
+#: inc/template-tags.php:433
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:458
+#: inc/template-tags.php:466
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:460
+#: inc/template-tags.php:468
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:461
+#: inc/template-tags.php:469
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:462
+#: inc/template-tags.php:470
 msgid "Page %s of %s"
 msgstr ""
 
-#: inc/template-tags.php:493
+#: inc/template-tags.php:501
 msgid "Post Author"
 msgstr ""
 
-#: inc/template-tags.php:515
+#: inc/template-tags.php:523
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:549
+#: inc/template-tags.php:557
 msgid "%1$s theme by %2$s"
+msgstr ""
+
+#: inc/template-tags.php:630
+msgid "<span class=\"meta-nav\">Previous</span>"
+msgstr ""
+
+#: inc/template-tags.php:634
+msgid "<span class=\"meta-nav\">Next</span>"
 msgstr ""
 
 #: search.php:17
@@ -239,6 +247,10 @@ msgstr ""
 #: template-parts/content-page.php:21 template-parts/content-single.php:21
 #: template-parts/content.php:22
 msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-search.php:18
+msgid "Continue Reading"
 msgstr ""
 
 #: template-parts/content.php:18
@@ -271,6 +283,10 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Fullwidth"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Portfolio Grid"
 msgstr ""
 
 #: comments.php:27
@@ -340,7 +356,7 @@ msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:508
+#: inc/template-tags.php:516
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""

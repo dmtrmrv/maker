@@ -231,7 +231,15 @@ function maker_post_thumbnail() {
 		return;
 	}
 
-	if ( is_singular() ) {
+	if ( get_post_type() == 'portfolio' ) {
+		printf( '<a class="project-thumbnail" href="%s">', esc_url( apply_filters( 'the_permalink', get_permalink() ) ) );
+			// if ( is_active_sidebar( 'sidebar-1' ) ) {
+				// the_post_thumbnail( 'maker-thumbnail' );
+			// } else {
+				the_post_thumbnail( 'maker-thumbnail-portfolio' );
+			// }
+		echo '</a>';
+	} elseif ( is_singular() ) {
 		echo '<div class="post-thumbnail">';
 			if ( is_active_sidebar( 'sidebar-1' ) ) {
 				the_post_thumbnail( 'maker-thumbnail' );
@@ -289,6 +297,7 @@ function maker_post_navigation() {
 }
 endif;
 
+
 if ( ! function_exists( 'maker_comment_navigation' ) ) :
 /**
  * Displays Comment Navigation.
@@ -319,6 +328,31 @@ function maker_comment_navigation( $id = '' ) {
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above --><?php 
 	}
+}
+endif;
+
+if ( ! function_exists( 'maker_portfolio_navigation' ) ) :
+/**
+ * Displays Post Navigation a.k.a Next/Previous Post links on a single post page.
+ */
+function maker_portfolio_navigation() {
+	$navigation = '';
+	// $previous   = get_previous_post_link( '<div class="nav-previous"><span>' . __( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
+	// $next       = get_next_post_link( '<div class="nav-next"><span>' . __( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
+
+	$prev = get_previous_post_link( '<div class="nav-previous">%link</div>', __( 'Prev', 'maker' ) );
+	$next     = get_next_post_link(     '<div class="nav-next">%link</div>', __( 'Next', 'maker' ) );
+
+	// Only add markup if there's somewhere to navigate to.
+	if ( $prev || $next ) {
+		$navigation = _navigation_markup(
+			$prev . $next,
+			'portfolio-navigation',
+			__( 'Portfolio navigation', 'maker' )
+		);
+	}
+
+	echo $navigation;
 }
 endif;
 
@@ -453,3 +487,80 @@ function maker_category_transient_flusher() {
 }
 add_action( 'edit_category', 'maker_category_transient_flusher' );
 add_action( 'save_post',     'maker_category_transient_flusher' );
+
+if ( ! function_exists( 'maker_paging_nav' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ * @return void
+ */
+function maker_paging_nav( $max_num_pages = '' ) {
+	// Get max_num_pages if not provided
+	if ( '' == $max_num_pages )
+		$max_num_pages = $GLOBALS['wp_query']->max_num_pages;
+
+	// Don't print empty markup if there's only one page.
+	if ( $max_num_pages < 2 ) {
+		return;
+	}
+	?>
+	
+	<nav class="navigation posts-navigation" role="navigation">
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'maker' ); ?></h2>
+			<div class="nav-links">
+				
+				<?php if ( get_next_posts_link( '', $max_num_pages ) ) : ?>
+				<div class="nav-previous"><?php next_posts_link( __( 'Older', 'maker' ), $max_num_pages ); ?></div>
+				<?php endif; ?>
+
+				<?php if ( get_previous_posts_link( '', $max_num_pages ) ) : ?>
+				<div class="nav-next"><?php previous_posts_link( __( 'Newer', 'maker' ), $max_num_pages ); ?></div>
+				<?php endif; ?>
+
+			</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+
+if ( ! function_exists( 'maker_project_meta' ) ) :
+/**
+ * [maker_project_meta description]
+ * @return [type] [description]
+ */
+function maker_portfolio_meta() {
+	$meta = array(
+		__( 'Client',   'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_client', true ),
+		__( 'Date',     'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_date',   true ),
+		__( 'Category', 'maker' ) => get_the_term_list( get_the_ID(), 'portfolio_category', '', ', ', '' ),
+		__( 'Skills',   'maker' ) => get_the_term_list( get_the_ID(), 'portfolio_tag',      '', ', ', '' ),
+		__( 'Link',     'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',   true ),
+	);
+
+	if ( array_filter( $meta ) ) :
+	
+	echo '<div class="project-meta">';
+		echo '<table>';
+		foreach ( $meta as $k => $v ) {
+			if ( $k == __( 'Link', 'maker' ) && $v ){
+				echo '<tr>';
+					echo '<td class="project-meta-item-name">' . $k . '</td>';
+					printf(
+						'<td class="project-meta-item-desc"><a href="%s" alt="">%s</a></td>',
+						esc_url( $v ),
+						esc_html( $v )
+					);
+				echo '</tr>';
+			} elseif ( $v ) {
+				echo '<tr>';
+					echo '<td class="project-meta-item-name">' . $k . '</td>';
+					echo '<td class="project-meta-item-desc">' . $v . '</td>';
+				echo '</tr>';
+			}
+		}
+		echo '</table>';
+	echo '</div>';
+
+	endif;
+}
+endif;

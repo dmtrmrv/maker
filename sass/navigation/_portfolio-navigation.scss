@@ -1,17 +1,15 @@
-/* Posts Navigation (Newer/Older Post) */
+/* Portfolio Navigation */
 
-.posts-navigation {
+.portfolio-navigation {
 	@extend .clear;
 	@include with-layout( $susy-static ) {
 		max-width: span( 6 );
 	}
-	margin: 1.5em auto 1.5em;
-	word-wrap: break-word;
 	@media screen and ( min-width: $md ) {
-		float: left;
-		width: 100%;
 		max-width: 100%;
 	}
+	margin: 0 auto 3em;
+	word-wrap: break-word;
 	a {
 		@extend %button_core;
 		@extend %button-border;

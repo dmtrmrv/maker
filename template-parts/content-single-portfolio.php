@@ -6,15 +6,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php maker_post_thumbnail(); ?>
-
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<div class="project-excerpt">
+			<?php the_excerpt(); ?>
+		</div>
+
+		<?php maker_portfolio_meta(); ?>
+
 	</header><!-- .entry-header -->
 
-	<?php maker_entry_meta_before_content(); ?>
-
-	<div class="entry-content post-single-item-content">
+	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -23,7 +25,5 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<?php maker_entry_meta_after_content(); ?>
 	
 </article><!-- #post-## -->
