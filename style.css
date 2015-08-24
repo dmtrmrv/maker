@@ -610,7 +610,7 @@ input[type='submit'],
 	display: inline-block;
 	height: 3em;
 	margin-bottom: 0;
-	padding: 0.5625em 2em 0.6875em;
+	padding: 0.625em 2em 0.625em;
 	border: 2px solid;
 	border-color: #ababab;
 	border-radius: 3px;
@@ -1469,11 +1469,17 @@ a.site-logo-link:before {
 	content: '\e803';
 }
 
+.blog .posts-navigation {
+	margin-top: 0;
+	padding-top: 2.875em;
+	border-top: 2px solid #f0f0f0;
+}
+
 /* Portfolio Navigation */
 
 .portfolio-navigation {
 	max-width: 474px;
-	margin: 0 auto 3em;
+	margin: 0 auto 1.5em;
 	word-wrap: break-word;
 }
 
@@ -1856,7 +1862,6 @@ a.site-logo-link:before {
 }
 
 .portfolio-grid .project-header {
-	width: 100%;
 	max-width: 100%;
 }
 
@@ -1867,15 +1872,15 @@ a.site-logo-link:before {
 .portfolio-grid .project-title a {
 	display: block;
 	color: #58585b;
-	font-size: 20px;
-	font-size: 1.25rem;
-	font-weight: normal;
-	line-height: 1.2;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
 }
 
 .portfolio-grid .project-categories {
 	display: inline-block;
 	color: #ababab;
+	font-weight: normal;
 }
 
 .portfolio-grid .project-categories a {
@@ -2682,7 +2687,7 @@ input[type='submit'].wpcf7-submit {
 		width: 31.70732%;
 		margin-right: 2.43902%;
 		margin-bottom: 1.5em;
-		background-color: #58585b;
+		background-color: #000;
 	}
 
 	.portfolio-grid .project:nth-of-type(3n) {
@@ -2696,7 +2701,7 @@ input[type='submit'].wpcf7-submit {
 
 	.portfolio-grid .project:hover .project-thumbnail,
 	.portfolio-grid .project:active .project-thumbnail {
-		opacity: 0.1;
+		opacity: 0.2;
 	}
 
 	.portfolio-grid .project:hover .project-thumbnail img,
@@ -2725,6 +2730,10 @@ input[type='submit'].wpcf7-submit {
 		float: left;
 		width: 48.17073%;
 		margin-right: 3.65854%;
+	}
+
+	.single-portfolio .project-meta table {
+		float: right;
 	}
 
 	.single-portfolio .project-meta {

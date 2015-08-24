@@ -36,4 +36,11 @@
 			content: '\e803';
 		}
 	}
+
+	// Pagination on a blog page.
+	.blog & {
+		margin-top: 0;
+		padding-top: em_minus_px( 3em, 2px );
+		border-top: 2px solid $color__background-hr;
+	}
 }

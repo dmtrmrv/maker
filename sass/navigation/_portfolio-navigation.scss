@@ -8,7 +8,7 @@
 	@media screen and ( min-width: $md ) {
 		max-width: 100%;
 	}
-	margin: 0 auto 3em;
+	margin: 0 auto 1.5em;
 	word-wrap: break-word;
 	a {
 		@extend %button_core;

@@ -4,7 +4,7 @@
 @mixin button-size-regular() {
 	@include font-size( 1 );
 	height: 3em;
-	padding: em_minus_px( 0.75em, 3px ) 2em em_minus_px( 0.75em, 1px );
+	padding: em_minus_px( 0.75em, 2px ) 2em em_minus_px( 0.75em, 2px );
 }
 
 @mixin button-color( $colors ) {

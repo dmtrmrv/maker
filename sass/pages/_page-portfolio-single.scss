@@ -31,9 +31,9 @@
 			width: auto;
 			display: block;
 			float: left;
-			// @media screen and ( min-width: $md ) {
-			// 	float: right;
-			// }
+			@media screen and ( min-width: $md ) {
+				float: right;
+			}
 		}
 		td {
 			border-bottom: none;

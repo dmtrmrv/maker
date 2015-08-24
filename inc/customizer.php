@@ -13,10 +13,6 @@
 function maker_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
-	// Change section title from 'Site Title & Tagline' to 'Header'.
-	$wp_customize->get_section( 'title_tagline' )->title = __( 'Header', 'maker' );
 
 	// Logo.
 	$wp_customize->add_setting( 'maker_logo', array( 
@@ -36,7 +32,7 @@ function maker_customize_register( $wp_customize ) {
 
 	// Display Title.
 	$wp_customize->add_setting( 'maker_display_title', array( 
-		'default' => true,
+		'default' => 1,
 		'sanitize_callback' => 'maker_sanitize_checkbox'
 	) );
 
@@ -48,7 +44,7 @@ function maker_customize_register( $wp_customize ) {
 
 	// Display Tagline.
 	$wp_customize->add_setting( 'maker_display_tagline', array( 
-		'default' => true,
+		'default' => 1,
 		'sanitize_callback' => 'maker_sanitize_checkbox'
 	) );
 
@@ -64,10 +60,27 @@ function maker_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
+	// Portfolio. 
+	$wp_customize->add_section( 'maker_portfolio' , array(
+		'title'    => __( 'Portfolio', 'maker' ),
+		'priority' => 130,
+	) );
+
+	$wp_customize->add_setting( 'maker_display_portfolio_text', array(
+		'default'           => 1,
+		'sanitize_callback' => 'maker_sanitize_checkbox'
+	) );
+
+	$wp_customize->add_control( 'maker_display_portfolio_text', array( 
+		'label'   => __( 'Display Text', 'maker' ),
+		'section' => 'maker_portfolio',
+		'type'    => 'checkbox',
+	) );
+
 	// Footer Text.
 	$wp_customize->add_section( 'maker_footer' , array(
 		'title'    => __( 'Footer', 'maker' ),
-		'priority' => 130,
+		'priority' => 160,
 	) );
 
 	$wp_customize->add_setting( 'maker_footer_text', array(
