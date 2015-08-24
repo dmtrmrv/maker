@@ -38,3 +38,10 @@ function maker_load_more_text( $settings ) {
 
 	return $settings;
 }
+
+function my_add_excerpts_to_pages() {
+	if ( post_type_exists( 'jetpack-portfolio' ) ) {
+		add_post_type_support( 'jetpack-portfolio', 'excerpt' );
+	}
+}
+add_action( 'init', 'my_add_excerpts_to_pages' );

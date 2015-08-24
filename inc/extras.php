@@ -24,6 +24,11 @@ function maker_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// Adds a no-excerpt class for portfolio pages without excerpts.
+	if ( ! has_excerpt() ) {
+		$classes[] = 'no-excerpt';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'maker_body_classes' );

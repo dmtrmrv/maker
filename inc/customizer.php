@@ -72,9 +72,10 @@ function maker_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'maker_display_portfolio_text', array( 
-		'label'   => __( 'Display Text', 'maker' ),
+		'label'   => __( 'Display Page Content', 'maker' ),
 		'section' => 'maker_portfolio',
 		'type'    => 'checkbox',
+		'description' => __( 'Choose to display page content before the portfolio grid or not.', 'maker' ),
 	) );
 
 	// Footer Text.

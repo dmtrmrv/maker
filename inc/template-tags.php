@@ -231,13 +231,9 @@ function maker_post_thumbnail() {
 		return;
 	}
 
-	if ( get_post_type() == 'portfolio' ) {
+	if ( 'jetpack-portfolio' == get_post_type() || 'portfolio' == get_post_type() ) {
 		printf( '<a class="project-thumbnail" href="%s">', esc_url( apply_filters( 'the_permalink', get_permalink() ) ) );
-			// if ( is_active_sidebar( 'sidebar-1' ) ) {
-				// the_post_thumbnail( 'maker-thumbnail' );
-			// } else {
-				the_post_thumbnail( 'maker-thumbnail-portfolio' );
-			// }
+			the_post_thumbnail( 'maker-thumbnail-portfolio' );
 		echo '</a>';
 	} elseif ( is_singular() ) {
 		echo '<div class="post-thumbnail">';
@@ -523,18 +519,47 @@ function maker_paging_nav( $max_num_pages = '' ) {
 }
 endif;
 
+if ( ! function_exists( 'maker_portfolio_item_category' ) ) :
+/**
+ * To Do
+ * @return [type] [description]
+ */
+function maker_get_portfolio_item_category() {
+	if ( 'jetpack-portfolio' == get_post_type() && has_term( '', 'jetpack-portfolio-type' ) ) {
+		return get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+	} elseif ( 'portfolio' == get_post_type() && has_term( '', 'portfolio_category' ) ) {
+		return get_the_term_list( get_the_ID(), 'portfolio_category', '', ', ', '' );
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_portfolio_item_tag' ) ) :
+/**
+ * To Do
+ * @return [type] [description]
+ */
+function maker_get_portfolio_item_tag() {
+	if ( 'jetpack-portfolio' == get_post_type() && has_term( '', 'jetpack-portfolio-tag' ) ) {
+		return get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
+	} elseif ( 'portfolio' == get_post_type() && has_term( '', 'portfolio_tag' ) ) {
+		return get_the_term_list( get_the_ID(), 'portfolio_tag', '', ', ', '' );
+	}
+}
+endif;
+
 if ( ! function_exists( 'maker_project_meta' ) ) :
 /**
  * [maker_project_meta description]
  * @return [type] [description]
  */
 function maker_portfolio_meta() {
+
 	$meta = array(
 		__( 'Client',   'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_client', true ),
 		__( 'Date',     'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_date',   true ),
-		__( 'Category', 'maker' ) => get_the_term_list( get_the_ID(), 'portfolio_category', '', ', ', '' ),
-		__( 'Skills',   'maker' ) => get_the_term_list( get_the_ID(), 'portfolio_tag',      '', ', ', '' ),
-		__( 'Link',     'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',   true ),
+		__( 'Link',     'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',    true ),
+		__( 'Category', 'maker' ) => maker_get_portfolio_item_category(),
+		__( 'Tags',     'maker' ) => maker_get_portfolio_item_tag()
 	);
 
 	if ( array_filter( $meta ) ) :

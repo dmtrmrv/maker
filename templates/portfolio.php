@@ -31,6 +31,7 @@ get_header(); ?>
 			<?php endif ?>
 
 			<?php
+				// Check if we have pagination.
 				if ( get_query_var( 'paged' ) ) :
 					$paged = get_query_var( 'paged' );
 				elseif ( get_query_var( 'page' ) ) :
@@ -39,35 +40,60 @@ get_header(); ?>
 					$paged = 1;
 				endif;
 
+				// Default posts per page option.
 				$posts_per_page = get_option( 'posts_per_page', 9 );
 
-				$args = array(
-					'post_type'      => 'portfolio',
-					'order'          => 'DESC',
-					'orderby'        => 'date',
-					'paged'          => $paged,
-					'posts_per_page' => $posts_per_page,
-				);
+				/*
+				 * Maker supports two plugins that manage portfolios -
+				 * Portfolio Toolkit and Jetpack Custom Post Types. We check
+				 * if Portfolio Toolkit is installed first. Later if we have
+				 * an edge case with both plugins installed, load only Jetpack
+				 * portfolio posts.
+				 */
+				$post_type = '';
 
-				$projects = new WP_Query ( $args );
+				// Check if Portfolio Toolkit is activated.
+				if ( post_type_exists( 'portfolio' ) ) {
+					$post_type = 'portfolio';
+				} 
 
-				if ( post_type_exists( 'portfolio' ) && $projects -> have_posts() ) :
+				// Override post type if using Jetpack Portfolio.
+				if ( post_type_exists( 'jetpack-portfolio' ) ) {
+					$post_type = 'jetpack-portfolio';
+				}
 
-					echo '<div class="portfolio-grid">';
-					
-					while ( $projects -> have_posts() ) : $projects -> the_post();
+				// Proceed only if we have Portfolios.
+				if ( $post_type ) :
 
-						get_template_part( 'template-parts/content', 'portfolio' );
+					$args = array(
+						'post_type'      => $post_type, 
+						'order'          => 'DESC',
+						'orderby'        => 'date',
+						'paged'          => $paged,
+						'posts_per_page' => $posts_per_page,
+					);
 
-					endwhile;
+					$projects = new WP_Query ( $args );
 
-					echo '</div>';
+					if ( $projects -> have_posts() ) :
 
-					maker_paging_nav( $projects->max_num_pages );
-					
-					wp_reset_postdata();
+						echo '<div class="portfolio-grid">';
+						
+							while ( $projects -> have_posts() ) : $projects -> the_post();
 
-				endif;		
+								get_template_part( 'template-parts/content', 'portfolio' );
+
+							endwhile;
+
+						echo '</div>';
+
+						maker_paging_nav( $projects->max_num_pages );
+						
+						wp_reset_postdata();
+
+					endif;
+
+				endif;	
 			?>
 		</div>
 	</div><!-- #content -->

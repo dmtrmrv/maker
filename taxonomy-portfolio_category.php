@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying full width pages.
- * 
- * Template Name: Portfolio Grid
+ * The template for displaying Portfolio Toolkit category.
  * 
  * @package Maker
  */

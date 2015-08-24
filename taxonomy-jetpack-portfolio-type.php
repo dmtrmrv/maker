@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Portfolio Toolkit tag.
+ * The template for displaying Jetpack portfolio type.
  * 
  * @package Maker
  */

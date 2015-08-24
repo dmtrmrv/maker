@@ -1,43 +1,42 @@
 /* Single Portfolio */
 
-.single-portfolio {
+.single-portfolio,
+.single-jetpack-portfolio {
 	.hentry {
 		@extend .clear;
 		margin-bottom: 1.5em;
 	}
 	.content-area {
+		float: none;
 		width: 100%;
 		max-width: 100%;
-		float: none;
 		margin-right: 0;
 	}
-
 	.entry-header,
 	.entry-content {
 		@extend .clear;
 		width: 100%;
 		max-width: 100%;
 	}
-
 	.project-excerpt,
 	.project-meta {
 		@media screen and ( min-width: $md ) {
 			@include span( 6 );
 		}
 	}
-
+	
 	.project-meta {
 		table {
-			width: auto;
 			display: block;
 			float: left;
+			width: auto;
 			@media screen and ( min-width: $md ) {
 				float: right;
 			}
 		}
 		td {
-			border-bottom: none;
 			padding: 0;
+			border-bottom: none;
 			&.project-meta-item-name {
 				padding-right: 1em;
 			}
@@ -46,13 +45,23 @@
 			margin-right: 0;
 		}
 	}
-
-	.project-meta-item-name {
-		color: $color__gray;
-		text-align: right;
-		padding-right: 1em;
+	
+	&.no-excerpt .project-meta {
+		table {
+			@media screen and ( min-width: $md ) {
+				float: left;
+			}
+		}
+		.project-meta-item-name {
+			text-align: left;
+		}
 	}
 
+	.project-meta-item-name {
+		padding-right: 1em;
+		color: $color__gray;
+		text-align: right;
+	}
 	.comments-area {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
