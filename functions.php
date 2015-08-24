@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  * Maker functions and definitions
  *
@@ -8,13 +8,13 @@
 /**
  * The current version of the theme.
  */
-define( 'MAKER_VERSION', '0.0.1' );
+define( 'MAKER_VERSION', '0.1.0' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 984;
+	$content_width = 474;
 }
 
 if ( ! function_exists( 'maker_setup' ) ) :
@@ -60,7 +60,7 @@ function maker_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'maker' ),
-		'footer' => __( 'Footer Menu', 'maker' )
+		'footer'  => __( 'Footer Menu',  'maker' )
 	) );
 
 	/*
@@ -75,21 +75,9 @@ function maker_setup() {
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link'
-	) );
-
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'maker_custom_background_args', array(
-		'default-color' => 'fafafa',
+		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 
@@ -101,6 +89,17 @@ function maker_setup() {
 }
 endif; // maker_setup
 add_action( 'after_setup_theme', 'maker_setup' );
+
+
+/**
+ * Adjust content_width value for fullwidth page and portfolio pages.
+ */
+function maker_content_width() {
+	if ( is_page_template( 'templates/fullwidth.php' ) || 'portfolio' == get_post_type() || 'jetpack-portfolio' == get_post_type() ) {
+		$GLOBALS['content_width'] = 984;
+	}
+}
+add_action( 'template_redirect', 'maker_content_width' );
 
 /**
  * Register widget area.

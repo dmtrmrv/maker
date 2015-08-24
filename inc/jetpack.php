@@ -21,27 +21,36 @@ function maker_jetpack_setup() {
 }
 add_action( 'after_setup_theme', 'maker_jetpack_setup' );
 
+/**
+ * Loads necessary template part during infinite scroll.
+ */
 function maker_infinite_scroll_render() {
 	while ( have_posts() ) : the_post();
-		if ( is_search() ) :
+		if ( is_search() ) {
 			get_template_part( 'template-parts/content-search' );
-		elseif ( 'portfolio' == get_post_type() ) :
+		} elseif ( 'portfolio' == get_post_type() ) {
 			get_template_part( 'template-parts/content', 'portfolio' );
-		else :
+		} else {
 			get_template_part( 'template-parts/content', get_post_format() );
-		endif;
+		}
 	endwhile;
 }
 
+/**
+ * Change Older Posts to Load More.
+ */
 function maker_load_more_text( $settings ) {
 	$settings['text'] = __( 'Load More', 'maker' );
 
 	return $settings;
 }
 
-function my_add_excerpts_to_pages() {
+/**
+ * Adds excerpts to Jetpack Portfolio.
+ */
+function maker_jetpack_portfolio_excerpts() {
 	if ( post_type_exists( 'jetpack-portfolio' ) ) {
 		add_post_type_support( 'jetpack-portfolio', 'excerpt' );
 	}
 }
-add_action( 'init', 'my_add_excerpts_to_pages' );
+add_action( 'init', 'maker_jetpack_portfolio_excerpts' );

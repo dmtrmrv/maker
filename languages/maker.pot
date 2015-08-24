@@ -1,8 +1,8 @@
-# Copyright (C) 2015 ThemePatio
+# Copyright (C) 2015 Dmitry Mayorov
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Maker 0.0.1\n"
+"Project-Id-Version: Maker 0.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2015-04-02 06:47:47+00:00\n"
 "MIME-Version: 1.0\n"
@@ -36,11 +36,11 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:61 header.php:34
+#: functions.php:62 header.php:34
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:63
 msgid "Footer Menu"
 msgstr ""
 
@@ -52,172 +52,155 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer.php:19
-msgid "Header"
-msgstr ""
-
-#: inc/customizer.php:31
+#: inc/customizer.php:27
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:40
 msgid "Display Title"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:52
 msgid "Display Tagline"
 msgstr ""
 
-#: inc/customizer.php:69
-msgid "Footer"
+#. Template Name of the plugin/theme
+msgid "Portfolio"
+msgstr ""
+
+#: inc/customizer.php:75
+msgid "Display Page Content"
+msgstr ""
+
+#: inc/customizer.php:78
+msgid "Choose to display page content before the portfolio grid or not."
 msgstr ""
 
 #: inc/customizer.php:83
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:97
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:86
+#: inc/customizer.php:100
 msgid "You may use [year] shortcode to display current year."
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:110
 msgid "Accent Color"
 msgstr ""
 
-#: inc/extras.php:69
+#: inc/extras.php:74
 msgid "Page %s"
 msgstr ""
 
-#: inc/jetpack.php:36
+#: inc/jetpack.php:43
 msgid "Load More"
 msgstr ""
 
-#: inc/template-tags.php:23 inc/template-tags.php:414 inc/template-tags.php:626
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:27
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:31
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:56 inc/template-tags.php:428
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:79
+#: inc/template-tags.php:21
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:172
+#: inc/template-tags.php:114
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:173
+#: inc/template-tags.php:115
 msgid "One Comment"
 msgstr ""
 
-#: inc/template-tags.php:174
+#: inc/template-tags.php:116
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:204 inc/template-tags.php:227
-#: inc/template-tags.php:494 inc/template-tags.php:519
+#: inc/template-tags.php:141 inc/template-tags.php:164
+#: inc/template-tags.php:527 inc/template-tags.php:552
 #. translators: used between list items, there is a space after the comma
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:246
-msgid "Category: %s"
-msgstr ""
-
-#: inc/template-tags.php:248
-msgid "Tag: %s"
-msgstr ""
-
-#: inc/template-tags.php:250
-msgid "Author: %s"
-msgstr ""
-
-#: inc/template-tags.php:252
-msgid "Year: %s"
-msgstr ""
-
-#: inc/template-tags.php:254
-msgid "Month: %s"
-msgstr ""
-
-#: inc/template-tags.php:256
-msgid "Day: %s"
-msgstr ""
-
-#: inc/template-tags.php:278
-msgid "Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:282
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: inc/template-tags.php:284
-msgid "Archives"
-msgstr ""
-
-#: inc/template-tags.php:412
+#: inc/template-tags.php:259 inc/template-tags.php:428
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:413
+#: inc/template-tags.php:260 inc/template-tags.php:432
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:432
+#: inc/template-tags.php:261 inc/template-tags.php:424
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:275
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:279
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:433
+#: inc/template-tags.php:280
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:466
+#: inc/template-tags.php:314
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:468
+#: inc/template-tags.php:316
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:469
+#: inc/template-tags.php:317 inc/template-tags.php:333
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:470
+#: inc/template-tags.php:318
 msgid "Page %s of %s"
 msgstr ""
 
-#: inc/template-tags.php:501
-msgid "Post Author"
+#: inc/template-tags.php:332
+msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:523
-msgid "Your comment is awaiting moderation."
+#: inc/template-tags.php:337
+msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:557
+#: inc/template-tags.php:354
 msgid "%1$s theme by %2$s"
 msgstr ""
 
-#: inc/template-tags.php:630
-msgid "<span class=\"meta-nav\">Previous</span>"
+#: inc/template-tags.php:474
+msgid "Client"
 msgstr ""
 
-#: inc/template-tags.php:634
-msgid "<span class=\"meta-nav\">Next</span>"
+#: inc/template-tags.php:475
+msgid "Date"
+msgstr ""
+
+#: inc/template-tags.php:476 inc/template-tags.php:486
+msgid "Link"
+msgstr ""
+
+#: inc/template-tags.php:477
+msgid "Category"
+msgstr ""
+
+#: inc/template-tags.php:478
+msgid "Tags"
+msgstr ""
+
+#: inc/template-tags.php:534
+msgid "Post Author"
+msgstr ""
+
+#: inc/template-tags.php:556
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: search.php:17
@@ -244,8 +227,9 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:21 template-parts/content-single.php:21
-#: template-parts/content.php:22
+#: template-parts/content-page.php:21
+#: template-parts/content-single-portfolio.php:24
+#: template-parts/content-single.php:21 template-parts/content.php:22
 msgid "Pages:"
 msgstr ""
 
@@ -262,19 +246,25 @@ msgid "Maker"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
+msgid "http://maker.dmitrymayorov.com/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Maker theme by ThemePatio. Created on top of Underscores."
+msgid ""
+"Maker is a simple yet powerful portfolio theme. Live Demo at "
+"http://maker.dmitrymayorov.com/"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "ThemePatio"
+msgid "Dmitry Mayorov"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://themepatio.com"
+msgid "http://dmitrymayorov.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Portfolio Grid"
 msgstr ""
 
 #. Template Name of the plugin/theme
@@ -285,10 +275,6 @@ msgstr ""
 msgid "Fullwidth"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Portfolio Grid"
-msgstr ""
-
 #: comments.php:27
 msgctxt "Comments title"
 msgid "One Comment"
@@ -296,67 +282,7 @@ msgid_plural "%s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:252
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:254
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags.php:256
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags.php:259
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr ""
-
-#: inc/template-tags.php:261
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: inc/template-tags.php:263
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: inc/template-tags.php:265
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr ""
-
-#: inc/template-tags.php:267
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr ""
-
-#: inc/template-tags.php:269
-msgctxt "post format archive title"
-msgid "Links"
-msgstr ""
-
-#: inc/template-tags.php:271
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr ""
-
-#: inc/template-tags.php:273
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: inc/template-tags.php:275
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr ""
-
-#: inc/template-tags.php:516
+#: inc/template-tags.php:549
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""

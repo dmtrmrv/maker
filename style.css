@@ -1,14 +1,14 @@
 /*
 Theme Name: Maker
-Theme URI: http://underscores.me/
-Author: ThemePatio
-Author URI: http://themepatio.com
-Description: Maker theme by ThemePatio. Created on top of Underscores.
-Version: 0.0.1
+Theme URI: http://maker.dmitrymayorov.com/
+Author: Dmitry Mayorov
+Author URI: http://dmitrymayorov.com/
+Description: Maker is a simple yet powerful portfolio theme. Live Demo at http://maker.dmitrymayorov.com/
+Version: 0.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: maker
-Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, accessibility-ready, blavatar, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging, seasonal
+Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -59,19 +59,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *       Post Formats
  *       Post Navigation
  * 0.8 - Pages
- *       Fullwidth 
- *       404 Page
+ *       Post
+ *       Page
+ *       Single Portfolio Page
+ *       Portfolio       
+ *       Fullwidth
+ *       Centered
+ *       Search 
+ *       404
  * 0.9 - Comments
  *       Comment Navigation
  * 1.0 - Widgets
- *       Content sidebar widgets
- *       Footer sidebar widgets
  * 1.1 - Footer
  * 1.2 - Plugins
  *       Jetpack
  *       Contact Form 7
- * 1.3 - Multisite
- * 1.4 - Print
  * 1.5 - Media Queries
  */
 
@@ -355,7 +357,7 @@ big {
 /* Links */
 
 a {
-	color: #3498db;
+	color: #ff2441;
 	background-color: transparent;
 	text-decoration: none;
 
@@ -687,9 +689,9 @@ input[type='submit']:focus,
 }
 
 input[type='submit'].search-submit {
-	border-color: #3498db;
+	border-color: #ff2441;
 	color: #fff;
-	background-color: #3498db;
+	background-color: #ff2441;
 }
 
 /* Images */
@@ -997,18 +999,18 @@ blockquote.alignright {
 .archive .entry-meta:after,
 .single-post .entry-meta:after,
 .page-template-default .hentry:after,
-.page-template-portfolio .page:after,
-.page-template-portfolio .content-area:after,
-.page-template-portfolio .entry-header:after,
-.page-template-portfolio .entry-content:after,
-.page-template-portfolio .comments-area:after,
-.portfolio-grid:after,
 .single-portfolio .hentry:after,
 .single-jetpack-portfolio .hentry:after,
 .single-portfolio .entry-header:after,
 .single-portfolio .entry-content:after,
 .single-jetpack-portfolio .entry-header:after,
 .single-jetpack-portfolio .entry-content:after,
+.page-template-portfolio .page:after,
+.page-template-portfolio .content-area:after,
+.page-template-portfolio .entry-header:after,
+.page-template-portfolio .entry-content:after,
+.page-template-portfolio .comments-area:after,
+.portfolio-grid:after,
 .page-template-fullwidth .hentry:after,
 .page-template-centered .hentry:after,
 .page-template-centered .content-area:after,
@@ -1566,7 +1568,7 @@ a.site-logo-link:before {
 .entry-meta-item a:hover,
 .entry-meta-item a:focus {
 	opacity: 1;
-	color: #3498db;
+	color: #ff2441;
 }
 
 .entry-meta-item.cat-links {
@@ -1580,7 +1582,7 @@ a.site-logo-link:before {
 }
 
 .entry-meta-item.cat-links a {
-	color: #3498db;
+	color: #ff2441;
 }
 
 .byline,
@@ -1601,7 +1603,7 @@ a.site-logo-link:before {
 .tags-links a:hover,
 .tags-links a:focus {
 	opacity: 1;
-	color: #3498db;
+	color: #ff2441;
 }
 
 .tags-links a:before {
@@ -1825,6 +1827,64 @@ a.site-logo-link:before {
 	margin-left: auto;
 }
 
+/* Single Portfolio */
+
+.single-portfolio .hentry,
+.single-jetpack-portfolio .hentry {
+	margin-bottom: 1.5em;
+}
+
+.single-portfolio .content-area,
+.single-jetpack-portfolio .content-area {
+	float: none;
+	width: 100%;
+	max-width: 100%;
+	margin-right: 0;
+}
+
+.single-portfolio .entry-header,
+.single-portfolio .entry-content,
+.single-jetpack-portfolio .entry-header,
+.single-jetpack-portfolio .entry-content {
+	width: 100%;
+	max-width: 100%;
+}
+
+.single-portfolio .project-meta table,
+.single-jetpack-portfolio .project-meta table {
+	display: block;
+	float: left;
+	width: auto;
+}
+
+.single-portfolio .project-meta td,
+.single-jetpack-portfolio .project-meta td {
+	padding: 0;
+	border-bottom: none;
+}
+
+.single-portfolio .project-meta td.project-meta-item-name,
+.single-jetpack-portfolio .project-meta td.project-meta-item-name {
+	padding-right: 1em;
+}
+
+.single-portfolio.no-excerpt .project-meta .project-meta-item-name,
+.single-jetpack-portfolio.no-excerpt .project-meta .project-meta-item-name {
+	text-align: left;
+}
+
+.single-portfolio .project-meta-item-name,
+.single-jetpack-portfolio .project-meta-item-name {
+	padding-right: 1em;
+	color: #ababab;
+	text-align: right;
+}
+
+.single-portfolio .comments-area,
+.single-jetpack-portfolio .comments-area {
+	max-width: 474px;
+}
+
 /* Portfolio */
 
 .page-template-portfolio .page {
@@ -1899,64 +1959,6 @@ a.site-logo-link:before {
 	display: block;
 	width: 100%;
 	height: auto;
-}
-
-/* Single Portfolio */
-
-.single-portfolio .hentry,
-.single-jetpack-portfolio .hentry {
-	margin-bottom: 1.5em;
-}
-
-.single-portfolio .content-area,
-.single-jetpack-portfolio .content-area {
-	float: none;
-	width: 100%;
-	max-width: 100%;
-	margin-right: 0;
-}
-
-.single-portfolio .entry-header,
-.single-portfolio .entry-content,
-.single-jetpack-portfolio .entry-header,
-.single-jetpack-portfolio .entry-content {
-	width: 100%;
-	max-width: 100%;
-}
-
-.single-portfolio .project-meta table,
-.single-jetpack-portfolio .project-meta table {
-	display: block;
-	float: left;
-	width: auto;
-}
-
-.single-portfolio .project-meta td,
-.single-jetpack-portfolio .project-meta td {
-	padding: 0;
-	border-bottom: none;
-}
-
-.single-portfolio .project-meta td.project-meta-item-name,
-.single-jetpack-portfolio .project-meta td.project-meta-item-name {
-	padding-right: 1em;
-}
-
-.single-portfolio.no-excerpt .project-meta .project-meta-item-name,
-.single-jetpack-portfolio.no-excerpt .project-meta .project-meta-item-name {
-	text-align: left;
-}
-
-.single-portfolio .project-meta-item-name,
-.single-jetpack-portfolio .project-meta-item-name {
-	padding-right: 1em;
-	color: #ababab;
-	text-align: right;
-}
-
-.single-portfolio .comments-area,
-.single-jetpack-portfolio .comments-area {
-	max-width: 474px;
 }
 
 /* Fullwidth */
@@ -2158,9 +2160,9 @@ a.site-logo-link:before {
 }
 
 .comment-form .submit {
-	border-color: #3498db;
+	border-color: #ff2441;
 	color: #fff;
-	background-color: #3498db;
+	background-color: #ff2441;
 }
 
 .comment-form textarea {
@@ -2260,7 +2262,7 @@ a.site-logo-link:before {
 .widget a:hover,
 .widget a:focus {
 	opacity: 1;
-	color: #3498db;
+	color: #ff2441;
 }
 
 .widget_search .search-submit {
@@ -2388,9 +2390,9 @@ a.site-logo-link:before {
 /* Contact Form 7 */
 
 input[type='submit'].wpcf7-submit {
-	border-color: #3498db;
+	border-color: #ff2441;
 	color: #fff;
-	background-color: #3498db;
+	background-color: #ff2441;
 }
 
 .wpcf7 {
@@ -2437,12 +2439,6 @@ input[type='submit'].wpcf7-submit {
 .wpcf7 .placeheld {
 	color: #939393;
 }
-
-/* Multisite */
-
-/**
- * Print
- */
 
 /**
  * Media Queries
@@ -2688,6 +2684,30 @@ input[type='submit'].wpcf7-submit {
 		margin-left: 0;
 	}
 
+	.single-portfolio .project-excerpt,
+	.single-portfolio .project-meta,
+	.single-jetpack-portfolio .project-excerpt,
+	.single-jetpack-portfolio .project-meta {
+		float: left;
+		width: 48.17073%;
+		margin-right: 3.65854%;
+	}
+
+	.single-portfolio .project-meta table,
+	.single-jetpack-portfolio .project-meta table {
+		float: right;
+	}
+
+	.single-portfolio .project-meta,
+	.single-jetpack-portfolio .project-meta {
+		margin-right: 0;
+	}
+
+	.single-portfolio.no-excerpt .project-meta table,
+	.single-jetpack-portfolio.no-excerpt .project-meta table {
+		float: left;
+	}
+
 	.page-template-portfolio .entry-header,
 	.page-template-portfolio .entry-content,
 	.page-template-portfolio .comments-area {
@@ -2740,30 +2760,6 @@ input[type='submit'].wpcf7-submit {
 
 	.portfolio-grid .project-thumbnail {
 		margin: 0;
-	}
-
-	.single-portfolio .project-excerpt,
-	.single-portfolio .project-meta,
-	.single-jetpack-portfolio .project-excerpt,
-	.single-jetpack-portfolio .project-meta {
-		float: left;
-		width: 48.17073%;
-		margin-right: 3.65854%;
-	}
-
-	.single-portfolio .project-meta table,
-	.single-jetpack-portfolio .project-meta table {
-		float: right;
-	}
-
-	.single-portfolio .project-meta,
-	.single-jetpack-portfolio .project-meta {
-		margin-right: 0;
-	}
-
-	.single-portfolio.no-excerpt .project-meta table,
-	.single-jetpack-portfolio.no-excerpt .project-meta table {
-		float: left;
 	}
 
 	.search .search-form,

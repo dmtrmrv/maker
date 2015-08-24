@@ -2,7 +2,7 @@
 /**
  * The template for displaying full width pages.
  * 
- * Template Name: Portfolio Grid
+ * Template Name: Portfolio
  * 
  * @package Maker
  */
@@ -95,6 +95,7 @@ get_header(); ?>
 
 				endif;	
 			?>
+			
 		</div>
 	</div><!-- #content -->
 </div><!-- #main -->

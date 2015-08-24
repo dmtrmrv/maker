@@ -130,19 +130,14 @@ function maker_entry_meta_before_content() {
 
 		echo '<div class="entry-meta">';
 
-		// Category. Hidden from page.
 		maker_entry_category();
 
-		// Author.
 		maker_entry_author();
 
-		// Date.
 		maker_entry_date();
 
-		// Comments.
 		maker_entry_comments_link ();
 
-		// Edit Link.
 		edit_post_link( __( 'Edit', 'maker' ), '<span class="entry-meta-item edit-link">', '</span>' );
 
 		echo '</div>';
@@ -333,92 +328,16 @@ if ( ! function_exists( 'maker_portfolio_navigation' ) ) :
  */
 function maker_portfolio_navigation() {
 	$navigation = '';
-	// $previous   = get_previous_post_link( '<div class="nav-previous"><span>' . __( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
-	// $next       = get_next_post_link( '<div class="nav-next"><span>' . __( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
-
+	
 	$prev = get_previous_post_link( '<div class="nav-previous">%link</div>', __( 'Prev', 'maker' ) );
 	$next     = get_next_post_link(     '<div class="nav-next">%link</div>', __( 'Next', 'maker' ) );
 
 	// Only add markup if there's somewhere to navigate to.
 	if ( $prev || $next ) {
-		$navigation = _navigation_markup(
-			$prev . $next,
-			'portfolio-navigation',
-			__( 'Portfolio navigation', 'maker' )
-		);
+		$navigation = _navigation_markup($prev . $next, 'portfolio-navigation', __( 'Portfolio navigation', 'maker' ) );
 	}
 
 	echo $navigation;
-}
-endif;
-
-if ( ! function_exists( 'maker_comment_display' ) ) :
-/**
- * Custom comment display.
- *
- * Displays default comments, pingbacks and trackbacks.
- * Compared to default output, this function adds translatable
- * "Post Author" string to comments written by post author,
- * and removes "says:" string after commenter's name.
- */
-function maker_comment_display( $comment, $args, $depth  ) {
-	$GLOBALS['comment'] = $comment;
-	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
-	switch( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' : ?>
-			<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-				<div class="comment-body">
-					<?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'maker' ), '<span class="edit-link">', '</span>' ); ?>
-				</div>
-			<?php break;
-		default:
-			$by_post_author = '';
-
-			if( $comment->comment_author_email == get_the_author_meta('email') ) {
-				$by_post_author = '<span> ' . __( 'Post Author', 'maker' ) . '</span>';
-			}
-
-			?>
-			<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-				<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-					<footer class="comment-meta">
-						<div class="comment-author vcard">
-							<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-							<?php printf( '<span class="author-name"><b class="fn">%s</b>%s</span>', get_comment_author_link(), $by_post_author ); ?>
-						</div><!-- .comment-author -->
-
-						<div class="comment-metadata">
-							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
-								<time datetime="<?php comment_time( 'c' ); ?>">
-									<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'maker' ), get_comment_date(), get_comment_time() ); ?>
-								</time>
-							</a>
-							<?php edit_comment_link( __( 'Edit', 'maker' ), '<span class="edit-link">', '</span>' ); ?>
-						</div><!-- .comment-metadata -->
-
-						<?php if ( '0' == $comment->comment_approved ) : ?>
-						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'maker' ); ?></p>
-						<?php endif; ?>
-					</footer><!-- .comment-meta -->
-
-					<div class="comment-content">
-						<?php comment_text(); ?>
-					</div><!-- .comment-content -->
-
-					<?php
-					comment_reply_link( array_merge( $args, array(
-						'add_below' => 'div-comment',
-						'depth'     => $depth,
-						'max_depth' => $args['max_depth'],
-						'before'    => '<div class="reply">',
-						'after'     => '</div>'
-					) ) );
-					?>
-				</article><!-- .comment-body -->
-			<?php
-		break;
-	endswitch;
 }
 endif;
 
@@ -434,7 +353,7 @@ function maker_footer_text() {
 		printf(
 			__( '%1$s theme by %2$s', 'maker' ),
 			'Maker',
-			'<a href="' . esc_url(  'http://themepatio.com/' ) . '">ThemePatio</a>'
+			'<a href="' . esc_url(  'http://dmitrymayorov.com/' ) . '">Dmitry Mayorov</a>'
 		);
 	}
 }
@@ -521,22 +440,20 @@ endif;
 
 if ( ! function_exists( 'maker_portfolio_item_category' ) ) :
 /**
- * To Do
- * @return [type] [description]
+ * Returns a portfolio category or project type.
  */
 function maker_get_portfolio_item_category() {
 	if ( 'jetpack-portfolio' == get_post_type() && has_term( '', 'jetpack-portfolio-type' ) ) {
-		return get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+		return get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '<div class="project-categories">', ', ', '</div>' );
 	} elseif ( 'portfolio' == get_post_type() && has_term( '', 'portfolio_category' ) ) {
-		return get_the_term_list( get_the_ID(), 'portfolio_category', '', ', ', '' );
+		return get_the_term_list( get_the_ID(), 'portfolio_category', '<div class="project-categories">', ', ', '</div>' );
 	}
 }
 endif;
 
 if ( ! function_exists( 'maker_portfolio_item_tag' ) ) :
 /**
- * To Do
- * @return [type] [description]
+ * Returns project tag.
  */
 function maker_get_portfolio_item_tag() {
 	if ( 'jetpack-portfolio' == get_post_type() && has_term( '', 'jetpack-portfolio-tag' ) ) {
@@ -549,8 +466,7 @@ endif;
 
 if ( ! function_exists( 'maker_project_meta' ) ) :
 /**
- * [maker_project_meta description]
- * @return [type] [description]
+ * Prints project meta.
  */
 function maker_portfolio_meta() {
 
@@ -587,5 +503,76 @@ function maker_portfolio_meta() {
 	echo '</div>';
 
 	endif;
+}
+endif;
+
+if ( ! function_exists( 'maker_comment_display' ) ) :
+/**
+ * Custom comment display.
+ *
+ * Displays default comments, pingbacks and trackbacks.
+ * Compared to default output, this function adds translatable
+ * "Post Author" string to comments written by post author,
+ * and removes "says:" string after commenter's name.
+ */
+function maker_comment_display( $comment, $args, $depth  ) {
+	$GLOBALS['comment'] = $comment;
+	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+	
+	switch( $comment->comment_type ) :
+		case 'pingback' :
+		case 'trackback' : ?>
+			<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+				<div class="comment-body">
+					<?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'maker' ), '<span class="edit-link">', '</span>' ); ?>
+				</div>
+			<?php break;
+		default:
+			$by_post_author = '';
+
+			if( $comment->comment_author_email == get_the_author_meta('email') ) {
+				$by_post_author = '<span> ' . __( 'Post Author', 'maker' ) . '</span>';
+			}
+
+			?>
+			<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+				<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+					<footer class="comment-meta">
+						<div class="comment-author vcard">
+							<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+							<?php printf( '<span class="author-name"><b class="fn">%s</b>%s</span>', get_comment_author_link(), $by_post_author ); ?>
+						</div><!-- .comment-author -->
+
+						<div class="comment-metadata">
+							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
+								<time datetime="<?php comment_time( 'c' ); ?>">
+									<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'maker' ), get_comment_date(), get_comment_time() ); ?>
+								</time>
+							</a>
+							<?php edit_comment_link( __( 'Edit', 'maker' ), '<span class="edit-link">', '</span>' ); ?>
+						</div><!-- .comment-metadata -->
+
+						<?php if ( '0' == $comment->comment_approved ) : ?>
+						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'maker' ); ?></p>
+						<?php endif; ?>
+					</footer><!-- .comment-meta -->
+
+					<div class="comment-content">
+						<?php comment_text(); ?>
+					</div><!-- .comment-content -->
+
+					<?php
+					comment_reply_link( array_merge( $args, array(
+						'add_below' => 'div-comment',
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+						'before'    => '<div class="reply">',
+						'after'     => '</div>'
+					) ) );
+					?>
+				</article><!-- .comment-body -->
+			<?php
+		break;
+	endswitch;
 }
 endif;

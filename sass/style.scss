@@ -1,14 +1,14 @@
 /*
 Theme Name: Maker
-Theme URI: http://underscores.me/
-Author: ThemePatio
-Author URI: http://themepatio.com
-Description: Maker theme by ThemePatio. Created on top of Underscores.
-Version: 0.0.1
+Theme URI: http://maker.dmitrymayorov.com/
+Author: Dmitry Mayorov
+Author URI: http://dmitrymayorov.com/
+Description: Maker is a simple yet powerful portfolio theme. Live Demo at http://maker.dmitrymayorov.com/
+Version: 0.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: maker
-Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, accessibility-ready, blavatar, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging, seasonal
+Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -59,19 +59,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *       Post Formats
  *       Post Navigation
  * 0.8 - Pages
- *       Fullwidth 
- *       404 Page
+ *       Post
+ *       Page
+ *       Single Portfolio Page
+ *       Portfolio       
+ *       Fullwidth
+ *       Centered
+ *       Search 
+ *       404
  * 0.9 - Comments
  *       Comment Navigation
  * 1.0 - Widgets
- *       Content sidebar widgets
- *       Footer sidebar widgets
  * 1.1 - Footer
  * 1.2 - Plugins
  *       Jetpack
  *       Contact Form 7
- * 1.3 - Multisite
- * 1.4 - Print
  * 1.5 - Media Queries
  */
 
@@ -110,10 +112,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'footer';
 
 @import 'plugins/_plugins';
-
-@import 'multisite';
-
-@import 'print';
 
 /**
  * Media Queries
