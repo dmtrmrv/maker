@@ -2,6 +2,7 @@ module.exports = {
 	release: {
 		src: [
 			'./**',
+			'!./README.md',
 			'!./node_modules/**',
 			'!./package.json',
 			'!./.csscomb.json',
