@@ -1002,8 +1002,8 @@ blockquote.alignright {
 .single-portfolio .hentry:after,
 .single-jetpack-portfolio .hentry:after,
 .single-portfolio .entry-header:after,
-.single-portfolio .entry-content:after,
 .single-jetpack-portfolio .entry-header:after,
+.single-portfolio .entry-content:after,
 .single-jetpack-portfolio .entry-content:after,
 .page-template-portfolio .page:after,
 .page-template-portfolio .content-area:after,
@@ -1843,11 +1843,17 @@ a.site-logo-link:before {
 }
 
 .single-portfolio .entry-header,
+.single-jetpack-portfolio .entry-header {
+	width: 100%;
+	max-width: 474px;
+	margin: 0 auto;
+}
+
 .single-portfolio .entry-content,
-.single-jetpack-portfolio .entry-header,
 .single-jetpack-portfolio .entry-content {
 	width: 100%;
-	max-width: 100%;
+	max-width: 474px;
+	margin: 0 auto;
 }
 
 .single-portfolio .project-meta table,
@@ -1924,15 +1930,15 @@ a.site-logo-link:before {
 	content: '';
 }
 
-.portfolio-grid .project-header {
+.project-header {
 	max-width: 100%;
 }
 
-.portfolio-grid .project-title {
+.project-title {
 	margin: 0;
 }
 
-.portfolio-grid .project-title a {
+.project-title a {
 	display: block;
 	color: #58585b;
 	font-size: 16px;
@@ -1940,22 +1946,22 @@ a.site-logo-link:before {
 	line-height: 1.5;
 }
 
-.portfolio-grid .project-categories {
+.project-categories {
 	display: inline-block;
 	color: #ababab;
 	font-weight: normal;
 }
 
-.portfolio-grid .project-categories a {
+.project-categories a {
 	color: #ababab;
 }
 
-.portfolio-grid .project-thumbnail {
+.project-thumbnail {
 	display: block;
 	margin: 0 0 1.5em;
 }
 
-.portfolio-grid .project-thumbnail img {
+.project-thumbnail img {
 	display: block;
 	width: 100%;
 	height: auto;
@@ -2684,6 +2690,22 @@ input[type='submit'].wpcf7-submit {
 		margin-left: 0;
 	}
 
+	.single-portfolio .entry-header,
+	.single-jetpack-portfolio .entry-header {
+		max-width: 100%;
+	}
+
+	.single-portfolio .entry-content,
+	.single-jetpack-portfolio .entry-content {
+		float: left;
+	}
+
+	.single-portfolio .entry-content .alignnone,
+	.single-jetpack-portfolio .entry-content .alignnone {
+		max-width: 984.0px;
+		margin-right: -474px;
+	}
+
 	.single-portfolio .project-excerpt,
 	.single-portfolio .project-meta,
 	.single-jetpack-portfolio .project-excerpt,
@@ -2722,6 +2744,7 @@ input[type='submit'].wpcf7-submit {
 		float: left;
 		position: relative;
 		width: 31.70732%;
+		min-height: 312px;
 		margin-right: 2.43902%;
 		margin-bottom: 1.5em;
 		background-color: #000;
@@ -2746,19 +2769,22 @@ input[type='submit'].wpcf7-submit {
 		opacity: 1;
 	}
 
-	.portfolio-grid .project-header {
-		display: none;
+	.project-header {
 		position: absolute;
 		top: 0;
 		left: 1.5em;
 	}
 
-	.portfolio-grid .project-title a {
+	.has-post-thumbnail .project-header {
+		display: none;
+	}
+
+	.project-title a {
 		padding: 1.2em 1.2em 0 0;
 		color: #fff;
 	}
 
-	.portfolio-grid .project-thumbnail {
+	.project-thumbnail {
 		margin: 0;
 	}
 

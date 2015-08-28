@@ -28,4 +28,13 @@ $susy-portfolio-grid: (
 	math: fluid,
 	output: float,
 	gutter-position: after
-)
+);
+
+$susy-portfolio-grid-static: (
+	columns: 12,
+	column-width: 60px,
+	gutters: 24/60,
+	math: static,
+	output: float,
+	gutter-position: after
+);

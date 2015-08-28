@@ -15,5 +15,5 @@
 		<?php echo maker_get_portfolio_item_category(); ?>
 		
 	</header><!-- .project-header -->
-
+	
 </article><!-- #post-## -->
