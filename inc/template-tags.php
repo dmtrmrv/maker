@@ -52,7 +52,7 @@ function maker_entry_date() {
 	printf( '<span class="entry-meta-item posted-on"><a href="%s" rel="bookmark">%s</a></span>',
 		esc_url( get_permalink() ),
 		$time_string
-	);
+	); // WPCS: XSS OK.
 }
 endif;
 
@@ -230,15 +230,13 @@ function maker_post_navigation() {
 	);
 
 	$navigation = '';
-	$previous   = get_previous_post_link( '<div class="nav-previous"><span>' . __( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
-	$next       = get_next_post_link( '<div class="nav-next"><span>' . __( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
+	$previous   = get_previous_post_link( '<div class="nav-previous"><span>' . esc_html__( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
+	$next       = get_next_post_link( '<div class="nav-next"><span>' . esc_html__( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
 
 	// Only add markup if there's somewhere to navigate to.
 	if ( $previous || $next ) {
-		$navigation = _navigation_markup( $next . $previous, 'post-navigation', $args['screen_reader_text'] );
+		echo _navigation_markup( $next . $previous, 'post-navigation', $args['screen_reader_text'] ); // WPCS: XSS OK.
 	}
-
-	echo $navigation;
 }
 endif;
 
@@ -286,12 +284,12 @@ if ( ! function_exists( 'maker_portfolio_navigation' ) ) :
 function maker_portfolio_navigation() {
 	$navigation = '';
 
-	$prev = get_previous_post_link( '<div class="nav-previous">%link</div>', __( 'Prev', 'maker' ) );
-	$next     = get_next_post_link( '<div class="nav-next">%link</div>', __( 'Next', 'maker' ) );
+	$prev = get_previous_post_link( '<div class="nav-previous">%link</div>', esc_html__( 'Prev', 'maker' ) );
+	$next     = get_next_post_link( '<div class="nav-next">%link</div>', esc_html__( 'Next', 'maker' ) );
 
 	// Only add markup if there's somewhere to navigate to.
 	if ( $prev || $next ) {
-		echo _navigation_markup( $prev . $next, 'portfolio-navigation', __( 'Portfolio navigation', 'maker' ) );
+		echo _navigation_markup( $prev . $next, 'portfolio-navigation', __( 'Portfolio navigation', 'maker' ) ); // WPCS: XSS OK.
 	}
 }
 endif;
