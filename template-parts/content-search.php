@@ -6,6 +6,7 @@
  *
  * @package Maker
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -15,8 +16,7 @@
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<a href="<?php the_permalink(); ?>"><?php _e( 'Continue Reading', 'maker' ); ?></a>
+		<a href="<?php the_permalink(); ?>"><?php esc_html_e( 'Continue Reading', 'maker' ); ?></a>
 	</div><!-- .entry-summary -->
 	
 </article><!-- #post-## -->
-

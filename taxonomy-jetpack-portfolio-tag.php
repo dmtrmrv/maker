@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying Jetpack portfolio tag.
- * 
+ *
  * @package Maker
  */
 

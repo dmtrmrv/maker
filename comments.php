@@ -23,8 +23,8 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
-				printf(
-					_nx( 'One Comment', '%s Comments', get_comments_number(), 'Comments title', 'maker' ),
+				printf( // WPCS: XSS OK.
+					esc_html( _nx( 'One Comment', '%s Comments', get_comments_number(), 'Comments title', 'maker' ) ),
 					number_format_i18n( get_comments_number() )
 				);
 			?>
@@ -34,25 +34,24 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'style'       => 'ul',
-					'callback'    => 'maker_comment_display',
 					'short_ping'  => true,
-					'avatar_size' => '96'
+					'avatar_size' => '96',
 				) );
 			?>
 		</ul><!-- .comment-list -->
 
 		<?php maker_comment_navigation( 'comment-nav-below' ); ?>
 
-	<?php endif; // have_comments() ?>
+	<?php endif; ?>
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'maker' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'maker' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form( array( 
+	<?php comment_form( array(
 		'title_reply_to'    => __( 'Reply to %s', 'maker' ),
 		'cancel_reply_link' => __( 'Cancel', 'maker' ),
 	) ); ?>

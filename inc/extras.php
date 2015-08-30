@@ -33,10 +33,11 @@ function maker_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'maker_body_classes' );
 
-
-if ( ! function_exists( 'maker_excerpt' ) ):
+if ( ! function_exists( 'maker_excerpt' ) ) :
 /**
  * Custom excerpt.
+ *
+ * @param string $more current excerpt.
  */
 function maker_excerpt( $more ) {
 	global $post;
@@ -60,7 +61,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		global $page, $paged;
 
-		// Add the blog name
+		// Add the blog name.
 		$title .= get_bloginfo( 'name', 'display' );
 
 		// Add the blog description for the home/front page.
@@ -69,7 +70,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 			$title .= " $sep $site_description";
 		}
 
-		// Add a page number if necessary:
+		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
 			$title .= " $sep " . sprintf( __( 'Page %s', 'maker' ), max( $paged, $page ) );
 		}
@@ -82,6 +83,8 @@ endif;
 
 /**
  * Filters the_category() to output HTML5 valid rel tag.
+ *
+ * @param string $text markup containing list of categories.
  */
 function maker_category_rel( $text ) {
 	$search  = array( 'rel="category"', 'rel="category tag"' );

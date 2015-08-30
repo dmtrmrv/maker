@@ -1,9 +1,7 @@
 <?php
 /**
  * The template for displaying full width pages.
- * 
- * Template Name: Portfolio Grid
- * 
+ *
  * @package Maker
  */
 

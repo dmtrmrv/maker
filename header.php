@@ -1,4 +1,3 @@
-
 <?php
 /**
  * The header for our theme.
@@ -7,6 +6,7 @@
  *
  * @package Maker
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -14,13 +14,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="stylesheet" href="http://basehold.it/24/255/42/85/0.5">
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'maker' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'maker' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrap">
@@ -32,7 +31,7 @@
 
 			<button id="site-navigation-toggle" class="menu-toggle" >
 				<span class="menu-toggle-icon"></span>
-				<?php _e( 'Primary Menu', 'maker' ); ?>
+				<?php esc_html_e( 'Primary Menu', 'maker' ); ?>
 			</button><!-- #site-navigation-menu-toggle -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

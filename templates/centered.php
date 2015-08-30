@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying full width pages.
- * 
+ * The template for displaying centered pages.
+ *
  * Template Name: Centered
- * 
+ *
  * @package Maker
  */
 
@@ -18,13 +18,12 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 				<?php
-					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
 				?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; ?>
 			
 		</div>
 

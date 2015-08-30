@@ -14,7 +14,7 @@ function maker_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'primary',
 		'render'    => 'maker_infinite_scroll_render',
-		'type'      => 'click'
+		'type'      => 'click',
 	) );
 
 	add_filter( 'infinite_scroll_js_settings', 'maker_load_more_text' );
@@ -38,6 +38,8 @@ function maker_infinite_scroll_render() {
 
 /**
  * Change Older Posts to Load More.
+ *
+ * @param array $settings array of Infinite Scroll settings.
  */
 function maker_load_more_text( $settings ) {
 	$settings['text'] = __( 'Load More', 'maker' );

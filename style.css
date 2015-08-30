@@ -2086,7 +2086,12 @@ a.site-logo-link:before {
 	border-radius: 50%;
 }
 
+.comment-author .says {
+	display: none;
+}
+
 .comment-author .author-name,
+.comment-author .fn,
 .comment-metadata {
 	display: block;
 	margin-left: 72px;

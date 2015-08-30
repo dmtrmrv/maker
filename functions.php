@@ -1,4 +1,4 @@
-	<?php
+<?php
 /**
  * Maker functions and definitions
  *
@@ -26,7 +26,6 @@ if ( ! function_exists( 'maker_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function maker_setup() {
-
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -60,7 +59,7 @@ function maker_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'maker' ),
-		'footer'  => __( 'Footer Menu',  'maker' )
+		'footer'  => __( 'Footer Menu',  'maker' ),
 	) );
 
 	/*
@@ -87,7 +86,7 @@ function maker_setup() {
 	 */
 	add_editor_style( array( 'editor-style.css' ) );
 }
-endif; // maker_setup
+endif;
 add_action( 'after_setup_theme', 'maker_setup' );
 
 
@@ -144,7 +143,7 @@ function maker_scripts() {
 	);
 
 	wp_enqueue_script(
-		'maker-skip-link-focus-fix', 
+		'maker-skip-link-focus-fix',
 		get_template_directory_uri() . '/js/skip-link-focus-fix.js',
 		array(),
 		MAKER_VERSION,
@@ -158,7 +157,7 @@ function maker_scripts() {
 		MAKER_VERSION,
 		true
 	);
-	
+
 	wp_enqueue_script(
 		'maker-fitvids',
 		get_template_directory_uri() . '/js/jquery.fitvids.js',
@@ -166,7 +165,7 @@ function maker_scripts() {
 		MAKER_VERSION,
 		true
 	);
-	
+
 	wp_enqueue_script(
 		'maker-custom',
 		get_template_directory_uri() . '/js/custom.js',

@@ -23,7 +23,7 @@ get_header(); ?>
 
 			<?php maker_post_navigation(); ?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; ?>
 
 		</div>
 

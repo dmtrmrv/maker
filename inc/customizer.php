@@ -15,40 +15,40 @@ function maker_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
 	// Logo.
-	$wp_customize->add_setting( 'maker_logo', array( 
-		'sanitize_callback' => 'maker_sanitize_image'
+	$wp_customize->add_setting( 'maker_logo', array(
+		'sanitize_callback' => 'maker_sanitize_image',
 	) );
 
 	$wp_customize -> add_control(
-		new WP_Customize_Image_Control (
+		new WP_Customize_Image_Control(
 			$wp_customize,
 			'maker_logo',
 			array(
 				'label'   => __( 'Logo', 'maker' ),
-				'section' => 'title_tagline'
+				'section' => 'title_tagline',
 			)
 		)
 	);
 
 	// Display Title.
-	$wp_customize->add_setting( 'maker_display_title', array( 
+	$wp_customize->add_setting( 'maker_display_title', array(
 		'default' => 1,
-		'sanitize_callback' => 'maker_sanitize_checkbox'
+		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_title', array( 
+	$wp_customize->add_control( 'maker_display_title', array(
 		'label'   => __( 'Display Title', 'maker' ),
 		'section' => 'title_tagline',
 		'type'    => 'checkbox',
 	) );
 
 	// Display Tagline.
-	$wp_customize->add_setting( 'maker_display_tagline', array( 
+	$wp_customize->add_setting( 'maker_display_tagline', array(
 		'default' => 1,
-		'sanitize_callback' => 'maker_sanitize_checkbox'
+		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_tagline', array( 
+	$wp_customize->add_control( 'maker_display_tagline', array(
 		'label'   => __( 'Display Tagline', 'maker' ),
 		'section' => 'title_tagline',
 		'type'    => 'checkbox',
@@ -60,7 +60,7 @@ function maker_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
-	// Portfolio. 
+	// Portfolio.
 	$wp_customize->add_section( 'maker_portfolio' , array(
 		'title'    => __( 'Portfolio', 'maker' ),
 		'priority' => 130,
@@ -68,10 +68,10 @@ function maker_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'maker_display_portfolio_text', array(
 		'default'           => 1,
-		'sanitize_callback' => 'maker_sanitize_checkbox'
+		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_portfolio_text', array( 
+	$wp_customize->add_control( 'maker_display_portfolio_text', array(
 		'label'   => __( 'Display Page Content', 'maker' ),
 		'section' => 'maker_portfolio',
 		'type'    => 'checkbox',
@@ -108,7 +108,7 @@ function maker_customize_register( $wp_customize ) {
 			'maker_accent_color',
 			array(
 				'label'   => __( 'Accent Color', 'maker' ),
-				'section' => 'colors'
+				'section' => 'colors',
 			)
 		)
 	);
@@ -116,7 +116,9 @@ function maker_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'maker_customize_register' );
 
 /**
- * Sanitizes Text.
+ * Sanitizes text.
+ *
+ * @param string $input potentially dangerous data.
  */
 function maker_sanitize_text( $input ) {
 	global $allowedtags;
@@ -124,10 +126,12 @@ function maker_sanitize_text( $input ) {
 }
 
 /**
- * Sanitizes Checkbox.
+ * Sanitizes checkbox.
+ *
+ * @param string|int $input potentially dangerous data.
  */
 function maker_sanitize_checkbox( $input ) {
-	if ( $input == 1 ) {
+	if ( 1 == $input ) {
 		return 1;
 	} else {
 		return 0;
@@ -136,12 +140,14 @@ function maker_sanitize_checkbox( $input ) {
 
 /**
  * Sanitizes Image Upload.
+ *
+ * @param string $input potentially dangerous data.
  */
 function maker_sanitize_image( $input ) {
 	$output = '';
 
 	$filetype = wp_check_filetype( $input );
-	if ( $filetype["ext"] && wp_ext2type( $filetype["ext"] ) === 'image' ) {
+	if ( $filetype['ext'] && wp_ext2type( $filetype['ext'] ) === 'image' ) {
 		$output = esc_url( $input );
 	}
 
@@ -154,26 +160,25 @@ function maker_sanitize_image( $input ) {
 function maker_custom_style_header_output() {
 	// Don't print any styles if no color, or if it is set to default.
 	$color = get_theme_mod( 'maker_accent_color' );
-	if ( ! $color || $color == '#3498db' ) {
+	if ( ! $color || '#3498db' == $color  ) {
 		return;
 	}
 
 	// Build and print styles.
-	$style  = "";
-	$style .= "a,";
-	$style .= ".entry-meta-item.cat-links a,";
-	$style .= ".entry-meta-item a:hover,";
-	$style .= ".entry-meta-item a:focus,";
-	$style .= ".widget a:hover,";
-	$style .= ".widget a:focus,";
-	$style .= ".tags-links a:hover,";
-	$style .= ".tags-links a:focus";
-	// $style .= ".search .entry-title a";
-	$style .= "{ color: $color }";
-	$style .= ".comment-form .submit,";
-	$style .= "input[type='submit'].search-submit,";
-	$style .= "input[type='submit'].wpcf7-submit { background-color: $color; border-color: $color; }";
-	
+	$style  = '';
+	$style .= 'a,';
+	$style .= '.entry-meta-item.cat-links a,';
+	$style .= '.entry-meta-item a:hover,';
+	$style .= '.entry-meta-item a:focus,';
+	$style .= '.widget a:hover,';
+	$style .= '.widget a:focus,';
+	$style .= '.tags-links a:hover,';
+	$style .= '.tags-links a:focus';
+	$style .= sprintf( '{ color: %s }', $color );
+	$style .= '.comment-form .submit,';
+	$style .= 'input[type=\'submit\'].search-submit,';
+	$style .= sprintf( 'input[type=\'submit\'].wpcf7-submit { background-color: %s; border-color: %s; }', $color );
+
 	echo '<style type="text/css">' . $style . '</style>';
 }
 add_action( 'wp_head' ,'maker_custom_style_header_output' );
@@ -182,6 +187,12 @@ add_action( 'wp_head' ,'maker_custom_style_header_output' );
  * Binds js handlers to make theme customizer preview reload changes asynchronously.
  */
 function maker_customize_preview_js() {
-	wp_enqueue_script( 'maker_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script(
+		'maker_customizer',
+		get_template_directory_uri() . '/js/customizer.js',
+		array( 'customize-preview' ),
+		'20130508',
+		true
+	);
 }
 add_action( 'customize_preview_init', 'maker_customize_preview_js' );

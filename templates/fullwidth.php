@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying full width pages.
- * 
+ * The template for displaying fullwidth pages.
+ *
  * Template Name: Fullwidth
- * 
+ *
  * @package Maker
  */
 
@@ -23,10 +23,9 @@ get_header(); ?>
 					endif;
 				?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile;?>
 			
 		</div>
-
 	</div><!-- #content -->
 </div><!-- #main -->
 

@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying full width pages.
- * 
+ * The template for displaying portfolio.
+ *
  * Template Name: Portfolio
- * 
+ *
  * @package Maker
  */
 
@@ -20,7 +20,6 @@ get_header(); ?>
 					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 					<?php
-						// If comments are open or we have at least one comment, load up the comment template
 						if ( comments_open() || get_comments_number() ) :
 							comments_template();
 						endif;
@@ -55,7 +54,7 @@ get_header(); ?>
 				// Check if Portfolio Toolkit is activated.
 				if ( post_type_exists( 'portfolio' ) ) {
 					$post_type = 'portfolio';
-				} 
+				}
 
 				// Override post type if using Jetpack Portfolio.
 				if ( post_type_exists( 'jetpack-portfolio' ) ) {
@@ -66,19 +65,19 @@ get_header(); ?>
 				if ( $post_type ) :
 
 					$args = array(
-						'post_type'      => $post_type, 
+						'post_type'      => $post_type,
 						'order'          => 'DESC',
 						'orderby'        => 'date',
 						'paged'          => $paged,
 						'posts_per_page' => $posts_per_page,
 					);
 
-					$projects = new WP_Query ( $args );
+					$projects = new WP_Query( $args );
 
 					if ( $projects -> have_posts() ) :
 
 						echo '<div class="portfolio-grid">';
-						
+
 							while ( $projects -> have_posts() ) : $projects -> the_post();
 
 								get_template_part( 'template-parts/content', 'portfolio' );
@@ -88,14 +87,14 @@ get_header(); ?>
 						echo '</div>';
 
 						maker_paging_nav( $projects->max_num_pages );
-						
+
 						wp_reset_postdata();
 
 					endif;
 
-				endif;	
+				endif;
 			?>
-			
+
 		</div>
 	</div><!-- #content -->
 </div><!-- #main -->

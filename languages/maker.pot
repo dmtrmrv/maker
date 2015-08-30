@@ -24,27 +24,27 @@ msgid ""
 "go to the homepage or try searching."
 msgstr ""
 
-#: comments.php:52
+#: comments.php:51
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:56
+#: comments.php:55
 msgid "Reply to %s"
 msgstr ""
 
-#: comments.php:57
+#: comments.php:56
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:62 header.php:34
+#: functions.php:61 header.php:34
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:62
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:110
 msgid "Sidebar"
 msgstr ""
 
@@ -92,152 +92,149 @@ msgstr ""
 msgid "Accent Color"
 msgstr ""
 
-#: inc/extras.php:74
+#: inc/extras.php:75
 msgid "Page %s"
 msgstr ""
 
-#: inc/jetpack.php:43
+#: inc/jetpack.php:45
 msgid "Load More"
 msgstr ""
 
-#: inc/template-tags.php:21
-#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:15
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:114
+#: inc/template-tags.php:17
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:71
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:115
+#: inc/template-tags.php:72
 msgid "One Comment"
 msgstr ""
 
-#: inc/template-tags.php:116
+#: inc/template-tags.php:73
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:141 inc/template-tags.php:164
-#: inc/template-tags.php:527 inc/template-tags.php:552
-#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:98 inc/template-tags.php:118
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:259 inc/template-tags.php:428
+#: inc/template-tags.php:114
+msgid "%1$s"
+msgstr ""
+
+#: inc/template-tags.php:213 inc/template-tags.php:384
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:260 inc/template-tags.php:432
+#: inc/template-tags.php:214 inc/template-tags.php:388
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:261 inc/template-tags.php:424
+#: inc/template-tags.php:215 inc/template-tags.php:380
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:275
+#: inc/template-tags.php:229
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:279
+#: inc/template-tags.php:233
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:280
+#: inc/template-tags.php:234
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:314
+#: inc/template-tags.php:271
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:316
+#: inc/template-tags.php:273
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:317 inc/template-tags.php:333
+#: inc/template-tags.php:274 inc/template-tags.php:290
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:318
+#: inc/template-tags.php:275
 msgid "Page %s of %s"
 msgstr ""
 
-#: inc/template-tags.php:332
+#: inc/template-tags.php:289
 msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:337
+#: inc/template-tags.php:294
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:354
+#: inc/template-tags.php:309
 msgid "%1$s theme by %2$s"
 msgstr ""
 
-#: inc/template-tags.php:474
+#: inc/template-tags.php:430
 msgid "Client"
 msgstr ""
 
-#: inc/template-tags.php:475
+#: inc/template-tags.php:431
 msgid "Date"
 msgstr ""
 
-#: inc/template-tags.php:476 inc/template-tags.php:486
+#: inc/template-tags.php:432 inc/template-tags.php:442
 msgid "Link"
 msgstr ""
 
-#: inc/template-tags.php:477
+#: inc/template-tags.php:433
 msgid "Category"
 msgstr ""
 
-#: inc/template-tags.php:478
+#: inc/template-tags.php:434
 msgid "Tags"
-msgstr ""
-
-#: inc/template-tags.php:534
-msgid "Post Author"
-msgstr ""
-
-#: inc/template-tags.php:556
-msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: search.php:17
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/content-none.php:13
+#: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:19
+#: template-parts/content-none.php:20
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:23
+#: template-parts/content-none.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:28
+#: template-parts/content-none.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:21
-#: template-parts/content-single-portfolio.php:24
-#: template-parts/content-single.php:21 template-parts/content.php:22
+#: template-parts/content-page.php:22
+#: template-parts/content-single-portfolio.php:27
+#: template-parts/content-single.php:24 template-parts/content.php:25
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-search.php:18
+#: template-parts/content-search.php:19
 msgid "Continue Reading"
 msgstr ""
 
-#: template-parts/content.php:18
+#: template-parts/content.php:21
 msgid "Continue reading %s"
 msgstr ""
 
@@ -264,10 +261,6 @@ msgid "http://dmitrymayorov.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Portfolio Grid"
-msgstr ""
-
-#. Template Name of the plugin/theme
 msgid "Centered"
 msgstr ""
 
@@ -281,8 +274,3 @@ msgid "One Comment"
 msgid_plural "%s Comments"
 msgstr[0] ""
 msgstr[1] ""
-
-#: inc/template-tags.php:549
-msgctxt "1: date, 2: time"
-msgid "%1$s at %2$s"
-msgstr ""

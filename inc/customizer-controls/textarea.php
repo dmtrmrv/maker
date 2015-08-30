@@ -1,14 +1,17 @@
 <?php
 /**
- * Customize for textarea, extend the WP customizer
+ * Customize for textarea, extend the WP customizer.
  *
  * @package Maker
  */
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
-	return NULL;
+	return null;
 }
 
+/**
+ * Extends the Customizer with the textarea control.
+ */
 class Textarea_Custom_Control extends WP_Customize_Control {
 	/**
 	 * Render the control's content.
@@ -23,7 +26,7 @@ class Textarea_Custom_Control extends WP_Customize_Control {
 				<?php echo esc_textarea( $this->value() ); ?>
 			</textarea>
 			<?php if ( $this->description ) : ?>
-				<p class="description"><?php echo $this->description; ?></p>
+				<p class="description"><?php echo esc_html( $this->description ); ?></p>
 			<?php endif; ?>
 		</label>
 		<?php

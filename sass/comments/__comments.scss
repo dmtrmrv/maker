@@ -49,9 +49,13 @@
 		height: 3em;
 		border-radius: 50%;
 	}
+	.says {
+		display: none;
+	}
 }
 
 .comment-author .author-name,
+.comment-author .fn,
 .comment-metadata {
 	display: block;
 	margin-left: $font__size-body-px * 4.5;

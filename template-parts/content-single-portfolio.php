@@ -1,7 +1,10 @@
 <?php
 /**
+ * The template used for displaying portfolio item content in single-portfolio.php and single-jetpack-portfolio.php
+ *
  * @package Maker
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

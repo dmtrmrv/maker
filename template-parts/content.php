@@ -1,7 +1,10 @@
 <?php
 /**
+ * The default template used for displaying post content in index.php
+ *
  * @package Maker
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

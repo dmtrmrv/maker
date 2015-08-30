@@ -1,7 +1,7 @@
 <?php
 /**
- * The template for displaying Portfolio Toolkit tag.
- * 
+ * The template for displaying Portfolio Toolkit category.
+ *
  * @package Maker
  */
 
