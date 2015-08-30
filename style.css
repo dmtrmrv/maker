@@ -1002,9 +1002,11 @@ blockquote.alignright {
 .single-portfolio .hentry:after,
 .single-jetpack-portfolio .hentry:after,
 .single-portfolio .entry-header:after,
-.single-jetpack-portfolio .entry-header:after,
 .single-portfolio .entry-content:after,
+.single-jetpack-portfolio .entry-header:after,
 .single-jetpack-portfolio .entry-content:after,
+.single-portfolio .project-meta:after,
+.single-jetpack-portfolio .project-meta:after,
 .page-template-portfolio .page:after,
 .page-template-portfolio .content-area:after,
 .page-template-portfolio .entry-header:after,
@@ -1045,7 +1047,7 @@ blockquote.alignright {
 .widget-area {
 	width: 100%;
 	max-width: 474px;
-	margin: 0 auto 4.5em;
+	margin: 0 auto 1.5em;
 }
 
 /**
@@ -1523,7 +1525,7 @@ a.site-logo-link:before {
 
 .post-thumbnail {
 	display: block;
-	margin: 0 0 3em;
+	margin: 0 0 1.5em;
 }
 
 .post-thumbnail img {
@@ -1533,12 +1535,6 @@ a.site-logo-link:before {
 }
 
 /* Entry Title */
-
-.entry-title {
-	margin: -0.25em 0 0.625em 0;
-	font-size: 2em;
-	line-height: 1.125;
-}
 
 .entry-title a {
 	color: #58585b;
@@ -1750,7 +1746,7 @@ a.site-logo-link:before {
 /* Post Navigation (Next/Previous Post) */
 
 .post-navigation {
-	margin-bottom: 4.5em;
+	margin-bottom: 1.5em;
 }
 
 .post-navigation span {
@@ -1813,10 +1809,6 @@ a.site-logo-link:before {
 
 /* Default Page */
 
-.page-template-default .hentry {
-	margin-bottom: 1.5em;
-}
-
 .page-template-default .entry-header,
 .page-template-default .entry-content,
 .page-template-default .comments-area {
@@ -1843,17 +1835,19 @@ a.site-logo-link:before {
 }
 
 .single-portfolio .entry-header,
-.single-jetpack-portfolio .entry-header {
+.single-portfolio .entry-content,
+.single-jetpack-portfolio .entry-header,
+.single-jetpack-portfolio .entry-content {
 	width: 100%;
 	max-width: 474px;
 	margin: 0 auto;
 }
 
-.single-portfolio .entry-content,
-.single-jetpack-portfolio .entry-content {
-	width: 100%;
-	max-width: 474px;
-	margin: 0 auto;
+.single-portfolio .project-excerpt,
+.single-portfolio .project-meta,
+.single-jetpack-portfolio .project-excerpt,
+.single-jetpack-portfolio .project-meta {
+	margin-bottom: 1.5em;
 }
 
 .single-portfolio .project-meta table,
@@ -1861,6 +1855,7 @@ a.site-logo-link:before {
 	display: block;
 	float: left;
 	width: auto;
+	margin-bottom: 0;
 }
 
 .single-portfolio .project-meta td,
@@ -1920,7 +1915,7 @@ a.site-logo-link:before {
 }
 
 .portfolio-grid .project {
-	margin-bottom: 3em;
+	margin-bottom: 1.5em;
 }
 
 .portfolio-grid .project:before,
@@ -1969,10 +1964,6 @@ a.site-logo-link:before {
 
 /* Fullwidth */
 
-.page-template-fullwidth .hentry {
-	margin-bottom: 3em;
-}
-
 .page-template-fullwidth .content-area {
 	float: none;
 	width: 100%;
@@ -1991,10 +1982,6 @@ a.site-logo-link:before {
 }
 
 /* Centered */
-
-.page-template-centered .hentry {
-	margin-bottom: 3em;
-}
 
 .page-template-centered .content-area {
 	float: none;
@@ -2183,11 +2170,11 @@ a.site-logo-link:before {
 
 .comment-list,
 .form-submit {
-	margin-bottom: 4.375em;
+	margin-bottom: 1.5em;
 }
 
 .no-comments {
-	margin-bottom: 4.5em;
+	margin-bottom: 3em;
 }
 
 /* Comment Navigation */
@@ -2469,10 +2456,6 @@ input[type='submit'].wpcf7-submit {
 		padding: 0 0.75em;
 	}
 
-	.widget {
-		margin: 0 0 3em;
-	}
-
 	.site-info {
 		float: right;
 		width: 39.53252%;
@@ -2569,6 +2552,16 @@ input[type='submit'].wpcf7-submit {
 		display: none;
 	}
 
+	.post-thumbnail {
+		margin: 0 0 3em;
+	}
+
+	.entry-title {
+		margin: -0.25em 0 0.625em 0;
+		font-size: 2em;
+		line-height: 1.125;
+	}
+
 	.entry-meta-item.cat-links {
 		display: block;
 	}
@@ -2580,6 +2573,10 @@ input[type='submit'].wpcf7-submit {
 
 	.comment-navigation {
 		margin-bottom: 3em;
+	}
+
+	.widget {
+		margin: 0 0 3em;
 	}
 }
 
@@ -2601,6 +2598,7 @@ input[type='submit'].wpcf7-submit {
 		float: right;
 		width: 22.2561%;
 		margin-right: 0;
+		margin-bottom: 3em;
 	}
 
 	.posts-navigation {
@@ -2683,6 +2681,10 @@ input[type='submit'].wpcf7-submit {
 		padding-right: 25.91463%;
 	}
 
+	.page-template-default .hentry {
+		margin-bottom: 1.5em;
+	}
+
 	.page-template-default .entry-header,
 	.page-template-default .entry-content,
 	.page-template-default .comments-area {
@@ -2691,19 +2693,10 @@ input[type='submit'].wpcf7-submit {
 	}
 
 	.single-portfolio .entry-header,
-	.single-jetpack-portfolio .entry-header {
-		max-width: 100%;
-	}
-
 	.single-portfolio .entry-content,
+	.single-jetpack-portfolio .entry-header,
 	.single-jetpack-portfolio .entry-content {
-		float: left;
-	}
-
-	.single-portfolio .entry-content .alignnone,
-	.single-jetpack-portfolio .entry-content .alignnone {
-		max-width: 984.0px;
-		margin-right: -474px;
+		max-width: 100%;
 	}
 
 	.single-portfolio .project-excerpt,
@@ -2718,6 +2711,7 @@ input[type='submit'].wpcf7-submit {
 	.single-portfolio .project-meta table,
 	.single-jetpack-portfolio .project-meta table {
 		float: right;
+		margin-bottom: 1.5em;
 	}
 
 	.single-portfolio .project-meta,
@@ -2746,6 +2740,7 @@ input[type='submit'].wpcf7-submit {
 		width: 31.70732%;
 		min-height: 312px;
 		margin-right: 2.43902%;
+		margin-bottom: 3em;
 		margin-bottom: 1.5em;
 		background-color: #000;
 	}
@@ -2788,11 +2783,24 @@ input[type='submit'].wpcf7-submit {
 		margin: 0;
 	}
 
+	.page-template-fullwidth .hentry {
+		margin-bottom: 1.5em;
+	}
+
+	.page-template-centered .hentry {
+		margin-bottom: 1.5em;
+	}
+
 	.search .search-form,
 	.search .entry-header,
 	.search .entry-summary {
 		max-width: 100%;
 		margin-left: 0;
+	}
+
+	.comment-list,
+	.form-submit {
+		margin-bottom: 3em;
 	}
 
 	#infinite-handle {

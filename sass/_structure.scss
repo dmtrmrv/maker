@@ -36,8 +36,9 @@
 		max-width: span( 6 );
 	}
 	width: 100%;
-	margin: 0 auto 4.5em;
+	margin: 0 auto 1.5em;
 	@media screen and ( min-width: $md ) {
+		margin-bottom: 3em;
 		@include span( 3 last );
 	}
 }

@@ -136,11 +136,14 @@
 
 .comment-list,
 .form-submit {
-	margin-bottom: em_minus_px( 4.5em, 2px );
+	margin-bottom: 1.5em;
+	@media screen and ( min-width: $md ) {
+		margin-bottom: 3em;
+	}
 }
 
 .no-comments {
-	margin-bottom: 4.5em;
+	margin-bottom: 3em;
 }
 
 @import 'comment-navigation';

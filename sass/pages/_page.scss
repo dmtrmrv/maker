@@ -2,16 +2,18 @@
 
 .page-template-default {
 	.hentry {
-		margin-bottom: 1.5em;
 		@extend .clear;
+		@media screen and ( min-width: $md ) {
+			margin-bottom: 1.5em;
+		}
 	}
 	.entry-header,
 	.entry-content,
 	.comments-area {
-		clear: both;
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}
+		clear: both;
 		width: 100%;
 		margin-right: auto;
 		margin-left: auto;

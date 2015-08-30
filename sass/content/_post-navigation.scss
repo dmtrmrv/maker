@@ -1,7 +1,10 @@
 /* Post Navigation (Next/Previous Post) */
 
 .post-navigation {
-	margin-bottom: 4.5em;
+	margin-bottom: 1.5em;
+	// @media screen and ( min-width: $md ) {
+	// 	margin-bottom: 3em;	
+	// }
 	span {
 		color: $color__gray;
 	}

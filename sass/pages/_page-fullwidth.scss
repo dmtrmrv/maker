@@ -3,7 +3,9 @@
 .page-template-fullwidth {
 	.hentry {
 		@extend .clear;
-		margin-bottom: 3em;
+		@media screen and ( min-width: $md ) {
+			margin-bottom: 1.5em;
+		}
 	}
 	.content-area {
 		width: 100%;

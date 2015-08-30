@@ -41,8 +41,9 @@
 	}
 	.project {
 		@include clearfix;
-		margin-bottom: 3em;
+		margin-bottom: 1.5em;
 		@media screen and ( min-width: $md ) {
+			margin-bottom: 3em;
 			@include with-layout( $susy-portfolio-grid ) {
 				@include span( 4 );
 			}
