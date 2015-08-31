@@ -51,9 +51,7 @@
 			@include with-layout( $susy-portfolio-grid ) {
 				@include span( 4 );
 			}
-			@include with-layout( $susy-portfolio-grid-static ) {
-				min-height: span( 4 );
-			}
+			min-height: 292px;
 			position: relative;
 			margin-bottom: 1.5em;
 			background-color: #000;
