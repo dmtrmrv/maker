@@ -5,6 +5,8 @@ module.exports = {
 			'!./README.md',
 			'!./node_modules/**',
 			'!./package.json',
+			'!./codesniffer.ruleset.xml',
+			'!./.travis.yml',
 			'!./.csscomb.json',
 			'!./Gruntfile.js',
 			'!./grunt/**',
