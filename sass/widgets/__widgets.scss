@@ -5,9 +5,6 @@
 .widget {
 	margin: 0 0 1.5em;
 	word-wrap: break-word;
-	@media screen and ( min-width: $sm ) {
-		margin: 0 0 3em;
-	}
 	select {
 		max-width: 100%;
 	}
@@ -68,6 +65,13 @@
 	tfoot td:last-child {
 		padding-right: 0.75em;
 		text-align: right;
+	}
+}
+
+.widget.widget_recent_comments,
+.widget.widget_recent_entries {
+	ul {
+		list-style-type: disc;
 	}
 }
 

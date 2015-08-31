@@ -85,9 +85,6 @@ input:-ms-input-placeholder {
 .search-form {
 	position: relative;
 	margin-bottom: 1.5em;
-	@media screen and ( min-width: $sm ) {
-		margin-bottom: 3em;
-	}
 }
 
 .search-submit {
