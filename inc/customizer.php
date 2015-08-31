@@ -78,30 +78,6 @@ function maker_customize_register( $wp_customize ) {
 		'description' => __( 'Choose to display page content before the portfolio grid or not.', 'maker' ),
 	) );
 
-	// Footer Text.
-	$wp_customize->add_section( 'maker_footer' , array(
-		'title'    => __( 'Footer', 'maker' ),
-		'priority' => 160,
-	) );
-
-	$wp_customize->add_setting( 'maker_footer_text', array(
-		'default'           => '',
-		'sanitize_callback' => 'maker_sanitize_text',
-	) );
-
-	$wp_customize->add_control(
-		new Textarea_Custom_Control(
-			$wp_customize,
-			'maker_footer_text',
-			array(
-				'label'       => __( 'Footer Text', 'maker' ),
-				'section'     => 'maker_footer',
-				'type'        => 'text',
-				'description' => __( 'You may use [year] shortcode to display current year.', 'maker' ),
-			)
-		)
-	);
-
 	$wp_customize -> add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,

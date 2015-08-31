@@ -76,19 +76,7 @@ msgstr ""
 msgid "Choose to display page content before the portfolio grid or not."
 msgstr ""
 
-#: inc/customizer.php:83
-msgid "Footer"
-msgstr ""
-
-#: inc/customizer.php:97
-msgid "Footer Text"
-msgstr ""
-
-#: inc/customizer.php:100
-msgid "You may use [year] shortcode to display current year."
-msgstr ""
-
-#: inc/customizer.php:110
+#: inc/customizer.php:86
 msgid "Accent Color"
 msgstr ""
 
@@ -151,15 +139,15 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#: inc/template-tags.php:367 inc/template-tags.php:536
+#: inc/template-tags.php:367 inc/template-tags.php:531
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:368 inc/template-tags.php:540
+#: inc/template-tags.php:368 inc/template-tags.php:535
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:369 inc/template-tags.php:532
+#: inc/template-tags.php:369 inc/template-tags.php:527
 msgid "Posts navigation"
 msgstr ""
 
@@ -199,7 +187,7 @@ msgstr ""
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:461
+#: inc/template-tags.php:457
 msgid "%1$s theme by %2$s"
 msgstr ""
 

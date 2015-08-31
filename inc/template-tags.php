@@ -453,16 +453,11 @@ if ( ! function_exists( 'maker_footer_text' ) ) :
  * Displays Footer Text.
  */
 function maker_footer_text() {
-	$text = get_theme_mod( 'maker_footer_text' );
-	if ( $text ) {
-		echo str_replace( '[year]', date( 'Y' ), $text );
-	} else {
-		printf(
-			esc_html__( '%1$s theme by %2$s', 'maker' ),
-			'Maker',
-			'<a href="' . esc_url( 'http://dmitrymayorov.com/' ) . '">Dmitry Mayorov</a>'
-		);
-	}
+	printf(
+		esc_html__( '%1$s theme by %2$s', 'maker' ),
+		'Maker',
+		'<a href="' . esc_url( 'http://dmitrymayorov.com/' ) . '">Dmitry Mayorov</a>'
+	);
 }
 endif;
 
