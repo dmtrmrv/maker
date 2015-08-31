@@ -419,7 +419,7 @@ function maker_comment_navigation( $id = '' ) {
 		}
 		?>
 
-		<nav <?php esc_attr_e( $id ); ?> class="navigation comment-navigation" role="navigation">
+		<nav <?php echo esc_attr( $id ); ?> class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'maker' ); ?></h2>
 			<div class="nav-links">
 				<div class="nav-previous"><?php previous_comments_link( __( 'Previous', 'maker' ) ); ?></div>
