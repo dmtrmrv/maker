@@ -2,7 +2,7 @@
 /**
  * The template for displaying portfolio.
  *
- * Template Name: Portfolio
+ * Template Name: Portfolio – Jetpack
  *
  * @package Maker
  */
@@ -42,30 +42,11 @@ get_header(); ?>
 				// Default posts per page option.
 				$posts_per_page = get_option( 'posts_per_page', 9 );
 
-				/*
-				 * Maker supports two plugins that manage portfolios -
-				 * Portfolio Toolkit and Jetpack Custom Post Types. We check
-				 * if Portfolio Toolkit is installed first. Later if we have
-				 * an edge case with both plugins installed, load only Jetpack
-				 * portfolio posts.
-				 */
-				$post_type = '';
-
-				// Check if Portfolio Toolkit is activated.
-				if ( post_type_exists( 'portfolio' ) ) {
-					$post_type = 'portfolio';
-				}
-
-				// Override post type if using Jetpack Portfolio.
-				if ( post_type_exists( 'jetpack-portfolio' ) ) {
-					$post_type = 'jetpack-portfolio';
-				}
-
 				// Proceed only if we have Portfolios.
-				if ( $post_type ) :
+				if ( post_type_exists( 'jetpack-portfolio' ) ) :
 
 					$args = array(
-						'post_type'      => $post_type,
+						'post_type'      => 'jetpack-portfolio',
 						'order'          => 'DESC',
 						'orderby'        => 'date',
 						'paged'          => $paged,
@@ -80,7 +61,7 @@ get_header(); ?>
 
 							while ( $projects -> have_posts() ) : $projects -> the_post();
 
-								get_template_part( 'template-parts/content', 'portfolio' );
+								get_template_part( 'template-parts/content', 'portfolio-jetpack' );
 
 							endwhile;
 

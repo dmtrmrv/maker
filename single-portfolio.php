@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single portfolio posts by Portfolio Toolkit.
  *
  * @package Maker
  */
@@ -13,7 +13,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single-portfolio' ); ?>
+			<?php get_template_part( 'template-parts/content', 'single-portfolio-toolkit' ); ?>
 
 			<?php maker_portfolio_navigation(); ?>
 
@@ -25,8 +25,7 @@ get_header(); ?>
 
 		<?php endwhile;?>
 
-		</div>
-
+		</div><!-- #primary -->
 	</div><!-- #content -->
 </div><!-- #main -->
 

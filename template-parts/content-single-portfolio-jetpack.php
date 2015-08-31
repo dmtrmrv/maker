@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying portfolio item content in single-portfolio.php and single-jetpack-portfolio.php
+ * The template used for displaying portfolio item content in single-jetpack-portfolio.php
  *
  * @package Maker
  */
@@ -16,7 +16,7 @@
 			<?php the_excerpt(); ?>
 		</div>
 
-		<?php maker_portfolio_meta(); ?>
+		<?php maker_portfolio_jetpack_meta(); ?>
 
 	</header><!-- .entry-header -->
 

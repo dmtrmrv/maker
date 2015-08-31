@@ -12,9 +12,57 @@ if ( ! function_exists( 'maker_entry_category' ) ) :
  * Displays categories.
  */
 function maker_entry_category() {
-	$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+	$categories_list = get_the_category_list( esc_html__( ', ', 'maker' ) );
 	if ( $categories_list && maker_categorized_blog() ) {
-		printf( '<span class="entry-meta-item cat-links">' . esc_html__( '%s', 'maker' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		printf( '<div class="entry-meta-item cat-links">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_jetpack_portfolio_type' ) ) :
+/**
+ * Displays Jetpack portfolio type.
+ */
+function maker_jetpack_portfolio_type() {
+	$categories_list = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+	if ( $categories_list ) {
+		printf( '<div class="project-categories">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_jetpack_portfolio_tag' ) ) :
+/**
+ * Displays Jetpack portfolio tag.
+ */
+function maker_jetpack_portfolio_tag() {
+	$categories_list = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
+	if ( $categories_list ) {
+		printf( '<div class="project-categories">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_portfolio_toolkit_category' ) ) :
+/**
+ * Displays Portfolio Toolkit's portfolio category.
+ */
+function maker_portfolio_toolkit_category() {
+	$categories_list = get_the_term_list( get_the_ID(), 'portfolio-category', '', ', ', '' );
+	if ( $categories_list ) {
+		printf( '<div class="project-categories">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_portfolio_toolkit_tag' ) ) :
+/**
+ * Displays Portfolio Toolkit's portfolio tag.
+ */
+function maker_portfolio_toolkit_tag() {
+	$tags_list = get_the_term_list( get_the_ID(), 'portfolio-tag', '', ', ', '' );
+	if ( $tags_list ) {
+		printf( '<div class="project-tags">' . esc_html__( '%s', 'maker' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 	}
 }
 endif;
@@ -49,10 +97,10 @@ function maker_entry_date() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( '<span class="entry-meta-item posted-on"><a href="%s" rel="bookmark">%s</a></span>',
+	printf( '<span class="entry-meta-item posted-on"><a href="%s" rel="bookmark">%s</a></span>',  // WPCS: XSS OK.
 		esc_url( get_permalink() ),
 		$time_string
-	); // WPCS: XSS OK.
+	);
 }
 endif;
 
@@ -102,6 +150,112 @@ function maker_entry_meta_before_content() {
 }
 endif;
 
+if ( ! function_exists( 'maker_portfolio_toolkit_meta' ) ) :
+/**
+ * Prints project meta for Portfolio Toolkit posts.
+ */
+function maker_portfolio_toolkit_meta() {
+
+	$client     = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_client', true );
+	$date       = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_date',   true );
+	$url        = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',    true );
+	$categories = get_the_term_list( get_the_ID(), 'portfolio-category', '', ', ', '' );
+	$tags       = get_the_term_list( get_the_ID(), 'portfolio-tag',      '', ', ', '' );
+
+	if ( $client || $date || $url || $categories || $tags ) :
+
+		echo '<div class="project-meta"><table>';
+
+		// Client.
+		if ( $client ) :
+		printf(
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			esc_html__( 'Client', 'maker' ),
+			esc_html( $client )
+		);
+		endif;
+
+		// Date.
+		if ( $date ) :
+		printf(
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			esc_html__( 'Date', 'maker' ),
+			esc_html( $date )
+		);
+		endif;
+
+		// URL.
+		if ( $url ) :
+		$parsed = parse_url( $url );
+		$domain = preg_replace( '/^www\./', '', $parsed['host'] );
+		printf(
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			esc_html__( 'Link', 'maker' ),
+			'<a href="' . esc_url( $url ) . '">' . esc_html( $domain )
+		);
+		endif;
+
+		// Category.
+		if ( $categories ) :
+		printf( // WPCS: XSS OK.
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			esc_html__( 'Category', 'maker' ),
+			sprintf( esc_html__( '%s', 'maker' ), $categories )
+		);
+		endif;
+
+		// Tag.
+		if ( $tags ) :
+		printf( // WPCS: XSS OK.
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			esc_html__( 'Tags', 'maker' ),
+			sprintf( esc_html__( '%s', 'maker' ), $tags )
+		);
+		endif;
+
+	echo '</table></div>';
+
+	endif;
+}
+endif;
+
+if ( ! function_exists( 'maker_portfolio_jetpack_meta' ) ) :
+/**
+ * Prints project meta for Jetpack portfolio posts.
+ */
+function maker_portfolio_jetpack_meta() {
+
+	$categories = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+	$tags       = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag',  '', ', ', '' );
+
+	if ( $categories || $tags ) :
+
+		echo '<div class="project-meta"><table>';
+
+		// Category.
+		if ( $categories ) :
+		printf( // WPCS: XSS OK.
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			esc_html__( 'Category', 'maker' ),
+			sprintf( esc_html__( '%s', 'maker' ), $categories )
+		);
+		endif;
+
+		// Tag.
+		if ( $tags ) :
+		printf( // WPCS: XSS OK.
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			esc_html__( 'Tags', 'maker' ),
+			sprintf( esc_html__( '%s', 'maker' ), $tags )
+		);
+		endif;
+
+	echo '</table></div>';
+
+	endif;
+}
+endif;
+
 if ( ! function_exists( 'maker_entry_meta_after_content' ) ) :
 /**
  * Prints HTML with meta after page content.
@@ -109,7 +263,7 @@ if ( ! function_exists( 'maker_entry_meta_after_content' ) ) :
 function maker_entry_meta_after_content() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		$tags_list = get_the_tag_list( '', esc_html__( '', '_s' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( '', 'maker' ) );
 		if ( $tags_list ) {
 			printf( '<footer class="entry-footer"><span class="tags-links">' . esc_html__( '%1$s', 'maker' ) . '</span></footer><!-- .entry-footer -->', $tags_list ); // WPCS: XSS OK.
 		}
@@ -206,7 +360,7 @@ endif;
 
 if ( ! function_exists( 'maker_posts_navigation' ) ) :
 /**
- * Displays Posts Navigation a.k.a  Older/Newer posts links on a blog page.
+ * Displays Posts Navigation a.k.a Older/Newer posts links on a blog page.
  */
 function maker_posts_navigation() {
 	$args = array(
@@ -389,73 +543,5 @@ function maker_paging_nav( $max_num_pages = '' ) {
 			</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
-}
-endif;
-
-if ( ! function_exists( 'maker_portfolio_item_category' ) ) :
-/**
- * Returns a portfolio category or project type.
- */
-function maker_get_portfolio_item_category() {
-	if ( 'jetpack-portfolio' == get_post_type() && has_term( '', 'jetpack-portfolio-type' ) ) {
-		return get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '<div class="project-categories">', ', ', '</div>' );
-	} elseif ( 'portfolio' == get_post_type() && has_term( '', 'portfolio-category' ) ) {
-		return get_the_term_list( get_the_ID(), 'portfolio-category', '<div class="project-categories">', ', ', '</div>' );
-	}
-}
-endif;
-
-if ( ! function_exists( 'maker_portfolio_item_tag' ) ) :
-/**
- * Returns project tag.
- */
-function maker_get_portfolio_item_tag() {
-	if ( 'jetpack-portfolio' == get_post_type() && has_term( '', 'jetpack-portfolio-tag' ) ) {
-		return get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
-	} elseif ( 'portfolio' == get_post_type() && has_term( '', 'portfolio-tag' ) ) {
-		return get_the_term_list( get_the_ID(), 'portfolio-tag', '', ', ', '' );
-	}
-}
-endif;
-
-if ( ! function_exists( 'maker_project_meta' ) ) :
-/**
- * Prints project meta.
- */
-function maker_portfolio_meta() {
-
-	$meta = array(
-		__( 'Client',   'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_client', true ),
-		__( 'Date',     'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_date',   true ),
-		__( 'Link',     'maker' ) => get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',    true ),
-		__( 'Category', 'maker' ) => maker_get_portfolio_item_category(),
-		__( 'Tags',     'maker' ) => maker_get_portfolio_item_tag(),
-	);
-
-	if ( array_filter( $meta ) ) :
-
-	echo '<div class="project-meta">';
-		echo '<table>';
-		foreach ( $meta as $k => $v ) {
-			if ( __( 'Link', 'maker' ) == $k && $v ) {
-				echo '<tr>';
-					echo '<td class="project-meta-item-name">' . esc_html( $k ) . '</td>';
-					printf(
-						'<td class="project-meta-item-desc"><a href="%s" alt="">%s</a></td>',
-						esc_url( $v ),
-						$v
-					);
-				echo '</tr>';
-			} elseif ( $v ) {
-				echo '<tr>';
-					echo '<td class="project-meta-item-name">' . esc_html( $k ) . '</td>';
-					echo '<td class="project-meta-item-desc">' . $v . '</td>';
-				echo '</tr>';
-			}
-		}
-		echo '</table>';
-	echo '</div>';
-
-	endif;
 }
 endif;

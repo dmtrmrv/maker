@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying full width pages.
+ * The template for displaying archive projects by Jetpack Portfolio.
  *
  * @package Maker
  */

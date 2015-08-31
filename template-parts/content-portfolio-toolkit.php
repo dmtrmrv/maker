@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying portfolio item content in portfolio.php
+ * The template used for displaying portfolio item content in portfolio-toolkit.php
  *
  * @package Maker
  */
@@ -15,7 +15,7 @@
 
 		<?php the_title( sprintf( '<h1 class="project-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		
-		<?php echo maker_get_portfolio_item_category(); ?>
+		<?php maker_portfolio_toolkit_category(); ?>
 		
 	</header><!-- .project-header -->
 	

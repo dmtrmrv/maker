@@ -1007,11 +1007,16 @@ blockquote.alignright {
 .single-jetpack-portfolio .entry-content:after,
 .single-portfolio .project-meta:after,
 .single-jetpack-portfolio .project-meta:after,
-.page-template-portfolio .page:after,
-.page-template-portfolio .content-area:after,
-.page-template-portfolio .entry-header:after,
-.page-template-portfolio .entry-content:after,
-.page-template-portfolio .comments-area:after,
+.page-template-portfolio-jetpack .page:after,
+.page-template-portfolio-toolkit .page:after,
+.page-template-portfolio-jetpack .content-area:after,
+.page-template-portfolio-toolkit .content-area:after,
+.page-template-portfolio-jetpack .entry-header:after,
+.page-template-portfolio-jetpack .entry-content:after,
+.page-template-portfolio-jetpack .comments-area:after,
+.page-template-portfolio-toolkit .entry-header:after,
+.page-template-portfolio-toolkit .entry-content:after,
+.page-template-portfolio-toolkit .comments-area:after,
 .portfolio-grid:after,
 .page-template-fullwidth .hentry:after,
 .page-template-centered .hentry:after,
@@ -1888,11 +1893,13 @@ a.site-logo-link:before {
 
 /* Portfolio */
 
-.page-template-portfolio .page {
+.page-template-portfolio-jetpack .page,
+.page-template-portfolio-toolkit .page {
 	margin-bottom: 3em;
 }
 
-.page-template-portfolio .content-area {
+.page-template-portfolio-jetpack .content-area,
+.page-template-portfolio-toolkit .content-area {
 	float: none;
 	width: 100%;
 	max-width: 100%;
@@ -1900,9 +1907,12 @@ a.site-logo-link:before {
 	padding: 0;
 }
 
-.page-template-portfolio .entry-header,
-.page-template-portfolio .entry-content,
-.page-template-portfolio .comments-area {
+.page-template-portfolio-jetpack .entry-header,
+.page-template-portfolio-jetpack .entry-content,
+.page-template-portfolio-jetpack .comments-area,
+.page-template-portfolio-toolkit .entry-header,
+.page-template-portfolio-toolkit .entry-content,
+.page-template-portfolio-toolkit .comments-area {
 	width: 100%;
 	max-width: 474px;
 	margin-right: auto;
@@ -2729,9 +2739,12 @@ input[type='submit'].wpcf7-submit {
 		float: left;
 	}
 
-	.page-template-portfolio .entry-header,
-	.page-template-portfolio .entry-content,
-	.page-template-portfolio .comments-area {
+	.page-template-portfolio-jetpack .entry-header,
+	.page-template-portfolio-jetpack .entry-content,
+	.page-template-portfolio-jetpack .comments-area,
+	.page-template-portfolio-toolkit .entry-header,
+	.page-template-portfolio-toolkit .entry-content,
+	.page-template-portfolio-toolkit .comments-area {
 		margin-left: 0;
 	}
 

@@ -56,7 +56,7 @@ function maker_customize_register( $wp_customize ) {
 
 	// Accent Color.
 	$wp_customize->add_setting( 'maker_accent_color', array(
-		'default'           => '#3498db',
+		'default'           => '#ff2441',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -155,35 +155,6 @@ function maker_sanitize_image( $input ) {
 }
 
 /**
- * Outputs custom styles to the header.
- */
-function maker_custom_style_header_output() {
-	// Don't print any styles if no color, or if it is set to default.
-	$color = get_theme_mod( 'maker_accent_color' );
-	if ( ! $color || '#3498db' == $color  ) {
-		return;
-	}
-
-	// Build and print styles.
-	$style  = '';
-	$style .= 'a,';
-	$style .= '.entry-meta-item.cat-links a,';
-	$style .= '.entry-meta-item a:hover,';
-	$style .= '.entry-meta-item a:focus,';
-	$style .= '.widget a:hover,';
-	$style .= '.widget a:focus,';
-	$style .= '.tags-links a:hover,';
-	$style .= '.tags-links a:focus';
-	$style .= sprintf( '{ color: %s }', $color );
-	$style .= '.comment-form .submit,';
-	$style .= 'input[type=\'submit\'].search-submit,';
-	$style .= sprintf( 'input[type=\'submit\'].wpcf7-submit { background-color: %s; border-color: %s; }', $color );
-
-	echo '<style type="text/css">' . $style . '</style>';
-}
-add_action( 'wp_head' ,'maker_custom_style_header_output' );
-
-/**
  * Binds js handlers to make theme customizer preview reload changes asynchronously.
  */
 function maker_customize_preview_js() {
@@ -196,3 +167,38 @@ function maker_customize_preview_js() {
 	);
 }
 add_action( 'customize_preview_init', 'maker_customize_preview_js' );
+
+/**
+ * Enqueues front-end CSS for the custom color.
+ */
+function maker_custom_color_css() {
+	$color = get_theme_mod( 'maker_accent_color' );
+
+	// Don't do anything if the current color is the default.
+	if ( ! $color || '#ff2441' == $color  ) {
+		return;
+	}
+
+	$css = '
+		a,
+		.entry-meta-item.cat-links a,
+		.entry-meta-item a:hover,
+		.entry-meta-item a:focus,
+		.widget a:hover,
+		.widget a:focus,
+		.tags-links a:hover,
+		.tags-links a:focus {
+			color: %1$s;
+		}
+
+		.comment-form .submit,
+		input[type="submit"].search-submit,
+		input[type="submit"].wpcf7-submit {
+			background-color: %1$s;
+			border-color: %1$s;
+		}	
+	';
+
+	wp_add_inline_style( 'maker-style', sprintf( $css, $color ) );
+}
+add_action( 'wp_enqueue_scripts', 'maker_custom_color_css', 11 );

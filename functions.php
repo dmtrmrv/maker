@@ -1,6 +1,6 @@
 <?php
 /**
- * Maker functions and definitions
+ * Maker functions and definitions.
  *
  * @package Maker
  */
