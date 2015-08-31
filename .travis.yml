@@ -1,7 +1,10 @@
-# Travis CI (MIT License) configuration file for the Underscores WordPress theme.
+# Travis CI (MIT License) configuration file for the Maker WordPress theme.
 # @link https://travis-ci.org/
 
-# For use with the Underscores WordPress theme.
+# For use with the Maker WordPress theme.
+# @link https://github.com/iamdmitrymayorov/Maker
+
+# Originally introduced in Underscores (_s) project.
 # @link https://github.com/Automattic/_s
 
 # Declare project language.
