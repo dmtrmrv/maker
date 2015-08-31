@@ -1855,6 +1855,25 @@ a.site-logo-link:before {
 	margin-bottom: 1.5em;
 }
 
+.single-portfolio .project-excerpt a,
+.single-portfolio .project-meta a,
+.single-jetpack-portfolio .project-excerpt a,
+.single-jetpack-portfolio .project-meta a {
+	color: #ababab;
+}
+
+.single-portfolio .project-excerpt a:hover,
+.single-portfolio .project-excerpt a:focus,
+.single-portfolio .project-meta a:hover,
+.single-portfolio .project-meta a:focus,
+.single-jetpack-portfolio .project-excerpt a:hover,
+.single-jetpack-portfolio .project-excerpt a:focus,
+.single-jetpack-portfolio .project-meta a:hover,
+.single-jetpack-portfolio .project-meta a:focus {
+	opacity: 1;
+	color: #ff2441;
+}
+
 .single-portfolio .project-meta table,
 .single-jetpack-portfolio .project-meta table {
 	display: block;

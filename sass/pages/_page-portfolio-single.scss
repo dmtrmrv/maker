@@ -24,15 +24,21 @@
 			max-width: 100%;
 		}
 	}
-	
 	.project-excerpt,
 	.project-meta {
 		margin-bottom: 1.5em;
 		@media screen and ( min-width: $md ) {
 			@include span( 6 );
 		}
+		a {
+			color: $color__gray;
+			&:hover,
+			&:focus {
+				opacity: 1;
+				color: $color__accent;
+			}
+		}
 	}
-	
 	.project-meta {
 		@extend .clear;
 		table {
@@ -56,7 +62,6 @@
 			margin-right: 0;
 		}
 	}
-
 	&.no-excerpt .project-meta {
 		table {
 			@media screen and ( min-width: $md ) {
@@ -67,13 +72,11 @@
 			text-align: left;
 		}
 	}
-	
 	.project-meta-item-name {
 		padding-right: 1em;
 		color: $color__gray;
 		text-align: right;
 	}
-	
 	.comments-area {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
