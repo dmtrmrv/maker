@@ -62,6 +62,7 @@
 			margin-right: 0;
 		}
 	}
+
 	&.no-excerpt .project-meta {
 		table {
 			@media screen and ( min-width: $md ) {
@@ -75,7 +76,10 @@
 	.project-meta-item-name {
 		padding-right: 1em;
 		color: $color__gray;
-		text-align: right;
+		text-align: left;
+		@media screen and ( min-width: $md ) {
+			text-align: right;
+		}
 	}
 	.comments-area {
 		@include with-layout( $susy-static ) {

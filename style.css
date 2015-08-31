@@ -1902,7 +1902,7 @@ a.site-logo-link:before {
 .single-jetpack-portfolio .project-meta-item-name {
 	padding-right: 1em;
 	color: #ababab;
-	text-align: right;
+	text-align: left;
 }
 
 .single-portfolio .comments-area,
@@ -2747,6 +2747,11 @@ input[type='submit'].wpcf7-submit {
 	.single-portfolio.no-excerpt .project-meta table,
 	.single-jetpack-portfolio.no-excerpt .project-meta table {
 		float: left;
+	}
+
+	.single-portfolio .project-meta-item-name,
+	.single-jetpack-portfolio .project-meta-item-name {
+		text-align: right;
 	}
 
 	.page-template-portfolio-jetpack .page,
