@@ -1951,6 +1951,7 @@ a.site-logo-link:before {
 
 .project-header {
 	max-width: 100%;
+	transition: 0.1s ease;
 }
 
 .project-title {
@@ -1978,6 +1979,9 @@ a.site-logo-link:before {
 .project-thumbnail {
 	display: block;
 	margin: 0 0 1.5em;
+	transition: 0.1s ease;
+
+	-webkit-backface-visibility: hidden;
 }
 
 .project-thumbnail img {
@@ -2789,7 +2793,7 @@ input[type='submit'].wpcf7-submit {
 
 	.portfolio-grid .project:hover .project-header,
 	.portfolio-grid .project:active .project-header {
-		display: block;
+		opacity: 1;
 	}
 
 	.portfolio-grid .project:hover .project-thumbnail,
@@ -2809,7 +2813,7 @@ input[type='submit'].wpcf7-submit {
 	}
 
 	.has-post-thumbnail .project-header {
-		display: none;
+		opacity: 0;
 	}
 
 	.project-title a {

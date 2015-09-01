@@ -1,12 +1,11 @@
 /* Portfolio */
 
 .page-template-portfolio-jetpack,
-.page-template-portfolio-toolkit
- {
+.page-template-portfolio-toolkit {
 	.page {
 		@extend .clear;
 		@media screen and ( min-width: $md ) {
-			margin-bottom: 3em;	
+			margin-bottom: 3em;
 		}
 	}
 	.content-area {
@@ -46,12 +45,12 @@
 		@include clearfix;
 		margin-bottom: 1.5em;
 		@media screen and ( min-width: $md ) {
-			margin-bottom: 3em;
 			@include with-layout( $susy-portfolio-grid ) {
 				@include span( 4 );
 			}
-			min-height: 292px;
 			position: relative;
+			min-height: 292px;
+			margin-bottom: 3em;
 			margin-bottom: 1.5em;
 			background-color: #000;
 			&:nth-of-type(3n) {
@@ -60,7 +59,7 @@
 			&:hover,
 			&:active {
 				.project-header {
-					display: block;
+					opacity: 1;
 				}
 				.project-thumbnail {
 					opacity: 0.2;
@@ -75,12 +74,13 @@
 
 .project-header {
 	max-width: 100%;
+	transition: 0.1s ease;
 	@media screen and ( min-width: $md ) {
 		position: absolute;
 		top: 0;
 		left: 1.5em;
 		.has-post-thumbnail & {
-			display: none;
+			opacity: 0;
 		}
 	}
 }
@@ -108,6 +108,9 @@
 .project-thumbnail {
 	display: block;
 	margin: 0 0 1.5em;
+	transition: 0.1s ease;
+
+	-webkit-backface-visibility: hidden;
 	@media screen and ( min-width: $md ) {
 		margin: 0;
 	}
