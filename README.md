@@ -4,7 +4,7 @@
 
 Simple yet powerful portfolio theme. For all those who create things. Websites, illustrations, photographs, you name it. Get Maker and present your content in a professional way.
 
-[![Build Status](https://travis-ci.org/iamdmitrymayorov/Maker.svg?branch=master)](https://travis-ci.org/iamdmitrymayorov/Maker)
+[![Build Status](https://travis-ci.org/iamdmitrymayorov/maker.svg?branch=master)](https://travis-ci.org/iamdmitrymayorov/Maker)
 
 Live demo at http://maker.dmitrymayorov.com/
 
