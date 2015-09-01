@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Maker 0.1.0\n"
+"Project-Id-Version: Maker 0.1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2015-04-02 06:47:47+00:00\n"
 "MIME-Version: 1.0\n"

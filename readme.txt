@@ -2,7 +2,7 @@
 Contributors: iamdmitrymayorov
 Requires at least: WordPress 4.1
 Tested up to: WordPress 4.3
-Version: 0.1.0
+Version: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
@@ -34,7 +34,7 @@ Homepage:  http://typicons.com/
 Font Awesome - Copyright (C) 2012 by Dave Gandy
 
 Author:    Dave Gandy
-License:   SIL ()
+License:   SIL (http://scripts.sil.org/OFL)
 Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 FitVids 1.1 - Copyright (C) 2013 by Chris Coyier and Dave Rupert
@@ -45,6 +45,11 @@ License:   WTFPL (http://sam.zoy.org/wtfpl/)
 Homepage:  http://fitvidsjs.com/
 
 == Changelog ==
+
+= 0.1.1 =
+
+Coding Standards Fixes
+CSS Fixes
 
 = 0.1.0 =
 
