@@ -397,37 +397,19 @@ endif;
 if ( ! function_exists( 'maker_comment_navigation' ) ) :
 /**
  * Displays Comment Navigation.
- *
- * @param string $id ID for the nav element.
  */
-function maker_comment_navigation( $id = '' ) {
-	// Are there comments to navigate to?
-	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
-
-		// How many comments pages?
-		$pages = get_comment_pages_count();
-
-		// What comments page we are on?
-		$page = get_query_var( 'cpage' );
-		if ( ! $page ) {
-			$page = 1;
-		}
-
-		// Is there an ID for the navigation block?
-		if ( $id ) {
-			$id = 'id="' . $id . '"';
-		}
-		?>
-
-		<nav <?php echo esc_attr( $id ); ?> class="navigation comment-navigation" role="navigation">
+function maker_comment_navigation() {
+	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+		<nav class="navigation comment-navigation" role="navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'maker' ); ?></h2>
 			<div class="nav-links">
-				<div class="nav-previous"><?php previous_comments_link( __( 'Previous', 'maker' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Next', 'maker' ) ); ?></div>
-				<div class="nav-pages"><?php printf( esc_html__( 'Page %s of %s', 'maker' ), esc_html( $page ), esc_html( $pages ) ); ?></div>
+
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'maker' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'maker' ) ); ?></div>
+
 			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above --><?php
-	}
+		</nav><!-- #comment-nav-above -->
+	<?php endif;
 }
 endif;
 
