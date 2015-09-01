@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 			?>
 		</ul><!-- .comment-list -->
 
-		<?php maker_comment_navigation( 'comment-nav-below' ); ?>
+		<?php maker_comment_navigation(); ?>
 
 	<?php endif; ?>
 
