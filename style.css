@@ -2568,12 +2568,6 @@ input[type='submit'].wpcf7-submit {
 		margin: 0 0 3em;
 	}
 
-	.entry-title {
-		margin: -0.25em 0 0.625em 0;
-		font-size: 2em;
-		line-height: 1.125;
-	}
-
 	.entry-meta-item.cat-links {
 		display: block;
 	}

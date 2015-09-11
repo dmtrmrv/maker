@@ -1,12 +1,6 @@
 /* Entry Title */
 
 .entry-title {
-	@media screen and ( min-width: $sm ) {
-		// 19px bottom margin to make text jump back into baseline grid
-		margin: -0.25em 0 0.625em 0;
-		font-size: 2em;
-		line-height: 1.125;
-	}
 	a {
 		color: $color__text-main;
 		&:hover,
