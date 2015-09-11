@@ -84,7 +84,7 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/jetpack.php:43
+#: inc/jetpack.php:45
 msgid "Load More"
 msgstr ""
 

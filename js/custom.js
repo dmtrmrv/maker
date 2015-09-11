@@ -3,10 +3,15 @@
  */
 jQuery( document ).ready( function( $ ) {
 	// Fitvids.
-	function fitvids() {
+	function makerFitvids() {
 		$( 'article iframe' ).not( '.fitvid iframe' ).wrap( '<div class=\'fitvid\'/>' );
 		$( '.fitvid' ).fitVids();
 	}
-	fitvids();
+	makerFitvids();
+
+	function makerMatchHeights() {
+		$( '.project' ).matchHeight();
+	}
+	makerMatchHeights();
 
 } );
