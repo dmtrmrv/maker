@@ -30,14 +30,6 @@
 		@media screen and ( min-width: $md ) {
 			@include span( 6 );
 		}
-		a {
-			color: $color__gray;
-			&:hover,
-			&:focus {
-				opacity: 1;
-				color: $color__accent;
-			}
-		}
 	}
 	.project-meta {
 		@extend .clear;

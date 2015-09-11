@@ -4,7 +4,7 @@
 .page-template-portfolio-toolkit {
 	.page {
 		@extend .clear;
-		@media screen and ( min-width: $md ) {
+		@media screen and ( min-width: $sm ) {
 			margin-bottom: 3em;
 		}
 	}
@@ -26,7 +26,7 @@
 		width: 100%;
 		margin-right: auto;
 		margin-left: auto;
-		@media screen and ( min-width: $md ) {
+		@media screen and ( min-width: $sm ) {
 			margin-left: 0;
 		}
 	}
@@ -38,35 +38,35 @@
 		max-width: span( 6 );
 		margin: 0 auto;
 	}
-	@media screen and ( min-width: $md ) {
+	@media screen and ( min-width: $sm ) {
 		max-width: 100%;
 	}
-	.project {
-		@include clearfix;
+}
+
+.project {
+	@include clearfix;
+	margin-bottom: 1.5em;
+	@media screen and ( min-width: $sm ) {
+		@include with-layout( $susy-portfolio-grid ) {
+			@include span( 4 );
+		}
+		position: relative;
+		min-height: 292px;
+		margin-bottom: 3em;
 		margin-bottom: 1.5em;
-		@media screen and ( min-width: $md ) {
-			@include with-layout( $susy-portfolio-grid ) {
-				@include span( 4 );
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+	}
+	@media screen and (min-width: $md) {
+		&:hover,
+		&:active {
+			a,
+			.project-header {
+				opacity: 1;
 			}
-			position: relative;
-			min-height: 292px;
-			margin-bottom: 3em;
-			margin-bottom: 1.5em;
-			background-color: #000;
-			&:nth-of-type(3n) {
-				margin-right: 0;
-			}
-			&:hover,
-			&:active {
-				.project-header {
-					opacity: 1;
-				}
-				.project-thumbnail {
-					opacity: 0.2;
-					img {
-						opacity: 1;
-					}
-				}
+			.project-thumbnail img {
+				opacity: 0.1;
 			}
 		}
 	}
@@ -74,7 +74,6 @@
 
 .project-header {
 	max-width: 100%;
-	transition: 0.1s ease;
 	@media screen and ( min-width: $md ) {
 		position: absolute;
 		top: 0;
@@ -91,27 +90,25 @@
 		display: block;
 		color: $color__text-main;
 		line-height: 1.5;
-		@media screen and ( min-width: $md ) {
+		@media screen and ( min-width: $sm ) {
 			padding: 1.2em 1.2em 0 0;
-			color: #fff;
 		}
 	}
 }
 .project-categories {
 	display: inline-block;
-	color: $color__gray;
 	font-weight: normal;
 	a {
-		color: $color__gray;
+		color: $color__gray-dark;
 	}
 }
+
 .project-thumbnail {
 	display: block;
 	margin: 0 0 1.5em;
-	transition: 0.1s ease;
 
 	-webkit-backface-visibility: hidden;
-	@media screen and ( min-width: $md ) {
+	@media screen and ( min-width: $sm ) {
 		margin: 0;
 	}
 	img {
