@@ -16,7 +16,7 @@ function maker_jetpack_setup() {
 		'render'         => 'maker_infinite_scroll_render',
 		'type'           => 'scroll',
 		'footer_widgets' => false,
-		'footer'         => false
+		'footer'         => false,
 	) );
 
 	add_filter( 'infinite_scroll_js_settings', 'maker_load_more_text' );

@@ -7,7 +7,11 @@
 	<description>A custom set of code standard rules to check for WordPress themes.</description>
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
-	<rule ref="WordPress" />
+	<rule ref="WordPress">
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+	</rule>
 
 	<exclude-pattern>*/grunt/*</exclude-pattern>
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
