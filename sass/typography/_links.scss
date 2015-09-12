@@ -4,15 +4,15 @@ a {
 	color: $color__link;
 	background-color: transparent; // Do not remove. !normalize
 	text-decoration: none;
-	-webkit-backface-visibility: hidden;
 	
 	&:hover,
 	&:active {
 		outline: 0; // Do not remove. !normalize
-		opacity: 0.6;
+		text-decoration: underline;
 	}
 	
 	&:focus {
 		@include focus();
+		text-decoration: underline;
 	}
 }

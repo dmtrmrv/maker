@@ -42,7 +42,8 @@ $social-icons:(
 			}
 
 			@if length( $i ) == 2 {
-				&[href*='#{$url}']:hover:before {
+				&[href*='#{$url}']:hover,
+				&[href*='#{$url}']:hover:before, {
 					color: nth($i, 2);
 				}
 			}

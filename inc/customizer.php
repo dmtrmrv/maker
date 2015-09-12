@@ -162,8 +162,15 @@ function maker_custom_color_css() {
 		.entry-meta-item a:focus,
 		.widget a:hover,
 		.widget a:focus,
+		.main-navigation a:hover,
+		.main-navigation a:focus,
+		.main-navigation a:active,
 		.tags-links a:hover,
-		.tags-links a:focus {
+		.tags-links a:focus,
+		.tags-links a:focus,
+		.site-footer a:hover,
+		.site-footer a:focus,
+		.site-footer a:active {
 			color: %1$s;
 		}
 

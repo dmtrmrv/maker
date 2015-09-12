@@ -21,7 +21,12 @@
 	a {
 		display: block;
 		padding: 0.75em 0.75em 0.75em 0;
-		color: $color__gray-darker;
+		color: $color__text-main;
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__accent;
+		}
 	}
 }
 

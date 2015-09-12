@@ -6,24 +6,24 @@ Description: Used to style the TinyMCE editor.
 /**
  * Table of Contents
  * 
- * 0.1 - Normalize
- * 0.2 - Typography
- *       Headings
- *       Copy
- *       Links
- *       Blockquotes
- *       Lists
- *       Tables
- *       Code
- * 0.3 - Repeatable Patterns
- *       Images
- *       Lines
- *       Media
- *       Captions
- *       Alignments
- *       Clearings
- * 0.4 - Content
- *       Galleries
+ * 0.1 Normalize
+ * 0.2 Typography
+ *     Headings
+ *     Copy
+ *     Links
+ *     Blockquotes
+ *     Lists
+ *     Tables
+ *     Code
+ * 0.3 Repeatable Patterns
+ *     Images
+ *     Lines
+ *     Media
+ *     Captions
+ *     Alignments
+ *     Clearings
+ * 0.4 Content
+ *     Galleries
  */
 
 /**
@@ -253,20 +253,19 @@ a {
 	color: #ff2441;
 	background-color: transparent;
 	text-decoration: none;
-
-	-webkit-backface-visibility: hidden;
 }
 
 a:hover,
 a:active {
 	outline: 0;
-	opacity: 0.6;
+	text-decoration: underline;
 }
 
 a:focus {
 	outline: thin dotted;
 	outline: 5px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
+	text-decoration: underline;
 }
 
 /* Blockquotes */

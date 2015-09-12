@@ -22,59 +22,59 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /**
  * Table of Contents
  * 
- * 0.1 - Normalize
- * 0.2 - Typography
- *       Headings
- *       Copy
- *       Links
- *       Blockquotes
- *       Lists
- *       Tables
- *       Code
- * 0.3 - Repeatable Patterns
- *       Forms
- *       Buttons
- *       Images
- *       Icons     
- *       Lines
- *       Alerts
- *       Media
- *       Captions
- *       Alignments
- *       Accessibility
- *       Clearings
- * 0.4 - Structure
- * 0.5 - Header
- * 0.6 - Navigation
- *       Primary Menu
- *       Footer Menu
- *       Social Menu
- *       Pagination
- * 0.7 - Content
- *       Post Thumbnail
- *       Entry Title
- *       Entry Meta
- *       Entry Content
- *       Galleries
- *       Post Formats
- *       Post Navigation
- * 0.8 - Pages
- *       Post
- *       Page
- *       Single Portfolio Page
- *       Portfolio       
- *       Fullwidth
- *       Centered
- *       Search 
- *       404
- * 0.9 - Comments
- *       Comment Navigation
- * 1.0 - Widgets
- * 1.1 - Footer
- * 1.2 - Plugins
- *       Jetpack
- *       Contact Form 7
- * 1.5 - Media Queries
+ * 0.1 Normalize
+ * 0.2 Typography
+ *     Headings
+ *     Copy
+ *     Links
+ *     Blockquotes
+ *     Lists
+ *     Tables
+ *     Code
+ * 0.3 Repeatable Patterns
+ *     Forms
+ *     Buttons
+ *     Images
+ *     Icons     
+ *     Lines
+ *     Alerts
+ *     Media
+ *     Captions
+ *     Alignments
+ *     Accessibility
+ *     Clearings
+ * 0.4 Structure
+ * 0.5 Header
+ * 0.6 Navigation
+ *     Primary Menu
+ *     Footer Menu
+ *     Social Menu
+ *     Pagination
+ * 0.7 Content
+ *     Post Thumbnail
+ *     Entry Title
+ *     Entry Meta
+ *     Entry Content
+ *     Galleries
+ *     Post Formats
+ *     Post Navigation
+ * 0.8 Pages
+ *     Post
+ *     Page
+ *     Single Portfolio Page
+ *     Portfolio       
+ *     Fullwidth
+ *     Centered
+ *     Search 
+ *     404
+ * 0.9 Comments
+ *     Comment Navigation
+ * 1.0 Widgets
+ * 1.1 Footer
+ * 1.2 Plugins
+ *     Jetpack
+ *     Contact Form 7
+ * 1.5 Media Queries
  */
 
 /**
@@ -360,20 +360,19 @@ a {
 	color: #ff2441;
 	background-color: transparent;
 	text-decoration: none;
-
-	-webkit-backface-visibility: hidden;
 }
 
 a:hover,
 a:active {
 	outline: 0;
-	opacity: 0.6;
+	text-decoration: underline;
 }
 
 a:focus {
 	outline: thin dotted;
 	outline: 5px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
+	text-decoration: underline;
 }
 
 /* Blockquotes */
@@ -1165,6 +1164,12 @@ a.site-logo-link:before {
 	color: #58585b;
 }
 
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a:active {
+	color: #ff2441;
+}
+
 /* Toggle Hamburger */
 
 .menu-toggle {
@@ -1270,6 +1275,7 @@ a.site-logo-link:before {
 	content: '\e807';
 }
 
+.menu-social-container a[href*='behance.net']:hover,
 .menu-social-container a[href*='behance.net']:hover:before {
 	color: #1769ff;
 }
@@ -1278,6 +1284,7 @@ a.site-logo-link:before {
 	content: '\e806';
 }
 
+.menu-social-container a[href*='bitbucket.org']:hover,
 .menu-social-container a[href*='bitbucket.org']:hover:before {
 	color: #205081;
 }
@@ -1294,6 +1301,7 @@ a.site-logo-link:before {
 	content: '\e80a';
 }
 
+.menu-social-container a[href*='dribbble.com']:hover,
 .menu-social-container a[href*='dribbble.com']:hover:before {
 	color: #ea4c89;
 }
@@ -1302,6 +1310,7 @@ a.site-logo-link:before {
 	content: '\e80b';
 }
 
+.menu-social-container a[href*='facebook.com']:hover,
 .menu-social-container a[href*='facebook.com']:hover:before {
 	color: #3b5998;
 }
@@ -1314,6 +1323,7 @@ a.site-logo-link:before {
 	content: '\e80d';
 }
 
+.menu-social-container a[href*='foursquare.com']:hover,
 .menu-social-container a[href*='foursquare.com']:hover:before {
 	color: #25a0ca;
 }
@@ -1322,6 +1332,7 @@ a.site-logo-link:before {
 	content: '\e80e';
 }
 
+.menu-social-container a[href*='github.com']:hover,
 .menu-social-container a[href*='github.com']:hover:before {
 	color: #4183c4;
 }
@@ -1330,6 +1341,7 @@ a.site-logo-link:before {
 	content: '\e810';
 }
 
+.menu-social-container a[href*='instagram.com']:hover,
 .menu-social-container a[href*='instagram.com']:hover:before {
 	color: #c08d64;
 }
@@ -1338,6 +1350,7 @@ a.site-logo-link:before {
 	content: '\e811';
 }
 
+.menu-social-container a[href*='last.fm']:hover,
 .menu-social-container a[href*='last.fm']:hover:before {
 	color: #c3000d;
 }
@@ -1346,6 +1359,7 @@ a.site-logo-link:before {
 	content: '\e812';
 }
 
+.menu-social-container a[href*='linkedin.com']:hover,
 .menu-social-container a[href*='linkedin.com']:hover:before {
 	color: #0e76a8;
 }
@@ -1354,6 +1368,7 @@ a.site-logo-link:before {
 	content: '\e814';
 }
 
+.menu-social-container a[href*='pinterest.com']:hover,
 .menu-social-container a[href*='pinterest.com']:hover:before {
 	color: #c8232c;
 }
@@ -1362,6 +1377,7 @@ a.site-logo-link:before {
 	content: '\e80f';
 }
 
+.menu-social-container a[href*='plus.google.com']:hover,
 .menu-social-container a[href*='plus.google.com']:hover:before {
 	color: #dd4b39;
 }
@@ -1370,6 +1386,7 @@ a.site-logo-link:before {
 	content: '\e81a';
 }
 
+.menu-social-container a[href*='soundcloud.com']:hover,
 .menu-social-container a[href*='soundcloud.com']:hover:before {
 	color: #f70;
 }
@@ -1378,6 +1395,7 @@ a.site-logo-link:before {
 	content: '\e819';
 }
 
+.menu-social-container a[href*='spotify.com']:hover,
 .menu-social-container a[href*='spotify.com']:hover:before {
 	color: #81b71a;
 }
@@ -1386,6 +1404,7 @@ a.site-logo-link:before {
 	content: '\e817';
 }
 
+.menu-social-container a[href*='stackoverflow.com']:hover,
 .menu-social-container a[href*='stackoverflow.com']:hover:before {
 	color: #fe7a15;
 }
@@ -1394,6 +1413,7 @@ a.site-logo-link:before {
 	content: '\e81f';
 }
 
+.menu-social-container a[href*='twitter.com']:hover,
 .menu-social-container a[href*='twitter.com']:hover:before {
 	color: #00a0d1;
 }
@@ -1402,6 +1422,7 @@ a.site-logo-link:before {
 	content: '\e820';
 }
 
+.menu-social-container a[href*='vimeo.com']:hover,
 .menu-social-container a[href*='vimeo.com']:hover:before {
 	color: #86c9ef;
 }
@@ -1410,6 +1431,7 @@ a.site-logo-link:before {
 	content: '\e821';
 }
 
+.menu-social-container a[href*='vine.co']:hover,
 .menu-social-container a[href*='vine.co']:hover:before {
 	color: #00bf8f;
 }
@@ -1418,6 +1440,7 @@ a.site-logo-link:before {
 	content: '\e822';
 }
 
+.menu-social-container a[href*='vk.com']:hover,
 .menu-social-container a[href*='vk.com']:hover:before {
 	color: #45668e;
 }
@@ -1426,6 +1449,7 @@ a.site-logo-link:before {
 	content: '\e823';
 }
 
+.menu-social-container a[href*='wordpress.com']:hover,
 .menu-social-container a[href*='wordpress.com']:hover:before {
 	color: #1e8cbe;
 }
@@ -1434,6 +1458,7 @@ a.site-logo-link:before {
 	content: '\e823';
 }
 
+.menu-social-container a[href*='wordpress.org']:hover,
 .menu-social-container a[href*='wordpress.org']:hover:before {
 	color: #21759b;
 }
@@ -1442,6 +1467,7 @@ a.site-logo-link:before {
 	content: '\e825';
 }
 
+.menu-social-container a[href*='youtube.com']:hover,
 .menu-social-container a[href*='youtube.com']:hover:before {
 	color: #c4302b;
 }
@@ -1543,11 +1569,6 @@ a.site-logo-link:before {
 
 .entry-title a {
 	color: #58585b;
-}
-
-.entry-title a:hover,
-.entry-title a:focus {
-	text-decoration: none;
 }
 
 .page-header {
@@ -2363,7 +2384,13 @@ a.site-logo-link:before {
 }
 
 .site-footer a {
-	color: #939393;
+	color: #58585b;
+}
+
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer a:active {
+	color: #ff2441;
 }
 
 .site-info {
