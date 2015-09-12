@@ -1,24 +1,27 @@
 /* Social Icons */
 
 $social-icons:(
-	'behance.net':       ( 'e807', #1769FF ),
-	'bitbucket.org':     ( 'e806', #205081 ),
+	'behance.net':       ( 'e804', #1769FF ),
+	'bitbucket.org':     ( 'e800', #205081 ),
 	'codepen.io':        ( 'e805' ),
 	'delicious.com':     ( 'e808' ),
+	'deviantart.com':    ( 'e809', #ea4c89 ),
 	'dribbble.com':      ( 'e80a', #ea4c89 ),
 	'facebook.com':      ( 'e80b', #3b5998 ),
 	'flickr.com':        ( 'e80c' ),
 	'foursquare.com':    ( 'e80d', #25a0ca ),
-	'github.com':        ( 'e80e', #4183c4 ),
+	'github.com':        ( 'e806', #4183c4 ),
 	'instagram.com':     ( 'e810', #c08d64 ),
 	'last.fm':           ( 'e811', #c3000d ),
 	'linkedin.com':      ( 'e812', #0e76a8 ),
 	'pinterest.com':     ( 'e814', #c8232c ),
-	'plus.google.com':   ( 'e80f', #dd4b39 ),
+	'slack.com':         ( 'e81c' ),
+	'slideshare.com':    ( 'e81b' ),
 	'soundcloud.com':    ( 'e81a', #ff7700 ),
 	'spotify.com':       ( 'e819', #81b71a ),
+	'stackexchange.com': ( 'e818' ),
 	'stackoverflow.com': ( 'e817', #fe7a15 ),
-	'twitter.com':       ( 'e81f', #00a0d1 ),
+	'twitter.com':       ( 'e813', #00a0d1 ),
 	'vimeo.com':         ( 'e820', #86c9ef ),
 	'vine.co':           ( 'e821', #00bf8f ),
 	'vk.com':            ( 'e822', #45668e ),
@@ -29,11 +32,12 @@ $social-icons:(
 
 .menu-social-container {
 	a {
+		color: $color__gray;
 		&:before {
 			@extend %icon;
 			width: 1.2em;
 			margin-right: 0.5em;
-			color: $color__gray;
+			color: lighten( $color__gray, 10% );
 		}
 		@each $url, $i in $social-icons {
 			

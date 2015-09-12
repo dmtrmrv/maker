@@ -6,6 +6,11 @@
 	@extend .clear;
 	padding: 1.5em 0 1.5em 0;
 	color: $color__gray;
+}
+
+.site-info {
+	display: block;
+	margin-bottom: 1.5em;
 	a {
 		color: $color__text-main;
 		&:hover,
@@ -14,11 +19,6 @@
 			color: $color__accent;
 		}
 	}
-}
-
-.site-info {
-	display: block;
-	margin-bottom: 1.5em;
 }
 
 @media screen and ( min-width: $xs ) {
