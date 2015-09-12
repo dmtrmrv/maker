@@ -1,0 +1,87 @@
+/* Portfolio Grid */
+
+.portfolio-grid {
+	@extend .clear;
+	@include with-layout( $susy-static ) {
+		max-width: span( 6 );
+		margin: 0 auto;
+	}
+	@media screen and ( min-width: $sm ) {
+		max-width: 100%;
+	}
+}
+
+.project {
+	@include clearfix;
+	margin-bottom: 1.5em;
+	background-color: $color__gray-light;
+	padding: 1.5em 2em;
+	&.has-post-thumbnail {
+		background-color: transparent;
+		padding: 0;
+	}
+	@media screen and ( min-width: $sm ) {
+		@include with-layout( $susy-portfolio-grid ) {
+			@include span( 4 );
+		}
+		position: relative;
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+		&:hover,
+		&:active {
+			a,
+			.project-header {
+				opacity: 1;
+			}
+			.project-thumbnail img {
+				opacity: 0.1;
+			}
+		}
+	}
+}
+
+.project-header {
+	@extend .clear;
+	max-width: 100%;
+	@media screen and ( min-width: $sm ) {
+		.has-post-thumbnail & {
+			position: absolute;
+			top: 1.5em;
+			left: 2em;
+			opacity: 0;
+		}
+	}
+}
+.project-title {
+	margin: 0;
+	a {
+		@include font-size( 1 );
+		display: block;
+		color: $color__text-main;
+		line-height: 1.5;
+	}
+}
+.project-categories {
+	display: inline-block;
+	color: $color__gray-dark;
+	font-weight: normal;
+	a {
+		color: $color__gray-dark;
+	}
+}
+
+.project-thumbnail {
+	display: block;
+	margin: 0 0 1.5em;
+
+	-webkit-backface-visibility: hidden;
+	@media screen and ( min-width: $sm ) {
+		margin: 0;
+	}
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}

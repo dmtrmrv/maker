@@ -978,6 +978,8 @@ blockquote.alignright {
 .portfolio-navigation:after,
 .post-thumbnail:after,
 .page-header:after,
+.portfolio-grid:after,
+.project-header:after,
 .gallery:after,
 .blog .post:after,
 .archive .post:after,
@@ -1016,7 +1018,6 @@ blockquote.alignright {
 .page-template-portfolio-toolkit .entry-header:after,
 .page-template-portfolio-toolkit .entry-content:after,
 .page-template-portfolio-toolkit .comments-area:after,
-.portfolio-grid:after,
 .page-template-fullwidth .hentry:after,
 .page-template-centered .hentry:after,
 .page-template-centered .content-area:after,
@@ -1571,6 +1572,8 @@ a.site-logo-link:before {
 	color: #58585b;
 }
 
+/* Page Header */
+
 .page-header {
 	max-width: 474px;
 	margin: 0 auto 1.5em;
@@ -1646,6 +1649,70 @@ a.site-logo-link:before {
 	   -moz-hyphens: auto;
 	    -ms-hyphens: auto;
 	        hyphens: auto;
+}
+
+/* Portfolio Grid */
+
+.portfolio-grid {
+	max-width: 474px;
+	margin: 0 auto;
+}
+
+.project {
+	margin-bottom: 1.5em;
+	padding: 1.5em 2em;
+	background-color: #f0f0f0;
+}
+
+.project:before,
+.project:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+
+.project.has-post-thumbnail {
+	padding: 0;
+	background-color: transparent;
+}
+
+.project-header {
+	max-width: 100%;
+}
+
+.project-title {
+	margin: 0;
+}
+
+.project-title a {
+	display: block;
+	color: #58585b;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+.project-categories {
+	display: inline-block;
+	color: #939393;
+	font-weight: normal;
+}
+
+.project-categories a {
+	color: #939393;
+}
+
+.project-thumbnail {
+	display: block;
+	margin: 0 0 1.5em;
+
+	-webkit-backface-visibility: hidden;
+}
+
+.project-thumbnail img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 /* Galleries */
@@ -1759,13 +1826,6 @@ a.site-logo-link:before {
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption,
 .gallery-columns-10 .gallery-caption {
-	display: none;
-}
-
-/* Post Formats */
-
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
 	display: none;
 }
 
@@ -1933,60 +1993,6 @@ a.site-logo-link:before {
 	max-width: 474px;
 	margin-right: auto;
 	margin-left: auto;
-}
-
-.portfolio-grid {
-	max-width: 474px;
-	margin: 0 auto;
-}
-
-.project {
-	margin-bottom: 1.5em;
-}
-
-.project:before,
-.project:after {
-	display: table;
-	clear: both;
-	content: '';
-}
-
-.project-header {
-	max-width: 100%;
-}
-
-.project-title {
-	margin: 0;
-}
-
-.project-title a {
-	display: block;
-	color: #58585b;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
-.project-categories {
-	display: inline-block;
-	font-weight: normal;
-}
-
-.project-categories a {
-	color: #939393;
-}
-
-.project-thumbnail {
-	display: block;
-	margin: 0 0 1.5em;
-
-	-webkit-backface-visibility: hidden;
-}
-
-.project-thumbnail img {
-	display: block;
-	width: 100%;
-	height: auto;
 }
 
 /* Fullwidth */
@@ -2599,6 +2605,44 @@ input[type='submit'].wpcf7-submit {
 		display: block;
 	}
 
+	.portfolio-grid {
+		max-width: 100%;
+	}
+
+	.project {
+		float: left;
+		position: relative;
+		width: 31.70732%;
+		margin-right: 2.43902%;
+	}
+
+	.project:nth-of-type(3n) {
+		margin-right: 0;
+	}
+
+	.project:hover a,
+	.project:hover .project-header,
+	.project:active a,
+	.project:active .project-header {
+		opacity: 1;
+	}
+
+	.project:hover .project-thumbnail img,
+	.project:active .project-thumbnail img {
+		opacity: 0.1;
+	}
+
+	.has-post-thumbnail .project-header {
+		position: absolute;
+		top: 1.5em;
+		left: 2em;
+		opacity: 0;
+	}
+
+	.project-thumbnail {
+		margin: 0;
+	}
+
 	.page-template-portfolio-jetpack .page,
 	.page-template-portfolio-toolkit .page {
 		margin-bottom: 3em;
@@ -2611,32 +2655,6 @@ input[type='submit'].wpcf7-submit {
 	.page-template-portfolio-toolkit .entry-content,
 	.page-template-portfolio-toolkit .comments-area {
 		margin-left: 0;
-	}
-
-	.portfolio-grid {
-		max-width: 100%;
-	}
-
-	.project {
-		float: left;
-		position: relative;
-		width: 31.70732%;
-		min-height: 292px;
-		margin-right: 2.43902%;
-		margin-bottom: 3em;
-		margin-bottom: 1.5em;
-	}
-
-	.project:nth-of-type(3n) {
-		margin-right: 0;
-	}
-
-	.project-title a {
-		padding: 1.2em 1.2em 0 0;
-	}
-
-	.project-thumbnail {
-		margin: 0;
 	}
 
 	.error404 .content-area {
@@ -2795,28 +2813,6 @@ input[type='submit'].wpcf7-submit {
 	.single-portfolio .project-meta-item-name,
 	.single-jetpack-portfolio .project-meta-item-name {
 		text-align: right;
-	}
-
-	.project:hover a,
-	.project:hover .project-header,
-	.project:active a,
-	.project:active .project-header {
-		opacity: 1;
-	}
-
-	.project:hover .project-thumbnail img,
-	.project:active .project-thumbnail img {
-		opacity: 0.1;
-	}
-
-	.project-header {
-		position: absolute;
-		top: 0;
-		left: 1.5em;
-	}
-
-	.has-post-thumbnail .project-header {
-		opacity: 0;
 	}
 
 	.page-template-fullwidth .hentry {
