@@ -78,9 +78,14 @@
 }
 
 .reply {
+	display: none;
 	position: absolute;
 	top: 0;
 	right: 0;
+}
+
+.comment-body:hover .reply & {
+	display: block;
 }
 
 .comment-content {
