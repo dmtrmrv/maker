@@ -463,7 +463,7 @@ table {
 td,
 th {
 	padding: 0.6875em 0.75em 0.75em;
-	border-bottom: 1px solid #ababab;
+	border-bottom: 1px solid #f0f0f0;
 	text-align: left;
 }
 
@@ -2291,8 +2291,8 @@ a.site-logo-link:before {
 }
 
 .widget a:hover,
+.widget a:active,
 .widget a:focus {
-	opacity: 1;
 	color: #ff2441;
 }
 
@@ -2344,9 +2344,16 @@ a.site-logo-link:before {
 	text-align: right;
 }
 
-.widget.widget_recent_comments ul,
-.widget.widget_recent_entries ul {
-	list-style-type: disc;
+.widget.widget_recent_comments li,
+.widget.widget_recent_entries li {
+	margin-bottom: 0.75em;
+	padding-bottom: 0.6875em;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.widget_rss .widget-title a {
+	color: #58585b;
+	text-decoration: underline;
 }
 
 .widget_rss .widget-title a:first-child {
@@ -2354,7 +2361,9 @@ a.site-logo-link:before {
 }
 
 .widget_rss li {
-	margin-bottom: 1.5em;
+	margin-bottom: 0.75em;
+	padding-bottom: 0.6875em;
+	border-bottom: 1px solid #f0f0f0;
 }
 
 .widget_rss a {
@@ -2364,16 +2373,13 @@ a.site-logo-link:before {
 .widget_rss cite {
 	margin: 0;
 	color: #ababab;
+	font-style: normal;
 }
 
 .widget_rss .rss-date {
 	display: block;
 	margin: 0;
 	color: #ababab;
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 24px;
-	line-height: 1.5rem;
 }
 
 .widget.widget_nav_menu ul ul {

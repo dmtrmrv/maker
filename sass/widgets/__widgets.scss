@@ -18,8 +18,8 @@
 	a {
 		color: $color__gray;
 		&:hover,
+		&:active,
 		&:focus {
-			opacity: 1;
 			color: $color__accent;
 		}
 	}
@@ -70,19 +70,27 @@
 
 .widget.widget_recent_comments,
 .widget.widget_recent_entries {
-	ul {
-		list-style-type: disc;
+	li {
+		border-bottom: 1px solid $color__gray-light;
+		margin-bottom: 0.75em;
+		padding-bottom: em_minus_px( 0.75em, 1px );
 	}
 }
 
 .widget_rss {
 	.widget-title {
+		a {
+			color: $color__text-main;
+			text-decoration: underline;
+		}
 		a:first-child {
 			display: none;
 		}
 	}
 	li {
-		margin-bottom: 1.5em;
+		border-bottom: 1px solid $color__gray-light;
+		margin-bottom: 0.75em;
+		padding-bottom: em_minus_px( 0.75em, 1px );
 	}
 	a {
 		display: block;
@@ -90,10 +98,9 @@
 	cite {
 		margin: 0;
 		color: $color__gray;
+		font-style: normal;
 	}
 	.rss-date {
-		@include font-size( 0.75 );
-		@include line-height( 1.5 );
 		display: block;
 		margin: 0;
 		color: $color__gray;
