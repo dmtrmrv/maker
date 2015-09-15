@@ -2640,6 +2640,7 @@ input[type='submit'].wpcf7-submit {
 		float: left;
 		position: relative;
 		width: 31.70732%;
+		min-height: 219px;
 		margin-right: 2.43902%;
 	}
 
@@ -2727,6 +2728,10 @@ input[type='submit'].wpcf7-submit {
 	.page-header {
 		max-width: 100%;
 		margin-left: 0;
+	}
+
+	.project {
+		min-height: 292px;
 	}
 
 	.blog .entry-header,
@@ -2871,5 +2876,9 @@ input[type='submit'].wpcf7-submit {
 	.wrap,
 	.site-content {
 		max-width: 1128px;
+	}
+
+	.project {
+		min-height: 312px;
 	}
 }
