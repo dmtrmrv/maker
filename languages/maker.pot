@@ -139,55 +139,55 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#: inc/template-tags.php:367 inc/template-tags.php:513
+#: inc/template-tags.php:379 inc/template-tags.php:525
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:368 inc/template-tags.php:517
+#: inc/template-tags.php:380 inc/template-tags.php:529
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:369 inc/template-tags.php:509
+#: inc/template-tags.php:381 inc/template-tags.php:521
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:383
+#: inc/template-tags.php:395
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:387
+#: inc/template-tags.php:399
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:388
+#: inc/template-tags.php:400
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:404
+#: inc/template-tags.php:416
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:407
+#: inc/template-tags.php:419
 msgid "Older Comments"
 msgstr ""
 
-#: inc/template-tags.php:408
+#: inc/template-tags.php:420
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/template-tags.php:423
+#: inc/template-tags.php:435
 msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:424
+#: inc/template-tags.php:436
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:428
+#: inc/template-tags.php:440
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:439
+#: inc/template-tags.php:451
 msgid "%1$s theme by %2$s"
 msgstr ""
 
@@ -216,8 +216,8 @@ msgid ""
 msgstr ""
 
 #: template-parts/content-page.php:22
-#: template-parts/content-single-portfolio-jetpack.php:27
-#: template-parts/content-single-portfolio-toolkit.php:27
+#: template-parts/content-single-portfolio-jetpack.php:29
+#: template-parts/content-single-portfolio-toolkit.php:29
 #: template-parts/content-single.php:24 template-parts/content.php:25
 msgid "Pages:"
 msgstr ""

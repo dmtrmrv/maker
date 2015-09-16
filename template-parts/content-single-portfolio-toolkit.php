@@ -12,9 +12,11 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		
-		<div class="project-excerpt">
-			<?php the_excerpt(); ?>
-		</div>
+		<?php if ( has_excerpt() ) : ?>
+			<div class="project-excerpt">
+				<?php maker_manual_excerpt(); ?>
+			</div>
+		<?php endif; ?>
 
 		<?php maker_portfolio_toolkit_meta(); ?>
 

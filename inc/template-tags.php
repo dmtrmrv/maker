@@ -358,6 +358,18 @@ function maker_post_thumbnail() {
 }
 endif;
 
+if ( ! function_exists( 'maker_manual_excerpt' ) ) :
+/**
+ * Displays excerpt set manually.
+ */
+function maker_manual_excerpt() {
+	global $post;
+	if ( $post->post_excerpt ) {
+		echo '<p>' . wp_kses_post( $post->post_excerpt ) . '</p>';
+	}
+}
+endif;
+
 if ( ! function_exists( 'maker_posts_navigation' ) ) :
 /**
  * Displays Posts Navigation a.k.a Older/Newer posts links on a blog page.
