@@ -187,14 +187,6 @@ function maker_scripts() {
 	}
 
 	/*
-	 * Disable infinite scroll styles.
-	 * Let's save one request and some bandwidth.
-	 */
-	if ( wp_style_is( 'the-neverending-homepage', 'registered' ) ) {
-		wp_deregister_style( 'the-neverending-homepage' );
-	}
-
-	/*
 	 * Do the same thing with Contact Form 7.
 	 */
 	if ( wp_style_is( 'contact-form-7', 'registered' ) ) {
@@ -202,6 +194,17 @@ function maker_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'maker_scripts' );
+
+/**
+ * Disable Jetpack Infinite scroll styles.
+ */
+function maker_disable_scripts() {
+	if ( wp_style_is( 'the-neverending-homepage', 'registered' ) ) {
+		wp_deregister_style( 'the-neverending-homepage' );
+	}
+}
+add_filter( 'jetpack_implode_frontend_css', '__return_false' );
+add_action( 'wp_enqueue_scripts', 'maker_disable_scripts' );
 
 /**
  * Custom template tags for this theme.
