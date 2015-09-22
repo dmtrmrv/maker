@@ -54,12 +54,6 @@ function maker_customize_register( $wp_customize ) {
 		'type'    => 'checkbox',
 	) );
 
-	// Accent Color.
-	$wp_customize->add_setting( 'maker_accent_color', array(
-		'default'           => '#ff2441',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
 	// Portfolio.
 	$wp_customize->add_section( 'maker_portfolio' , array(
 		'title'    => __( 'Portfolio', 'maker' ),
@@ -77,17 +71,6 @@ function maker_customize_register( $wp_customize ) {
 		'type'    => 'checkbox',
 		'description' => __( 'Choose to display page content before the portfolio grid or not.', 'maker' ),
 	) );
-
-	$wp_customize -> add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'maker_accent_color',
-			array(
-				'label'   => __( 'Accent Color', 'maker' ),
-				'section' => 'colors',
-			)
-		)
-	);
 }
 add_action( 'customize_register', 'maker_customize_register' );
 
@@ -143,45 +126,3 @@ function maker_customize_preview_js() {
 	);
 }
 add_action( 'customize_preview_init', 'maker_customize_preview_js' );
-
-/**
- * Enqueues front-end CSS for the custom color.
- */
-function maker_custom_color_css() {
-	$color = get_theme_mod( 'maker_accent_color' );
-
-	// Don't do anything if the current color is the default.
-	if ( ! $color || '#ff2441' == $color  ) {
-		return;
-	}
-
-	$css = '
-		a,
-		.entry-meta-item.cat-links a,
-		.entry-meta-item a:hover,
-		.entry-meta-item a:focus,
-		.widget a:hover,
-		.widget a:focus,
-		.main-navigation a:hover,
-		.main-navigation a:focus,
-		.main-navigation a:active,
-		.tags-links a:hover,
-		.tags-links a:focus,
-		.tags-links a:focus,
-		.site-footer a:hover,
-		.site-footer a:focus,
-		.site-footer a:active {
-			color: %1$s;
-		}
-
-		.comment-form .submit,
-		input[type="submit"].search-submit,
-		input[type="submit"].wpcf7-submit {
-			background-color: %1$s;
-			border-color: %1$s;
-		}	
-	';
-
-	wp_add_inline_style( 'maker-style', sprintf( $css, $color ) );
-}
-add_action( 'wp_enqueue_scripts', 'maker_custom_color_css', 11 );

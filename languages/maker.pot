@@ -44,7 +44,7 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:104
 msgid "Sidebar"
 msgstr ""
 
@@ -64,20 +64,16 @@ msgstr ""
 msgid "Display Tagline"
 msgstr ""
 
-#: inc/customizer.php:65
+#: inc/customizer.php:59
 msgid "Portfolio"
 msgstr ""
 
-#: inc/customizer.php:75
+#: inc/customizer.php:69
 msgid "Display Page Content"
 msgstr ""
 
-#: inc/customizer.php:78
+#: inc/customizer.php:72
 msgid "Choose to display page content before the portfolio grid or not."
-msgstr ""
-
-#: inc/customizer.php:86
-msgid "Accent Color"
 msgstr ""
 
 #: inc/extras.php:75
