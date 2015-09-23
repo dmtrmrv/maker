@@ -54,13 +54,14 @@ a.site-logo-link {
 
 .site-description {
 	@include font-size( 0.75 );
-	margin-top: -2em;
+	margin-top: -24px;
 	margin-bottom: 1em;
 	padding-top: 0;
 	color: $color__gray;
 	font-weight: normal;
 	letter-spacing: normal;
 	text-transform: none;
+	line-height: 1.5;
 }
 
 .site-title.screen-reader-text + .site-description {

@@ -1036,13 +1036,18 @@ blockquote.alignright {
  * Structure
  */
 
-.wrap,
-.site-content {
-	max-width: 100%;
+.site {
+	max-width: 1128px;
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 5%;
 	padding-left: 5%;
+	background-color: #fff;
+}
+
+.wrap,
+.site-content {
+	max-width: 100%;
 }
 
 .content-area {
@@ -1102,13 +1107,14 @@ a.site-logo-link:before {
 }
 
 .site-description {
-	margin-top: -2em;
+	margin-top: -24px;
 	margin-bottom: 1em;
 	padding-top: 0;
 	color: #ababab;
 	font-size: 12px;
 	font-size: 0.75rem;
 	font-weight: normal;
+	line-height: 1.5;
 	letter-spacing: normal;
 	text-transform: none;
 }
@@ -2873,11 +2879,6 @@ input[type='submit'].wpcf7-submit {
 }
 
 @media screen and (min-width: 1128px) {
-	.wrap,
-	.site-content {
-		max-width: 1128px;
-	}
-
 	.project {
 		min-height: 312px;
 	}

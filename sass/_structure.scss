@@ -2,16 +2,18 @@
  * Structure
  */
 
-.wrap {
-	@extend .clear;
-	max-width: 100%;
+.site {
+	max-width: 1128px;
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 5%;
 	padding-left: 5%;
-	@media screen and ( min-width: $lg ) {
-		max-width: 1128px;
-	}
+	background-color: #fff;
+}
+
+.wrap {
+	@extend .clear;
+	max-width: 100%;
 }
 
 .site-content {

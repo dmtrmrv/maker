@@ -36,7 +36,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:61 header.php:34
+#: functions.php:61 header.php:33
 msgid "Primary Menu"
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:22
+#: header.php:21
 msgid "Skip to content"
 msgstr ""
 
