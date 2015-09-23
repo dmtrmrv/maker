@@ -45,7 +45,7 @@ p > video {
 		margin-top: 1.5em;
 	}
 	.wp-playlist-light {
-		color: $color__text-main;
+		color: $color__text;
 		background-color: transparent;
 	}
 	.wp-playlist-current-item {
@@ -72,7 +72,7 @@ p > video {
 		text-transform: none;
 	}
 	.wp-playlist-item-title {
-		color: $color__text-main;
+		color: $color__text;
 	}
 	.wp-playlist-playing {
 		border-bottom: 1px solid $color__gray-light;

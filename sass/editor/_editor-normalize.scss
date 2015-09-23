@@ -26,7 +26,7 @@ body {
 	max-width: 474px;
 	font-family: inherit;
 	margin: 3em 5%;
-	color: $color__text-main;
+	color: $color__text;
 	line-height: $font__line-height-body;
 	background: $color__background-body;
 	@media screen and ( min-width: $sm ) {
@@ -99,7 +99,7 @@ dfn {
 mark {
 	// background: #ff0;
 	// color: #000;
-	color: $color__text-main;
+	color: $color__text;
 	background: $color__background-ins;
 	text-decoration: none;
 }

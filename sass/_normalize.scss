@@ -24,7 +24,7 @@ html {
 body {
 	margin: 0;
 	// Addition. Styling. 
-	color: $color__text-main;
+	color: $color__text;
 	line-height: $font__line-height-body;
 	background: $color__background-body;
 }
@@ -94,7 +94,7 @@ dfn {
 mark {
 	// background: #ff0;
 	// color: #000;
-	color: $color__text-main;
+	color: $color__text;
 	background: $color__background-ins;
 	text-decoration: none;
 }

@@ -48,7 +48,7 @@ html {
 body {
 	max-width: 474px;
 	margin: 3em 5%;
-	color: #58585b;
+	color: #585858;
 	background: #fff;
 	font-family: inherit;
 	line-height: 1.5;
@@ -112,8 +112,8 @@ i {
 
 mark,
 ins {
-	color: #58585b;
-	background: #f0f0f0;
+	color: #585858;
+	background: #f1f1f1;
 	text-decoration: none;
 }
 
@@ -188,7 +188,7 @@ h6 {
 	clear: both;
 	margin: 0 0 24px 0;
 	margin: 0 0 1.5rem 0;
-	color: #58585b;
+	color: #585858;
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	line-height: 24px;
@@ -274,8 +274,8 @@ blockquote {
 	margin: 0 0 1.3333333333em 0;
 	padding: 1.22222em 0 1.27778em;
 	border-top: 2px solid #939393;
-	border-bottom: 1px solid #ababab;
-	color: #58585b;
+	border-bottom: 1px solid #aaa;
+	color: #585858;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -357,7 +357,7 @@ dd {
 
 .mce-item-table td,
 .mce-item-table th {
-	border-bottom: 1px solid #ababab;
+	border-bottom: 1px solid #aaa;
 }
 
 .mce-item-table thead th {
@@ -375,14 +375,14 @@ table {
 td,
 th {
 	padding: 0.6875em 0.75em 0.75em;
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f1f1f1;
 	text-align: left;
 }
 
 thead th {
 	padding: 0.91667em 1em 0.91667em;
 	border-bottom: 2px solid #939393;
-	background-color: #f0f0f0;
+	background-color: #f1f1f1;
 	font-size: 12px;
 	font-size: 0.75rem;
 	font-weight: bold;
@@ -404,7 +404,7 @@ pre {
 	max-width: 100%;
 	margin-bottom: 1.6em;
 	padding: 1.6em;
-	background: #f0f0f0;
+	background: #f1f1f1;
 	font-family: 'Courier 10 Pitch', Courier, monospace;
 	line-height: 1.6;
 	word-wrap: initial;
@@ -440,7 +440,7 @@ hr {
 	margin-top: -2px;
 	margin-bottom: 1.5em;
 	border: 0;
-	background-color: #f0f0f0;
+	background-color: #f1f1f1;
 }
 
 /* Media. Editor modifications */
@@ -511,7 +511,7 @@ p > video {
 }
 
 .mce-content-body .wp-playlist-light {
-	color: #58585b;
+	color: #585858;
 	background-color: transparent;
 }
 
@@ -531,12 +531,12 @@ p > video {
 }
 
 .mce-content-body .wp-playlist-item {
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f1f1f1;
 }
 
 .mce-content-body .wp-playlist-caption,
 .mce-content-body [class*='wp-playlist-item-'] {
-	color: #ababab;
+	color: #aaa;
 	font-size: 16px;
 	font-size: 1rem;
 	font-style: normal;
@@ -546,12 +546,12 @@ p > video {
 }
 
 .mce-content-body .wp-playlist-item-title {
-	color: #58585b;
+	color: #585858;
 }
 
 .mce-content-body .wp-playlist-playing {
-	border-bottom: 1px solid #f0f0f0;
-	background-color: #f0f0f0;
+	border-bottom: 1px solid #f1f1f1;
+	background-color: #f1f1f1;
 	font-weight: normal;
 }
 
