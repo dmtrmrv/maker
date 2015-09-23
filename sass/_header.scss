@@ -48,7 +48,7 @@ a.site-logo-link {
 	margin-bottom: 0;
 	padding: 1em 0;
 	a {
-		color: $color__text;
+		color: $color__text-primary;
 	}
 }
 
@@ -57,7 +57,7 @@ a.site-logo-link {
 	margin-top: -24px;
 	margin-bottom: 1em;
 	padding-top: 0;
-	color: $color__gray;
+	color: $color__text-secondary;
 	font-weight: normal;
 	letter-spacing: normal;
 	text-transform: none;

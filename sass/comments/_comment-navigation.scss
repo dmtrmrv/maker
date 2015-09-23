@@ -24,7 +24,7 @@
 	.nav-pages {
 		display: inline-block;
 		float: right;
-		color: $color__gray;
+		color: $color__text-secondary;
 		text-align: right;
 	}
 	.nav-previous a {
@@ -34,7 +34,7 @@
 	.nav-next a:after {
 		@extend %icon;
 		margin: 0 0.2em;
-		color: $color__gray;
+		color: $color__text-secondary;
 	}
 	.nav-previous a:before {
 		margin: 0 0.5em 0 0;

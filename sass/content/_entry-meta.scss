@@ -3,7 +3,7 @@
 .entry-meta-item {
 	display: block;
 	a {
-		color: $color__gray;
+		color: $color__text-secondary;
 		&:hover,
 		&:focus {
 			opacity: 1;
@@ -40,7 +40,7 @@
 	a {
 		display: inline-block;
 		margin-right: 0.5em;
-		color: $color__gray;
+		color: $color__text-secondary;
 		&:hover,
 		&:focus {
 			opacity: 1;

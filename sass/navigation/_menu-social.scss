@@ -32,12 +32,12 @@ $social-icons:(
 
 .menu-social-container {
 	a {
-		color: $color__gray;
+		color: $color__text-secondary;
 		&:before {
 			@extend %icon;
 			width: 1.2em;
 			margin-right: 0.5em;
-			color: lighten( $color__gray, 10% );
+			color: $color__text-secondary;
 		}
 		@each $url, $i in $social-icons {
 			

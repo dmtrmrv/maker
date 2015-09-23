@@ -380,9 +380,8 @@ a:focus {
 blockquote {
 	margin: 0 0 1.3333333333em 0;
 	padding: 1.22222em 0 1.27778em;
-	border-top: 2px solid #939393;
-	border-bottom: 1px solid #aaa;
-	color: #585858;
+	border-top: 2px solid #585858;
+	border-bottom: 1px solid #a4a4a4;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -469,7 +468,7 @@ th {
 
 thead th {
 	padding: 0.91667em 1em 0.91667em;
-	border-bottom: 2px solid #939393;
+	border-bottom: 2px solid #a4a4a4;
 	background-color: #f1f1f1;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -549,24 +548,24 @@ input[type='search'] {
 }
 
 label {
-	color: #939393;
+	color: #a4a4a4;
 }
 
 ::-webkit-input-placeholder {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 :-moz-placeholder {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 ::-moz-placeholder {
 	opacity: 1;
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 input:-ms-input-placeholder {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .post-password-form {
@@ -613,11 +612,11 @@ input[type='submit'],
 	margin-bottom: 0;
 	padding: 0.625em 2em 0.625em;
 	border: 2px solid;
-	border-color: #aaa;
+	border-color: #a4a4a4;
 	border-radius: 3px;
 	-webkit-appearance: none;
 	color: #585858;
-	background-color: #aaa;
+	background-color: #a4a4a4;
 	background-image: none;
 	font-size: 16px;
 	font-size: 1rem;
@@ -841,7 +840,7 @@ p > video {
 
 #content .wp-playlist-caption,
 #content [class*='wp-playlist-item-'] {
-	color: #aaa;
+	color: #a4a4a4;
 	font-size: 16px;
 	font-size: 1rem;
 	font-style: normal;
@@ -876,7 +875,7 @@ p > video {
 .wp-caption .wp-caption-text {
 	display: block;
 	margin: 1em 0;
-	color: #939393;
+	color: #a4a4a4;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -1110,7 +1109,7 @@ a.site-logo-link:before {
 	margin-top: -24px;
 	margin-bottom: 1em;
 	padding-top: 0;
-	color: #aaa;
+	color: #a4a4a4;
 	font-size: 12px;
 	font-size: 0.75rem;
 	font-weight: normal;
@@ -1273,13 +1272,13 @@ a.site-logo-link:before {
 /* Social Icons */
 
 .menu-social-container a {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .menu-social-container a:before {
 	width: 1.2em;
 	margin-right: 0.5em;
-	color: #c3c3c3;
+	color: #a4a4a4;
 }
 
 .menu-social-container a[href*='behance.net']:before {
@@ -1605,11 +1604,10 @@ a.site-logo-link:before {
 
 .entry-meta-item {
 	display: block;
-	color: #585858;
 }
 
 .entry-meta-item a {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .entry-meta-item a:hover,
@@ -1644,7 +1642,7 @@ a.site-logo-link:before {
 .tags-links a {
 	display: inline-block;
 	margin-right: 0.5em;
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .tags-links a:hover,
@@ -1716,12 +1714,12 @@ a.site-logo-link:before {
 
 .project-categories {
 	display: inline-block;
-	color: #939393;
+	color: #a4a4a4;
 	font-weight: normal;
 }
 
 .project-categories a {
-	color: #939393;
+	color: #a4a4a4;
 }
 
 .project-thumbnail {
@@ -1858,7 +1856,7 @@ a.site-logo-link:before {
 }
 
 .post-navigation span {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 /**
@@ -1985,7 +1983,7 @@ a.site-logo-link:before {
 .single-portfolio .project-meta-item-name,
 .single-jetpack-portfolio .project-meta-item-name {
 	padding-right: 1em;
-	color: #aaa;
+	color: #a4a4a4;
 	text-align: left;
 }
 
@@ -2154,7 +2152,7 @@ a.site-logo-link:before {
 }
 
 .author-name span {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .comment-metadata {
@@ -2191,7 +2189,7 @@ a.site-logo-link:before {
 }
 
 .comment-awaiting-moderation {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .comment-reply-title small {
@@ -2270,7 +2268,7 @@ a.site-logo-link:before {
 .comment-navigation .nav-pages {
 	display: inline-block;
 	float: right;
-	color: #aaa;
+	color: #a4a4a4;
 	text-align: right;
 }
 
@@ -2281,7 +2279,7 @@ a.site-logo-link:before {
 .comment-navigation .nav-previous a:before,
 .comment-navigation .nav-next a:after {
 	margin: 0 0.2em;
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .comment-navigation .nav-previous a:before {
@@ -2314,7 +2312,7 @@ a.site-logo-link:before {
 }
 
 .widget a {
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .widget a:hover,
@@ -2329,7 +2327,7 @@ a.site-logo-link:before {
 
 .widget_calendar caption {
 	color: #fff;
-	background-color: #939393;
+	background-color: #a4a4a4;
 	font-size: 10px;
 	font-size: 0.625rem;
 	font-weight: normal;
@@ -2399,14 +2397,14 @@ a.site-logo-link:before {
 
 .widget_rss cite {
 	margin: 0;
-	color: #aaa;
+	color: #a4a4a4;
 	font-style: normal;
 }
 
 .widget_rss .rss-date {
 	display: block;
 	margin: 0;
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .widget.widget_nav_menu ul ul {
@@ -2419,22 +2417,12 @@ a.site-logo-link:before {
 
 .site-footer {
 	padding: 1.5em 0 1.5em 0;
-	color: #aaa;
+	color: #a4a4a4;
 }
 
 .site-info {
 	display: block;
 	margin-bottom: 1.5em;
-}
-
-.site-info a {
-	color: #585858;
-}
-
-.site-info a:hover,
-.site-info a:focus,
-.site-info a:active {
-	color: #ff2441;
 }
 
 /**
@@ -2512,7 +2500,7 @@ input[type='submit'].wpcf7-submit {
 }
 
 .wpcf7 .placeheld {
-	color: #939393;
+	color: #a4a4a4;
 }
 
 /**

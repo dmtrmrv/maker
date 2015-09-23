@@ -273,9 +273,8 @@ a:focus {
 blockquote {
 	margin: 0 0 1.3333333333em 0;
 	padding: 1.22222em 0 1.27778em;
-	border-top: 2px solid #939393;
-	border-bottom: 1px solid #aaa;
-	color: #585858;
+	border-top: 2px solid #585858;
+	border-bottom: 1px solid #a4a4a4;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -357,11 +356,11 @@ dd {
 
 .mce-item-table td,
 .mce-item-table th {
-	border-bottom: 1px solid #aaa;
+	border-bottom: 1px solid #f1f1f1;
 }
 
 .mce-item-table thead th {
-	border-bottom: 2px solid #939393;
+	border-bottom: 2px solid #a4a4a4;
 }
 
 /* Tables */
@@ -381,7 +380,7 @@ th {
 
 thead th {
 	padding: 0.91667em 1em 0.91667em;
-	border-bottom: 2px solid #939393;
+	border-bottom: 2px solid #a4a4a4;
 	background-color: #f1f1f1;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -536,7 +535,7 @@ p > video {
 
 .mce-content-body .wp-playlist-caption,
 .mce-content-body [class*='wp-playlist-item-'] {
-	color: #aaa;
+	color: #a4a4a4;
 	font-size: 16px;
 	font-size: 1rem;
 	font-style: normal;
@@ -572,7 +571,7 @@ p > video {
 	display: block;
 	margin: 1em 0;
 	padding: 0;
-	color: #939393;
+	color: #a4a4a4;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;

@@ -66,16 +66,16 @@
 	a {
 		@include font-size( 1 );
 		display: block;
-		color: $color__text;
+		color: $color__text-primary;
 		line-height: 1.5;
 	}
 }
 .project-categories {
 	display: inline-block;
-	color: $color__gray-dark;
+	color: $color__text-secondary;
 	font-weight: normal;
 	a {
-		color: $color__gray-dark;
+		color: $color__text-secondary;
 	}
 }
 

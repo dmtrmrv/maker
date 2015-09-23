@@ -10,11 +10,11 @@
 
 .mce-item-table td,
 .mce-item-table th {
-	border-bottom: 1px solid $color__gray;
+	border-bottom: 1px solid $color__gray-light;
 }
 
 .mce-item-table thead th {
-	border-bottom: 2px solid $color__gray-dark;
+	border-bottom: 2px solid $color__text-secondary;
 }
 
 @import '../typography/tables';

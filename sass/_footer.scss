@@ -5,20 +5,12 @@
 .site-footer {
 	@extend .clear;
 	padding: 1.5em 0 1.5em 0;
-	color: $color__gray;
+	color: $color__text-secondary;
 }
 
 .site-info {
 	display: block;
 	margin-bottom: 1.5em;
-	a {
-		color: $color__text;
-		&:hover,
-		&:focus,
-		&:active {
-			color: $color__accent;
-		}
-	}
 }
 
 @media screen and ( min-width: $xs ) {

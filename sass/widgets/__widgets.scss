@@ -16,7 +16,7 @@
 		}
 	}
 	a {
-		color: $color__gray;
+		color: $color__text-secondary;
 		&:hover,
 		&:active,
 		&:focus {
@@ -36,7 +36,7 @@
 		@include font-size( 0.625 );
 		@include line-height( 1.5 );
 		color: #fff;
-		background-color: $color__gray-dark;
+		background-color: $color__text-secondary;
 		font-weight: normal;
 		letter-spacing: ( 1em / 16 );
 		text-transform: uppercase;
@@ -80,7 +80,7 @@
 .widget_rss {
 	.widget-title {
 		a {
-			color: $color__text;
+			color: $color__text-primary;
 			text-decoration: underline;
 		}
 		a:first-child {
@@ -97,13 +97,13 @@
 	}
 	cite {
 		margin: 0;
-		color: $color__gray;
+		color: $color__text-secondary;
 		font-style: normal;
 	}
 	.rss-date {
 		display: block;
 		margin: 0;
-		color: $color__gray;
+		color: $color__text-secondary;
 	}
 }
 

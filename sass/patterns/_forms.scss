@@ -9,7 +9,7 @@
 // select,
 // textarea
 // {
-// color: $color__text;
+// color: $color__text-primary;
 // font-family: $font__main;
 // line-height: $font__line-height-body;
 // }
@@ -46,7 +46,7 @@ input[type='search'] {
 }
 
 label {
-	color: $color__gray-dark;
+	color: $color__text-secondary;
 }
 
 // Placeholder text color - selectors need to be separate to work.

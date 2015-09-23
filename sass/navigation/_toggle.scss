@@ -25,14 +25,14 @@ $dash_width: 1em;
 	height: $dash_height;
 	margin-top: ( $dash_height / ( -2 ) ) ;
 	margin-left: ( $dash_width / ( -2 ) ) ;
-	background-color: $color__text;
+	background-color: $color__text-primary;
 	&:before,
 	&:after {
 		display: block;
 		position: absolute;
 		width: 1em;
 		height: $dash_height;
-		background-color: $color__text;
+		background-color: $color__text-primary;
 		content: '';
 		transition: transform 0.3s, top 0.3s;
 	}
@@ -50,7 +50,7 @@ $dash_width: 1em;
 		&:before,
 		&:after {
 			top: 0;
-			background-color: $color__text;
+			background-color: $color__text-primary;
 		}
 		&:before {
 			transform: rotate( 225deg );
