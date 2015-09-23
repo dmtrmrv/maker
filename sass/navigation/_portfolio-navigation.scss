@@ -18,7 +18,7 @@
 		&:after {
 			@extend %icon;
 			margin: 0 0.5em;
-			color: darken( $color__background-hr, 7% );
+			color: $color__text-light;
 		}
 	}
 	.nav-previous a {

@@ -1,18 +1,16 @@
-// Text.
-$color__text-primary:   #585858;
-$color__text-secondary: lighten( $color__text-primary, 30% );
+// Basic Text Colors.
+$color__text:           #585858;
+$color__text-secondary: lighten( $color__text, 30% );
+$color__text-light:     lighten( $color__text, 60% );
 
 // Headings.
-$color__headings: $color__text-primary;
+$color__headings: $color__text;
 
 // Body.
 $color__background-body: #fff;
 
 // Theme Accent Color.
 $color__accent: #ff2441;
-
-// Gray.
-$color__gray-light: lighten( $color__text-primary, 60% );
 
 // State colors.
 $color__success: #1fc281;
@@ -29,34 +27,19 @@ $color__link-hover:   $color__accent;
 $color__text-screen:       #21759b;
 $color__background-screen: #f1f1f1;
 
-// Elements.
-$color__border-abbr:    $color__text-secondary;
-$color__background-hr:  $color__gray-light;
-$color__background-pre: $color__gray-light;
-$color__background-ins: $color__gray-light;
-
-//Forms.
-$color__forms: (
-	text:             $color__text-primary,
-	border:           $color__gray-light,
-	background:       #fff,
-	focus_background: $color__gray-light,
-	placeholder:      $color__text-secondary
-);
-
 // Button Default.
 $color__button: (
-	text:       $color__text-primary,
+	text:       $color__text,
 	border:     $color__text-secondary,
 	background: $color__text-secondary,
 );
 
 // Button Border.
 $color__button-border: (
-	text:             $color__text-primary,
-	border:           $color__gray-light,
+	text:             $color__text,
+	border:           $color__text-light,
 	background:       transparent,
-	hover_background: $color__gray-light
+	hover_background: $color__text-light
 );
 
 // Button Accent.

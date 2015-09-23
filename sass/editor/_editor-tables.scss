@@ -10,7 +10,8 @@
 
 .mce-item-table td,
 .mce-item-table th {
-	border-bottom: 1px solid $color__gray-light;
+	border-bottom: 1px solid;
+	border-bottom-color: $color__text-light;
 }
 
 .mce-item-table thead th {

@@ -71,7 +71,8 @@
 .widget.widget_recent_comments,
 .widget.widget_recent_entries {
 	li {
-		border-bottom: 1px solid $color__gray-light;
+		border-bottom: 1px solid;
+		border-bottom-color: $color__text-light;
 		margin-bottom: 0.75em;
 		padding-bottom: em_minus_px( 0.75em, 1px );
 	}
@@ -80,7 +81,7 @@
 .widget_rss {
 	.widget-title {
 		a {
-			color: $color__text-primary;
+			color: $color__text;
 			text-decoration: underline;
 		}
 		a:first-child {
@@ -88,7 +89,8 @@
 		}
 	}
 	li {
-		border-bottom: 1px solid $color__gray-light;
+		border-bottom: 1px solid;
+		border-bottom-color: $color__text-light;
 		margin-bottom: 0.75em;
 		padding-bottom: em_minus_px( 0.75em, 1px );
 	}

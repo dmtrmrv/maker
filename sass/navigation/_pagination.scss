@@ -20,7 +20,7 @@
 		&:after {
 			@extend %icon;
 			margin: 0 0.5em;
-			color: darken( $color__background-hr, 7% );
+			color: $color__text-light;
 		}
 	}
 	.nav-previous a {
@@ -41,6 +41,7 @@
 	.blog & {
 		margin-top: 0;
 		padding-top: em_minus_px( 3em, 2px );
-		border-top: 2px solid $color__background-hr;
+		border-top: 2px solid;
+		border-top-color: $color__text-light;
 	}
 }

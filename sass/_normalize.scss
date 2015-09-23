@@ -24,7 +24,6 @@ html {
 body {
 	margin: 0;
 	// Addition. Styling. 
-	color: $color__text-primary;
 	line-height: $font__line-height-body;
 	background: $color__background-body;
 }
@@ -94,8 +93,6 @@ dfn {
 mark {
 	// background: #ff0;
 	// color: #000;
-	color: $color__text-primary;
-	background: $color__background-ins;
 	text-decoration: none;
 }
 
@@ -217,7 +214,8 @@ fieldset {
 	// border: 1px solid #c0c0c0;
 	// margin: 0 2px;
 	// padding: 0.35em 0.625em 0.75em;
-	border: 2px solid $color__gray-light;
+	border: 2px solid;
+	border-color: $color__text-light;
 	border-radius: 3px;
 	margin: 0 0 1.5em;
 	padding: em_minus_px( 0.75em, 2px ) 1em 0;

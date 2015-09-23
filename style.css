@@ -23,7 +23,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * Table of Contents
  * 
  * 0.1 Normalize
- * 0.2 Typography
+ * 0.2 Color Scheme
+ * 0.3 Typography
  *     Headings
  *     Copy
  *     Links
@@ -31,7 +32,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *     Lists
  *     Tables
  *     Code
- * 0.3 Repeatable Patterns
+ * 0.4 Repeatable Patterns
  *     Forms
  *     Buttons
  *     Images
@@ -43,14 +44,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *     Alignments
  *     Accessibility
  *     Clearings
- * 0.4 Structure
- * 0.5 Header
- * 0.6 Navigation
+ * 0.5 Structure
+ * 0.6 Header
+ * 0.7 Navigation
  *     Primary Menu
  *     Footer Menu
  *     Social Menu
  *     Pagination
- * 0.7 Content
+ * 0.8 Content
  *     Post Thumbnail
  *     Entry Title
  *     Entry Meta
@@ -58,7 +59,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *     Galleries
  *     Post Formats
  *     Post Navigation
- * 0.8 Pages
+ * 0.9 Pages
  *     Post
  *     Page
  *     Single Portfolio Page
@@ -67,14 +68,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *     Centered
  *     Search 
  *     404
- * 0.9 Comments
+ * 1.0 Comments
  *     Comment Navigation
- * 1.0 Widgets
- * 1.1 Footer
- * 1.2 Plugins
+ * 1.1 Widgets
+ * 1.2 Footer
+ * 1.3 Plugins
  *     Jetpack
  *     Contact Form 7
- * 1.5 Media Queries
+ * 1.4 Media Queries
  */
 
 /**
@@ -157,7 +158,7 @@ i {
 mark,
 ins {
 	color: #585858;
-	background: #f1f1f1;
+	background-color: #f1f1f1;
 	text-decoration: none;
 }
 
@@ -254,7 +255,8 @@ input[type='search']::-webkit-search-decoration {
 fieldset {
 	margin: 0 0 1.5em;
 	padding: 0.625em 1em 0;
-	border: 2px solid #f1f1f1;
+	border: 2px solid;
+	border-color: #f1f1f1;
 	border-radius: 3px;
 }
 
@@ -279,6 +281,18 @@ td,
 th {
 	padding: 0;
 }
+
+/**
+ * Color Scheme
+ */
+
+/* Primary Text Color */
+
+/* Secondary Text Color */
+
+/* Light Text Color */
+
+/* Primary Text Color */
 
 /**
  * Typography
@@ -380,8 +394,10 @@ a:focus {
 blockquote {
 	margin: 0 0 1.3333333333em 0;
 	padding: 1.22222em 0 1.27778em;
-	border-top: 2px solid #585858;
-	border-bottom: 1px solid #a4a4a4;
+	border-top: 2px solid;
+	border-top-color: #585858;
+	border-bottom: 1px solid;
+	border-bottom-color: #a4a4a4;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -462,13 +478,15 @@ table {
 td,
 th {
 	padding: 0.6875em 0.75em 0.75em;
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid;
+	border-bottom-color: #f1f1f1;
 	text-align: left;
 }
 
 thead th {
 	padding: 0.91667em 1em 0.91667em;
-	border-bottom: 2px solid #a4a4a4;
+	border-bottom: 2px solid;
+	border-bottom-color: #a4a4a4;
 	background-color: #f1f1f1;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -485,7 +503,7 @@ pre {
 	max-width: 100%;
 	margin-bottom: 1.6em;
 	padding: 1.6em;
-	background: #f1f1f1;
+	background-color: #f1f1f1;
 	font-family: 'Courier 10 Pitch', Courier, monospace;
 	line-height: 1.6;
 	word-wrap: initial;
@@ -516,7 +534,8 @@ input[type='search'],
 textarea {
 	width: 100%;
 	padding: 0.625em 1em;
-	border: 2px solid #f1f1f1;
+	border: 2px solid;
+	border-color: #f1f1f1;
 	border-radius: 3px;
 	-webkit-appearance: none;
 	color: #585858;
@@ -835,7 +854,8 @@ p > video {
 }
 
 #content .wp-playlist-item {
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid;
+	border-bottom-color: #f1f1f1;
 }
 
 #content .wp-playlist-caption,
@@ -854,7 +874,8 @@ p > video {
 }
 
 #content .wp-playlist-playing {
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid;
+	border-bottom-color: #f1f1f1;
 	background-color: #f1f1f1;
 	font-weight: normal;
 }
@@ -1509,7 +1530,7 @@ a.site-logo-link:before {
 .posts-navigation a:before,
 .posts-navigation a:after {
 	margin: 0 0.5em;
-	color: #dfdfdf;
+	color: #f1f1f1;
 }
 
 .posts-navigation .nav-previous a {
@@ -1532,7 +1553,8 @@ a.site-logo-link:before {
 .blog .posts-navigation {
 	margin-top: 0;
 	padding-top: 2.875em;
-	border-top: 2px solid #f1f1f1;
+	border-top: 2px solid;
+	border-top-color: #f1f1f1;
 }
 
 /* Portfolio Navigation */
@@ -1550,7 +1572,7 @@ a.site-logo-link:before {
 .portfolio-navigation a:before,
 .portfolio-navigation a:after {
 	margin: 0 0.5em;
-	color: #dfdfdf;
+	color: #f1f1f1;
 }
 
 .portfolio-navigation .nav-previous a {
@@ -2100,7 +2122,8 @@ a.site-logo-link:before {
 .comment-list {
 	margin-left: 0;
 	padding-top: 1.375em;
-	border-top: 2px solid #f1f1f1;
+	border-top: 2px solid;
+	border-top-color: #f1f1f1;
 }
 
 .children {
@@ -2110,7 +2133,8 @@ a.site-logo-link:before {
 .comment-body {
 	position: relative;
 	margin: 0 0 1.375em 0;
-	border-bottom: 2px solid #f1f1f1;
+	border-bottom: 2px solid;
+	border-bottom-color: #f1f1f1;
 	word-wrap: break-word;
 }
 
@@ -2373,7 +2397,8 @@ a.site-logo-link:before {
 .widget.widget_recent_entries li {
 	margin-bottom: 0.75em;
 	padding-bottom: 0.6875em;
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid;
+	border-bottom-color: #f1f1f1;
 }
 
 .widget_rss .widget-title a {
@@ -2388,7 +2413,8 @@ a.site-logo-link:before {
 .widget_rss li {
 	margin-bottom: 0.75em;
 	padding-bottom: 0.6875em;
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid;
+	border-bottom-color: #f1f1f1;
 }
 
 .widget_rss a {
@@ -2585,7 +2611,7 @@ input[type='submit'].wpcf7-submit {
 	}
 
 	.main-navigation ul ul li {
-		box-shadow: 0 13px 0 -12px #f1f1f1;
+		box-shadow: 0 13px 0 -12px rgba(0, 0, 0, 0.05);
 	}
 
 	.main-navigation ul ul li:last-child {

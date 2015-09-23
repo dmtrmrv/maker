@@ -1,0 +1,16 @@
+/* Light Text Color */
+
+%color__gray {
+	color: $color__text-secondary;
+	color: rgba( $color__text-secondary, 0.6 );
+}
+
+%color__gray-background {
+	background-color: $color__text-secondary;
+	background-color: rgba( $color__text-secondary, 0.6 );
+}
+
+%color__gray-border-color {
+	border-color: $color__text-secondary;
+	border-color: rgba( $color__text-secondary, 0.6 );
+}

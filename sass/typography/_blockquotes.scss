@@ -5,8 +5,10 @@ blockquote {
 	@include line-height( 1.5 );
 	margin: 0 0 1.3333333333em 0;
 	padding: em_minus_px( 1.3333333333em, 2px, 18px ) 0 em_minus_px( 1.3333333333em, 1px, 18px );
-	border-top: 2px solid $color__text-primary;
-	border-bottom: 1px solid $color__text-secondary;
+	border-top: 2px solid;
+	border-top-color: $color__text;
+	border-bottom: 1px solid;
+	border-bottom-color: $color__text-secondary;
 	font-family: $font__blockquote;
 	font-style: italic;
 	quotes: '' '';

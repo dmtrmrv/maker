@@ -26,7 +26,7 @@ body {
 	max-width: 474px;
 	font-family: inherit;
 	margin: 3em 5%;
-	color: $color__text-primary;
+	color: $color__text;
 	line-height: $font__line-height-body;
 	background: $color__background-body;
 	@media screen and ( min-width: $sm ) {
@@ -99,8 +99,8 @@ dfn {
 mark {
 	// background: #ff0;
 	// color: #000;
-	color: $color__text-primary;
-	background: $color__background-ins;
+	color: $color__text;
+	background-color: $color__text-light;
 	text-decoration: none;
 }
 
@@ -222,7 +222,8 @@ textarea {
 // 	// border: 1px solid #c0c0c0;
 // 	// margin: 0 2px;
 // 	// padding: 0.35em 0.625em 0.75em;
-// 	border: 2px solid $color__gray-light;
+// 	border: 2px solid;
+// 	border-color: $color__text-light;
 // 	border-radius: 3px;
 // 	margin: 0 0 1.5em;
 // 	padding: em_minus_px( 0.75em, 2px ) 1em 0;

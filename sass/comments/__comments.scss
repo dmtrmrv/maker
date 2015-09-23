@@ -12,7 +12,8 @@
 .comment-list {
 	margin-left: 0;
 	padding-top: em_minus_px( 1.5em, 2px );
-	border-top: 2px solid $color__background-hr;
+	border-top: 2px solid;
+	border-top-color: $color__text-light;
 }
 
 .children {
@@ -22,13 +23,14 @@
 .comment-body {
 	position: relative;
 	margin: 0 0 em_minus_px( 1.5em, 2px ) 0;
-	border-bottom: 2px solid $color__background-hr;
+	border-bottom: 2px solid;
+	border-bottom-color: $color__text-light;
 	word-wrap: break-word;
 	.pingback & {
 		margin: 0 0 1.5em 0;
 		padding: 1.5em;
 		border-bottom: none;
-		background-color: $color__gray-light;
+		background-color: $color__text-light;
 		.edit-link {
 			display: block;
 			float: right;

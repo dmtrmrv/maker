@@ -21,7 +21,7 @@
 	a {
 		display: block;
 		padding: 0.75em 0.75em 0.75em 0;
-		color: $color__text-primary;
+		color: $color__text;
 		&:hover,
 		&:focus,
 		&:active {
@@ -53,7 +53,7 @@
 					left: -999em;
 				}
 				li {
-					box-shadow: 0 13px 0 -12px $color__gray-light;
+					box-shadow: 0 13px 0 -12px rgba( 0, 0, 0, 0.05 );
 					&:last-child {
 						box-shadow: none;
 					}

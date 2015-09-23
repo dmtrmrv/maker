@@ -1,19 +1,5 @@
 /* Forms */
 
-// Styles from underscores.
-// These properties are set to 'inherit' in normalize.
-// Needs testing. But very likely this is not needed.
-
-// button,
-// input,
-// select,
-// textarea
-// {
-// color: $color__text-primary;
-// font-family: $font__main;
-// line-height: $font__line-height-body;
-// }
-
 input[type='text'],
 input[type='email'],
 input[type='url'],
@@ -24,16 +10,17 @@ textarea {
 	@include line-height( 1.5 );
 	width: 100%;
 	padding: em_minus_px( 0.75em, 2px ) 1em;
-	border: 2px solid map-get( $color__forms, border );
+	border: 2px solid;
+	border-color: $color__text-light;
 	border-radius: 3px;
 	-webkit-appearance: none;
-	color: map-get( $color__forms, text );
-	background-color: map-get( $color__forms, background );
+	color: $color__text;
+	background-color: #fff;
 	box-shadow: none;
 	vertical-align: middle;
 	&:focus {
 		outline: 0;
-		background: map-get( $color__forms, focus_background );
+		background: $color__text-light,
 	}
 }
 
@@ -51,21 +38,21 @@ label {
 
 // Placeholder text color - selectors need to be separate to work.
 ::-webkit-input-placeholder {
-	color: map-get( $color__forms, placeholder );
+	color: $color__text-secondary;
 }
 
 :-moz-placeholder {
-	color: map-get( $color__forms, placeholder );
+	color: $color__text-secondary;
 }
 
 ::-moz-placeholder {
 	opacity: 1; // Since FF19 lowers the opacity of the placeholder by default.
-	color: map-get( $color__forms, placeholder );
+	color: $color__text-secondary;
 }
 
-// Only works if if set as 'input:-ms-input-placeholder' not just 'input:-ms-input-placeholder'.
+// Only works if set as 'input:-ms-input-placeholder' not just 'input:-ms-input-placeholder'.
 input:-ms-input-placeholder {
-	color: map-get( $color__forms, placeholder );
+	color: $color__text-secondary;
 }
 
 .post-password-form {
@@ -91,7 +78,6 @@ input:-ms-input-placeholder {
 	position: absolute;
 	top: 0;
 	right: 0;
-	
 }
 
 input[type='submit'].search-submit {
