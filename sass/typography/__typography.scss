@@ -2,10 +2,6 @@
  * Typography
  */
 
-body {
-	color: $color__text;
-}
-
 @import 'headings';
 
 @import 'copy';
@@ -19,5 +15,3 @@ body {
 @import 'tables';
 
 @import 'code';
-
-@import 'misc';

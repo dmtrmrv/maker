@@ -363,7 +363,8 @@ dd {
 }
 
 .mce-item-table thead th {
-	border-bottom: 2px solid #a4a4a4;
+	border-bottom: 2px solid;
+	border-bottom-color: #a4a4a4;
 }
 
 /* Tables */
