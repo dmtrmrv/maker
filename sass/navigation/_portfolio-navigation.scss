@@ -11,8 +11,7 @@
 	margin: 0 auto 1.5em;
 	word-wrap: break-word;
 	a {
-		@extend %button_core;
-		@extend %button-border;
+		@extend .button;
 		float: left;
 		&:before,
 		&:after {

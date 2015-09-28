@@ -527,7 +527,7 @@ textarea {
 	border-radius: 3px;
 	-webkit-appearance: none;
 	color: #585858;
-	background-color: #fff;
+	background-color: transparent;
 	box-shadow: none;
 	font-size: 16px;
 	font-size: 1rem;
@@ -543,7 +543,7 @@ input[type='password']:focus,
 input[type='search']:focus,
 textarea:focus {
 	outline: 0;
-	background: #f1f1f1;
+	background-color: #f1f1f1;
 }
 
 input[type='text'],
@@ -607,8 +607,8 @@ input[type='submit'].search-submit {
 
 /* Buttons */
 
-button,
 .button,
+button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'],
@@ -616,17 +616,16 @@ input[type='submit'],
 .portfolio-navigation a {
 	display: inline-block;
 	height: 3em;
-	margin-bottom: 0;
+	margin: 0;
 	padding: 0.625em 2em 0.625em;
 	border: 2px solid;
-	border-color: #a4a4a4;
+	border-color: #f1f1f1;
 	border-radius: 3px;
 	-webkit-appearance: none;
 	color: #585858;
-	background-color: #a4a4a4;
+	background-color: transparent;
 	background-image: none;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1em;
 	font-weight: bold;
 	text-align: center;
 	vertical-align: middle;
@@ -635,26 +634,25 @@ input[type='submit'],
 	cursor: pointer;
 }
 
-button:hover,
 .button:hover,
+button:hover,
 input[type='button']:hover,
 input[type='reset']:hover,
 input[type='submit']:hover,
 .posts-navigation a:hover,
 .portfolio-navigation a:hover,
-button:focus,
 .button:focus,
+button:focus,
 input[type='button']:focus,
 input[type='reset']:focus,
 input[type='submit']:focus,
 .posts-navigation a:focus,
 .portfolio-navigation a:focus {
-	opacity: 0.8;
 	text-decoration: none;
 }
 
-button:active,
 .button:active,
+button:active,
 input[type='button']:active,
 input[type='reset']:active,
 input[type='submit']:active,
@@ -663,8 +661,8 @@ input[type='submit']:active,
 	outline: 0;
 }
 
-button:focus,
 .button:focus,
+button:focus,
 input[type='button']:focus,
 input[type='reset']:focus,
 input[type='submit']:focus,
@@ -675,28 +673,37 @@ input[type='submit']:focus,
 	outline-offset: -2px;
 }
 
-.posts-navigation a,
-.portfolio-navigation a,
-#infinite-handle button {
-	border-color: #f1f1f1;
-	color: #585858;
-	background-color: transparent;
-}
-
+.button:hover,
+button:hover,
+input[type='button']:hover,
+input[type='reset']:hover,
+input[type='submit']:hover,
 .posts-navigation a:hover,
 .portfolio-navigation a:hover,
-#infinite-handle button:hover,
+.button:focus,
+button:focus,
+input[type='button']:focus,
+input[type='reset']:focus,
+input[type='submit']:focus,
 .posts-navigation a:focus,
-.portfolio-navigation a:focus,
-#infinite-handle button:focus {
+.portfolio-navigation a:focus {
 	opacity: 1;
-	background: #f1f1f1;
+	background-color: #f1f1f1;
 }
 
+.button-accent,
 input[type='submit'].search-submit {
 	border-color: #ff2441;
 	color: #fff;
 	background-color: #ff2441;
+}
+
+.button-accent:hover,
+input[type='submit'].search-submit:hover,
+.button-accent:focus,
+input[type='submit'].search-submit:focus {
+	opacity: 1;
+	background-color: #ff4860;
 }
 
 /* Images */
@@ -2233,6 +2240,12 @@ a.site-logo-link:before {
 	background-color: #ff2441;
 }
 
+.comment-form .submit:hover,
+.comment-form .submit:focus {
+	opacity: 1;
+	background-color: #ff4860;
+}
+
 .comment-form textarea {
 	min-height: 13.5em;
 }
@@ -2472,6 +2485,12 @@ input[type='submit'].wpcf7-submit {
 	background-color: #ff2441;
 }
 
+input[type='submit'].wpcf7-submit:hover,
+input[type='submit'].wpcf7-submit:focus {
+	opacity: 1;
+	background-color: #ff4860;
+}
+
 .wpcf7 {
 	margin: 0;
 	padding: 0;
@@ -2599,7 +2618,7 @@ input[type='submit'].wpcf7-submit {
 	}
 
 	.main-navigation ul ul li {
-		box-shadow: 0 13px 0 -12px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 13px 0 -12px #f1f1f1;
 	}
 
 	.main-navigation ul ul li:last-child {

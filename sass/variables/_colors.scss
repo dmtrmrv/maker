@@ -9,12 +9,6 @@ $color__background-body: #fff;
 // Theme Accent Color.
 $color__accent: #ff2441;
 
-// State colors.
-$color__success: #1fc281;
-$color__info:    #00b9f2;
-$color__warning: #f4cc31;
-$color__danger:  #e83337;
-
 // Links.
 $color__link:         $color__accent;
 $color__link-visited: $color__accent;
@@ -24,15 +18,14 @@ $color__link-hover:   $color__accent;
 $color__text-screen:       #21759b;
 $color__background-screen: #f1f1f1;
 
-// Button Default.
-$color__button: (
-	text:       $color__text,
-	border:     $color__text-secondary,
-	background: $color__text-secondary,
-);
+// State colors.
+$color__success: #1fc281;
+$color__info:    #00b9f2;
+$color__warning: #f4cc31;
+$color__danger:  #e83337;
 
-// Button Border.
-$color__button-border: (
+// Button.
+$color__button: (
 	text:             $color__text,
 	border:           $color__text-light,
 	background:       transparent,
@@ -41,9 +34,10 @@ $color__button-border: (
 
 // Button Accent.
 $color__button-accent: (
-	text:       #fff,
-	border:     $color__accent,
-	background: $color__accent,
+	text:             #fff,
+	border:           $color__accent,
+	background:       $color__accent,
+	hover_background: lighten( $color__accent, 7% ),
 );
 
 // Button Success.

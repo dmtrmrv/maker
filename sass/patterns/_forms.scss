@@ -15,12 +15,12 @@ textarea {
 	border-radius: 3px;
 	-webkit-appearance: none;
 	color: $color__text;
-	background-color: #fff;
+	background-color: transparent;
 	box-shadow: none;
 	vertical-align: middle;
 	&:focus {
 		outline: 0;
-		background: $color__text-light,
+		background-color: $color__text-light,
 	}
 }
 
@@ -81,7 +81,7 @@ input:-ms-input-placeholder {
 }
 
 input[type='submit'].search-submit {
-	@extend %button-accent;
+	@extend .button-accent;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
