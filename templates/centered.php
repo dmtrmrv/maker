@@ -26,7 +26,6 @@ get_header(); ?>
 			<?php endwhile; ?>
 			
 		</div>
-
 	</div><!-- #content -->
 </div><!-- #main -->
 

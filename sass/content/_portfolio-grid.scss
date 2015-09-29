@@ -14,21 +14,14 @@
 .project {
 	@include clearfix;
 	margin-bottom: 1.5em;
+	padding: 1.5em 1.75em;
 	background-color: $color__text-light;
-	padding: 1.5em 2em;
 	&.has-post-thumbnail {
-		background-color: transparent;
 		padding: 0;
+		background-color: transparent;
 	}
 	@media screen and ( min-width: $sm ) {
-		@include with-layout( $susy-portfolio-grid ) {
-			@include span( 4 );
-			min-height: 219px;
-		}
 		position: relative;
-		&:nth-of-type(3n) {
-			margin-right: 0;
-		}
 		&:hover,
 		&:active {
 			a,
@@ -40,12 +33,40 @@
 			}
 		}
 	}
-	@media screen and (min-width: $md) {
-		min-height: 292px;
+	// Two columns.
+	.portfolio-grid-col-2 & {
+		@media screen and ( min-width: $sm ) {
+			@include with-layout( $susy-portfolio-grid ) {
+				@include span( 6 );
+				margin-bottom: gutter();
+			}
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
 	}
-
-	@media screen and (min-width: $lg) {
-		min-height: 312px;
+	// Three columns.
+	.portfolio-grid-col-3 & {
+		@media screen and ( min-width: $sm ) {
+			@include with-layout( $susy-portfolio-grid ) {
+				@include span( 4 );
+				margin-bottom: gutter();
+			}
+			&:nth-of-type(3n) {
+				margin-right: 0;
+			}
+		}
+	}
+	// Four columns.
+	.portfolio-grid-col-4 & {
+		@media screen and ( min-width: $sm ) {
+			@include with-layout( $susy-portfolio-grid ) {
+				@include span( 3 );
+			}
+			&:nth-of-type(4n) {
+				margin-right: 0;
+			}
+		}
 	}
 }
 

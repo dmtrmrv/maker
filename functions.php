@@ -54,7 +54,7 @@ function maker_setup() {
 
 	add_image_size( 'maker-thumbnail',           '729', '432', true );
 	add_image_size( 'maker-thumbnail-fullwidth', '984', '576', true );
-	add_image_size( 'maker-thumbnail-portfolio', '312', '312', true );
+	add_image_size( 'maker-thumbnail-portfolio', '480', '480', true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

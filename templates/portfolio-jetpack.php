@@ -42,7 +42,7 @@ get_header(); ?>
 				// Default posts per page option.
 				$posts_per_page = get_option( 'posts_per_page', 9 );
 
-				// Proceed only if we have Portfolios.
+				// Proceed only if we have Jetpack Portfolio.
 				if ( post_type_exists( 'jetpack-portfolio' ) ) :
 
 					$args = array(
@@ -57,7 +57,10 @@ get_header(); ?>
 
 					if ( $projects -> have_posts() ) :
 
-						echo '<div class="portfolio-grid">';
+						printf(
+							'<div class="portfolio-grid %s">',
+							sanitize_html_class( maker_portfolio_grid_class() )
+						);
 
 							while ( $projects -> have_posts() ) : $projects -> the_post();
 

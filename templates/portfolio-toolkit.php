@@ -57,7 +57,10 @@ get_header(); ?>
 
 					if ( $projects -> have_posts() ) :
 
-						echo '<div class="portfolio-grid">';
+						printf(
+							'<div class="portfolio-grid %s">',
+							sanitize_html_class( maker_portfolio_grid_class() )
+						);
 
 							while ( $projects -> have_posts() ) : $projects -> the_post();
 

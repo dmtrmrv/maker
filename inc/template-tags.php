@@ -358,6 +358,31 @@ function maker_post_thumbnail() {
 }
 endif;
 
+if ( ! function_exists( 'maker_portfolio_grid_class' ) ) :
+	/**
+	 * Defines portfolio grid class depending on number of columns.
+	 */
+	function maker_portfolio_grid_class() {
+		$maker_portfolio_grid_class = 'portfolio-grid-col-3';
+
+		if ( get_theme_mod( 'maker_portfolio_columns' ) ) {
+			switch ( get_theme_mod( 'maker_portfolio_columns' ) ) {
+				case 2:
+					$maker_portfolio_grid_class = 'portfolio-grid-col-2';
+					break;
+				case 4:
+					$maker_portfolio_grid_class = 'portfolio-grid-col-4';
+					break;
+				default:
+					$maker_portfolio_grid_class = 'portfolio-grid-col-3';
+					break;
+			}
+		}
+
+		return $maker_portfolio_grid_class;
+	}
+endif;
+
 if ( ! function_exists( 'maker_manual_excerpt' ) ) :
 /**
  * Displays excerpt set manually.

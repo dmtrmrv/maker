@@ -1,6 +1,7 @@
 /* Centered */
 
-.page-template-centered {
+.page-template-centered,
+.page-template-page-blog-archives {
 	.hentry {
 		@extend .clear;
 		@media screen and ( min-width: $md ) {

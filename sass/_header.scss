@@ -5,6 +5,10 @@
 .site-header {
 	@extend .clear;
 	padding: 0;
+	margin-bottom: 1.5em;
+	@media screen and (min-width: $sm) {
+		margin-bottom: 0;
+	}
 }
 
 @include with-layout( $susy-static ) {
