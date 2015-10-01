@@ -19,12 +19,6 @@ get_header(); ?>
 
 					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-					<?php
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-					?>
-
 				<?php endwhile;?>
 
 			<?php endif ?>
@@ -42,7 +36,7 @@ get_header(); ?>
 				// Default posts per page option.
 				$posts_per_page = get_option( 'posts_per_page', 9 );
 
-				// Proceed only if we have Jetpack Portfolio.
+				// Check if Jetpack Portfolio is activated.
 				if ( post_type_exists( 'jetpack-portfolio' ) ) :
 
 					$args = array(
