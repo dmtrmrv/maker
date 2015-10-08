@@ -15,6 +15,7 @@ function maker_jetpack_setup() {
 		'container'      => 'primary',
 		'render'         => 'maker_infinite_scroll_render',
 		'type'           => 'scroll',
+		'wrapper'        => false,
 		'footer_widgets' => false,
 		'footer'         => false,
 	) );
@@ -30,6 +31,10 @@ function maker_infinite_scroll_render() {
 	while ( have_posts() ) : the_post();
 		if ( is_search() ) {
 			get_template_part( 'template-parts/content-search' );
+		} elseif ( 'portfolio' == get_post_type() ) {
+			get_template_part( 'template-parts/content-portfolio-toolkit' );
+		} elseif ( 'jetpack-portfolio' == get_post_type() ) {
+			get_template_part( 'template-parts/content-portfolio-jetpack' );
 		} else {
 			get_template_part( 'template-parts/content', get_post_format() );
 		}

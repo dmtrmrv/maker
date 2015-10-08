@@ -198,7 +198,7 @@ function maker_portfolio_toolkit_meta() {
 		// Category.
 		if ( $categories ) :
 		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			'<tr><td class="project-meta-item-name project-meta-cats">%s</td><td class="project-meta-item-desc">%s</td></tr>',
 			esc_html__( 'Category', 'maker' ),
 			sprintf( esc_html__( '%s', 'maker' ), $categories )
 		);
@@ -207,7 +207,7 @@ function maker_portfolio_toolkit_meta() {
 		// Tag.
 		if ( $tags ) :
 		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			'<tr><td class="project-meta-item-name project-meta-tags">%s</td><td class="project-meta-item-desc">%s</td></tr>',
 			esc_html__( 'Tags', 'maker' ),
 			sprintf( esc_html__( '%s', 'maker' ), $tags )
 		);
@@ -395,17 +395,17 @@ function maker_manual_excerpt() {
 }
 endif;
 
-if ( ! function_exists( 'maker_posts_navigation' ) ) :
+if ( ! function_exists( 'maker_posts_pagination' ) ) :
 /**
- * Displays Posts Navigation a.k.a Older/Newer posts links on a blog page.
+ * Displays Posts Navigation a.k.a Older/Newer posts links on a blog/archive page.
  */
-function maker_posts_navigation() {
+function maker_posts_pagination() {
 	$args = array(
-		'prev_text'          => __( 'Older', 'maker' ),
-		'next_text'          => __( 'Newer', 'maker' ),
+		'prev_text'          => __( 'Newer', 'maker' ),
+		'next_text'          => __( 'Older', 'maker' ),
 		'screen_reader_text' => __( 'Posts navigation', 'maker' ),
 	);
-	the_posts_navigation( $args );
+	the_posts_pagination( $args );
 }
 endif;
 
@@ -431,6 +431,35 @@ function maker_post_navigation() {
 }
 endif;
 
+if ( ! function_exists( 'maker_portfolio_navigation' ) ) :
+/**
+ * Displays Post Navigation a.k.a Next/Prev Post links on a single post page.
+ */
+function maker_portfolio_navigation() {
+	$navigation = '';
+	$prev = '';
+	$next = '';
+
+	// Get URLs of a previous and next portfolio items.
+	$prev_url = get_permalink( get_adjacent_post( false, '', false ) );
+	$next_url = get_permalink( get_adjacent_post( false, '', true ) );
+
+	if ( get_permalink() != $prev ) {
+		$prev = sprintf( '<a href="%s" class="prev page-numbers">%s</a>', esc_url( $prev_url ), esc_html__( 'Prev', 'maker' ) );
+	}
+	if ( get_permalink() != $next ) {
+		$next = sprintf( '<a href="%s" class="next page-numbers">%s</a>', esc_url( $next_url ), esc_html__( 'Next', 'maker' ) );
+	}
+
+	$all  = sprintf( '<a href="%s" class="all page-numbers"><span>%s</span></a>', esc_url( get_post_type_archive_link( get_post_type() ) ), esc_html__( 'All Projects', 'maker' ) );
+
+	// Only add markup if there's somewhere to navigate to.
+	if ( $prev || $next ) {
+		echo _navigation_markup( $prev . $all . $next, 'pagination', __( 'Portfolio navigation', 'maker' ) ); // WPCS: XSS OK.
+	}
+}
+endif;
+
 if ( ! function_exists( 'maker_comment_navigation' ) ) :
 /**
  * Displays Comment Navigation.
@@ -447,23 +476,6 @@ function maker_comment_navigation() {
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
 	<?php endif;
-}
-endif;
-
-if ( ! function_exists( 'maker_portfolio_navigation' ) ) :
-/**
- * Displays Post Navigation a.k.a Next/Previous Post links on a single post page.
- */
-function maker_portfolio_navigation() {
-	$navigation = '';
-
-	$prev = get_previous_post_link( '<div class="nav-previous">%link</div>', esc_html__( 'Prev', 'maker' ) );
-	$next     = get_next_post_link( '<div class="nav-next">%link</div>', esc_html__( 'Next', 'maker' ) );
-
-	// Only add markup if there's somewhere to navigate to.
-	if ( $prev || $next ) {
-		echo _navigation_markup( $prev . $next, 'portfolio-navigation', __( 'Portfolio navigation', 'maker' ) ); // WPCS: XSS OK.
-	}
 }
 endif;
 
@@ -523,39 +535,3 @@ function maker_category_transient_flusher() {
 }
 add_action( 'edit_category', 'maker_category_transient_flusher' );
 add_action( 'save_post',     'maker_category_transient_flusher' );
-
-if ( ! function_exists( 'maker_paging_nav' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @param  int $max_num_pages Maximum number of pages.
- */
-function maker_paging_nav( $max_num_pages = '' ) {
-	// Get max_num_pages if not provided.
-	if ( '' == $max_num_pages ) {
-		$max_num_pages = $GLOBALS['wp_query']->max_num_pages;
-	}
-
-	// Don't print empty markup if there's only one page.
-	if ( $max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	
-	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'maker' ); ?></h2>
-			<div class="nav-links">
-				
-				<?php if ( get_next_posts_link( '', $max_num_pages ) ) : ?>
-				<div class="nav-previous"><?php next_posts_link( __( 'Older', 'maker' ), $max_num_pages ); ?></div>
-				<?php endif; ?>
-
-				<?php if ( get_previous_posts_link( '', $max_num_pages ) ) : ?>
-				<div class="nav-next"><?php previous_posts_link( __( 'Newer', 'maker' ), $max_num_pages ); ?></div>
-				<?php endif; ?>
-
-			</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
-endif;

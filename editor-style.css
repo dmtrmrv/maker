@@ -276,7 +276,7 @@ blockquote {
 	border-top: 2px solid;
 	border-top-color: #585858;
 	border-bottom: 1px solid;
-	border-bottom-color: #a4a4a4;
+	border-bottom-color: #bebebe;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
@@ -364,7 +364,7 @@ dd {
 
 .mce-item-table thead th {
 	border-bottom: 2px solid;
-	border-bottom-color: #a4a4a4;
+	border-bottom-color: #bebebe;
 }
 
 /* Tables */
@@ -386,7 +386,7 @@ th {
 thead th {
 	padding: 0.91667em 1em 0.91667em;
 	border-bottom: 2px solid;
-	border-bottom-color: #a4a4a4;
+	border-bottom-color: #bebebe;
 	background-color: #f1f1f1;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -542,7 +542,7 @@ p > video {
 
 .mce-content-body .wp-playlist-caption,
 .mce-content-body [class*='wp-playlist-item-'] {
-	color: #a4a4a4;
+	color: #bebebe;
 	font-size: 16px;
 	font-size: 1rem;
 	font-style: normal;
@@ -579,7 +579,7 @@ p > video {
 	display: block;
 	margin: 1em 0;
 	padding: 0;
-	color: #a4a4a4;
+	color: #bebebe;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;

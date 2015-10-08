@@ -31,7 +31,7 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 
-				<?php maker_paging_nav(); ?>
+				<?php maker_posts_pagination(); ?>
 					
 			<?php endif; ?>
 		</div>

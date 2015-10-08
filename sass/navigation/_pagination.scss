@@ -1,46 +1,113 @@
-/* Posts Navigation (Newer/Older Post) */
+/* Pagination */
 
-.posts-navigation {
-	@extend .clear;
+.pagination {
+	@include clearfix;
 	@include with-layout( $susy-static ) {
 		max-width: span( 6 );
 	}
-	margin: 1.5em auto 1.5em;
+	margin: 0 auto 1.5em;
 	word-wrap: break-word;
+	// @media screen and ( min-width: $sm ) {
+	// 	margin-bottom: 3em;
+	// }
 	@media screen and ( min-width: $md ) {
-		float: left;
-		width: 100%;
 		max-width: 100%;
 	}
-	a {
+	.nav-links {
+		@extend .clear;
+		position: relative;
+		height: 3em;
+		text-align: center;
+	}
+	.page-numbers {
 		@extend .button;
-		float: left;
-		&:before,
-		&:after {
-			@extend %icon;
-			margin: 0 0.5em;
-			color: $color__text-light;
+		display: none;
+		min-width: 3em;
+		padding-right: 0.625em;
+		padding-left: 0.625em;
+		border-color: transparent;
+		@media screen and (min-width: $md) {
+			display: inline-block;
 		}
 	}
-	.nav-previous a {
-		margin-right: 1.5em;
+	
+	.page-numbers.prev {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-right: 1em;
 		padding-left: 0.5em;
+		border-color: $color__text-light;
 		&:before {
+			@extend %icon;
+			margin-right: 0.5em;
 			content: '\e802';
 		}
-	}
-	.nav-next a {
-		padding-right: 0.5em;
-		&:after {
-			content: '\e803';
+		@media screen and ( min-width: $sm ) {
+			padding-right: 2em;
+			padding-left: 1.5em;
 		}
 	}
-
-	// Pagination on a blog page.
-	.blog & {
-		margin-top: 0;
-		padding-top: em_minus_px( 3em, 2px );
-		border-top: 2px solid;
-		border-top-color: $color__text-light;
+	.page-numbers.next {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding-right: 0.5em;
+		padding-left: 1em;
+		border-color: $color__text-light;
+		&:after {
+			@extend %icon;
+			margin-left: 0.5em;
+			content: '\e803';
+		}
+		@media screen and ( min-width: $sm ) {
+			padding-right: 1.5em;
+			padding-left: 2em;
+		}
 	}
+	.page-numbers.all {
+		padding-right: 1em;
+		padding-left: 1em;
+		border-color: $color__text-light;
+		span {
+			display: none;
+		}
+		&:before {
+			@extend %icon;
+			margin-right: 0.5em;
+			content: '\e807';
+		}
+		@media screen and ( min-width: $sm ) {
+			padding-right: 2em;
+			padding-left: 2em;
+			span {
+				display: inline;
+			}
+		}
+	}
+	.page-numbers.current,
+	.page-numbers.dots {
+		color: $color__text-secondary;
+		cursor: auto;
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+	}
+}
+
+.blog .pagination {
+	padding-top: 1.5em;
+	border-top: 2px solid $color__text-light;
+	@media screen and ( min-width: $sm ) {
+		padding-top: 3em;
+	}
+}
+
+.page-template-portfolio-toolkit .pagination {
+	@media screen and ( min-width: $sm ) {
+		padding-top: 1.5em;
+	}	
 }

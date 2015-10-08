@@ -47,16 +47,21 @@ get_header(); ?>
 						'posts_per_page' => $posts_per_page,
 					);
 
-					$projects = new WP_Query( $args );
+					$portfolio_query = new WP_Query( $args );
 
-					if ( $projects -> have_posts() ) :
+					// Pagination fix.
+					$temp_query = $wp_query;
+					$wp_query   = null;
+					$wp_query   = $portfolio_query;
+
+					if ( $portfolio_query -> have_posts() ) :
 
 						printf(
 							'<div class="portfolio-grid %s">',
 							sanitize_html_class( maker_portfolio_grid_class() )
 						);
 
-							while ( $projects -> have_posts() ) : $projects -> the_post();
+							while ( $portfolio_query -> have_posts() ) : $portfolio_query -> the_post();
 
 								get_template_part( 'template-parts/content', 'portfolio-toolkit' );
 
@@ -64,11 +69,15 @@ get_header(); ?>
 
 						echo '</div>';
 
-						maker_paging_nav( $projects->max_num_pages );
-
 						wp_reset_postdata();
 
+						maker_posts_pagination();
+
 					endif;
+
+					// Restore original query.
+					$wp_query = null;
+					$wp_query = $temp_query;
 
 				endif;
 			?>
