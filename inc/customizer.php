@@ -44,7 +44,7 @@ function maker_customize_register( $wp_customize ) {
 
 	// Display Tagline.
 	$wp_customize->add_setting( 'maker_display_tagline', array(
-		'default' => 1,
+		'default'           => 1,
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
@@ -66,13 +66,66 @@ function maker_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'maker_display_portfolio_text', array(
-		'label'   => __( 'Display Page Content', 'maker' ),
-		'section' => 'maker_portfolio',
-		'type'    => 'checkbox',
-		'description' => __( 'Choose to display page content before the portfolio grid or not.', 'maker' ),
+		'label'           => __( 'Display Page Content', 'maker' ),
+		'section'         => 'maker_portfolio',
+		'type'            => 'checkbox',
+		'active_callback' => 'maker_is_portfolio_template',
+		'description'     => __( 'Choose to display page content before the portfolio grid or not.', 'maker' ),
+	) );
+
+	$wp_customize->add_setting( 'maker_display_project_excerpt', array(
+		'default'           => 1,
+		'sanitize_callback' => 'maker_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'maker_display_project_excerpt', array(
+		'label'           => __( 'Display Project Excerpt', 'maker' ),
+		'section'         => 'maker_portfolio',
+		'type'            => 'checkbox',
+		'active_callback' => 'maker_is_single_portfolio',
+	) );
+
+	$wp_customize->add_setting( 'maker_display_project_meta', array(
+		'default'           => 1,
+		'sanitize_callback' => 'maker_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'maker_display_project_meta', array(
+		'label'           => __( 'Display Project Meta', 'maker' ),
+		'section'         => 'maker_portfolio',
+		'type'            => 'checkbox',
+		'active_callback' => 'maker_is_single_portfolio',
+	) );
+
+	$wp_customize->add_setting( 'maker_all_projects_link', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( 'maker_all_projects_link', array(
+		'label'           => __( 'Link to all projects', 'maker' ),
+		'section'         => 'maker_portfolio',
+		'type'            => 'text',
+		'active_callback' => 'maker_is_single_portfolio',
+		'description'     => __( 'Link to all projects at the bottom of a single project. Leave empty to link portfolio archive. Alternatively you may link it your Homepage or any other page.', 'maker' ),
 	) );
 }
 add_action( 'customize_register', 'maker_customize_register' );
+
+
+function maker_is_single_portfolio() {
+	if ( is_singular( 'portfolio' ) || is_singular( 'jetpack_portfolio' ) ) {
+		return true;
+	}
+	return false;
+}
+
+
+function maker_is_portfolio_template() {
+	if ( is_page_template( 'templates/portfolio-toolkit.php' ) ) {
+		return true;
+	}
+}
 
 /**
  * Sanitizes text.

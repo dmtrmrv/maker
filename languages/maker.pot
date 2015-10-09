@@ -72,8 +72,27 @@ msgstr ""
 msgid "Display Page Content"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer.php:73
 msgid "Choose to display page content before the portfolio grid or not."
+msgstr ""
+
+#: inc/customizer.php:82
+msgid "Display Project Excerpt"
+msgstr ""
+
+#: inc/customizer.php:94
+msgid "Display Project Meta"
+msgstr ""
+
+#: inc/customizer.php:106
+msgid "Link to all projects"
+msgstr ""
+
+#: inc/customizer.php:110
+msgid ""
+"Link to all projects at the bottom of a single project. Leave empty to link "
+"portfolio archive. Alternatively you may link it your Homepage or any other "
+"page."
 msgstr ""
 
 #: inc/extras.php:75
@@ -89,9 +108,9 @@ msgid ", "
 msgstr ""
 
 #: inc/template-tags.php:17 inc/template-tags.php:29 inc/template-tags.php:41
-#: inc/template-tags.php:53 inc/template-tags.php:65 inc/template-tags.php:203
-#: inc/template-tags.php:212 inc/template-tags.php:240
-#: inc/template-tags.php:249
+#: inc/template-tags.php:53 inc/template-tags.php:65 inc/template-tags.php:208
+#: inc/template-tags.php:217 inc/template-tags.php:250
+#: inc/template-tags.php:259
 msgid "%s"
 msgstr ""
 
@@ -107,87 +126,87 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:146 inc/template-tags.php:272
+#: inc/template-tags.php:146 inc/template-tags.php:282
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:173
+#: inc/template-tags.php:178
 msgid "Client"
 msgstr ""
 
-#: inc/template-tags.php:182
+#: inc/template-tags.php:187
 msgid "Date"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:198
 msgid "Link"
 msgstr ""
 
-#: inc/template-tags.php:202 inc/template-tags.php:239
+#: inc/template-tags.php:207 inc/template-tags.php:249
 msgid "Category"
 msgstr ""
 
-#: inc/template-tags.php:211 inc/template-tags.php:248
+#: inc/template-tags.php:216 inc/template-tags.php:258
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:268
+#: inc/template-tags.php:278
 msgid "%1$s"
 msgstr ""
 
-#: inc/template-tags.php:404
+#: inc/template-tags.php:414
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:405
+#: inc/template-tags.php:415
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:406
+#: inc/template-tags.php:416
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:420
+#: inc/template-tags.php:430
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:424
+#: inc/template-tags.php:433
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:425
+#: inc/template-tags.php:434
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:448
+#: inc/template-tags.php:461
 msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:451
+#: inc/template-tags.php:469
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:454
+#: inc/template-tags.php:481
 msgid "All Projects"
 msgstr ""
 
-#: inc/template-tags.php:458
+#: inc/template-tags.php:486
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:470
+#: inc/template-tags.php:498
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:473
+#: inc/template-tags.php:501
 msgid "Older Comments"
 msgstr ""
 
-#: inc/template-tags.php:474
+#: inc/template-tags.php:502
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/template-tags.php:488
+#: inc/template-tags.php:516
 msgid "%1$s theme by %2$s"
 msgstr ""
 

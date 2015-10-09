@@ -156,6 +156,11 @@ if ( ! function_exists( 'maker_portfolio_toolkit_meta' ) ) :
  */
 function maker_portfolio_toolkit_meta() {
 
+	// Return if we don't need to display meta.
+	if ( ! get_theme_mod( 'maker_display_project_meta' ) ) {
+		return;
+	}
+
 	$client     = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_client', true );
 	$date       = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_date',   true );
 	$url        = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',    true );
@@ -224,6 +229,11 @@ if ( ! function_exists( 'maker_portfolio_jetpack_meta' ) ) :
  * Prints project meta for Jetpack portfolio posts.
  */
 function maker_portfolio_jetpack_meta() {
+
+	// Return if we don't need to display meta.
+	if ( ! get_theme_mod( 'maker_display_project_meta' ) ) {
+		return;
+	}
 
 	$categories = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
 	$tags       = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag',  '', ', ', '' );
@@ -417,12 +427,11 @@ function maker_post_navigation() {
 	$args = array(
 		'prev_text'          => '%title',
 		'next_text'          => '%title',
-		'screen_reader_text' => __( 'Post navigation', 'maker' ),
+		'screen_reader_text' => __( 'Post navigation', 'maker' )
 	);
 
-	$navigation = '';
-	$previous   = get_previous_post_link( '<div class="nav-previous"><span>' . esc_html__( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
-	$next       = get_next_post_link( '<div class="nav-next"><span>' . esc_html__( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
+		$previous = get_previous_post_link( '<div class="nav-previous"><span>' . esc_html__( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
+		$next     = get_next_post_link( '<div class="nav-next"><span>' . esc_html__( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
 
 	// Only add markup if there's somewhere to navigate to.
 	if ( $previous || $next ) {
@@ -436,22 +445,41 @@ if ( ! function_exists( 'maker_portfolio_navigation' ) ) :
  * Displays Post Navigation a.k.a Next/Prev Post links on a single post page.
  */
 function maker_portfolio_navigation() {
-	$navigation = '';
+	
 	$prev = '';
 	$next = '';
 
 	// Get URLs of a previous and next portfolio items.
 	$prev_url = get_permalink( get_adjacent_post( false, '', false ) );
 	$next_url = get_permalink( get_adjacent_post( false, '', true ) );
+	$all_url  = get_post_type_archive_link( get_post_type() );
 
 	if ( get_permalink() != $prev ) {
-		$prev = sprintf( '<a href="%s" class="prev page-numbers">%s</a>', esc_url( $prev_url ), esc_html__( 'Prev', 'maker' ) );
-	}
-	if ( get_permalink() != $next ) {
-		$next = sprintf( '<a href="%s" class="next page-numbers">%s</a>', esc_url( $next_url ), esc_html__( 'Next', 'maker' ) );
+		$prev = sprintf(
+			'<a href="%s" class="prev page-numbers">%s</a>',
+			esc_url( $prev_url ),
+			esc_html__( 'Prev', 'maker' )
+		);
 	}
 
-	$all  = sprintf( '<a href="%s" class="all page-numbers"><span>%s</span></a>', esc_url( get_post_type_archive_link( get_post_type() ) ), esc_html__( 'All Projects', 'maker' ) );
+	if ( get_permalink() != $next ) {
+		$next = sprintf(
+			'<a href="%s" class="next page-numbers">%s</a>',
+			esc_url( $next_url ),
+			esc_html__( 'Next', 'maker' )
+		);
+	}
+
+	// Override link to all projects, if it was set in the customizer.
+	if ( get_theme_mod( 'maker_all_projects_link' ) ) {
+		$all_url = get_theme_mod( 'maker_all_projects_link' );
+	}
+
+	$all  = sprintf(
+		'<a href="%s" class="all page-numbers"><span>%s</span></a>',
+		esc_url( $all_url ),
+		esc_html__( 'All Projects', 'maker' )
+	);
 
 	// Only add markup if there's somewhere to navigate to.
 	if ( $prev || $next ) {
