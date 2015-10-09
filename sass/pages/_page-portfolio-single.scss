@@ -4,7 +4,9 @@
 .single-jetpack-portfolio {
 	.hentry {
 		@extend .clear;
-		margin-bottom: 1.5em;
+		@media screen and (min-width: $sm) {
+			margin-bottom: 1.5em;
+		}
 	}
 	.content-area {
 		float: none;
@@ -54,7 +56,6 @@
 			margin-right: 0;
 		}
 	}
-
 	&.no-excerpt .project-meta {
 		table {
 			@media screen and ( min-width: $md ) {
@@ -73,6 +74,11 @@
 			text-align: right;
 		}
 	}
+
+	.project-meta-item-desc {
+		font-weight: bold;
+	}
+
 	.comments-area {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );

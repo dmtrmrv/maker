@@ -7,83 +7,95 @@
 	}
 	margin: 0 auto 1.5em;
 	word-wrap: break-word;
-	// @media screen and ( min-width: $sm ) {
-	// 	margin-bottom: 3em;
-	// }
 	@media screen and ( min-width: $md ) {
 		max-width: 100%;
 	}
 	.nav-links {
-		@extend .clear;
 		position: relative;
-		height: 3em;
-		text-align: center;
+		min-height: 3em;
 	}
 	.page-numbers {
 		@extend .button;
 		display: none;
-		min-width: 3em;
-		padding-right: 0.625em;
-		padding-left: 0.625em;
+		overflow: hidden;
+		min-width: 2em;
+		padding-right: em_minus_px( 0.75em, 2px );
+		padding-left: em_minus_px( 0.75em, 2px );
 		border-color: transparent;
-		@media screen and (min-width: $md) {
+		@media screen and (min-width: $xs) {
 			display: inline-block;
 		}
-	}
-	
-	.page-numbers.prev {
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		padding-right: 1em;
-		padding-left: 0.5em;
-		border-color: $color__text-light;
-		&:before {
-			@extend %icon;
-			margin-right: 0.5em;
-			content: '\e802';
-		}
-		@media screen and ( min-width: $sm ) {
-			padding-right: 2em;
-			padding-left: 1.5em;
+		@media screen and (min-width: $sm) {
+			width: 3em;
+			// padding-right: em_minus_px( 0.75em, 2px );
+			// padding-left: em_minus_px( 0.75em, 2px );
 		}
 	}
+	.page-numbers.prev,
 	.page-numbers.next {
 		display: block;
 		position: absolute;
 		top: 0;
-		right: 0;
-		padding-right: 0.5em;
-		padding-left: 1em;
+		width: 3em;
+		padding: em_minus_px( 0.75em, 2px );
 		border-color: $color__text-light;
-		&:after {
+		color: transparent;
+	}
+	.page-numbers.prev {
+		right: 60px;
+		&:before {
 			@extend %icon;
-			margin-left: 0.5em;
-			content: '\e803';
-		}
-		@media screen and ( min-width: $sm ) {
-			padding-right: 1.5em;
-			padding-left: 2em;
+			width: 24px;
+			height: 24px;
+			color: $color__text;
+			content: '\e802';
 		}
 	}
+	.page-numbers.next {
+		right: 0;
+		border-color: $color__text-light;
+		&:before {
+			@extend %icon;
+			width: 24px;
+			height: 24px;
+			color: $color__text;
+			content: '\e803';
+		}
+	}
+	.nav-links:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 48px;
+		height: 48px;
+		border: 2px dashed;
+		border-color: map-get( $color__button, border );
+		border-radius: 3px;
+		content: '';
+	}
 	.page-numbers.all {
-		padding-right: 1em;
-		padding-left: 1em;
+		display: inline-block;
+		width: 3em;
+		padding-right: em_minus_px( 0.75em, 2px );
+		padding-left: em_minus_px( 0.75em, 2px );
 		border-color: $color__text-light;
 		span {
 			display: none;
 		}
 		&:before {
 			@extend %icon;
-			margin-right: 0.5em;
 			content: '\e807';
 		}
 		@media screen and ( min-width: $sm ) {
-			padding-right: 2em;
-			padding-left: 2em;
+			width: auto;
+			padding-right: em_minus_px( 2em, 2px );
+			padding-left: em_minus_px( 1.75em, 2px );
 			span {
 				display: inline;
+			}
+			&:before {
+				margin-right: 0.5em;
+				content: '\e807';
 			}
 		}
 	}
@@ -106,8 +118,20 @@
 	}
 }
 
-.page-template-portfolio-toolkit .pagination {
-	@media screen and ( min-width: $sm ) {
+
+
+.page-template-portfolio-toolkit,
+.page-template-portfolio-jetpack {
+	.pagination {
+		@include with-layout( $susy-static ) {
+			max-width: span( 6 );
+		}
 		padding-top: 1.5em;
-	}	
+		border-top: 2px solid $color__text-light;
+		@media screen and ( min-width: $sm ) {
+			max-width: 100%;
+			border-top: none;
+			// padding-top: 1.5em;
+		}
+	}
 }
