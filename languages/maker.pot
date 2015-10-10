@@ -260,9 +260,9 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Maker is a simple portfolio theme for people who make things. Websites, "
-"illustrations, photos, etc. It is Designed to showcase your work in a "
+"illustrations, photos, etc. It is designed to showcase your work in a "
 "cleanest way possible. More info and live demo at "
-"http://maker.themepatio.com/"
+"http://themepatio.com/themes/maker"
 msgstr ""
 
 #. Author of the plugin/theme
