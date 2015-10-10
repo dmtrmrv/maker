@@ -1,4 +1,4 @@
-# Copyright (C) 2015 Dmitry Mayorov
+# Copyright (C) 2015 ThemePatio
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -254,7 +254,7 @@ msgid "Maker"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://maker.dmitrymayorov.com/"
+msgid "http://themepatio.com/themes/maker/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -264,11 +264,11 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Dmitry Mayorov"
+msgid "ThemePatio"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://dmitrymayorov.com/"
+msgid "http://themepatio.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme

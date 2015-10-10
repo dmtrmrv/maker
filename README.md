@@ -2,11 +2,9 @@
 
 ####Maker
 
-Simple yet powerful portfolio theme. For all those who create things. Websites, illustrations, photographs, you name it. Get Maker and present your content in a professional way.
+Maker is a simple portfolio theme for people who make things. Websites, illustrations, photos, etc. It is Designed to showcase your work in a cleanest way possible. More info and live demo at http://maker.themepatio.com/
 
-[![Build Status](https://travis-ci.org/iamdmitrymayorov/maker.svg?branch=master)](https://travis-ci.org/iamdmitrymayorov/Maker)
-
-Live demo at http://maker.dmitrymayorov.com/
+[![Build Status](https://travis-ci.org/iamdmitrymayorov/maker.svg?branch=master)](https://travis-ci.org/iamdmitrymayorov/maker)
 
 ---
 
@@ -48,6 +46,15 @@ Absolutely. You are welcome to report issues and submit pull requests.
 ---
 
 ####Changelog
+
+**0.1.2**
+
+* Improved pagination markup
+* Minor improvements and bug fixes
+
+**0.1.1**
+
+* Minor improvements and bug fixes
 
 **0.1.0**
 

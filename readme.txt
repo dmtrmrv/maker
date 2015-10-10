@@ -8,9 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 
 == Description ==
-Simple yet powerful portfolio theme. For all those who create things. Websites, illustrations, photographs, you name it. Get Maker and present your content in a professional way. Live demo at http://maker.dmitrymayorov.com/
-
-For more information about maker visit http://dmitrymayorov.com/2015/08/24/introducing-maker/
+Maker is a simple portfolio theme for people who make things. Websites, illustrations, photos, etc. It is Designed to showcase your work in a cleanest way possible. More info and live demo at http://maker.themepatio.com/
 
 == Installation ==
 
@@ -46,11 +44,15 @@ Homepage:  http://fitvidsjs.com/
 
 == Changelog ==
 
+= 0.1.2 =
+
+Improved pagination markup.
+Minor improvements and bug fixes.
+
 = 0.1.1 =
 
-Coding Standards Fixes
-CSS Fixes
+Minor improvements and bug fixes.
 
 = 0.1.0 =
 
-Initial release
+Initial release.
