@@ -5,7 +5,7 @@
 	.page {
 		@extend .clear;
 		@media screen and ( min-width: $sm ) {
-			margin-bottom: 3em;
+			margin-bottom: 1.5em;
 		}
 	}
 	.content-area {

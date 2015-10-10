@@ -63,7 +63,7 @@ get_header(); ?>
 
 							while ( $portfolio_query -> have_posts() ) : $portfolio_query -> the_post();
 
-								get_template_part( 'template-parts/content', 'portfolio-toolkit' );
+								get_template_part( 'template-parts/content', 'portfolio-jetpack' );
 
 							endwhile;
 

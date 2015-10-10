@@ -113,16 +113,21 @@ function maker_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'maker_customize_register' );
 
 
+/**
+ * Checks if the current page is a single portfolio item.
+ */
 function maker_is_single_portfolio() {
-	if ( is_singular( 'portfolio' ) || is_singular( 'jetpack_portfolio' ) ) {
+	if ( is_singular( 'portfolio' ) || is_singular( 'jetpack-portfolio' ) ) {
 		return true;
 	}
 	return false;
 }
 
-
+/**
+ * Checks if the current page uses one of the portfolio templates.
+ */
 function maker_is_portfolio_template() {
-	if ( is_page_template( 'templates/portfolio-toolkit.php' ) ) {
+	if ( is_page_template( 'templates/portfolio-toolkit.php' ) || is_page_template( 'templates/portfolio-jetpack.php' ) ) {
 		return true;
 	}
 }

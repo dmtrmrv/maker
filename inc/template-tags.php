@@ -427,7 +427,7 @@ function maker_post_navigation() {
 	$args = array(
 		'prev_text'          => '%title',
 		'next_text'          => '%title',
-		'screen_reader_text' => __( 'Post navigation', 'maker' )
+		'screen_reader_text' => __( 'Post navigation', 'maker' ),
 	);
 
 		$previous = get_previous_post_link( '<div class="nav-previous"><span>' . esc_html__( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
@@ -445,7 +445,6 @@ if ( ! function_exists( 'maker_portfolio_navigation' ) ) :
  * Displays Post Navigation a.k.a Next/Prev Post links on a single post page.
  */
 function maker_portfolio_navigation() {
-	
 	$prev = '';
 	$next = '';
 
@@ -454,7 +453,7 @@ function maker_portfolio_navigation() {
 	$next_url = get_permalink( get_adjacent_post( false, '', true ) );
 	$all_url  = get_post_type_archive_link( get_post_type() );
 
-	if ( get_permalink() != $prev ) {
+	if ( get_permalink() != $prev_url ) {
 		$prev = sprintf(
 			'<a href="%s" class="prev page-numbers">%s</a>',
 			esc_url( $prev_url ),
@@ -462,7 +461,7 @@ function maker_portfolio_navigation() {
 		);
 	}
 
-	if ( get_permalink() != $next ) {
+	if ( get_permalink() != $next_url ) {
 		$next = sprintf(
 			'<a href="%s" class="next page-numbers">%s</a>',
 			esc_url( $next_url ),

@@ -178,35 +178,35 @@ msgstr ""
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:461
+#: inc/template-tags.php:460
 msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:469
+#: inc/template-tags.php:468
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:481
+#: inc/template-tags.php:480
 msgid "All Projects"
 msgstr ""
 
-#: inc/template-tags.php:486
+#: inc/template-tags.php:485
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:498
+#: inc/template-tags.php:497
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:501
+#: inc/template-tags.php:500
 msgid "Older Comments"
 msgstr ""
 
-#: inc/template-tags.php:502
+#: inc/template-tags.php:501
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/template-tags.php:516
+#: inc/template-tags.php:515
 msgid "%1$s theme by %2$s"
 msgstr ""
 
