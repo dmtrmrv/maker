@@ -2,7 +2,7 @@
 Contributors: iamdmitrymayorov
 Requires at least: WordPress 4.1
 Tested up to: WordPress 4.3
-Version: 0.1.1
+Version: 0.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging

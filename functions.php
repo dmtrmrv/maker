@@ -8,7 +8,7 @@
 /**
  * The current version of the theme.
  */
-define( 'MAKER_VERSION', '0.1.1' );
+define( 'MAKER_VERSION', '0.1.2' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
