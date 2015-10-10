@@ -25,7 +25,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php maker_posts_navigation(); ?>
+			<?php maker_posts_pagination(); ?>
 
 		<?php else : ?>
 
