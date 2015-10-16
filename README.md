@@ -47,6 +47,11 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.1.3**
+
+* Improved project thumbnail styling. No need for matchHeight plugin.
+* Small footer margin adjustment.
+
 **0.1.2**
 
 * Improved pagination markup
