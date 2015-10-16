@@ -4,18 +4,17 @@
 
 .site-footer {
 	@extend .clear;
-	padding: 1.5em 0 1.5em 0;
 	color: $color__text-secondary;
+	@media screen and ( min-width: $sm ) {
+		padding: 1.5em 0;
+	}
 }
 
 .site-info {
 	display: block;
 	margin-bottom: 1.5em;
-}
-
-@media screen and ( min-width: $xs ) {
-	.site-info {
+	@media screen and ( min-width: $xs ) {
 		@include span( 5 last );
-		text-align: right;
+		text-align: right;	
 	}
 }

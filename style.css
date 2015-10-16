@@ -1733,18 +1733,14 @@ a.site-logo-link:before {
 .project {
 	position: relative;
 	margin-bottom: 1.5em;
-	background-color: #f1f1f1;
 }
 
 .project:before {
 	display: block;
 	width: 100%;
 	padding-top: 100%;
+	background-color: #f1f1f1;
 	content: '';
-}
-
-.project.has-post-thumbnail {
-	background-color: transparent;
 }
 
 .project-thumbnail {
@@ -2487,7 +2483,6 @@ a.site-logo-link:before {
  */
 
 .site-footer {
-	padding: 1.5em 0 1.5em 0;
 	color: #bebebe;
 }
 
@@ -2751,9 +2746,7 @@ input[type='submit'].wpcf7-submit:focus {
 		max-width: 100%;
 	}
 
-	.project:hover a,
 	.project:hover .project-header,
-	.project:active a,
 	.project:active .project-header {
 		opacity: 1;
 	}
@@ -2831,6 +2824,10 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.comment-navigation {
 		margin-bottom: 3em;
+	}
+
+	.site-footer {
+		padding: 1.5em 0;
 	}
 }
 

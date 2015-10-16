@@ -14,21 +14,17 @@
 .project {
 	position: relative;
 	margin-bottom: 1.5em;
-	background-color: $color__text-light;
 	// See https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
 	&:before {
 		display: block;
 		width: 100%;
 		padding-top: 100%;
+		background-color: $color__text-light;
 		content: '';
-	}
-	&.has-post-thumbnail {
-		background-color: transparent;
 	}
 	@media screen and ( min-width: $sm ) {
 		&:hover,
 		&:active {
-			a,
 			.project-header {
 				opacity: 1;
 			}
@@ -54,8 +50,8 @@
 .project-header {
 	@extend .clear;
 	width: 100%;
-	transition: opacity 0.15s ease-in-out;
 	padding: 1.5em 0 0;
+	transition: opacity 0.15s ease-in-out;
 	@media screen and ( min-width: $sm ) {
 		position: absolute;
 		top: 0;
