@@ -8,10 +8,4 @@ jQuery( document ).ready( function( $ ) {
 		$( '.fitvid' ).fitVids();
 	}
 	makerFitvids();
-
-	function makerMatchHeights() {
-		$( '.project' ).matchHeight();
-	}
-	makerMatchHeights();
-
 } );

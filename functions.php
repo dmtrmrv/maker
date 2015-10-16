@@ -161,14 +161,6 @@ function maker_scripts() {
 	);
 
 	wp_enqueue_script(
-		'maker-match-heights',
-		get_template_directory_uri() . '/js/jquery.matchHeight.js',
-		array( 'jquery' ),
-		MAKER_VERSION,
-		true
-	);
-
-	wp_enqueue_script(
 		'maker-custom',
 		get_template_directory_uri() . '/js/custom.js',
 		array( 'jquery' ),

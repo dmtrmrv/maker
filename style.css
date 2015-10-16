@@ -1731,25 +1731,42 @@ a.site-logo-link:before {
 }
 
 .project {
+	position: relative;
 	margin-bottom: 1.5em;
-	padding: 1.5em 1.75em;
 	background-color: #f1f1f1;
 }
 
-.project:before,
-.project:after {
-	display: table;
-	clear: both;
+.project:before {
+	display: block;
+	width: 100%;
+	padding-top: 100%;
 	content: '';
 }
 
 .project.has-post-thumbnail {
-	padding: 0;
 	background-color: transparent;
 }
 
+.project-thumbnail {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+}
+
+.project-thumbnail img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 .project-header {
-	max-width: 100%;
+	width: 100%;
+	padding: 1.5em 0 0;
+	transition: opacity 0.15s ease-in-out;
 }
 
 .project-title {
@@ -1766,26 +1783,14 @@ a.site-logo-link:before {
 
 .project-categories {
 	display: inline-block;
-	color: #bebebe;
 	font-weight: normal;
 }
 
 .project-categories a {
-	color: #bebebe;
+	color: #585858;
 }
 
-.project-thumbnail {
-	display: block;
-	margin: 0 0 1.5em;
-
-	-webkit-backface-visibility: hidden;
-}
-
-.project-thumbnail img {
-	display: block;
-	width: 100%;
-	height: auto;
-}
+/* Grid Variations. */
 
 /* Galleries */
 
@@ -2746,10 +2751,6 @@ input[type='submit'].wpcf7-submit:focus {
 		max-width: 100%;
 	}
 
-	.project {
-		position: relative;
-	}
-
 	.project:hover a,
 	.project:hover .project-header,
 	.project:active a,
@@ -2757,9 +2758,19 @@ input[type='submit'].wpcf7-submit:focus {
 		opacity: 1;
 	}
 
-	.project:hover .project-thumbnail img,
-	.project:active .project-thumbnail img {
-		opacity: 0.1;
+	.project-header {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 1.5em 2em;
+		background: linear-gradient(rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0.4) 100%);
+	}
+
+	.has-post-thumbnail .project-header {
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	.portfolio-grid-col-2 .project {
@@ -2792,17 +2803,6 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-4 .project:nth-of-type(4n) {
 		margin-right: 0;
-	}
-
-	.has-post-thumbnail .project-header {
-		position: absolute;
-		top: 1.5em;
-		left: 2em;
-		opacity: 0;
-	}
-
-	.project-thumbnail {
-		margin: 0;
 	}
 
 	.single-portfolio .hentry,

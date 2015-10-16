@@ -12,76 +12,65 @@
 }
 
 .project {
-	@include clearfix;
+	position: relative;
 	margin-bottom: 1.5em;
-	padding: 1.5em 1.75em;
 	background-color: $color__text-light;
+	// See https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+	&:before {
+		display: block;
+		width: 100%;
+		padding-top: 100%;
+		content: '';
+	}
 	&.has-post-thumbnail {
-		padding: 0;
 		background-color: transparent;
 	}
 	@media screen and ( min-width: $sm ) {
-		position: relative;
 		&:hover,
 		&:active {
 			a,
 			.project-header {
 				opacity: 1;
 			}
-			.project-thumbnail img {
-				opacity: 0.1;
-			}
 		}
 	}
-	// Two columns.
-	.portfolio-grid-col-2 & {
-		@media screen and ( min-width: $sm ) {
-			@include with-layout( $susy-portfolio-grid ) {
-				@include span( 6 );
-				margin-bottom: gutter();
-			}
-			&:nth-of-type(2n) {
-				margin-right: 0;
-			}
-		}
-	}
-	// Three columns.
-	.portfolio-grid-col-3 & {
-		@media screen and ( min-width: $sm ) {
-			@include with-layout( $susy-portfolio-grid ) {
-				@include span( 4 );
-				margin-bottom: gutter();
-			}
-			&:nth-of-type(3n) {
-				margin-right: 0;
-			}
-		}
-	}
-	// Four columns.
-	.portfolio-grid-col-4 & {
-		@media screen and ( min-width: $sm ) {
-			@include with-layout( $susy-portfolio-grid ) {
-				@include span( 3 );
-			}
-			&:nth-of-type(4n) {
-				margin-right: 0;
-			}
-		}
+}
+
+.project-thumbnail {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 }
 
 .project-header {
 	@extend .clear;
-	max-width: 100%;
+	width: 100%;
+	transition: opacity 0.15s ease-in-out;
+	padding: 1.5em 0 0;
 	@media screen and ( min-width: $sm ) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 1.5em 2em;
+		background: linear-gradient( rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0.4) 100% );
 		.has-post-thumbnail & {
-			position: absolute;
-			top: 1.5em;
-			left: 2em;
 			opacity: 0;
+			pointer-events: none;
 		}
 	}
 }
+
 .project-title {
 	margin: 0;
 	a {
@@ -91,26 +80,49 @@
 		line-height: 1.5;
 	}
 }
+
 .project-categories {
 	display: inline-block;
-	color: $color__text-secondary;
 	font-weight: normal;
 	a {
-		color: $color__text-secondary;
+		color: $color__text;
 	}
 }
 
-.project-thumbnail {
-	display: block;
-	margin: 0 0 1.5em;
+/* Grid Variations. */
 
-	-webkit-backface-visibility: hidden;
+// Two columns.
+.portfolio-grid-col-2 .project {
 	@media screen and ( min-width: $sm ) {
-		margin: 0;
+		@include with-layout( $susy-portfolio-grid ) {
+			@include span( 6 );
+			margin-bottom: gutter();
+		}
+		&:nth-of-type(2n) {
+			margin-right: 0;
+		}
 	}
-	img {
-		display: block;
-		width: 100%;
-		height: auto;
+}
+// Three columns.
+.portfolio-grid-col-3 .project {
+	@media screen and ( min-width: $sm ) {
+		@include with-layout( $susy-portfolio-grid ) {
+			@include span( 4 );
+			margin-bottom: gutter();
+		}
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+	}
+}
+// Four columns.
+.portfolio-grid-col-4 .project {
+	@media screen and ( min-width: $sm ) {
+		@include with-layout( $susy-portfolio-grid ) {
+			@include span( 3 );
+		}
+		&:nth-of-type(4n) {
+			margin-right: 0;
+		}
 	}
 }

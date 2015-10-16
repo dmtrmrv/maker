@@ -1,7 +1,7 @@
 module.exports = {
 	options: {
 		browsers: [
-			'last 2 versions',
+			'last 3 versions',
 			'ie 9'
 		]
 	},
