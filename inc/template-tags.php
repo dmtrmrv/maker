@@ -157,7 +157,7 @@ if ( ! function_exists( 'maker_portfolio_toolkit_meta' ) ) :
 function maker_portfolio_toolkit_meta() {
 
 	// Return if we don't need to display meta.
-	if ( ! get_theme_mod( 'maker_display_project_meta' ) ) {
+	if ( ! get_theme_mod( 'maker_display_project_meta', 1 ) ) {
 		return;
 	}
 
@@ -231,7 +231,7 @@ if ( ! function_exists( 'maker_portfolio_jetpack_meta' ) ) :
 function maker_portfolio_jetpack_meta() {
 
 	// Return if we don't need to display meta.
-	if ( ! get_theme_mod( 'maker_display_project_meta' ) ) {
+	if ( ! get_theme_mod( 'maker_display_project_meta', 1 ) ) {
 		return;
 	}
 

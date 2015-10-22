@@ -13,7 +13,7 @@ get_header(); ?>
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 
-			<?php if ( get_theme_mod( 'maker_display_portfolio_text' ) ) : ?>
+			<?php if ( get_theme_mod( 'maker_display_portfolio_text', 1 ) ) : ?>
 			
 				<?php while ( have_posts() ) : the_post(); ?>
 

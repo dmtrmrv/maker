@@ -25,7 +25,7 @@ function maker_body_classes( $classes ) {
 	}
 
 	// Adds a no-excerpt class for portfolio pages without manual excerpts.
-	if ( ! has_excerpt() || ! get_theme_mod( 'maker_display_project_excerpt' ) ) {
+	if ( ! has_excerpt() || ! get_theme_mod( 'maker_display_project_excerpt', 1 ) ) {
 		$classes[] = 'no-excerpt';
 	}
 

@@ -12,7 +12,7 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		
-		<?php if ( has_excerpt() && get_theme_mod( 'maker_display_project_excerpt' ) ) : ?>
+		<?php if ( has_excerpt() && get_theme_mod( 'maker_display_project_excerpt', 1 ) ) : ?>
 			<div class="project-excerpt">
 				<?php maker_manual_excerpt(); ?>
 			</div>
