@@ -514,7 +514,7 @@ function maker_footer_text() {
 	printf(
 		esc_html__( '%1$s theme by %2$s', 'maker' ),
 		'Maker',
-		'<a href="' . esc_url( 'http://dmitrymayorov.com/' ) . '">Dmitry Mayorov</a>'
+		'<a href="' . esc_url( 'https://themepatio.com/' ) . '">ThemePatio</a>'
 	);
 }
 endif;
