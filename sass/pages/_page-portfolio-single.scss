@@ -14,7 +14,17 @@
 		max-width: 100%;
 		margin-right: 0;
 	}
-	.entry-header,
+	.entry-header {
+		@extend .clear;
+		@include with-layout( $susy-static ) {
+			max-width: span( 6 );
+		}
+		width: 100%;
+		margin: 0 auto;
+		@media screen and ( min-width: $md ) {
+			max-width: 100%;
+		}
+	}
 	.entry-content {
 		@extend .clear;
 		@include with-layout( $susy-static ) {
@@ -24,6 +34,22 @@
 		margin: 0 auto;
 		@media screen and ( min-width: $md ) {
 			max-width: 100%;
+			margin: 0;
+			p,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			table,
+			pre,
+			blockquote {
+				max-width: span( 6 );
+			}
+			blockquote p {
+				max-width: 100%;
+			}
 		}
 	}
 	.project-excerpt,
@@ -74,11 +100,9 @@
 			text-align: right;
 		}
 	}
-
 	.project-meta-item-desc {
 		font-weight: bold;
 	}
-
 	.comments-area {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );

@@ -892,6 +892,10 @@ p > video {
 	line-height: 2em;
 }
 
+.entry-content .wp-caption img {
+	margin-bottom: 0;
+}
+
 /* Alignments */
 
 .alignleft {
@@ -1008,8 +1012,8 @@ blockquote.alignright {
 .single-portfolio .hentry:after,
 .single-jetpack-portfolio .hentry:after,
 .single-portfolio .entry-header:after,
-.single-portfolio .entry-content:after,
 .single-jetpack-portfolio .entry-header:after,
+.single-portfolio .entry-content:after,
 .single-jetpack-portfolio .entry-content:after,
 .single-portfolio .project-meta:after,
 .single-jetpack-portfolio .project-meta:after,
@@ -1723,6 +1727,11 @@ a.site-logo-link:before {
 	        hyphens: auto;
 }
 
+.entry-content img {
+	display: block;
+	margin-bottom: 1.5em;
+}
+
 /* Portfolio Grid */
 
 .portfolio-grid {
@@ -1989,8 +1998,13 @@ a.site-logo-link:before {
 }
 
 .single-portfolio .entry-header,
+.single-jetpack-portfolio .entry-header {
+	width: 100%;
+	max-width: 474px;
+	margin: 0 auto;
+}
+
 .single-portfolio .entry-content,
-.single-jetpack-portfolio .entry-header,
 .single-jetpack-portfolio .entry-content {
 	width: 100%;
 	max-width: 474px;
@@ -2622,6 +2636,11 @@ input[type='submit'].wpcf7-submit:focus {
 		margin-bottom: 2.9375em;
 	}
 
+	.site {
+		padding-right: 72px;
+		padding-left: 72px;
+	}
+
 	.site-header {
 		margin-bottom: 0;
 	}
@@ -2937,9 +2956,41 @@ input[type='submit'].wpcf7-submit:focus {
 	}
 
 	.single-portfolio .entry-header,
+	.single-jetpack-portfolio .entry-header {
+		max-width: 100%;
+	}
+
 	.single-portfolio .entry-content,
-	.single-jetpack-portfolio .entry-header,
 	.single-jetpack-portfolio .entry-content {
+		max-width: 100%;
+		margin: 0;
+	}
+
+	.single-portfolio .entry-content p,
+	.single-portfolio .entry-content h1,
+	.single-portfolio .entry-content h2,
+	.single-portfolio .entry-content h3,
+	.single-portfolio .entry-content h4,
+	.single-portfolio .entry-content h5,
+	.single-portfolio .entry-content h6,
+	.single-portfolio .entry-content table,
+	.single-portfolio .entry-content pre,
+	.single-portfolio .entry-content blockquote,
+	.single-jetpack-portfolio .entry-content p,
+	.single-jetpack-portfolio .entry-content h1,
+	.single-jetpack-portfolio .entry-content h2,
+	.single-jetpack-portfolio .entry-content h3,
+	.single-jetpack-portfolio .entry-content h4,
+	.single-jetpack-portfolio .entry-content h5,
+	.single-jetpack-portfolio .entry-content h6,
+	.single-jetpack-portfolio .entry-content table,
+	.single-jetpack-portfolio .entry-content pre,
+	.single-jetpack-portfolio .entry-content blockquote {
+		max-width: 48.17073%;
+	}
+
+	.single-portfolio .entry-content blockquote p,
+	.single-jetpack-portfolio .entry-content blockquote p {
 		max-width: 100%;
 	}
 
