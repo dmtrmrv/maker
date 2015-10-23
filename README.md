@@ -47,6 +47,12 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.1.4***
+
+Fixed issue with column width on portfolio pages.
+Fixed issue with the excerpt and project meta not appearing after theme installation.
+Minor style updates.
+
 **0.1.3**
 
 * Improved project thumbnail styling. No need for matchHeight plugin.
