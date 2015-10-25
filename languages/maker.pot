@@ -90,9 +90,8 @@ msgstr ""
 
 #: inc/customizer.php:110
 msgid ""
-"Link to all projects at the bottom of a single project. Leave empty to link "
-"portfolio archive. Alternatively you may link it your Homepage or any other "
-"page."
+"\"All Projects\" link at the bottom of a single project. Links to portfolio "
+"archive if left empty."
 msgstr ""
 
 #: inc/extras.php:75

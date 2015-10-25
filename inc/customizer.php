@@ -107,7 +107,7 @@ function maker_customize_register( $wp_customize ) {
 		'section'         => 'maker_portfolio',
 		'type'            => 'text',
 		'active_callback' => 'maker_is_single_portfolio',
-		'description'     => __( 'Link to all projects at the bottom of a single project. Leave empty to link portfolio archive. Alternatively you may link it your Homepage or any other page.', 'maker' ),
+		'description'     => __( '"All Projects" link at the bottom of a single project. Links to portfolio archive if left empty.', 'maker' ),
 	) );
 }
 add_action( 'customize_register', 'maker_customize_register' );
