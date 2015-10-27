@@ -47,7 +47,13 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
-**0.1.4***
+**0.1.5**
+
+Updated customizer messages.
+Updated screenshot.
+Added Licence information.
+
+**0.1.4**
 
 Fixed issue with column width on portfolio pages.
 Fixed issue with the excerpt and project meta not appearing after theme installation.

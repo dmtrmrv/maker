@@ -5,7 +5,7 @@ Tested up to: WordPress 4.3
 Version: 0.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, fixed-layout, fluid-layout, responsive-layout, one-column, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: black, gray, red, white, dark, light, responsive-layout, one-column, three-columns, right-sidebar, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 
 == Description ==
 Maker is a simple portfolio theme for people who make things. Websites, illustrations, photos, etc. It is designed to showcase your work in a cleanest way possible. More info and live demo at http://themepatio.com/themes/maker
@@ -25,24 +25,57 @@ Maker Theme bundles the following third-party resources:
 
 Typicons - Copyright (C) 2012 by Stephen Hutchings
 
-Author:    Stephen Hutchings
-License:   SIL (http://scripts.sil.org/OFL)
-Homepage:  http://typicons.com/
+Author:  Stephen Hutchings
+License: SIL (http://scripts.sil.org/OFL)
+URL:     http://typicons.com/
 
 Font Awesome - Copyright (C) 2012 by Dave Gandy
 
-Author:    Dave Gandy
-License:   SIL (http://scripts.sil.org/OFL)
-Homepage:  http://fortawesome.github.com/Font-Awesome/
+Author:  Dave Gandy
+License: SIL (http://scripts.sil.org/OFL)
+URL:     http://fortawesome.github.com/Font-Awesome/
 
 FitVids 1.1 - Copyright (C) 2013 by Chris Coyier and Dave Rupert
 
-Author:    Chris Coyier (http://css-tricks.com), Dave Rupert (http://daverupert.com)
-Credit     Thierry Koblentz (http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
-License:   WTFPL (http://sam.zoy.org/wtfpl/)
-Homepage:  http://fitvidsjs.com/
+Author:  Chris Coyier (http://css-tricks.com), Dave Rupert (http://daverupert.com)
+Credit:  Thierry Koblentz (http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
+License: WTFPL (http://sam.zoy.org/wtfpl/)
+URL:     http://fitvidsjs.com/
+
+Images and resources used in the screenshot
+
+Nexus mock-ups
+Author:  Elegant Themes
+License: GPLv2 or later
+URL:     https://www.elegantthemes.com/blog/freebie-of-the-week/free-nexus-7-psd-mockup-templates
+
+Macbook mock-ups
+Author:  Elegant Themes
+License: GPLv2 or later
+URL:     http://www.elegantthemes.com/blog/freebie-of-the-week/free-macbook-pro-psd-templates
+
+Genericons
+Author:  Automattic
+License: GPLv2 or later
+URL:     http://genericons.com/
+
+Image of the sky #1
+Author:  Blair Fraser
+Licence: CC0
+URL:     https://unsplash.com/photos/aI1tDC8PaLM
+
+Image of the sky #2
+Author:  Kien Do
+Licence: CC0
+URL:     https://unsplash.com/photos/cynn7cTgOCU
 
 == Changelog ==
+
+= 0.1.5 =
+
+Updated customizer messages.
+Updated screenshot.
+Added Licence information.
 
 = 0.1.4 =
 
