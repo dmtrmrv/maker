@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Maker 0.1.5\n"
+"Project-Id-Version: Maker 0.1.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2015-04-02 06:47:47+00:00\n"
 "MIME-Version: 1.0\n"
@@ -258,10 +258,11 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Maker is a simple portfolio theme for people who make things. Websites, "
-"illustrations, photos, etc. It is designed to showcase your work in a "
-"cleanest way possible. More info and live demo at "
-"http://themepatio.com/themes/maker"
+"Maker is a simple yet powerful portfolio theme for people who create "
+"things. Websites, illustrations, photos, etc. Maker features classic "
+"grid-based layout, clean typography and overall minimal style, that allows "
+"you to create a portfolio website that is both modern and timeless at the "
+"same time. More info and live demo at https://themepatio.com/themes/maker"
 msgstr ""
 
 #. Author of the plugin/theme
