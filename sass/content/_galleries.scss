@@ -18,6 +18,7 @@
 	img,
 	a {
 		display: block;
+		margin-bottom: 0;
 	}
 	@for $i from 1 through 10 {
 		.gallery-columns-#{$i} & {

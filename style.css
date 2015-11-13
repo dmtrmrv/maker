@@ -1815,6 +1815,7 @@ a.site-logo-link:before {
 .gallery-item img,
 .gallery-item a {
 	display: block;
+	margin-bottom: 0;
 }
 
 .gallery-columns-1 .gallery-item {
