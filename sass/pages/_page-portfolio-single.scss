@@ -96,6 +96,7 @@
 		padding-right: 1em;
 		color: $color__text-secondary;
 		text-align: left;
+		vertical-align: top;
 		@media screen and ( min-width: $md ) {
 			text-align: right;
 		}

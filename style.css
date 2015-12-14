@@ -2057,6 +2057,7 @@ a.site-logo-link:before {
 	padding-right: 1em;
 	color: #bebebe;
 	text-align: left;
+	vertical-align: top;
 }
 
 .single-portfolio .project-meta-item-desc,
