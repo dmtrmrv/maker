@@ -2065,6 +2065,13 @@ a.site-logo-link:before {
 	font-weight: bold;
 }
 
+.single-portfolio .project-meta-cats,
+.single-portfolio .project-meta-tags,
+.single-jetpack-portfolio .project-meta-cats,
+.single-jetpack-portfolio .project-meta-tags {
+	color: #ff2441;
+}
+
 .single-portfolio .comments-area,
 .single-jetpack-portfolio .comments-area {
 	max-width: 474px;

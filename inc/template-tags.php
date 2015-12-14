@@ -203,7 +203,7 @@ function maker_portfolio_toolkit_meta() {
 		// Category.
 		if ( $categories ) :
 		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name project-meta-cats">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-cats">%s</td></tr>',
 			esc_html__( 'Category', 'maker' ),
 			sprintf( esc_html__( '%s', 'maker' ), $categories )
 		);
@@ -212,7 +212,7 @@ function maker_portfolio_toolkit_meta() {
 		// Tag.
 		if ( $tags ) :
 		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name project-meta-tags">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-tags">%s</td></tr>',
 			esc_html__( 'Tags', 'maker' ),
 			sprintf( esc_html__( '%s', 'maker' ), $tags )
 		);
@@ -245,7 +245,7 @@ function maker_portfolio_jetpack_meta() {
 		// Category.
 		if ( $categories ) :
 		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-cats">%s</td></tr>',
 			esc_html__( 'Category', 'maker' ),
 			sprintf( esc_html__( '%s', 'maker' ), $categories )
 		);
@@ -254,7 +254,7 @@ function maker_portfolio_jetpack_meta() {
 		// Tag.
 		if ( $tags ) :
 		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc">%s</td></tr>',
+			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-tags">%s</td></tr>',
 			esc_html__( 'Tags', 'maker' ),
 			sprintf( esc_html__( '%s', 'maker' ), $tags )
 		);

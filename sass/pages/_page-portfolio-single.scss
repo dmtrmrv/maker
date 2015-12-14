@@ -104,6 +104,12 @@
 	.project-meta-item-desc {
 		font-weight: bold;
 	}
+
+	.project-meta-cats,
+	.project-meta-tags {
+		color: $color__accent;
+	}
+
 	.comments-area {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
