@@ -41,8 +41,6 @@ get_header(); ?>
 
 					$args = array(
 						'post_type'      => 'portfolio',
-						'order'          => 'DESC',
-						'orderby'        => 'date',
 						'paged'          => $paged,
 						'posts_per_page' => $posts_per_page,
 					);
