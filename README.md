@@ -47,6 +47,14 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.1.7**
+
+Fixed issue with margins on images inside galleries.
+
+**0.1.6**
+
+Updated theme tags.
+
 **0.1.5**
 
 Updated customizer messages.
