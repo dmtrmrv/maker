@@ -1447,6 +1447,15 @@ a.site-logo-link:before {
 	color: #fe7a15;
 }
 
+.menu-social-container a[href*='tumblr.com']:before {
+	content: '\e80e';
+}
+
+.menu-social-container a[href*='tumblr.com']:hover,
+.menu-social-container a[href*='tumblr.com']:hover:before {
+	color: #26475c;
+}
+
 .menu-social-container a[href*='twitter.com']:before {
 	content: '\e813';
 }
