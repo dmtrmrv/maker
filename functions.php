@@ -203,7 +203,12 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Customizer additions.
+ * Customizer Custom Controls.
+ */
+require get_template_directory() . '/inc/customizer-controls.php';
+
+/**
+ * Customizer settings.
  */
 require get_template_directory() . '/inc/customizer.php';
 

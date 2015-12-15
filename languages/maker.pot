@@ -94,6 +94,49 @@ msgid ""
 "archive if left empty."
 msgstr ""
 
+#: inc/customizer.php:128
+msgid "Custom Colors"
+msgstr ""
+
+#: inc/customizer.php:129
+msgid ""
+"With Maker Pro child theme you can change <strong>link, text, "
+"background,</strong> and <strong>site</strong> colors."
+msgstr ""
+
+#: inc/customizer.php:145
+msgid "Portfolio Columns"
+msgstr ""
+
+#: inc/customizer.php:146
+msgid ""
+"With Maker Pro child theme you can choose between <strong>two, "
+"three</strong> or <strong>four</strong> column layouts for portfolio grid "
+"on a homepage."
+msgstr ""
+
+#: inc/customizer.php:148
+msgid "Unlock Portfolio Columns"
+msgstr ""
+
+#: inc/customizer.php:156
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:167
+msgid "Footer Message"
+msgstr ""
+
+#: inc/customizer.php:168
+msgid ""
+"With Maker Pro child theme you can easily set your own custom footer "
+"message."
+msgstr ""
+
+#: inc/customizer.php:170
+msgid "Unlock custom footer."
+msgstr ""
+
 #: inc/extras.php:75
 msgid "Page %s"
 msgstr ""

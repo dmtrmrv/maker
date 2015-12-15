@@ -109,6 +109,71 @@ function maker_customize_register( $wp_customize ) {
 		'active_callback' => 'maker_is_single_portfolio',
 		'description'     => __( '"All Projects" link at the bottom of a single project. Links to portfolio archive if left empty.', 'maker' ),
 	) );
+
+	/**
+	 * Pro Options preview.
+	 */
+	$theme = wp_get_theme();
+
+	if ( 'Maker Pro' != $theme->Name ) :
+
+	// Colors.
+	$wp_customize->add_setting( 'maker_pro_colors' );
+
+	$wp_customize -> add_control(
+		new Maker_Message_Custom_Control(
+			$wp_customize,
+			'maker_pro_colors',
+			array(
+				'label'       => __( 'Custom Colors', 'maker' ),
+				'description' => __( 'With Maker Pro child theme you can change <strong>link, text, background,</strong> and <strong>site</strong> colors.', 'maker' ),
+				'url'         => 'https://themepatio.com/themes/maker/',
+				'cta'         => 'Unlock Cusotm Colors',
+				'section'     => 'colors',
+			)
+		)
+	);
+
+	// Portfolio.
+	$wp_customize->add_setting( 'maker_pro_portfolio_columns' );
+
+	$wp_customize -> add_control(
+		new Maker_Message_Custom_Control(
+			$wp_customize,
+			'maker_pro_portfolio_columns',
+			array(
+				'label'       => __( 'Portfolio Columns', 'maker' ),
+				'description' => __( 'With Maker Pro child theme you can choose between <strong>two, three</strong> or <strong>four</strong> column layouts for portfolio grid on a homepage.', 'maker' ),
+				'url'         => 'https://themepatio.com/themes/maker/',
+				'cta'         => __( 'Unlock Portfolio Columns', 'maker' ),
+				'section'     => 'maker_portfolio',
+			)
+		)
+	);
+
+	// Footer.
+	$wp_customize->add_section( 'maker_footer' , array(
+		'title'    => __( 'Footer', 'maker' ),
+		'priority' => 160,
+	) );
+
+	$wp_customize->add_setting( 'maker_pro_footer' );
+
+	$wp_customize -> add_control(
+		new Maker_Message_Custom_Control(
+			$wp_customize,
+			'maker_pro_footer',
+			array(
+				'label'       => __( 'Footer Message', 'maker' ),
+				'description' => __( 'With Maker Pro child theme you can easily set your own custom footer message.', 'maker' ),
+				'url'         => 'https://themepatio.com/themes/maker/',
+				'cta'         => __( 'Unlock custom footer.', 'maker' ),
+				'section'     => 'maker_footer',
+			)
+		)
+	);
+
+	endif;
 }
 add_action( 'customize_register', 'maker_customize_register' );
 
@@ -184,3 +249,28 @@ function maker_customize_preview_js() {
 	);
 }
 add_action( 'customize_preview_init', 'maker_customize_preview_js' );
+
+/**
+ * Prints custom CSS to customizer screen.
+ */
+$theme = wp_get_theme();
+
+if ( 'Maker Pro' != $theme->Name ) :
+
+function maker_customize_preview_css() { ?>
+	<style>
+		.pro-badge {
+			margin-left: 12px;
+			padding: 0 5px 1px;
+			border-radius: 3px;
+			color: #fff;
+			background-color: #0085ba;
+			font-size: 11px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+	</style><?php
+}
+add_action( 'customize_controls_print_styles', 'maker_customize_preview_css' );
+
+endif;
