@@ -216,3 +216,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Theme Info Screen
+ */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/welcome-screen/welcome-screen.php';
+}

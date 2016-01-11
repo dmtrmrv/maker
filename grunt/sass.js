@@ -6,8 +6,9 @@ module.exports = {
 			require:   'susy'
 		},
 		files: {
-			'style.css':        'sass/style.scss',
-			'editor-style.css': 'sass/editor-style.scss'
+			'style.css':                          'sass/style.scss',
+			'editor-style.css':                   'sass/editor-style.scss',
+			'inc/welcome-screen/css/welcome.css': 'sass/welcome.scss'
 		}
 	}
 };

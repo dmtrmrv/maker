@@ -1,0 +1,92 @@
+
+.about-wrap .feature-section:not(.under-the-hood) .col.theme-screenshot {
+	margin-top: 25px;
+}
+
+.theme-info-sidebar {
+	@media screen and ( min-width: 783px ) {
+		float: right;
+		width: 30%;
+		min-width: 30%;
+	}
+	.card {
+		min-width: auto;
+	}
+}
+
+.tab-content {
+	@media screen and ( min-width: 783px ) {
+		float: left;
+		box-sizing: border-box;
+		width: 70%;
+		&.card {
+			max-width: 63%;
+			max-width: calc( 70% - 40px );
+			margin-top: 40px;
+		}
+	}
+	.about-wrap & {
+		hr {
+			margin: 1em 0;
+		}
+	}
+}
+
+.tab-heading {
+	margin: 25px 0 30px;
+	font-size: 2.2em;
+	font-weight: 300;
+	line-height: 1.3;
+}
+
+.tp-two-col {
+	.tp-col {
+		display: inline-block;
+		@media screen and ( min-width: 501px ) {
+			float: none;
+			width: calc(47.6% - 4px);
+			margin-right: 4.799999999%;
+			vertical-align: top;
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.about-wrap h3.tp-col-heading {
+	margin: 0.6em 0;
+}
+
+.welcome-screen-widget {
+	margin-top: 40px;
+}
+
+.tp-theme-feature-buttons {
+	display: inline-block;
+	margin: 0.6em 0 1em;
+}
+
+h2.tp-nav-tab-wrapper .nav-tab {
+	@media screen and ( max-width: 600px ) {
+		margin: 0 -1px -1px;
+	}
+}
+
+.tp-well {
+	text-align: center;
+	padding: 1em;
+	background-color: #f0f0f0;
+	margin: 1em 0;
+}
+
+.tp-well-message {
+	color: #777;
+	font-size: 19px;
+	font-weight: 400;
+	line-height: 1.6em;
+	@media screen and ( min-width: 783px ) {
+		max-width: 67%;
+		margin: 1.2em auto 1.2em;
+	}
+}
