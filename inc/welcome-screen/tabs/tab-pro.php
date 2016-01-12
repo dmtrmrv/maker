@@ -50,7 +50,7 @@
 	<p>
 		<?php
 			printf(
-				'<a href="%s" class="button button-primary">%s</a>',
+				'<a href="%s" class="button button-hero button-primary">%s</a>',
 				esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
 				esc_html__( 'Purchase Maker Pro', 'maker' )
 			);
