@@ -45,17 +45,19 @@
 		<p><?php esc_html_e( 'Maker Pro also comes packed with the demo data, so you can import it and start editing to get the idea of how the theme works.', 'maker' ); ?></p>
 	</div>
 </div>
-<div class="tp-well">
-	<div class="tp-well-message"><?php esc_html_e( 'Maker Pro also comes with a year of updates and our friendly support. Level up!' ); ?></div>
-	<p>
-		<?php
-			printf(
-				'<a href="%s" class="button button-hero button-primary">%s</a>',
-				esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
-				esc_html__( 'Purchase Maker Pro', 'maker' )
-			);
-		?>
-	</p>
-</div>
+<?php if ( ! $this->maker_is_pro() ) : ?>
+	<div class="tp-well">
+		<div class="tp-well-message"><?php esc_html_e( 'Maker Pro also comes with a year of updates and our friendly support. Level up!' ); ?></div>
+		<p>
+			<?php
+				printf(
+					'<a href="%s" class="button button-hero button-primary">%s</a>',
+					esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+					esc_html__( 'Purchase Maker Pro', 'maker' )
+				);
+			?>
+		</p>
+	</div>
+<?php endif; ?>
 
 </div>

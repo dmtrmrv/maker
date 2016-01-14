@@ -65,7 +65,7 @@ class Maker_Theme_Info {
 		require_once( ABSPATH . 'wp-admin/admin.php' );
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
 
-		echo '<div class="wrap about-wrap">';
+		echo '<div class="wrap tp-theme-info">';
 
 			do_action( 'maker_welcome' );
 
@@ -134,8 +134,9 @@ class Maker_Theme_Info {
 	 */
 	public function maker_welcome_tab_title_pro() {
 		printf(
-			'<a href="#pro" class="nav-tab">%s</a>',
-			esc_html__( 'Maker Pro', 'maker' )
+			'<a href="#pro" class="nav-tab %2$s">%1$s</a>',
+			esc_html__( 'Maker Pro', 'maker' ),
+			$this->maker_is_pro() ? '' : 'nav-tab-pro'
 		);
 	}
 
@@ -200,6 +201,19 @@ class Maker_Theme_Info {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Checks if the theme is Maker Pro.
+	 * 
+	 * @return bool True if the theme is Maker Pro.
+	 */
+	public function maker_is_pro() {
+		if ( 'Maker Pro' == $this->theme->get( 'Name' ) ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**

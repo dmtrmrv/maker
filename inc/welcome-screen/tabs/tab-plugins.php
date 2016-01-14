@@ -12,7 +12,6 @@
 	<h2 class="tab-heading"><?php esc_html_e( 'Recommended Plugins', 'maker' ); ?></h2>
 
 	<p><?php esc_html_e( 'Maker is built to work with the following plugins. Although they are completely optional we recommend installing, at least, Portfolio Toolkit to create a website that looks like the demo.', 'maker' ); ?></p>
-
 	
 	<h3>Portfolio Toolkit</h3>
 

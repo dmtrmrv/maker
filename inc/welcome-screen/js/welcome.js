@@ -6,7 +6,7 @@ jQuery( document ).ready( function() {
 	jQuery( '.nav-tab-wrapper a' ).click( function() {
 
 		var tab  = jQuery( this );
-		var	wrap = tab.closest( '.about-wrap' );
+		var	wrap = tab.closest( '.tp-theme-info' );
 
 		jQuery( '.nav-tab-wrapper a', wrap ).removeClass( 'nav-tab-active' );
 		jQuery( 'div.tab-content', wrap ).hide();

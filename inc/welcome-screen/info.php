@@ -5,28 +5,27 @@
  * @package Maker
  */
 
-$maker_theme_object = wp_get_theme( 'maker' );
 ?>
 
-<div class="theme-info">
-<div class="feature-section two-col">
-	<div class="col theme-screenshot">
-		<img src="<?php echo esc_url( get_template_directory_uri() ) . '/screenshot.png'; ?>" alt="Maker" />
+<div class="tp-theme-intro">
+<div class="tp-two-col">
+	<div class="tp-col tp-theme-screenshot">
+		<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/screenshot.png'; ?>" alt="Maker" />
 	</div>
 	
-	<div class="col">
+	<div class="tp-col tp-theme-description">
 		<?php
 			// Title and version.
 			printf(
 				'<h1>%s <sup><small>%s</small></sup></h1>',
-				esc_html( $maker_theme_object['Name'] ),
-				esc_html( $maker_theme_object['Version'] )
+				esc_html( $this->theme->get( 'Name' ) ),
+				esc_html( $this->theme->get( 'Version' ) )
 			);
 
 			// Theme description.
 			printf(
 				'<p>%s</p>',
-				esc_html( $maker_theme_object['Description'] )
+				esc_html( $this->theme->get( 'Description' ) )
 			);
 		?>
 

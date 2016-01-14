@@ -325,30 +325,30 @@ msgid ""
 "insert a [year] shortcode and forget about updating the footer each year."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:83
-#: inc/welcome-screen/tabs/tab-features.php:104
-#: inc/welcome-screen/tabs/tab-features.php:125
-#: inc/welcome-screen/tabs/tab-pro.php:55
-#: inc/welcome-screen/tabs/tab-support.php:31
+#: inc/welcome-screen/tabs/tab-features.php:84
+#: inc/welcome-screen/tabs/tab-features.php:107
+#: inc/welcome-screen/tabs/tab-features.php:130
+#: inc/welcome-screen/tabs/tab-pro.php:56
+#: inc/welcome-screen/tabs/tab-support.php:25
 msgid "Purchase Maker Pro"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:98
+#: inc/welcome-screen/tabs/tab-features.php:100
 msgid "Unlimited Colors (Pro)"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:99
+#: inc/welcome-screen/tabs/tab-features.php:101
 msgid ""
 "With Maker Pro you can easily change the look of your website by adjusting "
 "the color scheme. You can change the text color, link color, site and "
 "background colors."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:119
+#: inc/welcome-screen/tabs/tab-features.php:123
 msgid "Custom Pages (Pro)"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:120
+#: inc/welcome-screen/tabs/tab-features.php:124
 msgid ""
 "Maker Pro also has a useful feature that allows you to change the number of "
 "columns on the portfolio grid page. You can choose from 2, 3 or 4 columns."
@@ -365,7 +365,7 @@ msgid ""
 "create a website that looks like the demo."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:19
+#: inc/welcome-screen/tabs/tab-plugins.php:18
 msgid ""
 "Adds portfolio functionality to your WordPress website. Maker is designed "
 "with this plugin in mind, however, it will not work if you enable Portfolio "
@@ -373,7 +373,7 @@ msgid ""
 "not at the same time."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:27
+#: inc/welcome-screen/tabs/tab-plugins.php:26
 msgid ""
 "Adds WordPress.com functionality to your self-hosted WordPress site. Note "
 "that in order to use Jetpack you'll need WordPress.com account. You don't "
@@ -381,11 +381,11 @@ msgid ""
 "Galleries modules to display portfolio projects."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:35
+#: inc/welcome-screen/tabs/tab-plugins.php:34
 msgid "Creates contact forms that can be easily added to posts, pages, and widgets."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:43
+#: inc/welcome-screen/tabs/tab-plugins.php:42
 msgid ""
 "This plugin allows you to regenerate thumbnails for your image attachments. "
 "It may be very useful if you are switching from another theme."
@@ -453,7 +453,7 @@ msgid ""
 "start editing to get the idea of how the theme works."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:49
+#: inc/welcome-screen/tabs/tab-pro.php:50
 msgid ""
 "Maker Pro also comes with a year of updates and our friendly support. Level "
 "up!"
@@ -475,16 +475,15 @@ msgid ""
 "fixing bugs. Support lasts for one year after a theme purchase."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:24
-#: inc/welcome-screen/tabs/tab-support.php:48
-msgid "Details"
-msgstr ""
-
-#: inc/welcome-screen/tabs/tab-support.php:38
-msgid "Priority Support $59"
+#: inc/welcome-screen/tabs/tab-support.php:32
+msgid "Submit a Ticket"
 msgstr ""
 
 #: inc/welcome-screen/tabs/tab-support.php:40
+msgid "Priority Support $59"
+msgstr ""
+
+#: inc/welcome-screen/tabs/tab-support.php:42
 msgid ""
 "Priority support is a huge time-saver. On top of the basic plan, it "
 "includes answers to the more technical questions, faster responses, and "
@@ -492,22 +491,26 @@ msgid ""
 "free themes as well. It lasts for 45 days from the day of purchase."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:55
+#: inc/welcome-screen/tabs/tab-support.php:50
+msgid "Details"
+msgstr ""
+
+#: inc/welcome-screen/tabs/tab-support.php:57
 msgid "Purchase Priority Support"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:62
+#: inc/welcome-screen/tabs/tab-support.php:64
 msgid "Free Support"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:64
+#: inc/welcome-screen/tabs/tab-support.php:66
 msgid ""
 "Please be advised that, even though, Maker is free, we can not guarantee "
 "free support for it. Consider purchasing Maker Pro or Priority Support plan "
 "to get access to our friendly one-on-one dedicated support!"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:66
+#: inc/welcome-screen/tabs/tab-support.php:68
 msgid ""
 "We do however encourage you to tell us if something went wrong through "
 "support forum. We do our best to provide timely support there but do not "
@@ -526,13 +529,13 @@ msgstr ""
 msgid "Maker Pro"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:221
+#: inc/welcome-screen/welcome-screen.php:234
 msgid ""
 "This plugin is installed but not activated. You need to go to the Plugins "
 "page and activate it."
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:234
+#: inc/welcome-screen/welcome-screen.php:247
 msgid "Installed & Acivated"
 msgstr ""
 

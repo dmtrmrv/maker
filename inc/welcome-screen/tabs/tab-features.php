@@ -14,7 +14,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="media-container">
-			<p style="margin-top: 0;"><img src="http://placehold.it/350x350"></p>
+			<p style="margin-top: 0;"><img src="http://placehold.it/468x468"></p>
 		</div>
 	</div>
 	<div class="tp-col">
@@ -28,7 +28,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="media-container">
-			<p><img src="http://placehold.it/350x350"></p>
+			<p><img src="http://placehold.it/468x468"></p>
 		</div>
 	</div>
 	<div class="tp-col">
@@ -42,7 +42,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="media-container">
-			<p><img src="http://placehold.it/350x350"></p>
+			<p><img src="http://placehold.it/468x468"></p>
 		</div>
 	</div>
 	<div class="tp-col">
@@ -56,7 +56,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="media-container">
-			<p><img src="http://placehold.it/350x350"></p>
+			<p><img src="http://placehold.it/468x468"></p>
 		</div>
 	</div>
 	<div class="tp-col">
@@ -70,18 +70,20 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="media-container">
-			<p><img src="http://placehold.it/350x350"></p>
+			<p><img src="http://placehold.it/468x468"></p>
 		</div>
 	</div>
 	<div class="tp-col">
 		<h3 class="tp-col-heading"><?php esc_html_e( 'Footer Message (Pro)', 'maker' ); ?></h3>
 		<p><?php esc_html_e( 'With Maker Pro, you can change the default footer message. There is also a very neat feature that allows you to display the current year. Simply insert a [year] shortcode and forget about updating the footer each year.', 'maker' ); ?></p>
 		<?php
-			printf(
-				'<p><a href="%s" class="button button-primary">%s</a></p>',
-				esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
-				esc_html__( 'Purchase Maker Pro', 'maker' )
-			);
+			if ( ! $this->maker_is_pro() ) {
+				printf(
+					'<p><a href="%s" class="button button-primary">%s</a></p>',
+					esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+					esc_html__( 'Purchase Maker Pro', 'maker' )
+				);
+			}
 		?>
 	</div>
 </div>
@@ -91,18 +93,20 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="media-container">
-			<p><img src="http://placehold.it/350x350"></p>
+			<p><img src="http://placehold.it/468x468"></p>
 		</div>
 	</div>
 	<div class="tp-col">
 		<h3 class="tp-col-heading"><?php esc_html_e( 'Unlimited Colors (Pro)', 'maker' ); ?></h3>
 		<p><?php esc_html_e( 'With Maker Pro you can easily change the look of your website by adjusting the color scheme. You can change the text color, link color, site and background colors.', 'maker' ); ?></p>
 		<?php
-			printf(
-				'<p><a href="%s" class="button button-primary">%s</a></p>',
-				esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
-				esc_html__( 'Purchase Maker Pro', 'maker' )
-			);
+			if ( ! $this->maker_is_pro() ) {
+				printf(
+					'<p><a href="%s" class="button button-primary">%s</a></p>',
+					esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+					esc_html__( 'Purchase Maker Pro', 'maker' )
+				);
+			}
 		?>
 	</div>
 </div>
@@ -112,18 +116,20 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="media-container">
-			<p><img src="http://placehold.it/350x350"></p>
+			<p><img src="http://placehold.it/468x468"></p>
 		</div>
 	</div>
 	<div class="tp-col">
 		<h3 class="tp-col-heading"><?php esc_html_e( 'Custom Pages (Pro)', 'maker' ); ?></h3>
 		<p><?php esc_html_e( 'Maker Pro also has a useful feature that allows you to change the number of columns on the portfolio grid page. You can choose from 2, 3 or 4 columns.', 'maker' ); ?></p>
 		<?php
-			printf(
-				'<p><a href="%s" class="button button-primary">%s</a></p>',
-				esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
-				esc_html__( 'Purchase Maker Pro', 'maker' )
-			);
+			if ( ! $this->maker_is_pro() ) {
+				printf(
+					'<p><a href="%s" class="button button-primary">%s</a></p>',
+					esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+					esc_html__( 'Purchase Maker Pro', 'maker' )
+				);
+			}
 		?>
 	</div>
 </div>

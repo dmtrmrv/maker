@@ -17,19 +17,21 @@
 
 <p class="tp-theme-feature-buttons">
 	<?php
-		// Details Button.
-		printf(
-			'<a href="%s" class="button">%s</a> ',
-			esc_url( $this->theme_author_url . 'support' ),
-			esc_html__( 'Details', 'maker' )
-		);
-
-		// Purchase Maker Pro Button.
-		printf(
-			'<a href="%s" class="button button-primary">%s</a>',
-			esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
-			esc_html__( 'Purchase Maker Pro', 'maker' )
-		);
+		if ( ! $this->maker_is_pro() ) {
+			// Purchase Maker Pro Button.
+			printf(
+				'<a href="%s" class="button button-primary">%s</a>',
+				esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+				esc_html__( 'Purchase Maker Pro', 'maker' )
+			);
+		} else {
+			// Submit a Ticket Button.
+			printf(
+				'<a href="%s" class="button button-primary">%s</a> ',
+				esc_url( $this->theme_author_url . 'support' ),
+				esc_html__( 'Submit a Ticket', 'maker' )
+			);
+		}
 	?>
 </p>
 
