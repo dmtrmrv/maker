@@ -47,7 +47,7 @@
 </div>
 <?php if ( ! $this->maker_is_pro() ) : ?>
 	<div class="tp-well">
-		<div class="tp-well-message"><?php esc_html_e( 'Maker Pro also comes with a year of updates and our friendly support. Level up!' ); ?></div>
+		<div class="tp-well-message"><?php esc_html_e( 'Maker Pro also comes with a year of updates and our friendly support. Level up!', 'maker' ); ?></div>
 		<p>
 			<?php
 				printf(
