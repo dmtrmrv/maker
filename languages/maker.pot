@@ -263,7 +263,7 @@ msgid ""
 msgstr ""
 
 #: inc/welcome-screen/sidebar/widget-docs.php:17
-msgid "View Docs"
+msgid "View Documentation"
 msgstr ""
 
 #: inc/welcome-screen/tabs/tab-features.php:12
@@ -288,7 +288,8 @@ msgstr ""
 msgid ""
 "With a free Portfolio Toolkit plugin, you can easily add a portfolio "
 "functionality to your website. Simply install and activate it and you are "
-"ready to go. Maker also supports Jetpack Portfolio Custom Content Types."
+"ready to go. You can also install Maker also supports Jetpack Portfolio "
+"Custom Content Types."
 msgstr ""
 
 #: inc/welcome-screen/tabs/tab-features.php:49
@@ -529,13 +530,13 @@ msgstr ""
 msgid "Maker Pro"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:234
+#: inc/welcome-screen/welcome-screen.php:235
 msgid ""
 "This plugin is installed but not activated. You need to go to the Plugins "
 "page and activate it."
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:247
+#: inc/welcome-screen/welcome-screen.php:248
 msgid "Installed & Acivated"
 msgstr ""
 

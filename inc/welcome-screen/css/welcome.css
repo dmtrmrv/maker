@@ -67,10 +67,15 @@
   }
 }
 
-.tp-theme-screenshot {
+.tp-theme-screenshot,
+.tp-media-container {
   box-sizing: border-box;
   border: 1px solid #dedede;
   box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.1);
+}
+
+.tp-media-container {
+  margin: 1em 0;
 }
 
 @media screen and (min-width: 783px) {
