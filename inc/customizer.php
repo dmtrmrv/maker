@@ -113,12 +113,14 @@ function maker_customize_register( $wp_customize ) {
 	/**
 	 * Pro Options preview.
 	 */
-	$theme = wp_get_theme();
+	$maker_theme_name = wp_get_theme();
 
-	if ( 'Maker Pro' != $theme->Name ) :
+	if ( 'Maker Pro' != $maker_theme_name->Name ) :
 
 	// Colors.
-	$wp_customize->add_setting( 'maker_pro_colors' );
+	$wp_customize->add_setting( 'maker_pro_colors', array(
+		'sanitize_callback' => '__return_false',
+	) );
 
 	$wp_customize -> add_control(
 		new Maker_Message_Custom_Control(
@@ -127,7 +129,7 @@ function maker_customize_register( $wp_customize ) {
 			array(
 				'label'       => __( 'Custom Colors', 'maker' ),
 				'description' => __( 'With Maker Pro child theme you can change <strong>link, text, background,</strong> and <strong>site</strong> colors.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/',
+				'url'         => 'https://themepatio.com/themes/maker/#tp-maker-pro-desc',
 				'cta'         => 'Unlock Cusotm Colors',
 				'section'     => 'colors',
 			)
@@ -135,7 +137,9 @@ function maker_customize_register( $wp_customize ) {
 	);
 
 	// Portfolio.
-	$wp_customize->add_setting( 'maker_pro_portfolio_columns' );
+	$wp_customize->add_setting( 'maker_pro_portfolio_columns', array(
+		'sanitize_callback' => '__return_false',
+	) );
 
 	$wp_customize -> add_control(
 		new Maker_Message_Custom_Control(
@@ -144,7 +148,7 @@ function maker_customize_register( $wp_customize ) {
 			array(
 				'label'       => __( 'Portfolio Columns', 'maker' ),
 				'description' => __( 'With Maker Pro child theme you can choose between <strong>two, three</strong> or <strong>four</strong> column layouts for portfolio grid on a homepage.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/',
+				'url'         => 'https://themepatio.com/themes/maker/#tp-maker-pro-desc',
 				'cta'         => __( 'Unlock Portfolio Columns', 'maker' ),
 				'section'     => 'maker_portfolio',
 			)
@@ -157,7 +161,9 @@ function maker_customize_register( $wp_customize ) {
 		'priority' => 160,
 	) );
 
-	$wp_customize->add_setting( 'maker_pro_footer' );
+	$wp_customize->add_setting( 'maker_pro_footer', array(
+		'sanitize_callback' => '__return_false',
+	) );
 
 	$wp_customize -> add_control(
 		new Maker_Message_Custom_Control(
@@ -166,7 +172,7 @@ function maker_customize_register( $wp_customize ) {
 			array(
 				'label'       => __( 'Footer Message', 'maker' ),
 				'description' => __( 'With Maker Pro child theme you can easily set your own custom footer message.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/',
+				'url'         => 'https://themepatio.com/themes/maker/#tp-maker-pro-desc',
 				'cta'         => __( 'Unlock custom footer.', 'maker' ),
 				'section'     => 'maker_footer',
 			)
