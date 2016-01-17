@@ -584,7 +584,7 @@ msgid "Maker"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://themepatio.com/themes/maker/"
+msgid "https://themepatio.com/themes/maker/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -601,7 +601,7 @@ msgid "ThemePatio"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://themepatio.com/"
+msgid "https://themepatio.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme
