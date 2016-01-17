@@ -11,7 +11,7 @@
 
 <h2 class="tab-heading">Maker Pro</h2>
 
-<p><img src="http://placehold.it/779x336"></p>
+<p><img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-pro-01.png' ); ?>"></p>
 
 <div class="tp-two-col">
 	<div class="tp-col">

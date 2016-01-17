@@ -13,8 +13,8 @@
 
 <div class="tp-two-col">
 	<div class="tp-col">
-		<div class="media-container">
-			<p style="margin-top: 0;"><img src="http://placehold.it/468x468"></p>
+		<div class="tp-media-container" style="margin-top: 0;">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-01.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -27,13 +27,13 @@
 
 <div class="tp-two-col">
 	<div class="tp-col">
-		<div class="media-container">
-			<p><img src="http://placehold.it/468x468"></p>
+		<div class="tp-media-container">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-02.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
 		<h3 class="tp-col-heading"><?php esc_html_e( 'Easy-to-manage Portfolio', 'maker' ); ?></h3>
-		<p><?php esc_html_e( 'With a free Portfolio Toolkit plugin, you can easily add a portfolio functionality to your website. Simply install and activate it and you are ready to go. Maker also supports Jetpack Portfolio Custom Content Types.', 'maker' ); ?></p>
+		<p><?php esc_html_e( 'With a free Portfolio Toolkit plugin, you can easily add a portfolio functionality to your website. Simply install and activate it and you are ready to go. You can also install Maker also supports Jetpack Portfolio Custom Content Types.', 'maker' ); ?></p>
 	</div>
 </div>
 
@@ -41,8 +41,8 @@
 
 <div class="tp-two-col">
 	<div class="tp-col">
-		<div class="media-container">
-			<p><img src="http://placehold.it/468x468"></p>
+		<div class="tp-media-container">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-03.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -55,8 +55,8 @@
 
 <div class="tp-two-col">
 	<div class="tp-col">
-		<div class="media-container">
-			<p><img src="http://placehold.it/468x468"></p>
+		<div class="tp-media-container">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-04.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -69,8 +69,8 @@
 
 <div class="tp-two-col">
 	<div class="tp-col">
-		<div class="media-container">
-			<p><img src="http://placehold.it/468x468"></p>
+		<div class="tp-media-container">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-05.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -92,8 +92,8 @@
 
 <div class="tp-two-col">
 	<div class="tp-col">
-		<div class="media-container">
-			<p><img src="http://placehold.it/468x468"></p>
+		<div class="tp-media-container">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-06.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -115,8 +115,8 @@
 
 <div class="tp-two-col">
 	<div class="tp-col">
-		<div class="media-container">
-			<p><img src="http://placehold.it/468x468"></p>
+		<div class="tp-media-container">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-07.gif' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
