@@ -8,6 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, red, white, dark, light, responsive-layout, one-column, three-columns, right-sidebar, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 
 == Description ==
+
 Maker is a simple yet powerful portfolio theme for people who create things. Websites, illustrations, photos, etc. Maker features classic grid-based layout, clean typography and overall minimal style, that allows you to create a portfolio website that is both modern and timeless at the same time. More info and live demo at https://themepatio.com/themes/maker
 
 == Installation ==
@@ -21,53 +22,90 @@ Maker is a simple yet powerful portfolio theme for people who create things. Web
 
 Maker is distributed under the terms of the GNU GPLv2 or later
 
-Maker Theme bundles the following third-party resources:
+== Bundled Resources ==
 
-Typicons - Copyright (C) 2012 by Stephen Hutchings
-
+Typicons
 Author:  Stephen Hutchings
 License: SIL (http://scripts.sil.org/OFL)
 URL:     http://typicons.com/
 
-Font Awesome - Copyright (C) 2012 by Dave Gandy
-
+Font Awesome
 Author:  Dave Gandy
 License: SIL (http://scripts.sil.org/OFL)
 URL:     http://fortawesome.github.com/Font-Awesome/
 
-FitVids 1.1 - Copyright (C) 2013 by Chris Coyier and Dave Rupert
-
+FitVids 1.1
 Author:  Chris Coyier (http://css-tricks.com), Dave Rupert (http://daverupert.com)
 Credit:  Thierry Koblentz (http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
 License: WTFPL (http://sam.zoy.org/wtfpl/)
 URL:     http://fitvidsjs.com/
 
-Images and resources used in the screenshot
+== Images used in the screenshot ==
 
-Nexus mock-ups
-Author:  Elegant Themes
-License: GPLv2 or later
-URL:     https://www.elegantthemes.com/blog/freebie-of-the-week/free-nexus-7-psd-mockup-templates
+Smartphones and laptop devices mock-ups
+Author:  Michał Jakobsze
+License: CC BY-NC 3.0
+URL:     https://www.behance.net/gallery/13493563/FREE-Flat-Apple-Devices-Mockup-iPhone-6-update
 
-Macbook mock-ups
-Author:  Elegant Themes
-License: GPLv2 or later
-URL:     http://www.elegantthemes.com/blog/freebie-of-the-week/free-macbook-pro-psd-templates
+Woman Portrait
+Author:  Gabriele Forcina
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/GVHnAe86Nio
 
-Genericons
-Author:  Automattic
-License: GPLv2 or later
-URL:     http://genericons.com/
+Sandwiches
+Author:  Shanice Garcia
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/up9-P5CyAjU
 
-Image of the sky #1
-Author:  Blair Fraser
-Licence: CC0
-URL:     https://unsplash.com/photos/aI1tDC8PaLM
+Chair & Table
+Author:  Jordan Sanchez
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/KyB-Eo4xS_c
 
-Image of the sky #2
-Author:  Kien Do
-Licence: CC0
-URL:     https://unsplash.com/photos/cynn7cTgOCU
+Cap, Guitar & Smartphone
+Author:  Death to Stock
+Licence: CC0 1.0
+URL:     http://deathtothestockphoto.com/
+
+Man with Smartphone
+Author:  Death to Stock
+Licence: CC0 1.0
+URL:     http://deathtothestockphoto.com/
+
+Horses
+Author:  Anders JildénL
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/uO4Au3LrCtk
+
+Rocks and Sea
+Author:  Death to Stock
+Licence: CC0 1.0
+URL:     http://deathtothestockphoto.com/
+
+Woman with Camera
+Author:  Mia Domenico
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/1z1F5Qc30Bs
+
+Motel Sign
+Author:  Steven Lewis
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/KW7feTv6dIs
+
+Yellow Chairs
+Author:  Benjamin Child
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/HgPAUR1ALJQ
+
+Singing Man
+Author:  Jay Wennington
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/vESAH7cwMzc
+
+Icelandic Mountain
+Author:  Alex Talmon
+Licence: CC0 1.0
+URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
