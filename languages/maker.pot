@@ -461,7 +461,7 @@ msgid ""
 msgstr ""
 
 #: inc/welcome-screen/tabs/tab-support.php:12
-#: inc/welcome-screen/welcome-screen.php:128
+#: inc/welcome-screen/welcome-screen.php:145
 msgid "Support"
 msgstr ""
 
@@ -518,25 +518,25 @@ msgid ""
 "guarantee it."
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:108
+#: inc/welcome-screen/welcome-screen.php:125
 msgid "Features"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:118
+#: inc/welcome-screen/welcome-screen.php:135
 msgid "Plugins"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:138
+#: inc/welcome-screen/welcome-screen.php:155
 msgid "Maker Pro"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:235
+#: inc/welcome-screen/welcome-screen.php:252
 msgid ""
 "This plugin is installed but not activated. You need to go to the Plugins "
 "page and activate it."
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:248
+#: inc/welcome-screen/welcome-screen.php:265
 msgid "Installed & Acivated"
 msgstr ""
 

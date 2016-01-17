@@ -10,8 +10,25 @@
  */
 class Maker_Theme_Info {
 
+	/**
+	 * Current theme object.
+	 *
+	 * @var object
+	 */
 	private $theme;
+
+	/**
+	 * Current theme URL.
+	 *
+	 * @var string
+	 */
 	private $theme_url;
+
+	/**
+	 * Current theme Author URL
+	 *
+	 * @var string
+	 */
 	private $theme_author_url;
 
 	/**
@@ -136,7 +153,7 @@ class Maker_Theme_Info {
 		printf(
 			'<a href="#pro" class="nav-tab %2$s">%1$s</a>',
 			esc_html__( 'Maker Pro', 'maker' ),
-			$this->maker_is_pro() ? '' : 'nav-tab-pro'
+			esc_attr( $this->maker_is_pro() ? '' : 'nav-tab-pro' )
 		);
 	}
 
@@ -205,7 +222,7 @@ class Maker_Theme_Info {
 
 	/**
 	 * Checks if the theme is Maker Pro.
-	 * 
+	 *
 	 * @return bool True if the theme is Maker Pro.
 	 */
 	public function maker_is_pro() {
