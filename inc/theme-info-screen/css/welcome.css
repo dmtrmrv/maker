@@ -135,14 +135,6 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .tp-theme-info .nav-tab-active,
-  .tp-theme-info .nav-tab-active:focus,
-  .tp-theme-info .nav-tab-active:focus:active,
-  .tp-theme-info .nav-tab-active:hover {
-    border-bottom: 1px solid #ccc;
-  }
-}
 .nav-tab-pro:not(.nav-tab-active) {
   border-color: #0085ba;
   color: #fff;

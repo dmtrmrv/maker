@@ -14,7 +14,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="tp-media-container" style="margin-top: 0;">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-01.png' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-feature-01.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -28,7 +28,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="tp-media-container">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-02.png' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-feature-02.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -42,7 +42,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="tp-media-container">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-03.png' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-feature-03.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -56,7 +56,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="tp-media-container">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-04.png' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-feature-04.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -70,7 +70,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="tp-media-container">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-05.png' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-feature-05.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -93,7 +93,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="tp-media-container">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-06.png' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-feature-06.png' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">
@@ -116,7 +116,7 @@
 <div class="tp-two-col">
 	<div class="tp-col">
 		<div class="tp-media-container">
-			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-feature-07.gif' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-feature-07.gif' ); ?>">
 		</div>
 	</div>
 	<div class="tp-col">

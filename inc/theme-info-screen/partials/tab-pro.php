@@ -11,7 +11,9 @@
 
 <h2 class="tab-heading">Maker Pro</h2>
 
-<p><img src="<?php echo esc_url( get_template_directory_uri() . '/inc/welcome-screen/img/tp-theme-pro-01.png' ); ?>"></p>
+<div class="tp-media-container" style="margin-top: 0;">
+	<img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info-screen/img/tp-theme-pro-01.png' ); ?>">
+</div>
 
 <div class="tp-two-col">
 	<div class="tp-col">

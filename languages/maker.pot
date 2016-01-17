@@ -252,39 +252,25 @@ msgstr ""
 msgid "%1$s theme by %2$s"
 msgstr ""
 
-#: inc/welcome-screen/sidebar/widget-docs.php:11
-msgid "Looking For Help?"
-msgstr ""
-
-#: inc/welcome-screen/sidebar/widget-docs.php:12
-msgid ""
-"We have more docs and tutorials at our website. Check them out if you need "
-"more detailed information about the theme."
-msgstr ""
-
-#: inc/welcome-screen/sidebar/widget-docs.php:17
-msgid "View Documentation"
-msgstr ""
-
-#: inc/welcome-screen/tabs/tab-features.php:12
+#: inc/theme-info-screen/partials/tab-features.php:12
 msgid "Theme Features"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:21
+#: inc/theme-info-screen/partials/tab-features.php:21
 msgid "Responsive Layout"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:22
+#: inc/theme-info-screen/partials/tab-features.php:22
 msgid ""
 "Maker is built to work great on any device and with any screen resolution. "
 "From a small phone to a large desktop computer."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:35
+#: inc/theme-info-screen/partials/tab-features.php:35
 msgid "Easy-to-manage Portfolio"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:36
+#: inc/theme-info-screen/partials/tab-features.php:36
 msgid ""
 "With a free Portfolio Toolkit plugin, you can easily add a portfolio "
 "functionality to your website. Simply install and activate it and you are "
@@ -292,11 +278,11 @@ msgid ""
 "Custom Content Types."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:49
+#: inc/theme-info-screen/partials/tab-features.php:49
 msgid "Solid Foundation"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:50
+#: inc/theme-info-screen/partials/tab-features.php:50
 msgid ""
 "Maker is built with Underscores, the community-approved platform that "
 "serves as a foundation for default themes like Twenty Sixteen. Maker "
@@ -304,69 +290,69 @@ msgid ""
 "Underscores."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:63
+#: inc/theme-info-screen/partials/tab-features.php:63
 msgid "Social Icons"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:64
+#: inc/theme-info-screen/partials/tab-features.php:64
 msgid ""
 "Maker has a very useful feature of showing the social icons next to the "
 "menu items. Simply call the menu \"Social\" and provide the links to your "
 "social profiles. The Icons will appear automagically."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:77
+#: inc/theme-info-screen/partials/tab-features.php:77
 msgid "Footer Message (Pro)"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:78
+#: inc/theme-info-screen/partials/tab-features.php:78
 msgid ""
 "With Maker Pro, you can change the default footer message. There is also a "
 "very neat feature that allows you to display the current year. Simply "
 "insert a [year] shortcode and forget about updating the footer each year."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:84
-#: inc/welcome-screen/tabs/tab-features.php:107
-#: inc/welcome-screen/tabs/tab-features.php:130
-#: inc/welcome-screen/tabs/tab-pro.php:56
-#: inc/welcome-screen/tabs/tab-support.php:25
+#: inc/theme-info-screen/partials/tab-features.php:84
+#: inc/theme-info-screen/partials/tab-features.php:107
+#: inc/theme-info-screen/partials/tab-features.php:130
+#: inc/theme-info-screen/partials/tab-pro.php:58
+#: inc/theme-info-screen/partials/tab-support.php:25
 msgid "Purchase Maker Pro"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:100
+#: inc/theme-info-screen/partials/tab-features.php:100
 msgid "Unlimited Colors (Pro)"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:101
+#: inc/theme-info-screen/partials/tab-features.php:101
 msgid ""
 "With Maker Pro you can easily change the look of your website by adjusting "
 "the color scheme. You can change the text color, link color, site and "
 "background colors."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:123
+#: inc/theme-info-screen/partials/tab-features.php:123
 msgid "Custom Pages (Pro)"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-features.php:124
+#: inc/theme-info-screen/partials/tab-features.php:124
 msgid ""
 "Maker Pro also has a useful feature that allows you to change the number of "
 "columns on the portfolio grid page. You can choose from 2, 3 or 4 columns."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:12
+#: inc/theme-info-screen/partials/tab-plugins.php:12
 msgid "Recommended Plugins"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:14
+#: inc/theme-info-screen/partials/tab-plugins.php:14
 msgid ""
 "Maker is built to work with the following plugins. Although they are "
 "completely optional we recommend installing, at least, Portfolio Toolkit to "
 "create a website that looks like the demo."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:18
+#: inc/theme-info-screen/partials/tab-plugins.php:18
 msgid ""
 "Adds portfolio functionality to your WordPress website. Maker is designed "
 "with this plugin in mind, however, it will not work if you enable Portfolio "
@@ -374,7 +360,7 @@ msgid ""
 "not at the same time."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:26
+#: inc/theme-info-screen/partials/tab-plugins.php:26
 msgid ""
 "Adds WordPress.com functionality to your self-hosted WordPress site. Note "
 "that in order to use Jetpack you'll need WordPress.com account. You don't "
@@ -382,109 +368,109 @@ msgid ""
 "Galleries modules to display portfolio projects."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:34
+#: inc/theme-info-screen/partials/tab-plugins.php:34
 msgid "Creates contact forms that can be easily added to posts, pages, and widgets."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-plugins.php:42
+#: inc/theme-info-screen/partials/tab-plugins.php:42
 msgid ""
 "This plugin allows you to regenerate thumbnails for your image attachments. "
 "It may be very useful if you are switching from another theme."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:18
+#: inc/theme-info-screen/partials/tab-pro.php:20
 msgid "Unlimited Color Schemes"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:19
+#: inc/theme-info-screen/partials/tab-pro.php:21
 msgid ""
 "With Maker Pro, you can easily change the look of your website by adjusting "
 "the color scheme. You can change the text color, link color, site and "
 "background colors."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:22
+#: inc/theme-info-screen/partials/tab-pro.php:24
 msgid "Custom Background Image"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:23
+#: inc/theme-info-screen/partials/tab-pro.php:25
 msgid ""
 "Maker Pro supports the native WordPress Custom Background feature. Simply "
 "upload the image to the media library and set it as your website background "
 "in the Customizer."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:29
+#: inc/theme-info-screen/partials/tab-pro.php:31
 msgid "Custom Layouts"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:30
+#: inc/theme-info-screen/partials/tab-pro.php:32
 msgid ""
 "Don't like the three column grid on the front page? With Maker Pro, you can "
 "set it to two or four columns right from the Customizer."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:33
+#: inc/theme-info-screen/partials/tab-pro.php:35
 msgid "Archive Page Template"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:34
+#: inc/theme-info-screen/partials/tab-pro.php:36
 msgid ""
 "Maker Pro also has a very handy archive page template that displays ten "
 "latest posts, archives by month, year and subject."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:40
+#: inc/theme-info-screen/partials/tab-pro.php:42
 msgid "Custom Footer Text"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:41
+#: inc/theme-info-screen/partials/tab-pro.php:43
 msgid ""
 "With Maker Pro, you can set your own footer text. You may optionally use "
 "the [year] shortcode to display current year."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:44
+#: inc/theme-info-screen/partials/tab-pro.php:46
 msgid "XML Demo Data"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:45
+#: inc/theme-info-screen/partials/tab-pro.php:47
 msgid ""
 "Maker Pro also comes packed with the demo data, so you can import it and "
 "start editing to get the idea of how the theme works."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-pro.php:50
+#: inc/theme-info-screen/partials/tab-pro.php:52
 msgid ""
 "Maker Pro also comes with a year of updates and our friendly support. Level "
 "up!"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:12
-#: inc/welcome-screen/welcome-screen.php:145
+#: inc/theme-info-screen/partials/tab-support.php:12
+#: inc/theme-info-screen/theme-info-screen.php:145
 msgid "Support"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:14
+#: inc/theme-info-screen/partials/tab-support.php:14
 msgid "Basic Support (Free with Maker Pro)"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:16
+#: inc/theme-info-screen/partials/tab-support.php:16
 msgid ""
 "Basic support is included with the Purchase of Maker Pro. It includes "
 "answering the setup questions, questions about how the theme works and "
 "fixing bugs. Support lasts for one year after a theme purchase."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:32
+#: inc/theme-info-screen/partials/tab-support.php:32
 msgid "Submit a Ticket"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:40
+#: inc/theme-info-screen/partials/tab-support.php:40
 msgid "Priority Support $59"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:42
+#: inc/theme-info-screen/partials/tab-support.php:42
 msgid ""
 "Priority support is a huge time-saver. On top of the basic plan, it "
 "includes answers to the more technical questions, faster responses, and "
@@ -492,51 +478,65 @@ msgid ""
 "free themes as well. It lasts for 45 days from the day of purchase."
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:50
+#: inc/theme-info-screen/partials/tab-support.php:50
 msgid "Details"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:57
+#: inc/theme-info-screen/partials/tab-support.php:57
 msgid "Purchase Priority Support"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:64
+#: inc/theme-info-screen/partials/tab-support.php:64
 msgid "Free Support"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:66
+#: inc/theme-info-screen/partials/tab-support.php:66
 msgid ""
 "Please be advised that, even though, Maker is free, we can not guarantee "
 "free support for it. Consider purchasing Maker Pro or Priority Support plan "
 "to get access to our friendly one-on-one dedicated support!"
 msgstr ""
 
-#: inc/welcome-screen/tabs/tab-support.php:68
+#: inc/theme-info-screen/partials/tab-support.php:68
 msgid ""
 "We do however encourage you to tell us if something went wrong through "
 "support forum. We do our best to provide timely support there but do not "
 "guarantee it."
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:125
+#: inc/theme-info-screen/partials/widget-docs.php:11
+msgid "Looking For Help?"
+msgstr ""
+
+#: inc/theme-info-screen/partials/widget-docs.php:12
+msgid ""
+"We have more docs and tutorials at our website. Check them out if you need "
+"more detailed information about the theme."
+msgstr ""
+
+#: inc/theme-info-screen/partials/widget-docs.php:17
+msgid "View Documentation"
+msgstr ""
+
+#: inc/theme-info-screen/theme-info-screen.php:125
 msgid "Features"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:135
+#: inc/theme-info-screen/theme-info-screen.php:135
 msgid "Plugins"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:155
+#: inc/theme-info-screen/theme-info-screen.php:155
 msgid "Maker Pro"
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:252
+#: inc/theme-info-screen/theme-info-screen.php:232
 msgid ""
 "This plugin is installed but not activated. You need to go to the Plugins "
 "page and activate it."
 msgstr ""
 
-#: inc/welcome-screen/welcome-screen.php:265
+#: inc/theme-info-screen/theme-info-screen.php:245
 msgid "Installed & Acivated"
 msgstr ""
 
