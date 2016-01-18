@@ -6,6 +6,8 @@ css:
   - 'sass:default'
   - 'autoprefixer'
   - 'combine_mq:default'
+  - 'combine_mq:editor'
+  - 'combine_mq:themeinfoscreen'
   - 'replace:line_after_brace'
   - 'replace:line_after_docblock'
   - 'csscomb'
