@@ -60,11 +60,11 @@ class Maker_Theme_Info_Screen {
 	}
 
 	/**
-	 * Load welcome screen JS and CSS.
+	 * Enqueue theme info screen JS and CSS.
 	 */
 	public function maker_theme_info_screen_style() {
-		wp_enqueue_style( 'maker-theme-info-screen', get_template_directory_uri() . '/inc/theme-info-screen/css/welcome.css', MAKER_VERSION );
-		wp_enqueue_script( 'maker-theme-info-screen', get_template_directory_uri() . '/inc/theme-info-screen/js/welcome.js', MAKER_VERSION );
+		wp_enqueue_style( 'maker-theme-info-screen', get_template_directory_uri() . '/inc/theme-info-screen/css/theme-info-screen.css', MAKER_VERSION );
+		wp_enqueue_script( 'maker-theme-info-screen', get_template_directory_uri() . '/inc/theme-info-screen/js/theme-info-screen.js', MAKER_VERSION );
 	}
 
 	/**

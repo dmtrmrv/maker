@@ -8,7 +8,8 @@ module.exports = {
 	files: {
 		src: [
 			'style.css',
-			'editor-style.css'
+			'editor-style.css',
+			'inc/theme-info-screen/theme-info-scren.css'
 		]
 	}
 }
