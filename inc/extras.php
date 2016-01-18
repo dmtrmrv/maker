@@ -96,9 +96,33 @@ add_filter( 'the_category', 'maker_category_rel' );
 
 /**
  * Removes p tags from images.
+ *
  * @param  string $content Post content.
  */
 function maker_filter_p_tags_on_images( $content ) {
 	return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
 }
 add_filter( 'the_content', 'maker_filter_p_tags_on_images' );
+
+/**
+ * Adds an admin notice upon successful activation.
+ */
+function maker_activation_admin_notice() {
+	global $pagenow;
+
+	if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'maker_welcome_admin_notice', 99 );
+	}
+}
+add_action( 'load-themes.php', 'maker_activation_admin_notice' );
+
+/**
+ * Display an admin notice linking to the welcome screen.
+ */
+function maker_welcome_admin_notice() {
+	?>
+		<div class="updated notice is-dismissible">
+			<p><?php echo sprintf( esc_html__( 'Thanks for choosing Maker! Visit the %sGetting Started%s page to kickstart your site with the new theme!', 'maker' ), '<a href="' . esc_url( admin_url( 'themes.php?page=maker-getting-started' ) ) . '">', '</a>' ); ?></p>
+		</div>
+	<?php
+}
