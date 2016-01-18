@@ -123,6 +123,15 @@
 	padding: 0;
 }
 
+.tp-nav-tab-wrapper .nav-tab-active,
+.tp-nav-tab-wrapper .nav-tab-active:focus,
+.tp-nav-tab-wrapper .nav-tab-active:focus:active,
+.tp-nav-tab-wrapper .nav-tab-active:hover {
+	@media screen and ( max-width: 600px ) {
+		border-bottom: 1px solid #ccc;
+	}
+}
+
 h2.tp-nav-tab-wrapper .nav-tab {
 	@media screen and ( max-width: 600px ) {
 		margin: 0 -1px -1px;
