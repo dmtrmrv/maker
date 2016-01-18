@@ -34,7 +34,7 @@ get_header(); ?>
 				endif;
 
 				// Default posts per page option.
-				$posts_per_page = get_option( 'posts_per_page', 9 );
+				$posts_per_page = get_option( 'jetpack_portfolio_posts_per_page', 9 );
 
 				// Check if Jetpack Portfolio is activated.
 				if ( post_type_exists( 'jetpack-portfolio' ) ) :
