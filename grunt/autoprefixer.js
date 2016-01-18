@@ -9,7 +9,7 @@ module.exports = {
 		src: [
 			'style.css',
 			'editor-style.css',
-			'inc/theme-info-screen/theme-info-scren.css'
+			'inc/theme-info-screen/css/theme-info-screen.css'
 		]
 	}
 }
