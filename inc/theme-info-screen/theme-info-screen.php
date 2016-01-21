@@ -1,12 +1,12 @@
 <?php
 /**
- * Maker Theme Info Page
+ * Maker Theme Info Screen.
  *
  * @package Maker
  */
 
 /**
- * Creates Theme info page.
+ * Creates Theme info screen.
  */
 class Maker_Theme_Info_Screen {
 

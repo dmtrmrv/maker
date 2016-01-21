@@ -80,6 +80,19 @@
 	.card {
 		min-width: auto;
 	}
+	input[type=text] {
+		width: 100%;
+	}
+}
+
+.tp-license-active {
+	color: #1fc281;
+}
+.tp-license-inactive {
+	color: #f4cc31;
+}
+.tp-license-unknown {
+	color: #e83337;
 }
 
 .tab-content {
@@ -112,6 +125,8 @@
 .welcome-screen-widget {
 	margin-top: 40px;
 }
+
+
 
 .tp-theme-feature-buttons {
 	display: inline-block;

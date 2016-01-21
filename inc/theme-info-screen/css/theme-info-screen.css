@@ -43,6 +43,22 @@
 	min-width: auto;
 }
 
+.theme-info-sidebar input[type=text] {
+	width: 100%;
+}
+
+.tp-license-active {
+	color: #1fc281;
+}
+
+.tp-license-inactive {
+	color: #f4cc31;
+}
+
+.tp-license-unknown {
+	color: #e83337;
+}
+
 .tab-content hr {
 	margin: 1em 0;
 }
