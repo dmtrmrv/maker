@@ -21,7 +21,7 @@ Maker is a simple yet powerful portfolio theme for people who create things. Web
 1. Jetpack ( Carousel, Custom Content Types(Portfolio), Infinite Scroll )
 2. Portfolio Toolkit
 3. Contact Form 7
-4. WP Retina 2x
+4. Intuitive Custom Post Order
 
 ---
 
@@ -47,40 +47,51 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.2.0**
+
+Added: Support for Intuitive Custom Post Order plugin.
+Added: Tumblr icon for social menu.
+Added: Theme info screen.
+Fixed: Project meta alignment.
+Fixed: Issue with the text color on project meta.
+Fixed: Incorrect theme and author URLs in theme description.
+Tweak: New screenshot.
+Tweak: Minor code improvements.
+
 **0.1.7**
 
-Fixed issue with margins on images inside galleries.
+Fixed: Issue with margins on images inside galleries.
 
 **0.1.6**
 
-Updated theme tags.
+Tweak: Updated theme tags.
 
 **0.1.5**
 
-Updated customizer messages.
-Updated screenshot.
-Added Licence information.
+Tweak: Updated customizer messages.
+Tweak: Updated screenshot.
+Fixed: Added Licence information.
 
 **0.1.4**
 
-Fixed issue with column width on portfolio pages.
-Fixed issue with the excerpt and project meta not appearing after theme installation.
-Minor style updates.
+Fixed: Issue with column width on portfolio pages.
+Fixed: Issue with the excerpt and project meta not appearing after theme installation.
+Tweak: Minor CSS updates.
 
 **0.1.3**
 
-* Improved project thumbnail styling. No need for matchHeight plugin.
-* Small footer margin adjustment.
+Fixed: Improved project thumbnail styling. No need for matchHeight plugin.
+Tweak: Small footer margin adjustment.
 
 **0.1.2**
 
-* Improved pagination markup
-* Minor improvements and bug fixes
+Tweak: Improved pagination markup.
+Tweak: Minor code improvements.
 
 **0.1.1**
 
-* Minor improvements and bug fixes
+Tweak: Minor code improvements.
 
 **0.1.0**
 
-* Initial Release
+Initial release.
