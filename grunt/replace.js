@@ -31,7 +31,19 @@ module.exports = {
 		overwrite: true,
 		replacements: [ {
 			from: /Version:.*$/m,
-			to: 'Version: <%= package.version %>'
+			to:   'Version:     <%= package.version %>' // Exactly 5 spaces.
+		} ]
+	},
+
+	// Replace theme version in README.txt
+	version_readme: {
+		src: [
+			'README.txt',
+		],
+		overwrite: true,
+		replacements: [ {
+			from: /Version:.*$/m,
+			to:   'Version:           <%= package.version %>' // Exactly 11 spaces.
 		} ]
 	},
 
@@ -43,7 +55,7 @@ module.exports = {
 		overwrite: true,
 		replacements: [ {
 			from: /^define\( 'MAKER_VERSION'.*$/m,
-			to: 'define( \'MAKER_VERSION\', \'<%= package.version %>\' );'
+			to:   'define( \'MAKER_VERSION\', \'<%= package.version %>\' );'
 		} ]
 	},
 

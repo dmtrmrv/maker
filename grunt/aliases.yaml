@@ -18,6 +18,7 @@ js:
 
 release:
   - 'replace:version_style'
+  - 'replace:version_readme'
   - 'replace:version_functions'
 
   - 'css'
