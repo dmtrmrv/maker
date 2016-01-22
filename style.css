@@ -2742,6 +2742,10 @@ input[type='submit'].wpcf7-submit:focus {
 		display: none;
 	}
 
+	.pagination {
+		margin-bottom: 3em;
+	}
+
 	.pagination .page-numbers {
 		width: 3em;
 	}
@@ -2833,6 +2837,16 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-4 .project:nth-of-type(4n) {
 		margin-right: 0;
+	}
+
+	.blog .post,
+	.archive .post {
+		margin-bottom: 4.5em;
+	}
+
+	.blog .post:last-of-type,
+	.archive .post:last-of-type {
+		margin-bottom: 1.5em;
 	}
 
 	.single-portfolio .hentry,
