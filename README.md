@@ -49,13 +49,13 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 **0.2.0**
 
-Added: Support for Intuitive Custom Post Order plugin.
-Added: Tumblr icon for social menu.
-Added: Theme info screen.
-Fixed: Project meta alignment.
-Fixed: Issue with the text color on project meta.
-Fixed: Incorrect theme and author URLs in theme description.
-Tweak: New screenshot.
+Added: Support for Intuitive Custom Post Order plugin.  
+Added: Tumblr icon for social menu.  
+Added: Theme info screen.  
+Fixed: Project meta alignment.  
+Fixed: Issue with the text color on project meta.  
+Fixed: Incorrect theme and author URLs in theme description.  
+Tweak: New screenshot.  
 Tweak: Minor code improvements.
 
 **0.1.7**
@@ -68,24 +68,24 @@ Tweak: Updated theme tags.
 
 **0.1.5**
 
-Tweak: Updated customizer messages.
-Tweak: Updated screenshot.
-Fixed: Added Licence information.
+Tweak: Updated customizer messages.  
+Tweak: Updated screenshot.  
+Fixed: Added Licence information.  
 
 **0.1.4**
 
-Fixed: Issue with column width on portfolio pages.
-Fixed: Issue with the excerpt and project meta not appearing after theme installation.
+Fixed: Issue with column width on portfolio pages.  
+Fixed: Issue with the excerpt and project meta not appearing after theme installation.  
 Tweak: Minor CSS updates.
 
 **0.1.3**
 
-Fixed: Improved project thumbnail styling. No need for matchHeight plugin.
+Fixed: Improved project thumbnail styling. No need for matchHeight plugin.  
 Tweak: Small footer margin adjustment.
 
 **0.1.2**
 
-Tweak: Improved pagination markup.
+Tweak: Improved pagination markup.  
 Tweak: Minor code improvements.
 
 **0.1.1**
