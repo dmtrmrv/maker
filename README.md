@@ -1,4 +1,4 @@
-![Maker WordPress Theme](https://raw.githubusercontent.com/iamdmitrymayorov/Maker/master/screenshot.png "Maker WordPress Theme")
+![Maker WordPress Theme](https://raw.githubusercontent.com/iamdmitrymayorov/maker/master/screenshot.png "Maker WordPress Theme")
 
 ####Maker
 
