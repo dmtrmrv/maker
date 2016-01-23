@@ -46,14 +46,18 @@ if ( post_password_required() ) {
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'maker' ); ?></p>
-	<?php endif; ?>
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) {
+			printf(
+				'<p class="no-comments">%s</p>',
+				esc_html_e( 'Comments are closed.', 'maker' )
+			);
+		}
 
-	<?php comment_form( array(
-		'title_reply_to'    => __( 'Reply to %s', 'maker' ),
-		'cancel_reply_link' => __( 'Cancel', 'maker' ),
-	) ); ?>
+		// Display comment form.
+		comment_form( array(
+			'title_reply_to'    => __( 'Reply to %s', 'maker' ),
+			'cancel_reply_link' => __( 'Cancel', 'maker' ),
+		) );
+	?>
 
 </div><!-- #comments -->

@@ -13,18 +13,15 @@ get_header(); ?>
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 
-			<?php if ( get_theme_mod( 'maker_display_portfolio_text', 1 ) ) : ?>
-			
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'template-parts/content', 'page' ); ?>
-
-				<?php endwhile;?>
-
-			<?php endif ?>
-
 			<?php
-				// Check if we have pagination.
+				// Content before the portfolio grid.
+				if ( get_theme_mod( 'maker_display_portfolio_text', 1 ) ) {
+					while ( have_posts() ) : the_post();
+						get_template_part( 'template-parts/content', 'page' );
+					endwhile;
+				}
+
+				// Portfolio grid. Check if we have pagination first.
 				if ( get_query_var( 'paged' ) ) :
 					$paged = get_query_var( 'paged' );
 				elseif ( get_query_var( 'page' ) ) :
@@ -59,11 +56,11 @@ get_header(); ?>
 							sanitize_html_class( maker_portfolio_grid_class() )
 						);
 
-							while ( $portfolio_query -> have_posts() ) : $portfolio_query -> the_post();
+						while ( $portfolio_query -> have_posts() ) : $portfolio_query -> the_post();
 
-								get_template_part( 'template-parts/content', 'portfolio-jetpack' );
+							get_template_part( 'template-parts/content', 'portfolio-jetpack' );
 
-							endwhile;
+						endwhile;
 
 						echo '</div>';
 

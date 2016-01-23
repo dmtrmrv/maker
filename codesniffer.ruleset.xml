@@ -11,9 +11,14 @@
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.get_adjacent_post" />
 	</rule>
 
 	<exclude-pattern>*/grunt/*</exclude-pattern>
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	
+	<exclude-pattern>*/fonts/*</exclude-pattern>
+	<exclude-pattern>*.js</exclude-pattern>
+
+	<include-pattern>js/custom.js</include-pattern>
+
 </ruleset>

@@ -222,10 +222,9 @@ class Maker_Theme_Info_Screen {
 	 */
 	public function maker_theme_info_screen_plugin_install_button( $slug, $path, $class ) {
 
-		// Plugin is installed.
+		// Check if plugin is installed or not.
 		if ( $this->maker_theme_info_screen_is_plugin_installed( $path ) ) {
-
-			// Not activated.
+			// Check if plugin is activated or not.
 			if ( is_plugin_inactive( $path ) ) {
 				printf(
 					'<p class="description">%s</p>',
@@ -238,15 +237,12 @@ class Maker_Theme_Info_Screen {
 					esc_html( 'Go to Plugins Page and Activate', 'maker' )
 				);
 
-			// Activated.
 			} else {
 				printf(
 					'<p class="tp-theme-feature-buttons"><span class="button button-disabled">%s</span></p>',
 					esc_html__( 'Installed & Acivated', 'maker' )
 				);
 			}
-
-		// Plugin is not installed.
 		} else {
 			printf(
 				'<p class="tp-theme-feature-buttons"><a href="%s" target="_blank" class="button button-primary">%s</a></p>',

@@ -24,15 +24,15 @@ msgid ""
 "go to the homepage or try searching."
 msgstr ""
 
-#: comments.php:51
+#: comments.php:52
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:55
+#: comments.php:58
 msgid "Reply to %s"
 msgstr ""
 
-#: comments.php:56
+#: comments.php:59
 msgid "Cancel"
 msgstr ""
 
@@ -536,13 +536,13 @@ msgstr ""
 msgid "Maker Pro"
 msgstr ""
 
-#: inc/theme-info-screen/theme-info-screen.php:232
+#: inc/theme-info-screen/theme-info-screen.php:231
 msgid ""
 "This plugin is installed but not activated. You need to go to the Plugins "
 "page and activate it."
 msgstr ""
 
-#: inc/theme-info-screen/theme-info-screen.php:245
+#: inc/theme-info-screen/theme-info-screen.php:243
 msgid "Installed & Acivated"
 msgstr ""
 

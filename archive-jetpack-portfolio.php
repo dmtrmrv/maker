@@ -9,12 +9,7 @@ get_header(); ?>
 
 <div id="main" class="site-main" role="main">
 	<div id="content" class="site-content">
-		<?php
-			printf(
-				'<div id="primary" class="portfolio-grid %s">',
-				sanitize_html_class( maker_portfolio_grid_class() )
-			);
-		?>
+		<?php printf( '<div id="primary" class="portfolio-grid %s">', sanitize_html_class( maker_portfolio_grid_class() ) ); ?>
 
 			<?php if ( have_posts() ) : ?>
 					

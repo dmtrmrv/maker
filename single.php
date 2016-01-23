@@ -11,19 +11,19 @@ get_header(); ?>
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+			while ( have_posts() ) : the_post();
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+				get_template_part( 'template-parts/content', 'single' );
 
-			<?php
-				if ( comments_open() || get_comments_number() ) :
+				if ( comments_open() || get_comments_number() ) {
 					comments_template();
-				endif;
-			?>
+				}
 
-			<?php maker_post_navigation(); ?>
+				maker_post_navigation();
 
-		<?php endwhile; ?>
+			endwhile;
+		?>
 
 		</div>
 
