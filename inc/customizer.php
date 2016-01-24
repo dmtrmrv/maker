@@ -259,7 +259,8 @@ add_action( 'customize_preview_init', 'maker_customize_preview_js' );
 /**
  * Custom CSS for customizer screen.
  */
-$theme = wp_get_theme();
+
+$maker_theme = wp_get_theme();
 
 if ( 'Maker Pro' != $maker_theme->get( 'Name' ) ) :
 
