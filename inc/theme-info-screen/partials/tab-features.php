@@ -80,7 +80,7 @@
 			if ( ! $this->maker_is_pro() ) {
 				printf(
 					'<p><a href="%s" class="button button-primary">%s</a></p>',
-					esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+					esc_url( $this->theme_url . '#tp-child-theme' ),
 					esc_html__( 'Purchase Maker Pro', 'maker' )
 				);
 			}
@@ -103,7 +103,7 @@
 			if ( ! $this->maker_is_pro() ) {
 				printf(
 					'<p><a href="%s" class="button button-primary">%s</a></p>',
-					esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+					esc_url( $this->theme_url . '#tp-child-theme' ),
 					esc_html__( 'Purchase Maker Pro', 'maker' )
 				);
 			}
@@ -126,7 +126,7 @@
 			if ( ! $this->maker_is_pro() ) {
 				printf(
 					'<p><a href="%s" class="button button-primary">%s</a></p>',
-					esc_url( $this->theme_url . '#tp-maker-pro-desc' ),
+					esc_url( $this->theme_url . '#tp-child-theme' ),
 					esc_html__( 'Purchase Maker Pro', 'maker' )
 				);
 			}
