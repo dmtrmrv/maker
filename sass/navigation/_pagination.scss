@@ -30,8 +30,6 @@
 		}
 		@media screen and (min-width: $sm) {
 			width: 3em;
-			// padding-right: em_minus_px( 0.75em, 2px );
-			// padding-left: em_minus_px( 0.75em, 2px );
 		}
 	}
 	.page-numbers.prev,
@@ -45,36 +43,39 @@
 		color: transparent;
 	}
 	.page-numbers.prev {
-		right: 60px;
+		right: 3.75em;
 		&:before {
 			@extend %icon;
-			width: 24px;
-			height: 24px;
+			width: 1.5em;
+			height: 1.5em;
 			color: $color__text;
 			content: '\e802';
 		}
 	}
 	.page-numbers.next {
 		right: 0;
-		border-color: $color__text-light;
 		&:before {
 			@extend %icon;
-			width: 24px;
-			height: 24px;
+			width: 1.5em;
+			height: 1.5em;
 			color: $color__text;
 			content: '\e803';
 		}
 	}
 	.nav-links:before {
+		visibility: hidden;
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 48px;
-		height: 48px;
+		width: 3em;
+		height: 3em;
 		border: 2px dashed;
 		border-color: map-get( $color__button, border );
 		border-radius: 3px;
 		content: '';
+	}
+	.nav-links.last-page:before {
+		visibility: visible;
 	}
 	.page-numbers.all {
 		display: inline-block;

@@ -1560,38 +1560,42 @@ a.site-logo-link:before {
 }
 
 .pagination .page-numbers.prev {
-	right: 60px;
+	right: 3.75em;
 }
 
 .pagination .page-numbers.prev:before {
-	width: 24px;
-	height: 24px;
+	width: 1.5em;
+	height: 1.5em;
 	color: #585858;
 	content: '\e802';
 }
 
 .pagination .page-numbers.next {
 	right: 0;
-	border-color: #f1f1f1;
 }
 
 .pagination .page-numbers.next:before {
-	width: 24px;
-	height: 24px;
+	width: 1.5em;
+	height: 1.5em;
 	color: #585858;
 	content: '\e803';
 }
 
 .pagination .nav-links:before {
+	visibility: hidden;
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 48px;
-	height: 48px;
+	width: 3em;
+	height: 3em;
 	border: 2px dashed;
 	border-color: #f1f1f1;
 	border-radius: 3px;
 	content: '';
+}
+
+.pagination .nav-links.last-page:before {
+	visibility: visible;
 }
 
 .pagination .page-numbers.all {
