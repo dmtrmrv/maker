@@ -17,6 +17,13 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 474;
 }
 
+/**
+ * Maker Pro functions.
+ */
+if ( 'Maker Pro' == wp_get_theme()->get( 'Name' ) ) {
+	require get_template_directory() . '/pro/functions.php';
+}
+
 if ( ! function_exists( 'maker_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
