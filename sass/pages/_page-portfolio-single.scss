@@ -35,24 +35,6 @@
 		@media screen and ( min-width: $md ) {
 			max-width: 100%;
 			margin: 0;
-			p,
-			h1,
-			h2,
-			h3,
-			h4,
-			h5,
-			h6,
-			> ul,
-			> ol,
-			> dl,
-			table,
-			pre,
-			blockquote {
-				max-width: span( 6 );
-			}
-			blockquote p {
-				max-width: 100%;
-			}
 		}
 	}
 	.project-excerpt,

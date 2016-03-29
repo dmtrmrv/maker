@@ -2995,40 +2995,6 @@ input[type='submit'].wpcf7-submit:focus {
 		margin: 0;
 	}
 
-	.single-portfolio .entry-content p,
-	.single-portfolio .entry-content h1,
-	.single-portfolio .entry-content h2,
-	.single-portfolio .entry-content h3,
-	.single-portfolio .entry-content h4,
-	.single-portfolio .entry-content h5,
-	.single-portfolio .entry-content h6,
-	.single-portfolio .entry-content > ul,
-	.single-portfolio .entry-content > ol,
-	.single-portfolio .entry-content > dl,
-	.single-portfolio .entry-content table,
-	.single-portfolio .entry-content pre,
-	.single-portfolio .entry-content blockquote,
-	.single-jetpack-portfolio .entry-content p,
-	.single-jetpack-portfolio .entry-content h1,
-	.single-jetpack-portfolio .entry-content h2,
-	.single-jetpack-portfolio .entry-content h3,
-	.single-jetpack-portfolio .entry-content h4,
-	.single-jetpack-portfolio .entry-content h5,
-	.single-jetpack-portfolio .entry-content h6,
-	.single-jetpack-portfolio .entry-content > ul,
-	.single-jetpack-portfolio .entry-content > ol,
-	.single-jetpack-portfolio .entry-content > dl,
-	.single-jetpack-portfolio .entry-content table,
-	.single-jetpack-portfolio .entry-content pre,
-	.single-jetpack-portfolio .entry-content blockquote {
-		max-width: 48.17073%;
-	}
-
-	.single-portfolio .entry-content blockquote p,
-	.single-jetpack-portfolio .entry-content blockquote p {
-		max-width: 100%;
-	}
-
 	.single-portfolio .project-excerpt,
 	.single-portfolio .project-meta,
 	.single-jetpack-portfolio .project-excerpt,
