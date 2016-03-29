@@ -2848,11 +2848,6 @@ input[type='submit'].wpcf7-submit:focus {
 		margin-bottom: 4.5em;
 	}
 
-	.blog .post:last-of-type,
-	.archive .post:last-of-type {
-		margin-bottom: 1.5em;
-	}
-
 	.single-portfolio .hentry,
 	.single-jetpack-portfolio .hentry {
 		margin-bottom: 1.5em;
