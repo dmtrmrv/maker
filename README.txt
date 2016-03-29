@@ -1,8 +1,8 @@
 === Maker ===
 Contributors:      iamdmitrymayorov
 Requires at least: WordPress 4.1
-Tested up to:      WordPress 4.4.1
-Version:           0.2.0
+Tested up to:      WordPress 4.5
+Version:           0.2.1
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              black, gray, red, white, dark, light, responsive-layout, one-column, three-columns, right-sidebar, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
@@ -109,51 +109,59 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
+= 0.2.1 =
+
+Fixed: Typo on theme info screen
+Fixed: Pagination styling issue with custom colors    
+Tweak: Better blockquotes look  
+Tweak: Better gallery captions  
+Tweak: Removed content width restriction for single portfolio project  
+
 = 0.2.0 =
 
-Added: Support for Intuitive Custom Post Order plugin.
-Added: Tumblr icon for social menu.
-Added: Theme info screen.
-Fixed: Project meta alignment.
-Fixed: Issue with the text color on project meta.
-Fixed: Incorrect theme and author URLs in theme description.
-Tweak: New screenshot.
-Tweak: Minor code improvements.
+Added: Support for Intuitive Custom Post Order plugin
+Added: Tumblr icon for social menu
+Added: Theme info screen
+Fixed: Project meta alignment
+Fixed: Issue with the text color on project meta
+Fixed: Incorrect theme and author URLs in theme description
+Tweak: New screenshot
+Tweak: Minor code improvements
 
 = 0.1.7 =
 
-Fixed: Issue with margins on images inside galleries.
+Fixed: Issue with margins on images inside galleries
 
 = 0.1.6 =
 
-Tweak: Updated theme tags.
+Tweak: Updated theme tags
 
 = 0.1.5 =
 
-Tweak: Updated customizer messages.
-Tweak: Updated screenshot.
-Fixed: Added Licence information.
+Tweak: Updated customizer messages
+Tweak: Updated screenshot
+Fixed: Added Licence information
 
 = 0.1.4 =
 
-Fixed: Issue with column width on portfolio pages.
-Fixed: Issue with the excerpt and project meta not appearing after theme installation.
-Tweak: Minor CSS updates.
+Fixed: Issue with column width on portfolio pages
+Fixed: Issue with the excerpt and project meta not appearing after theme installation
+Tweak: Minor CSS updates
 
 = 0.1.3 =
 
-Fixed: Improved project thumbnail styling. No need for matchHeight plugin.
-Tweak: Small footer margin adjustment.
+Fixed: Improved project thumbnail styling. No need for matchHeight plugin
+Tweak: Small footer margin adjustment
 
 = 0.1.2 =
 
-Tweak: Improved pagination markup.
-Tweak: Minor code improvements.
+Tweak: Improved pagination markup
+Tweak: Minor code improvements
 
 = 0.1.1 =
 
-Tweak: Minor code improvements.
+Tweak: Minor code improvements
 
 = 0.1.0 =
 
-Initial release.
+Initial release
