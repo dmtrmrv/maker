@@ -4,8 +4,5 @@ module.exports = {
 	},
 	release: {
 		src: '../build/'
-	},
-	pot: {
-		src: './languages/maker.pot'
 	}
 }

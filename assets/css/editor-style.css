@@ -54,6 +54,12 @@ body {
 	line-height: 1.5;
 }
 
+@media screen and (min-width: 768px) {
+	body {
+		margin: 3em auto;
+	}
+}
+
 article,
 aside,
 details,
@@ -386,6 +392,12 @@ thead th {
 	line-height: 24px;
 	line-height: 1.5rem;
 	text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+	table {
+		margin-bottom: 2.9375em;
+	}
 }
 
 /* Code */
@@ -761,14 +773,4 @@ blockquote.alignright {
 	display: table;
 	clear: both;
 	content: '';
-}
-
-@media screen and (min-width: 768px) {
-	body {
-		margin: 3em auto;
-	}
-
-	table {
-		margin-bottom: 2.9375em;
-	}
 }

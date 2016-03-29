@@ -1,12 +1,13 @@
 module.exports = {
 	default: {
 		src: [
-			'js/jquery.fitvids.js',
-			'js/skip-link-focus-fix.js',
-			'js/navigation.js',
-			'js/gallery-captions.js',
-			'js/custom.js'
+			'assets/js/src/jquery.fitvids.js',
+			'assets/js/src/skip-link-focus-fix.js',
+			'assets/js/src/navigation.js',
+			'assets/js/src/sticky-nav.js',
+			'assets/js/src/gallery-captions.js',
+			'assets/js/src/custom.js'
 		],
-		dest: 'js/theme.js'
+		dest: 'assets/js/project.js'
 	}
 }

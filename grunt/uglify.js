@@ -1,6 +1,6 @@
 module.exports = {
 	default: {
-		src: 'js/theme.js',
-		dest: 'js/theme.min.js'
+		src:  'assets/js/project.js',
+		dest: 'assets/js/project.min.js'
 	}
 }

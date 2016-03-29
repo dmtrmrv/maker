@@ -85,7 +85,7 @@ function maker_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'editor-style.css' ) );
+	add_editor_style( array( 'assets/css/editor-style.css' ) );
 }
 endif;
 add_action( 'after_setup_theme', 'maker_setup' );
@@ -126,7 +126,7 @@ function maker_scripts() {
 
 	wp_enqueue_style(
 		'maker-fontello',
-		get_template_directory_uri() . '/fonts/fontello/css/fontello.css',
+		get_template_directory_uri() . '/assets/fonts/fontello/css/fontello.css',
 		array()
 	);
 
@@ -137,7 +137,7 @@ function maker_scripts() {
 
 	wp_enqueue_script(
 		'maker-navigation',
-		get_template_directory_uri() . '/js/navigation.js',
+		get_template_directory_uri() . '/assets/js/src/navigation.js',
 		array(),
 		MAKER_VERSION,
 		true
@@ -145,7 +145,7 @@ function maker_scripts() {
 
 	wp_enqueue_script(
 		'maker-skip-link-focus-fix',
-		get_template_directory_uri() . '/js/skip-link-focus-fix.js',
+		get_template_directory_uri() . '/assets/js/src/skip-link-focus-fix.js',
 		array(),
 		MAKER_VERSION,
 		true
@@ -153,7 +153,7 @@ function maker_scripts() {
 
 	wp_enqueue_script(
 		'maker-fitvids',
-		get_template_directory_uri() . '/js/jquery.fitvids.js',
+		get_template_directory_uri() . '/assets/js/src/jquery.fitvids.js',
 		array( 'jquery' ),
 		MAKER_VERSION,
 		true
@@ -161,7 +161,7 @@ function maker_scripts() {
 
 	wp_enqueue_script(
 		'maker-custom',
-		get_template_directory_uri() . '/js/custom.js',
+		get_template_directory_uri() . '/assets/js/src/custom.js',
 		array( 'jquery' ),
 		MAKER_VERSION,
 		true
