@@ -543,7 +543,7 @@ msgid ""
 msgstr ""
 
 #: inc/theme-info-screen/theme-info-screen.php:243
-msgid "Installed & Acivated"
+msgid "Installed & Activated"
 msgstr ""
 
 #: search.php:17

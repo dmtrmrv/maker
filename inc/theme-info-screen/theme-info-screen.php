@@ -240,7 +240,7 @@ class Maker_Theme_Info_Screen {
 			} else {
 				printf(
 					'<p class="tp-theme-feature-buttons"><span class="button button-disabled">%s</span></p>',
-					esc_html__( 'Installed & Acivated', 'maker' )
+					esc_html__( 'Installed & Activated', 'maker' )
 				);
 			}
 		} else {
