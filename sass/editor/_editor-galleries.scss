@@ -11,20 +11,16 @@
 	margin: 0;
 	padding: 0;
 	.gallery-item {
+		box-sizing: border-box;
+		line-height: 1.5;
 		padding: 0;
 		text-align: left;
 	}
 	.gallery-caption {
-		@include font-size( 0.75 );
-		@include line-height( 1.125 );
 		box-sizing: border-box;
 		margin: 0;
-		font-weight: normal;
+		font-size: 12px;
 	}
-}
-
-.gallery:after {
-	@include clearfix;
 }
 
 .gallery:after {

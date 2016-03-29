@@ -145,14 +145,6 @@ function maker_scripts() {
 	);
 
 	wp_enqueue_script(
-		'maker-gallery-captions',
-		get_template_directory_uri() . '/js/gallery-captions.js',
-		array(),
-		MAKER_VERSION,
-		true
-	);
-
-	wp_enqueue_script(
 		'maker-fitvids',
 		get_template_directory_uri() . '/js/jquery.fitvids.js',
 		array( 'jquery' ),
