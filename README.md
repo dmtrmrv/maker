@@ -47,6 +47,11 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.2.2**
+
+Fixed: Primary menu tab navigation issue  
+Changed: Folder restructure  
+
 **0.2.1**
 
 Fixed: Typo on theme info screen
