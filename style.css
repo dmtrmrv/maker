@@ -2700,7 +2700,8 @@ input[type='submit'].wpcf7-submit:focus {
 		box-shadow: none;
 	}
 
-	.main-navigation ul ul li:hover > ul {
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li.focus > ul {
 		left: 100%;
 	}
 
@@ -2709,7 +2710,8 @@ input[type='submit'].wpcf7-submit:focus {
 		padding: 0.75em 1em;
 	}
 
-	.main-navigation ul li:hover > ul {
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
 		left: auto;
 	}
 
