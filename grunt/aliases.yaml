@@ -27,3 +27,17 @@ release:
   - 'clean:release'
   - 'copy:release'
   - 'compress:release'
+
+releasepro:
+  - 'replace:version_style'
+  - 'replace:version_readme'
+  - 'replace:version_functions'
+
+  - 'css'
+  - 'js'
+
+  - 'makepot'
+
+  - 'clean:release'
+  - 'copy:release'
+  - 'compress:pro'
