@@ -26,7 +26,7 @@ module.exports = {
 	// Replace theme version in style.scss
 	version_style: {
 		src: [
-			'sass/style.scss',
+			'assets/css/sass/style.scss',
 		],
 		overwrite: true,
 		replacements: [ {
@@ -54,9 +54,8 @@ module.exports = {
 		],
 		overwrite: true,
 		replacements: [ {
-			from: /^define\( '<%= package.name.toUppercase %>_VERSION'.*$/m,
-			to:   'define( \'<%= package.name.toUppercase %>_VERSION\', \'<%= package.version %>\' );'
+			from: /define\(.*(?=\_VERSION\',\s*\'\d\.\d\.\d\'\s*\)\;).*$/m,
+			to:   'define( \'<%= package.name.toUpperCase() %>_VERSION\', \'<%= package.version %>\' );'
 		} ]
 	}
-
 }
