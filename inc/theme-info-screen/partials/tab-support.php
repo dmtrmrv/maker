@@ -17,7 +17,7 @@
 
 <p class="tp-theme-feature-buttons">
 	<?php
-	if ( ! $this->maker_is_pro() ) {
+	if ( ! MAKER_PRO ) {
 		// Purchase Maker Pro Button.
 		printf(
 			'<a href="%s" class="button button-primary">%s</a>',

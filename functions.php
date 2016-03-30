@@ -11,17 +11,15 @@
 define( 'MAKER_VERSION', '0.2.2' );
 
 /**
+ * Is this a pro version?
+ */
+define( 'MAKER_PRO', false );
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
-}
-
-/**
- * Maker Pro functions.
- */
-if ( 'Maker Pro' == wp_get_theme()->get( 'Name' ) ) {
-	require get_template_directory() . '/pro/functions.php';
 }
 
 if ( ! function_exists( 'maker_setup' ) ) :

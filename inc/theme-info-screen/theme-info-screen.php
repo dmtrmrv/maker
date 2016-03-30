@@ -153,7 +153,7 @@ class Maker_Theme_Info_Screen {
 		printf(
 			'<a href="#pro" class="nav-tab %2$s">%1$s</a>',
 			esc_html__( 'Maker Pro', 'maker' ),
-			esc_attr( $this->maker_is_pro() ? '' : 'nav-tab-pro' )
+			esc_attr( MAKER_PRO ? '' : 'nav-tab-pro' )
 		);
 	}
 
@@ -249,19 +249,6 @@ class Maker_Theme_Info_Screen {
 				esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ) ),
 				esc_html( 'Install', 'maker' )
 			);
-		}
-	}
-
-	/**
-	 * Checks if the theme is Maker Pro.
-	 *
-	 * @return bool True if the theme is Maker Pro.
-	 */
-	public function maker_is_pro() {
-		if ( 'Maker Pro' == $this->theme->get( 'Name' ) ) {
-			return true;
-		} else {
-			return false;
 		}
 	}
 }
