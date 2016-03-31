@@ -112,7 +112,7 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 = 0.2.2 =
 
 Fixed: Primary menu tab navigation issue
-Changed: Minor folder restructure
+Changed: Folder structure  
 
 = 0.2.1 =
 
