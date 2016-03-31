@@ -115,7 +115,7 @@ function maker_customize_register( $wp_customize ) {
 	 */
 	$maker_theme = wp_get_theme();
 
-	if ( 'Maker Pro' != $maker_theme->get( 'Name' ) ) :
+	if ( ! MAKER_PRO ) :
 
 	// Colors.
 	$wp_customize->add_setting( 'maker_pro_colors', array(
@@ -262,7 +262,7 @@ add_action( 'customize_preview_init', 'maker_customize_preview_js' );
 
 $maker_theme = wp_get_theme();
 
-if ( 'Maker Pro' != $maker_theme->get( 'Name' ) ) :
+if ( ! MAKER_PRO ) :
 
 /**
  * Prints CSS for customizer screen.
