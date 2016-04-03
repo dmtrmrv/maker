@@ -100,8 +100,8 @@ msgstr ""
 
 #: inc/customizer.php:131
 msgid ""
-"With Maker Pro child theme you can change <strong>link, text, "
-"background,</strong> and <strong>site</strong> colors."
+"With Maker Pro you can change <strong>link, text, background,</strong> and "
+"<strong>site</strong> colors."
 msgstr ""
 
 #: inc/customizer.php:149
@@ -110,9 +110,8 @@ msgstr ""
 
 #: inc/customizer.php:150
 msgid ""
-"With Maker Pro child theme you can choose between <strong>two, "
-"three</strong> or <strong>four</strong> column layouts for portfolio grid "
-"on a homepage."
+"With Maker Pro you can choose between <strong>two, three</strong> or "
+"<strong>four</strong> column layouts for portfolio grid on a homepage."
 msgstr ""
 
 #: inc/customizer.php:152
@@ -128,9 +127,7 @@ msgid "Footer Message"
 msgstr ""
 
 #: inc/customizer.php:174
-msgid ""
-"With Maker Pro child theme you can easily set your own custom footer "
-"message."
+msgid "With Maker Pro you can easily set your own custom footer message."
 msgstr ""
 
 #: inc/customizer.php:176
