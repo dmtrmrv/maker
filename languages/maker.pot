@@ -100,8 +100,8 @@ msgstr ""
 
 #: inc/customizer.php:129
 msgid ""
-"With Maker Pro you can change <strong>link, text, background,</strong> and "
-"<strong>site</strong> colors."
+"With Maker Pro you can create your own color scheme, changing the color of "
+"links, text and background."
 msgstr ""
 
 #: inc/customizer.php:147
@@ -110,8 +110,8 @@ msgstr ""
 
 #: inc/customizer.php:148
 msgid ""
-"With Maker Pro you can set <strong>two, three</strong> or "
-"<strong>four</strong> column layout for the homepage."
+"With Maker Pro you can set <strong>2, 3</strong> or "
+"<strong>4</strong>-column layout for the portfolio grid page."
 msgstr ""
 
 #: inc/customizer.php:150

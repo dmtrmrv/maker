@@ -126,7 +126,7 @@ function maker_customize_register( $wp_customize ) {
 			'maker_pro_colors',
 			array(
 				'label'       => __( 'Custom Colors', 'maker' ),
-				'description' => __( 'With Maker Pro you can change <strong>link, text, background,</strong> and <strong>site</strong> colors.', 'maker' ),
+				'description' => __( 'With Maker Pro you can create your own color scheme, changing the color of links, text and background.', 'maker' ),
 				'url'         => 'https://themepatio.com/themes/maker/#tp-child-theme',
 				'cta'         => 'Unlock Cusotm Colors',
 				'section'     => 'colors',
@@ -145,7 +145,7 @@ function maker_customize_register( $wp_customize ) {
 			'maker_pro_portfolio_columns',
 			array(
 				'label'       => __( 'Portfolio Columns', 'maker' ),
-				'description' => __( 'With Maker Pro you can set <strong>two, three</strong> or <strong>four</strong> column layout for the homepage.', 'maker' ),
+				'description' => __( 'With Maker Pro you can set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
 				'url'         => 'https://themepatio.com/themes/maker/#tp-child-theme',
 				'cta'         => __( 'Unlock Portfolio Columns', 'maker' ),
 				'section'     => 'maker_portfolio',
@@ -274,6 +274,9 @@ function maker_customize_preview_css() {
 			font-size: 11px;
 			letter-spacing: 1px;
 			text-transform: uppercase;
+		}
+		.customize-control-paragraph {
+			margin-top: 0;
 		}
 	</style><?php
 }
