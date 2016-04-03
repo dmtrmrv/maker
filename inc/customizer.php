@@ -113,8 +113,6 @@ function maker_customize_register( $wp_customize ) {
 	/**
 	 * Pro Options preview.
 	 */
-	$maker_theme = wp_get_theme();
-
 	if ( ! MAKER_PRO ) :
 
 	// Colors.
@@ -259,9 +257,6 @@ add_action( 'customize_preview_init', 'maker_customize_preview_js' );
 /**
  * Custom CSS for customizer screen.
  */
-
-$maker_theme = wp_get_theme();
-
 if ( ! MAKER_PRO ) :
 
 /**
