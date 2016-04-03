@@ -47,6 +47,11 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+= 0.2.3 =
+
+Fixed: Typo in the Customizer  
+Changed: Minor improvements  
+
 **0.2.2**
 
 Fixed: Primary menu tab navigation issue  

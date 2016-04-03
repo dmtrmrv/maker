@@ -109,10 +109,15 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
+= 0.2.3 =
+
+Fixed: Typo in the Customizer
+Changed: Minor improvements
+
 = 0.2.2 =
 
 Fixed: Primary menu tab navigation issue
-Changed: Folder structure  
+Changed: Folder structure
 
 = 0.2.1 =
 
