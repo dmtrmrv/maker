@@ -127,7 +127,7 @@ function maker_customize_register( $wp_customize ) {
 			array(
 				'label'       => __( 'Custom Colors', 'maker' ),
 				'description' => __( 'With Maker Pro you can create your own color scheme, changing the color of links, text and background.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/#tp-child-theme',
+				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
 				'cta'         => 'Unlock Cusotm Colors',
 				'section'     => 'colors',
 			)
@@ -146,7 +146,7 @@ function maker_customize_register( $wp_customize ) {
 			array(
 				'label'       => __( 'Portfolio Columns', 'maker' ),
 				'description' => __( 'With Maker Pro you can set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/#tp-child-theme',
+				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
 				'cta'         => __( 'Unlock Portfolio Columns', 'maker' ),
 				'section'     => 'maker_portfolio',
 			)
@@ -170,7 +170,7 @@ function maker_customize_register( $wp_customize ) {
 			array(
 				'label'       => __( 'Footer Message', 'maker' ),
 				'description' => __( 'With Maker Pro you can easily set your own custom footer message.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/#tp-child-theme',
+				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
 				'cta'         => __( 'Unlock Custom Footer', 'maker' ),
 				'section'     => 'maker_footer',
 			)
