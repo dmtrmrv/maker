@@ -42,14 +42,14 @@ class Maker_Message_Custom_Control extends WP_Customize_Control {
 
 		if ( isset( $this->description ) ) {
 			printf(
-				'<span class="description customize-control-description">%s</span>',
+				'<p>%s</p>',
 				wp_kses_post( $this->description )
 			);
 		}
 
 		if ( isset( $this->url ) && isset( $this->cta ) ) {
 			printf(
-				'<span><a href="%s">%s</a></span>',
+				'<span><a href="%s" class="button button-primary">%s</a></span>',
 				esc_url( $this->url ),
 				esc_html( $this->cta )
 			);

@@ -110,8 +110,8 @@ msgstr ""
 
 #: inc/customizer.php:150
 msgid ""
-"With Maker Pro you can choose between <strong>two, three</strong> or "
-"<strong>four</strong> column layouts for portfolio grid on a homepage."
+"With Maker Pro you can set <strong>two, three</strong> or "
+"<strong>four</strong> column layout for the homepage."
 msgstr ""
 
 #: inc/customizer.php:152
@@ -131,7 +131,7 @@ msgid "With Maker Pro you can easily set your own custom footer message."
 msgstr ""
 
 #: inc/customizer.php:176
-msgid "Unlock custom footer."
+msgid "Unlock Custom Footer"
 msgstr ""
 
 #: inc/extras.php:75

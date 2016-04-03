@@ -147,7 +147,7 @@ function maker_customize_register( $wp_customize ) {
 			'maker_pro_portfolio_columns',
 			array(
 				'label'       => __( 'Portfolio Columns', 'maker' ),
-				'description' => __( 'With Maker Pro you can choose between <strong>two, three</strong> or <strong>four</strong> column layouts for portfolio grid on a homepage.', 'maker' ),
+				'description' => __( 'With Maker Pro you can set <strong>two, three</strong> or <strong>four</strong> column layout for the homepage.', 'maker' ),
 				'url'         => 'https://themepatio.com/themes/maker/#tp-child-theme',
 				'cta'         => __( 'Unlock Portfolio Columns', 'maker' ),
 				'section'     => 'maker_portfolio',
@@ -173,7 +173,7 @@ function maker_customize_register( $wp_customize ) {
 				'label'       => __( 'Footer Message', 'maker' ),
 				'description' => __( 'With Maker Pro you can easily set your own custom footer message.', 'maker' ),
 				'url'         => 'https://themepatio.com/themes/maker/#tp-child-theme',
-				'cta'         => __( 'Unlock custom footer.', 'maker' ),
+				'cta'         => __( 'Unlock Custom Footer', 'maker' ),
 				'section'     => 'maker_footer',
 			)
 		)
