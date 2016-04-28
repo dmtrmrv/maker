@@ -2,7 +2,7 @@
 Contributors:      iamdmitrymayorov
 Requires at least: WordPress 4.1
 Tested up to:      WordPress 4.5
-Version:           0.2.3
+Version:           0.2.4
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              black, gray, red, white, dark, light, responsive-layout, one-column, three-columns, right-sidebar, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
