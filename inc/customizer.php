@@ -60,6 +60,20 @@ function maker_customize_register( $wp_customize ) {
 		'priority' => 130,
 	) );
 
+	$wp_customize -> add_control(
+		new Maker_Message_Control(
+			$wp_customize,
+			'maker_portfolio',
+			array(
+				'label'           => __( 'Navigate to Portfolio', 'maker' ),
+				'settings'        => array(),
+				'description'     => __( 'To edit the portfolio, open either a single portfolio project or a portfolio grid page in the preview screen on the right.', 'maker' ),
+				'section'         => 'maker_portfolio',
+				'active_callback' => 'maker_not_portfolio_template',
+			)
+		)
+	);
+
 	$wp_customize->add_setting( 'maker_display_portfolio_text', array(
 		'default'           => 1,
 		'sanitize_callback' => 'maker_sanitize_checkbox',
@@ -115,40 +129,33 @@ function maker_customize_register( $wp_customize ) {
 	 */
 	if ( ! MAKER_PRO ) :
 
-	// Colors.
-	$wp_customize->add_setting( 'maker_pro_colors', array(
-		'sanitize_callback' => '__return_false',
-	) );
-
 	$wp_customize -> add_control(
-		new Maker_Message_Custom_Control(
+		new Maker_Message_Pro_Control(
 			$wp_customize,
 			'maker_pro_colors',
 			array(
 				'label'       => __( 'Custom Colors', 'maker' ),
 				'description' => __( 'With Maker Pro you can create your own color scheme, changing the color of links, text and background.', 'maker' ),
 				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
-				'cta'         => 'Unlock Cusotm Colors',
+				'cta'         => __( 'Get Maker Pro', 'maker' ),
 				'section'     => 'colors',
+				'settings'    => array(),
 			)
 		)
 	);
 
-	// Portfolio.
-	$wp_customize->add_setting( 'maker_pro_portfolio_columns', array(
-		'sanitize_callback' => '__return_false',
-	) );
-
 	$wp_customize -> add_control(
-		new Maker_Message_Custom_Control(
+		new Maker_Message_Pro_Control(
 			$wp_customize,
 			'maker_pro_portfolio_columns',
 			array(
-				'label'       => __( 'Portfolio Columns', 'maker' ),
-				'description' => __( 'With Maker Pro you can set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
-				'cta'         => __( 'Unlock Portfolio Columns', 'maker' ),
-				'section'     => 'maker_portfolio',
+				'label'           => __( 'Portfolio Columns', 'maker' ),
+				'description'     => __( 'With Maker Pro you can set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
+				'url'             => 'https://themepatio.com/themes/maker/#tp-pro-theme',
+				'cta'             => __( 'Get Maker Pro', 'maker' ),
+				'section'         => 'maker_portfolio',
+				'settings'        => array(),
+				'active_callback' => 'maker_is_portfolio_template',
 			)
 		)
 	);
@@ -159,20 +166,17 @@ function maker_customize_register( $wp_customize ) {
 		'priority' => 160,
 	) );
 
-	$wp_customize->add_setting( 'maker_pro_footer', array(
-		'sanitize_callback' => '__return_false',
-	) );
-
 	$wp_customize -> add_control(
-		new Maker_Message_Custom_Control(
+		new Maker_Message_Pro_Control(
 			$wp_customize,
 			'maker_pro_footer',
 			array(
 				'label'       => __( 'Footer Message', 'maker' ),
 				'description' => __( 'With Maker Pro you can easily set your own custom footer message.', 'maker' ),
 				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
-				'cta'         => __( 'Unlock Custom Footer', 'maker' ),
+				'cta'         => __( 'Get Maker Pro', 'maker' ),
 				'section'     => 'maker_footer',
+				'settings'    => array(),
 			)
 		)
 	);
@@ -199,6 +203,13 @@ function maker_is_portfolio_template() {
 	if ( is_page_template( 'templates/portfolio-toolkit.php' ) || is_page_template( 'templates/portfolio-jetpack.php' ) ) {
 		return true;
 	}
+}
+
+/**
+ * Checks if the current page is not one of the portfolio templates.
+ */
+function maker_not_portfolio_template() {
+	return ! maker_is_portfolio_template() && ! maker_is_single_portfolio();
 }
 
 /**

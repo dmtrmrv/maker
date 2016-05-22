@@ -68,70 +68,76 @@ msgstr ""
 msgid "Portfolio"
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:68
+msgid "Navigate to Portfolio"
+msgstr ""
+
+#: inc/customizer.php:70
+msgid ""
+"To edit the portfolio, open either a single portfolio project or a "
+"portfolio grid page in the preview screen on the right."
+msgstr ""
+
+#: inc/customizer.php:83
 msgid "Display Page Content"
 msgstr ""
 
-#: inc/customizer.php:73
+#: inc/customizer.php:87
 msgid "Choose to display page content before the portfolio grid or not."
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:96
 msgid "Display Project Excerpt"
 msgstr ""
 
-#: inc/customizer.php:94
+#: inc/customizer.php:108
 msgid "Display Project Meta"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:120
 msgid "Link to all projects"
 msgstr ""
 
-#: inc/customizer.php:110
+#: inc/customizer.php:124
 msgid ""
 "\"All Projects\" link at the bottom of a single project. Links to portfolio "
 "archive if left empty."
 msgstr ""
 
-#: inc/customizer.php:128
+#: inc/customizer.php:137
 msgid "Custom Colors"
 msgstr ""
 
-#: inc/customizer.php:129
+#: inc/customizer.php:138
 msgid ""
 "With Maker Pro you can create your own color scheme, changing the color of "
 "links, text and background."
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:140 inc/customizer.php:155 inc/customizer.php:177
+msgid "Get Maker Pro"
+msgstr ""
+
+#: inc/customizer.php:152
 msgid "Portfolio Columns"
 msgstr ""
 
-#: inc/customizer.php:148
+#: inc/customizer.php:153
 msgid ""
 "With Maker Pro you can set <strong>2, 3</strong> or "
 "<strong>4</strong>-column layout for the portfolio grid page."
 msgstr ""
 
-#: inc/customizer.php:150
-msgid "Unlock Portfolio Columns"
-msgstr ""
-
-#: inc/customizer.php:158
+#: inc/customizer.php:165
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:171
+#: inc/customizer.php:174
 msgid "Footer Message"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:175
 msgid "With Maker Pro you can easily set your own custom footer message."
-msgstr ""
-
-#: inc/customizer.php:174
-msgid "Unlock Custom Footer"
 msgstr ""
 
 #: inc/extras.php:75
