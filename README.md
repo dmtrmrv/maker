@@ -47,6 +47,11 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.2.5**
+
+Fixed: Broken path to customizer.js  
+Changed: Customizer wording improvements
+
 **0.2.4**
 
 Fixed: Broken link in the footer  
