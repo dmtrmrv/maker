@@ -246,9 +246,9 @@ function maker_sanitize_image( $input ) {
 function maker_customize_preview_js() {
 	wp_enqueue_script(
 		'maker_customizer',
-		get_template_directory_uri() . '/js/customizer.js',
+		get_template_directory_uri() . '/assets/js/customizer.js',
 		array( 'customize-preview' ),
-		'20130508',
+		MAKER_VERSION,
 		true
 	);
 }
