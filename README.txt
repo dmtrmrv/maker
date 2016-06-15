@@ -109,6 +109,12 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
+= 0.2.6 =
+
+Fixed: Mailpoet CSS conflict  
+Fixed: Grunt configured to autoprefix and combine media queiries on editor-style.css and theme-info-screen.css
+Changed: Minor CSS updates
+
 = 0.2.5 =
 
 Fixed: Broken path to customizer.js  
