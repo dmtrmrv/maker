@@ -7,7 +7,7 @@
 
 ?>
 
-<div id="support" class="tab-content card">
+<div id="support" class="tp-tab-content card">
 
 <h2 class="tab-heading"><?php esc_html_e( 'Support', 'maker' ); ?></h2>
 

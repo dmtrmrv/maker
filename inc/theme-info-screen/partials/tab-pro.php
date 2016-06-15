@@ -7,7 +7,7 @@
 
 ?>
 
-<div id="pro" class="tab-content tp-pro-tab card">
+<div id="pro" class="tp-tab-content tp-pro-tab card">
 
 <h2 class="tab-heading">Maker Pro</h2>
 

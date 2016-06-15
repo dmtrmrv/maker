@@ -7,7 +7,7 @@
 
 ?>
 
-<div id="features" class="tab-content tab-features card">
+<div id="features" class="tp-tab-content card">
 
 <h2 class="tab-heading"><?php esc_html_e( 'Theme Features', 'maker' ); ?></h2>
 

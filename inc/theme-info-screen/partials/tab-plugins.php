@@ -7,7 +7,7 @@
 
 ?>
 
-<div id="plugins" class="tab-content card">
+<div id="plugins" class="tp-tab-content card">
 
 	<h2 class="tab-heading"><?php esc_html_e( 'Recommended Plugins', 'maker' ); ?></h2>
 

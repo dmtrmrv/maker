@@ -59,8 +59,9 @@
 	color: #e83337;
 }
 
-.tab-content hr {
+.tp-tab-content hr {
 	margin: 1em 0;
+	border-bottom: 0;
 }
 
 .tab-heading {
@@ -156,13 +157,13 @@
 		min-width: 30%;
 	}
 
-	.tab-content {
+	.tp-tab-content {
 		float: left;
 		box-sizing: border-box;
 		width: 70%;
 	}
 
-	.tab-content.card {
+	.tp-tab-content.card {
 		max-width: 63%;
 		max-width: calc( 70% - 40px );
 		margin-top: 40px;
