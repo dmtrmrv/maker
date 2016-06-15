@@ -50,7 +50,7 @@ Absolutely. You are welcome to report issues and submit pull requests.
 **0.2.6**
 
 Fixed: Mailpoet CSS conflict  
-Fixed: Grunt configured to autoprefix and combine media queiries on editor-style.css and theme-info-screen.css
+Fixed: Grunt configured to autoprefix and combine media queiries on editor-style.css and theme-info-screen.css  
 Changed: Minor CSS updates
 
 **0.2.5**
