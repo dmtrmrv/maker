@@ -47,6 +47,10 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.2.7**
+
+Fixed: Removed obsolete tags
+
 **0.2.6**
 
 Fixed: Mailpoet CSS conflict  

@@ -109,6 +109,10 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
+= 0.2.7 =
+
+Fixed: Removed obsolete tags
+
 = 0.2.6 =
 
 Fixed: Mailpoet CSS conflict  
