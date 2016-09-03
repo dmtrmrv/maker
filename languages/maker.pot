@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Maker 0.2.7\n"
+"Project-Id-Version: Maker 0.2.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2015-04-02 06:47:47+00:00\n"
 "MIME-Version: 1.0\n"
@@ -205,59 +205,59 @@ msgstr ""
 msgid "%1$s"
 msgstr ""
 
-#: inc/template-tags.php:414
+#: inc/template-tags.php:423
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:415
+#: inc/template-tags.php:424
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:416
+#: inc/template-tags.php:425
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:430
+#: inc/template-tags.php:439
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:433
+#: inc/template-tags.php:442
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:434
+#: inc/template-tags.php:443
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:460
+#: inc/template-tags.php:469
 msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:468
+#: inc/template-tags.php:477
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:480
+#: inc/template-tags.php:489
 msgid "All Projects"
 msgstr ""
 
-#: inc/template-tags.php:485
+#: inc/template-tags.php:494
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:497
+#: inc/template-tags.php:506
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:500
+#: inc/template-tags.php:509
 msgid "Older Comments"
 msgstr ""
 
-#: inc/template-tags.php:501
+#: inc/template-tags.php:510
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/template-tags.php:515
+#: inc/template-tags.php:524
 msgid "%1$s theme by %2$s"
 msgstr ""
 
