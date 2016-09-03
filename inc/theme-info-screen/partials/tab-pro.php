@@ -53,8 +53,8 @@
 		<p>
 			<?php
 				printf(
-					'<a href="%s" class="button button-hero button-primary">%s</a>',
-					esc_url( $this->theme_url . '#tp-pro-theme' ),
+					'<a href="%s" target="_blank" class="button button-hero button-primary">%s</a>',
+					esc_url( 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme' ),
 					esc_html__( 'Purchase Maker Pro', 'maker' )
 				);
 			?>

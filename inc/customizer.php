@@ -135,9 +135,9 @@ function maker_customize_register( $wp_customize ) {
 			'maker_pro_colors',
 			array(
 				'label'       => __( 'Custom Colors', 'maker' ),
-				'description' => __( 'With Maker Pro you can create your own color scheme, changing the color of links, text and background.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
-				'cta'         => __( 'Get Maker Pro', 'maker' ),
+				'description' => __( 'Upgrade Maker and create your own color schemes, changing the color of links, text and background.', 'maker' ),
+				'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+				'cta'         => __( 'Upgrade Maker', 'maker' ),
 				'section'     => 'colors',
 				'settings'    => array(),
 			)
@@ -150,9 +150,9 @@ function maker_customize_register( $wp_customize ) {
 			'maker_pro_portfolio_columns',
 			array(
 				'label'           => __( 'Portfolio Columns', 'maker' ),
-				'description'     => __( 'With Maker Pro you can set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
-				'url'             => 'https://themepatio.com/themes/maker/#tp-pro-theme',
-				'cta'             => __( 'Get Maker Pro', 'maker' ),
+				'description'     => __( 'Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
+				'url'             => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+				'cta'             => __( 'Upgrade Maker', 'maker' ),
 				'section'         => 'maker_portfolio',
 				'settings'        => array(),
 				'active_callback' => 'maker_is_portfolio_template',
@@ -172,9 +172,9 @@ function maker_customize_register( $wp_customize ) {
 			'maker_pro_footer',
 			array(
 				'label'       => __( 'Footer Message', 'maker' ),
-				'description' => __( 'With Maker Pro you can easily set your own custom footer message.', 'maker' ),
-				'url'         => 'https://themepatio.com/themes/maker/#tp-pro-theme',
-				'cta'         => __( 'Get Maker Pro', 'maker' ),
+				'description' => __( 'Upgrade Maker and set your own custom footer message.', 'maker' ),
+				'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+				'cta'         => __( 'Upgrade Maker', 'maker' ),
 				'section'     => 'maker_footer',
 				'settings'    => array(),
 			)

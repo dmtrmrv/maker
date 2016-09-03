@@ -110,12 +110,12 @@ msgstr ""
 
 #: inc/customizer.php:138
 msgid ""
-"With Maker Pro you can create your own color scheme, changing the color of "
+"Upgrade Maker and create your own color schemes, changing the color of "
 "links, text and background."
 msgstr ""
 
 #: inc/customizer.php:140 inc/customizer.php:155 inc/customizer.php:177
-msgid "Get Maker Pro"
+msgid "Upgrade Maker"
 msgstr ""
 
 #: inc/customizer.php:152
@@ -124,8 +124,8 @@ msgstr ""
 
 #: inc/customizer.php:153
 msgid ""
-"With Maker Pro you can set <strong>2, 3</strong> or "
-"<strong>4</strong>-column layout for the portfolio grid page."
+"Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column "
+"layout for the portfolio grid page."
 msgstr ""
 
 #: inc/customizer.php:165
@@ -137,7 +137,7 @@ msgid "Footer Message"
 msgstr ""
 
 #: inc/customizer.php:175
-msgid "With Maker Pro you can easily set your own custom footer message."
+msgid "Upgrade Maker and set your own custom footer message."
 msgstr ""
 
 #: inc/extras.php:75

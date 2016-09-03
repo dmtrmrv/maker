@@ -49,7 +49,7 @@ class Maker_Message_Pro_Control extends WP_Customize_Control {
 
 		if ( $this->url && $this->cta ) {
 			printf(
-				'<p class="customize-control-paragraph"><a href="%s" class="button button-primary">%s</a></p>',
+				'<p class="customize-control-paragraph"><a href="%s" target="_blank" class="button button-primary">%s</a></p>',
 				esc_url( $this->url ),
 				esc_html( $this->cta )
 			);

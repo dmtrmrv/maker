@@ -80,7 +80,7 @@
 			if ( ! MAKER_PRO ) {
 				printf(
 					'<p><a href="%s" class="button button-primary">%s</a></p>',
-					esc_url( $this->theme_url . '#tp-pro-theme' ),
+					esc_url( 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme' ),
 					esc_html__( 'Purchase Maker Pro', 'maker' )
 				);
 			}
@@ -103,7 +103,7 @@
 			if ( ! MAKER_PRO ) {
 				printf(
 					'<p><a href="%s" class="button button-primary">%s</a></p>',
-					esc_url( $this->theme_url . '#tp-pro-theme' ),
+					esc_url( 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme' ),
 					esc_html__( 'Purchase Maker Pro', 'maker' )
 				);
 			}
@@ -126,7 +126,7 @@
 			if ( ! MAKER_PRO ) {
 				printf(
 					'<p><a href="%s" class="button button-primary">%s</a></p>',
-					esc_url( $this->theme_url . '#tp-pro-theme' ),
+					esc_url( 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme' ),
 					esc_html__( 'Purchase Maker Pro', 'maker' )
 				);
 			}
