@@ -294,11 +294,20 @@ function maker_site_title() {
 	if ( false == get_theme_mod( 'maker_display_title', true ) ) {
 		$class .= ' screen-reader-text';
 	}
-	printf( '<h1 class="%s"><a href="%s" rel="home">%s</a></h1>',
-		esc_attr( $class ),
-		esc_url( home_url( '/' ) ),
-		esc_html( get_bloginfo( 'name' ) )
-	);
+
+	if ( is_front_page() && is_home() ) {
+		printf( '<h1 class="%s"><a href="%s" rel="home">%s</a></h1>',
+			esc_attr( $class ),
+			esc_url( home_url( '/' ) ),
+			esc_html( get_bloginfo( 'name' ) )
+		);
+	} else {
+		printf( '<p class="%s"><a href="%s" rel="home">%s</a></p>',
+			esc_attr( $class ),
+			esc_url( home_url( '/' ) ),
+			esc_html( get_bloginfo( 'name' ) )
+		);
+	}
 }
 endif;
 
