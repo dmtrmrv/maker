@@ -109,6 +109,11 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
+= 0.2.8 =
+
+Fixed: Improve markup on site title  
+Fixed: Open info screen links in a new tab
+
 = 0.2.7 =
 
 Fixed: Removed obsolete tags
