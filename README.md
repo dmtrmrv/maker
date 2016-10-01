@@ -4,7 +4,7 @@
 
 Maker is a simple yet powerful portfolio theme for people who create things. Websites, illustrations, photos, etc. Maker features classic grid-based layout, clean typography and overall minimal style, that allows you to create a portfolio website that is both modern and timeless at the same time. More info and live demo at https://themepatio.com/themes/maker
 
-[![Build Status](https://travis-ci.org/iamdmitrymayorov/maker.svg?branch=master)](https://travis-ci.org/iamdmitrymayorov/maker)
+[![Build Status](https://travis-ci.org/dmtrmrv/maker.svg?branch=master)](https://travis-ci.org/dmtrmrv/maker)
 
 ---
 
