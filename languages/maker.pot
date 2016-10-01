@@ -152,13 +152,6 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:17 inc/template-tags.php:29 inc/template-tags.php:41
-#: inc/template-tags.php:53 inc/template-tags.php:65 inc/template-tags.php:208
-#: inc/template-tags.php:217 inc/template-tags.php:250
-#: inc/template-tags.php:259
-msgid "%s"
-msgstr ""
-
 #: inc/template-tags.php:119
 msgid "Leave a comment"
 msgstr ""
@@ -193,10 +186,6 @@ msgstr ""
 
 #: inc/template-tags.php:216 inc/template-tags.php:258
 msgid "Tags"
-msgstr ""
-
-#: inc/template-tags.php:278
-msgid "%1$s"
 msgstr ""
 
 #: inc/template-tags.php:423

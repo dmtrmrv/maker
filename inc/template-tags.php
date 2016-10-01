@@ -14,7 +14,7 @@ if ( ! function_exists( 'maker_entry_category' ) ) :
 function maker_entry_category() {
 	$categories_list = get_the_category_list( esc_html__( ', ', 'maker' ) );
 	if ( $categories_list && maker_categorized_blog() ) {
-		printf( '<div class="entry-meta-item cat-links">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+		printf( '<div class="entry-meta-item cat-links">%s</div>', $categories_list ); // WPCS: XSS OK.
 	}
 }
 endif;
@@ -26,7 +26,7 @@ if ( ! function_exists( 'maker_jetpack_portfolio_type' ) ) :
 function maker_jetpack_portfolio_type() {
 	$categories_list = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
 	if ( $categories_list ) {
-		printf( '<div class="project-categories">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+		printf( '<div class="project-categories">%s</div>', $categories_list ); // WPCS: XSS OK.
 	}
 }
 endif;
@@ -38,7 +38,7 @@ if ( ! function_exists( 'maker_jetpack_portfolio_tag' ) ) :
 function maker_jetpack_portfolio_tag() {
 	$categories_list = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag', '', ', ', '' );
 	if ( $categories_list ) {
-		printf( '<div class="project-categories">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+		printf( '<div class="project-categories">%s</div>', $categories_list ); // WPCS: XSS OK.
 	}
 }
 endif;
@@ -50,7 +50,7 @@ if ( ! function_exists( 'maker_portfolio_toolkit_category' ) ) :
 function maker_portfolio_toolkit_category() {
 	$categories_list = get_the_term_list( get_the_ID(), 'portfolio-category', '', ', ', '' );
 	if ( $categories_list ) {
-		printf( '<div class="project-categories">' . esc_html__( '%s', 'maker' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+		printf( '<div class="project-categories">%s</div>', $categories_list ); // WPCS: XSS OK.
 	}
 }
 endif;
@@ -62,7 +62,7 @@ if ( ! function_exists( 'maker_portfolio_toolkit_tag' ) ) :
 function maker_portfolio_toolkit_tag() {
 	$tags_list = get_the_term_list( get_the_ID(), 'portfolio-tag', '', ', ', '' );
 	if ( $tags_list ) {
-		printf( '<div class="project-tags">' . esc_html__( '%s', 'maker' ) . '</div>', $tags_list ); // WPCS: XSS OK.
+		printf( '<div class="project-tags">%s</div>', $tags_list ); // WPCS: XSS OK.
 	}
 }
 endif;
@@ -205,7 +205,7 @@ function maker_portfolio_toolkit_meta() {
 		printf( // WPCS: XSS OK.
 			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-cats">%s</td></tr>',
 			esc_html__( 'Category', 'maker' ),
-			sprintf( esc_html__( '%s', 'maker' ), $categories )
+			$categories
 		);
 		endif;
 
@@ -214,7 +214,7 @@ function maker_portfolio_toolkit_meta() {
 		printf( // WPCS: XSS OK.
 			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-tags">%s</td></tr>',
 			esc_html__( 'Tags', 'maker' ),
-			sprintf( esc_html__( '%s', 'maker' ), $tags )
+			$tags
 		);
 		endif;
 
@@ -247,7 +247,7 @@ function maker_portfolio_jetpack_meta() {
 		printf( // WPCS: XSS OK.
 			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-cats">%s</td></tr>',
 			esc_html__( 'Category', 'maker' ),
-			sprintf( esc_html__( '%s', 'maker' ), $categories )
+			$categories
 		);
 		endif;
 
@@ -256,7 +256,7 @@ function maker_portfolio_jetpack_meta() {
 		printf( // WPCS: XSS OK.
 			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-tags">%s</td></tr>',
 			esc_html__( 'Tags', 'maker' ),
-			sprintf( esc_html__( '%s', 'maker' ), $tags )
+			$tags
 		);
 		endif;
 
@@ -273,9 +273,9 @@ if ( ! function_exists( 'maker_entry_meta_after_content' ) ) :
 function maker_entry_meta_after_content() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		$tags_list = get_the_tag_list( '', esc_html__( '', 'maker' ) );
+		$tags_list = get_the_tag_list( '', '' );
 		if ( $tags_list ) {
-			printf( '<footer class="entry-footer"><span class="tags-links">' . esc_html__( '%1$s', 'maker' ) . '</span></footer><!-- .entry-footer -->', $tags_list ); // WPCS: XSS OK.
+			printf( '<footer class="entry-footer"><span class="tags-links">%s</span></footer><!-- .entry-footer -->', $tags_list ); // WPCS: XSS OK.
 		}
 	} elseif ( 'page' == get_post_type() && current_user_can( 'edit_pages' ) ) {
 		echo '<footer class="entry-footer">';
