@@ -105,24 +105,9 @@ function maker_filter_p_tags_on_images( $content ) {
 add_filter( 'the_content', 'maker_filter_p_tags_on_images' );
 
 /**
- * Adds an admin notice upon successful activation.
+ * Redirect the user to the Getting Started screen upon theme activation.
  */
-function maker_activation_admin_notice() {
-	global $pagenow;
-
-	if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
-		add_action( 'admin_notices', 'maker_welcome_admin_notice', 99 );
-	}
-}
-add_action( 'load-themes.php', 'maker_activation_admin_notice' );
-
-/**
- * Display an admin notice linking to the welcome screen.
- */
-function maker_welcome_admin_notice() {
-	?>
-		<div class="updated notice is-dismissible">
-			<p><?php echo sprintf( esc_html__( 'Thanks for choosing Maker! Visit the %sGetting Started%s page to kickstart your site with the new theme!', 'maker' ), '<a href="' . esc_url( admin_url( 'themes.php?page=maker-getting-started' ) ) . '">', '</a>' ); ?></p>
-		</div>
-	<?php
+if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' == $pagenow ) {
+	wp_redirect( admin_url( 'admin.php?page=maker-getting-started' ) );
+	exit;
 }

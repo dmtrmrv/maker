@@ -144,12 +144,6 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/extras.php:125
-msgid ""
-"Thanks for choosing Maker! Visit the %sGetting Started%s page to kickstart "
-"your site with the new theme!"
-msgstr ""
-
 #: inc/jetpack.php:50
 msgid "Load More"
 msgstr ""
