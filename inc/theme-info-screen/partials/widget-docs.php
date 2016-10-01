@@ -13,9 +13,9 @@
 	<?php
 		printf(
 			'<p><a href="%s" class="button button-primary">%s</a></p>',
-			esc_url( $this->theme_author_url . 'docs/maker-getting-started/' ),
+			'https://docs.themepatio.com/maker-getting-started/',
 			esc_html__( 'View Documentation', 'maker' )
 		);
 	?>
-	
+
 </div>
