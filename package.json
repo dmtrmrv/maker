@@ -1,7 +1,7 @@
 {
   "name": "maker",
   "fullname": "Maker",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "devDependencies": {
     "clean-css": "^3.4.4",
     "grunt": "^0.4.5",
