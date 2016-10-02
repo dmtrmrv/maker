@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 				$comment_count = get_comments_number();
 				if ( 1 == $comment_count ) {
 					printf(
-						esc_html_e( 'One Reply' )
+						esc_html_e( 'One Reply', 'maker' )
 					);
 				} else {
 					printf( // WPCS: XSS OK.
