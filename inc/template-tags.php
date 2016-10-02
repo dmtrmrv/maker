@@ -320,7 +320,7 @@ function maker_site_description() {
 	if ( false == get_theme_mod( 'maker_display_tagline', true ) ) {
 		$class .= ' screen-reader-text';
 	}
-	printf( '<h2 class="%s">%s</h2>', esc_attr( $class ), esc_html( get_bloginfo( 'description' ) ) );
+	printf( '<p class="%s">%s</p>', esc_attr( $class ), esc_html( get_bloginfo( 'description' ) ) );
 }
 endif;
 
