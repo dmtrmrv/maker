@@ -109,9 +109,15 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
+= 0.2.9 =
+
+Fixed: Site description markup
+Fixed: Comment headings translation
+Fixed: Various Codesniffer warnings
+
 = 0.2.8 =
 
-Fixed: Improve markup on site title  
+Fixed: Improve markup on site title
 Fixed: Open info screen links in a new tab
 
 = 0.2.7 =
@@ -120,13 +126,13 @@ Fixed: Removed obsolete tags
 
 = 0.2.6 =
 
-Fixed: Mailpoet CSS conflict  
-Fixed: Grunt configured to autoprefix and combine media queiries on editor-style.css and theme-info-screen.css  
+Fixed: Mailpoet CSS conflict
+Fixed: Grunt configured to autoprefix and combine media queiries on editor-style.css and theme-info-screen.css
 Changed: Minor CSS updates
 
 = 0.2.5 =
 
-Fixed: Broken path to customizer.js  
+Fixed: Broken path to customizer.js
 Changed: Customizer wording improvements
 
 = 0.2.4 =
@@ -135,32 +141,32 @@ Fixed: Broken link in the footer
 
 = 0.2.3 =
 
-Fixed: Typo in the Customizer  
+Fixed: Typo in the Customizer
 Changed: Minor improvements
 
 = 0.2.2 =
 
-Fixed: Primary menu tab navigation issue  
+Fixed: Primary menu tab navigation issue
 Changed: Folder structure
 
 = 0.2.1 =
 
-Fixed: Typo on theme info screen  
-Fixed: Pagination styling issue with custom colors  
-Changed: Better blockquotes look  
-Changed: Better gallery captions  
-Changed: Removed content width restriction for single portfolio project  
+Fixed: Typo on theme info screen
+Fixed: Pagination styling issue with custom colors
+Changed: Better blockquotes look
+Changed: Better gallery captions
+Changed: Removed content width restriction for single portfolio project
 
 = 0.2.0 =
 
-Added: Support for Intuitive Custom Post Order plugin  
-Added: Tumblr icon for social menu  
-Added: Theme info screen  
-Fixed: Project meta alignment  
-Fixed: Issue with the text color on project meta  
-Fixed: Incorrect theme and author URLs in theme description  
-Changed: New screenshot  
-Changed: Minor code improvements  
+Added: Support for Intuitive Custom Post Order plugin
+Added: Tumblr icon for social menu
+Added: Theme info screen
+Fixed: Project meta alignment
+Fixed: Issue with the text color on project meta
+Fixed: Incorrect theme and author URLs in theme description
+Changed: New screenshot
+Changed: Minor code improvements
 
 = 0.1.7 =
 
@@ -172,29 +178,29 @@ Changed: Updated theme tags
 
 = 0.1.5 =
 
-Changed: Updated customizer messages  
-Changed: Updated screenshot  
-Fixed: Added Licence information  
+Changed: Updated customizer messages
+Changed: Updated screenshot
+Fixed: Added Licence information
 
 = 0.1.4 =
 
-Fixed: Issue with column width on portfolio pages  
-Fixed: Issue with the excerpt and project meta not appearing after theme installation  
-Changed: Minor CSS updates  
+Fixed: Issue with column width on portfolio pages
+Fixed: Issue with the excerpt and project meta not appearing after theme installation
+Changed: Minor CSS updates
 
 = 0.1.3 =
 
-Fixed: Improved project thumbnail styling. No need for matchHeight plugin  
+Fixed: Improved project thumbnail styling. No need for matchHeight plugin
 Changed: Small footer margin adjustment
 
 = 0.1.2 =
 
-Changed: Improved pagination markup  
+Changed: Improved pagination markup
 Changed: Minor code improvements
 
 = 0.1.1 =
 
-Changed: Minor code improvements  
+Changed: Minor code improvements
 
 = 0.1.0 =
 

@@ -47,6 +47,12 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 ####Changelog
 
+**0.2.9**
+
+Fixed: Site description markup
+Fixed: Comment headings translation
+Fixed: Various Codesniffer warnings
+
 **0.2.8**
 
 Fixed: Improve markup on site title  
