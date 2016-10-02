@@ -24,15 +24,19 @@ msgid ""
 "go to the homepage or try searching."
 msgstr ""
 
-#: comments.php:52
+#: comments.php:29
+msgid "One Reply"
+msgstr ""
+
+#: comments.php:60
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:58
+#: comments.php:66
 msgid "Reply to %s"
 msgstr ""
 
-#: comments.php:59
+#: comments.php:67
 msgid "Cancel"
 msgstr ""
 
@@ -612,9 +616,9 @@ msgstr ""
 msgid "Portfolio – Portfolio Toolkit"
 msgstr ""
 
-#: comments.php:27
-msgctxt "Comments title"
-msgid "One Comment"
-msgid_plural "%s Comments"
+#: comments.php:33
+msgctxt "comments title"
+msgid "%1$s Reply"
+msgid_plural "%1$s Replies"
 msgstr[0] ""
 msgstr[1] ""
