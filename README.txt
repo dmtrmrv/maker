@@ -9,7 +9,7 @@ Tags:              black, gray, red, white, dark, light, responsive-layout, one-
 
 == Description ==
 
-Maker is a simple yet powerful portfolio theme for people who create things. Websites, illustrations, photos, etc. Maker features classic grid-based layout, clean typography and overall minimal style, that allows you to create a portfolio website that is both modern and timeless at the same time. More info and live demo at https://themepatio.com/themes/maker
+Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. More info and live demo at https://themepatio.com/themes/maker
 
 == Installation ==
 

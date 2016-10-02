@@ -2,7 +2,7 @@
 
 ####Maker
 
-Maker is a simple yet powerful portfolio theme for people who create things. Websites, illustrations, photos, etc. Maker features classic grid-based layout, clean typography and overall minimal style, that allows you to create a portfolio website that is both modern and timeless at the same time. More info and live demo at https://themepatio.com/themes/maker
+Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. More info and live demo at https://themepatio.com/themes/maker
 
 [![Build Status](https://travis-ci.org/dmtrmrv/maker.svg?branch=master)](https://travis-ci.org/dmtrmrv/maker)
 
@@ -28,20 +28,17 @@ Maker is a simple yet powerful portfolio theme for people who create things. Web
 ####FAQ
 
 **Who is this theme for?**  
-Target audience of this theme is mainly web and graphic designers, illustrators, artists, photographers. All those who make beautiful things.
+Web and graphic designers, illustrators, artists, photographers, and all the great people who make things.
 
 **Does this theme support Jetpack Portfolio Custom Post Type?**  
-Yes. And if you are already using it you can switch to this theme regenerate thumbnails and you are all set.
+Yes. And if you are already using it you can switch to Maker regenerate thumbnails and keep creating content.
 
 **Why use Portfolio Toolkit then?**  
-Usually when creating portfolio, people want to somehow display typical information about the project, like client, date when it was released and a link to it. Portfolio Toolkit solves this problem in a neat way by providing three custom fields:
+Usually, when creating a portfolio, you want to display typical information about the project, like the name of the client, the release date and a link to the live version. Portfolio Toolkit has custom fields for this data.
 
-Client - Client name for the project (e.g. Apple)  
-Date - Release date of the project (e.g. June 2015)  
-URL - Link to a live project (e.g. http://www.apple.com/)
-
-**Can I participate?**  
-Absolutely. You are welcome to report issues and submit pull requests.
+Client - Client name for the project (e.g. ThemePatio)  
+Date - Release date of the project (e.g. June 2016)  
+URL - Link to a live project (e.g. https://themepatio.com/)
 
 ---
 
@@ -49,8 +46,8 @@ Absolutely. You are welcome to report issues and submit pull requests.
 
 **0.2.9**
 
-Fixed: Site description markup
-Fixed: Comment headings translation
+Fixed: Site description markup  
+Fixed: Comment headings translation  
 Fixed: Various Codesniffer warnings
 
 **0.2.8**
