@@ -9,7 +9,7 @@ Tags:              one-column, three-columns, right-sidebar, custom-menu, editor
 
 == Description ==
 
-Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. More info and live demo at https://themepatio.com/themes/maker
+Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. Info and demo at https://themepatio.com/themes/maker
 
 == Installation ==
 

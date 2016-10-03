@@ -2,7 +2,7 @@
 
 ####Maker
 
-Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. More info and live demo at https://themepatio.com/themes/maker
+Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. Info and demo at https://themepatio.com/themes/maker
 
 [![Build Status](https://travis-ci.org/dmtrmrv/maker.svg?branch=master)](https://travis-ci.org/dmtrmrv/maker)
 
@@ -22,13 +22,14 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 2. Portfolio Toolkit
 3. Contact Form 7
 4. Intuitive Custom Post Order
+5. Pageviews
 
 ---
 
 ####FAQ
 
 **Who is this theme for?**  
-Web and graphic designers, illustrators, artists, photographers, and all the great people who make things.
+Web and graphic designers, illustrators, artists, photographers, and other folks who make things.
 
 **Does this theme support Jetpack Portfolio Custom Post Type?**  
 Yes. And if you are already using it you can switch to Maker regenerate thumbnails and keep creating content.
