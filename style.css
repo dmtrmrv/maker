@@ -1677,6 +1677,7 @@ a.site-logo-link:before {
 
 .entry-meta-item {
 	display: block;
+	color: #bebebe;
 }
 
 .entry-meta-item a {
@@ -1687,6 +1688,17 @@ a.site-logo-link:before {
 .entry-meta-item a:focus {
 	opacity: 1;
 	color: #ff2441;
+}
+
+.entry-meta-icon {
+	display: block;
+	float: left;
+	width: 1em;
+	height: 1.5em;
+	margin-right: 0.25em;
+	opacity: 0.5;
+
+	fill: currentColor;
 }
 
 .entry-meta-item.cat-links {

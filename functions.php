@@ -80,6 +80,11 @@ function maker_setup() {
 	) );
 
 	/*
+	 * Add support for Pageviews plugin.
+	 */
+	add_theme_support( 'pageviews' );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */

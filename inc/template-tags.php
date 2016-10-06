@@ -104,6 +104,22 @@ function maker_entry_date() {
 }
 endif;
 
+if ( ! function_exists( 'maker_pageviews' ) ) :
+/**
+ * Displays Date of the current post.
+ */
+function maker_pageviews() {
+	if ( ! has_action( 'pageviews' ) ) {
+		return;
+	}
+
+	printf( '<span class="entry-meta-item pageviews">%1$s %2$s</span>',  // WPCS: XSS OK.
+		Pageviews::get_placeholder( get_the_ID() ),
+		'<svg class="entry-meta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"/><g><path d="M21 21H3v-2h18v2zM8 10H4v7h4v-7zm6-7h-4v14h4V3zm6 3h-4v11h4V6z"/></g></svg>'
+	);
+}
+endif;
+
 if ( ! function_exists( 'maker_entry_comments_link' ) ) :
 /**
  * Prints HTML with a link to post comments.
@@ -144,6 +160,8 @@ function maker_entry_meta_before_content() {
 		maker_entry_comments_link();
 
 		edit_post_link( __( 'Edit', 'maker' ), '<span class="entry-meta-item edit-link">', '</span>' );
+
+		maker_pageviews();
 
 		echo '</div>';
 	}

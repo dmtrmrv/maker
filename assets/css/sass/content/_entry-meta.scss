@@ -2,6 +2,7 @@
 
 .entry-meta-item {
 	display: block;
+	color: $color__text-secondary;
 	a {
 		color: $color__text-secondary;
 		&:hover,
@@ -10,6 +11,16 @@
 			color: $color__accent;
 		}
 	}
+}
+
+.entry-meta-icon {
+	fill: currentColor;
+	width: 1em;
+	height: 1.5em;
+	display: block;
+	float: left;
+	margin-right: 0.25em;
+	opacity: 0.5;
 }
 
 .entry-meta-item.cat-links {
