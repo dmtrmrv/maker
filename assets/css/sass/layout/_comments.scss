@@ -71,7 +71,7 @@
 .comment-metadata {
 	@include font-size( 0.875 );
 	@include line-height( 1.5 );
-	margin-bottom: $font__size-body-px * $font__line-height-body; // Can't wait to remove this. Bleh! 
+	margin-bottom: $font__size-body-px * $font__line-height-body; // Can't wait to remove this. Bleh!
 	margin-bottom: 1.5rem;
 	time,
 	.edit-link a {
@@ -157,4 +157,50 @@
 	margin-bottom: 3em;
 }
 
-@import 'comment-navigation';
+/* Comment Navigation */
+
+.comment-navigation {
+	overflow: hidden;
+	margin: 0 0 1.5em;
+	word-wrap: break-word;
+	@media screen and ( min-width: $sm ) {
+		margin-bottom: 3em;
+	}
+
+	.nav-links {
+		overflow: hidden;
+		width: 100%;
+	}
+	.nav-previous,
+	.nav-next {
+		display: inline-block;
+		float: left;
+		a {
+			display: block;
+			float: left;
+		}
+	}
+	.nav-pages {
+		display: inline-block;
+		float: right;
+		color: $color__text-secondary;
+		text-align: right;
+	}
+	.nav-previous a {
+		margin-right: 1em;
+	}
+	.nav-previous a:before,
+	.nav-next a:after {
+		@extend %icon;
+		margin: 0 0.2em;
+		color: $color__text-secondary;
+	}
+	.nav-previous a:before {
+		margin: 0 0.5em 0 0;
+		content: '\e802';
+	}
+	.nav-next a:after {
+		margin: 0 0 0 0.5em;
+		content: '\e803';
+	}
+}

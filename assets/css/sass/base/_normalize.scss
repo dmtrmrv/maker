@@ -7,7 +7,7 @@
 *,
 *:before,
 *:after {
-	box-sizing: inherit; 
+	box-sizing: inherit;
 }
 
 html {
@@ -23,7 +23,7 @@ html {
 
 body {
 	margin: 0;
-	// Addition. Styling. 
+	// Addition. Styling.
 	color: $color__text;
 	line-height: $font__line-height-body;
 	background: $color__background-body;
@@ -222,7 +222,7 @@ fieldset {
 	border-radius: 3px;
 	margin: 0 0 1.5em;
 	padding: em_minus_px( 0.75em, 2px ) 1em 0;
-	
+
 }
 
 legend {

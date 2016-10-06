@@ -1,6 +1,4 @@
-/**
- * Footer
- */
+/* Footer */
 
 .site-footer {
 	@extend .clear;
@@ -15,6 +13,6 @@
 	margin-bottom: 1.5em;
 	@media screen and ( min-width: $xs ) {
 		@include span( 5 last );
-		text-align: right;	
+		text-align: right;
 	}
 }

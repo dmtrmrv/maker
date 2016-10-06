@@ -1,0 +1,158 @@
+// Colors. ------------------------------------------------------------- //
+
+// Basic Text Colors.
+$color__text:           #585858;
+$color__text-secondary: lighten( $color__text, 40% );
+$color__text-light:     lighten( $color__text, 60% );
+
+// Body.
+$color__background-body: #fff;
+
+// Theme Accent Color.
+$color__accent: #ff2441;
+
+// Links.
+$color__link:         $color__accent;
+$color__link-visited: $color__accent;
+$color__link-hover:   $color__accent;
+
+// Accessibility.
+$color__text-screen:       #21759b;
+$color__background-screen: #f1f1f1;
+
+// State colors.
+$color__success: #1fc281;
+$color__info:    #00b9f2;
+$color__warning: #f4cc31;
+$color__danger:  #e83337;
+
+// Button.
+$color__button: (
+	text:             $color__text,
+	border:           $color__text-light,
+	background:       transparent,
+	hover_background: $color__text-light
+);
+
+// Button Accent.
+$color__button-accent: (
+	text:             #fff,
+	border:           $color__accent,
+	background:       $color__accent,
+	hover_background: lighten( $color__accent, 7% ),
+);
+
+// Button Success.
+$color__button-success: (
+	text:       #fff,
+	border:     $color__success,
+	background: $color__success,
+);
+
+// Button Info.
+$color__button-info: (
+	text:       #fff,
+	border:     $color__info,
+	background: $color__info,
+);
+
+// Button Warning.
+$color__button-warning: (
+	text:       #fff,
+	border:     $color__warning,
+	background: $color__warning,
+);
+
+// Button Danger.
+$color__button-danger: (
+	text:       #fff,
+	border:     $color__danger,
+	background: $color__danger,
+);
+
+// Layout. ------------------------------------------------------------------ //
+
+// Breakpoints.
+$xs: 415px;  // Phablets bigger than iPhone 6 plus.
+$sm: 768px;  // iPad (vertical).
+$md: 1024px; // Small Desktops, iPad (horizontal) and bigger.
+$lg: 1128px; // Desktops.
+
+// Susy.
+$susy: (
+	columns: 12,
+	gutters: 36/49,
+	math: fluid,
+	output: float,
+	gutter-position: after
+);
+
+$susy-static: (
+	columns: 12,
+	column-width: 49px,
+	gutters: 36/49,
+	math: static,
+	output: float,
+	gutter-position: after,
+);
+
+$susy-portfolio-grid: (
+	columns: 12,
+	gutters: 24/60,
+	math: fluid,
+	output: float,
+	gutter-position: after
+);
+
+$susy-portfolio-grid-static: (
+	columns: 12,
+	column-width: 60px,
+	gutters: 24/60,
+	math: static,
+	output: float,
+	gutter-position: after
+);
+
+// Typography. -------------------------------------------------------------- //
+
+$font__main:             Helvetica, Arial, sans-serif;
+$font__headings:         $font__main;
+$font__code:             Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__blockquote:       $font__main;
+$font__pre:              "Courier 10 Pitch", Courier, monospace;
+$font__size-body:        16;
+$font__size-body-px:     $font__size-body * 1px;
+$font__line-height-body: 1.5;
+$font__line-height-pre:  1.6;
+
+// Social icons. ------------------------------------------------------------- //
+$social-icons:(
+	'behance.net':       ( 'e804', #1769FF ),
+	'bitbucket.org':     ( 'e800', #205081 ),
+	'codepen.io':        ( 'e805' ),
+	'delicious.com':     ( 'e808' ),
+	'deviantart.com':    ( 'e809', #ea4c89 ),
+	'dribbble.com':      ( 'e80a', #ea4c89 ),
+	'facebook.com':      ( 'e80b', #3b5998 ),
+	'flickr.com':        ( 'e80c' ),
+	'foursquare.com':    ( 'e80d', #25a0ca ),
+	'github.com':        ( 'e806', #4183c4 ),
+	'instagram.com':     ( 'e810', #c08d64 ),
+	'last.fm':           ( 'e811', #c3000d ),
+	'linkedin.com':      ( 'e812', #0e76a8 ),
+	'pinterest.com':     ( 'e814', #c8232c ),
+	'slack.com':         ( 'e81c' ),
+	'slideshare.com':    ( 'e81b' ),
+	'soundcloud.com':    ( 'e81a', #ff7700 ),
+	'spotify.com':       ( 'e819', #81b71a ),
+	'stackexchange.com': ( 'e818' ),
+	'stackoverflow.com': ( 'e817', #fe7a15 ),
+	'tumblr.com':        ( 'e80e', #26475c ),
+	'twitter.com':       ( 'e813', #00a0d1 ),
+	'vimeo.com':         ( 'e820', #86c9ef ),
+	'vine.co':           ( 'e821', #00bf8f ),
+	'vk.com':            ( 'e822', #45668e ),
+	'wordpress.com':     ( 'e823', #1e8cbe ),
+	'wordpress.org':     ( 'e823', #21759b ),
+	'youtube.com':       ( 'e825', #c4302b )
+);

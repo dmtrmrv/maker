@@ -23,96 +23,89 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * Table of Contents
  *
  * 0.1 Normalize
- * 0.2 Color Scheme
- * 0.3 Typography
- *     Headings
- *     Copy
- *     Links
- *     Blockquotes
- *     Lists
- *     Tables
- *     Code
- * 0.4 Repeatable Patterns
- *     Forms
- *     Buttons
- *     Images
- *     Icons
- *     Lines
- *     Alerts
- *     Media
- *     Captions
- *     Alignments
- *     Accessibility
- *     Clearings
- * 0.5 Structure
- * 0.6 Header
- * 0.7 Navigation
- *     Primary Menu
- *     Footer Menu
- *     Social Menu
- *     Pagination
- * 0.8 Content
- *     Post Thumbnail
- *     Entry Title
- *     Entry Meta
- *     Entry Content
- *     Galleries
- *     Post Formats
- *     Post Navigation
- * 0.9 Pages
- *     Post
- *     Page
- *     Single Portfolio Page
- *     Portfolio
- *     Fullwidth
- *     Centered
- *     Search
- *     404
- * 1.0 Comments
- *     Comment Navigation
- * 1.1 Widgets
- * 1.2 Footer
- * 1.3 Plugins
- *     Jetpack
- *     Contact Form 7
- * 1.4 Media Queries
+ * 0.2 Typography
+ * 0.3 Components
+ * 0.4 Layout
+ * 0.5 Templates
+ * 0.6 Plugins
+ * 0.7 Media Queries
  */
 
 // Dependencies, variables, mixins and functions.
-
 @import 'susy';
 
-@import 'variables/variables';
+// Variables, mixins and functions.
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
 
-@import 'functions/functions-master';
+// Theme Styles start here.
+@import 'base/normalize';
 
-@import 'mixins/mixins-master';
+/**
+ * Typography.
+ */
+@import 'base/typography/headings';
+@import 'base/typography/copy';
+@import 'base/typography/links';
+@import 'base/typography/blockquotes';
+@import 'base/typography/lists';
+@import 'base/typography/tables';
+@import 'base/typography/code';
 
-// Theme Styles start here
+/**
+ * Components.
+ */
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/alignments';
+@import 'components/images';
+@import 'components/icons';
+@import 'components/lines';
+@import 'components/alerts';
+@import 'components/media';
+@import 'components/captions';
+@import 'components/accessibility';
+@import 'components/clearings';
 
-@import 'normalize';
+/**
+ * Layout.
+ */
+@import 'layout/structure';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/menu-primary';
+@import 'layout/menu-footer';
+@import 'layout/menu-social';
+@import 'layout/pagination';
+@import 'layout/post-thumbnail';
+@import 'layout/entry-header';
+@import 'layout/page-header';
+@import 'layout/entry-meta';
+@import 'layout/entry-content';
+@import 'layout/comments';
+@import 'layout/portfolio-grid';
+@import 'layout/galleries';
+@import 'layout/widgets';
+@import 'layout/post-navigation';
 
-@import 'typography/_typography';
+/**
+ * Templates.
+ */
+@import 'templates/post';
+@import 'templates/page';
+@import 'templates/page-fullwidth';
+@import 'templates/page-centered';
+@import 'templates/page-portfolio-single';
+@import 'templates/page-portfolio';
+@import 'templates/page-search';
+@import 'templates/page-404';
 
-@import 'patterns/_patterns';
-
-@import 'structure';
-
-@import 'header';
-
-@import 'navigation/_navigation';
-
-@import 'content/_content';
-
-@import 'pages/_pages';
-
-@import 'comments/_comments';
-
-@import 'widgets/_widgets';
-
-@import 'footer';
-
-@import 'plugins/_plugins';
+/**
+ * Plugins.
+ */
+@import 'plugins/infinite-scroll';
+@import 'plugins/contact-form-7';
 
 /**
  * Media Queries
