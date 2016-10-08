@@ -30,25 +30,27 @@ function maker_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Display Title.
-	$wp_customize->add_setting( 'maker_display_title', array(
-		'default' => 1,
+	// Display site title.
+	$wp_customize->add_setting( 'display_blogname', array(
+		'default'           => 1,
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_title', array(
-		'label'   => __( 'Display Title', 'maker' ),
+	$wp_customize->add_control( 'display_blogname', array(
+		'label'   => __( 'Display Site Title', 'maker' ),
 		'section' => 'title_tagline',
 		'type'    => 'checkbox',
 	) );
 
-	// Display Tagline.
-	$wp_customize->add_setting( 'maker_display_tagline', array(
+	// Display site tagline.
+	$wp_customize->add_setting( 'display_blogdescription', array(
 		'default'           => 1,
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_tagline', array(
+	$wp_customize->add_control( 'display_blogdescription', array(
 		'label'   => __( 'Display Tagline', 'maker' ),
 		'section' => 'title_tagline',
 		'type'    => 'checkbox',

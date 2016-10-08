@@ -309,7 +309,7 @@ if ( ! function_exists( 'maker_site_title' ) ) :
  */
 function maker_site_title() {
 	$class = 'site-title';
-	if ( false == get_theme_mod( 'maker_display_title', true ) ) {
+	if ( ! get_theme_mod( 'display_blogname', true ) ) {
 		$class .= ' screen-reader-text';
 	}
 
@@ -335,7 +335,7 @@ if ( ! function_exists( 'maker_site_description' ) ) :
  */
 function maker_site_description() {
 	$class = 'site-description';
-	if ( false == get_theme_mod( 'maker_display_tagline', true ) ) {
+	if ( ! get_theme_mod( 'display_blogdescription', true ) ) {
 		$class .= ' screen-reader-text';
 	}
 	printf( '<p class="%s">%s</p>', esc_attr( $class ), esc_html( get_bloginfo( 'description' ) ) );
