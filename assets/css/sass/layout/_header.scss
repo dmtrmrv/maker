@@ -13,36 +13,21 @@
 	.site-branding {
 		display: inline-block;
 		max-width: span( 3 );
-		line-height: 0;
 	}
 }
 
-a.site-logo-link {
-	display: inline-block;
-	height: 3em;
+a.custom-logo-link {
+	display: block;
 	margin: 0.75em 0;
 	img {
-		display: inline-block;
+		display: block;
 		width: auto;
 		max-width: 100%;
 		height: auto;
-		max-height: 3em;
 		margin: 0;
-		vertical-align: middle;
-	}
-	// Helper to center Logo vertically.
-	&:before {
-		display: inline-block;
-		height: 100%;
-		vertical-align: middle;
-		content: '';
 	}
 	@media screen and ( min-width: $sm ) {
-		height: 4.5em;
 		margin: 0;
-		img {
-			max-height: 4.5em;
-		}
 	}
 }
 
@@ -51,7 +36,7 @@ a.site-logo-link {
 	@include font-size( 1.5 ); // 24
 	clear: both;
 	margin-bottom: 0;
-	padding: 1em 0;
+	padding-top: 1em;
 	color: $color__text;
 	font-family: $font__headings;
 	font-weight: bold;
@@ -62,7 +47,6 @@ a.site-logo-link {
 
 .site-description {
 	@include font-size( 0.75 );
-	margin-top: -24px;
 	margin-bottom: 1em;
 	padding-top: 0;
 	color: $color__text-secondary;
@@ -72,14 +56,14 @@ a.site-logo-link {
 	text-transform: none;
 }
 
-.site-title.screen-reader-text + .site-description {
-	margin-top: 0;
-	padding: 2em 0 1em;
-}
-
-.site-logo-link + .site-title.screen-reader-text + .site-description {
-	padding: 0;
-}
+// .site-title.screen-reader-text + .site-description {
+// 	margin-top: 0;
+// 	padding: 2em 0 1em;
+// }
+//
+// .site-logo-link + .site-title.screen-reader-text + .site-description {
+// 	padding: 0;
+// }
 .main-navigation {
 	float: right;
 }

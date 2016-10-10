@@ -14,22 +14,6 @@ function maker_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
-	// Logo.
-	$wp_customize->add_setting( 'maker_logo', array(
-		'sanitize_callback' => 'maker_sanitize_image',
-	) );
-
-	$wp_customize -> add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,
-			'maker_logo',
-			array(
-				'label'   => __( 'Logo', 'maker' ),
-				'section' => 'title_tagline',
-			)
-		)
-	);
-
 	// Display site title.
 	$wp_customize->add_setting( 'display_blogname', array(
 		'default'           => 1,

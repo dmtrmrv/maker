@@ -1038,36 +1038,25 @@ p > video {
 .site-branding {
 	display: inline-block;
 	max-width: 222.0px;
-	line-height: 0;
 }
 
-a.site-logo-link {
-	display: inline-block;
-	height: 3em;
+a.custom-logo-link {
+	display: block;
 	margin: 0.75em 0;
 }
 
-a.site-logo-link img {
-	display: inline-block;
+a.custom-logo-link img {
+	display: block;
 	width: auto;
 	max-width: 100%;
 	height: auto;
-	max-height: 3em;
 	margin: 0;
-	vertical-align: middle;
-}
-
-a.site-logo-link:before {
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
-	content: '';
 }
 
 .site-title {
 	clear: both;
 	margin-bottom: 0;
-	padding: 1em 0;
+	padding-top: 1em;
 	color: #585858;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 24px;
@@ -1082,7 +1071,6 @@ a.site-logo-link:before {
 }
 
 .site-description {
-	margin-top: -24px;
 	margin-bottom: 1em;
 	padding-top: 0;
 	color: #bebebe;
@@ -1092,21 +1080,6 @@ a.site-logo-link:before {
 	line-height: 1.5;
 	letter-spacing: normal;
 	text-transform: none;
-}
-
-.site-title.screen-reader-text + .site-description,
-.site-title.comment-notes + .site-description,
-.site-title.form-allowed-tags + .site-description,
-.wpcf7 .site-title.screen-reader-response + .site-description {
-	margin-top: 0;
-	padding: 2em 0 1em;
-}
-
-.site-logo-link + .site-title.screen-reader-text + .site-description,
-.site-logo-link + .site-title.comment-notes + .site-description,
-.site-logo-link + .site-title.form-allowed-tags + .site-description,
-.wpcf7 .site-logo-link + .site-title.screen-reader-response + .site-description {
-	padding: 0;
 }
 
 .main-navigation {
@@ -2601,13 +2574,8 @@ input[type='submit'].wpcf7-submit:focus {
 		margin-bottom: 0;
 	}
 
-	a.site-logo-link {
-		height: 4.5em;
+	a.custom-logo-link {
 		margin: 0;
-	}
-
-	a.site-logo-link img {
-		max-height: 4.5em;
 	}
 
 	.site-header {
@@ -2735,6 +2703,10 @@ input[type='submit'].wpcf7-submit:focus {
 		max-width: 100%;
 	}
 
+	.project {
+		margin-bottom: 3.61446%;
+	}
+
 	.project:hover .project-header,
 	.project:active .project-header {
 		opacity: 1;
@@ -2757,9 +2729,9 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-2 .project {
 		float: left;
-		width: 48.79518%;
-		margin-right: 2.40964%;
-		margin-bottom: 2.40964%;
+		width: 48.19277%;
+		margin-right: 3.61446%;
+		margin-bottom: 3.61446%;
 	}
 
 	.portfolio-grid-col-2 .project:nth-of-type(2n) {
@@ -2768,9 +2740,9 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-3 .project {
 		float: left;
-		width: 31.72691%;
-		margin-right: 2.40964%;
-		margin-bottom: 2.40964%;
+		width: 30.92369%;
+		margin-right: 3.61446%;
+		margin-bottom: 3.61446%;
 	}
 
 	.portfolio-grid-col-3 .project:nth-of-type(3n) {
@@ -2779,8 +2751,8 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-4 .project {
 		float: left;
-		width: 23.19277%;
-		margin-right: 2.40964%;
+		width: 22.28916%;
+		margin-right: 3.61446%;
 	}
 
 	.portfolio-grid-col-4 .project:nth-of-type(4n) {

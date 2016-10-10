@@ -50,6 +50,16 @@ function maker_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/**
+	 * Enable support for custom logo.
+	 */
+	add_theme_support( 'custom-logo', array(
+		'width'       => 444,
+		'height'      => 144,
+		'flex-width'  => true,
+		'flex-height' => true,
+	) );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *

@@ -40,15 +40,15 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:66 header.php:33
+#: functions.php:76 header.php:33
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:77
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:124
 msgid "Sidebar"
 msgstr ""
 
@@ -56,91 +56,87 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/customizer.php:27
-msgid "Logo"
-msgstr ""
-
-#: inc/customizer.php:41
+#: inc/customizer.php:25
 msgid "Display Site Title"
 msgstr ""
 
-#: inc/customizer.php:54
+#: inc/customizer.php:38
 msgid "Display Tagline"
 msgstr ""
 
-#: inc/customizer.php:61
+#: inc/customizer.php:45
 msgid "Portfolio"
 msgstr ""
 
-#: inc/customizer.php:70
+#: inc/customizer.php:54
 msgid "Navigate to Portfolio"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer.php:56
 msgid ""
 "To edit the portfolio, open either a single portfolio project or a "
 "portfolio grid page in the preview screen on the right."
 msgstr ""
 
-#: inc/customizer.php:85
+#: inc/customizer.php:69
 msgid "Display Page Content"
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:73
 msgid "Choose to display page content before the portfolio grid or not."
 msgstr ""
 
-#: inc/customizer.php:98
+#: inc/customizer.php:82
 msgid "Display Project Excerpt"
 msgstr ""
 
-#: inc/customizer.php:110
+#: inc/customizer.php:94
 msgid "Display Project Meta"
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:106
 msgid "Link to all projects"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:110
 msgid ""
 "\"All Projects\" link at the bottom of a single project. Links to portfolio "
 "archive if left empty."
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:123
 msgid "Custom Colors"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:124
 msgid ""
 "Upgrade Maker and create your own color schemes, changing the color of "
 "links, text and background."
 msgstr ""
 
-#: inc/customizer.php:142 inc/customizer.php:157 inc/customizer.php:179
+#: inc/customizer.php:126 inc/customizer.php:141 inc/customizer.php:163
 msgid "Upgrade Maker"
 msgstr ""
 
-#: inc/customizer.php:154
+#: inc/customizer.php:138
 msgid "Portfolio Columns"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:139
 msgid ""
 "Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column "
 "layout for the portfolio grid page."
 msgstr ""
 
-#: inc/customizer.php:167
+#: inc/customizer.php:151
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:160
 msgid "Footer Message"
 msgstr ""
 
-#: inc/customizer.php:177
+#: inc/customizer.php:161
 msgid "Upgrade Maker and set your own custom footer message."
 msgstr ""
 
@@ -152,99 +148,99 @@ msgstr ""
 msgid "Load More"
 msgstr ""
 
-#: inc/template-tags.php:15
+#: inc/template-tags.php:65
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:135
+#: inc/template-tags.php:185
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:136
+#: inc/template-tags.php:186
 msgid "One Comment"
 msgstr ""
 
-#: inc/template-tags.php:137
+#: inc/template-tags.php:187
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:162 inc/template-tags.php:300
+#: inc/template-tags.php:212 inc/template-tags.php:350
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:196
+#: inc/template-tags.php:246
 msgid "Client"
 msgstr ""
 
-#: inc/template-tags.php:205
+#: inc/template-tags.php:255
 msgid "Date"
 msgstr ""
 
-#: inc/template-tags.php:216
+#: inc/template-tags.php:266
 msgid "Link"
 msgstr ""
 
-#: inc/template-tags.php:225 inc/template-tags.php:267
+#: inc/template-tags.php:275 inc/template-tags.php:317
 msgid "Category"
 msgstr ""
 
-#: inc/template-tags.php:234 inc/template-tags.php:276
+#: inc/template-tags.php:284 inc/template-tags.php:326
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:441
+#: inc/template-tags.php:435
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:442
+#: inc/template-tags.php:436
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:443
+#: inc/template-tags.php:437
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:457
+#: inc/template-tags.php:451
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:460
+#: inc/template-tags.php:454
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:461
+#: inc/template-tags.php:455
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:487
+#: inc/template-tags.php:481
 msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:495
+#: inc/template-tags.php:489
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:507
+#: inc/template-tags.php:501
 msgid "All Projects"
 msgstr ""
 
-#: inc/template-tags.php:512
+#: inc/template-tags.php:506
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:524
+#: inc/template-tags.php:518
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:527
+#: inc/template-tags.php:521
 msgid "Older Comments"
 msgstr ""
 
-#: inc/template-tags.php:528
+#: inc/template-tags.php:522
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/template-tags.php:542
+#: inc/template-tags.php:536
 msgid "%1$s theme by %2$s"
 msgstr ""
 

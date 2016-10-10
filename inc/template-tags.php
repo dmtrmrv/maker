@@ -7,6 +7,56 @@
  * @package Maker
  */
 
+/**
+ * Displays custom logo for the site.
+ *
+ * @todo Remove when 4.7 is out
+ */
+function maker_site_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+
+if ( ! function_exists( 'maker_site_title' ) ) :
+/**
+ * Displays site title.
+ */
+function maker_site_title() {
+	$class = 'site-title';
+	if ( ! get_theme_mod( 'display_blogname', true ) ) {
+		$class .= ' screen-reader-text';
+	}
+
+	if ( is_front_page() && is_home() ) {
+		printf( '<h1 class="%s"><a href="%s" rel="home">%s</a></h1>',
+			esc_attr( $class ),
+			esc_url( home_url( '/' ) ),
+			esc_html( get_bloginfo( 'name' ) )
+		);
+	} else {
+		printf( '<p class="%s"><a href="%s" rel="home">%s</a></p>',
+			esc_attr( $class ),
+			esc_url( home_url( '/' ) ),
+			esc_html( get_bloginfo( 'name' ) )
+		);
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_site_description' ) ) :
+/**
+ * Displays site description.
+ */
+function maker_site_description() {
+	$class = 'site-description';
+	if ( ! get_theme_mod( 'display_blogdescription', true ) ) {
+		$class .= ' screen-reader-text';
+	}
+	printf( '<p class="%s">%s</p>', esc_attr( $class ), esc_html( get_bloginfo( 'description' ) ) );
+}
+endif;
+
 if ( ! function_exists( 'maker_entry_category' ) ) :
 /**
  * Displays categories.
@@ -299,62 +349,6 @@ function maker_entry_meta_after_content() {
 		echo '<footer class="entry-footer">';
 			edit_post_link( __( 'Edit', 'maker' ), '<span class="edit-link">', '</span>' );
 		echo '</footer><!-- .entry-footer -->';
-	}
-}
-endif;
-
-if ( ! function_exists( 'maker_site_title' ) ) :
-/**
- * Displays site title.
- */
-function maker_site_title() {
-	$class = 'site-title';
-	if ( ! get_theme_mod( 'display_blogname', true ) ) {
-		$class .= ' screen-reader-text';
-	}
-
-	if ( is_front_page() && is_home() ) {
-		printf( '<h1 class="%s"><a href="%s" rel="home">%s</a></h1>',
-			esc_attr( $class ),
-			esc_url( home_url( '/' ) ),
-			esc_html( get_bloginfo( 'name' ) )
-		);
-	} else {
-		printf( '<p class="%s"><a href="%s" rel="home">%s</a></p>',
-			esc_attr( $class ),
-			esc_url( home_url( '/' ) ),
-			esc_html( get_bloginfo( 'name' ) )
-		);
-	}
-}
-endif;
-
-if ( ! function_exists( 'maker_site_description' ) ) :
-/**
- * Displays site description.
- */
-function maker_site_description() {
-	$class = 'site-description';
-	if ( ! get_theme_mod( 'display_blogdescription', true ) ) {
-		$class .= ' screen-reader-text';
-	}
-	printf( '<p class="%s">%s</p>', esc_attr( $class ), esc_html( get_bloginfo( 'description' ) ) );
-}
-endif;
-
-if ( ! function_exists( 'maker_site_logo' ) ) :
-/**
- * Displays site logo.
- */
-function maker_site_logo() {
-	if ( ! get_theme_mod( 'maker_logo' ) ) {
-		return;
-	} else {
-		printf( '<a href="%1$s" class="site-logo-link" rel="home"><img src="%2$s" alt="%3$s"></a>',
-			esc_url( home_url( '/' ) ),
-			esc_url( get_theme_mod( 'maker_logo' ) ),
-			esc_attr( get_bloginfo( 'name', 'display' ) )
-		);
 	}
 }
 endif;
