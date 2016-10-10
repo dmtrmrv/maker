@@ -105,6 +105,14 @@ function maker_filter_p_tags_on_images( $content ) {
 add_filter( 'the_content', 'maker_filter_p_tags_on_images' );
 
 /**
+ * Update maximum srcset image width.
+ */
+function remove_max_srcset_image_width( $max_width ) {
+	return 1992;
+}
+add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
+
+/**
  * Redirect the user to the Getting Started screen upon theme activation.
  */
 if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' == $pagenow ) {

@@ -16,11 +16,16 @@ define( 'MAKER_VERSION', '0.2.9' );
 define( 'MAKER_PRO', false );
 
 /**
- * Set the content width based on the theme's design and stylesheet.
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
  */
-if ( ! isset( $content_width ) ) {
-	$content_width = 474;
+function maker_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'maker_content_width', 480 );
 }
+add_action( 'after_setup_theme', 'maker_content_width', 0 );
 
 if ( ! function_exists( 'maker_setup' ) ) :
 /**
@@ -62,14 +67,20 @@ function maker_setup() {
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'maker-thumbnail',           '729', '432', true );
-	add_image_size( 'maker-thumbnail-fullwidth', '984', '576', true );
-	add_image_size( 'maker-thumbnail-portfolio', '480', '480', true );
+	// Blog thumbnail with sidebar.
+	add_image_size( '738x0',  738,  0, false );
+	add_image_size( '1476x0', 1458, 0, false );
+
+	// Blog thumbnail without sidebar.
+	add_image_size( '996x0',  996,  0, false );
+	add_image_size( '1992x0', 1992, 0, false );
+
+	// Portfolio thumbnail.
+	add_image_size( '480x480', 480, 480, true );
+	add_image_size( '960x960', 960, 960, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -109,7 +120,7 @@ add_action( 'after_setup_theme', 'maker_setup' );
  */
 function maker_content_width() {
 	if ( is_page_template( 'templates/fullwidth.php' ) || 'portfolio' == get_post_type() || 'jetpack-portfolio' == get_post_type() ) {
-		$GLOBALS['content_width'] = 984;
+		$GLOBALS['content_width'] = 996;
 	}
 }
 add_action( 'template_redirect', 'maker_content_width' );

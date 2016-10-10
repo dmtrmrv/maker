@@ -367,14 +367,14 @@ function maker_post_thumbnail() {
 
 	if ( 'jetpack-portfolio' == get_post_type() || 'portfolio' == get_post_type() ) {
 		printf( '<a class="project-thumbnail" href="%s">', esc_url( apply_filters( 'the_permalink', get_permalink() ) ) );
-			the_post_thumbnail( 'maker-thumbnail-portfolio' );
+			the_post_thumbnail( '480x480' );
 		echo '</a>';
 	} elseif ( is_singular() ) {
 		echo '<div class="post-thumbnail">';
 			if ( is_active_sidebar( 'sidebar-1' ) ) {
 				the_post_thumbnail( 'maker-thumbnail' );
 			} else {
-				the_post_thumbnail( 'maker-thumbnail-fullwidth' );
+				the_post_thumbnail( '996x0' );
 			}
 		echo '</div>';
 	} else {
@@ -382,7 +382,7 @@ function maker_post_thumbnail() {
 			if ( is_active_sidebar( 'sidebar-1' ) ) {
 				the_post_thumbnail( 'maker-thumbnail' );
 			} else {
-				the_post_thumbnail( 'maker-thumbnail-fullwidth' );
+				the_post_thumbnail( '996x0' );
 			}
 		echo '</a>';
 	}
