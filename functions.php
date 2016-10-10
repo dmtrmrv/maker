@@ -38,9 +38,6 @@ if ( ! function_exists( 'maker_setup' ) ) :
 function maker_setup() {
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Maker, use a find and replace
-	 * to change 'maker' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'maker', get_template_directory() . '/languages' );
 
@@ -49,9 +46,6 @@ function maker_setup() {
 
 	/*
 	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
 
@@ -89,8 +83,7 @@ function maker_setup() {
 	) );
 
 	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
+	 * Enable HTML5 markup for listed features.
 	 */
 	add_theme_support( 'html5', array(
 		'search-form',
@@ -106,8 +99,7 @@ function maker_setup() {
 	add_theme_support( 'pageviews' );
 
 	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
+	 * This theme styles the visual editor to resemble the theme style.
 	 */
 	add_editor_style( array( 'assets/css/editor-style.css' ) );
 }
@@ -118,12 +110,12 @@ add_action( 'after_setup_theme', 'maker_setup' );
 /**
  * Adjust content_width value for fullwidth page and portfolio pages.
  */
-function maker_content_width() {
+function maker_adjust_content_width() {
 	if ( is_page_template( 'templates/fullwidth.php' ) || 'portfolio' == get_post_type() || 'jetpack-portfolio' == get_post_type() ) {
 		$GLOBALS['content_width'] = 996;
 	}
 }
-add_action( 'template_redirect', 'maker_content_width' );
+add_action( 'template_redirect', 'maker_adjust_content_width' );
 
 /**
  * Register widget area.
