@@ -90,7 +90,7 @@
 // Two columns.
 .portfolio-grid-col-2 .project {
 	@media screen and ( min-width: $sm ) {
-		@include with-layout( $susy-portfolio-grid ) {
+		@include with-layout( $susy-portfolio ) {
 			@include span( 6 );
 			margin-bottom: gutter();
 		}
@@ -102,7 +102,7 @@
 // Three columns.
 .portfolio-grid-col-3 .project {
 	@media screen and ( min-width: $sm ) {
-		@include with-layout( $susy-portfolio-grid ) {
+		@include with-layout( $susy-portfolio ) {
 			@include span( 4 );
 			margin-bottom: gutter();
 		}
@@ -114,7 +114,7 @@
 // Four columns.
 .portfolio-grid-col-4 .project {
 	@media screen and ( min-width: $sm ) {
-		@include with-layout( $susy-portfolio-grid ) {
+		@include with-layout( $susy-portfolio ) {
 			@include span( 3 );
 		}
 		&:nth-of-type(4n) {

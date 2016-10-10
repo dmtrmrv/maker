@@ -1,13 +1,13 @@
 /* Structure */
 
 .site {
-	max-width: 1128px;
+	max-width: $lg;
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 5%;
-	padding-left: 5%;
+	padding-right: 6.3157894737%; // 72px on desktop.
+	padding-left: 6.3157894737%;
 	background-color: #fff;
-	@media screen and ( min-width: $sm ) {
+	@media screen and ( min-width: $lg ) {
 		padding-left: 72px;
 		padding-right: 72px;
 	}

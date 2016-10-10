@@ -76,12 +76,12 @@ $color__button-danger: (
 $xs: 415px;  // Phablets bigger than iPhone 6 plus.
 $sm: 768px;  // iPad (vertical).
 $md: 1024px; // Small Desktops, iPad (horizontal) and bigger.
-$lg: 1128px; // Desktops.
+$lg: 1140px; // Desktops.
 
 // Susy.
 $susy: (
 	columns: 12,
-	gutters: 36/49,
+	gutters: 36/50,
 	math: fluid,
 	output: float,
 	gutter-position: after
@@ -89,26 +89,17 @@ $susy: (
 
 $susy-static: (
 	columns: 12,
-	column-width: 49px,
-	gutters: 36/49,
+	column-width: 50px,
+	gutters: 36/50,
 	math: static,
 	output: float,
 	gutter-position: after,
 );
 
-$susy-portfolio-grid: (
+$susy-portfolio: (
 	columns: 12,
-	gutters: 24/60,
+	gutters: 24/61,
 	math: fluid,
-	output: float,
-	gutter-position: after
-);
-
-$susy-portfolio-grid-static: (
-	columns: 12,
-	column-width: 60px,
-	gutters: 24/60,
-	math: static,
 	output: float,
 	gutter-position: after
 );

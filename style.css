@@ -1005,11 +1005,11 @@ p > video {
 /* Structure */
 
 .site {
-	max-width: 1128px;
+	max-width: 1140px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 5%;
-	padding-left: 5%;
+	padding-right: 6.3157894737%;
+	padding-left: 6.3157894737%;
 	background-color: #fff;
 }
 
@@ -1024,7 +1024,7 @@ p > video {
 
 .widget-area {
 	width: 100%;
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto;
 }
 
@@ -1037,7 +1037,7 @@ p > video {
 
 .site-branding {
 	display: inline-block;
-	max-width: 219px;
+	max-width: 222.0px;
 	line-height: 0;
 }
 
@@ -1486,7 +1486,7 @@ a.site-logo-link:before {
 /* Pagination */
 
 .pagination {
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto 1.5em;
 	word-wrap: break-word;
 }
@@ -1598,7 +1598,7 @@ a.site-logo-link:before {
 
 .page-template-portfolio-toolkit .pagination,
 .page-template-portfolio-jetpack .pagination {
-	max-width: 474px;
+	max-width: 480px;
 	padding-top: 1.5em;
 	border-top: 2px solid #f1f1f1;
 }
@@ -1625,7 +1625,7 @@ a.site-logo-link:before {
 /* Page Header */
 
 .page-header {
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto 1.5em;
 }
 
@@ -1933,7 +1933,7 @@ a.site-logo-link:before {
 /* Portfolio Grid */
 
 .portfolio-grid {
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto;
 }
 
@@ -2239,7 +2239,7 @@ a.site-logo-link:before {
 .blog .entry-header,
 .archive .entry-header,
 .single-post .entry-header {
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto;
 }
 
@@ -2255,7 +2255,7 @@ a.site-logo-link:before {
 .single-post .entry-footer,
 .single-post .comments-area,
 .single-post .post-navigation {
-	max-width: 474px;
+	max-width: 480px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -2263,7 +2263,7 @@ a.site-logo-link:before {
 .blog .entry-meta,
 .archive .entry-meta,
 .single-post .entry-meta {
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto 1.5em;
 }
 
@@ -2283,7 +2283,7 @@ a.site-logo-link:before {
 .page-template-default .comments-area {
 	clear: both;
 	width: 100%;
-	max-width: 474px;
+	max-width: 480px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -2304,7 +2304,7 @@ a.site-logo-link:before {
 }
 
 .page-template-fullwidth .comments-area {
-	max-width: 474px;
+	max-width: 480px;
 }
 
 /* Centered */
@@ -2325,7 +2325,7 @@ a.site-logo-link:before {
 .page-template-blog-archives .entry-content,
 .page-template-blog-archives .comments-area {
 	width: 100%;
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto;
 }
 
@@ -2342,14 +2342,14 @@ a.site-logo-link:before {
 .single-portfolio .entry-header,
 .single-jetpack-portfolio .entry-header {
 	width: 100%;
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto;
 }
 
 .single-portfolio .entry-content,
 .single-jetpack-portfolio .entry-content {
 	width: 100%;
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto;
 }
 
@@ -2406,7 +2406,7 @@ a.site-logo-link:before {
 
 .single-portfolio .comments-area,
 .single-jetpack-portfolio .comments-area {
-	max-width: 474px;
+	max-width: 480px;
 }
 
 /* Portfolio */
@@ -2427,7 +2427,7 @@ a.site-logo-link:before {
 .page-template-portfolio-toolkit .entry-content,
 .page-template-portfolio-toolkit .comments-area {
 	width: 100%;
-	max-width: 474px;
+	max-width: 480px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -2454,7 +2454,7 @@ a.site-logo-link:before {
 .search .search-form,
 .search .entry-header,
 .search .entry-summary {
-	max-width: 474px;
+	max-width: 480px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -2484,7 +2484,7 @@ a.site-logo-link:before {
 }
 
 #infinite-handle {
-	max-width: 474px;
+	max-width: 480px;
 	margin: 0 auto 1.5em;
 }
 
@@ -2564,14 +2564,14 @@ input[type='submit'].wpcf7-submit:focus {
 @media screen and (min-width: 415px) {
 	.site-info {
 		float: right;
-		width: 39.53252%;
+		width: 39.55823%;
 		margin-right: 0;
 		text-align: right;
 	}
 
 	.footer-navigation {
 		float: left;
-		width: 60.46748%;
+		width: 60.44177%;
 	}
 
 	.footer-navigation ul {
@@ -2595,11 +2595,6 @@ input[type='submit'].wpcf7-submit:focus {
 @media screen and (min-width: 768px) {
 	table {
 		margin-bottom: 2.9375em;
-	}
-
-	.site {
-		padding-right: 72px;
-		padding-left: 72px;
 	}
 
 	.site-header {
@@ -2762,9 +2757,9 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-2 .project {
 		float: left;
-		width: 48.78049%;
-		margin-right: 2.43902%;
-		margin-bottom: 2.43902%;
+		width: 48.79518%;
+		margin-right: 2.40964%;
+		margin-bottom: 2.40964%;
 	}
 
 	.portfolio-grid-col-2 .project:nth-of-type(2n) {
@@ -2773,9 +2768,9 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-3 .project {
 		float: left;
-		width: 31.70732%;
-		margin-right: 2.43902%;
-		margin-bottom: 2.43902%;
+		width: 31.72691%;
+		margin-right: 2.40964%;
+		margin-bottom: 2.40964%;
 	}
 
 	.portfolio-grid-col-3 .project:nth-of-type(3n) {
@@ -2784,8 +2779,8 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.portfolio-grid-col-4 .project {
 		float: left;
-		width: 23.17073%;
-		margin-right: 2.43902%;
+		width: 23.19277%;
+		margin-right: 2.40964%;
 	}
 
 	.portfolio-grid-col-4 .project:nth-of-type(4n) {
@@ -2825,9 +2820,9 @@ input[type='submit'].wpcf7-submit:focus {
 @media screen and (min-width: 1024px) {
 	.content-area {
 		float: left;
-		width: 74.08537%;
-		max-width: 74.08537%;
-		margin-right: 3.65854%;
+		width: 74.09639%;
+		max-width: 74.09639%;
+		margin-right: 3.61446%;
 	}
 
 	.no-sidebar .content-area {
@@ -2838,7 +2833,7 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.widget-area {
 		float: right;
-		width: 22.2561%;
+		width: 22.28916%;
 		margin-right: 0;
 	}
 
@@ -2860,7 +2855,7 @@ input[type='submit'].wpcf7-submit:focus {
 	.archive .entry-header,
 	.single-post .entry-header {
 		float: right;
-		width: 65.02058%;
+		width: 65.04065%;
 		max-width: 100%;
 		margin: 0;
 	}
@@ -2878,7 +2873,7 @@ input[type='submit'].wpcf7-submit:focus {
 	.single-post .comments-area,
 	.single-post .post-navigation {
 		float: right;
-		width: 65.02058%;
+		width: 65.04065%;
 		max-width: 100%;
 		margin-right: 0;
 		margin-left: 0;
@@ -2889,23 +2884,23 @@ input[type='submit'].wpcf7-submit:focus {
 	.archive .entry-meta,
 	.single-post .entry-meta {
 		float: left;
-		width: 30.04115%;
-		margin-right: 4.93827%;
+		width: 30.0813%;
+		margin-right: 4.87805%;
 	}
 
 	.blog.no-sidebar .entry-header,
 	.archive.no-sidebar .entry-header,
 	.single-post.no-sidebar .entry-header {
-		width: 74.08537%;
-		padding-right: 25.91463%;
+		width: 74.09639%;
+		padding-right: 25.90361%;
 	}
 
 	.blog.no-sidebar .entry-meta,
 	.archive.no-sidebar .entry-meta,
 	.single-post.no-sidebar .entry-meta {
 		float: left;
-		width: 22.2561%;
-		margin-right: 3.65854%;
+		width: 22.28916%;
+		margin-right: 3.61446%;
 	}
 
 	.blog.no-sidebar .entry-content,
@@ -2917,8 +2912,8 @@ input[type='submit'].wpcf7-submit:focus {
 	.single-post.no-sidebar .entry-content,
 	.single-post.no-sidebar .comments-area,
 	.single-post.no-sidebar .post-navigation {
-		width: 74.08537%;
-		padding-right: 25.91463%;
+		width: 74.09639%;
+		padding-right: 25.90361%;
 	}
 
 	.page-template-default .hentry {
@@ -2957,8 +2952,8 @@ input[type='submit'].wpcf7-submit:focus {
 	.single-jetpack-portfolio .project-excerpt,
 	.single-jetpack-portfolio .project-meta {
 		float: left;
-		width: 48.17073%;
-		margin-right: 3.65854%;
+		width: 48.19277%;
+		margin-right: 3.61446%;
 	}
 
 	.single-portfolio .project-meta table,
@@ -2991,5 +2986,12 @@ input[type='submit'].wpcf7-submit:focus {
 
 	#infinite-handle {
 		max-width: 100%;
+	}
+}
+
+@media screen and (min-width: 1140px) {
+	.site {
+		padding-right: 72px;
+		padding-left: 72px;
 	}
 }
