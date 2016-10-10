@@ -2,20 +2,19 @@
 /**
  * Docs widget on a welcome screen.
  *
- * @package Maker.
+ * @package Maker
  */
 
 ?>
 
-<div class="welcome-screen-widget card">
-	<h2><?php esc_html_e( 'Looking For Help?', 'maker' ); ?></h2>
-	<p><?php esc_html_e( 'We have more docs and tutorials at our website. Check them out if you need more detailed information about the theme.', 'maker' ); ?></p>
+<div class="tp-theme-info-sidebar-widget card">
+	<h2><?php esc_html_e( 'Have a question?', 'maker' ); ?></h2>
+	<p><?php esc_html_e( 'Check out our easy-to-follow articles with screenshots about the theme at ThemePatio knowledge base.', 'maker' ); ?></p>
 	<?php
 		printf(
-			'<p><a href="%s" class="button button-primary">%s</a></p>',
+			'<p><a href="%s" target="_blank" class="button button-primary">%s</a></p>',
 			'https://docs.themepatio.com/maker-getting-started/',
-			esc_html__( 'View Documentation', 'maker' )
+			esc_html__( 'View Docs', 'maker' )
 		);
 	?>
-
 </div>
