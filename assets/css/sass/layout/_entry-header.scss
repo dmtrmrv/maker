@@ -1,6 +1,10 @@
 /* Entry Title */
 
 .entry-title {
+	@media screen and ( min-width: $sm ) {
+		font-size: 28px;
+		line-height: 1.125;
+	}
 	a {
 		color: $color__text;
 	}

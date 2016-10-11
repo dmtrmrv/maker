@@ -28,18 +28,21 @@ h3 {
 }
 
 h4 {
-	@include font-size( 1 ); // 16
+	@include font-size( 1.125 ); // 18
+	font-weight: normal;
 }
 
 h5 {
-	@include font-size( 0.75 ); // 12
-	letter-spacing: 1px;
+	@include font-size( 0.875 ); // 14
+	letter-spacing: 2px;
 	text-transform: uppercase;
+	margin-bottom: 0.75em
 }
 
 h6 {
-	@include font-size( 0.75 ); // 12
-	font-weight: normal;
-	letter-spacing: 1px;
+	@include font-size( 0.875 ); // 14
+	letter-spacing: 2px;
 	text-transform: uppercase;
+	font-weight: normal;
+	margin-bottom: 0.75em
 }

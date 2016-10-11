@@ -205,22 +205,25 @@ h3 {
 }
 
 h4 {
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 18px;
+	font-size: 1.125rem;
+	font-weight: normal;
 }
 
 h5 {
-	font-size: 12px;
-	font-size: 0.75rem;
-	letter-spacing: 1px;
+	margin-bottom: 0.75em;
+	font-size: 14px;
+	font-size: 0.875rem;
+	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
 h6 {
-	font-size: 12px;
-	font-size: 0.75rem;
+	margin-bottom: 0.75em;
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: normal;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
@@ -393,7 +396,7 @@ thead th {
 pre {
 	overflow: auto;
 	max-width: 100%;
-	margin-bottom: 1.6em;
+	margin: 2.125em;
 	padding: 1.6em;
 	background-color: #f1f1f1;
 	font-family: 'Courier 10 Pitch', Courier, monospace;
