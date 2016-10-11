@@ -46,41 +46,6 @@ function maker_excerpt( $more ) {
 add_filter( 'excerpt_more', 'maker_excerpt' );
 endif;
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function maker_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name.
-		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary.
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'maker' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'maker_wp_title', 10, 2 );
-
-endif;
-
 /**
  * Filters the_category() to output HTML5 valid rel tag.
  *
@@ -95,16 +60,6 @@ function maker_category_rel( $text ) {
 add_filter( 'the_category', 'maker_category_rel' );
 
 /**
- * Removes p tags from images.
- *
- * @param  string $content Post content.
- */
-function maker_filter_p_tags_on_images( $content ) {
-	return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
-}
-add_filter( 'the_content', 'maker_filter_p_tags_on_images' );
-
-/**
  * Update maximum srcset image width.
  */
 function remove_max_srcset_image_width( $max_width ) {
@@ -113,9 +68,24 @@ function remove_max_srcset_image_width( $max_width ) {
 add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
 
 /**
- * Redirect the user to the Getting Started screen upon theme activation.
+ * Adds an admin notice about version 0.3.0.
  */
 if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' == $pagenow ) {
-	wp_redirect( admin_url( 'admin.php?page=maker-getting-started' ) );
-	exit;
+	add_action( 'admin_notices', 'maker_update_admin_notice', 99 );
+}
+
+/**
+ * Displays an upgrade notice.
+ */
+function maker_update_admin_notice() {
+	$message = sprintf(
+		esc_html__( 'Some things have changed in Maker 0.3.0! %1$sRead%2$s the upgrade guide for more details.', 'maker' ),
+		'<a href="' . esc_url( 'https://docs.themepatio.com/maker-upgrading-maker-0-3-0' ) . '" target="_blank">',
+		'</a>'
+	);
+
+	printf( // WPCS: XSS OK.
+		'<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
+		$message
+	);
 }

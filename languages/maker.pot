@@ -140,8 +140,10 @@ msgstr ""
 msgid "Upgrade Maker and set your own custom footer message."
 msgstr ""
 
-#: inc/extras.php:75
-msgid "Page %s"
+#: inc/extras.php:82
+msgid ""
+"Some things have changed in Maker 0.3.0! %1$sRead%2$s the upgrade guide for "
+"more details."
 msgstr ""
 
 #: inc/jetpack.php:50
