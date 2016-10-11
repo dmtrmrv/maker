@@ -61,6 +61,8 @@ add_filter( 'the_category', 'maker_category_rel' );
 
 /**
  * Update maximum srcset image width.
+ *
+ * @param int $max_width Maximum allowed image width.
  */
 function remove_max_srcset_image_width( $max_width ) {
 	return 1992;
