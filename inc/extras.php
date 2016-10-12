@@ -82,7 +82,7 @@ if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' == $pagenow ) {
 function maker_update_admin_notice() {
 	$message = sprintf(
 		esc_html__( 'Some things have changed in Maker 0.3.0! %1$sRead%2$s the upgrade guide for more details.', 'maker' ),
-		'<a href="' . esc_url( 'https://docs.themepatio.com/maker-upgrading-maker-0-3-0' ) . '" target="_blank">',
+		'<a href="' . esc_url( 'https://docs.themepatio.com/maker-upgrade-0-3-0/' ) . '" target="_blank">',
 		'</a>'
 	);
 
