@@ -7,12 +7,8 @@
 		margin-bottom: 3em;
 	}
 	.entry-title {
-		@include font-size( 1.25 );
-		margin: 0 0 1.2em;
-		line-height: 1.2em;
-		a {
-			color: $color__text;
-		}
+		@include font-size( 1.25 );  // 20
+		line-height: 1.2;
 	}
 	.search-form,
 	.entry-header,

@@ -284,34 +284,34 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#: template-parts/content-none.php:22
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:26
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
+#: template-parts/content-none.php:32
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22
-#: template-parts/content-single-portfolio-jetpack.php:29
-#: template-parts/content-single-portfolio-toolkit.php:29
-#: template-parts/content-single.php:24 template-parts/content.php:25
+#: template-parts/content-page.php:24
+#: template-parts/content-single-portfolio-jetpack.php:34
+#: template-parts/content-single-portfolio-toolkit.php:34
+#: template-parts/content-single.php:26 template-parts/content.php:26
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-search.php:19
+#: template-parts/content-search.php:24
 msgid "Continue Reading"
 msgstr ""
 
-#: template-parts/content.php:21
+#: template-parts/content.php:24
 msgid "Continue reading %s"
 msgstr ""
 

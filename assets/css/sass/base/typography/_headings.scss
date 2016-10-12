@@ -6,7 +6,6 @@ h3,
 h4,
 h5,
 h6 {
-	@include line-height( 1.5 );
 	clear: both;
 	margin: 0 0 ( $font__size-body-px * $font__line-height-body ) 0; // Can't wait to remove this. Bleh!
 	margin: 0 0 1.5rem 0;
@@ -17,32 +16,38 @@ h6 {
 
 h1 {
 	@include font-size( 1.5 ); // 24
+	line-height: 1.125;
 }
 
 h2 {
 	@include font-size( 1.25 );  // 20
+	line-height: 1.2;
 }
 
 h3 {
 	@include font-size( 1.125 ); // 18
+	line-height: 1.2;
 }
 
 h4 {
 	@include font-size( 1.125 ); // 18
 	font-weight: normal;
+	line-height: 1.2;
 }
 
 h5 {
 	@include font-size( 0.875 ); // 14
+	margin-bottom: 0.75em;
+	line-height: 1.2;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	margin-bottom: 0.75em
 }
 
 h6 {
 	@include font-size( 0.875 ); // 14
+	margin-bottom: 0.75em;
+	font-weight: normal;
+	line-height: 1.2;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	font-weight: normal;
-	margin-bottom: 0.75em
 }

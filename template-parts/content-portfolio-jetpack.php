@@ -13,10 +13,10 @@
 
 	<header class="project-header">
 
-		<?php the_title( sprintf( '<h1 class="project-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		
+		<?php the_title( sprintf( '<h2 class="project-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
 		<?php maker_jetpack_portfolio_type(); ?>
-		
+
 	</header><!-- .project-header -->
-	
+
 </article><!-- #post-## -->
