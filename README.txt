@@ -109,98 +109,116 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 == Changelog ==
 
+= 0.3.0 =
+
+Addition: Support for Pageviews plugin
+Addition: Support for native Custom Logo
+Change: Getting Started screen clean-up
+Change: Update README
+Fix: Minor Codesniffer warnings
+Fix: Update-comment-translations
+Fix: Update activation notice message
+Fix: Restructure CSS folder, 10up style
+Fix: Live update site title and description with postMessage
+Fix: Minor grid updates
+Fix: Support for responsive images
+Fix: Minor typography tweaks
+Fix: Fix escaping issue on Nothing Found page
+Fix: Update page header
+Fix: Fix headings for better SEO
+
 = 0.2.9 =
 
-Fixed: Site description markup
-Fixed: Comment headings translation
-Fixed: Various Codesniffer warnings
+Fix: Site description markup
+Fix: Comment headings translation
+Fix: Various Codesniffer warnings
 
 = 0.2.8 =
 
-Fixed: Improve markup on site title
-Fixed: Open info screen links in a new tab
+Fix: Improve markup on site title
+Fix: Open info screen links in a new tab
 
 = 0.2.7 =
 
-Fixed: Removed obsolete tags
+Fix: Removed obsolete tags
 
 = 0.2.6 =
 
-Fixed: Mailpoet CSS conflict
-Fixed: Grunt configured to autoprefix and combine media queiries on editor-style.css and theme-info-screen.css
-Changed: Minor CSS updates
+Change: Minor CSS updates
+Fix: Mailpoet CSS conflict
+Fix: Grunt config to autoprefix and combine media queiries
 
 = 0.2.5 =
 
-Fixed: Broken path to customizer.js
-Changed: Customizer wording improvements
+Change: Customizer wording improvements
+Fix: Broken path to customizer.js
 
 = 0.2.4 =
 
-Fixed: Broken link in the footer
+Fix: Broken link in the footer
 
 = 0.2.3 =
 
-Fixed: Typo in the Customizer
-Changed: Minor improvements
+Change: Minor improvements
+Fix: Typo in the Customizer
 
 = 0.2.2 =
 
-Fixed: Primary menu tab navigation issue
-Changed: Folder structure
+Change: Folder structure
+Fix: Primary menu tab navigation issue
 
 = 0.2.1 =
 
-Fixed: Typo on theme info screen
-Fixed: Pagination styling issue with custom colors
-Changed: Better blockquotes look
-Changed: Better gallery captions
-Changed: Removed content width restriction for single portfolio project
+Change: Better blockquotes look
+Change: Better gallery captions
+Change: Remove content width restriction for single portfolio project
+Fix: Typo on theme info screen
+Fix: Pagination styling issue with custom colors
 
 = 0.2.0 =
 
-Added: Support for Intuitive Custom Post Order plugin
-Added: Tumblr icon for social menu
-Added: Theme info screen
-Fixed: Project meta alignment
-Fixed: Issue with the text color on project meta
-Fixed: Incorrect theme and author URLs in theme description
-Changed: New screenshot
-Changed: Minor code improvements
+Addition: Support for Intuitive Custom Post Order plugin
+Addition: Tumblr icon for social menu
+Addition: Theme info screen
+Change: New screenshot
+Change: Minor code improvements
+Fix: Project meta alignment
+Fix: Issue with the text color on project meta
+Fix: Incorrect theme and author URLs in theme description
 
 = 0.1.7 =
 
-Fixed: Issue with margins on images inside galleries
+Fix: Issue with margins on images inside galleries.
 
 = 0.1.6 =
 
-Changed: Updated theme tags
+Change: Updated theme tags
 
 = 0.1.5 =
 
-Changed: Updated customizer messages
-Changed: Updated screenshot
-Fixed: Added Licence information
+Change: Updated customizer messages
+Change: Updated screenshot
+Fix: Add Licence information
 
 = 0.1.4 =
 
-Fixed: Issue with column width on portfolio pages
-Fixed: Issue with the excerpt and project meta not appearing after theme installation
-Changed: Minor CSS updates
+Fix: Issue with column width on portfolio pages
+Fix: Issue with the excerpt and project meta not appearing after theme installation
+Change: Minor CSS updates.
 
 = 0.1.3 =
 
-Fixed: Improved project thumbnail styling. No need for matchHeight plugin
-Changed: Small footer margin adjustment
+Fix: Improved project thumbnail styling. No need for matchHeight plugin
+Change: Small footer margin adjustment
 
 = 0.1.2 =
 
-Changed: Improved pagination markup
-Changed: Minor code improvements
+Change: Improved pagination markup
+Change: Minor code improvements
 
 = 0.1.1 =
 
-Changed: Minor code improvements
+Change: Minor code improvements
 
 = 0.1.0 =
 
