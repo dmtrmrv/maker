@@ -1234,8 +1234,7 @@ a.site-logo-link:before {
 	height: 0.125em;
 	background-color: #585858;
 	content: '';
-	transition: -webkit-transform 0.3s, top 0.3s;
-	transition:         transform 0.3s, top 0.3s;
+	transition: transform 0.3s, top 0.3s;
 }
 
 .menu-toggle-icon:before {
@@ -1257,15 +1256,13 @@ a.site-logo-link:before {
 }
 
 .menu-toggle.toggled .menu-toggle-icon:before {
-	-webkit-transform: rotate(225deg);
-	    -ms-transform: rotate(225deg);
-	        transform: rotate(225deg);
+	-ms-transform: rotate(225deg);
+	    transform: rotate(225deg);
 }
 
 .menu-toggle.toggled .menu-toggle-icon:after {
-	-webkit-transform: rotate(-225deg);
-	    -ms-transform: rotate(-225deg);
-	        transform: rotate(-225deg);
+	-ms-transform: rotate(-225deg);
+	    transform: rotate(-225deg);
 }
 
 /* Footer Menu */
@@ -1742,7 +1739,6 @@ a.site-logo-link:before {
 .entry-summary {
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
 	    -ms-hyphens: auto;
 	        hyphens: auto;
 }
