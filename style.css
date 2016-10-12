@@ -1602,7 +1602,6 @@ a.custom-logo-link img {
 
 .page-header {
 	max-width: 480px;
-	margin: 0 auto 1.5em;
 }
 
 /* Entry Meta */
@@ -2696,6 +2695,12 @@ input[type='submit'].wpcf7-submit:focus {
 
 	.entry-title {
 		font-size: 28px;
+		line-height: 1.125;
+	}
+
+	.page-title {
+		font-size: 28px;
+		font-size: 1.75rem;
 		line-height: 1.125;
 	}
 
