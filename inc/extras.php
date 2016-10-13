@@ -70,24 +70,41 @@ function remove_max_srcset_image_width( $max_width ) {
 add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
 
 /**
- * Adds an admin notice about version 0.3.0.
+ * Displays an update notice.
  */
-if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' == $pagenow ) {
-	add_action( 'admin_notices', 'maker_update_admin_notice', 99 );
+function maker_update_notice() {
+	global $current_user ;
+	$user_id = $current_user->ID;
+	$nag_allowed_html = array(
+		'a' => array(
+			'href' => array(),
+			'target' => array(),
+		),
+		'strong' => array(),
+	);
+
+	/* Check if the user has already clicked to ignore the nag */
+	if ( current_user_can( 'edit_theme_options' ) && ! get_user_meta( $user_id, 'maker_update_0_3_0_ignore' ) ) {
+		echo '<div class="notice notice-warning is-dismissible"><p>';
+		printf( wp_kses( __( '<strong>Maker 0.3.0</strong> has some new features and fixes numerous minor bugs. <a href="%1$s" target="_blank">Read</a> the upgrade guide for more details. <a href="%2$s" target="_blank">Got it, hide this notice.</a>', 'maker' ), $nag_allowed_html ),
+			esc_url( 'https://docs.themepatio.com/maker-upgrade-0-3-0/' ),
+			'?maker_update_0_3_0_ignore=0" target="_blank"'
+			);
+		echo '</p></div>';
+	}
 }
+add_action( 'admin_notices', 'maker_update_notice' );
 
 /**
- * Displays an upgrade notice.
+ * Checks if the user has clicked to ignore the notice.
  */
-function maker_update_admin_notice() {
-	$message = sprintf(
-		esc_html__( 'Some things have changed in Maker 0.3.0! %1$sRead%2$s the upgrade guide for more details.', 'maker' ),
-		'<a href="' . esc_url( 'https://docs.themepatio.com/maker-upgrade-0-3-0/' ) . '" target="_blank">',
-		'</a>'
-	);
+function maker_update_notice_ignore() {
+	global $current_user;
+	$user_id = $current_user->ID;
 
-	printf( // WPCS: XSS OK.
-		'<div class="notice notice-warning is-dismissible"><p>%s</p></div>',
-		$message
-	);
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['maker_update_0_3_0_ignore'] ) && 0 == $_GET['maker_update_0_3_0_ignore'] ) {
+		 add_user_meta( $user_id, 'maker_update_0_3_0_ignore', 1, true );
+	}
 }
+add_action( 'admin_init', 'maker_update_notice_ignore' );

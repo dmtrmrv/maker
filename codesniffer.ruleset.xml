@@ -12,6 +12,7 @@
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.get_adjacent_post" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.user_meta" />
 	</rule>
 
 	<exclude-pattern>*/grunt/*</exclude-pattern>
