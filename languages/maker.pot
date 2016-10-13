@@ -246,36 +246,6 @@ msgstr ""
 msgid "%1$s theme by %2$s"
 msgstr ""
 
-#: inc/theme-info-screen/partials/content.php:11
-msgid "Getting Started"
-msgstr ""
-
-#: inc/theme-info-screen/partials/content.php:14
-msgid "Loading"
-msgstr ""
-
-#: inc/theme-info-screen/partials/content.php:15
-msgid "Something went wrong! Please contact support."
-msgstr ""
-
-#: inc/theme-info-screen/partials/intro.php:21
-msgid "Version: "
-msgstr ""
-
-#: inc/theme-info-screen/partials/widget-docs.php:11
-msgid "Have a question?"
-msgstr ""
-
-#: inc/theme-info-screen/partials/widget-docs.php:12
-msgid ""
-"Check out our easy-to-follow articles with screenshots about the theme at "
-"ThemePatio knowledge base."
-msgstr ""
-
-#: inc/theme-info-screen/partials/widget-docs.php:17
-msgid "View Docs"
-msgstr ""
-
 #: search.php:17
 msgid "Search Results for: %s"
 msgstr ""

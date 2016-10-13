@@ -1196,13 +1196,11 @@ a.custom-logo-link img {
 }
 
 .menu-toggle.toggled .menu-toggle-icon:before {
-	-ms-transform: rotate(225deg);
-	    transform: rotate(225deg);
+	transform: rotate(225deg);
 }
 
 .menu-toggle.toggled .menu-toggle-icon:after {
-	-ms-transform: rotate(-225deg);
-	    transform: rotate(-225deg);
+	transform: rotate(-225deg);
 }
 
 /* Footer Menu */
