@@ -49,7 +49,6 @@ URL - Link to a live project (e.g. https://themepatio.com/)
 
 Addition: Support for Pageviews plugin  
 Addition: Add support for native Custom Image Logo  
-Change: Getting Started screen clean-up  
 Change: Update README  
 Fix: Minor Codesniffer warnings  
 Fix: Update-comment-translations  

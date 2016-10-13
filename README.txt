@@ -113,7 +113,6 @@ URL:     https://unsplash.com/photos/UFskvng2OMU
 
 Addition: Support for Pageviews plugin
 Addition: Support for native Custom Logo
-Change: Getting Started screen clean-up
 Change: Update README
 Fix: Minor Codesniffer warnings
 Fix: Update-comment-translations
