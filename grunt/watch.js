@@ -1,6 +1,6 @@
 module.exports = {
 	styles: {
-		files: [ 'assets/css/sass/*.scss', 'assets//css/sass/**/*.scss' ],
+		files: [ 'assets/css/sass/*.scss', 'assets/css/sass/**/*.scss' ],
 		tasks: [ 'css', 'clean:release', 'copy:release' ],
 		options: {
 			livereload: true

@@ -6,6 +6,6 @@ module.exports = {
 		},
 		expand: true,
 		cwd: '../build/',
-		src: [ '<%= package.name %>/**' ]
+		src: ['<%= package.name %>/**']
 	}
 }

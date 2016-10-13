@@ -12,12 +12,5 @@ module.exports = {
 		},
 		src:  'assets/css/editor-style.css',
 		dest: 'assets/css/editor-style.css'
-	},
-	tis: {
-		options: {
-			beautify: true
-		},
-		src:  'inc/theme-info-screen/css/theme-info-screen.css',
-		dest: 'inc/theme-info-screen/css/theme-info-screen.css'
 	}
 }

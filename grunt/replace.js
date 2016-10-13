@@ -1,7 +1,10 @@
 module.exports = {
 	// Add empty lines after curly braces.
 	line_after_brace: {
-		src: [ 'style.css', 'assets/css/editor-style.css' ],
+		src: [
+			'style.css',
+			'assets/css/editor-style.css'
+		],
 		overwrite: true,
 		replacements: [ {
 			from: /\}\n(?!\n)(?!\})|\}(?=.)/g,
@@ -13,7 +16,10 @@ module.exports = {
 
 	// Add empty lines after DocBlocks and comments.
 	line_after_docblock: {
-		src: [ 'style.css', 'assets/css/editor-style.css' ],
+		src: [
+			'style.css',
+			'assets/css/editor-style.css'
+		],
 		overwrite: true,
 		replacements: [ {
 			from: /\*\/\n(?!\n)|\*\/(?=.)/g,
@@ -23,10 +29,10 @@ module.exports = {
 		} ]
 	},
 
-	// Replace theme version in style.scss
+	// Replace theme version in project.scss
 	version_style: {
 		src: [
-			'assets/css/sass/style.scss',
+			'assets/css/sass/project.scss',
 		],
 		overwrite: true,
 		replacements: [ {

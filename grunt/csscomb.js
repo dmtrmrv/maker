@@ -4,6 +4,9 @@ module.exports = {
 	},
 	files: {
 		expand: true,
-		src: [ 'style.css', 'assets/css/editor-style.css', 'inc/theme-info-screen/css/theme-info-screen.css' ]
+		src: [
+			'style.css',
+			'assets/css/editor-style.css',
+		]
 	}
 }
