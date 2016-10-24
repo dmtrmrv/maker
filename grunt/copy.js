@@ -13,6 +13,7 @@ module.exports = {
 			'!./Gruntfile.js',
 			'!./*.sublime-workspace',
 			'!./*.sublime-project',
+			'!./*.rej',
 			'!./README.md',
 			'!./package.json',
 			'!./assets/css/sass/**',
