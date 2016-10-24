@@ -1,6 +1,6 @@
 module.exports = {
 	// Add empty lines after curly braces.
-	line_after_brace: {
+	lineAfterBrace: {
 		src: [
 			'style.css',
 			'assets/css/editor-style.css'
@@ -15,7 +15,7 @@ module.exports = {
 	},
 
 	// Add empty lines after DocBlocks and comments.
-	line_after_docblock: {
+	lineAfterDocblock: {
 		src: [
 			'style.css',
 			'assets/css/editor-style.css'
@@ -30,7 +30,7 @@ module.exports = {
 	},
 
 	// Replace theme version in project.scss
-	version_style: {
+	versionStyle: {
 		src: [
 			'assets/css/sass/project.scss',
 		],
@@ -42,7 +42,7 @@ module.exports = {
 	},
 
 	// Replace theme version in README.txt
-	version_readme: {
+	versionReadme: {
 		src: [
 			'README.txt',
 		],
@@ -54,7 +54,7 @@ module.exports = {
 	},
 
 	// Replace version in functions.php
-	version_functions: {
+	versionFunctions: {
 		src: [
 			'functions.php'
 		],

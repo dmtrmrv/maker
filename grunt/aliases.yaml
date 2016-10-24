@@ -1,30 +1,34 @@
 default:
-  - 'css'
-  - 'js'
+- 'css'
+- 'js'
 
 css:
-  - 'sass:default'
-  - 'autoprefixer'
-  - 'combine_mq:default'
-  - 'combine_mq:editor'
-  - 'replace:line_after_brace'
-  - 'replace:line_after_docblock'
-  - 'csscomb'
+- 'sass:default'
+- 'autoprefixer'
+- 'combine_mq:default'
+- 'combine_mq:editor'
+- 'replace:lineAfterBrace'
+- 'replace:lineAfterDocblock'
+- 'csscomb'
 
 js:
-  - 'concat:default'
-  - 'uglify:default'
+- 'concat:default'
+- 'uglify:default'
 
 release:
-  - 'replace:version_style'
-  - 'replace:version_readme'
-  - 'replace:version_functions'
+# Replace the version number
+- 'replace:versionStyle'
+- 'replace:versionReadme'
+- 'replace:versionFunctions'
 
-  - 'css'
-  - 'js'
+# Run CSS and JS tasks
+- 'css'
+- 'js'
 
-  - 'makepot'
+# Update .pot file
+- 'makepot'
 
-  - 'clean:release'
-  - 'copy:release'
-  - 'compress:release'
+# Create a production version in a build folder
+- 'clean:release'
+- 'copy:release'
+- 'compress:release'
