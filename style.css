@@ -447,7 +447,7 @@ thead th {
 pre {
 	overflow: auto;
 	max-width: 100%;
-	margin: 2.125em;
+	margin: 2.125em 0;
 	padding: 1.6em;
 	background-color: #f1f1f1;
 	font-family: 'Courier 10 Pitch', Courier, monospace;
