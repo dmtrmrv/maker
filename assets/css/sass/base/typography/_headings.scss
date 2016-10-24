@@ -12,42 +12,38 @@ h6 {
 	color: $color__text;
 	font-family: $font__headings;
 	font-weight: bold;
+	line-height: 1.125;
 }
 
 h1 {
 	@include font-size( 1.5 ); // 24
-	line-height: 1.125;
 }
 
 h2 {
 	@include font-size( 1.25 );  // 20
-	line-height: 1.2;
 }
 
 h3 {
 	@include font-size( 1.125 ); // 18
-	line-height: 1.2;
+	font-weight: normal;
 }
 
 h4 {
-	@include font-size( 1.125 ); // 18
-	font-weight: normal;
-	line-height: 1.2;
+	@include font-size( 0.875 ); // 14
+	margin-bottom: 0.75em;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
 h5 {
 	@include font-size( 0.875 ); // 14
 	margin-bottom: 0.75em;
-	line-height: 1.2;
+	font-weight: normal;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
 h6 {
-	@include font-size( 0.875 ); // 14
+	@include font-size( 1 );
 	margin-bottom: 0.75em;
-	font-weight: normal;
-	line-height: 1.2;
-	letter-spacing: 2px;
-	text-transform: uppercase;
 }

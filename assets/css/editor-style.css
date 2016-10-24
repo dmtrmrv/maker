@@ -185,50 +185,46 @@ h6 {
 	color: #585858;
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
+	line-height: 1.125;
 }
 
 h1 {
 	font-size: 24px;
 	font-size: 1.5rem;
-	line-height: 1.125;
 }
 
 h2 {
 	font-size: 20px;
 	font-size: 1.25rem;
-	line-height: 1.2;
 }
 
 h3 {
 	font-size: 18px;
 	font-size: 1.125rem;
-	line-height: 1.2;
+	font-weight: normal;
 }
 
 h4 {
-	font-size: 18px;
-	font-size: 1.125rem;
-	font-weight: normal;
-	line-height: 1.2;
+	margin-bottom: 0.75em;
+	font-size: 14px;
+	font-size: 0.875rem;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
 h5 {
 	margin-bottom: 0.75em;
 	font-size: 14px;
 	font-size: 0.875rem;
-	line-height: 1.2;
+	font-weight: normal;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
 h6 {
 	margin-bottom: 0.75em;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: normal;
-	line-height: 1.2;
-	letter-spacing: 2px;
-	text-transform: uppercase;
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 /* Copy */
