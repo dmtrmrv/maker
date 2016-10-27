@@ -97,6 +97,12 @@ function maker_setup() {
 	 * This theme styles the visual editor to resemble the theme style.
 	 */
 	add_editor_style( array( 'assets/css/editor-style.css' ) );
+
+	/**
+	 * Support for Selective Refresh for widgets.
+	 */
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 endif;
 add_action( 'after_setup_theme', 'maker_setup' );

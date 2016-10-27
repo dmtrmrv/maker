@@ -218,26 +218,61 @@ function maker_entry_meta_before_content() {
 }
 endif;
 
-if ( ! function_exists( 'maker_portfolio_toolkit_meta' ) ) :
+if ( ! function_exists( 'maker_portfolio_project_excerpt' ) ) :
+/**
+ * Displays excerpt set manually.
+ */
+function maker_portfolio_project_excerpt() {
+
+	global $post;
+
+	if ( $post->post_excerpt ) {
+		if ( is_customize_preview() ) {
+				printf(
+					'<div class="project-excerpt %1$s"><p>%2$s</p></div>',
+					get_theme_mod( 'maker_display_project_excerpt', 1 ) ? '' : 'screen-reader-text',
+					wp_kses_post( $post->post_excerpt )
+				);
+		} else {
+			if ( get_theme_mod( 'maker_display_project_excerpt', 1 ) ) {
+				printf(
+					'<div class="project-excerpt"><p>%1$s</p></div>',
+					wp_kses_post( $post->post_excerpt )
+				);
+			}
+		}
+	}
+}
+endif;
+
+if ( ! function_exists( 'maker_portfolio_project_meta' ) ) :
 /**
  * Prints project meta for Portfolio Toolkit posts.
  */
-function maker_portfolio_toolkit_meta() {
+function maker_portfolio_project_meta() {
 
 	// Return if we don't need to display meta.
-	if ( ! get_theme_mod( 'maker_display_project_meta', 1 ) ) {
+	if ( ! get_theme_mod( 'maker_display_project_meta', 1 ) && ! is_customize_preview() ) {
 		return;
 	}
 
-	$client     = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_client', true );
-	$date       = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_date',   true );
-	$url        = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',    true );
-	$categories = get_the_term_list( get_the_ID(), 'portfolio-category', '', ', ', '' );
-	$tags       = get_the_term_list( get_the_ID(), 'portfolio-tag',      '', ', ', '' );
+	if ( is_singular( 'portfolio' ) ) :
+		$client     = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_client', true );
+		$date       = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_date',   true );
+		$url        = get_post_meta( get_the_ID(), '_portfolio_toolkit_project_url',    true );
+		$categories = get_the_term_list( get_the_ID(), 'portfolio-category', '', ', ', '' );
+		$tags       = get_the_term_list( get_the_ID(), 'portfolio-tag',      '', ', ', '' );
+	else :
+		$categories = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
+		$tags       = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag',  '', ', ', '' );
+	endif;
 
 	if ( $client || $date || $url || $categories || $tags ) :
 
-		echo '<div class="project-meta"><table>';
+		printf(
+			'<div class="project-meta %s"><table>',
+			! get_theme_mod( 'maker_display_project_meta', 1 ) && is_customize_preview() ? 'screen-reader-text' : ''
+		);
 
 		// Client.
 		if ( $client ) :
@@ -267,48 +302,6 @@ function maker_portfolio_toolkit_meta() {
 			'<a href="' . esc_url( $url ) . '">' . esc_html( $domain )
 		);
 		endif;
-
-		// Category.
-		if ( $categories ) :
-		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-cats">%s</td></tr>',
-			esc_html__( 'Category', 'maker' ),
-			$categories
-		);
-		endif;
-
-		// Tag.
-		if ( $tags ) :
-		printf( // WPCS: XSS OK.
-			'<tr><td class="project-meta-item-name">%s</td><td class="project-meta-item-desc project-meta-tags">%s</td></tr>',
-			esc_html__( 'Tags', 'maker' ),
-			$tags
-		);
-		endif;
-
-	echo '</table></div>';
-
-	endif;
-}
-endif;
-
-if ( ! function_exists( 'maker_portfolio_jetpack_meta' ) ) :
-/**
- * Prints project meta for Jetpack portfolio posts.
- */
-function maker_portfolio_jetpack_meta() {
-
-	// Return if we don't need to display meta.
-	if ( ! get_theme_mod( 'maker_display_project_meta', 1 ) ) {
-		return;
-	}
-
-	$categories = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '', ', ', '' );
-	$tags       = get_the_term_list( get_the_ID(), 'jetpack-portfolio-tag',  '', ', ', '' );
-
-	if ( $categories || $tags ) :
-
-		echo '<div class="project-meta"><table>';
 
 		// Category.
 		if ( $categories ) :
@@ -389,43 +382,6 @@ function maker_post_thumbnail() {
 }
 endif;
 
-if ( ! function_exists( 'maker_portfolio_grid_class' ) ) :
-	/**
-	 * Defines portfolio grid class depending on number of columns.
-	 */
-	function maker_portfolio_grid_class() {
-		$maker_portfolio_grid_class = 'portfolio-grid-col-3';
-
-		if ( get_theme_mod( 'maker_portfolio_columns' ) ) {
-			switch ( get_theme_mod( 'maker_portfolio_columns' ) ) {
-				case 2:
-					$maker_portfolio_grid_class = 'portfolio-grid-col-2';
-					break;
-				case 4:
-					$maker_portfolio_grid_class = 'portfolio-grid-col-4';
-					break;
-				default:
-					$maker_portfolio_grid_class = 'portfolio-grid-col-3';
-					break;
-			}
-		}
-
-		return $maker_portfolio_grid_class;
-	}
-endif;
-
-if ( ! function_exists( 'maker_manual_excerpt' ) ) :
-/**
- * Displays excerpt set manually.
- */
-function maker_manual_excerpt() {
-	global $post;
-	if ( $post->post_excerpt ) {
-		echo '<p>' . wp_kses_post( $post->post_excerpt ) . '</p>';
-	}
-}
-endif;
-
 if ( ! function_exists( 'maker_posts_pagination' ) ) :
 /**
  * Displays Posts Navigation a.k.a Older/Newer posts links on a blog/archive page.
@@ -451,13 +407,44 @@ function maker_post_navigation() {
 		'screen_reader_text' => __( 'Post navigation', 'maker' ),
 	);
 
-		$previous = get_previous_post_link( '<div class="nav-previous"><span>' . esc_html__( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
-		$next     = get_next_post_link( '<div class="nav-next"><span>' . esc_html__( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
+	$previous = get_previous_post_link( '<div class="nav-previous"><span>' . esc_html__( 'Older:', 'maker' ) . ' </span>%link</div>', $args['prev_text'] );
+	$next     = get_next_post_link( '<div class="nav-next"><span>' . esc_html__( 'Newer:', 'maker' ) . ' </span>%link</div>', $args['next_text'] );
 
 	// Only add markup if there's somewhere to navigate to.
 	if ( $previous || $next ) {
 		echo _navigation_markup( $next . $previous, 'post-navigation', $args['screen_reader_text'] ); // WPCS: XSS OK.
 	}
+}
+endif;
+
+if ( ! function_exists( 'maker_get_portfolio_all_projects_link' ) ) :
+/**
+ * Returns the markup for the "All Projects" link.
+ *
+ * @return string Link Markup.
+ */
+function maker_get_portfolio_all_projects_link() {
+	// Detect the type of the link.
+	switch ( get_theme_mod( 'portfolio_all_projects_link_type', 'archive' ) ) {
+		case 'frontpage':
+			$url = get_site_url();
+			break;
+
+		case 'custom':
+			$url = get_theme_mod( 'maker_all_projects_link', get_post_type_archive_link( get_post_type() ) );
+			break;
+
+		default:
+			$url = get_post_type_archive_link( get_post_type() );
+			break;
+	}
+
+	// Return the link.
+	return sprintf(
+		'<a href="%1$s" class="all page-numbers"><span>%2$s</span></a>',
+		esc_url( $url ),
+		esc_html__( 'All Projects', 'maker' )
+	);
 }
 endif;
 
@@ -472,7 +459,6 @@ function maker_portfolio_navigation() {
 	// Get URLs of a previous and next portfolio items.
 	$prev_url = get_permalink( get_adjacent_post( false, '', false ) );
 	$next_url = get_permalink( get_adjacent_post( false, '', true ) );
-	$all_url  = get_post_type_archive_link( get_post_type() );
 
 	if ( get_permalink() != $prev_url ) {
 		$prev = sprintf(
@@ -490,20 +476,9 @@ function maker_portfolio_navigation() {
 		);
 	}
 
-	// Override link to all projects, if it was set in the customizer.
-	if ( get_theme_mod( 'maker_all_projects_link' ) ) {
-		$all_url = get_theme_mod( 'maker_all_projects_link' );
-	}
-
-	$all  = sprintf(
-		'<a href="%s" class="all page-numbers"><span>%s</span></a>',
-		esc_url( $all_url ),
-		esc_html__( 'All Projects', 'maker' )
-	);
-
 	// Only add markup if there's somewhere to navigate to.
 	if ( $prev || $next ) {
-		echo _navigation_markup( $prev . $all . $next, 'pagination', __( 'Portfolio navigation', 'maker' ) ); // WPCS: XSS OK.
+		echo _navigation_markup( $prev . maker_get_portfolio_all_projects_link() . $next, 'pagination', __( 'Portfolio navigation', 'maker' ) ); // WPCS: XSS OK.
 	}
 }
 endif;
@@ -577,7 +552,6 @@ function maker_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
-	// Like, beat it. Dig?
 	delete_transient( 'maker_categories' );
 }
 add_action( 'edit_category', 'maker_category_transient_flusher' );

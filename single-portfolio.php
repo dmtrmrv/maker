@@ -11,19 +11,19 @@ get_header(); ?>
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">
 
-		<?php
-			while ( have_posts() ) : the_post();
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				get_template_part( 'template-parts/content', 'single-portfolio-toolkit' );
+				<?php get_template_part( 'template-parts/content', 'single-portfolio' ); ?>
 
-				maker_portfolio_navigation();
+				<?php maker_portfolio_navigation(); ?>
 
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+				<?php if ( comments_open() || get_comments_number() ) : ?>
 
-			endwhile;
-		?>
+					<?php comments_template(); ?>
+
+				<?php endif; ?>
+
+			<?php endwhile; ?>
 
 		</div><!-- #primary -->
 	</div><!-- #content -->

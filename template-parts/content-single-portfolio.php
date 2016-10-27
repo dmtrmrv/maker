@@ -1,6 +1,8 @@
 <?php
 /**
- * The template used for displaying portfolio item content in single-jetpack-portfolio.php
+ * The template used for displaying portfolio item on a single portfolio page.
+ *
+ * Used both for Portfolio Toolkit and Jetpack
  *
  * @package Maker
  */
@@ -13,17 +15,9 @@
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<?php if ( has_excerpt() && get_theme_mod( 'maker_display_project_excerpt', 1 ) ) : ?>
+		<?php maker_portfolio_project_excerpt(); ?>
 
-			<div class="project-excerpt">
-
-				<?php maker_manual_excerpt(); ?>
-
-			</div>
-
-		<?php endif; ?>
-
-		<?php maker_portfolio_jetpack_meta(); ?>
+		<?php maker_portfolio_project_meta(); ?>
 
 	</header><!-- .entry-header -->
 

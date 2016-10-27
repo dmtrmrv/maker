@@ -48,7 +48,7 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:122
+#: functions.php:128
 msgid "Sidebar"
 msgstr ""
 
@@ -140,12 +140,12 @@ msgstr ""
 msgid "Upgrade Maker and set your own custom footer message."
 msgstr ""
 
-#: inc/extras.php:89
+#: inc/extras.php:95
 msgid ""
-"<strong>Maker 0.3.0</strong> has some new features and fixes numerous minor "
-"bugs. <a href=\"%1$s\" target=\"_blank\">Read</a> the upgrade guide for "
-"more details. <a href=\"%2$s\" target=\"_blank\">Got it, hide this "
-"notice.</a>"
+"Upgrading from version prior to <strong>Maker 0.3.0</strong>? Read the <a "
+"href=\"%1$s\" target=\"_blank\">release notes</a>, this update requires a "
+"bit of action on your side. <a href=\"%2$s\" target=\"_blank\">Got it, "
+"don't show again.</a>"
 msgstr ""
 
 #: inc/jetpack.php:50
@@ -168,83 +168,83 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:212 inc/template-tags.php:350
+#: inc/template-tags.php:212 inc/template-tags.php:343
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:246
+#: inc/template-tags.php:281
 msgid "Client"
 msgstr ""
 
-#: inc/template-tags.php:255
+#: inc/template-tags.php:290
 msgid "Date"
 msgstr ""
 
-#: inc/template-tags.php:266
+#: inc/template-tags.php:301
 msgid "Link"
 msgstr ""
 
-#: inc/template-tags.php:275 inc/template-tags.php:317
+#: inc/template-tags.php:310
 msgid "Category"
 msgstr ""
 
-#: inc/template-tags.php:284 inc/template-tags.php:326
+#: inc/template-tags.php:319
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:435
+#: inc/template-tags.php:391
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:436
+#: inc/template-tags.php:392
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:437
+#: inc/template-tags.php:393
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:451
+#: inc/template-tags.php:407
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:454
+#: inc/template-tags.php:410
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:455
+#: inc/template-tags.php:411
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:481
-msgid "Prev"
-msgstr ""
-
-#: inc/template-tags.php:489
-msgid "Next"
-msgstr ""
-
-#: inc/template-tags.php:501
+#: inc/template-tags.php:446
 msgid "All Projects"
 msgstr ""
 
-#: inc/template-tags.php:506
+#: inc/template-tags.php:467
+msgid "Prev"
+msgstr ""
+
+#: inc/template-tags.php:475
+msgid "Next"
+msgstr ""
+
+#: inc/template-tags.php:481
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:518
+#: inc/template-tags.php:493
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:521
+#: inc/template-tags.php:496
 msgid "Older Comments"
 msgstr ""
 
-#: inc/template-tags.php:522
+#: inc/template-tags.php:497
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/template-tags.php:536
+#: inc/template-tags.php:511
 msgid "%1$s theme by %2$s"
 msgstr ""
 
@@ -273,8 +273,7 @@ msgid ""
 msgstr ""
 
 #: template-parts/content-page.php:24
-#: template-parts/content-single-portfolio-jetpack.php:34
-#: template-parts/content-single-portfolio-toolkit.php:34
+#: template-parts/content-single-portfolio.php:28
 #: template-parts/content-single.php:26 template-parts/content.php:26
 msgid "Pages:"
 msgstr ""

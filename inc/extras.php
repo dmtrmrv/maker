@@ -1,8 +1,6 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
- *
- * Eventually, some of the functionality here could be replaced by core features
+ * Custom functions that act independently of the theme templates.
  *
  * @package Maker
  */
@@ -33,7 +31,17 @@ function maker_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'maker_body_classes' );
 
-if ( ! function_exists( 'maker_excerpt' ) ) :
+/**
+ * Defines portfolio grid class depending on the number of columns.
+ */
+function maker_portfolio_grid_class() {
+	if ( in_array( get_theme_mod( 'maker_portfolio_columns', 3 ), array( 2, 3, 4 ) ) ) {
+		return 'portfolio-grid-col-' . get_theme_mod( 'maker_portfolio_columns', 3 );
+	} else {
+		return 'portfolio-grid-col-3';
+	}
+}
+
 /**
  * Custom excerpt.
  *
@@ -44,7 +52,6 @@ function maker_excerpt( $more ) {
 	return ' ...';
 }
 add_filter( 'excerpt_more', 'maker_excerpt' );
-endif;
 
 /**
  * Filters the_category() to output HTML5 valid rel tag.
@@ -58,16 +65,15 @@ function maker_category_rel( $text ) {
 	return $text;
 }
 add_filter( 'the_category', 'maker_category_rel' );
-
 /**
  * Update maximum srcset image width.
  *
  * @param int $max_width Maximum allowed image width.
  */
-function remove_max_srcset_image_width( $max_width ) {
+function maker_remove_max_srcset_image_width( $max_width ) {
 	return 1992;
 }
-add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
+add_filter( 'max_srcset_image_width', 'maker_remove_max_srcset_image_width' );
 
 /**
  * Displays an update notice.
@@ -86,7 +92,7 @@ function maker_update_notice() {
 	/* Check if the user has already clicked to ignore the nag */
 	if ( current_user_can( 'edit_theme_options' ) && ! get_user_meta( $user_id, 'maker_update_0_3_0_ignore' ) ) {
 		echo '<div class="notice notice-warning is-dismissible"><p>';
-		printf( wp_kses( __( '<strong>Maker 0.3.0</strong> has some new features and fixes numerous minor bugs. <a href="%1$s" target="_blank">Read</a> the upgrade guide for more details. <a href="%2$s" target="_blank">Got it, hide this notice.</a>', 'maker' ), $nag_allowed_html ),
+		printf( wp_kses( __( 'Upgrading from version prior to <strong>Maker 0.3.0</strong>? Read the <a href="%1$s" target="_blank">release notes</a>, this update requires a bit of action on your side. <a href="%2$s" target="_blank">Got it, don\'t show again.</a>', 'maker' ), $nag_allowed_html ),
 			esc_url( 'https://docs.themepatio.com/maker-upgrade-0-3-0/' ),
 			'?maker_update_0_3_0_ignore=0" target="_blank"'
 			);
