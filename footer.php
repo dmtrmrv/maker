@@ -13,7 +13,7 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'depth' => 1, 'fallback_cb' => false ) ); ?>
 				</nav><!-- #site-navigation -->
 			<?php endif; ?>
-			
+
 			<div class="site-info">
 				<?php maker_footer_text(); ?>
 			</div><!-- .site-info -->

@@ -19,7 +19,7 @@ get_header(); ?>
 							the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
-					
+
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php get_template_part( 'template-parts/content', 'portfolio-toolkit' ); ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 					<?php endwhile; ?>
 
 				<?php maker_posts_pagination(); ?>
-					
+
 			<?php endif; ?>
 		</div>
 	</div><!-- #content -->

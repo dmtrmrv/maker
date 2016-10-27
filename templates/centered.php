@@ -24,7 +24,7 @@ get_header(); ?>
 
 				endwhile;
 			?>
-			
+
 		</div>
 	</div><!-- #content -->
 </div><!-- #main -->
