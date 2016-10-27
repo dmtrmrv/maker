@@ -42,8 +42,7 @@ function maker_customize_register( $wp_customize ) {
 
 	// Portfolio.
 	$wp_customize->add_section( 'maker_portfolio' , array(
-		'title'    => __( 'Portfolio', 'maker' ),
-		'priority' => 130,
+		'title' => __( 'Portfolio', 'maker' ),
 	) );
 
 	$wp_customize -> add_control(
@@ -53,15 +52,17 @@ function maker_customize_register( $wp_customize ) {
 			array(
 				'label'           => __( 'Navigate to Portfolio', 'maker' ),
 				'settings'        => array(),
-				'description'     => __( 'To edit the portfolio, open either a single portfolio project or a portfolio grid page in the preview screen on the right.', 'maker' ),
+				'description'     => __( 'To edit the portfolio, navigate to portfolio grid page in the preview screen.', 'maker' ),
 				'section'         => 'maker_portfolio',
 				'active_callback' => 'maker_not_portfolio_template',
 			)
 		)
 	);
 
+	// Portfolio Page Content.
 	$wp_customize->add_setting( 'maker_display_portfolio_text', array(
 		'default'           => 1,
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
@@ -70,11 +71,13 @@ function maker_customize_register( $wp_customize ) {
 		'section'         => 'maker_portfolio',
 		'type'            => 'checkbox',
 		'active_callback' => 'maker_is_portfolio_template',
-		'description'     => __( 'Choose to display page content before the portfolio grid or not.', 'maker' ),
+		'description'     => __( 'Appears before the portfolio grid.', 'maker' ),
 	) );
 
+	// Porfolio Project Excerpt.
 	$wp_customize->add_setting( 'maker_display_project_excerpt', array(
 		'default'           => 1,
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
@@ -85,8 +88,10 @@ function maker_customize_register( $wp_customize ) {
 		'active_callback' => 'maker_is_single_portfolio',
 	) );
 
+	// Portfolio Project Meta.
 	$wp_customize->add_setting( 'maker_display_project_meta', array(
 		'default'           => 1,
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
@@ -97,8 +102,29 @@ function maker_customize_register( $wp_customize ) {
 		'active_callback' => 'maker_is_single_portfolio',
 	) );
 
+	// All Projects link type.
+	$wp_customize->add_setting( 'portfolio_all_projects_link_type', array(
+		'default'   => 'archive',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'maker_sanitize_portfolio_all_projects_link_type',
+	) );
+
+	$wp_customize->add_control( 'portfolio_all_projects_link_type', array(
+		'label'   => __( 'All Projects links to', 'maker' ),
+		'section' => 'maker_portfolio',
+		'type'    => 'radio',
+		'active_callback' => 'maker_is_single_portfolio',
+		'choices' => array(
+			'archive'   => __( 'Archive', 'maker' ),
+			'frontpage' => __( 'Frontpage', 'maker' ),
+			'custom'    => __( 'Custom URL', 'maker' ),
+		),
+	) );
+
+	// All Projects link.
 	$wp_customize->add_setting( 'maker_all_projects_link', array(
 		'default'           => '',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 
@@ -106,137 +132,121 @@ function maker_customize_register( $wp_customize ) {
 		'label'           => __( 'Link to all projects', 'maker' ),
 		'section'         => 'maker_portfolio',
 		'type'            => 'text',
-		'active_callback' => 'maker_is_single_portfolio',
-		'description'     => __( '"All Projects" link at the bottom of a single project. Links to portfolio archive if left empty.', 'maker' ),
+		'active_callback' => function () {
+			return 'custom' === get_theme_mod( 'portfolio_all_projects_link_type' ) && maker_is_single_portfolio();
+		},
 	) );
 
-	$wp_customize -> add_control(
-		new Maker_Message_Pro_Control(
-			$wp_customize,
-			'maker_pro_colors',
-			array(
-				'label'       => __( 'Custom Colors', 'maker' ),
-				'description' => __( 'Upgrade Maker and create your own color schemes, changing the color of links, text and background.', 'maker' ),
-				'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
-				'cta'         => __( 'Upgrade Maker', 'maker' ),
-				'section'     => 'colors',
-				'settings'    => array(),
-			)
-		)
-	);
+	// Colors.
+	$wp_customize->add_control( new Maker_Message_Pro_Control( $wp_customize, 'maker_pro_colors', array(
+		'label'       => __( 'Custom Colors', 'maker' ),
+		'description' => __( 'Upgrade Maker and create your own color schemes, changing the color of links, text and background.', 'maker' ),
+		'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+		'cta'         => __( 'Upgrade Maker', 'maker' ),
+		'section'     => 'colors',
+		'settings'    => array(),
+	) ) );
 
-	$wp_customize -> add_control(
-		new Maker_Message_Pro_Control(
-			$wp_customize,
-			'maker_pro_portfolio_columns',
-			array(
-				'label'           => __( 'Portfolio Columns', 'maker' ),
-				'description'     => __( 'Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
-				'url'             => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
-				'cta'             => __( 'Upgrade Maker', 'maker' ),
-				'section'         => 'maker_portfolio',
-				'settings'        => array(),
-				'active_callback' => 'maker_is_portfolio_template',
-			)
-		)
-	);
+	// Portfolio Column number.
+	$wp_customize -> add_control( new Maker_Message_Pro_Control( $wp_customize, 'maker_pro_portfolio_columns', array(
+		'label'           => __( 'Portfolio Columns', 'maker' ),
+		'description'     => __( 'Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
+		'url'             => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+		'cta'             => __( 'Upgrade Maker', 'maker' ),
+		'section'         => 'maker_portfolio',
+		'settings'        => array(),
+		'active_callback' => 'maker_is_portfolio_template',
+	) ) );
 
-	// Footer.
+	// Footer text.
 	$wp_customize->add_section( 'maker_footer' , array(
 		'title'    => __( 'Footer', 'maker' ),
-		'priority' => 160,
 	) );
 
-	$wp_customize -> add_control(
-		new Maker_Message_Pro_Control(
-			$wp_customize,
-			'maker_pro_footer',
-			array(
-				'label'       => __( 'Footer Message', 'maker' ),
-				'description' => __( 'Upgrade Maker and set your own custom footer message.', 'maker' ),
-				'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
-				'cta'         => __( 'Upgrade Maker', 'maker' ),
-				'section'     => 'maker_footer',
-				'settings'    => array(),
-			)
-		)
-	);
+	$wp_customize -> add_control( new Maker_Message_Pro_Control( $wp_customize, 'maker_pro_footer', array(
+		'label'       => __( 'Footer Message', 'maker' ),
+		'description' => __( 'Upgrade Maker and set your own custom footer message.', 'maker' ),
+		'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+		'cta'         => __( 'Upgrade Maker', 'maker' ),
+		'section'     => 'maker_footer',
+		'settings'    => array(),
+	) ) );
 }
 add_action( 'customize_register', 'maker_customize_register' );
-
 
 /**
  * Checks if the current page is a single portfolio item.
  */
 function maker_is_single_portfolio() {
-	if ( is_singular( 'portfolio' ) || is_singular( 'jetpack-portfolio' ) ) {
-		return true;
-	}
-	return false;
+	return is_singular( 'portfolio' ) || is_singular( 'jetpack-portfolio' );
 }
 
 /**
  * Checks if the current page uses one of the portfolio templates.
  */
 function maker_is_portfolio_template() {
-	if ( is_page_template( 'templates/portfolio-toolkit.php' ) || is_page_template( 'templates/portfolio-jetpack.php' ) ) {
-		return true;
-	}
+	return is_page_template( 'templates/portfolio-toolkit.php' ) || is_page_template( 'templates/portfolio-jetpack.php' );
 }
 
 /**
- * Checks if the current page is not one of the portfolio templates.
+ * Checks if the current page is not of the portfolio templates.
  */
 function maker_not_portfolio_template() {
 	return ! maker_is_portfolio_template() && ! maker_is_single_portfolio();
 }
 
 /**
- * Sanitizes text.
- *
- * @param string $input potentially dangerous data.
- */
-function maker_sanitize_text( $input ) {
-	global $allowedtags;
-	return wp_kses( $input , $allowedtags );
-}
-
-/**
  * Sanitizes checkbox.
  *
- * @param string|int $input potentially dangerous data.
+ * @param string|int $input Potentially harmful data.
  */
 function maker_sanitize_checkbox( $input ) {
-	if ( 1 == $input ) {
-		return 1;
-	} else {
-		return 0;
-	}
+	return 1 == $input ? 1 : 0;
 }
 
 /**
- * Sanitizes Image Upload.
+ * Sanitizes column option.
  *
- * @param string $input potentially dangerous data.
+ * @param  int $input Potentially harmful data.
  */
-function maker_sanitize_image( $input ) {
-	$output = '';
-
-	$filetype = wp_check_filetype( $input );
-	if ( $filetype['ext'] && wp_ext2type( $filetype['ext'] ) === 'image' ) {
-		$output = esc_url( $input );
-	}
-
-	return $output;
+function maker_sanitize_number_of_columns( $input ) {
+	return in_array( $input, array( 2, 3, 4 ) ) ? $input : 3;
 }
 
 /**
- * Binds js handlers to make theme customizer preview reload changes asynchronously.
+ * Sanitizes the type of the "All Projects" link type.
+ *
+ * @param  string $input Potentially harmful data.
+ * @return string        Link type.
+ */
+function maker_sanitize_portfolio_all_projects_link_type( $input ) {
+	if ( in_array( $input, array( 'archive', 'frontpage', 'custom' ) ) ) {
+		return $input;
+	}
+	return 'archive';
+}
+
+/**
+ * Enqueue custom scripts for customizer controls.
+ */
+function maker_customize_control_js() {
+	wp_enqueue_script(
+		'maker-customize-controls',
+		get_template_directory_uri() . '/assets/js/customize-controls.js',
+		array( 'jquery', 'customize-controls' ),
+		MAKER_VERSION,
+		true
+	);
+}
+add_action( 'customize_controls_enqueue_scripts', 'maker_customize_control_js' );
+
+/**
+ * Enqueue custom scripts for customizer preview screen.
  */
 function maker_customize_preview_js() {
 	wp_enqueue_script(
-		'maker_customizer',
-		get_template_directory_uri() . '/assets/js/customizer.js',
+		'maker-customize-preview',
+		get_template_directory_uri() . '/assets/js/customize-preview.js',
 		array( 'customize-preview' ),
 		MAKER_VERSION,
 		true

@@ -68,75 +68,85 @@ msgstr ""
 msgid "Portfolio"
 msgstr ""
 
-#: inc/customizer.php:54
+#: inc/customizer.php:53
 msgid "Navigate to Portfolio"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:55
 msgid ""
-"To edit the portfolio, open either a single portfolio project or a "
-"portfolio grid page in the preview screen on the right."
+"To edit the portfolio, navigate to portfolio grid page in the preview "
+"screen."
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:70
 msgid "Display Page Content"
 msgstr ""
 
-#: inc/customizer.php:73
-msgid "Choose to display page content before the portfolio grid or not."
+#: inc/customizer.php:74
+msgid "Appears before the portfolio grid."
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:85
 msgid "Display Project Excerpt"
 msgstr ""
 
-#: inc/customizer.php:94
+#: inc/customizer.php:99
 msgid "Display Project Meta"
 msgstr ""
 
-#: inc/customizer.php:106
-msgid "Link to all projects"
-msgstr ""
-
-#: inc/customizer.php:110
-msgid ""
-"\"All Projects\" link at the bottom of a single project. Links to portfolio "
-"archive if left empty."
+#: inc/customizer.php:113
+msgid "All Projects links to"
 msgstr ""
 
 #: inc/customizer.php:118
-msgid "Custom Colors"
+msgid "Archive"
 msgstr ""
 
 #: inc/customizer.php:119
+msgid "Frontpage"
+msgstr ""
+
+#: inc/customizer.php:120
+msgid "Custom URL"
+msgstr ""
+
+#: inc/customizer.php:132
+msgid "Link to all projects"
+msgstr ""
+
+#: inc/customizer.php:142
+msgid "Custom Colors"
+msgstr ""
+
+#: inc/customizer.php:143
 msgid ""
 "Upgrade Maker and create your own color schemes, changing the color of "
 "links, text and background."
 msgstr ""
 
-#: inc/customizer.php:121 inc/customizer.php:136 inc/customizer.php:158
+#: inc/customizer.php:145 inc/customizer.php:155 inc/customizer.php:170
 msgid "Upgrade Maker"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:152
 msgid "Portfolio Columns"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:153
 msgid ""
 "Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column "
 "layout for the portfolio grid page."
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:163
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:167
 msgid "Footer Message"
 msgstr ""
 
-#: inc/customizer.php:156
+#: inc/customizer.php:168
 msgid "Upgrade Maker and set your own custom footer message."
 msgstr ""
 
@@ -272,6 +282,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
+#: template-parts/content-page-portfolio.php:24
 #: template-parts/content-page.php:24
 #: template-parts/content-single-portfolio.php:28
 #: template-parts/content-single.php:26 template-parts/content.php:26

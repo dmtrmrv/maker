@@ -15,11 +15,9 @@ get_header(); ?>
 
 			<?php
 				// Content before the portfolio grid.
-				if ( get_theme_mod( 'maker_display_portfolio_text', 1 ) ) {
-					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/content', 'page' );
-					endwhile;
-				}
+				while ( have_posts() ) : the_post();
+					get_template_part( 'template-parts/content', 'page-portfolio' );
+				endwhile;
 
 				// Portfolio grid. Check if we have pagination first.
 				if ( get_query_var( 'paged' ) ) :
