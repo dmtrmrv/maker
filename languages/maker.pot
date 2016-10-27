@@ -40,15 +40,15 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.php:81 header.php:33
+#: functions.php:76 header.php:33
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:82
+#: functions.php:77
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:122
 msgid "Sidebar"
 msgstr ""
 
@@ -104,39 +104,39 @@ msgid ""
 "archive if left empty."
 msgstr ""
 
-#: inc/customizer.php:123
+#: inc/customizer.php:118
 msgid "Custom Colors"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:119
 msgid ""
 "Upgrade Maker and create your own color schemes, changing the color of "
 "links, text and background."
 msgstr ""
 
-#: inc/customizer.php:126 inc/customizer.php:141 inc/customizer.php:163
+#: inc/customizer.php:121 inc/customizer.php:136 inc/customizer.php:158
 msgid "Upgrade Maker"
 msgstr ""
 
-#: inc/customizer.php:138
+#: inc/customizer.php:133
 msgid "Portfolio Columns"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:134
 msgid ""
 "Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column "
 "layout for the portfolio grid page."
 msgstr ""
 
-#: inc/customizer.php:151
+#: inc/customizer.php:146
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:160
+#: inc/customizer.php:155
 msgid "Footer Message"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:156
 msgid "Upgrade Maker and set your own custom footer message."
 msgstr ""
 

@@ -110,11 +110,6 @@ function maker_customize_register( $wp_customize ) {
 		'description'     => __( '"All Projects" link at the bottom of a single project. Links to portfolio archive if left empty.', 'maker' ),
 	) );
 
-	/**
-	 * Pro Options preview.
-	 */
-	if ( ! MAKER_PRO ) :
-
 	$wp_customize -> add_control(
 		new Maker_Message_Pro_Control(
 			$wp_customize,
@@ -166,8 +161,6 @@ function maker_customize_register( $wp_customize ) {
 			)
 		)
 	);
-
-	endif;
 }
 add_action( 'customize_register', 'maker_customize_register' );
 
@@ -252,11 +245,6 @@ function maker_customize_preview_js() {
 add_action( 'customize_preview_init', 'maker_customize_preview_js' );
 
 /**
- * Custom CSS for customizer screen.
- */
-if ( ! MAKER_PRO ) :
-
-/**
  * Prints CSS for customizer screen.
  */
 function maker_customize_preview_css() {
@@ -278,5 +266,3 @@ function maker_customize_preview_css() {
 	</style><?php
 }
 add_action( 'customize_controls_print_styles', 'maker_customize_preview_css' );
-
-endif;
