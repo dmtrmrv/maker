@@ -13,18 +13,19 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-					<header class="page-header">
-						<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
+				<header class="page-header">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 
-						<?php get_template_part( 'template-parts/content', 'portfolio-jetpack' ); ?>
+					<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
 
-					<?php endwhile; ?>
+				</header><!-- .page-header -->
+
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'template-parts/content', 'portfolio-jetpack' ); ?>
+
+				<?php endwhile; ?>
 
 				<?php maker_posts_pagination(); ?>
 

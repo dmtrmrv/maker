@@ -289,7 +289,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-search.php:24
+#: template-parts/content-search.php:22
 msgid "Continue Reading"
 msgstr ""
 
