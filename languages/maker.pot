@@ -258,7 +258,7 @@ msgstr ""
 msgid "%1$s theme by %2$s"
 msgstr ""
 
-#: search.php:17
+#: search.php:18
 msgid "Search Results for: %s"
 msgstr ""
 

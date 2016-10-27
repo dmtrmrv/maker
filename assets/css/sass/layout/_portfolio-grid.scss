@@ -11,10 +11,10 @@
 	}
 }
 
+// See https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
 .project {
 	position: relative;
 	margin-bottom: 1.5em;
-	// See https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
 	&:before {
 		display: block;
 		width: 100%;
@@ -25,7 +25,7 @@
 	@media screen and ( min-width: $sm ) {
 		margin-bottom: gutter();
 		&:hover,
-		&:active {
+		&.focus {
 			.project-header {
 				opacity: 1;
 			}
@@ -60,7 +60,7 @@
 		bottom: 0;
 		left: 0;
 		padding: 1.5em 2em;
-		background: linear-gradient( rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0.4) 100% );
+		background: linear-gradient( rgba( 255, 255, 255, 0.9 ) 35%, rgba( 255, 255, 255, 0 ) 100% );
 		.has-post-thumbnail & {
 			opacity: 0;
 			pointer-events: none;
@@ -91,8 +91,7 @@
 // Two columns.
 .portfolio-grid-col-2 .project {
 	@media screen and ( min-width: $sm ) {
-			@include span( 6 );
-			margin-bottom: gutter();
+		@include span( 6 );
 		&:nth-of-type(2n) {
 			margin-right: 0;
 		}
@@ -101,8 +100,7 @@
 // Three columns.
 .portfolio-grid-col-3 .project {
 	@media screen and ( min-width: $sm ) {
-			@include span( 4 );
-			margin-bottom: gutter();
+		@include span( 4 );
 		&:nth-of-type(3n) {
 			margin-right: 0;
 		}
@@ -111,7 +109,7 @@
 // Four columns.
 .portfolio-grid-col-4 .project {
 	@media screen and ( min-width: $sm ) {
-			@include span( 3 );
+		@include span( 3 );
 		&:nth-of-type(4n) {
 			margin-right: 0;
 		}

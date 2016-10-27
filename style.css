@@ -2719,7 +2719,7 @@ input[type='submit'].wpcf7-submit:focus {
 	}
 
 	.project:hover .project-header,
-	.project:active .project-header {
+	.project.focus .project-header {
 		opacity: 1;
 	}
 
@@ -2730,7 +2730,7 @@ input[type='submit'].wpcf7-submit:focus {
 		bottom: 0;
 		left: 0;
 		padding: 1.5em 2em;
-		background: linear-gradient(rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0.4) 100%);
+		background: linear-gradient(rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0) 100%);
 	}
 
 	.has-post-thumbnail .project-header {
@@ -2742,7 +2742,6 @@ input[type='submit'].wpcf7-submit:focus {
 		float: left;
 		width: 48.19277%;
 		margin-right: 3.61446%;
-		margin-bottom: 3.61446%;
 	}
 
 	.portfolio-grid-col-2 .project:nth-of-type(2n) {
@@ -2753,7 +2752,6 @@ input[type='submit'].wpcf7-submit:focus {
 		float: left;
 		width: 30.92369%;
 		margin-right: 3.61446%;
-		margin-bottom: 3.61446%;
 	}
 
 	.portfolio-grid-col-3 .project:nth-of-type(3n) {
