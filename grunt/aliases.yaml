@@ -1,6 +1,6 @@
 default:
 - 'css'
-- 'js'
+# - 'js'
 
 css:
 - 'sass:default'
@@ -23,7 +23,7 @@ release:
 
 # Run CSS and JS tasks
 - 'css'
-- 'js'
+# - 'js'
 
 # Update .pot file
 - 'makepot'
