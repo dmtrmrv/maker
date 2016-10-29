@@ -25,6 +25,13 @@
 			color: $color__accent;
 		}
 	}
+	@media screen and ( min-width: $sm ) {
+		margin-bottom: 3em;
+	}
+}
+
+.widget-title {
+	font-weight: normal;
 }
 
 .widget_search {

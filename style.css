@@ -1684,6 +1684,10 @@ a.custom-logo-link img {
 	color: #ff2441;
 }
 
+.widget-title {
+	font-weight: normal;
+}
+
 .widget_search .search-submit {
 	display: none;
 }
@@ -2662,6 +2666,10 @@ input[type='submit'].wpcf7-submit {
 	.page-template-portfolio-jetpack .pagination {
 		max-width: 100%;
 		border-top: none;
+	}
+
+	.widget {
+		margin-bottom: 3em;
 	}
 
 	.page-title {

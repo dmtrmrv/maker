@@ -98,7 +98,7 @@ function maker_setup() {
 	 */
 	add_editor_style( array( 'assets/css/editor-style.css' ) );
 
-	/**
+	/*
 	 * Support for Selective Refresh for widgets.
 	 */
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -130,8 +130,8 @@ function maker_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h5 class="widget-title">',
-		'after_title'   => '</h5>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'maker_widgets_init' );
@@ -188,9 +188,6 @@ function maker_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	/*
-	 * Do the same thing with Contact Form 7.
-	 */
 	if ( wp_style_is( 'contact-form-7', 'registered' ) ) {
 		wp_deregister_style( 'contact-form-7' );
 	}
