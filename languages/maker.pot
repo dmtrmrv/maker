@@ -150,7 +150,7 @@ msgstr ""
 msgid "Upgrade Maker and set your own custom footer message."
 msgstr ""
 
-#: inc/extras.php:95
+#: inc/extras.php:99
 msgid ""
 "Upgrading from version prior to <strong>Maker 0.3.0</strong>? Read the <a "
 "href=\"%1$s\" target=\"_blank\">release notes</a>, this update requires a "

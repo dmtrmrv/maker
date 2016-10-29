@@ -1,7 +1,7 @@
 /* Contact Form 7 */
 
 input[type='submit'].wpcf7-submit {
-	@include button-color( $color__button-accent );
+	@include button-color( $color__accent );
 }
 
 .wpcf7 {
@@ -10,7 +10,7 @@ input[type='submit'].wpcf7-submit {
 }
 
 .wpcf7-response-output {
-	@extend %alert;
+	@extend .alert;
 }
 
 .wpcf7 .screen-reader-response {
@@ -18,19 +18,19 @@ input[type='submit'].wpcf7-submit {
 }
 
 .wpcf7-mail-sent-ok {
-	@extend %alert-success;
+	@extend .alert-success;
 }
 
 .wpcf7-mail-sent-ng {
-	@extend %alert-danger;
+	@extend .alert-danger;
 }
 
 .wpcf7-spam-blocked {
-	@extend %alert-warning;
+	@extend .alert-warning;
 }
 
 .wpcf7-validation-errors {
-	@extend %alert-warning;
+	@extend .alert-warning;
 }
 
 .wpcf7-form-control-wrap {
@@ -44,8 +44,8 @@ input[type='submit'].wpcf7-submit {
 }
 
 .use-floating-validation-tip .wpcf7-not-valid-tip {
-	@extend %alert;
-	@extend %alert-danger;
+	@extend .alert;
+	@extend .alert-danger;
 	position: absolute;
 	z-index: 100;
 	top: 0;
@@ -69,8 +69,4 @@ input[type='submit'].wpcf7-submit {
 
 .wpcf7 .ajax-error {
 	display: none;
-}
-
-.wpcf7 .placeheld {
-	color: $color__text-secondary;
 }

@@ -7,43 +7,60 @@ h4,
 h5,
 h6 {
 	clear: both;
-	margin: 0 0 ( $font__size-body-px * $font__line-height-body ) 0; // Can't wait to remove this. Bleh!
-	margin: 0 0 1.5rem 0;
-	color: $color__text;
-	font-family: $font__headings;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	color: $color__headings;
 	font-weight: bold;
 	line-height: 1.125;
 }
 
 h1 {
-	@include font-size( 1.5 ); // 24
+	font-size: 1.5em;
+	@media screen and ( min-width: $sm ) {
+		font-size: 1.75em;
+	}
 }
 
 h2 {
-	@include font-size( 1.25 );  // 20
+	font-size: 1.25em;
 }
 
 h3 {
-	@include font-size( 1.125 ); // 18
+	font-size: 1.25em;
 	font-weight: normal;
 }
 
 h4 {
-	@include font-size( 0.875 ); // 14
-	margin-bottom: 0.75em;
-	letter-spacing: 2px;
+	font-size: 0.875em;
+	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 
 h5 {
-	@include font-size( 0.875 ); // 14
-	margin-bottom: 0.75em;
+	font-size: 0.875em;
 	font-weight: normal;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
 h6 {
-	@include font-size( 1 );
-	margin-bottom: 0.75em;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.entry-content,
+.comment-content {
+	h1,
+	h2 {
+		margin-top: 3rem;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 2rem;
+		margin-bottom: 13.5px;
+		margin-bottom: 0.75rem;
+	}
 }

@@ -1,20 +1,19 @@
 /* Page Header */
 
 .page-header {
-	@extend .clear;
 	@include with-layout( $susy-static ) {
 		max-width: span( 6 );
 	}
 	@media screen and ( min-width: $md ) {
 		max-width: 100%;
-		margin-left: 0;
+		margin-bottom: 3em;
 	}
 }
 
 .page-title {
+	@include font-size( 1.5 );
+	line-height: 1.125;
 	@media screen and ( min-width: $sm ) {
-		font-size: 28px;
-		font-size: 1.75rem;
-		line-height: 1.125;
+		@include font-size( 1.75 );
 	}
 }

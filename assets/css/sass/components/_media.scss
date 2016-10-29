@@ -45,7 +45,6 @@ p > video {
 		margin-top: 1.5em;
 	}
 	.wp-playlist-light {
-		color: $color__text;
 		background-color: transparent;
 	}
 	.wp-playlist-current-item {
@@ -58,27 +57,21 @@ p > video {
 	}
 	.wp-playlist-item,
 	.wp-playlist-item-length {
-		padding: em_minus_px( 0.75em, 1px ) 0.75em 0.75em;
+		padding: 0.75em;
 	}
 	.wp-playlist-item {
-		border-bottom: 1px solid;
-		border-bottom-color: $color__text-light;
+		border-bottom: 1px solid rgba( 0, 0, 0, $opacity-light );
 	}
 	.wp-playlist-caption,
 	[class*='wp-playlist-item-'] {
 		@include font-size( 1 );
 		@include line-height( 1.5 );
-		color: $color__text-secondary;
 		font-style: normal;
 		text-transform: none;
 	}
-	.wp-playlist-item-title {
-		color: $color__text;
-	}
 	.wp-playlist-playing {
-		border-bottom: 1px solid;
-		border-bottom-color: $color__text-light;
-		background-color: $color__text-light;
+		border-bottom: 1px solid rgba( 0, 0, 0, $opacity-light );
+		background-color: rgba( 0, 0, 0, $opacity-light );
 		font-weight: normal;
 	}
 }

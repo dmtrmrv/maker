@@ -1,15 +1,16 @@
 /* Blockquotes */
 
 blockquote {
-	@include font-size( 1.125 );
-	@include line-height( 1.5 );
-	margin: 0 0 1.3333333333em 0;
-	padding: 1.3333333333em 0;
-	border-top-color: $color__text;
-	border-bottom-color: $color__text-secondary;
+	@include font-size( 1.5 );
+	margin: 1.5rem;
+	color: $color__headings;
 	font-family: $font__blockquote;
 	font-style: italic;
+	line-height: 1.125;
 	quotes: '' '';
+	@media screen and ( min-width: $sm ) {
+		margin: 3rem;
+	}
 	&:before,
 	&:after {
 		content: '';
@@ -24,13 +25,7 @@ blockquote {
 		margin: 0 0 -1.2em 0;
 		font-family: $font__main;
 		font-style: normal;
-		letter-spacing: ( 1em / 16 );
+		letter-spacing: 2px;
 		text-transform: uppercase;
-	}
-	&.alignleft {
-		width: 50%;
-	}
-	&.alignright {
-		width: 50%;
 	}
 }

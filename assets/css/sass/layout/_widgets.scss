@@ -10,16 +10,18 @@
 	}
 	&:not( .widget_text ) {
 		ul {
-			margin: 0;
+			margin-left: 0;
 			padding: 0;
 			list-style: none;
 		}
 	}
 	a {
-		color: $color__text-secondary;
+		opacity: $opacity;
+		color: $color__text;
 		&:hover,
 		&:active,
 		&:focus {
+			opacity: 1;
 			color: $color__accent;
 		}
 	}
@@ -32,80 +34,71 @@
 }
 
 .widget_calendar {
-	caption {
-		@include font-size( 0.625 );
-		@include line-height( 1.5 );
-		color: #fff;
-		background-color: $color__text-secondary;
-		font-weight: normal;
-		letter-spacing: ( 1em / 16 );
-		text-transform: uppercase;
-	}
 	table {
 		max-width: 100%;
+		margin-top: 0;
 		margin-bottom: 0;
 	}
+	caption,
 	td,
 	th {
 		@include font-size( 0.75 );
 		padding: 0 ;
 		line-height: 2em;
 		text-align: center;
+		letter-spacing: 2px;
+		text-transform: uppercase;
 	}
-	td, {
-		line-height: em_minus_px( 2em, 1px, $font__size-body-px * 0.75 );
-	}
-	th {
-		line-height: em_minus_px( 2em, 2px, $font__size-body-px * 0.75 );
-	}
-	tfoot td:first-child {
-		padding-left: 0.75em;
-		text-align: left;
-	}
-	tfoot td:last-child {
-		padding-right: 0.75em;
-		text-align: right;
+	caption {
+		border-top: 1px solid $color__gray;
 	}
 }
 
 .widget.widget_recent_comments,
 .widget.widget_recent_entries {
 	li {
-		border-bottom: 1px solid;
-		border-bottom-color: $color__text-light;
 		margin-bottom: 0.75em;
 		padding-bottom: em_minus_px( 0.75em, 1px );
+		border-bottom: 1px solid $color__gray;
 	}
 }
 
 .widget_rss {
 	.widget-title {
 		a {
-			color: $color__text;
-			text-decoration: underline;
-		}
-		a:first-child {
-			display: none;
+			display: block;
+			// Hide Ugly RSS Icon.
+			&:first-child {
+				display: none;
+			}
 		}
 	}
 	li {
-		border-bottom: 1px solid;
-		border-bottom-color: $color__text-light;
-		margin-bottom: 0.75em;
+		margin-bottom: 1.25em;
 		padding-bottom: em_minus_px( 0.75em, 1px );
+		border-bottom: 1px solid $color__gray;
 	}
-	a {
-		display: block;
+	ul > li > a {
+		color: $color__text;
+		text-decoration: underline;
+		font-weight: bold;
+		opacity: 1;
 	}
 	cite {
-		margin: 0;
-		color: $color__text-secondary;
-		font-style: normal;
-	}
-	.rss-date {
+		@include font-size( 0.75 );
 		display: block;
 		margin: 0;
-		color: $color__text-secondary;
+		margin: 1em 0;
+		font-style: normal;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	.rss-date {
+		@include font-size( 0.75 );
+		display: block;
+		margin: 1em 0;
+		letter-spacing: 2px;
+		text-transform: uppercase;
 	}
 }
 

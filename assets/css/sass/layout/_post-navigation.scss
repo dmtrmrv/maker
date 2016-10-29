@@ -1,8 +1,6 @@
 /* Post Navigation (Next/Previous Post) */
 
 .post-navigation {
+	@extend .clear;
 	margin-bottom: 1.5em;
-	span {
-		color: $color__text-secondary;
-	}
 }

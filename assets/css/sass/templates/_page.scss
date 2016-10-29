@@ -2,7 +2,6 @@
 
 .page-template-default {
 	.hentry {
-		@extend .clear;
 		@media screen and ( min-width: $md ) {
 			margin-bottom: 1.5em;
 		}
@@ -17,7 +16,7 @@
 		width: 100%;
 		margin-right: auto;
 		margin-left: auto;
-		@media screen and (min-width: $md) {
+		@media screen and ( min-width: $md ) {
 			float: left;
 			margin-left: 0;
 		}

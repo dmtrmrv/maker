@@ -1,59 +1,85 @@
 /* Buttons */
 
+// Core button functionality. Theme independent.
 @mixin button-core {
 	display: inline-block;
 	margin: 0;
 	-webkit-appearance: none;
 	background-image: none;
+	line-height: 1;
 	text-align: center;
 	vertical-align: middle;
 	white-space: nowrap;
 	text-decoration: none;
 	cursor: pointer;
-	// touch-action: manipulation;
-	&:hover,
-	&:focus {
+
+	touch-action: manipulation;
+	&:hover {
+		box-shadow: inset 0 0 108px rgba( 255, 255, 255, 0.5 );
 		text-decoration: none;
 	}
 	&:active {
 		outline: 0;
+		box-shadow: inset 0 0 108px rgba( 255, 255, 255, 0.5 );
+		text-decoration: none;
 	}
 	&:focus {
 		@include focus;
+		box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.2 );
+		text-decoration: none;
 	}
 }
 
-@mixin button-color( $colors ) {
-	border-color: map-get( $colors, border );
-	color: map-get( $colors, text );
-	background-color: map-get( $colors, background );
-	@if map-has-key( $colors, hover_background ) {
-		&:hover,
-		&:focus {
-			opacity: 1;
-			background-color: map-get( $colors, hover_background );
-		}
-	}
-}
-
-.button {
+// Default button styles.
+@mixin button {
 	@include button-core;
-	@include button-color( $color__button );
 	height: 3em;
-	padding: em_minus_px( 0.75em, 2px ) 2em em_minus_px( 0.75em, 2px );
+	padding: 0.875em 1.25em;
 	border: 2px solid;
 	border-radius: 3px;
 	font-size: 1em;
 	font-weight: bold;
+	border-color: $color__gray;
+	color: $color__text;
+	background-color: $color__gray;
 }
 
+// For consistency reasons we have to provide the default colors for
+// input[type=*] button-like fields. But since input[type=*] selector is
+// stronger than the regular class selector, we have to add !important to be
+// able to override the default colors. Will think of a better solution, but
+// this work for now.
+@mixin button-color( $color ) {
+	border-color: $color !important;
+	color: #fff !important;
+	background-color: $color !important;
+}
+
+.btn,
 button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-	@extend .button;
+	@include button;
 }
 
-.button-accent {
-	@include button-color( $color__button-accent );
+// Double class to override the border color of input elements.
+.btn-accent {
+	@include button-color( $color__accent );
+}
+
+.btn-success {
+	@include button-color( $color__success );
+}
+
+.btn-info {
+	@include button-color( $color__info );
+}
+
+.btn-warning {
+	@include button-color( $color__warning );
+}
+
+.btn-danger {
+	@include button-color( $color__danger );
 }

@@ -11,16 +11,21 @@
 } ) ( jQuery );
 
 /**
- * Adds a 'last-page' class to 'nav-links' if necessary.
+ * Adds a 'last-page' class to 'prev' link within the pagination.
  */
 ( function() {
-	// Try to get the pagination.
-	var nav = document.querySelector( '.nav-links' );
+	// Try to get the 'prev' link within the pagination.
+	var navPrev = document.querySelector( '.page-numbers.prev' ),
+			navNext = document.querySelector( '.page-numbers.next' );
 
-	// Look for 'next' class within 'nav-links'.
-	if ( nav && ! nav.querySelector( '.next' ) ) {
-		// Add 'last-page' class to 'nav-links' if not found.
-		nav.className += ' last-page';
+			console.log( navPrev, navNext );
+
+	// Check if we have a 'next' link within pagination.
+	if ( navPrev && ! navNext ) {
+		// Add 'last-page' class to 'prev' link if it is not there.
+		if ( -1 === navPrev.className.indexOf( 'last-page' ) ) {
+				navPrev.className += ' last-page';
+		}
 	}
 } )();
 

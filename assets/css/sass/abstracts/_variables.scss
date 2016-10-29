@@ -1,9 +1,13 @@
-// Colors. ------------------------------------------------------------- //
+// Colors. ------------------------------------------------------------------ //
 
 // Basic Text Colors.
-$color__text:           #585858;
-$color__text-secondary: lighten( $color__text, 40% );
-$color__text-light:     lighten( $color__text, 60% );
+$color__text:     #585858;
+$color__headings: #1e1e1e; // r:30 g:30 b:30
+$color__gray:     lighten( $color__text, 60% );
+
+// Opacity.
+$opacity: 0.5;
+$opacity-light: 0.1;
 
 // Body.
 $color__background-body: #fff;
@@ -11,69 +15,16 @@ $color__background-body: #fff;
 // Theme Accent Color.
 $color__accent: #ff2441;
 
-// Links.
-$color__link:         $color__accent;
-$color__link-visited: $color__accent;
-$color__link-hover:   $color__accent;
-
-// Accessibility.
-$color__text-screen:       #21759b;
-$color__background-screen: #f1f1f1;
-
 // State colors.
 $color__success: #1fc281;
 $color__info:    #00b9f2;
 $color__warning: #f4cc31;
 $color__danger:  #e83337;
 
-// Button.
-$color__button: (
-	text:             $color__text,
-	border:           $color__text-light,
-	background:       transparent,
-	hover_background: $color__text-light
-);
-
-// Button Accent.
-$color__button-accent: (
-	text:             #fff,
-	border:           $color__accent,
-	background:       $color__accent,
-	hover_background: lighten( $color__accent, 7% ),
-);
-
-// Button Success.
-$color__button-success: (
-	text:       #fff,
-	border:     $color__success,
-	background: $color__success,
-);
-
-// Button Info.
-$color__button-info: (
-	text:       #fff,
-	border:     $color__info,
-	background: $color__info,
-);
-
-// Button Warning.
-$color__button-warning: (
-	text:       #fff,
-	border:     $color__warning,
-	background: $color__warning,
-);
-
-// Button Danger.
-$color__button-danger: (
-	text:       #fff,
-	border:     $color__danger,
-	background: $color__danger,
-);
-
 // Layout. ------------------------------------------------------------------ //
 
 // Breakpoints.
-$xs: 415px;  // Phablets bigger than iPhone 6 plus.
+$xs: 415px;  // Phones bigger than iPhone 6 plus.
 $sm: 768px;  // iPad (vertical).
 $md: 1024px; // Small Desktops, iPad (horizontal) and bigger.
 $lg: 1140px; // Desktops.
@@ -100,15 +51,14 @@ $susy-static: (
 
 $font__main:             Helvetica, Arial, sans-serif;
 $font__headings:         $font__main;
-$font__code:             Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__blockquote:       $font__main;
-$font__pre:              "Courier 10 Pitch", Courier, monospace;
+$font__code:             Courier, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__blockquote:       Georgia, "Times New Roman", Times, serif;
 $font__size-body:        16;
 $font__size-body-px:     $font__size-body * 1px;
 $font__line-height-body: 1.5;
-$font__line-height-pre:  1.6;
 
-// Social icons. ------------------------------------------------------------- //
+// Social icons. ------------------------------------------------------------ //
+
 $social-icons:(
 	'behance.net':       ( 'e804', #1769FF ),
 	'bitbucket.org':     ( 'e800', #205081 ),

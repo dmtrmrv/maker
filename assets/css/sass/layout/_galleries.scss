@@ -22,8 +22,7 @@
 	}
 	@for $i from 1 through 10 {
 		.gallery-columns-#{$i} & {
-			width: auto;
-			max-width: 100% / $i;
+			width: 100% / $i;
 		}
 	}
 }
@@ -31,10 +30,8 @@
 .gallery-caption {
 	display: block;
 	overflow: hidden;
-	height: 2em;
-	margin: 0;
-	padding-top: 3px;
-	color: $color__text-secondary;
+	height: 1.5em;
+	margin: 0.75em 0 2em;
 	font-size: 0.75em;
 	white-space: nowrap;
 	text-overflow: ellipsis;

@@ -2,19 +2,13 @@
 
 .wp-caption {
 	max-width: 100%;
-	margin-bottom: 0.5em;
-	img[class*='wp-image-'] {
-		@include center-block;
-	}
+	margin: 2em 0;
 	.wp-caption-text {
 		@include font-size( 0.75 );
 		display: block;
-		margin: 1em 0;
-		color: $color__text-secondary;
-		font-family: $font__main;
+		margin: 0.75em 0;
 		font-weight: normal;
 		font-style: normal;
-		line-height: 2em;
 	}
 }
 

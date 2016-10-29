@@ -13,6 +13,9 @@
 			padding: 0 0 0 1em;
 		}
 	}
+	li {
+		margin-bottom: 0;
+	}
 	&.toggled {
 		ul {
 			display: block;
@@ -21,7 +24,7 @@
 	a {
 		display: block;
 		padding: 0.75em 0.75em 0.75em 0;
-		color: $color__text;
+		color: $color__headings;
 		&:hover,
 		&:focus,
 		&:active {
@@ -47,13 +50,13 @@
 				left: -999em;
 				padding: 0;
 				background-color: #fff;
-				box-shadow: 0 2px 25px 3px rgba( 0, 0, 0, 0.1 );
+				box-shadow: 0 2px 25px 3px rgba( 0, 0, 0, $opacity-light );
 				ul {
 					top: 0;
 					left: -999em;
 				}
 				li {
-					box-shadow: 0 13px 0 -12px $color__text-light;
+					box-shadow: 0 13px 0 -12px $color__gray;
 					&:last-child {
 						box-shadow: none;
 					}
@@ -75,6 +78,7 @@
 		li {
 			float: left;
 			position: relative;
+			margin-bottom: 0;
 		}
 		a {
 			padding: 0.75em;
@@ -82,11 +86,7 @@
 	}
 }
 
-// Toggle.
-/* Toggle Hamburger */
-
-$dash_height: ( 2 / $font__size-body ) * 1em;
-$dash_width: 1em;
+/* Toggle Hamburger Icon */
 
 .menu-toggle {
 	float: right;
@@ -107,25 +107,24 @@ $dash_width: 1em;
 	top: 50%;
 	left: 50%;
 	width: 1em;
-	height: $dash_height;
-	margin-top: ( $dash_height / ( -2 ) ) ;
-	margin-left: ( $dash_width / ( -2 ) ) ;
-	background-color: $color__text;
+	height: 1px;
+	margin-top: -1px;
+	margin-left: -8px;
+	background-color: $color__headings;
 	&:before,
 	&:after {
 		display: block;
 		position: absolute;
 		width: 1em;
-		height: $dash_height;
-		background-color: $color__text;
+		height: 1px;
+		background-color: $color__headings;
 		content: '';
-		transition: transform 0.3s, top 0.3s;
 	}
 	&:before {
-		top: ( $dash_height * ( -3 ) );
+		top: -6px
 	}
 	&:after {
-		top: ( $dash_height * 3 );
+		top: 6px
 	}
 }
 
@@ -135,7 +134,7 @@ $dash_width: 1em;
 		&:before,
 		&:after {
 			top: 0;
-			background-color: $color__text;
+			background-color: $color__headings;
 		}
 		&:before {
 			transform: rotate( 225deg );

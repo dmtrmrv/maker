@@ -2,6 +2,10 @@
  * Comments
  */
 
+.comments-area {
+		@extend .clear;
+}
+
 .comment-list,
 .children {
 	margin-bottom: 0;
@@ -13,7 +17,7 @@
 	margin-left: 0;
 	padding-top: em_minus_px( 1.5em, 2px );
 	border-top: 2px solid;
-	border-top-color: $color__text-light;
+	border-top-color: $color__gray;
 }
 
 .children {
@@ -24,13 +28,13 @@
 	position: relative;
 	margin: 0 0 em_minus_px( 1.5em, 2px ) 0;
 	border-bottom: 2px solid;
-	border-bottom-color: $color__text-light;
+	border-bottom-color: $color__gray;
 	word-wrap: break-word;
 	.pingback & {
 		margin: 0 0 1.5em 0;
 		padding: 1.5em;
 		border-bottom: none;
-		background-color: $color__text-light;
+		background-color: $color__gray;
 		.edit-link {
 			display: block;
 			float: right;
@@ -60,22 +64,22 @@
 .comment-author .fn,
 .comment-metadata {
 	display: block;
-	margin-left: $font__size-body-px * 4.5;
+	margin-left: 72px;
 	margin-left: 4.5rem;
-}
-
-.author-name span {
-	color: $color__text-secondary;
 }
 
 .comment-metadata {
 	@include font-size( 0.875 );
 	@include line-height( 1.5 );
-	margin-bottom: $font__size-body-px * $font__line-height-body; // Can't wait to remove this. Bleh!
+	margin-bottom: 24px;
 	margin-bottom: 1.5rem;
 	time,
 	.edit-link a {
 		margin-right: 0.5em;
+	}
+	a {
+		color: $color__text;
+		opacity: $opacity;
 	}
 }
 
@@ -102,10 +106,6 @@
 	display: block;
 }
 
-.comment-awaiting-moderation {
-	color: $color__text-secondary;
-}
-
 .comment-reply-title small {
 	@include font-size();
 	@include line-height();
@@ -128,7 +128,7 @@
 
 .comment-form {
 	.submit {
-		@include button-color( $color__button-accent );
+		@include button-color( $color__accent );
 	}
 	textarea {
 		min-height: 13.5em;
@@ -142,7 +142,7 @@
 
 .comments-title,
 .comment-reply-title {
-	@include font-size( 1.5 ); // 24
+	@include font-size( 1.5 );
 }
 
 .comment-list,
@@ -183,7 +183,7 @@
 	.nav-pages {
 		display: inline-block;
 		float: right;
-		color: $color__text-secondary;
+		opacity: $opacity;
 		text-align: right;
 	}
 	.nav-previous a {
@@ -193,7 +193,7 @@
 	.nav-next a:after {
 		@extend %icon;
 		margin: 0 0.2em;
-		color: $color__text-secondary;
+		opacity: $opacity;
 	}
 	.nav-previous a:before {
 		margin: 0 0.5em 0 0;

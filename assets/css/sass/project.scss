@@ -78,16 +78,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'layout/menu-footer';
 @import 'layout/menu-social';
 @import 'layout/pagination';
-@import 'layout/post-thumbnail';
-@import 'layout/entry-header';
+@import 'layout/galleries';
+@import 'layout/widgets';
 @import 'layout/page-header';
+@import 'layout/entry-header';
+@import 'layout/entry-footer';
+@import 'layout/post-thumbnail';
 @import 'layout/entry-meta';
 @import 'layout/entry-content';
 @import 'layout/comments';
-@import 'layout/portfolio-grid';
-@import 'layout/galleries';
-@import 'layout/widgets';
 @import 'layout/post-navigation';
+@import 'layout/portfolio-grid';
 
 /**
  * Templates.

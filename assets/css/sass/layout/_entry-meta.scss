@@ -1,10 +1,14 @@
 /* Entry Meta */
 
+.entry-meta {
+	@extend .clear;
+}
+
 .entry-meta-item {
 	display: block;
-	color: $color__text-secondary;
 	a {
-		color: $color__text-secondary;
+		color: $color__text;
+		opacity: $opacity;
 		&:hover,
 		&:focus {
 			opacity: 1;
@@ -26,14 +30,15 @@
 .entry-meta-item.cat-links {
 	@include font-size( 0.875 );
 	display: block;
-	font-weight: bold;
-	line-height: 1.7142857143;
+	font-weight: normal;
+	line-height: 1.5;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	@media screen and ( min-width: $sm ) {
 		display: block;
 	}
 	a {
+		opacity: 1;
 		color: $color__accent;
 	}
 }
@@ -51,7 +56,8 @@
 	a {
 		display: inline-block;
 		margin-right: 0.5em;
-		color: $color__text-secondary;
+		color: $color__text;
+		opacity: $opacity;
 		&:hover,
 		&:focus {
 			opacity: 1;

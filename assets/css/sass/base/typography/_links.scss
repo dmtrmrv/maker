@@ -1,16 +1,16 @@
 /* Links */
 
 a {
-	color: $color__link;
+	color: $color__accent;
 	background-color: transparent; // Do not remove. !normalize
 	text-decoration: none;
-	
+
 	&:hover,
 	&:active {
 		outline: 0; // Do not remove. !normalize
 		text-decoration: underline;
 	}
-	
+
 	&:focus {
 		@include focus();
 		text-decoration: underline;

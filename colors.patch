@@ -1,0 +1,5869 @@
+From cb4ece2d663a2c4901c282f6495f1d889d7ef304 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 10:54:55 +0300
+Subject: [PATCH 01/35] Update buttons
+
+---
+ assets/css/sass/abstracts/_variables.scss    |   2 +
+ assets/css/sass/components/_buttons.scss     |  70 +++++++++++-----
+ assets/css/sass/components/_forms.scss       |   2 +-
+ assets/css/sass/layout/_comments.scss        |   2 +-
+ assets/css/sass/layout/_pagination.scss      |   1 -
+ assets/css/sass/plugins/_contact-form-7.scss |   2 +-
+ style.css                                    | 115 ++++++++++++---------------
+ 7 files changed, 105 insertions(+), 89 deletions(-)
+
+diff --git a/assets/css/sass/abstracts/_variables.scss b/assets/css/sass/abstracts/_variables.scss
+index 64c1379..a73b1bd 100755
+--- a/assets/css/sass/abstracts/_variables.scss
++++ b/assets/css/sass/abstracts/_variables.scss
+@@ -2,6 +2,8 @@
+ 
+ // Basic Text Colors.
+ $color__text:           #585858;
++$color__headings:       #1e1e1e; // r:30 g:30 b:30
++$color__gray:     lighten( $color__text, 60% );
+ $color__text-secondary: lighten( $color__text, 40% );
+ $color__text-light:     lighten( $color__text, 60% );
+ 
+diff --git a/assets/css/sass/components/_buttons.scss b/assets/css/sass/components/_buttons.scss
+index 1e1f3d7..34766cf 100755
+--- a/assets/css/sass/components/_buttons.scss
++++ b/assets/css/sass/components/_buttons.scss
+@@ -1,59 +1,85 @@
+ /* Buttons */
+ 
++// Core button functionality. Theme independent.
+ @mixin button-core {
+ 	display: inline-block;
+ 	margin: 0;
+ 	-webkit-appearance: none;
+ 	background-image: none;
++	line-height: 1;
+ 	text-align: center;
+ 	vertical-align: middle;
+ 	white-space: nowrap;
+ 	text-decoration: none;
+ 	cursor: pointer;
+-	// touch-action: manipulation;
+-	&:hover,
+-	&:focus {
++
++	touch-action: manipulation;
++	&:hover {
++		box-shadow: inset 0 0 108px rgba( 255, 255, 255, 0.5 );
+ 		text-decoration: none;
+ 	}
+ 	&:active {
+ 		outline: 0;
++		box-shadow: inset 0 0 108px rgba( 255, 255, 255, 0.5 );
++		text-decoration: none;
+ 	}
+ 	&:focus {
+ 		@include focus;
++		box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.2 );
++		text-decoration: none;
+ 	}
+ }
+ 
+-@mixin button-color( $colors ) {
+-	border-color: map-get( $colors, border );
+-	color: map-get( $colors, text );
+-	background-color: map-get( $colors, background );
+-	@if map-has-key( $colors, hover_background ) {
+-		&:hover,
+-		&:focus {
+-			opacity: 1;
+-			background-color: map-get( $colors, hover_background );
+-		}
+-	}
+-}
+-
+-.button {
++// Default button styles.
++@mixin button {
+ 	@include button-core;
+-	@include button-color( $color__button );
+ 	height: 3em;
+-	padding: em_minus_px( 0.75em, 2px ) 2em em_minus_px( 0.75em, 2px );
++	padding: 0.875em 1.25em;
+ 	border: 2px solid;
+ 	border-radius: 3px;
+ 	font-size: 1em;
+ 	font-weight: bold;
++	border-color: $color__gray;
++	color: $color__text;
++	background-color: $color__gray;
++}
++
++// For consistency reasons we have to provide the default colors for
++// input[type=*] button-like fields. But since input[type=*] selector is
++// stronger than the regular class selector, we have to add !important to be
++// able to override the default colors. Will think of a better solution, but
++// this work for now.
++@mixin button-color( $color ) {
++	border-color: $color !important;
++	color: #fff !important;
++	background-color: $color !important;
+ }
+ 
++.btn,
+ button,
+ input[type='button'],
+ input[type='reset'],
+ input[type='submit'] {
+-	@extend .button;
++	@include button;
++}
++
++// Double class to override the border color of input elements.
++.btn-accent {
++	@include button-color( $color__accent );
++}
++
++.btn-success {
++	@include button-color( $color__success );
++}
++
++.btn-info {
++	@include button-color( $color__info );
++}
++
++.btn-warning {
++	@include button-color( $color__warning );
+ }
+ 
+-.button-accent {
+-	@include button-color( $color__button-accent );
++.btn-danger {
++	@include button-color( $color__danger );
+ }
+diff --git a/assets/css/sass/components/_forms.scss b/assets/css/sass/components/_forms.scss
+index 38e7e1e..44a8864 100755
+--- a/assets/css/sass/components/_forms.scss
++++ b/assets/css/sass/components/_forms.scss
+@@ -81,7 +81,7 @@ input:-ms-input-placeholder {
+ }
+ 
+ input[type='submit'].search-submit {
+-	@extend .button-accent;
++	@include button-color( $color__accent );
+ 	border-top-left-radius: 0;
+ 	border-bottom-left-radius: 0;
+ }
+diff --git a/assets/css/sass/layout/_comments.scss b/assets/css/sass/layout/_comments.scss
+index d2be2d3..013fc5c 100755
+--- a/assets/css/sass/layout/_comments.scss
++++ b/assets/css/sass/layout/_comments.scss
+@@ -128,7 +128,7 @@
+ 
+ .comment-form {
+ 	.submit {
+-		@include button-color( $color__button-accent );
++		@include button-color( $color__accent );
+ 	}
+ 	textarea {
+ 		min-height: 13.5em;
+diff --git a/assets/css/sass/layout/_pagination.scss b/assets/css/sass/layout/_pagination.scss
+index 55b21ea..e733b15 100644
+--- a/assets/css/sass/layout/_pagination.scss
++++ b/assets/css/sass/layout/_pagination.scss
+@@ -18,7 +18,6 @@
+ 		min-height: 3em;
+ 	}
+ 	.page-numbers {
+-		@extend .button;
+ 		display: none;
+ 		overflow: hidden;
+ 		min-width: 2em;
+diff --git a/assets/css/sass/plugins/_contact-form-7.scss b/assets/css/sass/plugins/_contact-form-7.scss
+index ca7de9c..40f0ae1 100644
+--- a/assets/css/sass/plugins/_contact-form-7.scss
++++ b/assets/css/sass/plugins/_contact-form-7.scss
+@@ -1,7 +1,7 @@
+ /* Contact Form 7 */
+ 
+ input[type='submit'].wpcf7-submit {
+-	@include button-color( $color__button-accent );
++	@include button-color( $color__accent );
+ }
+ 
+ .wpcf7 {
+diff --git a/style.css b/style.css
+index 1627834..9daa861 100644
+--- a/style.css
++++ b/style.css
+@@ -468,96 +468,94 @@ var {
+ 
+ /* Buttons */
+ 
+-.button,
++.btn,
+ button,
+ input[type='button'],
+ input[type='reset'],
+-input[type='submit'],
+-.pagination .page-numbers {
++input[type='submit'] {
+ 	display: inline-block;
+ 	height: 3em;
+ 	margin: 0;
+-	padding: 0.625em 2em 0.625em;
++	padding: 0.875em 1.25em;
+ 	border: 2px solid;
+ 	border-color: #f1f1f1;
+ 	border-radius: 3px;
+ 	-webkit-appearance: none;
+ 	color: #585858;
+-	background-color: transparent;
++	background-color: #f1f1f1;
+ 	background-image: none;
+ 	font-size: 1em;
+ 	font-weight: bold;
++	line-height: 1;
+ 	text-align: center;
+ 	vertical-align: middle;
+ 	white-space: nowrap;
+ 	text-decoration: none;
+ 	cursor: pointer;
++
++	-ms-touch-action: manipulation;
++	    touch-action: manipulation;
+ }
+ 
+-.button:hover,
++.btn:hover,
+ button:hover,
+ input[type='button']:hover,
+ input[type='reset']:hover,
+-input[type='submit']:hover,
+-.pagination .page-numbers:hover,
+-.button:focus,
+-button:focus,
+-input[type='button']:focus,
+-input[type='reset']:focus,
+-input[type='submit']:focus,
+-.pagination .page-numbers:focus {
++input[type='submit']:hover {
++	box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.5);
+ 	text-decoration: none;
+ }
+ 
+-.button:active,
++.btn:active,
+ button:active,
+ input[type='button']:active,
+ input[type='reset']:active,
+-input[type='submit']:active,
+-.pagination .page-numbers:active {
++input[type='submit']:active {
+ 	outline: 0;
++	box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.5);
++	text-decoration: none;
+ }
+ 
+-.button:focus,
++.btn:focus,
+ button:focus,
+ input[type='button']:focus,
+ input[type='reset']:focus,
+-input[type='submit']:focus,
+-.pagination .page-numbers:focus {
++input[type='submit']:focus {
+ 	outline: thin dotted;
+ 	outline: 5px auto -webkit-focus-ring-color;
+ 	outline-offset: -2px;
++	box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.2);
++	text-decoration: none;
+ }
+ 
+-.button:hover,
+-button:hover,
+-input[type='button']:hover,
+-input[type='reset']:hover,
+-input[type='submit']:hover,
+-.pagination .page-numbers:hover,
+-.button:focus,
+-button:focus,
+-input[type='button']:focus,
+-input[type='reset']:focus,
+-input[type='submit']:focus,
+-.pagination .page-numbers:focus {
+-	opacity: 1;
+-	background-color: #f1f1f1;
++.btn-accent {
++	border-color: #ff2441 !important;
++	color: #fff !important;
++	background-color: #ff2441 !important;
+ }
+ 
+-.button-accent,
+-input[type='submit'].search-submit {
+-	border-color: #ff2441;
+-	color: #fff;
+-	background-color: #ff2441;
++.btn-success {
++	border-color: #1fc281 !important;
++	color: #fff !important;
++	background-color: #1fc281 !important;
+ }
+ 
+-.button-accent:hover,
+-input[type='submit'].search-submit:hover,
+-.button-accent:focus,
+-input[type='submit'].search-submit:focus {
+-	opacity: 1;
+-	background-color: #ff4860;
++.btn-info {
++	border-color: #00b9f2 !important;
++	color: #fff !important;
++	background-color: #00b9f2 !important;
++}
++
++.btn-warning {
++	border-color: #f4cc31 !important;
++	color: #fff !important;
++	background-color: #f4cc31 !important;
++}
++
++.btn-danger {
++	border-color: #e83337 !important;
++	color: #fff !important;
++	background-color: #e83337 !important;
+ }
+ 
+ /* Forms */
+@@ -649,8 +647,11 @@ input:-ms-input-placeholder {
+ }
+ 
+ input[type='submit'].search-submit {
++	border-color: #ff2441 !important;
+ 	border-top-left-radius: 0;
+ 	border-bottom-left-radius: 0;
++	color: #fff !important;
++	background-color: #ff2441 !important;
+ }
+ 
+ /* Alignments */
+@@ -1826,15 +1827,9 @@ a.custom-logo-link img {
+ }
+ 
+ .comment-form .submit {
+-	border-color: #ff2441;
+-	color: #fff;
+-	background-color: #ff2441;
+-}
+-
+-.comment-form .submit:hover,
+-.comment-form .submit:focus {
+-	opacity: 1;
+-	background-color: #ff4860;
++	border-color: #ff2441 !important;
++	color: #fff !important;
++	background-color: #ff2441 !important;
+ }
+ 
+ .comment-form textarea {
+@@ -2474,15 +2469,9 @@ a.custom-logo-link img {
+ /* Contact Form 7 */
+ 
+ input[type='submit'].wpcf7-submit {
+-	border-color: #ff2441;
+-	color: #fff;
+-	background-color: #ff2441;
+-}
+-
+-input[type='submit'].wpcf7-submit:hover,
+-input[type='submit'].wpcf7-submit:focus {
+-	opacity: 1;
+-	background-color: #ff4860;
++	border-color: #ff2441 !important;
++	color: #fff !important;
++	background-color: #ff2441 !important;
+ }
+ 
+ .wpcf7 {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 7d1fe256c128c8de7b63c98464c14aef6e8a06ac Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 14:46:58 +0300
+Subject: [PATCH 02/35] Update forms
+
+---
+ assets/css/sass/abstracts/_variables.scss |  5 ++-
+ assets/css/sass/components/_forms.scss    | 63 +++++++++++++++++--------------
+ style.css                                 | 55 +++++++++++++++------------
+ 3 files changed, 69 insertions(+), 54 deletions(-)
+
+diff --git a/assets/css/sass/abstracts/_variables.scss b/assets/css/sass/abstracts/_variables.scss
+index a73b1bd..b3955cf 100755
+--- a/assets/css/sass/abstracts/_variables.scss
++++ b/assets/css/sass/abstracts/_variables.scss
+@@ -3,7 +3,10 @@
+ // Basic Text Colors.
+ $color__text:           #585858;
+ $color__headings:       #1e1e1e; // r:30 g:30 b:30
+-$color__gray:     lighten( $color__text, 60% );
++$color__gray:           lighten( $color__text, 60% );
++
++// Opacity.
++$opacity: 0.5;
+ $color__text-secondary: lighten( $color__text, 40% );
+ $color__text-light:     lighten( $color__text, 60% );
+ 
+diff --git a/assets/css/sass/components/_forms.scss b/assets/css/sass/components/_forms.scss
+index 44a8864..6c1f097 100755
+--- a/assets/css/sass/components/_forms.scss
++++ b/assets/css/sass/components/_forms.scss
+@@ -5,54 +5,61 @@ input[type='email'],
+ input[type='url'],
+ input[type='password'],
+ input[type='search'],
++input[type='number'],
++input[type='date'],
++input[type='datetime'],
++input[type='datetime-local'],
++input[type='month'],
++input[type='time'],
++input[type='week'],
++input[type='tel'],
+ textarea {
+ 	@include font-size( 1 );
+ 	@include line-height( 1.5 );
+ 	width: 100%;
+ 	padding: em_minus_px( 0.75em, 2px ) 1em;
+ 	border: 2px solid;
+-	border-color: $color__text-light;
++	border-color: $color__gray;
+ 	border-radius: 3px;
+ 	-webkit-appearance: none;
+ 	color: $color__text;
+ 	background-color: transparent;
+ 	box-shadow: none;
+ 	vertical-align: middle;
+-	&:focus {
+-		outline: 0;
+-		background-color: $color__text-light,
+-	}
+ }
+ 
+-input[type='text'],
+-input[type='email'],
+-input[type='url'],
+-input[type='password'],
+-input[type='search'] {
+-	height: 3em; // IE Damn You!
+-}
+-
+-label {
+-	color: $color__text-secondary;
+-}
+-
+-// Placeholder text color - selectors need to be separate to work.
+ ::-webkit-input-placeholder {
+-	color: $color__text-secondary;
++	color: $color__text;
++	opacity: $opacity;
++	text-overflow: ellipsis;
++}
++::-moz-placeholder {
++	color: $color__text;
++	opacity: $opacity;
++	text-overflow: ellipsis;
+ }
+-
+ :-moz-placeholder {
+-	color: $color__text-secondary;
++	color: $color__text;
++	opacity: $opacity;
++	text-overflow: ellipsis;
+ }
+-
+-::-moz-placeholder {
+-	opacity: 1; // Since FF19 lowers the opacity of the placeholder by default.
+-	color: $color__text-secondary;
++input:-ms-input-placeholder {
++	color: $color__text;
++	opacity: $opacity;
++	text-overflow: ellipsis;
+ }
+ 
+-// Only works if set as 'input:-ms-input-placeholder' not just 'input:-ms-input-placeholder'.
+-input:-ms-input-placeholder {
+-	color: $color__text-secondary;
++:focus::-webkit-input-placeholder {
++	color: transparent;
++}
++:focus::-moz-placeholder {
++	color: transparent;
++}
++:focus:-moz-placeholder {
++	color: transparent;
++}
++input:focus:-ms-input-placeholder {
++	color: transparent;
+ }
+ 
+ .post-password-form {
+diff --git a/style.css b/style.css
+index 9daa861..56e89b5 100644
+--- a/style.css
++++ b/style.css
+@@ -565,6 +565,14 @@ input[type='email'],
+ input[type='url'],
+ input[type='password'],
+ input[type='search'],
++input[type='number'],
++input[type='date'],
++input[type='datetime'],
++input[type='datetime-local'],
++input[type='month'],
++input[type='time'],
++input[type='week'],
++input[type='tel'],
+ textarea {
+ 	width: 100%;
+ 	padding: 0.625em 1em;
+@@ -582,43 +590,40 @@ textarea {
+ 	vertical-align: middle;
+ }
+ 
+-input[type='text']:focus,
+-input[type='email']:focus,
+-input[type='url']:focus,
+-input[type='password']:focus,
+-input[type='search']:focus,
+-textarea:focus {
+-	outline: 0;
+-	background-color: #f1f1f1;
++::-webkit-input-placeholder {
++	color: #585858;
++	text-overflow: ellipsis;
+ }
+ 
+-input[type='text'],
+-input[type='email'],
+-input[type='url'],
+-input[type='password'],
+-input[type='search'] {
+-	height: 3em;
++::-moz-placeholder {
++	color: #585858;
++	text-overflow: ellipsis;
+ }
+ 
+-label {
+-	color: #bebebe;
++:-moz-placeholder {
++	color: #585858;
++	text-overflow: ellipsis;
+ }
+ 
+-::-webkit-input-placeholder {
+-	color: #bebebe;
++input:-ms-input-placeholder {
++	color: #585858;
++	text-overflow: ellipsis;
+ }
+ 
+-:-moz-placeholder {
+-	color: #bebebe;
++:focus::-webkit-input-placeholder {
++	color: transparent;
+ }
+ 
+-::-moz-placeholder {
+-	opacity: 1;
+-	color: #bebebe;
++:focus::-moz-placeholder {
++	color: transparent;
+ }
+ 
+-input:-ms-input-placeholder {
+-	color: #bebebe;
++:focus:-moz-placeholder {
++	color: transparent;
++}
++
++input:focus:-ms-input-placeholder {
++	color: transparent;
+ }
+ 
+ .post-password-form {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 8db138e75421090025d3625bedf5b4a6c4afeaea Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 15:07:15 +0300
+Subject: [PATCH 03/35] Update headings
+
+---
+ assets/css/editor-style.css                    | 54 +++++++++++++++---------
+ assets/css/sass/base/typography/_headings.scss | 44 ++++++++++++-------
+ style.css                                      | 58 +++++++++++++++++---------
+ 3 files changed, 102 insertions(+), 54 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 6fe1f7f..83346ba 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -180,51 +180,61 @@ h4,
+ h5,
+ h6 {
+ 	clear: both;
+-	margin: 0 0 24px 0;
+-	margin: 0 0 1.5rem 0;
+-	color: #585858;
+-	font-family: Helvetica, Arial, sans-serif;
++	margin-bottom: 1.5rem;
++	color: #1e1e1e;
+ 	font-weight: bold;
+ 	line-height: 1.125;
+ }
+ 
+ h1 {
+-	font-size: 24px;
+-	font-size: 1.5rem;
++	font-size: 1.5em;
+ }
+ 
+ h2 {
+-	font-size: 20px;
+-	font-size: 1.25rem;
++	font-size: 1.25em;
+ }
+ 
+ h3 {
+-	font-size: 18px;
+-	font-size: 1.125rem;
++	font-size: 1.25em;
+ 	font-weight: normal;
+ }
+ 
+ h4 {
+-	margin-bottom: 0.75em;
+-	font-size: 14px;
+-	font-size: 0.875rem;
+-	letter-spacing: 2px;
++	font-size: 0.875em;
++	letter-spacing: 3px;
+ 	text-transform: uppercase;
+ }
+ 
+ h5 {
+-	margin-bottom: 0.75em;
+-	font-size: 14px;
+-	font-size: 0.875rem;
++	font-size: 0.875em;
+ 	font-weight: normal;
+ 	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+ h6 {
+-	margin-bottom: 0.75em;
+-	font-size: 16px;
+-	font-size: 1rem;
++	font-size: 1em;
++	font-weight: bold;
++}
++
++.entry-content h1,
++.entry-content h2,
++.comment-content h1,
++.comment-content h2 {
++	margin-top: 3rem;
++}
++
++.entry-content h3,
++.entry-content h4,
++.entry-content h5,
++.entry-content h6,
++.comment-content h3,
++.comment-content h4,
++.comment-content h5,
++.comment-content h6 {
++	margin-top: 2rem;
++	margin-bottom: 13.5px;
++	margin-bottom: 0.75rem;
+ }
+ 
+ /* Copy */
+@@ -770,6 +780,10 @@ blockquote.alignright {
+ 		margin: 3em auto;
+ 	}
+ 
++	h1 {
++		font-size: 1.75em;
++	}
++
+ 	table {
+ 		margin-bottom: 2.9375em;
+ 	}
+diff --git a/assets/css/sass/base/typography/_headings.scss b/assets/css/sass/base/typography/_headings.scss
+index a894843..60102c0 100755
+--- a/assets/css/sass/base/typography/_headings.scss
++++ b/assets/css/sass/base/typography/_headings.scss
+@@ -7,43 +7,59 @@ h4,
+ h5,
+ h6 {
+ 	clear: both;
+-	margin: 0 0 ( $font__size-body-px * $font__line-height-body ) 0; // Can't wait to remove this. Bleh!
+-	margin: 0 0 1.5rem 0;
+-	color: $color__text;
+-	font-family: $font__headings;
++	margin-bottom: 1.5rem;
++	color: $color__headings;
+ 	font-weight: bold;
+ 	line-height: 1.125;
+ }
+ 
+ h1 {
+-	@include font-size( 1.5 ); // 24
++	font-size: 1.5em;
++	@media screen and ( min-width: $sm ) {
++		font-size: 1.75em;
++	}
+ }
+ 
+ h2 {
+-	@include font-size( 1.25 );  // 20
++	font-size: 1.25em;
+ }
+ 
+ h3 {
+-	@include font-size( 1.125 ); // 18
++	font-size: 1.25em;
+ 	font-weight: normal;
+ }
+ 
+ h4 {
+-	@include font-size( 0.875 ); // 14
+-	margin-bottom: 0.75em;
+-	letter-spacing: 2px;
++	font-size: 0.875em;
++	letter-spacing: 3px;
+ 	text-transform: uppercase;
+ }
+ 
+ h5 {
+-	@include font-size( 0.875 ); // 14
+-	margin-bottom: 0.75em;
++	font-size: 0.875em;
+ 	font-weight: normal;
+ 	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+ h6 {
+-	@include font-size( 1 );
+-	margin-bottom: 0.75em;
++	font-size: 1em;
++	font-weight: bold;
++}
++
++.entry-content,
++.comment-content {
++	h1,
++	h2 {
++		margin-top: 3rem;
++	}
++
++	h3,
++	h4,
++	h5,
++	h6 {
++		margin-top: 2rem;
++		margin-bottom: 13.5px;
++		margin-bottom: 0.75rem;
++	}
+ }
+diff --git a/style.css b/style.css
+index 56e89b5..21e3a59 100644
+--- a/style.css
++++ b/style.css
+@@ -248,51 +248,61 @@ h4,
+ h5,
+ h6 {
+ 	clear: both;
+-	margin: 0 0 24px 0;
+-	margin: 0 0 1.5rem 0;
+-	color: #585858;
+-	font-family: Helvetica, Arial, sans-serif;
++	margin-bottom: 1.5rem;
++	color: #1e1e1e;
+ 	font-weight: bold;
+ 	line-height: 1.125;
+ }
+ 
+ h1 {
+-	font-size: 24px;
+-	font-size: 1.5rem;
++	font-size: 1.5em;
+ }
+ 
+ h2 {
+-	font-size: 20px;
+-	font-size: 1.25rem;
++	font-size: 1.25em;
+ }
+ 
+ h3 {
+-	font-size: 18px;
+-	font-size: 1.125rem;
++	font-size: 1.25em;
+ 	font-weight: normal;
+ }
+ 
+ h4 {
+-	margin-bottom: 0.75em;
+-	font-size: 14px;
+-	font-size: 0.875rem;
+-	letter-spacing: 2px;
++	font-size: 0.875em;
++	letter-spacing: 3px;
+ 	text-transform: uppercase;
+ }
+ 
+ h5 {
+-	margin-bottom: 0.75em;
+-	font-size: 14px;
+-	font-size: 0.875rem;
++	font-size: 0.875em;
+ 	font-weight: normal;
+ 	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+ h6 {
+-	margin-bottom: 0.75em;
+-	font-size: 16px;
+-	font-size: 1rem;
++	font-size: 1em;
++	font-weight: bold;
++}
++
++.entry-content h1,
++.entry-content h2,
++.comment-content h1,
++.comment-content h2 {
++	margin-top: 3rem;
++}
++
++.entry-content h3,
++.entry-content h4,
++.entry-content h5,
++.entry-content h6,
++.comment-content h3,
++.comment-content h4,
++.comment-content h5,
++.comment-content h6 {
++	margin-top: 2rem;
++	margin-bottom: 13.5px;
++	margin-bottom: 0.75rem;
+ }
+ 
+ /* Copy */
+@@ -591,21 +601,25 @@ textarea {
+ }
+ 
+ ::-webkit-input-placeholder {
++	opacity: 0.5;
+ 	color: #585858;
+ 	text-overflow: ellipsis;
+ }
+ 
+ ::-moz-placeholder {
++	opacity: 0.5;
+ 	color: #585858;
+ 	text-overflow: ellipsis;
+ }
+ 
+ :-moz-placeholder {
++	opacity: 0.5;
+ 	color: #585858;
+ 	text-overflow: ellipsis;
+ }
+ 
+ input:-ms-input-placeholder {
++	opacity: 0.5;
+ 	color: #585858;
+ 	text-overflow: ellipsis;
+ }
+@@ -2560,6 +2574,10 @@ input[type='submit'].wpcf7-submit {
+ }
+ 
+ @media screen and (min-width: 768px) {
++	h1 {
++		font-size: 1.75em;
++	}
++
+ 	table {
+ 		margin-bottom: 2.9375em;
+ 	}
+-- 
+2.5.4 (Apple Git-61)
+
+
+From bbf365ab80cf591f705331a78cef1be88975d0d9 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 15:11:21 +0300
+Subject: [PATCH 04/35] Update links and copy
+
+---
+ assets/css/editor-style.css                 | 3 +--
+ assets/css/sass/base/typography/_copy.scss  | 2 +-
+ assets/css/sass/base/typography/_links.scss | 6 +++---
+ style.css                                   | 3 +--
+ 4 files changed, 6 insertions(+), 8 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 83346ba..b4fc9a4 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -248,8 +248,7 @@ address {
+ }
+ 
+ big {
+-	font-size: 18px;
+-	font-size: 1.125rem;
++	font-size: 1.25em;
+ 	line-height: 16px;
+ 	line-height: 1rem;
+ }
+diff --git a/assets/css/sass/base/typography/_copy.scss b/assets/css/sass/base/typography/_copy.scss
+index 9737e8a..7943e32 100755
+--- a/assets/css/sass/base/typography/_copy.scss
++++ b/assets/css/sass/base/typography/_copy.scss
+@@ -22,6 +22,6 @@ ins {
+ }
+ 
+ big {
+-	@include font-size( 1.125 );
++	font-size: 1.25em;
+ 	@include line-height( 1 );
+ }
+diff --git a/assets/css/sass/base/typography/_links.scss b/assets/css/sass/base/typography/_links.scss
+index 0aa1a33..e14b1b0 100755
+--- a/assets/css/sass/base/typography/_links.scss
++++ b/assets/css/sass/base/typography/_links.scss
+@@ -1,16 +1,16 @@
+ /* Links */
+ 
+ a {
+-	color: $color__link;
++	color: $color__accent;
+ 	background-color: transparent; // Do not remove. !normalize
+ 	text-decoration: none;
+-	
++
+ 	&:hover,
+ 	&:active {
+ 		outline: 0; // Do not remove. !normalize
+ 		text-decoration: underline;
+ 	}
+-	
++
+ 	&:focus {
+ 		@include focus();
+ 		text-decoration: underline;
+diff --git a/style.css b/style.css
+index 21e3a59..a5dabef 100644
+--- a/style.css
++++ b/style.css
+@@ -316,8 +316,7 @@ address {
+ }
+ 
+ big {
+-	font-size: 18px;
+-	font-size: 1.125rem;
++	font-size: 1.25em;
+ 	line-height: 16px;
+ 	line-height: 1rem;
+ }
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 336e608adde565361a74c3c7c0f5474522e21058 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 15:24:46 +0300
+Subject: [PATCH 05/35] Update blockquotes
+
+---
+ assets/css/editor-style.css                       | 29 +++++++++--------------
+ assets/css/sass/abstracts/_variables.scss         |  2 +-
+ assets/css/sass/base/typography/_blockquotes.scss | 21 +++++++---------
+ style.css                                         | 29 +++++++++--------------
+ 4 files changed, 31 insertions(+), 50 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index b4fc9a4..e97cc52 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -277,16 +277,13 @@ a:focus {
+ /* Blockquotes */
+ 
+ blockquote {
+-	margin: 0 0 1.3333333333em 0;
+-	padding: 1.3333333333em 0;
+-	border-top-color: #585858;
+-	border-bottom-color: #bebebe;
+-	font-family: Helvetica, Arial, sans-serif;
+-	font-size: 18px;
+-	font-size: 1.125rem;
++	margin: 1.5rem;
++	color: #1e1e1e;
++	font-family: Georgia, 'Times New Roman', Times, serif;
++	font-size: 28px;
++	font-size: 1.75rem;
+ 	font-style: italic;
+-	line-height: 24px;
+-	line-height: 1.5rem;
++	line-height: 1.1;
+ 	quotes: '' '';
+ }
+ 
+@@ -308,18 +305,10 @@ blockquote cite {
+ 	font-style: normal;
+ 	line-height: 24px;
+ 	line-height: 1.5rem;
+-	letter-spacing: 0.0625em;
++	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+-blockquote.alignleft {
+-	width: 50%;
+-}
+-
+-blockquote.alignright {
+-	width: 50%;
+-}
+-
+ /* Lists */
+ 
+ ul,
+@@ -783,6 +772,10 @@ blockquote.alignright {
+ 		font-size: 1.75em;
+ 	}
+ 
++	blockquote {
++		margin: 3rem;
++	}
++
+ 	table {
+ 		margin-bottom: 2.9375em;
+ 	}
+diff --git a/assets/css/sass/abstracts/_variables.scss b/assets/css/sass/abstracts/_variables.scss
+index b3955cf..8b9b198 100755
+--- a/assets/css/sass/abstracts/_variables.scss
++++ b/assets/css/sass/abstracts/_variables.scss
+@@ -106,7 +106,7 @@ $susy-static: (
+ $font__main:             Helvetica, Arial, sans-serif;
+ $font__headings:         $font__main;
+ $font__code:             Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+-$font__blockquote:       $font__main;
++$font__blockquote:       Georgia, "Times New Roman", Times, serif;
+ $font__pre:              "Courier 10 Pitch", Courier, monospace;
+ $font__size-body:        16;
+ $font__size-body-px:     $font__size-body * 1px;
+diff --git a/assets/css/sass/base/typography/_blockquotes.scss b/assets/css/sass/base/typography/_blockquotes.scss
+index 0f2291e..099dbb4 100644
+--- a/assets/css/sass/base/typography/_blockquotes.scss
++++ b/assets/css/sass/base/typography/_blockquotes.scss
+@@ -1,15 +1,16 @@
+ /* Blockquotes */
+ 
+ blockquote {
+-	@include font-size( 1.125 );
+-	@include line-height( 1.5 );
+-	margin: 0 0 1.3333333333em 0;
+-	padding: 1.3333333333em 0;
+-	border-top-color: $color__text;
+-	border-bottom-color: $color__text-secondary;
++	@include font-size( 1.75 );
++	margin: 1.5rem;
++	color: $color__headings;
+ 	font-family: $font__blockquote;
+ 	font-style: italic;
++	line-height: 1.1;
+ 	quotes: '' '';
++	@media screen and ( min-width: $sm ) {
++		margin: 3rem;
++	}
+ 	&:before,
+ 	&:after {
+ 		content: '';
+@@ -24,13 +25,7 @@ blockquote {
+ 		margin: 0 0 -1.2em 0;
+ 		font-family: $font__main;
+ 		font-style: normal;
+-		letter-spacing: ( 1em / 16 );
++		letter-spacing: 2px;
+ 		text-transform: uppercase;
+ 	}
+-	&.alignleft {
+-		width: 50%;
+-	}
+-	&.alignright {
+-		width: 50%;
+-	}
+ }
+diff --git a/style.css b/style.css
+index a5dabef..7f4fc60 100644
+--- a/style.css
++++ b/style.css
+@@ -345,16 +345,13 @@ a:focus {
+ /* Blockquotes */
+ 
+ blockquote {
+-	margin: 0 0 1.3333333333em 0;
+-	padding: 1.3333333333em 0;
+-	border-top-color: #585858;
+-	border-bottom-color: #bebebe;
+-	font-family: Helvetica, Arial, sans-serif;
+-	font-size: 18px;
+-	font-size: 1.125rem;
++	margin: 1.5rem;
++	color: #1e1e1e;
++	font-family: Georgia, 'Times New Roman', Times, serif;
++	font-size: 28px;
++	font-size: 1.75rem;
+ 	font-style: italic;
+-	line-height: 24px;
+-	line-height: 1.5rem;
++	line-height: 1.1;
+ 	quotes: '' '';
+ }
+ 
+@@ -376,18 +373,10 @@ blockquote cite {
+ 	font-style: normal;
+ 	line-height: 24px;
+ 	line-height: 1.5rem;
+-	letter-spacing: 0.0625em;
++	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+-blockquote.alignleft {
+-	width: 50%;
+-}
+-
+-blockquote.alignright {
+-	width: 50%;
+-}
+-
+ /* Lists */
+ 
+ ul,
+@@ -2577,6 +2566,10 @@ input[type='submit'].wpcf7-submit {
+ 		font-size: 1.75em;
+ 	}
+ 
++	blockquote {
++		margin: 3rem;
++	}
++
+ 	table {
+ 		margin-bottom: 2.9375em;
+ 	}
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 2dfdb83b77e1780964d064625faaa3e15eb1c945 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 15:46:34 +0300
+Subject: [PATCH 06/35] Update blockquotes
+
+---
+ assets/css/editor-style.css                       | 6 +++---
+ assets/css/sass/base/typography/_blockquotes.scss | 4 ++--
+ style.css                                         | 6 +++---
+ 3 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index e97cc52..1f31555 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -280,10 +280,10 @@ blockquote {
+ 	margin: 1.5rem;
+ 	color: #1e1e1e;
+ 	font-family: Georgia, 'Times New Roman', Times, serif;
+-	font-size: 28px;
+-	font-size: 1.75rem;
++	font-size: 24px;
++	font-size: 1.5rem;
+ 	font-style: italic;
+-	line-height: 1.1;
++	line-height: 1.125;
+ 	quotes: '' '';
+ }
+ 
+diff --git a/assets/css/sass/base/typography/_blockquotes.scss b/assets/css/sass/base/typography/_blockquotes.scss
+index 099dbb4..627ca3c 100644
+--- a/assets/css/sass/base/typography/_blockquotes.scss
++++ b/assets/css/sass/base/typography/_blockquotes.scss
+@@ -1,12 +1,12 @@
+ /* Blockquotes */
+ 
+ blockquote {
+-	@include font-size( 1.75 );
++	@include font-size( 1.5 );
+ 	margin: 1.5rem;
+ 	color: $color__headings;
+ 	font-family: $font__blockquote;
+ 	font-style: italic;
+-	line-height: 1.1;
++	line-height: 1.125;
+ 	quotes: '' '';
+ 	@media screen and ( min-width: $sm ) {
+ 		margin: 3rem;
+diff --git a/style.css b/style.css
+index 7f4fc60..b5fbabc 100644
+--- a/style.css
++++ b/style.css
+@@ -348,10 +348,10 @@ blockquote {
+ 	margin: 1.5rem;
+ 	color: #1e1e1e;
+ 	font-family: Georgia, 'Times New Roman', Times, serif;
+-	font-size: 28px;
+-	font-size: 1.75rem;
++	font-size: 24px;
++	font-size: 1.5rem;
+ 	font-style: italic;
+-	line-height: 1.1;
++	line-height: 1.125;
+ 	quotes: '' '';
+ }
+ 
+-- 
+2.5.4 (Apple Git-61)
+
+
+From fc1a7352357963fadfd9f369b567b15aaed52ba9 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 15:51:02 +0300
+Subject: [PATCH 07/35] Update lists
+
+---
+ assets/css/editor-style.css                 | 10 ++++++++--
+ assets/css/sass/base/typography/_lists.scss | 10 +++++++---
+ style.css                                   | 10 ++++++++--
+ 3 files changed, 23 insertions(+), 7 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 1f31555..0241858 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -313,10 +313,15 @@ blockquote cite {
+ 
+ ul,
+ ol {
+-	margin: 0 0 1.5em 1.5em;
++	margin: 0 0 1.5em 0.75em;
+ 	padding-left: 1.5em;
+ }
+ 
++ul li,
++ol li {
++	margin-bottom: 0.75em;
++}
++
+ ul {
+ 	list-style: disc;
+ }
+@@ -327,8 +332,9 @@ ol {
+ 
+ li > ul,
+ li > ol {
++	margin-top: 0.75em;
+ 	margin-bottom: 0;
+-	margin-left: 0.5em;
++	margin-left: 0.75em;
+ }
+ 
+ dt {
+diff --git a/assets/css/sass/base/typography/_lists.scss b/assets/css/sass/base/typography/_lists.scss
+index f80cf21..fe54057 100755
+--- a/assets/css/sass/base/typography/_lists.scss
++++ b/assets/css/sass/base/typography/_lists.scss
+@@ -2,8 +2,11 @@
+ 
+ ul,
+ ol {
+-	margin: 0 0 1.5em 1.5em;
++	margin: 0 0 1.5em 0.75em;
+ 	padding-left: 1.5em;
++	li {
++		margin-bottom: 0.75em;
++	}
+ }
+ 
+ ul {
+@@ -17,7 +20,8 @@ ol {
+ li > ul,
+ li > ol {
+ 	margin-bottom: 0;
+-	margin-left: 0.5em;
++	margin-top: 0.75em;
++	margin-left: 0.75em;
+ }
+ 
+ dt {
+@@ -26,4 +30,4 @@ dt {
+ 
+ dd {
+ 	margin: 0 0 1.5em;
+-}
+\ No newline at end of file
++}
+diff --git a/style.css b/style.css
+index b5fbabc..e234c53 100644
+--- a/style.css
++++ b/style.css
+@@ -381,10 +381,15 @@ blockquote cite {
+ 
+ ul,
+ ol {
+-	margin: 0 0 1.5em 1.5em;
++	margin: 0 0 1.5em 0.75em;
+ 	padding-left: 1.5em;
+ }
+ 
++ul li,
++ol li {
++	margin-bottom: 0.75em;
++}
++
+ ul {
+ 	list-style: disc;
+ }
+@@ -395,8 +400,9 @@ ol {
+ 
+ li > ul,
+ li > ol {
++	margin-top: 0.75em;
+ 	margin-bottom: 0;
+-	margin-left: 0.5em;
++	margin-left: 0.75em;
+ }
+ 
+ dt {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From a19693bdad076d451fba26578ce06061e3447991 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 15:54:51 +0300
+Subject: [PATCH 08/35] Update tables
+
+---
+ assets/css/editor-style.css                  | 14 +++++---------
+ assets/css/sass/base/typography/_tables.scss | 20 +++++++-------------
+ style.css                                    | 14 +++++---------
+ 3 files changed, 17 insertions(+), 31 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 0241858..8f00070 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -370,28 +370,28 @@ dd {
+ 
+ table {
+ 	width: 100%;
+-	margin-bottom: 1.4375em;
++	margin-top: 2em;
++	margin-bottom: 2em;
+ 	padding: 0;
+ }
+ 
+ td,
+ th {
+-	padding: 0.6875em 0.75em 0.75em;
++	padding: 0.75em;
+ 	border-bottom: 1px solid;
+ 	border-bottom-color: #f1f1f1;
+ 	text-align: left;
+ }
+ 
+ thead th {
+-	padding: 0.91667em 1em 0.91667em;
+-	border-bottom: 2px solid;
+-	border-bottom-color: #bebebe;
++	padding: 1em;
+ 	background-color: #f1f1f1;
+ 	font-size: 12px;
+ 	font-size: 0.75rem;
+ 	font-weight: bold;
+ 	line-height: 24px;
+ 	line-height: 1.5rem;
++	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+@@ -781,8 +781,4 @@ blockquote.alignright {
+ 	blockquote {
+ 		margin: 3rem;
+ 	}
+-
+-	table {
+-		margin-bottom: 2.9375em;
+-	}
+ }
+diff --git a/assets/css/sass/base/typography/_tables.scss b/assets/css/sass/base/typography/_tables.scss
+index 9e4b358..d75182a 100755
+--- a/assets/css/sass/base/typography/_tables.scss
++++ b/assets/css/sass/base/typography/_tables.scss
+@@ -2,30 +2,24 @@
+ 
+ table {
+ 	width: 100%;
+-	margin-bottom: em_minus_px( 1.5em, 1px );
++	margin-top: 2em;
++	margin-bottom: 2em;
+ 	padding: 0;
+ }
+ 
+ td, th {
+-	padding: em_minus_px( 0.75em, 1px ) 0.75em 0.75em;
++	padding: 0.75em;
+ 	border-bottom: 1px solid;
+-	border-bottom-color: $color__text-light;
++	border-bottom-color: $color__gray;
+ 	text-align: left;
+ }
+ 
+ thead th {
+ 	@include font-size( 0.75 );
+ 	@include line-height( 1.5 );
+-	padding: em_minus_px( 1em, 1px, $font__size-body-px * 0.75 ) 1em em_minus_px( 1em, 1px, $font__size-body-px * 0.75 );
+-	border-bottom: 2px solid;
+-	border-bottom-color: $color__text-secondary;
++	padding: 1em;
+ 	font-weight: bold;
+ 	text-transform: uppercase;
+-	background-color: $color__text-light;
++	letter-spacing: 2px;
++	background-color: $color__gray;
+ }
+-
+-@media screen and ( min-width: $sm ) {
+-	table {
+-		margin-bottom: em_minus_px( 3em, 1px );
+-	}
+-}
+\ No newline at end of file
+diff --git a/style.css b/style.css
+index e234c53..b344e99 100644
+--- a/style.css
++++ b/style.css
+@@ -417,28 +417,28 @@ dd {
+ 
+ table {
+ 	width: 100%;
+-	margin-bottom: 1.4375em;
++	margin-top: 2em;
++	margin-bottom: 2em;
+ 	padding: 0;
+ }
+ 
+ td,
+ th {
+-	padding: 0.6875em 0.75em 0.75em;
++	padding: 0.75em;
+ 	border-bottom: 1px solid;
+ 	border-bottom-color: #f1f1f1;
+ 	text-align: left;
+ }
+ 
+ thead th {
+-	padding: 0.91667em 1em 0.91667em;
+-	border-bottom: 2px solid;
+-	border-bottom-color: #bebebe;
++	padding: 1em;
+ 	background-color: #f1f1f1;
+ 	font-size: 12px;
+ 	font-size: 0.75rem;
+ 	font-weight: bold;
+ 	line-height: 24px;
+ 	line-height: 1.5rem;
++	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+@@ -2576,10 +2576,6 @@ input[type='submit'].wpcf7-submit {
+ 		margin: 3rem;
+ 	}
+ 
+-	table {
+-		margin-bottom: 2.9375em;
+-	}
+-
+ 	.site-header {
+ 		margin-bottom: 0;
+ 	}
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 772b2b019c19326b304e3db493f697daf0e3c11d Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 16:08:06 +0300
+Subject: [PATCH 09/35] Update code
+
+---
+ assets/css/editor-style.css                | 20 +++++++++++---------
+ assets/css/sass/abstracts/_variables.scss  |  4 +---
+ assets/css/sass/base/typography/_code.scss | 17 ++++++++++-------
+ style.css                                  | 20 +++++++++++---------
+ 4 files changed, 33 insertions(+), 28 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 8f00070..88bf864 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -400,23 +400,25 @@ thead th {
+ pre {
+ 	overflow: auto;
+ 	max-width: 100%;
+-	margin: 2.125em 0;
+-	padding: 1.6em;
+-	background-color: #f1f1f1;
+-	font-family: 'Courier 10 Pitch', Courier, monospace;
+-	line-height: 1.6;
++	margin: 2em 0;
++	padding: 1.5em;
++	color: #f1f1f1;
++	background-color: #1e1e1e;
++	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
++	font-weight: bold;
+ 	word-wrap: initial;
+ }
+ 
+ code,
+ kbd,
+-pre,
+ samp,
+ tt,
+ var {
+-	font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+-	font-size: 15px;
+-	font-size: 0.9375rem;
++	padding: 3px 5px;
++	border-radius: 3px;
++	background-color: rgba(0, 0, 0, 0.05);
++	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
++	white-space: nowrap;
+ }
+ 
+ /**
+diff --git a/assets/css/sass/abstracts/_variables.scss b/assets/css/sass/abstracts/_variables.scss
+index 8b9b198..66fbfcf 100755
+--- a/assets/css/sass/abstracts/_variables.scss
++++ b/assets/css/sass/abstracts/_variables.scss
+@@ -105,13 +105,11 @@ $susy-static: (
+ 
+ $font__main:             Helvetica, Arial, sans-serif;
+ $font__headings:         $font__main;
+-$font__code:             Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
++$font__code:             Courier, "Andale Mono", "DejaVu Sans Mono", monospace;
+ $font__blockquote:       Georgia, "Times New Roman", Times, serif;
+-$font__pre:              "Courier 10 Pitch", Courier, monospace;
+ $font__size-body:        16;
+ $font__size-body-px:     $font__size-body * 1px;
+ $font__line-height-body: 1.5;
+-$font__line-height-pre:  1.6;
+ 
+ // Social icons. ------------------------------------------------------------- //
+ $social-icons:(
+diff --git a/assets/css/sass/base/typography/_code.scss b/assets/css/sass/base/typography/_code.scss
+index 4f15a77..6f07c26 100644
+--- a/assets/css/sass/base/typography/_code.scss
++++ b/assets/css/sass/base/typography/_code.scss
+@@ -3,20 +3,23 @@
+ pre {
+ 	overflow: auto;
+ 	max-width: 100%;
+-	margin: 2.125em 0;
+-	padding: 1.6em;
+-	background-color: $color__text-light;
+-	font-family: $font__pre;
+-	line-height: $font__line-height-pre;
++	margin: 2em 0;
++	padding: 1.5em;
++	color: $color__gray;
++	background-color: $color__headings;
++	font-family: $font__code;
++	font-weight: bold;
+ 	word-wrap: initial;
+ }
+ 
+ code,
+ kbd,
+-pre,
+ samp,
+ tt,
+ var {
+-	@include font-size( 0.9375 );
++	padding: 3px 5px;
++	border-radius: 3px;
++	background-color: rgba(0, 0, 0, 0.05);
+ 	font-family: $font__code;
++	white-space: nowrap;
+ }
+diff --git a/style.css b/style.css
+index b344e99..4610704 100644
+--- a/style.css
++++ b/style.css
+@@ -447,23 +447,25 @@ thead th {
+ pre {
+ 	overflow: auto;
+ 	max-width: 100%;
+-	margin: 2.125em 0;
+-	padding: 1.6em;
+-	background-color: #f1f1f1;
+-	font-family: 'Courier 10 Pitch', Courier, monospace;
+-	line-height: 1.6;
++	margin: 2em 0;
++	padding: 1.5em;
++	color: #f1f1f1;
++	background-color: #1e1e1e;
++	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
++	font-weight: bold;
+ 	word-wrap: initial;
+ }
+ 
+ code,
+ kbd,
+-pre,
+ samp,
+ tt,
+ var {
+-	font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+-	font-size: 15px;
+-	font-size: 0.9375rem;
++	padding: 3px 5px;
++	border-radius: 3px;
++	background-color: rgba(0, 0, 0, 0.05);
++	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
++	white-space: nowrap;
+ }
+ 
+ /**
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 8ae8726d6873fd690463ad1833eb1e24fb3ac44e Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 16:57:18 +0300
+Subject: [PATCH 10/35] Update alignments
+
+---
+ assets/css/editor-style.css                 | 22 ++++++++++++++++------
+ assets/css/sass/components/_alignments.scss | 26 +++++++++++++++++---------
+ style.css                                   | 22 ++++++++++++++++------
+ 3 files changed, 49 insertions(+), 21 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 88bf864..de0e26d 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -600,26 +600,24 @@ p > video {
+ 	margin-left: auto;
+ }
+ 
+-blockquote.alignleft,
+ img.alignleft,
+ .wp-caption.alignleft {
+-	margin: 8px 24px 8px 0;
+ 	margin: 0.5rem 1.5rem 0.5rem 0;
+ }
+ 
+-blockquote.alignright,
+ img.alignright,
+ .wp-caption.alignright {
+-	margin: 8px 0 0.5rem 1.5rem;
+ 	margin: 0.5rem 0 0.5rem 1.5rem;
+ }
+ 
+ blockquote.alignleft {
+-	margin: 0 1.5em 0.9375em 0;
++	float: none;
++	margin: 1.5em;
+ }
+ 
+ blockquote.alignright {
+-	margin: 0 0 0.9375em 1.5em;
++	float: none;
++	margin: 1.5em;
+ }
+ 
+ /* Clearings */
+@@ -783,4 +781,16 @@ blockquote.alignright {
+ 	blockquote {
+ 		margin: 3rem;
+ 	}
++
++	blockquote.alignleft {
++		float: left;
++		max-width: 50%;
++		margin: 3em 1.5em 3em 0;
++	}
++
++	blockquote.alignright {
++		float: right;
++		max-width: 50%;
++		margin: 3em 0 3em 1.5em;
++	}
+ }
+diff --git a/assets/css/sass/components/_alignments.scss b/assets/css/sass/components/_alignments.scss
+index e9f3786..ff69634 100755
+--- a/assets/css/sass/components/_alignments.scss
++++ b/assets/css/sass/components/_alignments.scss
+@@ -12,24 +12,32 @@
+ 	@include center-block;
+ }
+ 
+-blockquote,
+ img,
+ .wp-caption {
+ 	&.alignleft {
+-		margin: 8px 24px 8px 0;
+ 		margin: 0.5rem 1.5rem 0.5rem 0;
+ 	}
+ 	&.alignright {
+-		margin: 8px 0 0.5rem 1.5rem;
+ 		margin: 0.5rem 0 0.5rem 1.5rem;
+ 	}
+ }
+ 
+-blockquote {
+-	&.alignleft {
+-		margin: 0 1.5em em_minus_px( 1em, 1px ) 0;
++blockquote.alignleft {
++	margin: 1.5em;
++	float: none;
++	@media screen and ( min-width: $sm ) {
++		float: left;
++		margin: 3em 1.5em 3em 0;
++		max-width: 50%
+ 	}
+-	&.alignright {
+-		margin: 0 0 em_minus_px( 1em, 1px ) 1.5em;
++}
++
++blockquote.alignright {
++	margin: 1.5em;
++	float: none;
++	@media screen and ( min-width: $sm ) {
++		float: right;
++		margin: 3em 0 3em 1.5em;
++		max-width: 50%
+ 	}
+-}
+\ No newline at end of file
++}
+diff --git a/style.css b/style.css
+index 4610704..eaa128f 100644
+--- a/style.css
++++ b/style.css
+@@ -685,26 +685,24 @@ input[type='submit'].search-submit {
+ 	margin-left: auto;
+ }
+ 
+-blockquote.alignleft,
+ img.alignleft,
+ .wp-caption.alignleft {
+-	margin: 8px 24px 8px 0;
+ 	margin: 0.5rem 1.5rem 0.5rem 0;
+ }
+ 
+-blockquote.alignright,
+ img.alignright,
+ .wp-caption.alignright {
+-	margin: 8px 0 0.5rem 1.5rem;
+ 	margin: 0.5rem 0 0.5rem 1.5rem;
+ }
+ 
+ blockquote.alignleft {
+-	margin: 0 1.5em 0.9375em 0;
++	float: none;
++	margin: 1.5em;
+ }
+ 
+ blockquote.alignright {
+-	margin: 0 0 0.9375em 1.5em;
++	float: none;
++	margin: 1.5em;
+ }
+ 
+ /* Images */
+@@ -2578,6 +2576,18 @@ input[type='submit'].wpcf7-submit {
+ 		margin: 3rem;
+ 	}
+ 
++	blockquote.alignleft {
++		float: left;
++		max-width: 50%;
++		margin: 3em 1.5em 3em 0;
++	}
++
++	blockquote.alignright {
++		float: right;
++		max-width: 50%;
++		margin: 3em 0 3em 1.5em;
++	}
++
+ 	.site-header {
+ 		margin-bottom: 0;
+ 	}
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 6b37e46f7e9c3858b00b2c0d56e4f797e6c1eda7 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 16:58:41 +0300
+Subject: [PATCH 11/35] Update images
+
+---
+ assets/css/sass/components/_images.scss | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/assets/css/sass/components/_images.scss b/assets/css/sass/components/_images.scss
+index aa60e37..7df3760 100644
+--- a/assets/css/sass/components/_images.scss
++++ b/assets/css/sass/components/_images.scss
+@@ -1,6 +1,6 @@
+ /* Images */
+ 
+ img {
+-	max-width: 100%; // Adhere to container width.
+-	height: auto; // Make sure images are scaled correctly.
+-}
+\ No newline at end of file
++	max-width: 100%;
++	height: auto;
++}
+-- 
+2.5.4 (Apple Git-61)
+
+
+From af60329332b621f09a68ca14f46a02fd18112fce Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 17:01:00 +0300
+Subject: [PATCH 12/35] Update lines
+
+---
+ assets/css/sass/components/_lines.scss | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/assets/css/sass/components/_lines.scss b/assets/css/sass/components/_lines.scss
+index f45b78e..b96132a 100644
+--- a/assets/css/sass/components/_lines.scss
++++ b/assets/css/sass/components/_lines.scss
+@@ -6,5 +6,5 @@ hr {
+ 	margin-top: -2px;
+ 	margin-bottom: 1.5em;
+ 	border: 0;
+-	background-color: $color__text-light;
++	background-color: $color__gray;
+ }
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 0e1c960b775a3218f56ca040d3c1a44fb50527b5 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 17:07:29 +0300
+Subject: [PATCH 13/35] Update alerts
+
+---
+ assets/css/sass/components/_alerts.scss      | 12 ++++++------
+ assets/css/sass/plugins/_contact-form-7.scss | 14 +++++++-------
+ style.css                                    |  9 +++++++++
+ 3 files changed, 22 insertions(+), 13 deletions(-)
+
+diff --git a/assets/css/sass/components/_alerts.scss b/assets/css/sass/components/_alerts.scss
+index d9f52b5..0453191 100644
+--- a/assets/css/sass/components/_alerts.scss
++++ b/assets/css/sass/components/_alerts.scss
+@@ -1,6 +1,6 @@
+ /* Alerts */
+ 
+-%alert {
++.alert {
+ 	min-height: 3em;
+ 	margin: 0 0 1.5em;
+ 	padding: em_minus_px( 0.75em, 2px ) 1.5em;
+@@ -9,22 +9,22 @@
+ 	border-style: solid;
+ }
+ 
+-%alert-success {
++.alert-success {
+ 	border-color: $color__success;
+ 	background-color: lighten( $color__success, 35% );
+ }
+ 
+-%alert-info {
++.alert-info {
+ 	border-color: $color__info;
+ 	background-color: lighten( $color__info, 35% );
+ }
+ 
+-%alert-warning {
++.alert-warning {
+ 	border-color: $color__warning;
+ 	background-color: lighten( $color__warning, 35% );
+ }
+ 
+-%alert-danger {
++.alert-danger {
+ 	border-color: $color__danger;
+ 	background-color: lighten( $color__danger, 35% );
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/plugins/_contact-form-7.scss b/assets/css/sass/plugins/_contact-form-7.scss
+index 40f0ae1..2a531a4 100644
+--- a/assets/css/sass/plugins/_contact-form-7.scss
++++ b/assets/css/sass/plugins/_contact-form-7.scss
+@@ -10,7 +10,7 @@ input[type='submit'].wpcf7-submit {
+ }
+ 
+ .wpcf7-response-output {
+-	@extend %alert;
++	@extend .alert;
+ }
+ 
+ .wpcf7 .screen-reader-response {
+@@ -18,19 +18,19 @@ input[type='submit'].wpcf7-submit {
+ }
+ 
+ .wpcf7-mail-sent-ok {
+-	@extend %alert-success;
++	@extend .alert-success;
+ }
+ 
+ .wpcf7-mail-sent-ng {
+-	@extend %alert-danger;
++	@extend .alert-danger;
+ }
+ 
+ .wpcf7-spam-blocked {
+-	@extend %alert-warning;
++	@extend .alert-warning;
+ }
+ 
+ .wpcf7-validation-errors {
+-	@extend %alert-warning;
++	@extend .alert-warning;
+ }
+ 
+ .wpcf7-form-control-wrap {
+@@ -44,8 +44,8 @@ input[type='submit'].wpcf7-submit {
+ }
+ 
+ .use-floating-validation-tip .wpcf7-not-valid-tip {
+-	@extend %alert;
+-	@extend %alert-danger;
++	@extend .alert;
++	@extend .alert-danger;
+ 	position: absolute;
+ 	z-index: 100;
+ 	top: 0;
+diff --git a/style.css b/style.css
+index eaa128f..13c41c9 100644
+--- a/style.css
++++ b/style.css
+@@ -749,6 +749,7 @@ hr {
+ 
+ /* Alerts */
+ 
++.alert,
+ .wpcf7-response-output,
+ .use-floating-validation-tip .wpcf7-not-valid-tip {
+ 	min-height: 3em;
+@@ -759,17 +760,25 @@ hr {
+ 	border-radius: 3px;
+ }
+ 
++.alert-success,
+ .wpcf7-mail-sent-ok {
+ 	border-color: #1fc281;
+ 	background-color: #a3f0d2;
+ }
+ 
++.alert-info {
++	border-color: #00b9f2;
++	background-color: #a6eaff;
++}
++
++.alert-warning,
+ .wpcf7-spam-blocked,
+ .wpcf7-validation-errors {
+ 	border-color: #f4cc31;
+ 	background-color: #fdf6da;
+ }
+ 
++.alert-danger,
+ .wpcf7-mail-sent-ng,
+ .use-floating-validation-tip .wpcf7-not-valid-tip {
+ 	border-color: #e83337;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 3530803b48b09b9817159489a81018709e41ba7a Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 17:20:47 +0300
+Subject: [PATCH 14/35] Update media playlists
+
+---
+ assets/css/sass/abstracts/_variables.scss |  1 +
+ assets/css/sass/components/_media.scss    | 12 ++++--------
+ style.css                                 | 12 ++++--------
+ 3 files changed, 9 insertions(+), 16 deletions(-)
+
+diff --git a/assets/css/sass/abstracts/_variables.scss b/assets/css/sass/abstracts/_variables.scss
+index 66fbfcf..37927a8 100755
+--- a/assets/css/sass/abstracts/_variables.scss
++++ b/assets/css/sass/abstracts/_variables.scss
+@@ -7,6 +7,7 @@ $color__gray:           lighten( $color__text, 60% );
+ 
+ // Opacity.
+ $opacity: 0.5;
++$opacity-light: 0.1;
+ $color__text-secondary: lighten( $color__text, 40% );
+ $color__text-light:     lighten( $color__text, 60% );
+ 
+diff --git a/assets/css/sass/components/_media.scss b/assets/css/sass/components/_media.scss
+index 7c938f5..e74e1ed 100755
+--- a/assets/css/sass/components/_media.scss
++++ b/assets/css/sass/components/_media.scss
+@@ -45,7 +45,6 @@ p > video {
+ 		margin-top: 1.5em;
+ 	}
+ 	.wp-playlist-light {
+-		color: $color__text;
+ 		background-color: transparent;
+ 	}
+ 	.wp-playlist-current-item {
+@@ -58,17 +57,15 @@ p > video {
+ 	}
+ 	.wp-playlist-item,
+ 	.wp-playlist-item-length {
+-		padding: em_minus_px( 0.75em, 1px ) 0.75em 0.75em;
++		padding: 0.75em;
+ 	}
+ 	.wp-playlist-item {
+-		border-bottom: 1px solid;
+-		border-bottom-color: $color__text-light;
++		border-bottom: 1px solid rgba( 0, 0, 0, $opacity-light );
+ 	}
+ 	.wp-playlist-caption,
+ 	[class*='wp-playlist-item-'] {
+ 		@include font-size( 1 );
+ 		@include line-height( 1.5 );
+-		color: $color__text-secondary;
+ 		font-style: normal;
+ 		text-transform: none;
+ 	}
+@@ -76,9 +73,8 @@ p > video {
+ 		color: $color__text;
+ 	}
+ 	.wp-playlist-playing {
+-		border-bottom: 1px solid;
+-		border-bottom-color: $color__text-light;
+-		background-color: $color__text-light;
++		border-bottom: 1px solid rgba( 0, 0, 0, $opacity-light );
++		background-color: rgba( 0, 0, 0, $opacity-light );
+ 		font-weight: normal;
+ 	}
+ }
+diff --git a/style.css b/style.css
+index 13c41c9..4a2a583 100644
+--- a/style.css
++++ b/style.css
+@@ -836,7 +836,6 @@ p > video {
+ }
+ 
+ #content .wp-playlist-light {
+-	color: #585858;
+ 	background-color: transparent;
+ }
+ 
+@@ -852,17 +851,15 @@ p > video {
+ 
+ #content .wp-playlist-item,
+ #content .wp-playlist-item-length {
+-	padding: 0.6875em 0.75em 0.75em;
++	padding: 0.75em;
+ }
+ 
+ #content .wp-playlist-item {
+-	border-bottom: 1px solid;
+-	border-bottom-color: #f1f1f1;
++	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+ }
+ 
+ #content .wp-playlist-caption,
+ #content [class*='wp-playlist-item-'] {
+-	color: #bebebe;
+ 	font-size: 16px;
+ 	font-size: 1rem;
+ 	font-style: normal;
+@@ -876,9 +873,8 @@ p > video {
+ }
+ 
+ #content .wp-playlist-playing {
+-	border-bottom: 1px solid;
+-	border-bottom-color: #f1f1f1;
+-	background-color: #f1f1f1;
++	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
++	background-color: rgba(0, 0, 0, 0.1);
+ 	font-weight: normal;
+ }
+ 
+-- 
+2.5.4 (Apple Git-61)
+
+
+From d6852694c7f64154b298b3857446be589c984749 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 17:28:11 +0300
+Subject: [PATCH 15/35] Update captions
+
+---
+ assets/css/sass/components/_captions.scss | 10 ++--------
+ style.css                                 | 13 ++-----------
+ 2 files changed, 4 insertions(+), 19 deletions(-)
+
+diff --git a/assets/css/sass/components/_captions.scss b/assets/css/sass/components/_captions.scss
+index 2492c0f..81bab41 100755
+--- a/assets/css/sass/components/_captions.scss
++++ b/assets/css/sass/components/_captions.scss
+@@ -2,19 +2,13 @@
+ 
+ .wp-caption {
+ 	max-width: 100%;
+-	margin-bottom: 0.5em;
+-	img[class*='wp-image-'] {
+-		@include center-block;
+-	}
++	margin: 2em 0;
+ 	.wp-caption-text {
+ 		@include font-size( 0.75 );
+ 		display: block;
+-		margin: 1em 0;
+-		color: $color__text-secondary;
+-		font-family: $font__main;
++		margin: 0.75em 0;
+ 		font-weight: normal;
+ 		font-style: normal;
+-		line-height: 2em;
+ 	}
+ }
+ 
+diff --git a/style.css b/style.css
+index 4a2a583..96bd8e0 100644
+--- a/style.css
++++ b/style.css
+@@ -882,25 +882,16 @@ p > video {
+ 
+ .wp-caption {
+ 	max-width: 100%;
+-	margin-bottom: 0.5em;
+-}
+-
+-.wp-caption img[class*='wp-image-'] {
+-	display: block;
+-	margin-right: auto;
+-	margin-left: auto;
++	margin: 2em 0;
+ }
+ 
+ .wp-caption .wp-caption-text {
+ 	display: block;
+-	margin: 1em 0;
+-	color: #bebebe;
+-	font-family: Helvetica, Arial, sans-serif;
++	margin: 0.75em 0;
+ 	font-size: 12px;
+ 	font-size: 0.75rem;
+ 	font-weight: normal;
+ 	font-style: normal;
+-	line-height: 2em;
+ }
+ 
+ .entry-content .wp-caption img {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 68c0aac1d59985f3239c012ea91e046de4653543 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 17:38:25 +0300
+Subject: [PATCH 16/35] Update footer
+
+---
+ assets/css/sass/components/_clearings.scss | 2 +-
+ assets/css/sass/layout/_footer.scss        | 1 -
+ assets/css/sass/layout/_header.scss        | 8 --------
+ style.css                                  | 4 ----
+ 4 files changed, 1 insertion(+), 14 deletions(-)
+
+diff --git a/assets/css/sass/components/_clearings.scss b/assets/css/sass/components/_clearings.scss
+index 1b1dc42..11eb125 100755
+--- a/assets/css/sass/components/_clearings.scss
++++ b/assets/css/sass/components/_clearings.scss
+@@ -2,4 +2,4 @@
+ 
+ .clear {
+ 	@include clearfix-after();
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/layout/_footer.scss b/assets/css/sass/layout/_footer.scss
+index a27dce7..d828d5a 100644
+--- a/assets/css/sass/layout/_footer.scss
++++ b/assets/css/sass/layout/_footer.scss
+@@ -2,7 +2,6 @@
+ 
+ .site-footer {
+ 	@extend .clear;
+-	color: $color__text-secondary;
+ 	@media screen and ( min-width: $sm ) {
+ 		padding: 1.5em 0;
+ 	}
+diff --git a/assets/css/sass/layout/_header.scss b/assets/css/sass/layout/_header.scss
+index 380c2b9..d9b9f7c 100644
+--- a/assets/css/sass/layout/_header.scss
++++ b/assets/css/sass/layout/_header.scss
+@@ -56,14 +56,6 @@ a.custom-logo-link {
+ 	text-transform: none;
+ }
+ 
+-// .site-title.screen-reader-text + .site-description {
+-// 	margin-top: 0;
+-// 	padding: 2em 0 1em;
+-// }
+-//
+-// .site-logo-link + .site-title.screen-reader-text + .site-description {
+-// 	padding: 0;
+-// }
+ .main-navigation {
+ 	float: right;
+ }
+diff --git a/style.css b/style.css
+index 96bd8e0..35f2a84 100644
+--- a/style.css
++++ b/style.css
+@@ -1101,10 +1101,6 @@ a.custom-logo-link img {
+ 
+ /* Footer */
+ 
+-.site-footer {
+-	color: #bebebe;
+-}
+-
+ .site-info {
+ 	display: block;
+ 	margin-bottom: 1.5em;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 09d9700fbfc1e3395b6cb8c524cdb3915cc67a2a Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Fri, 28 Oct 2016 18:10:24 +0300
+Subject: [PATCH 17/35] Update header
+
+---
+ assets/css/sass/layout/_header.scss | 5 ++---
+ style.css                           | 5 ++---
+ 2 files changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/assets/css/sass/layout/_header.scss b/assets/css/sass/layout/_header.scss
+index d9b9f7c..c429cd8 100644
+--- a/assets/css/sass/layout/_header.scss
++++ b/assets/css/sass/layout/_header.scss
+@@ -37,11 +37,10 @@ a.custom-logo-link {
+ 	clear: both;
+ 	margin-bottom: 0;
+ 	padding-top: 1em;
+-	color: $color__text;
+ 	font-family: $font__headings;
+ 	font-weight: bold;
+ 	a {
+-		color: $color__text;
++		color: $color__headings;
+ 	}
+ }
+ 
+@@ -49,7 +48,7 @@ a.custom-logo-link {
+ 	@include font-size( 0.75 );
+ 	margin-bottom: 1em;
+ 	padding-top: 0;
+-	color: $color__text-secondary;
++	opacity: $opacity;
+ 	font-weight: normal;
+ 	line-height: 1.5;
+ 	letter-spacing: normal;
+diff --git a/style.css b/style.css
+index 35f2a84..ee58dbc 100644
+--- a/style.css
++++ b/style.css
+@@ -1070,7 +1070,6 @@ a.custom-logo-link img {
+ 	clear: both;
+ 	margin-bottom: 0;
+ 	padding-top: 1em;
+-	color: #585858;
+ 	font-family: Helvetica, Arial, sans-serif;
+ 	font-size: 24px;
+ 	font-size: 1.5rem;
+@@ -1080,13 +1079,13 @@ a.custom-logo-link img {
+ }
+ 
+ .site-title a {
+-	color: #585858;
++	color: #1e1e1e;
+ }
+ 
+ .site-description {
+ 	margin-bottom: 1em;
+ 	padding-top: 0;
+-	color: #bebebe;
++	opacity: 0.5;
+ 	font-size: 12px;
+ 	font-size: 0.75rem;
+ 	font-weight: normal;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 2c4bb2e35da25fdb53dbcf6b988a1a31f03ebc20 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 00:31:02 +0300
+Subject: [PATCH 18/35] Update menus
+
+---
+ assets/css/sass/layout/_menu-primary.scss | 5 +++--
+ assets/css/sass/layout/_menu-social.scss  | 2 +-
+ style.css                                 | 3 ++-
+ 3 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/assets/css/sass/layout/_menu-primary.scss b/assets/css/sass/layout/_menu-primary.scss
+index 8077b29..826366f 100644
+--- a/assets/css/sass/layout/_menu-primary.scss
++++ b/assets/css/sass/layout/_menu-primary.scss
+@@ -47,13 +47,13 @@
+ 				left: -999em;
+ 				padding: 0;
+ 				background-color: #fff;
+-				box-shadow: 0 2px 25px 3px rgba( 0, 0, 0, 0.1 );
++				box-shadow: 0 2px 25px 3px rgba( 0, 0, 0, $opacity-light );
+ 				ul {
+ 					top: 0;
+ 					left: -999em;
+ 				}
+ 				li {
+-					box-shadow: 0 13px 0 -12px $color__text-light;
++					box-shadow: 0 13px 0 -12px rgba( 0, 0, 0, $opacity-light );
+ 					&:last-child {
+ 						box-shadow: none;
+ 					}
+@@ -75,6 +75,7 @@
+ 		li {
+ 			float: left;
+ 			position: relative;
++			margin-bottom: 0;
+ 		}
+ 		a {
+ 			padding: 0.75em;
+diff --git a/assets/css/sass/layout/_menu-social.scss b/assets/css/sass/layout/_menu-social.scss
+index bbf0709..31139b1 100644
+--- a/assets/css/sass/layout/_menu-social.scss
++++ b/assets/css/sass/layout/_menu-social.scss
+@@ -12,7 +12,7 @@
+ 		@each $url, $i in $social-icons {
+ 
+ 			&[href*='#{$url}']:before {
+-				content: char( nth( $i, 1 ));
++				content: char( nth( $i, 1 ) );
+ 			}
+ 
+ 			@if length( $i ) == 2 {
+diff --git a/style.css b/style.css
+index ee58dbc..b7f0cf3 100644
+--- a/style.css
++++ b/style.css
+@@ -2628,7 +2628,7 @@ input[type='submit'].wpcf7-submit {
+ 	}
+ 
+ 	.main-navigation ul ul li {
+-		box-shadow: 0 13px 0 -12px #f1f1f1;
++		box-shadow: 0 13px 0 -12px rgba(0, 0, 0, 0.1);
+ 	}
+ 
+ 	.main-navigation ul ul li:last-child {
+@@ -2653,6 +2653,7 @@ input[type='submit'].wpcf7-submit {
+ 	.main-navigation li {
+ 		float: left;
+ 		position: relative;
++		margin-bottom: 0;
+ 	}
+ 
+ 	.main-navigation a {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 16b2a7a7a3db71ef28bf7cf99ff6ab93eb1aaefe Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 13:45:29 +0300
+Subject: [PATCH 19/35] Update header
+
+---
+ assets/css/sass/layout/_header.scss | 1 +
+ style.css                           | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/assets/css/sass/layout/_header.scss b/assets/css/sass/layout/_header.scss
+index c429cd8..a1ea001 100644
+--- a/assets/css/sass/layout/_header.scss
++++ b/assets/css/sass/layout/_header.scss
+@@ -36,6 +36,7 @@ a.custom-logo-link {
+ 	@include font-size( 1.5 ); // 24
+ 	clear: both;
+ 	margin-bottom: 0;
++	margin-top: 0;
+ 	padding-top: 1em;
+ 	font-family: $font__headings;
+ 	font-weight: bold;
+diff --git a/style.css b/style.css
+index b7f0cf3..8dc3894 100644
+--- a/style.css
++++ b/style.css
+@@ -1068,6 +1068,7 @@ a.custom-logo-link img {
+ 
+ .site-title {
+ 	clear: both;
++	margin-top: 0;
+ 	margin-bottom: 0;
+ 	padding-top: 1em;
+ 	font-family: Helvetica, Arial, sans-serif;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 291ef3507e9171f55f473077f92f1eaaf27c5588 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 15:06:06 +0300
+Subject: [PATCH 20/35] Update pagination
+
+---
+ assets/css/sass/layout/_pagination.scss | 65 ++++++++++------------
+ assets/js/src/custom.js                 | 19 ++++---
+ style.css                               | 95 +++++++++++++++++++++------------
+ 3 files changed, 102 insertions(+), 77 deletions(-)
+
+diff --git a/assets/css/sass/layout/_pagination.scss b/assets/css/sass/layout/_pagination.scss
+index e733b15..5a7afca 100644
+--- a/assets/css/sass/layout/_pagination.scss
++++ b/assets/css/sass/layout/_pagination.scss
+@@ -1,7 +1,7 @@
+ /* Pagination */
+ 
+ .pagination {
+-	@include clearfix;
++	@include clearfix-after;
+ 	@include with-layout( $susy-static ) {
+ 		max-width: span( 6 );
+ 	}
+@@ -13,17 +13,26 @@
+ 	@media screen and ( min-width: $md ) {
+ 		max-width: 100%;
+ 	}
++
+ 	.nav-links {
+ 		position: relative;
+ 		min-height: 3em;
+ 	}
++
+ 	.page-numbers {
++		@include button;
+ 		display: none;
+ 		overflow: hidden;
+ 		min-width: 2em;
+ 		padding-right: em_minus_px( 0.75em, 2px );
+ 		padding-left: em_minus_px( 0.75em, 2px );
+ 		border-color: transparent;
++		background-color: transparent;
++		&:hover,
++		&:focus {
++			border-color: $color__gray;
++			background-color: $color__gray;
++		}
+ 		@media screen and (min-width: $xs) {
+ 			display: inline-block;
+ 		}
+@@ -31,57 +40,44 @@
+ 			width: 3em;
+ 		}
+ 	}
++
+ 	.page-numbers.prev,
+ 	.page-numbers.next {
+ 		display: block;
+ 		position: absolute;
+ 		top: 0;
+ 		width: 3em;
+-		padding: em_minus_px( 0.75em, 2px );
+-		border-color: $color__text-light;
+ 		color: transparent;
+ 	}
++
+ 	.page-numbers.prev {
+ 		right: 3.75em;
+ 		&:before {
+ 			@extend %icon;
+ 			width: 1.5em;
+ 			height: 1.5em;
+-			color: $color__text;
++			color: $color__headings;
+ 			content: '\e802';
+ 		}
++		&.last-page {
++			right: 0;
++		}
+ 	}
++
+ 	.page-numbers.next {
+ 		right: 0;
+ 		&:before {
+ 			@extend %icon;
+ 			width: 1.5em;
+ 			height: 1.5em;
+-			color: $color__text;
++			color: $color__headings;
+ 			content: '\e803';
+ 		}
+ 	}
+-	.nav-links:before {
+-		visibility: hidden;
+-		position: absolute;
+-		top: 0;
+-		right: 0;
+-		width: 3em;
+-		height: 3em;
+-		border: 2px dashed;
+-		border-color: map-get( $color__button, border );
+-		border-radius: 3px;
+-		content: '';
+-	}
+-	.nav-links.last-page:before {
+-		visibility: visible;
+-	}
++
+ 	.page-numbers.all {
+-		display: inline-block;
+ 		width: 3em;
+-		padding-right: em_minus_px( 0.75em, 2px );
+-		padding-left: em_minus_px( 0.75em, 2px );
+-		border-color: $color__text-light;
++		border-color: transparent;
+ 		span {
+ 			display: none;
+ 		}
+@@ -91,38 +87,36 @@
+ 		}
+ 		@media screen and ( min-width: $sm ) {
+ 			width: auto;
+-			padding-right: em_minus_px( 2em, 2px );
+-			padding-left: em_minus_px( 1.75em, 2px );
++			padding-left: 1em;
++			padding-right: 1em;
+ 			span {
+ 				display: inline;
+ 			}
+ 			&:before {
+-				margin-right: 0.5em;
+-				content: '\e807';
++					display: none;
+ 			}
+ 		}
+ 	}
++
+ 	.page-numbers.current,
+ 	.page-numbers.dots {
+-		color: $color__text-secondary;
++		opacity: $opacity;
+ 		cursor: auto;
+-		&:hover,
+-		&:focus {
++		&:hover {
+ 			background-color: transparent;
++			border-color: transparent;
+ 		}
+ 	}
+ }
+ 
+ .blog .pagination {
+ 	padding-top: 1.5em;
+-	border-top: 2px solid $color__text-light;
++	border-top: 2px solid $color__gray;
+ 	@media screen and ( min-width: $sm ) {
+ 		padding-top: 3em;
+ 	}
+ }
+ 
+-
+-
+ .page-template-portfolio-toolkit,
+ .page-template-portfolio-jetpack {
+ 	.pagination {
+@@ -130,11 +124,10 @@
+ 			max-width: span( 6 );
+ 		}
+ 		padding-top: 1.5em;
+-		border-top: 2px solid $color__text-light;
++		border-top: 2px solid $color__gray;
+ 		@media screen and ( min-width: $sm ) {
+ 			max-width: 100%;
+ 			border-top: none;
+-			// padding-top: 1.5em;
+ 		}
+ 	}
+ }
+diff --git a/assets/js/src/custom.js b/assets/js/src/custom.js
+index e5de3b0..0a8dfb0 100644
+--- a/assets/js/src/custom.js
++++ b/assets/js/src/custom.js
+@@ -11,16 +11,21 @@
+ } ) ( jQuery );
+ 
+ /**
+- * Adds a 'last-page' class to 'nav-links' if necessary.
++ * Adds a 'last-page' class to 'prev' link within the pagination.
+  */
+ ( function() {
+-	// Try to get the pagination.
+-	var nav = document.querySelector( '.nav-links' );
++	// Try to get the 'prev' link within the pagination.
++	var navPrev = document.querySelector( '.page-numbers.prev' ),
++			navNext = document.querySelector( '.page-numbers.next' );
+ 
+-	// Look for 'next' class within 'nav-links'.
+-	if ( nav && ! nav.querySelector( '.next' ) ) {
+-		// Add 'last-page' class to 'nav-links' if not found.
+-		nav.className += ' last-page';
++			console.log( navPrev, navNext );
++
++	// Check if we have a 'next' link within pagination.
++	if ( navPrev && ! navNext ) {
++		// Add 'last-page' class to 'prev' link if it is not there.
++		if ( -1 === navPrev.className.indexOf( 'last-page' ) ) {
++				navPrev.className += ' last-page';
++		}
+ 	}
+ } )();
+ 
+diff --git a/style.css b/style.css
+index 8dc3894..df65eab 100644
+--- a/style.css
++++ b/style.css
+@@ -1471,7 +1471,6 @@ a.custom-logo-link img {
+ 	word-wrap: break-word;
+ }
+ 
+-.pagination:before,
+ .pagination:after {
+ 	display: table;
+ 	clear: both;
+@@ -1484,12 +1483,60 @@ a.custom-logo-link img {
+ }
+ 
+ .pagination .page-numbers {
++	display: inline-block;
+ 	display: none;
+ 	overflow: hidden;
+ 	min-width: 2em;
++	height: 3em;
++	margin: 0;
++	padding: 0.875em 1.25em;
+ 	padding-right: 0.625em;
+ 	padding-left: 0.625em;
++	border: 2px solid;
++	border-color: #f1f1f1;
+ 	border-color: transparent;
++	border-radius: 3px;
++	-webkit-appearance: none;
++	color: #585858;
++	background-color: #f1f1f1;
++	background-color: transparent;
++	background-image: none;
++	font-size: 1em;
++	font-weight: bold;
++	line-height: 1;
++	text-align: center;
++	vertical-align: middle;
++	white-space: nowrap;
++	text-decoration: none;
++	cursor: pointer;
++
++	-ms-touch-action: manipulation;
++	    touch-action: manipulation;
++}
++
++.pagination .page-numbers:hover {
++	box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.5);
++	text-decoration: none;
++}
++
++.pagination .page-numbers:active {
++	outline: 0;
++	box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.5);
++	text-decoration: none;
++}
++
++.pagination .page-numbers:focus {
++	outline: thin dotted;
++	outline: 5px auto -webkit-focus-ring-color;
++	outline-offset: -2px;
++	box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.2);
++	text-decoration: none;
++}
++
++.pagination .page-numbers:hover,
++.pagination .page-numbers:focus {
++	border-color: #f1f1f1;
++	background-color: #f1f1f1;
+ }
+ 
+ .pagination .page-numbers.prev,
+@@ -1498,8 +1545,6 @@ a.custom-logo-link img {
+ 	position: absolute;
+ 	top: 0;
+ 	width: 3em;
+-	padding: 0.625em;
+-	border-color: #f1f1f1;
+ 	color: transparent;
+ }
+ 
+@@ -1510,10 +1555,14 @@ a.custom-logo-link img {
+ .pagination .page-numbers.prev:before {
+ 	width: 1.5em;
+ 	height: 1.5em;
+-	color: #585858;
++	color: #1e1e1e;
+ 	content: '\e802';
+ }
+ 
++.pagination .page-numbers.prev.last-page {
++	right: 0;
++}
++
+ .pagination .page-numbers.next {
+ 	right: 0;
+ }
+@@ -1521,33 +1570,13 @@ a.custom-logo-link img {
+ .pagination .page-numbers.next:before {
+ 	width: 1.5em;
+ 	height: 1.5em;
+-	color: #585858;
++	color: #1e1e1e;
+ 	content: '\e803';
+ }
+ 
+-.pagination .nav-links:before {
+-	visibility: hidden;
+-	position: absolute;
+-	top: 0;
+-	right: 0;
+-	width: 3em;
+-	height: 3em;
+-	border: 2px dashed;
+-	border-color: #f1f1f1;
+-	border-radius: 3px;
+-	content: '';
+-}
+-
+-.pagination .nav-links.last-page:before {
+-	visibility: visible;
+-}
+-
+ .pagination .page-numbers.all {
+-	display: inline-block;
+ 	width: 3em;
+-	padding-right: 0.625em;
+-	padding-left: 0.625em;
+-	border-color: #f1f1f1;
++	border-color: transparent;
+ }
+ 
+ .pagination .page-numbers.all span {
+@@ -1560,14 +1589,13 @@ a.custom-logo-link img {
+ 
+ .pagination .page-numbers.current,
+ .pagination .page-numbers.dots {
+-	color: #bebebe;
++	opacity: 0.5;
+ 	cursor: auto;
+ }
+ 
+ .pagination .page-numbers.current:hover,
+-.pagination .page-numbers.current:focus,
+-.pagination .page-numbers.dots:hover,
+-.pagination .page-numbers.dots:focus {
++.pagination .page-numbers.dots:hover {
++	border-color: transparent;
+ 	background-color: transparent;
+ }
+ 
+@@ -2675,8 +2703,8 @@ input[type='submit'].wpcf7-submit {
+ 
+ 	.pagination .page-numbers.all {
+ 		width: auto;
+-		padding-right: 1.875em;
+-		padding-left: 1.625em;
++		padding-right: 1em;
++		padding-left: 1em;
+ 	}
+ 
+ 	.pagination .page-numbers.all span {
+@@ -2684,8 +2712,7 @@ input[type='submit'].wpcf7-submit {
+ 	}
+ 
+ 	.pagination .page-numbers.all:before {
+-		margin-right: 0.5em;
+-		content: '\e807';
++		display: none;
+ 	}
+ 
+ 	.blog .pagination {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 7152df6b0cf96a4c2d1dd462d40abce5888eec23 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 15:30:51 +0300
+Subject: [PATCH 21/35] Update page headers and thumbnail
+
+---
+ assets/css/editor-style.css                    |  1 +
+ assets/css/sass/base/typography/_headings.scss |  1 +
+ assets/css/sass/layout/_entry-header.scss      |  7 ++++---
+ assets/css/sass/layout/_page-header.scss       |  9 ++++-----
+ assets/css/sass/layout/_post-thumbnail.scss    |  3 +--
+ style.css                                      | 17 +++++++++++------
+ 6 files changed, 22 insertions(+), 16 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index de0e26d..25452cf 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -180,6 +180,7 @@ h4,
+ h5,
+ h6 {
+ 	clear: both;
++	margin-top: 0;
+ 	margin-bottom: 1.5rem;
+ 	color: #1e1e1e;
+ 	font-weight: bold;
+diff --git a/assets/css/sass/base/typography/_headings.scss b/assets/css/sass/base/typography/_headings.scss
+index 60102c0..18bcd5e 100755
+--- a/assets/css/sass/base/typography/_headings.scss
++++ b/assets/css/sass/base/typography/_headings.scss
+@@ -7,6 +7,7 @@ h4,
+ h5,
+ h6 {
+ 	clear: both;
++	margin-top: 0;
+ 	margin-bottom: 1.5rem;
+ 	color: $color__headings;
+ 	font-weight: bold;
+diff --git a/assets/css/sass/layout/_entry-header.scss b/assets/css/sass/layout/_entry-header.scss
+index b24f8c7..d73770d 100644
+--- a/assets/css/sass/layout/_entry-header.scss
++++ b/assets/css/sass/layout/_entry-header.scss
+@@ -1,11 +1,12 @@
+ /* Entry Title */
+ 
+ .entry-title {
+-	@include font-size( 1.5 ); // 24px
++	@include font-size( 1.5 );
++	line-height: 1.125;
+ 	@media screen and ( min-width: $sm ) {
+-		@include font-size( 1.75 ); // 28px
++		@include font-size( 1.75 );
+ 	}
+ 	a {
+-		color: $color__text;
++		color: $color__headings;
+ 	}
+ }
+diff --git a/assets/css/sass/layout/_page-header.scss b/assets/css/sass/layout/_page-header.scss
+index 70e65a4..68f96d7 100644
+--- a/assets/css/sass/layout/_page-header.scss
++++ b/assets/css/sass/layout/_page-header.scss
+@@ -1,20 +1,19 @@
+ /* Page Header */
+ 
+ .page-header {
+-	@extend .clear;
+ 	@include with-layout( $susy-static ) {
+ 		max-width: span( 6 );
+ 	}
+ 	@media screen and ( min-width: $md ) {
+ 		max-width: 100%;
+-		margin-left: 0;
++		margin-bottom: 3em;
+ 	}
+ }
+ 
+ .page-title {
++	@include font-size( 1.5 );
++	line-height: 1.125;
+ 	@media screen and ( min-width: $sm ) {
+-		font-size: 28px;
+-		font-size: 1.75rem;
+-		line-height: 1.125;
++		@include font-size( 1.75 );
+ 	}
+ }
+diff --git a/assets/css/sass/layout/_post-thumbnail.scss b/assets/css/sass/layout/_post-thumbnail.scss
+index 37c33a8..f1d2064 100644
+--- a/assets/css/sass/layout/_post-thumbnail.scss
++++ b/assets/css/sass/layout/_post-thumbnail.scss
+@@ -1,9 +1,8 @@
+ /* Post Thumbnail */
+ 
+ .post-thumbnail {
+-	@extend .clear;
+ 	display: block;
+-	margin: 0 0 2.25em;
++	margin: 0 0 2em;
+ 	@media screen and ( min-width: $sm ) {
+ 		margin: 0 0 3em;
+ 	}
+diff --git a/style.css b/style.css
+index df65eab..7ec8e81 100644
+--- a/style.css
++++ b/style.css
+@@ -248,6 +248,7 @@ h4,
+ h5,
+ h6 {
+ 	clear: both;
++	margin-top: 0;
+ 	margin-bottom: 1.5rem;
+ 	color: #1e1e1e;
+ 	font-weight: bold;
+@@ -950,8 +951,6 @@ p > video {
+ .site-header:after,
+ .site-footer:after,
+ .footer-navigation:after,
+-.post-thumbnail:after,
+-.page-header:after,
+ .comment-content:after,
+ .portfolio-grid:after,
+ .project-header:after,
+@@ -1615,7 +1614,7 @@ a.custom-logo-link img {
+ 
+ .post-thumbnail {
+ 	display: block;
+-	margin: 0 0 2.25em;
++	margin: 0 0 2em;
+ }
+ 
+ .post-thumbnail img {
+@@ -1629,10 +1628,11 @@ a.custom-logo-link img {
+ .entry-title {
+ 	font-size: 24px;
+ 	font-size: 1.5rem;
++	line-height: 1.125;
+ }
+ 
+ .entry-title a {
+-	color: #585858;
++	color: #1e1e1e;
+ }
+ 
+ /* Page Header */
+@@ -1641,6 +1641,12 @@ a.custom-logo-link img {
+ 	max-width: 480px;
+ }
+ 
++.page-title {
++	font-size: 24px;
++	font-size: 1.5rem;
++	line-height: 1.125;
++}
++
+ /* Entry Meta */
+ 
+ .entry-meta-item {
+@@ -2737,7 +2743,6 @@ input[type='submit'].wpcf7-submit {
+ 	.page-title {
+ 		font-size: 28px;
+ 		font-size: 1.75rem;
+-		line-height: 1.125;
+ 	}
+ 
+ 	.entry-meta-item.cat-links {
+@@ -2866,7 +2871,7 @@ input[type='submit'].wpcf7-submit {
+ 
+ 	.page-header {
+ 		max-width: 100%;
+-		margin-left: 0;
++		margin-bottom: 3em;
+ 	}
+ 
+ 	.comment-list,
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 6b3b97422e4846d962c079a80a8c0482f1cba931 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 15:43:44 +0300
+Subject: [PATCH 22/35] Update entry meta
+
+---
+ assets/css/sass/layout/_entry-meta.scss | 12 +++++++-----
+ style.css                               | 12 +++++++-----
+ 2 files changed, 14 insertions(+), 10 deletions(-)
+
+diff --git a/assets/css/sass/layout/_entry-meta.scss b/assets/css/sass/layout/_entry-meta.scss
+index 9f90ced..cf1b308 100644
+--- a/assets/css/sass/layout/_entry-meta.scss
++++ b/assets/css/sass/layout/_entry-meta.scss
+@@ -2,9 +2,9 @@
+ 
+ .entry-meta-item {
+ 	display: block;
+-	color: $color__text-secondary;
+ 	a {
+-		color: $color__text-secondary;
++		color: $color__text;
++		opacity: $opacity;
+ 		&:hover,
+ 		&:focus {
+ 			opacity: 1;
+@@ -26,14 +26,15 @@
+ .entry-meta-item.cat-links {
+ 	@include font-size( 0.875 );
+ 	display: block;
+-	font-weight: bold;
+-	line-height: 1.7142857143;
++	font-weight: normal;
++	line-height: 1.5;
+ 	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ 	@media screen and ( min-width: $sm ) {
+ 		display: block;
+ 	}
+ 	a {
++		opacity: 1;
+ 		color: $color__accent;
+ 	}
+ }
+@@ -51,7 +52,8 @@
+ 	a {
+ 		display: inline-block;
+ 		margin-right: 0.5em;
+-		color: $color__text-secondary;
++		color: $color__text;
++		opacity: $opacity;
+ 		&:hover,
+ 		&:focus {
+ 			opacity: 1;
+diff --git a/style.css b/style.css
+index 7ec8e81..dc0c123 100644
+--- a/style.css
++++ b/style.css
+@@ -1651,11 +1651,11 @@ a.custom-logo-link img {
+ 
+ .entry-meta-item {
+ 	display: block;
+-	color: #bebebe;
+ }
+ 
+ .entry-meta-item a {
+-	color: #bebebe;
++	opacity: 0.5;
++	color: #585858;
+ }
+ 
+ .entry-meta-item a:hover,
+@@ -1679,13 +1679,14 @@ a.custom-logo-link img {
+ 	display: block;
+ 	font-size: 14px;
+ 	font-size: 0.875rem;
+-	font-weight: bold;
+-	line-height: 1.7142857143;
++	font-weight: normal;
++	line-height: 1.5;
+ 	letter-spacing: 2px;
+ 	text-transform: uppercase;
+ }
+ 
+ .entry-meta-item.cat-links a {
++	opacity: 1;
+ 	color: #ff2441;
+ }
+ 
+@@ -1701,7 +1702,8 @@ a.custom-logo-link img {
+ .tags-links a {
+ 	display: inline-block;
+ 	margin-right: 0.5em;
+-	color: #bebebe;
++	opacity: 0.5;
++	color: #585858;
+ }
+ 
+ .tags-links a:hover,
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 4b0c9afc698190f8090c218c51ef917e46b04e25 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 15:45:58 +0300
+Subject: [PATCH 23/35] Update clearings
+
+---
+ assets/css/sass/layout/_entry-content.scss | 1 +
+ assets/css/sass/layout/_pagination.scss    | 2 +-
+ style.css                                  | 2 ++
+ 3 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/assets/css/sass/layout/_entry-content.scss b/assets/css/sass/layout/_entry-content.scss
+index 2042a15..8ce043a 100644
+--- a/assets/css/sass/layout/_entry-content.scss
++++ b/assets/css/sass/layout/_entry-content.scss
+@@ -7,6 +7,7 @@
+ }
+ 
+ .entry-content {
++	@extend .clear;
+ 	img {
+ 		display: block;
+ 		margin-bottom: 1.5em;
+diff --git a/assets/css/sass/layout/_pagination.scss b/assets/css/sass/layout/_pagination.scss
+index 5a7afca..3741100 100644
+--- a/assets/css/sass/layout/_pagination.scss
++++ b/assets/css/sass/layout/_pagination.scss
+@@ -1,7 +1,7 @@
+ /* Pagination */
+ 
+ .pagination {
+-	@include clearfix-after;
++	@include clearfix;
+ 	@include with-layout( $susy-static ) {
+ 		max-width: span( 6 );
+ 	}
+diff --git a/style.css b/style.css
+index dc0c123..87dcd64 100644
+--- a/style.css
++++ b/style.css
+@@ -951,6 +951,7 @@ p > video {
+ .site-header:after,
+ .site-footer:after,
+ .footer-navigation:after,
++.entry-content:after,
+ .comment-content:after,
+ .portfolio-grid:after,
+ .project-header:after,
+@@ -1470,6 +1471,7 @@ a.custom-logo-link img {
+ 	word-wrap: break-word;
+ }
+ 
++.pagination:before,
+ .pagination:after {
+ 	display: table;
+ 	clear: both;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 2ec944070d1f8c56e70cd02d0fd98c009f7d6760 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 15:54:27 +0300
+Subject: [PATCH 24/35] Update comments
+
+---
+ assets/css/sass/layout/_comments.scss | 28 ++++++++++++----------------
+ style.css                             | 17 +++++++----------
+ 2 files changed, 19 insertions(+), 26 deletions(-)
+
+diff --git a/assets/css/sass/layout/_comments.scss b/assets/css/sass/layout/_comments.scss
+index 013fc5c..29a6b73 100755
+--- a/assets/css/sass/layout/_comments.scss
++++ b/assets/css/sass/layout/_comments.scss
+@@ -13,7 +13,7 @@
+ 	margin-left: 0;
+ 	padding-top: em_minus_px( 1.5em, 2px );
+ 	border-top: 2px solid;
+-	border-top-color: $color__text-light;
++	border-top-color: $color__gray;
+ }
+ 
+ .children {
+@@ -24,13 +24,13 @@
+ 	position: relative;
+ 	margin: 0 0 em_minus_px( 1.5em, 2px ) 0;
+ 	border-bottom: 2px solid;
+-	border-bottom-color: $color__text-light;
++	border-bottom-color: $color__gray;
+ 	word-wrap: break-word;
+ 	.pingback & {
+ 		margin: 0 0 1.5em 0;
+ 		padding: 1.5em;
+ 		border-bottom: none;
+-		background-color: $color__text-light;
++		background-color: $color__gray;
+ 		.edit-link {
+ 			display: block;
+ 			float: right;
+@@ -60,23 +60,23 @@
+ .comment-author .fn,
+ .comment-metadata {
+ 	display: block;
+-	margin-left: $font__size-body-px * 4.5;
++	margin-left: 72px;
+ 	margin-left: 4.5rem;
+ }
+ 
+-.author-name span {
+-	color: $color__text-secondary;
+-}
+-
+ .comment-metadata {
+ 	@include font-size( 0.875 );
+ 	@include line-height( 1.5 );
+-	margin-bottom: $font__size-body-px * $font__line-height-body; // Can't wait to remove this. Bleh!
++	margin-bottom: 24px;
+ 	margin-bottom: 1.5rem;
+ 	time,
+ 	.edit-link a {
+ 		margin-right: 0.5em;
+ 	}
++	a {
++		color: $color__text;
++		opacity: $opacity;
++	}
+ }
+ 
+ .reply {
+@@ -102,10 +102,6 @@
+ 	display: block;
+ }
+ 
+-.comment-awaiting-moderation {
+-	color: $color__text-secondary;
+-}
+-
+ .comment-reply-title small {
+ 	@include font-size();
+ 	@include line-height();
+@@ -142,7 +138,7 @@
+ 
+ .comments-title,
+ .comment-reply-title {
+-	@include font-size( 1.5 ); // 24
++	@include font-size( 1.5 );
+ }
+ 
+ .comment-list,
+@@ -183,7 +179,7 @@
+ 	.nav-pages {
+ 		display: inline-block;
+ 		float: right;
+-		color: $color__text-secondary;
++		opacity: $opacity;
+ 		text-align: right;
+ 	}
+ 	.nav-previous a {
+@@ -193,7 +189,7 @@
+ 	.nav-next a:after {
+ 		@extend %icon;
+ 		margin: 0 0.2em;
+-		color: $color__text-secondary;
++		opacity: $opacity;
+ 	}
+ 	.nav-previous a:before {
+ 		margin: 0 0.5em 0 0;
+diff --git a/style.css b/style.css
+index 87dcd64..5af3749 100644
+--- a/style.css
++++ b/style.css
+@@ -1805,10 +1805,6 @@ a.custom-logo-link img {
+ 	margin-left: 4.5rem;
+ }
+ 
+-.author-name span {
+-	color: #bebebe;
+-}
+-
+ .comment-metadata {
+ 	margin-bottom: 24px;
+ 	margin-bottom: 1.5rem;
+@@ -1823,6 +1819,11 @@ a.custom-logo-link img {
+ 	margin-right: 0.5em;
+ }
+ 
++.comment-metadata a {
++	opacity: 0.5;
++	color: #585858;
++}
++
+ .reply {
+ 	display: none;
+ 	position: absolute;
+@@ -1842,10 +1843,6 @@ a.custom-logo-link img {
+ 	display: block;
+ }
+ 
+-.comment-awaiting-moderation {
+-	color: #bebebe;
+-}
+-
+ .comment-reply-title small {
+ 	float: right;
+ 	font-size: 16px;
+@@ -1922,7 +1919,7 @@ a.custom-logo-link img {
+ .comment-navigation .nav-pages {
+ 	display: inline-block;
+ 	float: right;
+-	color: #bebebe;
++	opacity: 0.5;
+ 	text-align: right;
+ }
+ 
+@@ -1933,7 +1930,7 @@ a.custom-logo-link img {
+ .comment-navigation .nav-previous a:before,
+ .comment-navigation .nav-next a:after {
+ 	margin: 0 0.2em;
+-	color: #bebebe;
++	opacity: 0.5;
+ }
+ 
+ .comment-navigation .nav-previous a:before {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 272c86846faeb662c49a959ddc38990876d663b0 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 16:15:55 +0300
+Subject: [PATCH 25/35] Update portfolio grid
+
+---
+ assets/css/sass/layout/_portfolio-grid.scss | 28 ++++++++++++++++++----------
+ style.css                                   | 22 +++++++++++++++++-----
+ 2 files changed, 35 insertions(+), 15 deletions(-)
+
+diff --git a/assets/css/sass/layout/_portfolio-grid.scss b/assets/css/sass/layout/_portfolio-grid.scss
+index 14e6a71..5f35896 100644
+--- a/assets/css/sass/layout/_portfolio-grid.scss
++++ b/assets/css/sass/layout/_portfolio-grid.scss
+@@ -59,36 +59,44 @@
+ 		right: 0;
+ 		bottom: 0;
+ 		left: 0;
+-		padding: 1.5em 2em;
++		padding: 2.25em;
+ 		background: linear-gradient( rgba( 255, 255, 255, 0.9 ) 35%, rgba( 255, 255, 255, 0 ) 100% );
+ 		.has-post-thumbnail & {
+ 			opacity: 0;
+ 			pointer-events: none;
+ 		}
++		.portfolio-grid-col-4 & {
++			padding: 1em;
++		}
+ 	}
+ }
+ 
+ .project-title {
++	@include font-size( 1.25 );
+ 	margin: 0;
+ 	a {
+-		@include font-size( 1 );
+ 		display: block;
+-		color: $color__text;
+-		line-height: 1.5;
++		color: $color__headings;
++		line-height: 1.125;
++	}
++	.portfolio-grid-col-4 & {
++		@include font-size( 1 );
+ 	}
+ }
+ 
+ .project-categories {
+-	display: inline-block;
+ 	font-weight: normal;
+ 	a {
+ 		color: $color__text;
++		opacity: $opacity;
+ 	}
+-}
++	.portfolio-grid-col-4 & {
++		@include font-size( 0.875 );
+ 
+-/* Grid Variations. */
++	}
++}
+ 
+-// Two columns.
++// Grid Variations.
+ .portfolio-grid-col-2 .project {
+ 	@media screen and ( min-width: $sm ) {
+ 		@include span( 6 );
+@@ -97,7 +105,7 @@
+ 		}
+ 	}
+ }
+-// Three columns.
++
+ .portfolio-grid-col-3 .project {
+ 	@media screen and ( min-width: $sm ) {
+ 		@include span( 4 );
+@@ -106,7 +114,7 @@
+ 		}
+ 	}
+ }
+-// Four columns.
++
+ .portfolio-grid-col-4 .project {
+ 	@media screen and ( min-width: $sm ) {
+ 		@include span( 3 );
+diff --git a/style.css b/style.css
+index 5af3749..ca97843 100644
+--- a/style.css
++++ b/style.css
+@@ -1987,26 +1987,34 @@ a.custom-logo-link img {
+ 
+ .project-title {
+ 	margin: 0;
++	font-size: 20px;
++	font-size: 1.25rem;
+ }
+ 
+ .project-title a {
+ 	display: block;
+-	color: #585858;
++	color: #1e1e1e;
++	line-height: 1.125;
++}
++
++.portfolio-grid-col-4 .project-title {
+ 	font-size: 16px;
+ 	font-size: 1rem;
+-	line-height: 1.5;
+ }
+ 
+ .project-categories {
+-	display: inline-block;
+ 	font-weight: normal;
+ }
+ 
+ .project-categories a {
++	opacity: 0.5;
+ 	color: #585858;
+ }
+ 
+-/* Grid Variations. */
++.portfolio-grid-col-4 .project-categories {
++	font-size: 14px;
++	font-size: 0.875rem;
++}
+ 
+ /* Galleries */
+ 
+@@ -2773,7 +2781,7 @@ input[type='submit'].wpcf7-submit {
+ 		right: 0;
+ 		bottom: 0;
+ 		left: 0;
+-		padding: 1.5em 2em;
++		padding: 2.25em;
+ 		background: linear-gradient(rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0) 100%);
+ 	}
+ 
+@@ -2782,6 +2790,10 @@ input[type='submit'].wpcf7-submit {
+ 		pointer-events: none;
+ 	}
+ 
++	.portfolio-grid-col-4 .project-header {
++		padding: 1em;
++	}
++
+ 	.portfolio-grid-col-2 .project {
+ 		float: left;
+ 		width: 48.19277%;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 3186cf603333b1deeb10fe3ef58a1f2e92d1357c Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 16:59:15 +0300
+Subject: [PATCH 26/35] Update galleries
+
+---
+ assets/css/editor-style.css            | 36 ++++++++++++----------------------
+ assets/css/sass/layout/_galleries.scss |  9 +++------
+ style.css                              | 36 ++++++++++++----------------------
+ 3 files changed, 27 insertions(+), 54 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 25452cf..bb04924 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -663,62 +663,50 @@ blockquote.alignright {
+ }
+ 
+ .gallery-columns-1 .gallery-item {
+-	width: auto;
+-	max-width: 100%;
++	width: 100%;
+ }
+ 
+ .gallery-columns-2 .gallery-item {
+-	width: auto;
+-	max-width: 50%;
++	width: 50%;
+ }
+ 
+ .gallery-columns-3 .gallery-item {
+-	width: auto;
+-	max-width: 33.33333%;
++	width: 33.33333%;
+ }
+ 
+ .gallery-columns-4 .gallery-item {
+-	width: auto;
+-	max-width: 25%;
++	width: 25%;
+ }
+ 
+ .gallery-columns-5 .gallery-item {
+-	width: auto;
+-	max-width: 20%;
++	width: 20%;
+ }
+ 
+ .gallery-columns-6 .gallery-item {
+-	width: auto;
+-	max-width: 16.66667%;
++	width: 16.66667%;
+ }
+ 
+ .gallery-columns-7 .gallery-item {
+-	width: auto;
+-	max-width: 14.28571%;
++	width: 14.28571%;
+ }
+ 
+ .gallery-columns-8 .gallery-item {
+-	width: auto;
+-	max-width: 12.5%;
++	width: 12.5%;
+ }
+ 
+ .gallery-columns-9 .gallery-item {
+-	width: auto;
+-	max-width: 11.11111%;
++	width: 11.11111%;
+ }
+ 
+ .gallery-columns-10 .gallery-item {
+-	width: auto;
+-	max-width: 10%;
++	width: 10%;
+ }
+ 
+ .gallery-caption {
+ 	display: block;
+ 	overflow: hidden;
+-	height: 2em;
+-	margin: 0;
+-	padding-top: 3px;
+-	color: #bebebe;
++	height: 1.5em;
++	margin: 0.75em 0 2em;
+ 	font-size: 0.75em;
+ 	white-space: nowrap;
+ 	text-overflow: ellipsis;
+diff --git a/assets/css/sass/layout/_galleries.scss b/assets/css/sass/layout/_galleries.scss
+index b0f092f..e5fc4fb 100755
+--- a/assets/css/sass/layout/_galleries.scss
++++ b/assets/css/sass/layout/_galleries.scss
+@@ -22,8 +22,7 @@
+ 	}
+ 	@for $i from 1 through 10 {
+ 		.gallery-columns-#{$i} & {
+-			width: auto;
+-			max-width: 100% / $i;
++			width: 100% / $i;
+ 		}
+ 	}
+ }
+@@ -31,10 +30,8 @@
+ .gallery-caption {
+ 	display: block;
+ 	overflow: hidden;
+-	height: 2em;
+-	margin: 0;
+-	padding-top: 3px;
+-	color: $color__text-secondary;
++	height: 1.5em;
++	margin: 0.75em 0 2em;
+ 	font-size: 0.75em;
+ 	white-space: nowrap;
+ 	text-overflow: ellipsis;
+diff --git a/style.css b/style.css
+index ca97843..100d5ec 100644
+--- a/style.css
++++ b/style.css
+@@ -2037,62 +2037,50 @@ a.custom-logo-link img {
+ }
+ 
+ .gallery-columns-1 .gallery-item {
+-	width: auto;
+-	max-width: 100%;
++	width: 100%;
+ }
+ 
+ .gallery-columns-2 .gallery-item {
+-	width: auto;
+-	max-width: 50%;
++	width: 50%;
+ }
+ 
+ .gallery-columns-3 .gallery-item {
+-	width: auto;
+-	max-width: 33.33333%;
++	width: 33.33333%;
+ }
+ 
+ .gallery-columns-4 .gallery-item {
+-	width: auto;
+-	max-width: 25%;
++	width: 25%;
+ }
+ 
+ .gallery-columns-5 .gallery-item {
+-	width: auto;
+-	max-width: 20%;
++	width: 20%;
+ }
+ 
+ .gallery-columns-6 .gallery-item {
+-	width: auto;
+-	max-width: 16.66667%;
++	width: 16.66667%;
+ }
+ 
+ .gallery-columns-7 .gallery-item {
+-	width: auto;
+-	max-width: 14.28571%;
++	width: 14.28571%;
+ }
+ 
+ .gallery-columns-8 .gallery-item {
+-	width: auto;
+-	max-width: 12.5%;
++	width: 12.5%;
+ }
+ 
+ .gallery-columns-9 .gallery-item {
+-	width: auto;
+-	max-width: 11.11111%;
++	width: 11.11111%;
+ }
+ 
+ .gallery-columns-10 .gallery-item {
+-	width: auto;
+-	max-width: 10%;
++	width: 10%;
+ }
+ 
+ .gallery-caption {
+ 	display: block;
+ 	overflow: hidden;
+-	height: 2em;
+-	margin: 0;
+-	padding-top: 3px;
+-	color: #bebebe;
++	height: 1.5em;
++	margin: 0.75em 0 2em;
+ 	font-size: 0.75em;
+ 	white-space: nowrap;
+ 	text-overflow: ellipsis;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 1571915419f8b218d43fbc38b2133f60add4db00 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 17:46:03 +0300
+Subject: [PATCH 27/35] Update widgets
+
+---
+ assets/css/sass/layout/_widgets.scss | 71 ++++++++++++++++-------------------
+ style.css                            | 72 +++++++++++++++---------------------
+ 2 files changed, 62 insertions(+), 81 deletions(-)
+
+diff --git a/assets/css/sass/layout/_widgets.scss b/assets/css/sass/layout/_widgets.scss
+index fc3801c..537fa5a 100755
+--- a/assets/css/sass/layout/_widgets.scss
++++ b/assets/css/sass/layout/_widgets.scss
+@@ -10,16 +10,18 @@
+ 	}
+ 	&:not( .widget_text ) {
+ 		ul {
+-			margin: 0;
++			margin-left: 0;
+ 			padding: 0;
+ 			list-style: none;
+ 		}
+ 	}
+ 	a {
+-		color: $color__text-secondary;
++		opacity: $opacity;
++		color: $color__text;
+ 		&:hover,
+ 		&:active,
+ 		&:focus {
++			opacity: 1;
+ 			color: $color__accent;
+ 		}
+ 	}
+@@ -35,80 +37,71 @@
+ }
+ 
+ .widget_calendar {
+-	caption {
+-		@include font-size( 0.625 );
+-		@include line-height( 1.5 );
+-		color: #fff;
+-		background-color: $color__text-secondary;
+-		font-weight: normal;
+-		letter-spacing: ( 1em / 16 );
+-		text-transform: uppercase;
+-	}
+ 	table {
+ 		max-width: 100%;
++		margin-top: 0;
+ 		margin-bottom: 0;
+ 	}
++	caption,
+ 	td,
+ 	th {
+ 		@include font-size( 0.75 );
+ 		padding: 0 ;
+ 		line-height: 2em;
+ 		text-align: center;
++		letter-spacing: 2px;
++		text-transform: uppercase;
+ 	}
+-	td, {
+-		line-height: em_minus_px( 2em, 1px, $font__size-body-px * 0.75 );
+-	}
+-	th {
+-		line-height: em_minus_px( 2em, 2px, $font__size-body-px * 0.75 );
+-	}
+-	tfoot td:first-child {
+-		padding-left: 0.75em;
+-		text-align: left;
+-	}
+-	tfoot td:last-child {
+-		padding-right: 0.75em;
+-		text-align: right;
++	caption {
++		border-top: 1px solid $color__gray;
+ 	}
+ }
+ 
+ .widget.widget_recent_comments,
+ .widget.widget_recent_entries {
+ 	li {
+-		border-bottom: 1px solid;
+-		border-bottom-color: $color__text-light;
+ 		margin-bottom: 0.75em;
+ 		padding-bottom: em_minus_px( 0.75em, 1px );
++		border-bottom: 1px solid $color__gray;
+ 	}
+ }
+ 
+ .widget_rss {
+ 	.widget-title {
+ 		a {
+-			color: $color__text;
+-			text-decoration: underline;
+-		}
+-		a:first-child {
+-			display: none;
++			display: block;
++			// Hide Ugly RSS Icon.
++			&:first-child {
++				display: none;
++			}
+ 		}
+ 	}
+ 	li {
+-		border-bottom: 1px solid;
+-		border-bottom-color: $color__text-light;
+-		margin-bottom: 0.75em;
++		margin-bottom: 1.25em;
+ 		padding-bottom: em_minus_px( 0.75em, 1px );
++		border-bottom: 1px solid $color__gray;
+ 	}
+-	a {
+-		display: block;
++	ul > li > a {
++		color: $color__text;
++		text-decoration: underline;
++		font-weight: bold;
++		opacity: 1;
+ 	}
+ 	cite {
++		@include font-size( 0.75 );
++		display: block;
+ 		margin: 0;
+-		color: $color__text-secondary;
++		margin: 1em 0;
+ 		font-style: normal;
++		letter-spacing: 2px;
++		text-transform: uppercase;
+ 	}
+ 	.rss-date {
++		@include font-size( 0.75 );
+ 		display: block;
+-		margin: 0;
+-		color: $color__text-secondary;
++		margin: 1em 0;
++		letter-spacing: 2px;
++		text-transform: uppercase;
+ 	}
+ }
+ 
+diff --git a/style.css b/style.css
+index 100d5ec..bfe10a6 100644
+--- a/style.css
++++ b/style.css
+@@ -2114,18 +2114,20 @@ a.custom-logo-link img {
+ }
+ 
+ .widget:not(.widget_text) ul {
+-	margin: 0;
++	margin-left: 0;
+ 	padding: 0;
+ 	list-style: none;
+ }
+ 
+ .widget a {
+-	color: #bebebe;
++	opacity: 0.5;
++	color: #585858;
+ }
+ 
+ .widget a:hover,
+ .widget a:active,
+ .widget a:focus {
++	opacity: 1;
+ 	color: #ff2441;
+ }
+ 
+@@ -2133,23 +2135,13 @@ a.custom-logo-link img {
+ 	display: none;
+ }
+ 
+-.widget_calendar caption {
+-	color: #fff;
+-	background-color: #bebebe;
+-	font-size: 10px;
+-	font-size: 0.625rem;
+-	font-weight: normal;
+-	line-height: 24px;
+-	line-height: 1.5rem;
+-	letter-spacing: 0.0625em;
+-	text-transform: uppercase;
+-}
+-
+ .widget_calendar table {
+ 	max-width: 100%;
++	margin-top: 0;
+ 	margin-bottom: 0;
+ }
+ 
++.widget_calendar caption,
+ .widget_calendar td,
+ .widget_calendar th {
+ 	padding: 0;
+@@ -2157,37 +2149,23 @@ a.custom-logo-link img {
+ 	font-size: 0.75rem;
+ 	line-height: 2em;
+ 	text-align: center;
++	letter-spacing: 2px;
++	text-transform: uppercase;
+ }
+ 
+-.widget_calendar td {
+-	line-height: 1.91667em;
+-}
+-
+-.widget_calendar th {
+-	line-height: 1.83333em;
+-}
+-
+-.widget_calendar tfoot td:first-child {
+-	padding-left: 0.75em;
+-	text-align: left;
+-}
+-
+-.widget_calendar tfoot td:last-child {
+-	padding-right: 0.75em;
+-	text-align: right;
++.widget_calendar caption {
++	border-top: 1px solid #f1f1f1;
+ }
+ 
+ .widget.widget_recent_comments li,
+ .widget.widget_recent_entries li {
+ 	margin-bottom: 0.75em;
+ 	padding-bottom: 0.6875em;
+-	border-bottom: 1px solid;
+-	border-bottom-color: #f1f1f1;
++	border-bottom: 1px solid #f1f1f1;
+ }
+ 
+ .widget_rss .widget-title a {
+-	color: #585858;
+-	text-decoration: underline;
++	display: block;
+ }
+ 
+ .widget_rss .widget-title a:first-child {
+@@ -2195,26 +2173,36 @@ a.custom-logo-link img {
+ }
+ 
+ .widget_rss li {
+-	margin-bottom: 0.75em;
++	margin-bottom: 1.25em;
+ 	padding-bottom: 0.6875em;
+-	border-bottom: 1px solid;
+-	border-bottom-color: #f1f1f1;
++	border-bottom: 1px solid #f1f1f1;
+ }
+ 
+-.widget_rss a {
+-	display: block;
++.widget_rss ul > li > a {
++	opacity: 1;
++	color: #585858;
++	font-weight: bold;
++	text-decoration: underline;
+ }
+ 
+ .widget_rss cite {
++	display: block;
+ 	margin: 0;
+-	color: #bebebe;
++	margin: 1em 0;
++	font-size: 12px;
++	font-size: 0.75rem;
+ 	font-style: normal;
++	letter-spacing: 2px;
++	text-transform: uppercase;
+ }
+ 
+ .widget_rss .rss-date {
+ 	display: block;
+-	margin: 0;
+-	color: #bebebe;
++	margin: 1em 0;
++	font-size: 12px;
++	font-size: 0.75rem;
++	letter-spacing: 2px;
++	text-transform: uppercase;
+ }
+ 
+ .widget.widget_nav_menu ul ul {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 1f99d7a7671defc761caae09d7593ae1f190086a Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 17:49:34 +0300
+Subject: [PATCH 28/35] Update post navigation
+
+---
+ assets/css/sass/layout/_post-navigation.scss | 3 ---
+ style.css                                    | 4 ----
+ 2 files changed, 7 deletions(-)
+
+diff --git a/assets/css/sass/layout/_post-navigation.scss b/assets/css/sass/layout/_post-navigation.scss
+index 65c2945..f5128cb 100644
+--- a/assets/css/sass/layout/_post-navigation.scss
++++ b/assets/css/sass/layout/_post-navigation.scss
+@@ -2,7 +2,4 @@
+ 
+ .post-navigation {
+ 	margin-bottom: 1.5em;
+-	span {
+-		color: $color__text-secondary;
+-	}
+ }
+diff --git a/style.css b/style.css
+index bfe10a6..184cacd 100644
+--- a/style.css
++++ b/style.css
+@@ -2215,10 +2215,6 @@ a.custom-logo-link img {
+ 	margin-bottom: 1.5em;
+ }
+ 
+-.post-navigation span {
+-	color: #bebebe;
+-}
+-
+ /**
+  * Templates.
+  */
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 9aba6a6b15494fcc9710c869ffcd9d7c7f95c75f Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 18:07:34 +0300
+Subject: [PATCH 29/35] Update post layout
+
+---
+ assets/css/sass/layout/_comments.scss        |   4 +
+ assets/css/sass/layout/_entry-footer.scss    |   4 +
+ assets/css/sass/layout/_entry-header.scss    |   4 +
+ assets/css/sass/layout/_entry-meta.scss      |   4 +
+ assets/css/sass/layout/_post-navigation.scss |   1 +
+ assets/css/sass/project.scss                 |  11 +-
+ assets/css/sass/templates/_page.scss         |   1 -
+ assets/css/sass/templates/_post.scss         |   7 +-
+ style.css                                    | 474 +++++++++++++--------------
+ 9 files changed, 258 insertions(+), 252 deletions(-)
+ create mode 100644 assets/css/sass/layout/_entry-footer.scss
+
+diff --git a/assets/css/sass/layout/_comments.scss b/assets/css/sass/layout/_comments.scss
+index 29a6b73..5e828fc 100755
+--- a/assets/css/sass/layout/_comments.scss
++++ b/assets/css/sass/layout/_comments.scss
+@@ -2,6 +2,10 @@
+  * Comments
+  */
+ 
++.comments-area {
++		@extend .clear;
++}
++
+ .comment-list,
+ .children {
+ 	margin-bottom: 0;
+diff --git a/assets/css/sass/layout/_entry-footer.scss b/assets/css/sass/layout/_entry-footer.scss
+new file mode 100644
+index 0000000..1496728
+--- /dev/null
++++ b/assets/css/sass/layout/_entry-footer.scss
+@@ -0,0 +1,4 @@
++/* Entry footer */
++.entry-footer {
++  @extend .clear;
++}
+diff --git a/assets/css/sass/layout/_entry-header.scss b/assets/css/sass/layout/_entry-header.scss
+index d73770d..f305dde 100644
+--- a/assets/css/sass/layout/_entry-header.scss
++++ b/assets/css/sass/layout/_entry-header.scss
+@@ -1,5 +1,9 @@
+ /* Entry Title */
+ 
++.entry-header {
++	@extend .clear;
++}
++
+ .entry-title {
+ 	@include font-size( 1.5 );
+ 	line-height: 1.125;
+diff --git a/assets/css/sass/layout/_entry-meta.scss b/assets/css/sass/layout/_entry-meta.scss
+index cf1b308..ded0d24 100644
+--- a/assets/css/sass/layout/_entry-meta.scss
++++ b/assets/css/sass/layout/_entry-meta.scss
+@@ -1,5 +1,9 @@
+ /* Entry Meta */
+ 
++.entry-meta {
++	@extend .clear;
++}
++
+ .entry-meta-item {
+ 	display: block;
+ 	a {
+diff --git a/assets/css/sass/layout/_post-navigation.scss b/assets/css/sass/layout/_post-navigation.scss
+index f5128cb..f3628af 100644
+--- a/assets/css/sass/layout/_post-navigation.scss
++++ b/assets/css/sass/layout/_post-navigation.scss
+@@ -1,5 +1,6 @@
+ /* Post Navigation (Next/Previous Post) */
+ 
+ .post-navigation {
++	@extend .clear;
+ 	margin-bottom: 1.5em;
+ }
+diff --git a/assets/css/sass/project.scss b/assets/css/sass/project.scss
+index 62f5838..eda0439 100755
+--- a/assets/css/sass/project.scss
++++ b/assets/css/sass/project.scss
+@@ -78,16 +78,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+ @import 'layout/menu-footer';
+ @import 'layout/menu-social';
+ @import 'layout/pagination';
+-@import 'layout/post-thumbnail';
+-@import 'layout/entry-header';
++@import 'layout/galleries';
++@import 'layout/widgets';
+ @import 'layout/page-header';
++@import 'layout/entry-header';
++@import 'layout/entry-footer';
++@import 'layout/post-thumbnail';
+ @import 'layout/entry-meta';
+ @import 'layout/entry-content';
+ @import 'layout/comments';
+-@import 'layout/portfolio-grid';
+-@import 'layout/galleries';
+-@import 'layout/widgets';
+ @import 'layout/post-navigation';
++@import 'layout/portfolio-grid';
+ 
+ /**
+  * Templates.
+diff --git a/assets/css/sass/templates/_page.scss b/assets/css/sass/templates/_page.scss
+index ab97019..1bb6639 100644
+--- a/assets/css/sass/templates/_page.scss
++++ b/assets/css/sass/templates/_page.scss
+@@ -2,7 +2,6 @@
+ 
+ .page-template-default {
+ 	.hentry {
+-		@extend .clear;
+ 		@media screen and ( min-width: $md ) {
+ 			margin-bottom: 1.5em;
+ 		}
+diff --git a/assets/css/sass/templates/_post.scss b/assets/css/sass/templates/_post.scss
+index ea006ca..a90c5a6 100644
+--- a/assets/css/sass/templates/_post.scss
++++ b/assets/css/sass/templates/_post.scss
+@@ -5,14 +5,12 @@
+ 
+ .hentry {
+ 	word-wrap: break-word;
++	@extend .clear;
+ }
+ 
+ .blog,
+ .archive,
+ .single-post {
+-	.post {
+-		@extend .clear;
+-	}
+ 	.entry-header {
+ 		@include with-layout( $susy-static ) {
+ 			max-width: span( 6 );
+@@ -29,7 +27,6 @@
+ 	.entry-footer,
+ 	.comments-area,
+ 	.post-navigation {
+-		@extend .clear;
+ 		@include with-layout( $susy-static ) {
+ 			max-width: span( 6 );
+ 		}
+@@ -45,7 +42,6 @@
+ 		}
+ 	}
+ 	.entry-meta {
+-		@extend .clear;
+ 		@include with-layout( $susy-static ) {
+ 			max-width: span( 6 );
+ 		}
+@@ -68,6 +64,7 @@
+ 			}
+ 		}
+ 		.entry-content,
++		.entry-footer,
+ 		.comments-area,
+ 		.post-navigation {
+ 			@media screen and ( min-width: $md ) {
+diff --git a/style.css b/style.css
+index 184cacd..70b9d5b 100644
+--- a/style.css
++++ b/style.css
+@@ -951,31 +951,18 @@ p > video {
+ .site-header:after,
+ .site-footer:after,
+ .footer-navigation:after,
++.gallery:after,
++.gallery-item:after,
++.entry-header:after,
++.entry-footer:after,
++.entry-meta:after,
+ .entry-content:after,
++.comments-area:after,
+ .comment-content:after,
++.post-navigation:after,
+ .portfolio-grid:after,
+ .project-header:after,
+-.gallery:after,
+-.gallery-item:after,
+-.blog .post:after,
+-.archive .post:after,
+-.single-post .post:after,
+-.blog .entry-content:after,
+-.blog .entry-footer:after,
+-.blog .comments-area:after,
+-.blog .post-navigation:after,
+-.archive .entry-content:after,
+-.archive .entry-footer:after,
+-.archive .comments-area:after,
+-.archive .post-navigation:after,
+-.single-post .entry-content:after,
+-.single-post .entry-footer:after,
+-.single-post .comments-area:after,
+-.single-post .post-navigation:after,
+-.blog .entry-meta:after,
+-.archive .entry-meta:after,
+-.single-post .entry-meta:after,
+-.page-template-default .hentry:after,
++.hentry:after,
+ .page-template-fullwidth .hentry:after,
+ .page-template-centered .hentry:after,
+ .page-template-blog-archives .hentry:after,
+@@ -1612,29 +1599,197 @@ a.custom-logo-link img {
+ 	border-top: 2px solid #f1f1f1;
+ }
+ 
+-/* Post Thumbnail */
++/* Galleries */
+ 
+-.post-thumbnail {
+-	display: block;
+-	margin: 0 0 2em;
++.gallery,
++#content .tiled-gallery {
++	margin: 0 -2px 1.375em;
+ }
+ 
+-.post-thumbnail img {
++.gallery-item {
++	float: left;
++	overflow: hidden;
++	margin: 0;
++	border: 2px solid transparent;
++}
++
++.gallery-item img,
++.gallery-item a {
+ 	display: block;
++	margin-bottom: 0;
++}
++
++.gallery-columns-1 .gallery-item {
+ 	width: 100%;
+-	height: auto;
+ }
+ 
+-/* Entry Title */
++.gallery-columns-2 .gallery-item {
++	width: 50%;
++}
+ 
+-.entry-title {
+-	font-size: 24px;
+-	font-size: 1.5rem;
+-	line-height: 1.125;
++.gallery-columns-3 .gallery-item {
++	width: 33.33333%;
+ }
+ 
+-.entry-title a {
+-	color: #1e1e1e;
++.gallery-columns-4 .gallery-item {
++	width: 25%;
++}
++
++.gallery-columns-5 .gallery-item {
++	width: 20%;
++}
++
++.gallery-columns-6 .gallery-item {
++	width: 16.66667%;
++}
++
++.gallery-columns-7 .gallery-item {
++	width: 14.28571%;
++}
++
++.gallery-columns-8 .gallery-item {
++	width: 12.5%;
++}
++
++.gallery-columns-9 .gallery-item {
++	width: 11.11111%;
++}
++
++.gallery-columns-10 .gallery-item {
++	width: 10%;
++}
++
++.gallery-caption {
++	display: block;
++	overflow: hidden;
++	height: 1.5em;
++	margin: 0.75em 0 2em;
++	font-size: 0.75em;
++	white-space: nowrap;
++	text-overflow: ellipsis;
++}
++
++.gallery-columns-1 figure.gallery-item:nth-of-type(1n+1),
++.gallery-columns-2 figure.gallery-item:nth-of-type(2n+1),
++.gallery-columns-3 figure.gallery-item:nth-of-type(3n+1) {
++	clear: left;
++}
++
++.gallery-columns-6 .gallery-caption,
++.gallery-columns-7 .gallery-caption,
++.gallery-columns-8 .gallery-caption,
++.gallery-columns-9 .gallery-caption,
++.gallery-columns-10 .gallery-caption {
++	display: none;
++}
++
++/**
++ * Widgets
++ */
++
++.widget {
++	margin: 0 0 1.5em;
++	word-wrap: break-word;
++}
++
++.widget select {
++	max-width: 100%;
++}
++
++.widget:not(.widget_text) ul {
++	margin-left: 0;
++	padding: 0;
++	list-style: none;
++}
++
++.widget a {
++	opacity: 0.5;
++	color: #585858;
++}
++
++.widget a:hover,
++.widget a:active,
++.widget a:focus {
++	opacity: 1;
++	color: #ff2441;
++}
++
++.widget_search .search-submit {
++	display: none;
++}
++
++.widget_calendar table {
++	max-width: 100%;
++	margin-top: 0;
++	margin-bottom: 0;
++}
++
++.widget_calendar caption,
++.widget_calendar td,
++.widget_calendar th {
++	padding: 0;
++	font-size: 12px;
++	font-size: 0.75rem;
++	line-height: 2em;
++	text-align: center;
++	letter-spacing: 2px;
++	text-transform: uppercase;
++}
++
++.widget_calendar caption {
++	border-top: 1px solid #f1f1f1;
++}
++
++.widget.widget_recent_comments li,
++.widget.widget_recent_entries li {
++	margin-bottom: 0.75em;
++	padding-bottom: 0.6875em;
++	border-bottom: 1px solid #f1f1f1;
++}
++
++.widget_rss .widget-title a {
++	display: block;
++}
++
++.widget_rss .widget-title a:first-child {
++	display: none;
++}
++
++.widget_rss li {
++	margin-bottom: 1.25em;
++	padding-bottom: 0.6875em;
++	border-bottom: 1px solid #f1f1f1;
++}
++
++.widget_rss ul > li > a {
++	opacity: 1;
++	color: #585858;
++	font-weight: bold;
++	text-decoration: underline;
++}
++
++.widget_rss cite {
++	display: block;
++	margin: 0;
++	margin: 1em 0;
++	font-size: 12px;
++	font-size: 0.75rem;
++	font-style: normal;
++	letter-spacing: 2px;
++	text-transform: uppercase;
++}
++
++.widget_rss .rss-date {
++	display: block;
++	margin: 1em 0;
++	font-size: 12px;
++	font-size: 0.75rem;
++	letter-spacing: 2px;
++	text-transform: uppercase;
++}
++
++.widget.widget_nav_menu ul ul {
++	margin-left: 1em;
+ }
+ 
+ /* Page Header */
+@@ -1649,6 +1804,33 @@ a.custom-logo-link img {
+ 	line-height: 1.125;
+ }
+ 
++/* Entry Title */
++
++.entry-title {
++	font-size: 24px;
++	font-size: 1.5rem;
++	line-height: 1.125;
++}
++
++.entry-title a {
++	color: #1e1e1e;
++}
++
++/* Entry footer */
++
++/* Post Thumbnail */
++
++.post-thumbnail {
++	display: block;
++	margin: 0 0 2em;
++}
++
++.post-thumbnail img {
++	display: block;
++	width: 100%;
++	height: auto;
++}
++
+ /* Entry Meta */
+ 
+ .entry-meta-item {
+@@ -1943,6 +2125,12 @@ a.custom-logo-link img {
+ 	content: '\e803';
+ }
+ 
++/* Post Navigation (Next/Previous Post) */
++
++.post-navigation {
++	margin-bottom: 1.5em;
++}
++
+ /* Portfolio Grid */
+ 
+ .portfolio-grid {
+@@ -2016,205 +2204,6 @@ a.custom-logo-link img {
+ 	font-size: 0.875rem;
+ }
+ 
+-/* Galleries */
+-
+-.gallery,
+-#content .tiled-gallery {
+-	margin: 0 -2px 1.375em;
+-}
+-
+-.gallery-item {
+-	float: left;
+-	overflow: hidden;
+-	margin: 0;
+-	border: 2px solid transparent;
+-}
+-
+-.gallery-item img,
+-.gallery-item a {
+-	display: block;
+-	margin-bottom: 0;
+-}
+-
+-.gallery-columns-1 .gallery-item {
+-	width: 100%;
+-}
+-
+-.gallery-columns-2 .gallery-item {
+-	width: 50%;
+-}
+-
+-.gallery-columns-3 .gallery-item {
+-	width: 33.33333%;
+-}
+-
+-.gallery-columns-4 .gallery-item {
+-	width: 25%;
+-}
+-
+-.gallery-columns-5 .gallery-item {
+-	width: 20%;
+-}
+-
+-.gallery-columns-6 .gallery-item {
+-	width: 16.66667%;
+-}
+-
+-.gallery-columns-7 .gallery-item {
+-	width: 14.28571%;
+-}
+-
+-.gallery-columns-8 .gallery-item {
+-	width: 12.5%;
+-}
+-
+-.gallery-columns-9 .gallery-item {
+-	width: 11.11111%;
+-}
+-
+-.gallery-columns-10 .gallery-item {
+-	width: 10%;
+-}
+-
+-.gallery-caption {
+-	display: block;
+-	overflow: hidden;
+-	height: 1.5em;
+-	margin: 0.75em 0 2em;
+-	font-size: 0.75em;
+-	white-space: nowrap;
+-	text-overflow: ellipsis;
+-}
+-
+-.gallery-columns-1 figure.gallery-item:nth-of-type(1n+1),
+-.gallery-columns-2 figure.gallery-item:nth-of-type(2n+1),
+-.gallery-columns-3 figure.gallery-item:nth-of-type(3n+1) {
+-	clear: left;
+-}
+-
+-.gallery-columns-6 .gallery-caption,
+-.gallery-columns-7 .gallery-caption,
+-.gallery-columns-8 .gallery-caption,
+-.gallery-columns-9 .gallery-caption,
+-.gallery-columns-10 .gallery-caption {
+-	display: none;
+-}
+-
+-/**
+- * Widgets
+- */
+-
+-.widget {
+-	margin: 0 0 1.5em;
+-	word-wrap: break-word;
+-}
+-
+-.widget select {
+-	max-width: 100%;
+-}
+-
+-.widget:not(.widget_text) ul {
+-	margin-left: 0;
+-	padding: 0;
+-	list-style: none;
+-}
+-
+-.widget a {
+-	opacity: 0.5;
+-	color: #585858;
+-}
+-
+-.widget a:hover,
+-.widget a:active,
+-.widget a:focus {
+-	opacity: 1;
+-	color: #ff2441;
+-}
+-
+-.widget_search .search-submit {
+-	display: none;
+-}
+-
+-.widget_calendar table {
+-	max-width: 100%;
+-	margin-top: 0;
+-	margin-bottom: 0;
+-}
+-
+-.widget_calendar caption,
+-.widget_calendar td,
+-.widget_calendar th {
+-	padding: 0;
+-	font-size: 12px;
+-	font-size: 0.75rem;
+-	line-height: 2em;
+-	text-align: center;
+-	letter-spacing: 2px;
+-	text-transform: uppercase;
+-}
+-
+-.widget_calendar caption {
+-	border-top: 1px solid #f1f1f1;
+-}
+-
+-.widget.widget_recent_comments li,
+-.widget.widget_recent_entries li {
+-	margin-bottom: 0.75em;
+-	padding-bottom: 0.6875em;
+-	border-bottom: 1px solid #f1f1f1;
+-}
+-
+-.widget_rss .widget-title a {
+-	display: block;
+-}
+-
+-.widget_rss .widget-title a:first-child {
+-	display: none;
+-}
+-
+-.widget_rss li {
+-	margin-bottom: 1.25em;
+-	padding-bottom: 0.6875em;
+-	border-bottom: 1px solid #f1f1f1;
+-}
+-
+-.widget_rss ul > li > a {
+-	opacity: 1;
+-	color: #585858;
+-	font-weight: bold;
+-	text-decoration: underline;
+-}
+-
+-.widget_rss cite {
+-	display: block;
+-	margin: 0;
+-	margin: 1em 0;
+-	font-size: 12px;
+-	font-size: 0.75rem;
+-	font-style: normal;
+-	letter-spacing: 2px;
+-	text-transform: uppercase;
+-}
+-
+-.widget_rss .rss-date {
+-	display: block;
+-	margin: 1em 0;
+-	font-size: 12px;
+-	font-size: 0.75rem;
+-	letter-spacing: 2px;
+-	text-transform: uppercase;
+-}
+-
+-.widget.widget_nav_menu ul ul {
+-	margin-left: 1em;
+-}
+-
+-/* Post Navigation (Next/Previous Post) */
+-
+-.post-navigation {
+-	margin-bottom: 1.5em;
+-}
+-
+ /**
+  * Templates.
+  */
+@@ -2712,20 +2701,24 @@ input[type='submit'].wpcf7-submit {
+ 		border-top: none;
+ 	}
+ 
+-	.post-thumbnail {
+-		margin: 0 0 3em;
++	.widget {
++		margin-bottom: 3em;
+ 	}
+ 
+-	.entry-title {
++	.page-title {
+ 		font-size: 28px;
+ 		font-size: 1.75rem;
+ 	}
+ 
+-	.page-title {
++	.entry-title {
+ 		font-size: 28px;
+ 		font-size: 1.75rem;
+ 	}
+ 
++	.post-thumbnail {
++		margin: 0 0 3em;
++	}
++
+ 	.entry-meta-item.cat-links {
+ 		display: block;
+ 	}
+@@ -2796,10 +2789,6 @@ input[type='submit'].wpcf7-submit {
+ 		margin-right: 0;
+ 	}
+ 
+-	.widget {
+-		margin-bottom: 3em;
+-	}
+-
+ 	.blog .post,
+ 	.archive .post {
+ 		margin-bottom: 4.5em;
+@@ -2917,12 +2906,15 @@ input[type='submit'].wpcf7-submit {
+ 	}
+ 
+ 	.blog.no-sidebar .entry-content,
++	.blog.no-sidebar .entry-footer,
+ 	.blog.no-sidebar .comments-area,
+ 	.blog.no-sidebar .post-navigation,
+ 	.archive.no-sidebar .entry-content,
++	.archive.no-sidebar .entry-footer,
+ 	.archive.no-sidebar .comments-area,
+ 	.archive.no-sidebar .post-navigation,
+ 	.single-post.no-sidebar .entry-content,
++	.single-post.no-sidebar .entry-footer,
+ 	.single-post.no-sidebar .comments-area,
+ 	.single-post.no-sidebar .post-navigation {
+ 		width: 74.09639%;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From d0f71a2fdcac4e2cc1eb39ff63f3eb12f622afcc Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 18:34:58 +0300
+Subject: [PATCH 30/35] Update page templates
+
+---
+ assets/css/sass/layout/_entry-content.scss         |  4 ++
+ assets/css/sass/templates/_page-404.scss           |  2 +-
+ assets/css/sass/templates/_page-centered.scss      |  3 --
+ assets/css/sass/templates/_page-fullwidth.scss     |  3 +-
+ .../css/sass/templates/_page-portfolio-single.scss |  5 +-
+ assets/css/sass/templates/_page-portfolio.scss     |  6 +--
+ assets/css/sass/templates/_page.scss               |  2 +-
+ inc/extras.php                                     |  4 ++
+ languages/maker.pot                                |  4 +-
+ style.css                                          | 55 ++++------------------
+ 10 files changed, 25 insertions(+), 63 deletions(-)
+
+diff --git a/assets/css/sass/layout/_entry-content.scss b/assets/css/sass/layout/_entry-content.scss
+index 8ce043a..0211cdd 100644
+--- a/assets/css/sass/layout/_entry-content.scss
++++ b/assets/css/sass/layout/_entry-content.scss
+@@ -13,3 +13,7 @@
+ 		margin-bottom: 1.5em;
+ 	}
+ }
++
++.content-area {
++	@extend .clear;
++}
+diff --git a/assets/css/sass/templates/_page-404.scss b/assets/css/sass/templates/_page-404.scss
+index f7988a7..3da5896 100644
+--- a/assets/css/sass/templates/_page-404.scss
++++ b/assets/css/sass/templates/_page-404.scss
+@@ -26,4 +26,4 @@
+ 			float: none;
+ 			margin: 0 auto;
+ 	}
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/templates/_page-centered.scss b/assets/css/sass/templates/_page-centered.scss
+index 37c125b..2593cc3 100644
+--- a/assets/css/sass/templates/_page-centered.scss
++++ b/assets/css/sass/templates/_page-centered.scss
+@@ -3,13 +3,11 @@
+ .page-template-centered,
+ .page-template-blog-archives {
+ 	.hentry {
+-		@extend .clear;
+ 		@media screen and ( min-width: $md ) {
+ 			margin-bottom: 1.5em;
+ 		}
+ 	}
+ 	.content-area {
+-		@extend .clear;
+ 		float: none;
+ 		width: 100%;
+ 		max-width: 100%;
+@@ -19,7 +17,6 @@
+ 	.entry-header,
+ 	.entry-content,
+ 	.comments-area {
+-		@extend .clear;
+ 		@include with-layout( $susy-static ) {
+ 			max-width: span( 6 );
+ 		}
+diff --git a/assets/css/sass/templates/_page-fullwidth.scss b/assets/css/sass/templates/_page-fullwidth.scss
+index 7c63260..010a8c7 100644
+--- a/assets/css/sass/templates/_page-fullwidth.scss
++++ b/assets/css/sass/templates/_page-fullwidth.scss
+@@ -2,7 +2,6 @@
+ 
+ .page-template-fullwidth {
+ 	.hentry {
+-		@extend .clear;
+ 		@media screen and ( min-width: $md ) {
+ 			margin-bottom: 1.5em;
+ 		}
+@@ -24,4 +23,4 @@
+ 			max-width: span( 6 );
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/templates/_page-portfolio-single.scss b/assets/css/sass/templates/_page-portfolio-single.scss
+index 3bc1077..6d81fef 100644
+--- a/assets/css/sass/templates/_page-portfolio-single.scss
++++ b/assets/css/sass/templates/_page-portfolio-single.scss
+@@ -3,7 +3,6 @@
+ .single-portfolio,
+ .single-jetpack-portfolio {
+ 	.hentry {
+-		@extend .clear;
+ 		@media screen and (min-width: $sm) {
+ 			margin-bottom: 1.5em;
+ 		}
+@@ -15,7 +14,6 @@
+ 		margin-right: 0;
+ 	}
+ 	.entry-header {
+-		@extend .clear;
+ 		@include with-layout( $susy-static ) {
+ 			max-width: span( 6 );
+ 		}
+@@ -26,7 +24,6 @@
+ 		}
+ 	}
+ 	.entry-content {
+-		@extend .clear;
+ 		@include with-layout( $susy-static ) {
+ 			max-width: span( 6 );
+ 		}
+@@ -45,11 +42,11 @@
+ 		}
+ 	}
+ 	.project-meta {
+-		@extend .clear;
+ 		table {
+ 			display: block;
+ 			float: left;
+ 			width: auto;
++			margin-top: 0;
+ 			margin-bottom: 0;
+ 			@media screen and ( min-width: $md ) {
+ 				float: right;
+diff --git a/assets/css/sass/templates/_page-portfolio.scss b/assets/css/sass/templates/_page-portfolio.scss
+index a113a72..8e99c79 100644
+--- a/assets/css/sass/templates/_page-portfolio.scss
++++ b/assets/css/sass/templates/_page-portfolio.scss
+@@ -1,15 +1,12 @@
+ /* Portfolio */
+ 
+-.page-template-portfolio-jetpack,
+-.page-template-portfolio-toolkit {
++.page-template-portfolio {
+ 	.page {
+-		@extend .clear;
+ 		@media screen and ( min-width: $sm ) {
+ 			margin-bottom: 1.5em;
+ 		}
+ 	}
+ 	.content-area {
+-		@extend .clear;
+ 		float: none;
+ 		width: 100%;
+ 		max-width: 100%;
+@@ -19,7 +16,6 @@
+ 	.entry-header,
+ 	.entry-content,
+ 	.comments-area {
+-		@extend .clear;
+ 		@include with-layout( $susy-static ) {
+ 			max-width: span( 6 );
+ 		}
+diff --git a/assets/css/sass/templates/_page.scss b/assets/css/sass/templates/_page.scss
+index 1bb6639..bc0fee2 100644
+--- a/assets/css/sass/templates/_page.scss
++++ b/assets/css/sass/templates/_page.scss
+@@ -16,7 +16,7 @@
+ 		width: 100%;
+ 		margin-right: auto;
+ 		margin-left: auto;
+-		@media screen and (min-width: $md) {
++		@media screen and ( min-width: $md ) {
+ 			float: left;
+ 			margin-left: 0;
+ 		}
+diff --git a/inc/extras.php b/inc/extras.php
+index 1e7d857..f7c3ee5 100644
+--- a/inc/extras.php
++++ b/inc/extras.php
+@@ -27,6 +27,10 @@ function maker_body_classes( $classes ) {
+ 		$classes[] = 'no-excerpt';
+ 	}
+ 
++	if ( is_page_template( 'templates/portfolio-toolkit.php' ) || is_page_template( 'templates/portfolio-jetpack.php' ) ) {
++		$classes[] = 'page-template-portfolio';
++	}
++
+ 	return $classes;
+ }
+ add_filter( 'body_class', 'maker_body_classes' );
+diff --git a/languages/maker.pot b/languages/maker.pot
+index f7cbcd8..1ea6f40 100644
+--- a/languages/maker.pot
++++ b/languages/maker.pot
+@@ -154,13 +154,13 @@ msgstr ""
+ msgid "Use [year] shortcode to display current year."
+ msgstr ""
+ 
+-#: inc/extras.php:125
++#: inc/extras.php:129
+ msgid ""
+ "Thanks for choosing Maker! Please, %1$sactivate%2$s the license key to "
+ "access theme updates and support."
+ msgstr ""
+ 
+-#: inc/extras.php:150
++#: inc/extras.php:154
+ msgid ""
+ "Upgrading from version prior to <strong>Maker 0.3.0</strong>? Read the <a "
+ "href=\"%1$s\" target=\"_blank\">release notes</a>, this update requires a "
+diff --git a/style.css b/style.css
+index 70b9d5b..ac21054 100644
+--- a/style.css
++++ b/style.css
+@@ -957,41 +957,13 @@ p > video {
+ .entry-footer:after,
+ .entry-meta:after,
+ .entry-content:after,
++.content-area:after,
+ .comments-area:after,
+ .comment-content:after,
+ .post-navigation:after,
+ .portfolio-grid:after,
+ .project-header:after,
+ .hentry:after,
+-.page-template-fullwidth .hentry:after,
+-.page-template-centered .hentry:after,
+-.page-template-blog-archives .hentry:after,
+-.page-template-centered .content-area:after,
+-.page-template-blog-archives .content-area:after,
+-.page-template-centered .entry-header:after,
+-.page-template-centered .entry-content:after,
+-.page-template-centered .comments-area:after,
+-.page-template-blog-archives .entry-header:after,
+-.page-template-blog-archives .entry-content:after,
+-.page-template-blog-archives .comments-area:after,
+-.single-portfolio .hentry:after,
+-.single-jetpack-portfolio .hentry:after,
+-.single-portfolio .entry-header:after,
+-.single-jetpack-portfolio .entry-header:after,
+-.single-portfolio .entry-content:after,
+-.single-jetpack-portfolio .entry-content:after,
+-.single-portfolio .project-meta:after,
+-.single-jetpack-portfolio .project-meta:after,
+-.page-template-portfolio-jetpack .page:after,
+-.page-template-portfolio-toolkit .page:after,
+-.page-template-portfolio-jetpack .content-area:after,
+-.page-template-portfolio-toolkit .content-area:after,
+-.page-template-portfolio-jetpack .entry-header:after,
+-.page-template-portfolio-jetpack .entry-content:after,
+-.page-template-portfolio-jetpack .comments-area:after,
+-.page-template-portfolio-toolkit .entry-header:after,
+-.page-template-portfolio-toolkit .entry-content:after,
+-.page-template-portfolio-toolkit .comments-area:after,
+ #infinite-handle:after {
+ 	display: table;
+ 	clear: both;
+@@ -2347,6 +2319,7 @@ a.custom-logo-link img {
+ 	display: block;
+ 	float: left;
+ 	width: auto;
++	margin-top: 0;
+ 	margin-bottom: 0;
+ }
+ 
+@@ -2393,8 +2366,7 @@ a.custom-logo-link img {
+ 
+ /* Portfolio */
+ 
+-.page-template-portfolio-jetpack .content-area,
+-.page-template-portfolio-toolkit .content-area {
++.page-template-portfolio .content-area {
+ 	float: none;
+ 	width: 100%;
+ 	max-width: 100%;
+@@ -2402,12 +2374,9 @@ a.custom-logo-link img {
+ 	padding: 0;
+ }
+ 
+-.page-template-portfolio-jetpack .entry-header,
+-.page-template-portfolio-jetpack .entry-content,
+-.page-template-portfolio-jetpack .comments-area,
+-.page-template-portfolio-toolkit .entry-header,
+-.page-template-portfolio-toolkit .entry-content,
+-.page-template-portfolio-toolkit .comments-area {
++.page-template-portfolio .entry-header,
++.page-template-portfolio .entry-content,
++.page-template-portfolio .comments-area {
+ 	width: 100%;
+ 	max-width: 480px;
+ 	margin-right: auto;
+@@ -2799,17 +2768,13 @@ input[type='submit'].wpcf7-submit {
+ 		margin-bottom: 1.5em;
+ 	}
+ 
+-	.page-template-portfolio-jetpack .page,
+-	.page-template-portfolio-toolkit .page {
++	.page-template-portfolio .page {
+ 		margin-bottom: 1.5em;
+ 	}
+ 
+-	.page-template-portfolio-jetpack .entry-header,
+-	.page-template-portfolio-jetpack .entry-content,
+-	.page-template-portfolio-jetpack .comments-area,
+-	.page-template-portfolio-toolkit .entry-header,
+-	.page-template-portfolio-toolkit .entry-content,
+-	.page-template-portfolio-toolkit .comments-area {
++	.page-template-portfolio .entry-header,
++	.page-template-portfolio .entry-content,
++	.page-template-portfolio .comments-area {
+ 		margin-left: 0;
+ 	}
+ 
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 0f0a50009bf71d94f9d9aa9fbea54687af937ab2 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 18:37:10 +0300
+Subject: [PATCH 31/35] Update CF7 style
+
+---
+ assets/css/sass/plugins/_contact-form-7.scss | 4 ----
+ style.css                                    | 4 ----
+ 2 files changed, 8 deletions(-)
+
+diff --git a/assets/css/sass/plugins/_contact-form-7.scss b/assets/css/sass/plugins/_contact-form-7.scss
+index 2a531a4..79ea73e 100644
+--- a/assets/css/sass/plugins/_contact-form-7.scss
++++ b/assets/css/sass/plugins/_contact-form-7.scss
+@@ -70,7 +70,3 @@ input[type='submit'].wpcf7-submit {
+ .wpcf7 .ajax-error {
+ 	display: none;
+ }
+-
+-.wpcf7 .placeheld {
+-	color: $color__text-secondary;
+-}
+diff --git a/style.css b/style.css
+index ac21054..c90d7a6 100644
+--- a/style.css
++++ b/style.css
+@@ -2493,10 +2493,6 @@ input[type='submit'].wpcf7-submit {
+ 	display: none;
+ }
+ 
+-.wpcf7 .placeheld {
+-	color: #bebebe;
+-}
+-
+ /**
+  * Media Queries
+  */
+-- 
+2.5.4 (Apple Git-61)
+
+
+From ef0bef2e2d3f44a980ffb6526f7e89a09531c896 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 19:23:45 +0300
+Subject: [PATCH 32/35] Update Sass variables
+
+---
+ assets/css/editor-style.css                        | 13 +----
+ assets/css/sass/abstracts/_variables.scss          | 68 +++-------------------
+ assets/css/sass/base/_normalize.scss               |  4 +-
+ assets/css/sass/base/typography/_tables.scss       |  3 +-
+ assets/css/sass/components/_accessibility.scss     |  6 +-
+ assets/css/sass/editor/_editor-captions.scss       |  3 +-
+ assets/css/sass/editor/_editor-media.scss          | 10 ++--
+ assets/css/sass/editor/_editor-normalize.scss      | 10 ++--
+ assets/css/sass/editor/_editor-tables.scss         |  7 +--
+ assets/css/sass/layout/_menu-social.scss           |  3 +-
+ assets/css/sass/layout/_portfolio-grid.scss        |  2 +-
+ .../css/sass/templates/_page-portfolio-single.scss |  2 +-
+ style.css                                          |  8 +--
+ 13 files changed, 32 insertions(+), 107 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index bb04924..234be22 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -362,11 +362,6 @@ dd {
+ 	border-bottom-color: #f1f1f1;
+ }
+ 
+-.mce-item-table thead th {
+-	border-bottom: 2px solid;
+-	border-bottom-color: #bebebe;
+-}
+-
+ /* Tables */
+ 
+ table {
+@@ -379,8 +374,7 @@ table {
+ td,
+ th {
+ 	padding: 0.75em;
+-	border-bottom: 1px solid;
+-	border-bottom-color: #f1f1f1;
++	border-bottom: 1px solid #f1f1f1;
+ 	text-align: left;
+ }
+ 
+@@ -532,13 +526,11 @@ p > video {
+ }
+ 
+ .mce-content-body .wp-playlist-item {
+-	border-bottom: 1px solid;
+-	border-bottom-color: #f1f1f1;
++	border-bottom: 1px solid #f1f1f1;
+ }
+ 
+ .mce-content-body .wp-playlist-caption,
+ .mce-content-body [class*='wp-playlist-item-'] {
+-	color: #bebebe;
+ 	font-size: 16px;
+ 	font-size: 1rem;
+ 	font-style: normal;
+@@ -575,7 +567,6 @@ p > video {
+ 	display: block;
+ 	margin: 1em 0;
+ 	padding: 0;
+-	color: #bebebe;
+ 	font-family: Helvetica, Arial, sans-serif;
+ 	font-size: 12px;
+ 	font-size: 0.75rem;
+diff --git a/assets/css/sass/abstracts/_variables.scss b/assets/css/sass/abstracts/_variables.scss
+index 37927a8..d9f8e0b 100755
+--- a/assets/css/sass/abstracts/_variables.scss
++++ b/assets/css/sass/abstracts/_variables.scss
+@@ -1,15 +1,13 @@
+-// Colors. ------------------------------------------------------------- //
++// Colors. ------------------------------------------------------------------ //
+ 
+ // Basic Text Colors.
+-$color__text:           #585858;
+-$color__headings:       #1e1e1e; // r:30 g:30 b:30
+-$color__gray:           lighten( $color__text, 60% );
++$color__text:     #585858;
++$color__headings: #1e1e1e; // r:30 g:30 b:30
++$color__gray:     lighten( $color__text, 60% );
+ 
+ // Opacity.
+ $opacity: 0.5;
+ $opacity-light: 0.1;
+-$color__text-secondary: lighten( $color__text, 40% );
+-$color__text-light:     lighten( $color__text, 60% );
+ 
+ // Body.
+ $color__background-body: #fff;
+@@ -17,69 +15,16 @@ $color__background-body: #fff;
+ // Theme Accent Color.
+ $color__accent: #ff2441;
+ 
+-// Links.
+-$color__link:         $color__accent;
+-$color__link-visited: $color__accent;
+-$color__link-hover:   $color__accent;
+-
+-// Accessibility.
+-$color__text-screen:       #21759b;
+-$color__background-screen: #f1f1f1;
+-
+ // State colors.
+ $color__success: #1fc281;
+ $color__info:    #00b9f2;
+ $color__warning: #f4cc31;
+ $color__danger:  #e83337;
+ 
+-// Button.
+-$color__button: (
+-	text:             $color__text,
+-	border:           $color__text-light,
+-	background:       transparent,
+-	hover_background: $color__text-light
+-);
+-
+-// Button Accent.
+-$color__button-accent: (
+-	text:             #fff,
+-	border:           $color__accent,
+-	background:       $color__accent,
+-	hover_background: lighten( $color__accent, 7% ),
+-);
+-
+-// Button Success.
+-$color__button-success: (
+-	text:       #fff,
+-	border:     $color__success,
+-	background: $color__success,
+-);
+-
+-// Button Info.
+-$color__button-info: (
+-	text:       #fff,
+-	border:     $color__info,
+-	background: $color__info,
+-);
+-
+-// Button Warning.
+-$color__button-warning: (
+-	text:       #fff,
+-	border:     $color__warning,
+-	background: $color__warning,
+-);
+-
+-// Button Danger.
+-$color__button-danger: (
+-	text:       #fff,
+-	border:     $color__danger,
+-	background: $color__danger,
+-);
+-
+ // Layout. ------------------------------------------------------------------ //
+ 
+ // Breakpoints.
+-$xs: 415px;  // Phablets bigger than iPhone 6 plus.
++$xs: 415px;  // Phones bigger than iPhone 6 plus.
+ $sm: 768px;  // iPad (vertical).
+ $md: 1024px; // Small Desktops, iPad (horizontal) and bigger.
+ $lg: 1140px; // Desktops.
+@@ -112,7 +57,8 @@ $font__size-body:        16;
+ $font__size-body-px:     $font__size-body * 1px;
+ $font__line-height-body: 1.5;
+ 
+-// Social icons. ------------------------------------------------------------- //
++// Social icons. ------------------------------------------------------------ //
++
+ $social-icons:(
+ 	'behance.net':       ( 'e804', #1769FF ),
+ 	'bitbucket.org':     ( 'e800', #205081 ),
+diff --git a/assets/css/sass/base/_normalize.scss b/assets/css/sass/base/_normalize.scss
+index 3573689..a381e8c 100755
+--- a/assets/css/sass/base/_normalize.scss
++++ b/assets/css/sass/base/_normalize.scss
+@@ -95,7 +95,7 @@ mark {
+ 	// background: #ff0;
+ 	// color: #000;
+ 	color: $color__text;
+-	background-color: $color__text-light;
++	background-color: $color__gray;
+ 	text-decoration: none;
+ }
+ 
+@@ -218,7 +218,7 @@ fieldset {
+ 	// margin: 0 2px;
+ 	// padding: 0.35em 0.625em 0.75em;
+ 	border: 2px solid;
+-	border-color: $color__text-light;
++	border-color: $color__gray;
+ 	border-radius: 3px;
+ 	margin: 0 0 1.5em;
+ 	padding: em_minus_px( 0.75em, 2px ) 1em 0;
+diff --git a/assets/css/sass/base/typography/_tables.scss b/assets/css/sass/base/typography/_tables.scss
+index d75182a..40256d8 100755
+--- a/assets/css/sass/base/typography/_tables.scss
++++ b/assets/css/sass/base/typography/_tables.scss
+@@ -9,8 +9,7 @@ table {
+ 
+ td, th {
+ 	padding: 0.75em;
+-	border-bottom: 1px solid;
+-	border-bottom-color: $color__gray;
++	border-bottom: 1px solid $color__gray;
+ 	text-align: left;
+ }
+ 
+diff --git a/assets/css/sass/components/_accessibility.scss b/assets/css/sass/components/_accessibility.scss
+index 778c363..499ef30 100755
+--- a/assets/css/sass/components/_accessibility.scss
++++ b/assets/css/sass/components/_accessibility.scss
+@@ -11,11 +11,11 @@
+ 	&:hover,
+ 	&:active,
+ 	&:focus {
+-		background-color: $color__background-screen;
++		background-color: #f1f1f1;
+ 		border-radius: 3px;
+ 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+ 		clip: auto !important;
+-		color: $color__text-screen;
++		color: #21759b;
+ 		display: block;
+ 		@include font-size(0.875);
+ 		font-weight: bold;
+@@ -28,4 +28,4 @@
+ 		width: auto;
+ 		z-index: 100000; // Above WP toolbar.
+ 	}
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/editor/_editor-captions.scss b/assets/css/sass/editor/_editor-captions.scss
+index e69d249..2406d87 100644
+--- a/assets/css/sass/editor/_editor-captions.scss
++++ b/assets/css/sass/editor/_editor-captions.scss
+@@ -11,11 +11,10 @@
+ 		display: block;
+ 		margin: 1em 0;
+ 		padding: 0;
+-		color: $color__text-secondary;
+ 		font-family: $font__main ;
+ 		font-weight: normal;
+ 		font-style: normal;
+ 		line-height: 2em;
+ 		text-align: left;
+ 	}
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/editor/_editor-media.scss b/assets/css/sass/editor/_editor-media.scss
+index 7ad9ff1..fcb6f07 100644
+--- a/assets/css/sass/editor/_editor-media.scss
++++ b/assets/css/sass/editor/_editor-media.scss
+@@ -77,14 +77,12 @@ p > video {
+ 		padding: em_minus_px( 0.75em, 2px ) 0.75em 0.75em;
+ 	}
+ 	.wp-playlist-item {
+-		border-bottom: 1px solid;
+-		border-bottom-color: $color__text-light;
++		border-bottom: 1px solid $color__gray;
+ 	}
+ 	.wp-playlist-caption,
+ 	[class*='wp-playlist-item-'] {
+ 		@include font-size( 1 );
+ 		@include line-height( 1.5 );
+-		color: $color__text-secondary;
+ 		font-style: normal;
+ 		text-transform: none;
+ 	}
+@@ -93,8 +91,8 @@ p > video {
+ 	}
+ 	.wp-playlist-playing {
+ 		border-bottom: 1px solid;
+-		border-bottom-color: $color__text-light;
+-		background-color: $color__text-light;
++		border-bottom-color: $color__gray;
++		background-color: $color__gray;
+ 		font-weight: normal;
+ 	}
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/editor/_editor-normalize.scss b/assets/css/sass/editor/_editor-normalize.scss
+index bc9900e..32780cc 100755
+--- a/assets/css/sass/editor/_editor-normalize.scss
++++ b/assets/css/sass/editor/_editor-normalize.scss
+@@ -7,7 +7,7 @@
+ *,
+ *:before,
+ *:after {
+-	box-sizing: inherit; 
++	box-sizing: inherit;
+ }
+ 
+ html {
+@@ -100,7 +100,7 @@ mark {
+ 	// background: #ff0;
+ 	// color: #000;
+ 	color: $color__text;
+-	background-color: $color__text-light;
++	background-color: $color__gray;
+ 	text-decoration: none;
+ }
+ 
+@@ -223,11 +223,11 @@ textarea {
+ // 	// margin: 0 2px;
+ // 	// padding: 0.35em 0.625em 0.75em;
+ // 	border: 2px solid;
+-// 	border-color: $color__text-light;
++// 	border-color: $color__gray;
+ // 	border-radius: 3px;
+ // 	margin: 0 0 1.5em;
+ // 	padding: em_minus_px( 0.75em, 2px ) 1em 0;
+-	
++
+ // }
+ 
+ // legend {
+@@ -251,4 +251,4 @@ table {
+ td,
+ th {
+ 	padding: 0;
+-}
+\ No newline at end of file
++}
+diff --git a/assets/css/sass/editor/_editor-tables.scss b/assets/css/sass/editor/_editor-tables.scss
+index 248743e..2b490f0 100644
+--- a/assets/css/sass/editor/_editor-tables.scss
++++ b/assets/css/sass/editor/_editor-tables.scss
+@@ -11,10 +11,5 @@
+ .mce-item-table td,
+ .mce-item-table th {
+ 	border-bottom: 1px solid;
+-	border-bottom-color: $color__text-light;
+-}
+-
+-.mce-item-table thead th {
+-	border-bottom: 2px solid;
+-	border-bottom-color: $color__text-secondary;
++	border-bottom-color: $color__gray;
+ }
+diff --git a/assets/css/sass/layout/_menu-social.scss b/assets/css/sass/layout/_menu-social.scss
+index 31139b1..22ea2e3 100644
+--- a/assets/css/sass/layout/_menu-social.scss
++++ b/assets/css/sass/layout/_menu-social.scss
+@@ -2,12 +2,11 @@
+ 
+ .menu-social-container {
+ 	a {
+-		color: $color__text-secondary;
++		color: $color__text;
+ 		&:before {
+ 			@extend %icon;
+ 			width: 1.2em;
+ 			margin-right: 0.5em;
+-			color: $color__text-secondary;
+ 		}
+ 		@each $url, $i in $social-icons {
+ 
+diff --git a/assets/css/sass/layout/_portfolio-grid.scss b/assets/css/sass/layout/_portfolio-grid.scss
+index 5f35896..72cf92f 100644
+--- a/assets/css/sass/layout/_portfolio-grid.scss
++++ b/assets/css/sass/layout/_portfolio-grid.scss
+@@ -19,7 +19,7 @@
+ 		display: block;
+ 		width: 100%;
+ 		padding-top: 100%;
+-		background-color: $color__text-light;
++		background-color: $color__gray;
+ 		content: '';
+ 	}
+ 	@media screen and ( min-width: $sm ) {
+diff --git a/assets/css/sass/templates/_page-portfolio-single.scss b/assets/css/sass/templates/_page-portfolio-single.scss
+index 6d81fef..f441cb5 100644
+--- a/assets/css/sass/templates/_page-portfolio-single.scss
++++ b/assets/css/sass/templates/_page-portfolio-single.scss
+@@ -76,7 +76,7 @@
+ 	}
+ 	.project-meta-item-name {
+ 		padding-right: 1em;
+-		color: $color__text-secondary;
++		opacity: $opacity;
+ 		text-align: left;
+ 		vertical-align: top;
+ 		@media screen and ( min-width: $md ) {
+diff --git a/style.css b/style.css
+index c90d7a6..99e581d 100644
+--- a/style.css
++++ b/style.css
+@@ -426,8 +426,7 @@ table {
+ td,
+ th {
+ 	padding: 0.75em;
+-	border-bottom: 1px solid;
+-	border-bottom-color: #f1f1f1;
++	border-bottom: 1px solid #f1f1f1;
+ 	text-align: left;
+ }
+ 
+@@ -1191,13 +1190,12 @@ a.custom-logo-link img {
+ /* Social Icons */
+ 
+ .menu-social-container a {
+-	color: #bebebe;
++	color: #585858;
+ }
+ 
+ .menu-social-container a:before {
+ 	width: 1.2em;
+ 	margin-right: 0.5em;
+-	color: #bebebe;
+ }
+ 
+ .menu-social-container a[href*='behance.net']:before {
+@@ -2342,7 +2340,7 @@ a.custom-logo-link img {
+ .single-portfolio .project-meta-item-name,
+ .single-jetpack-portfolio .project-meta-item-name {
+ 	padding-right: 1em;
+-	color: #bebebe;
++	opacity: 0.5;
+ 	text-align: left;
+ 	vertical-align: top;
+ }
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 81021a96a56d13378fa6290ec64c991f73425151 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 19:31:37 +0300
+Subject: [PATCH 33/35] Primary menu clean-up
+
+---
+ assets/css/sass/layout/_menu-primary.scss | 32 +++++++++++++++----------------
+ style.css                                 | 29 +++++++++++++++-------------
+ 2 files changed, 31 insertions(+), 30 deletions(-)
+
+diff --git a/assets/css/sass/layout/_menu-primary.scss b/assets/css/sass/layout/_menu-primary.scss
+index 826366f..40bc649 100644
+--- a/assets/css/sass/layout/_menu-primary.scss
++++ b/assets/css/sass/layout/_menu-primary.scss
+@@ -13,6 +13,9 @@
+ 			padding: 0 0 0 1em;
+ 		}
+ 	}
++	li {
++		margin-bottom: 0;
++	}
+ 	&.toggled {
+ 		ul {
+ 			display: block;
+@@ -21,7 +24,7 @@
+ 	a {
+ 		display: block;
+ 		padding: 0.75em 0.75em 0.75em 0;
+-		color: $color__text;
++		color: $color__headings;
+ 		&:hover,
+ 		&:focus,
+ 		&:active {
+@@ -53,7 +56,7 @@
+ 					left: -999em;
+ 				}
+ 				li {
+-					box-shadow: 0 13px 0 -12px rgba( 0, 0, 0, $opacity-light );
++					box-shadow: 0 13px 0 -12px $color__gray;
+ 					&:last-child {
+ 						box-shadow: none;
+ 					}
+@@ -83,11 +86,7 @@
+ 	}
+ }
+ 
+-// Toggle.
+-/* Toggle Hamburger */
+-
+-$dash_height: ( 2 / $font__size-body ) * 1em;
+-$dash_width: 1em;
++/* Toggle Hamburger Icon */
+ 
+ .menu-toggle {
+ 	float: right;
+@@ -108,25 +107,24 @@ $dash_width: 1em;
+ 	top: 50%;
+ 	left: 50%;
+ 	width: 1em;
+-	height: $dash_height;
+-	margin-top: ( $dash_height / ( -2 ) ) ;
+-	margin-left: ( $dash_width / ( -2 ) ) ;
+-	background-color: $color__text;
++	height: 1px;
++	margin-top: -1px;
++	margin-left: -8px;
++	background-color: $color__headings;
+ 	&:before,
+ 	&:after {
+ 		display: block;
+ 		position: absolute;
+ 		width: 1em;
+-		height: $dash_height;
+-		background-color: $color__text;
++		height: 1px;
++		background-color: $color__headings;
+ 		content: '';
+-		transition: transform 0.3s, top 0.3s;
+ 	}
+ 	&:before {
+-		top: ( $dash_height * ( -3 ) );
++		top: -6px
+ 	}
+ 	&:after {
+-		top: ( $dash_height * 3 );
++		top: 6px
+ 	}
+ }
+ 
+@@ -136,7 +134,7 @@ $dash_width: 1em;
+ 		&:before,
+ 		&:after {
+ 			top: 0;
+-			background-color: $color__text;
++			background-color: $color__headings;
+ 		}
+ 		&:before {
+ 			transform: rotate( 225deg );
+diff --git a/style.css b/style.css
+index 99e581d..2d164d3 100644
+--- a/style.css
++++ b/style.css
+@@ -1083,6 +1083,10 @@ a.custom-logo-link img {
+ 	padding: 0 0 0 1em;
+ }
+ 
++.main-navigation li {
++	margin-bottom: 0;
++}
++
+ .main-navigation.toggled ul {
+ 	display: block;
+ }
+@@ -1090,7 +1094,7 @@ a.custom-logo-link img {
+ .main-navigation a {
+ 	display: block;
+ 	padding: 0.75em 0.75em 0.75em 0;
+-	color: #585858;
++	color: #1e1e1e;
+ }
+ 
+ .main-navigation a:hover,
+@@ -1099,7 +1103,7 @@ a.custom-logo-link img {
+ 	color: #ff2441;
+ }
+ 
+-/* Toggle Hamburger */
++/* Toggle Hamburger Icon */
+ 
+ .menu-toggle {
+ 	float: right;
+@@ -1120,10 +1124,10 @@ a.custom-logo-link img {
+ 	top: 50%;
+ 	left: 50%;
+ 	width: 1em;
+-	height: 0.125em;
+-	margin-top: -0.0625em;
+-	margin-left: -0.5em;
+-	background-color: #585858;
++	height: 1px;
++	margin-top: -1px;
++	margin-left: -8px;
++	background-color: #1e1e1e;
+ }
+ 
+ .menu-toggle-icon:before,
+@@ -1131,18 +1135,17 @@ a.custom-logo-link img {
+ 	display: block;
+ 	position: absolute;
+ 	width: 1em;
+-	height: 0.125em;
+-	background-color: #585858;
++	height: 1px;
++	background-color: #1e1e1e;
+ 	content: '';
+-	transition: transform 0.3s, top 0.3s;
+ }
+ 
+ .menu-toggle-icon:before {
+-	top: -0.375em;
++	top: -6px;
+ }
+ 
+ .menu-toggle-icon:after {
+-	top: 0.375em;
++	top: 6px;
+ }
+ 
+ .menu-toggle.toggled .menu-toggle-icon {
+@@ -1152,7 +1155,7 @@ a.custom-logo-link img {
+ .menu-toggle.toggled .menu-toggle-icon:before,
+ .menu-toggle.toggled .menu-toggle-icon:after {
+ 	top: 0;
+-	background-color: #585858;
++	background-color: #1e1e1e;
+ }
+ 
+ .menu-toggle.toggled .menu-toggle-icon:before {
+@@ -2596,7 +2599,7 @@ input[type='submit'].wpcf7-submit {
+ 	}
+ 
+ 	.main-navigation ul ul li {
+-		box-shadow: 0 13px 0 -12px rgba(0, 0, 0, 0.1);
++		box-shadow: 0 13px 0 -12px #f1f1f1;
+ 	}
+ 
+ 	.main-navigation ul ul li:last-child {
+-- 
+2.5.4 (Apple Git-61)
+
+
+From 772bb11172fc32baaa488cfdc209750eb9e20271 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sat, 29 Oct 2016 19:51:38 +0300
+Subject: [PATCH 34/35] Fix project meta clearings
+
+---
+ assets/css/sass/templates/_page-portfolio-single.scss | 4 ++++
+ style.css                                             | 1 +
+ 2 files changed, 5 insertions(+)
+
+diff --git a/assets/css/sass/templates/_page-portfolio-single.scss b/assets/css/sass/templates/_page-portfolio-single.scss
+index f441cb5..a2dd609 100644
+--- a/assets/css/sass/templates/_page-portfolio-single.scss
++++ b/assets/css/sass/templates/_page-portfolio-single.scss
+@@ -96,3 +96,7 @@
+ 		}
+ 	}
+ }
++
++.project-meta {
++	@extend .clear;
++}
+diff --git a/style.css b/style.css
+index 2d164d3..1521ecc 100644
+--- a/style.css
++++ b/style.css
+@@ -963,6 +963,7 @@ p > video {
+ .portfolio-grid:after,
+ .project-header:after,
+ .hentry:after,
++.project-meta:after,
+ #infinite-handle:after {
+ 	display: table;
+ 	clear: both;
+-- 
+2.5.4 (Apple Git-61)
+
+
+From d74680c1297a9b40ca340347a35b494a81c330a1 Mon Sep 17 00:00:00 2001
+From: Dmitry Mayorov <iamdmitrymayorov@gmail.com>
+Date: Sun, 30 Oct 2016 01:36:01 +0300
+Subject: [PATCH 35/35] Minor color fixes
+
+---
+ assets/css/editor-style.css               | 4 ----
+ assets/css/sass/components/_media.scss    | 3 ---
+ assets/css/sass/editor/_editor-media.scss | 3 ---
+ style.css                                 | 4 ----
+ 4 files changed, 14 deletions(-)
+
+diff --git a/assets/css/editor-style.css b/assets/css/editor-style.css
+index 234be22..a1df504 100644
+--- a/assets/css/editor-style.css
++++ b/assets/css/editor-style.css
+@@ -539,10 +539,6 @@ p > video {
+ 	text-transform: none;
+ }
+ 
+-.mce-content-body .wp-playlist-item-title {
+-	color: #585858;
+-}
+-
+ .mce-content-body .wp-playlist-playing {
+ 	border-bottom: 1px solid;
+ 	border-bottom-color: #f1f1f1;
+diff --git a/assets/css/sass/components/_media.scss b/assets/css/sass/components/_media.scss
+index e74e1ed..dc10044 100755
+--- a/assets/css/sass/components/_media.scss
++++ b/assets/css/sass/components/_media.scss
+@@ -69,9 +69,6 @@ p > video {
+ 		font-style: normal;
+ 		text-transform: none;
+ 	}
+-	.wp-playlist-item-title {
+-		color: $color__text;
+-	}
+ 	.wp-playlist-playing {
+ 		border-bottom: 1px solid rgba( 0, 0, 0, $opacity-light );
+ 		background-color: rgba( 0, 0, 0, $opacity-light );
+diff --git a/assets/css/sass/editor/_editor-media.scss b/assets/css/sass/editor/_editor-media.scss
+index fcb6f07..68578f0 100644
+--- a/assets/css/sass/editor/_editor-media.scss
++++ b/assets/css/sass/editor/_editor-media.scss
+@@ -86,9 +86,6 @@ p > video {
+ 		font-style: normal;
+ 		text-transform: none;
+ 	}
+-	.wp-playlist-item-title {
+-		color: $color__text;
+-	}
+ 	.wp-playlist-playing {
+ 		border-bottom: 1px solid;
+ 		border-bottom-color: $color__gray;
+diff --git a/style.css b/style.css
+index 1521ecc..3fcb325 100644
+--- a/style.css
++++ b/style.css
+@@ -868,10 +868,6 @@ p > video {
+ 	text-transform: none;
+ }
+ 
+-#content .wp-playlist-item-title {
+-	color: #585858;
+-}
+-
+ #content .wp-playlist-playing {
+ 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+ 	background-color: rgba(0, 0, 0, 0.1);
+-- 
+2.5.4 (Apple Git-61)
+

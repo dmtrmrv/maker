@@ -5,14 +5,12 @@
 
 .hentry {
 	word-wrap: break-word;
+	@extend .clear;
 }
 
 .blog,
 .archive,
 .single-post {
-	.post {
-		@extend .clear;
-	}
 	.entry-header {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
@@ -29,7 +27,6 @@
 	.entry-footer,
 	.comments-area,
 	.post-navigation {
-		@extend .clear;
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}
@@ -45,7 +42,6 @@
 		}
 	}
 	.entry-meta {
-		@extend .clear;
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}
@@ -68,6 +64,7 @@
 			}
 		}
 		.entry-content,
+		.entry-footer,
 		.comments-area,
 		.post-navigation {
 			@media screen and ( min-width: $md ) {

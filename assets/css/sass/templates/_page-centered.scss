@@ -3,13 +3,11 @@
 .page-template-centered,
 .page-template-blog-archives {
 	.hentry {
-		@extend .clear;
 		@media screen and ( min-width: $md ) {
 			margin-bottom: 1.5em;
 		}
 	}
 	.content-area {
-		@extend .clear;
 		float: none;
 		width: 100%;
 		max-width: 100%;
@@ -19,7 +17,6 @@
 	.entry-header,
 	.entry-content,
 	.comments-area {
-		@extend .clear;
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}

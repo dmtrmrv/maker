@@ -3,20 +3,23 @@
 pre {
 	overflow: auto;
 	max-width: 100%;
-	margin: 2.125em 0;
-	padding: 1.6em;
-	background-color: $color__text-light;
-	font-family: $font__pre;
-	line-height: $font__line-height-pre;
+	margin: 2em 0;
+	padding: 1.5em;
+	color: $color__gray;
+	background-color: $color__headings;
+	font-family: $font__code;
+	font-weight: bold;
 	word-wrap: initial;
 }
 
 code,
 kbd,
-pre,
 samp,
 tt,
 var {
-	@include font-size( 0.9375 );
+	padding: 3px 5px;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.05);
 	font-family: $font__code;
+	white-space: nowrap;
 }

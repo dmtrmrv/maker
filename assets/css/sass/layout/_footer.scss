@@ -2,7 +2,6 @@
 
 .site-footer {
 	@extend .clear;
-	color: $color__text-secondary;
 	@media screen and ( min-width: $sm ) {
 		padding: 1.5em 0;
 	}

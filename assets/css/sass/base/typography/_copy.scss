@@ -22,6 +22,6 @@ ins {
 }
 
 big {
-	@include font-size( 1.125 );
+	font-size: 1.25em;
 	@include line-height( 1 );
 }

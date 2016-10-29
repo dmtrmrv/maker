@@ -2,7 +2,6 @@
 
 .page-template-fullwidth {
 	.hentry {
-		@extend .clear;
 		@media screen and ( min-width: $md ) {
 			margin-bottom: 1.5em;
 		}

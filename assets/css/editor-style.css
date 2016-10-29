@@ -180,51 +180,62 @@ h4,
 h5,
 h6 {
 	clear: both;
-	margin: 0 0 24px 0;
-	margin: 0 0 1.5rem 0;
-	color: #585858;
-	font-family: Helvetica, Arial, sans-serif;
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	color: #1e1e1e;
 	font-weight: bold;
 	line-height: 1.125;
 }
 
 h1 {
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 1.5em;
 }
 
 h2 {
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 1.25em;
 }
 
 h3 {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 1.25em;
 	font-weight: normal;
 }
 
 h4 {
-	margin-bottom: 0.75em;
-	font-size: 14px;
-	font-size: 0.875rem;
-	letter-spacing: 2px;
+	font-size: 0.875em;
+	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 
 h5 {
-	margin-bottom: 0.75em;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 0.875em;
 	font-weight: normal;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
 h6 {
-	margin-bottom: 0.75em;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.entry-content h1,
+.entry-content h2,
+.comment-content h1,
+.comment-content h2 {
+	margin-top: 3rem;
+}
+
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.comment-content h3,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6 {
+	margin-top: 2rem;
+	margin-bottom: 13.5px;
+	margin-bottom: 0.75rem;
 }
 
 /* Copy */
@@ -238,8 +249,7 @@ address {
 }
 
 big {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 1.25em;
 	line-height: 16px;
 	line-height: 1rem;
 }
@@ -268,16 +278,13 @@ a:focus {
 /* Blockquotes */
 
 blockquote {
-	margin: 0 0 1.3333333333em 0;
-	padding: 1.3333333333em 0;
-	border-top-color: #585858;
-	border-bottom-color: #bebebe;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 18px;
-	font-size: 1.125rem;
+	margin: 1.5rem;
+	color: #1e1e1e;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 24px;
+	font-size: 1.5rem;
 	font-style: italic;
-	line-height: 24px;
-	line-height: 1.5rem;
+	line-height: 1.125;
 	quotes: '' '';
 }
 
@@ -299,24 +306,21 @@ blockquote cite {
 	font-style: normal;
 	line-height: 24px;
 	line-height: 1.5rem;
-	letter-spacing: 0.0625em;
+	letter-spacing: 2px;
 	text-transform: uppercase;
-}
-
-blockquote.alignleft {
-	width: 50%;
-}
-
-blockquote.alignright {
-	width: 50%;
 }
 
 /* Lists */
 
 ul,
 ol {
-	margin: 0 0 1.5em 1.5em;
+	margin: 0 0 1.5em 0.75em;
 	padding-left: 1.5em;
+}
+
+ul li,
+ol li {
+	margin-bottom: 0.75em;
 }
 
 ul {
@@ -329,8 +333,9 @@ ol {
 
 li > ul,
 li > ol {
+	margin-top: 0.75em;
 	margin-bottom: 0;
-	margin-left: 0.5em;
+	margin-left: 0.75em;
 }
 
 dt {
@@ -357,37 +362,31 @@ dd {
 	border-bottom-color: #f1f1f1;
 }
 
-.mce-item-table thead th {
-	border-bottom: 2px solid;
-	border-bottom-color: #bebebe;
-}
-
 /* Tables */
 
 table {
 	width: 100%;
-	margin-bottom: 1.4375em;
+	margin-top: 2em;
+	margin-bottom: 2em;
 	padding: 0;
 }
 
 td,
 th {
-	padding: 0.6875em 0.75em 0.75em;
-	border-bottom: 1px solid;
-	border-bottom-color: #f1f1f1;
+	padding: 0.75em;
+	border-bottom: 1px solid #f1f1f1;
 	text-align: left;
 }
 
 thead th {
-	padding: 0.91667em 1em 0.91667em;
-	border-bottom: 2px solid;
-	border-bottom-color: #bebebe;
+	padding: 1em;
 	background-color: #f1f1f1;
 	font-size: 12px;
 	font-size: 0.75rem;
 	font-weight: bold;
 	line-height: 24px;
 	line-height: 1.5rem;
+	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
@@ -396,23 +395,25 @@ thead th {
 pre {
 	overflow: auto;
 	max-width: 100%;
-	margin: 2.125em 0;
-	padding: 1.6em;
-	background-color: #f1f1f1;
-	font-family: 'Courier 10 Pitch', Courier, monospace;
-	line-height: 1.6;
+	margin: 2em 0;
+	padding: 1.5em;
+	color: #f1f1f1;
+	background-color: #1e1e1e;
+	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+	font-weight: bold;
 	word-wrap: initial;
 }
 
 code,
 kbd,
-pre,
 samp,
 tt,
 var {
-	font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	padding: 3px 5px;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.05);
+	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+	white-space: nowrap;
 }
 
 /**
@@ -525,23 +526,17 @@ p > video {
 }
 
 .mce-content-body .wp-playlist-item {
-	border-bottom: 1px solid;
-	border-bottom-color: #f1f1f1;
+	border-bottom: 1px solid #f1f1f1;
 }
 
 .mce-content-body .wp-playlist-caption,
 .mce-content-body [class*='wp-playlist-item-'] {
-	color: #bebebe;
 	font-size: 16px;
 	font-size: 1rem;
 	font-style: normal;
 	line-height: 24px;
 	line-height: 1.5rem;
 	text-transform: none;
-}
-
-.mce-content-body .wp-playlist-item-title {
-	color: #585858;
 }
 
 .mce-content-body .wp-playlist-playing {
@@ -568,7 +563,6 @@ p > video {
 	display: block;
 	margin: 1em 0;
 	padding: 0;
-	color: #bebebe;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -594,26 +588,24 @@ p > video {
 	margin-left: auto;
 }
 
-blockquote.alignleft,
 img.alignleft,
 .wp-caption.alignleft {
-	margin: 8px 24px 8px 0;
 	margin: 0.5rem 1.5rem 0.5rem 0;
 }
 
-blockquote.alignright,
 img.alignright,
 .wp-caption.alignright {
-	margin: 8px 0 0.5rem 1.5rem;
 	margin: 0.5rem 0 0.5rem 1.5rem;
 }
 
 blockquote.alignleft {
-	margin: 0 1.5em 0.9375em 0;
+	float: none;
+	margin: 1.5em;
 }
 
 blockquote.alignright {
-	margin: 0 0 0.9375em 1.5em;
+	float: none;
+	margin: 1.5em;
 }
 
 /* Clearings */
@@ -658,62 +650,50 @@ blockquote.alignright {
 }
 
 .gallery-columns-1 .gallery-item {
-	width: auto;
-	max-width: 100%;
+	width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
-	width: auto;
-	max-width: 50%;
+	width: 50%;
 }
 
 .gallery-columns-3 .gallery-item {
-	width: auto;
-	max-width: 33.33333%;
+	width: 33.33333%;
 }
 
 .gallery-columns-4 .gallery-item {
-	width: auto;
-	max-width: 25%;
+	width: 25%;
 }
 
 .gallery-columns-5 .gallery-item {
-	width: auto;
-	max-width: 20%;
+	width: 20%;
 }
 
 .gallery-columns-6 .gallery-item {
-	width: auto;
-	max-width: 16.66667%;
+	width: 16.66667%;
 }
 
 .gallery-columns-7 .gallery-item {
-	width: auto;
-	max-width: 14.28571%;
+	width: 14.28571%;
 }
 
 .gallery-columns-8 .gallery-item {
-	width: auto;
-	max-width: 12.5%;
+	width: 12.5%;
 }
 
 .gallery-columns-9 .gallery-item {
-	width: auto;
-	max-width: 11.11111%;
+	width: 11.11111%;
 }
 
 .gallery-columns-10 .gallery-item {
-	width: auto;
-	max-width: 10%;
+	width: 10%;
 }
 
 .gallery-caption {
 	display: block;
 	overflow: hidden;
-	height: 2em;
-	margin: 0;
-	padding-top: 3px;
-	color: #bebebe;
+	height: 1.5em;
+	margin: 0.75em 0 2em;
 	font-size: 0.75em;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -770,7 +750,23 @@ blockquote.alignright {
 		margin: 3em auto;
 	}
 
-	table {
-		margin-bottom: 2.9375em;
+	h1 {
+		font-size: 1.75em;
+	}
+
+	blockquote {
+		margin: 3rem;
+	}
+
+	blockquote.alignleft {
+		float: left;
+		max-width: 50%;
+		margin: 3em 1.5em 3em 0;
+	}
+
+	blockquote.alignright {
+		float: right;
+		max-width: 50%;
+		margin: 3em 0 3em 1.5em;
 	}
 }

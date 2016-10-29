@@ -5,54 +5,61 @@ input[type='email'],
 input[type='url'],
 input[type='password'],
 input[type='search'],
+input[type='number'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='time'],
+input[type='week'],
+input[type='tel'],
 textarea {
 	@include font-size( 1 );
 	@include line-height( 1.5 );
 	width: 100%;
 	padding: em_minus_px( 0.75em, 2px ) 1em;
 	border: 2px solid;
-	border-color: $color__text-light;
+	border-color: $color__gray;
 	border-radius: 3px;
 	-webkit-appearance: none;
 	color: $color__text;
 	background-color: transparent;
 	box-shadow: none;
 	vertical-align: middle;
-	&:focus {
-		outline: 0;
-		background-color: $color__text-light,
-	}
 }
 
-input[type='text'],
-input[type='email'],
-input[type='url'],
-input[type='password'],
-input[type='search'] {
-	height: 3em; // IE Damn You!
-}
-
-label {
-	color: $color__text-secondary;
-}
-
-// Placeholder text color - selectors need to be separate to work.
 ::-webkit-input-placeholder {
-	color: $color__text-secondary;
+	color: $color__text;
+	opacity: $opacity;
+	text-overflow: ellipsis;
 }
-
-:-moz-placeholder {
-	color: $color__text-secondary;
-}
-
 ::-moz-placeholder {
-	opacity: 1; // Since FF19 lowers the opacity of the placeholder by default.
-	color: $color__text-secondary;
+	color: $color__text;
+	opacity: $opacity;
+	text-overflow: ellipsis;
+}
+:-moz-placeholder {
+	color: $color__text;
+	opacity: $opacity;
+	text-overflow: ellipsis;
+}
+input:-ms-input-placeholder {
+	color: $color__text;
+	opacity: $opacity;
+	text-overflow: ellipsis;
 }
 
-// Only works if set as 'input:-ms-input-placeholder' not just 'input:-ms-input-placeholder'.
-input:-ms-input-placeholder {
-	color: $color__text-secondary;
+:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+:focus::-moz-placeholder {
+	color: transparent;
+}
+:focus:-moz-placeholder {
+	color: transparent;
+}
+input:focus:-ms-input-placeholder {
+	color: transparent;
 }
 
 .post-password-form {
@@ -81,7 +88,7 @@ input:-ms-input-placeholder {
 }
 
 input[type='submit'].search-submit {
-	@extend .button-accent;
+	@include button-color( $color__accent );
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }

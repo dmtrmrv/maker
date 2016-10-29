@@ -27,6 +27,10 @@ function maker_body_classes( $classes ) {
 		$classes[] = 'no-excerpt';
 	}
 
+	if ( is_page_template( 'templates/portfolio-toolkit.php' ) || is_page_template( 'templates/portfolio-jetpack.php' ) ) {
+		$classes[] = 'page-template-portfolio';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'maker_body_classes' );

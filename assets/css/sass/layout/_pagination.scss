@@ -13,18 +13,26 @@
 	@media screen and ( min-width: $md ) {
 		max-width: 100%;
 	}
+
 	.nav-links {
 		position: relative;
 		min-height: 3em;
 	}
+
 	.page-numbers {
-		@extend .button;
+		@include button;
 		display: none;
 		overflow: hidden;
 		min-width: 2em;
 		padding-right: em_minus_px( 0.75em, 2px );
 		padding-left: em_minus_px( 0.75em, 2px );
 		border-color: transparent;
+		background-color: transparent;
+		&:hover,
+		&:focus {
+			border-color: $color__gray;
+			background-color: $color__gray;
+		}
 		@media screen and (min-width: $xs) {
 			display: inline-block;
 		}
@@ -32,57 +40,44 @@
 			width: 3em;
 		}
 	}
+
 	.page-numbers.prev,
 	.page-numbers.next {
 		display: block;
 		position: absolute;
 		top: 0;
 		width: 3em;
-		padding: em_minus_px( 0.75em, 2px );
-		border-color: $color__text-light;
 		color: transparent;
 	}
+
 	.page-numbers.prev {
 		right: 3.75em;
 		&:before {
 			@extend %icon;
 			width: 1.5em;
 			height: 1.5em;
-			color: $color__text;
+			color: $color__headings;
 			content: '\e802';
 		}
+		&.last-page {
+			right: 0;
+		}
 	}
+
 	.page-numbers.next {
 		right: 0;
 		&:before {
 			@extend %icon;
 			width: 1.5em;
 			height: 1.5em;
-			color: $color__text;
+			color: $color__headings;
 			content: '\e803';
 		}
 	}
-	.nav-links:before {
-		visibility: hidden;
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 3em;
-		height: 3em;
-		border: 2px dashed;
-		border-color: map-get( $color__button, border );
-		border-radius: 3px;
-		content: '';
-	}
-	.nav-links.last-page:before {
-		visibility: visible;
-	}
+
 	.page-numbers.all {
-		display: inline-block;
 		width: 3em;
-		padding-right: em_minus_px( 0.75em, 2px );
-		padding-left: em_minus_px( 0.75em, 2px );
-		border-color: $color__text-light;
+		border-color: transparent;
 		span {
 			display: none;
 		}
@@ -92,37 +87,35 @@
 		}
 		@media screen and ( min-width: $sm ) {
 			width: auto;
-			padding-right: em_minus_px( 2em, 2px );
-			padding-left: em_minus_px( 1.75em, 2px );
+			padding-left: 1em;
+			padding-right: 1em;
 			span {
 				display: inline;
 			}
 			&:before {
-				margin-right: 0.5em;
-				content: '\e807';
+					display: none;
 			}
 		}
 	}
+
 	.page-numbers.current,
 	.page-numbers.dots {
-		color: $color__text-secondary;
+		opacity: $opacity;
 		cursor: auto;
-		&:hover,
-		&:focus {
+		&:hover {
 			background-color: transparent;
+			border-color: transparent;
 		}
 	}
 }
 
 .blog .pagination {
 	padding-top: 1.5em;
-	border-top: 2px solid $color__text-light;
+	border-top: 2px solid $color__gray;
 	@media screen and ( min-width: $sm ) {
 		padding-top: 3em;
 	}
 }
-
-
 
 .page-template-portfolio-toolkit,
 .page-template-portfolio-jetpack {
@@ -131,11 +124,10 @@
 			max-width: span( 6 );
 		}
 		padding-top: 1.5em;
-		border-top: 2px solid $color__text-light;
+		border-top: 2px solid $color__gray;
 		@media screen and ( min-width: $sm ) {
 			max-width: 100%;
 			border-top: none;
-			// padding-top: 1.5em;
 		}
 	}
 }

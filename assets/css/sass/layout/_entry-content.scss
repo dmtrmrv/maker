@@ -7,8 +7,13 @@
 }
 
 .entry-content {
+	@extend .clear;
 	img {
 		display: block;
 		margin-bottom: 1.5em;
 	}
+}
+
+.content-area {
+	@extend .clear;
 }

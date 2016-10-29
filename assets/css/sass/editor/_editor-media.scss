@@ -77,24 +77,19 @@ p > video {
 		padding: em_minus_px( 0.75em, 2px ) 0.75em 0.75em;
 	}
 	.wp-playlist-item {
-		border-bottom: 1px solid;
-		border-bottom-color: $color__text-light;
+		border-bottom: 1px solid $color__gray;
 	}
 	.wp-playlist-caption,
 	[class*='wp-playlist-item-'] {
 		@include font-size( 1 );
 		@include line-height( 1.5 );
-		color: $color__text-secondary;
 		font-style: normal;
 		text-transform: none;
 	}
-	.wp-playlist-item-title {
-		color: $color__text;
-	}
 	.wp-playlist-playing {
 		border-bottom: 1px solid;
-		border-bottom-color: $color__text-light;
-		background-color: $color__text-light;
+		border-bottom-color: $color__gray;
+		background-color: $color__gray;
 		font-weight: normal;
 	}
 }

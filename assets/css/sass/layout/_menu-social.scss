@@ -2,17 +2,16 @@
 
 .menu-social-container {
 	a {
-		color: $color__text-secondary;
+		color: $color__text;
 		&:before {
 			@extend %icon;
 			width: 1.2em;
 			margin-right: 0.5em;
-			color: $color__text-secondary;
 		}
 		@each $url, $i in $social-icons {
 
 			&[href*='#{$url}']:before {
-				content: char( nth( $i, 1 ));
+				content: char( nth( $i, 1 ) );
 			}
 
 			@if length( $i ) == 2 {

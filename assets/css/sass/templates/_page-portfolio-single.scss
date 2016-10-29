@@ -3,7 +3,6 @@
 .single-portfolio,
 .single-jetpack-portfolio {
 	.hentry {
-		@extend .clear;
 		@media screen and (min-width: $sm) {
 			margin-bottom: 1.5em;
 		}
@@ -15,7 +14,6 @@
 		margin-right: 0;
 	}
 	.entry-header {
-		@extend .clear;
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}
@@ -26,7 +24,6 @@
 		}
 	}
 	.entry-content {
-		@extend .clear;
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}
@@ -45,11 +42,11 @@
 		}
 	}
 	.project-meta {
-		@extend .clear;
 		table {
 			display: block;
 			float: left;
 			width: auto;
+			margin-top: 0;
 			margin-bottom: 0;
 			@media screen and ( min-width: $md ) {
 				float: right;
@@ -79,7 +76,7 @@
 	}
 	.project-meta-item-name {
 		padding-right: 1em;
-		color: $color__text-secondary;
+		opacity: $opacity;
 		text-align: left;
 		vertical-align: top;
 		@media screen and ( min-width: $md ) {
@@ -98,4 +95,8 @@
 			max-width: span( 6 );
 		}
 	}
+}
+
+.project-meta {
+	@extend .clear;
 }

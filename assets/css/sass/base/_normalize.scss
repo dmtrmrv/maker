@@ -95,7 +95,7 @@ mark {
 	// background: #ff0;
 	// color: #000;
 	color: $color__text;
-	background-color: $color__text-light;
+	background-color: $color__gray;
 	text-decoration: none;
 }
 
@@ -218,7 +218,7 @@ fieldset {
 	// margin: 0 2px;
 	// padding: 0.35em 0.625em 0.75em;
 	border: 2px solid;
-	border-color: $color__text-light;
+	border-color: $color__gray;
 	border-radius: 3px;
 	margin: 0 0 1.5em;
 	padding: em_minus_px( 0.75em, 2px ) 1em 0;

@@ -2,30 +2,23 @@
 
 table {
 	width: 100%;
-	margin-bottom: em_minus_px( 1.5em, 1px );
+	margin-top: 2em;
+	margin-bottom: 2em;
 	padding: 0;
 }
 
 td, th {
-	padding: em_minus_px( 0.75em, 1px ) 0.75em 0.75em;
-	border-bottom: 1px solid;
-	border-bottom-color: $color__text-light;
+	padding: 0.75em;
+	border-bottom: 1px solid $color__gray;
 	text-align: left;
 }
 
 thead th {
 	@include font-size( 0.75 );
 	@include line-height( 1.5 );
-	padding: em_minus_px( 1em, 1px, $font__size-body-px * 0.75 ) 1em em_minus_px( 1em, 1px, $font__size-body-px * 0.75 );
-	border-bottom: 2px solid;
-	border-bottom-color: $color__text-secondary;
+	padding: 1em;
 	font-weight: bold;
 	text-transform: uppercase;
-	background-color: $color__text-light;
-}
-
-@media screen and ( min-width: $sm ) {
-	table {
-		margin-bottom: em_minus_px( 3em, 1px );
-	}
+	letter-spacing: 2px;
+	background-color: $color__gray;
 }
