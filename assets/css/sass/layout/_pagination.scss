@@ -31,7 +31,7 @@
 		&:hover,
 		&:focus {
 			border-color: $color__gray;
-			background-color: $color__gray;
+			box-shadow: none;
 		}
 		@media screen and (min-width: $xs) {
 			display: inline-block;
@@ -56,7 +56,7 @@
 			@extend %icon;
 			width: 1.5em;
 			height: 1.5em;
-			color: $color__headings;
+			color: $color__text;
 			content: '\e802';
 		}
 		&.last-page {
@@ -70,7 +70,7 @@
 			@extend %icon;
 			width: 1.5em;
 			height: 1.5em;
-			color: $color__headings;
+			color: $color__text;
 			content: '\e803';
 		}
 	}

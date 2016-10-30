@@ -1,9 +1,9 @@
 // Colors. ------------------------------------------------------------------ //
 
 // Basic Text Colors.
-$color__text:     #585858;
 $color__headings: #1e1e1e; // r:30 g:30 b:30
-$color__gray:     lighten( $color__text, 60% );
+$color__text:     #585858;
+$color__gray:     rgba( $color__text, 0.2 );
 
 // Opacity.
 $opacity: 0.5;

@@ -107,7 +107,7 @@ i {
 mark,
 ins {
 	color: #585858;
-	background-color: #f1f1f1;
+	background-color: rgba(88, 88, 88, 0.2);
 	text-decoration: none;
 }
 
@@ -359,7 +359,7 @@ dd {
 .mce-item-table td,
 .mce-item-table th {
 	border-bottom: 1px solid;
-	border-bottom-color: #f1f1f1;
+	border-bottom-color: rgba(88, 88, 88, 0.2);
 }
 
 /* Tables */
@@ -374,13 +374,13 @@ table {
 td,
 th {
 	padding: 0.75em;
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid rgba(88, 88, 88, 0.2);
 	text-align: left;
 }
 
 thead th {
 	padding: 1em;
-	background-color: #f1f1f1;
+	background-color: rgba(88, 88, 88, 0.2);
 	font-size: 12px;
 	font-size: 0.75rem;
 	font-weight: bold;
@@ -397,7 +397,7 @@ pre {
 	max-width: 100%;
 	margin: 2em 0;
 	padding: 1.5em;
-	color: #f1f1f1;
+	color: rgba(88, 88, 88, 0.2);
 	background-color: #1e1e1e;
 	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 	font-weight: bold;
@@ -435,7 +435,7 @@ hr {
 	margin-top: -2px;
 	margin-bottom: 1.5em;
 	border: 0;
-	background-color: #f1f1f1;
+	background-color: rgba(88, 88, 88, 0.2);
 }
 
 /* Media. Editor modifications */
@@ -526,7 +526,7 @@ p > video {
 }
 
 .mce-content-body .wp-playlist-item {
-	border-bottom: 1px solid #f1f1f1;
+	border-bottom: 1px solid rgba(88, 88, 88, 0.2);
 }
 
 .mce-content-body .wp-playlist-caption,
@@ -541,8 +541,8 @@ p > video {
 
 .mce-content-body .wp-playlist-playing {
 	border-bottom: 1px solid;
-	border-bottom-color: #f1f1f1;
-	background-color: #f1f1f1;
+	border-bottom-color: rgba(88, 88, 88, 0.2);
+	background-color: rgba(88, 88, 88, 0.2);
 	font-weight: normal;
 }
 

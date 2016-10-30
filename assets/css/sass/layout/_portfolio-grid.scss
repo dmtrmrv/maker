@@ -60,7 +60,7 @@
 		bottom: 0;
 		left: 0;
 		padding: 2.25em;
-		background: linear-gradient( rgba( 255, 255, 255, 0.9 ) 35%, rgba( 255, 255, 255, 0 ) 100% );
+		background: linear-gradient( #fff -2%, transparent 100% );
 		.has-post-thumbnail & {
 			opacity: 0;
 			pointer-events: none;
