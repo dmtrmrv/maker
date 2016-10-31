@@ -23,7 +23,7 @@ function maker_body_classes( $classes ) {
 	}
 
 	// Adds a no-excerpt class for portfolio pages without manual excerpts.
-	if ( ! has_excerpt() || ! get_theme_mod( 'maker_display_project_excerpt', 1 ) ) {
+	if ( ! has_excerpt() || ! get_theme_mod( 'project_display_excerpt', 1 ) ) {
 		$classes[] = 'no-excerpt';
 	}
 
@@ -39,8 +39,8 @@ add_filter( 'body_class', 'maker_body_classes' );
  * Defines portfolio grid class depending on the number of columns.
  */
 function maker_portfolio_grid_class() {
-	if ( in_array( get_theme_mod( 'maker_portfolio_columns', 3 ), array( 2, 3, 4 ) ) ) {
-		return 'portfolio-grid-col-' . get_theme_mod( 'maker_portfolio_columns', 3 );
+	if ( in_array( get_theme_mod( 'portfolio_column_number', 3 ), array( 2, 3, 4 ) ) ) {
+		return 'portfolio-grid-col-' . get_theme_mod( 'portfolio_column_number', 3 );
 	} else {
 		return 'portfolio-grid-col-3';
 	}

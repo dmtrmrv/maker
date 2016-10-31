@@ -60,13 +60,13 @@ function maker_customize_register( $wp_customize ) {
 	);
 
 	// Portfolio Page Content.
-	$wp_customize->add_setting( 'maker_display_portfolio_text', array(
+	$wp_customize->add_setting( 'portfolio_display_page_content', array(
 		'default'           => 1,
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_portfolio_text', array(
+	$wp_customize->add_control( 'portfolio_display_page_content', array(
 		'label'           => __( 'Display Page Content', 'maker' ),
 		'section'         => 'maker_portfolio',
 		'type'            => 'checkbox',
@@ -75,13 +75,13 @@ function maker_customize_register( $wp_customize ) {
 	) );
 
 	// Porfolio Project Excerpt.
-	$wp_customize->add_setting( 'maker_display_project_excerpt', array(
+	$wp_customize->add_setting( 'project_display_excerpt', array(
 		'default'           => 1,
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_project_excerpt', array(
+	$wp_customize->add_control( 'project_display_excerpt', array(
 		'label'           => __( 'Display Project Excerpt', 'maker' ),
 		'section'         => 'maker_portfolio',
 		'type'            => 'checkbox',
@@ -89,13 +89,13 @@ function maker_customize_register( $wp_customize ) {
 	) );
 
 	// Portfolio Project Meta.
-	$wp_customize->add_setting( 'maker_display_project_meta', array(
+	$wp_customize->add_setting( 'project_display_meta', array(
 		'default'           => 1,
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'maker_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control( 'maker_display_project_meta', array(
+	$wp_customize->add_control( 'project_display_meta', array(
 		'label'           => __( 'Display Project Meta', 'maker' ),
 		'section'         => 'maker_portfolio',
 		'type'            => 'checkbox',
@@ -122,13 +122,13 @@ function maker_customize_register( $wp_customize ) {
 	) );
 
 	// All Projects link.
-	$wp_customize->add_setting( 'maker_all_projects_link', array(
+	$wp_customize->add_setting( 'project_all_projects_link', array(
 		'default'           => '',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 
-	$wp_customize->add_control( 'maker_all_projects_link', array(
+	$wp_customize->add_control( 'project_all_projects_link', array(
 		'label'           => __( 'Link to all projects', 'maker' ),
 		'section'         => 'maker_portfolio',
 		'type'            => 'text',

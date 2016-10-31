@@ -32,14 +32,14 @@
 	} );
 
 	// Toggle the visibility of page content on a portfolio grid page.
-	api( 'maker_display_portfolio_text', function( value ) {
+	api( 'portfolio_display_page_content', function( value ) {
 		value.bind( function( to ) {
 			$( '.portfolio-grid-content' ).toggleClass( 'screen-reader-text', ! to );
 		} );
 	} );
 
 	// Toggle the visibility of the portfolio project excerpt.
-	api( 'maker_display_project_excerpt', function( value ) {
+	api( 'project_display_excerpt', function( value ) {
 		value.bind( function( to ) {
 			$( '.project-excerpt' ).toggleClass( 'screen-reader-text', ! to );
 			$( 'body' ).toggleClass( 'no-excerpt', ! to );
@@ -47,7 +47,7 @@
 	} );
 
 	// Toggle the visibility of the portfolio item project meta.
-	api( 'maker_display_project_meta', function( value ) {
+	api( 'project_display_meta', function( value ) {
 		value.bind( function( to ) {
 			$( '.project-meta' ).toggleClass( 'screen-reader-text', ! to );
 		} );

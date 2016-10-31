@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( ! get_theme_mod( 'maker_display_portfolio_text', false ) ? 'screen-reader-text portfolio-grid-content' : 'portfolio-grid-content' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( ! get_theme_mod( 'portfolio_display_page_content', false ) ? 'screen-reader-text portfolio-grid-content' : 'portfolio-grid-content' ); ?>>
 
 	<?php maker_post_thumbnail(); ?>
 

@@ -230,11 +230,11 @@ function maker_portfolio_project_excerpt() {
 		if ( is_customize_preview() ) {
 				printf(
 					'<div class="project-excerpt %1$s"><p>%2$s</p></div>',
-					get_theme_mod( 'maker_display_project_excerpt', 1 ) ? '' : 'screen-reader-text',
+					get_theme_mod( 'project_display_excerpt', 1 ) ? '' : 'screen-reader-text',
 					wp_kses_post( $post->post_excerpt )
 				);
 		} else {
-			if ( get_theme_mod( 'maker_display_project_excerpt', 1 ) ) {
+			if ( get_theme_mod( 'project_display_excerpt', 1 ) ) {
 				printf(
 					'<div class="project-excerpt"><p>%1$s</p></div>',
 					wp_kses_post( $post->post_excerpt )
@@ -252,7 +252,7 @@ if ( ! function_exists( 'maker_portfolio_project_meta' ) ) :
 function maker_portfolio_project_meta() {
 
 	// Return if we don't need to display meta.
-	if ( ! get_theme_mod( 'maker_display_project_meta', 1 ) && ! is_customize_preview() ) {
+	if ( ! get_theme_mod( 'project_display_meta', 1 ) && ! is_customize_preview() ) {
 		return;
 	}
 
@@ -271,7 +271,7 @@ function maker_portfolio_project_meta() {
 
 		printf(
 			'<div class="project-meta %s"><table>',
-			! get_theme_mod( 'maker_display_project_meta', 1 ) && is_customize_preview() ? 'screen-reader-text' : ''
+			! get_theme_mod( 'project_display_meta', 1 ) && is_customize_preview() ? 'screen-reader-text' : ''
 		);
 
 		// Client.
@@ -431,7 +431,7 @@ function maker_get_portfolio_all_projects_link() {
 			break;
 
 		case 'custom':
-			$url = get_theme_mod( 'maker_all_projects_link', get_post_type_archive_link( get_post_type() ) );
+			$url = get_theme_mod( 'project_all_projects_link', get_post_type_archive_link( get_post_type() ) );
 			break;
 
 		default:
@@ -502,7 +502,7 @@ function maker_comment_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'maker_footer_text' ) ) :
+if ( ! function_exists( 'footer_message' ) ) :
 /**
  * Displays Footer Text.
  */
