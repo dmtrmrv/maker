@@ -72,15 +72,15 @@
 }
 
 .project-title {
-	@include font-size( 1.25 );
+	@include font-size( 1 );
 	margin: 0;
 	a {
 		display: block;
 		color: $color__headings;
 		line-height: 1.125;
 	}
-	.portfolio-grid-col-4 & {
-		@include font-size( 1 );
+	.portfolio-grid-col-2 & {
+		@include font-size( 1.25 );
 	}
 }
 

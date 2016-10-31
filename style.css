@@ -325,7 +325,7 @@ big {
 /* Links */
 
 a {
-	color: #ff2441;
+	color: #f45844;
 	background-color: transparent;
 	text-decoration: none;
 }
@@ -449,7 +449,7 @@ pre {
 	max-width: 100%;
 	margin: 2em 0;
 	padding: 1.5em;
-	color: rgba(88, 88, 88, 0.2);
+	color: #f0f0f0;
 	background-color: #1e1e1e;
 	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 	font-weight: bold;
@@ -535,9 +535,9 @@ input[type='submit']:focus {
 }
 
 .btn-accent {
-	border-color: #ff2441 !important;
+	border-color: #f45844 !important;
 	color: #fff !important;
-	background-color: #ff2441 !important;
+	background-color: #f45844 !important;
 }
 
 .btn-success {
@@ -662,11 +662,11 @@ input:focus:-ms-input-placeholder {
 }
 
 input[type='submit'].search-submit {
-	border-color: #ff2441 !important;
+	border-color: #f45844 !important;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	color: #fff !important;
-	background-color: #ff2441 !important;
+	background-color: #f45844 !important;
 }
 
 /* Alignments */
@@ -758,6 +758,7 @@ hr {
 	border-width: 2px;
 	border-style: solid;
 	border-radius: 3px;
+	color: #1e1e1e;
 }
 
 .alert-success,
@@ -1097,7 +1098,7 @@ a.custom-logo-link img {
 .main-navigation a:hover,
 .main-navigation a:focus,
 .main-navigation a:active {
-	color: #ff2441;
+	color: #f45844;
 }
 
 /* Toggle Hamburger Icon */
@@ -1546,6 +1547,12 @@ a.custom-logo-link img {
 	display: none;
 }
 
+.pagination .page-numbers.all:hover,
+.pagination .page-numbers.all:focus {
+	border-color: rgba(88, 88, 88, 0.2);
+	box-shadow: none;
+}
+
 .pagination .page-numbers.all:before {
 	content: '\e807';
 }
@@ -1567,8 +1574,7 @@ a.custom-logo-link img {
 	border-top: 2px solid rgba(88, 88, 88, 0.2);
 }
 
-.page-template-portfolio-toolkit .pagination,
-.page-template-portfolio-jetpack .pagination {
+.page-template-portfolio .pagination {
 	max-width: 480px;
 	padding-top: 1.5em;
 	border-top: 2px solid rgba(88, 88, 88, 0.2);
@@ -1686,7 +1692,7 @@ a.custom-logo-link img {
 .widget a:active,
 .widget a:focus {
 	opacity: 1;
-	color: #ff2441;
+	color: #f45844;
 }
 
 .widget-title {
@@ -1824,7 +1830,7 @@ a.custom-logo-link img {
 .entry-meta-item a:hover,
 .entry-meta-item a:focus {
 	opacity: 1;
-	color: #ff2441;
+	color: #f45844;
 }
 
 .entry-meta-icon {
@@ -1850,7 +1856,7 @@ a.custom-logo-link img {
 
 .entry-meta-item.cat-links a {
 	opacity: 1;
-	color: #ff2441;
+	color: #f45844;
 }
 
 .byline,
@@ -1872,7 +1878,7 @@ a.custom-logo-link img {
 .tags-links a:hover,
 .tags-links a:focus {
 	opacity: 1;
-	color: #ff2441;
+	color: #f45844;
 }
 
 .tags-links a:before {
@@ -2028,9 +2034,9 @@ a.custom-logo-link img {
 }
 
 .comment-form .submit {
-	border-color: #ff2441 !important;
+	border-color: #f45844 !important;
 	color: #fff !important;
-	background-color: #ff2441 !important;
+	background-color: #f45844 !important;
 }
 
 .comment-form textarea {
@@ -2154,8 +2160,8 @@ a.custom-logo-link img {
 
 .project-title {
 	margin: 0;
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 .project-title a {
@@ -2164,9 +2170,9 @@ a.custom-logo-link img {
 	line-height: 1.125;
 }
 
-.portfolio-grid-col-4 .project-title {
-	font-size: 16px;
-	font-size: 1rem;
+.portfolio-grid-col-2 .project-title {
+	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 .project-categories {
@@ -2363,7 +2369,7 @@ a.custom-logo-link img {
 .single-portfolio .project-meta-tags,
 .single-jetpack-portfolio .project-meta-cats,
 .single-jetpack-portfolio .project-meta-tags {
-	color: #ff2441;
+	color: #f45844;
 }
 
 .single-portfolio .comments-area,
@@ -2454,9 +2460,9 @@ a.custom-logo-link img {
 /* Contact Form 7 */
 
 input[type='submit'].wpcf7-submit {
-	border-color: #ff2441 !important;
+	border-color: #f45844 !important;
 	color: #fff !important;
-	background-color: #ff2441 !important;
+	background-color: #f45844 !important;
 }
 
 .wpcf7 {
@@ -2667,8 +2673,7 @@ input[type='submit'].wpcf7-submit {
 		padding-top: 3em;
 	}
 
-	.page-template-portfolio-toolkit .pagination,
-	.page-template-portfolio-jetpack .pagination {
+	.page-template-portfolio .pagination {
 		max-width: 100%;
 		border-top: none;
 	}

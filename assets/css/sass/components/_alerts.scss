@@ -4,9 +4,10 @@
 	min-height: 3em;
 	margin: 0 0 1.5em;
 	padding: em_minus_px( 0.75em, 2px ) 1.5em;
-	border-radius: 3px;
 	border-width: 2px;
 	border-style: solid;
+	border-radius: 3px;
+	color: $color__headings;
 }
 
 .alert-success {

@@ -257,7 +257,7 @@ big {
 /* Links */
 
 a {
-	color: #ff2441;
+	color: #f45844;
 	background-color: transparent;
 	text-decoration: none;
 }
@@ -397,7 +397,7 @@ pre {
 	max-width: 100%;
 	margin: 2em 0;
 	padding: 1.5em;
-	color: rgba(88, 88, 88, 0.2);
+	color: #f0f0f0;
 	background-color: #1e1e1e;
 	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 	font-weight: bold;

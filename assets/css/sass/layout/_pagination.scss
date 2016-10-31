@@ -81,6 +81,11 @@
 		span {
 			display: none;
 		}
+		&:hover,
+		&:focus {
+			border-color: $color__gray;
+			box-shadow: none;
+		}
 		&:before {
 			@extend %icon;
 			content: '\e807';
@@ -117,8 +122,7 @@
 	}
 }
 
-.page-template-portfolio-toolkit,
-.page-template-portfolio-jetpack {
+.page-template-portfolio {
 	.pagination {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
