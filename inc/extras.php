@@ -118,3 +118,39 @@ function maker_update_notice_ignore() {
 	}
 }
 add_action( 'admin_init', 'maker_update_notice_ignore' );
+
+/**
+ * Updates the names of the incorrectly-set theme mods.
+ */
+function maker_update_theme_mods() {
+	// Return if mods are updated already.
+	if ( get_theme_mod( 'mods_updated', false ) ) {
+		return;
+	}
+
+	// List oа mods to update.
+	$mods = array(
+		'maker_display_portfolio_text'  => 'portfolio_display_page_content',
+		'maker_portfolio_columns'       => 'portfolio_column_number',
+		'maker_display_project_excerpt' => 'project_display_excerpt',
+		'maker_display_project_meta'    => 'project_display_meta',
+		'maker_all_projects_link'       => 'project_all_projects_link',
+		'maker_site_color'              => 'color_site',
+		'maker_text_color'              => 'color_text',
+		'maker_accent_color'            => 'color_accent',
+		'maker_footer_text'             => 'footer_message',
+	);
+
+	// Loop through all mods and update them.
+	foreach ( $mods as $old => $new ) {
+		$mod_val = get_theme_mod( $old, false );
+		if ( $mod_val ) {
+			set_theme_mod( $new, $mod_val );
+		}
+		remove_theme_mod( $old );
+	}
+
+	set_theme_mod( 'mods_updated', true );
+
+}
+add_action( 'after_setup_theme', 'maker_update_theme_mods' );
