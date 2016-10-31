@@ -42,70 +42,40 @@ URL:     http://fitvidsjs.com/
 
 == Images used in the screenshot ==
 
-Smartphones and Laptop Devices Mock-ups
-Author:  Michał Jakobsze
+Mountain
+Author:  Kristina Dobo
 License: CC BY-NC 3.0
-URL:     https://www.behance.net/gallery/13493563/FREE-Flat-Apple-Devices-Mockup-iPhone-6-update
+URL:     https://unsplash.com/@kristina?photo=EyBKbpPCW7A
 
-Woman Portrait
-Author:  Gabriele Forcina
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/GVHnAe86Nio
+Dancing Woman
+Author:  Ron S
+License: CC BY-NC 3.0
+URL:     https://unsplash.com/@ronsartini?photo=iDHcL5L2tkw
 
-Sandwiches
-Author:  Shanice Garcia
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/up9-P5CyAjU
+Hands & Handlebar
+Author:  Agberto Guimaraes
+License: CC BY-NC 3.0
+URL:     https://unsplash.com/@agb800m?photo=QlCmhWO-r1I
 
-Chair & Table
-Author:  Jordan Sanchez
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/KyB-Eo4xS_c
+Portrait of a Man
+Author:  Agberto Guimaraes
+License: CC BY-NC 3.0
+URL:     https://unsplash.com/@kfred?photo=9n7mfbahX8c
 
-Cap, Guitar & Smartphone
-Author:  Death to Stock
-Licence: CC0 1.0
-URL:     http://deathtothestockphoto.com/
+Portrait of a Man
+Author:  Karl Fredrickson
+License: CC BY-NC 3.0
+URL:     https://unsplash.com/@kfred?photo=9n7mfbahX8c
 
-Man with Smartphone
-Author:  Death to Stock
-Licence: CC0 1.0
-URL:     http://deathtothestockphoto.com/
+Hands & Coffee
+Author:  Anete Lūsiņa
+License: CC BY-NC 3.0
+URL:     https://unsplash.com/@anete_lusina?photo=lPWSIC2OjUs
 
-Horses
-Author:  Anders JildénL
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/uO4Au3LrCtk
-
-Rocks and Sea
-Author:  Death to Stock
-Licence: CC0 1.0
-URL:     http://deathtothestockphoto.com/
-
-Woman with Camera
-Author:  Mia Domenico
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/1z1F5Qc30Bs
-
-Motel Sign
-Author:  Steven Lewis
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/KW7feTv6dIs
-
-Yellow Chairs
-Author:  Benjamin Child
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/HgPAUR1ALJQ
-
-Singing Man
-Author:  Jay Wennington
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/vESAH7cwMzc
-
-Icelandic Mountain
-Author:  Alex Talmon
-Licence: CC0 1.0
-URL:     https://unsplash.com/photos/UFskvng2OMU
+Flatiron Building
+Author:  Alec Cutter
+License: CC BY-NC 3.0
+URL:     https://unsplash.com/@aleccutter?photo=Sfn8f32ZIj0
 
 == Changelog ==
 
