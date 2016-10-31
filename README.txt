@@ -79,6 +79,14 @@ URL:     https://unsplash.com/@aleccutter?photo=Sfn8f32ZIj0
 
 == Changelog ==
 
+= 0.3.1 =
+
+Addition: Built-in dark color scheme
+Improvement: All options in Customizer now use postMessage
+Fix: Tab navigation now enables the hover effect
+Fix: Minor typography tweaks
+Fix: General clean-up
+
 = 0.3.0 =
 
 Addition: Support for Pageviews plugin

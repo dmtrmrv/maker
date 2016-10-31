@@ -1,6 +1,4 @@
-![Maker WordPress Theme](https://raw.githubusercontent.com/iamdmitrymayorov/maker/master/screenshot.png "Maker WordPress Theme")
-
-####Maker
+##Maker
 
 Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. Info and demo at https://themepatio.com/themes/maker
 
@@ -8,7 +6,7 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 
 ---
 
-####Installation
+##Installation
 
 1. In your admin panel, go to `Appearance` → `Themes` and click the `Add New` button.
 2. Type in **Maker** in the search form and press the `Enter` key on your keyboard.
@@ -17,7 +15,7 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 
 ---
 
-####Tested With
+##Tested With
 1. Jetpack ( Carousel, Custom Content Types(Portfolio), Infinite Scroll )
 2. Portfolio Toolkit
 3. Contact Form 7
@@ -26,7 +24,7 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 
 ---
 
-####FAQ
+##FAQ
 
 **Who is this theme for?**  
 Web and graphic designers, illustrators, artists, photographers, and other folks who make things.
@@ -43,7 +41,15 @@ URL - Link to a live project (e.g. https://themepatio.com/)
 
 ---
 
-####Changelog
+##Changelog
+
+**0.3.1**
+
+Addition: Built-in dark color scheme  
+Improvement: All options in Customizer now use postMessage  
+Fix: Tab navigation now enables the hover effect  
+Fix: Minor typography tweaks  
+Fix: General clean-up
 
 **0.3.0**
 
