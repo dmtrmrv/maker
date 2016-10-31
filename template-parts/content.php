@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template used for displaying post content in index.php
+ * The default template used for displaying post content in index.php.
  *
  * @package Maker
  */

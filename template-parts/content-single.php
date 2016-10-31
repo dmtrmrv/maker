@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying post content in single.php
+ * The template used for displaying post content in single.php.
  *
  * @package Maker
  */

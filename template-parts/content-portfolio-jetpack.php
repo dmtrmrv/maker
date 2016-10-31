@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying portfolio item content in portfolio-jetpack.php
+ * The template used for displaying portfolio item content in portfolio-jetpack.php.
  *
  * @package Maker
  */
