@@ -44,15 +44,10 @@
 	background-color: $color__gray;
 }
 
-// For consistency reasons we have to provide the default colors for
-// input[type=*] button-like fields. But since input[type=*] selector is
-// stronger than the regular class selector, we have to add !important to be
-// able to override the default colors. Will think of a better solution, but
-// this work for now.
 @mixin button-color( $color ) {
-	border-color: $color !important;
-	color: #fff !important;
-	background-color: $color !important;
+	border-color: $color;
+	color: #fff;
+	background-color: $color;
 }
 
 .btn,
@@ -64,22 +59,22 @@ input[type='submit'] {
 }
 
 // Double class to override the border color of input elements.
-.btn-accent {
+.btn.btn-accent {
 	@include button-color( $color__accent );
 }
 
-.btn-success {
+.btn.btn-success {
 	@include button-color( $color__success );
 }
 
-.btn-info {
+.btn.btn-info {
 	@include button-color( $color__info );
 }
 
-.btn-warning {
+.btn.btn-warning {
 	@include button-color( $color__warning );
 }
 
-.btn-danger {
+.btn.btn-danger {
 	@include button-color( $color__danger );
 }

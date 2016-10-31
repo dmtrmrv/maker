@@ -534,34 +534,34 @@ input[type='submit']:focus {
 	text-decoration: none;
 }
 
-.btn-accent {
-	border-color: #f45844 !important;
-	color: #fff !important;
-	background-color: #f45844 !important;
+.btn.btn-accent {
+	border-color: #f45844;
+	color: #fff;
+	background-color: #f45844;
 }
 
-.btn-success {
-	border-color: #1fc281 !important;
-	color: #fff !important;
-	background-color: #1fc281 !important;
+.btn.btn-success {
+	border-color: #1fc281;
+	color: #fff;
+	background-color: #1fc281;
 }
 
-.btn-info {
-	border-color: #00b9f2 !important;
-	color: #fff !important;
-	background-color: #00b9f2 !important;
+.btn.btn-info {
+	border-color: #00b9f2;
+	color: #fff;
+	background-color: #00b9f2;
 }
 
-.btn-warning {
-	border-color: #f4cc31 !important;
-	color: #fff !important;
-	background-color: #f4cc31 !important;
+.btn.btn-warning {
+	border-color: #f4cc31;
+	color: #fff;
+	background-color: #f4cc31;
 }
 
-.btn-danger {
-	border-color: #e83337 !important;
-	color: #fff !important;
-	background-color: #e83337 !important;
+.btn.btn-danger {
+	border-color: #e83337;
+	color: #fff;
+	background-color: #e83337;
 }
 
 /* Forms */
@@ -662,11 +662,11 @@ input:focus:-ms-input-placeholder {
 }
 
 input[type='submit'].search-submit {
-	border-color: #f45844 !important;
+	border-color: #f45844;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-	color: #fff !important;
-	background-color: #f45844 !important;
+	color: #fff;
+	background-color: #f45844;
 }
 
 /* Alignments */
@@ -2034,9 +2034,9 @@ a.custom-logo-link img {
 }
 
 .comment-form .submit {
-	border-color: #f45844 !important;
-	color: #fff !important;
-	background-color: #f45844 !important;
+	border-color: #f45844;
+	color: #fff;
+	background-color: #f45844;
 }
 
 .comment-form textarea {
@@ -2465,9 +2465,9 @@ a.custom-logo-link img {
 /* Contact Form 7 */
 
 input[type='submit'].wpcf7-submit {
-	border-color: #f45844 !important;
-	color: #fff !important;
-	background-color: #f45844 !important;
+	border-color: #f45844;
+	color: #fff;
+	background-color: #f45844;
 }
 
 .wpcf7 {
