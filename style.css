@@ -2160,8 +2160,8 @@ a.custom-logo-link img {
 
 .project-title {
 	margin: 0;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 }
 
 .project-title a {
@@ -2173,6 +2173,11 @@ a.custom-logo-link img {
 .portfolio-grid-col-2 .project-title {
 	font-size: 20px;
 	font-size: 1.25rem;
+}
+
+.portfolio-grid-col-4 .project-title {
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 .project-categories {

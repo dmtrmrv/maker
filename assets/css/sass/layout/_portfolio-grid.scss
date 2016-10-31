@@ -72,7 +72,7 @@
 }
 
 .project-title {
-	@include font-size( 1 );
+	@include font-size( 1.125 );
 	margin: 0;
 	a {
 		display: block;
@@ -81,6 +81,9 @@
 	}
 	.portfolio-grid-col-2 & {
 		@include font-size( 1.25 );
+	}
+	.portfolio-grid-col-4 & {
+		@include font-size( 1 );
 	}
 }
 
@@ -92,7 +95,6 @@
 	}
 	.portfolio-grid-col-4 & {
 		@include font-size( 0.875 );
-
 	}
 }
 
