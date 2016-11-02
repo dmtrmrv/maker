@@ -35,7 +35,7 @@
 ( function() {
 	var projects = document.querySelector( '.portfolio-grid' );
 
-	if ( 'undefined' !== projects ) {
+	if ( projects ) {
 
 		var links = projects.getElementsByTagName( 'a' );
 
