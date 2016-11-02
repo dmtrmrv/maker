@@ -1565,14 +1565,15 @@ a.custom-logo-link img {
 
 .pagination .page-numbers.current,
 .pagination .page-numbers.dots {
+	border-color: transparent !important;
 	opacity: 0.5;
 	cursor: auto;
 }
 
 .pagination .page-numbers.current:hover,
 .pagination .page-numbers.dots:hover {
-	border-color: transparent;
-	background-color: transparent;
+	border-color: transparent !important;
+	background-color: transparent !important;
 }
 
 .blog .pagination {

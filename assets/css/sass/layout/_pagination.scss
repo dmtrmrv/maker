@@ -111,9 +111,10 @@
 	.page-numbers.dots {
 		opacity: $opacity;
 		cursor: auto;
+		border-color: transparent !important;
 		&:hover {
-			background-color: transparent;
-			border-color: transparent;
+			background-color: transparent !important;
+			border-color: transparent !important;
 		}
 	}
 }
