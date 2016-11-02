@@ -34,12 +34,6 @@ Author:  Dave Gandy
 License: SIL (http://scripts.sil.org/OFL)
 URL:     http://fortawesome.github.com/Font-Awesome/
 
-FitVids 1.1
-Author:  Chris Coyier (http://css-tricks.com), Dave Rupert (http://daverupert.com)
-Credit:  Thierry Koblentz (http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
-License: WTFPL (http://sam.zoy.org/wtfpl/)
-URL:     http://fitvidsjs.com/
-
 == Images used in the screenshot ==
 
 Mountain

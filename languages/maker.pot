@@ -48,7 +48,7 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:131
 msgid "Sidebar"
 msgstr ""
 

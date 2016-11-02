@@ -1,14 +1,6 @@
 /*
  * Custom theme scripts.
  */
-( function( $ ) {
-	// Fitvids.
-	function makerFitvids() {
-		$( 'article iframe' ).not( '.fitvid iframe' ).wrap( '<div class=\'fitvid\'/>' );
-		$( '.fitvid' ).fitVids();
-	}
-	makerFitvids();
-} ) ( jQuery );
 
 /**
  * Adds a 'last-page' class to 'prev' link within the pagination.
@@ -17,8 +9,6 @@
 	// Try to get the 'prev' link within the pagination.
 	var navPrev = document.querySelector( '.page-numbers.prev' ),
 			navNext = document.querySelector( '.page-numbers.next' );
-
-			console.log( navPrev, navNext );
 
 	// Check if we have a 'next' link within pagination.
 	if ( navPrev && ! navNext ) {
