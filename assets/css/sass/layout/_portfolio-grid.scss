@@ -2,13 +2,6 @@
 
 .portfolio-grid {
 	@extend .clear;
-	@include with-layout( $susy-static ) {
-		max-width: span( 6 );
-		margin: 0 auto;
-	}
-	@media screen and ( min-width: $sm ) {
-		max-width: 100%;
-	}
 }
 
 // See https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
@@ -22,6 +15,12 @@
 		background-color: $color__gray;
 		content: '';
 	}
+	@media screen and ( min-width: $xs ) {
+		@include span( 6 );
+		&:nth-of-type(2n) {
+			margin-right: 0;
+		}
+	}
 	@media screen and ( min-width: $sm ) {
 		margin-bottom: gutter();
 		&:hover,
@@ -29,6 +28,34 @@
 			.project-header {
 				opacity: 1;
 			}
+		}
+	}
+}
+
+// Grid Variations.
+.portfolio-grid-col-2 .project {
+	@media screen and ( min-width: $sm ) {
+		@include span( 6 );
+		&:nth-of-type(2n) {
+			margin-right: 0;
+		}
+	}
+}
+
+.portfolio-grid-col-3 .project {
+	@media screen and ( min-width: $sm ) {
+		@include span( 4 );
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+	}
+}
+
+.portfolio-grid-col-4 .project {
+	@media screen and ( min-width: $sm ) {
+		@include span( 3 );
+		&:nth-of-type(4n) {
+			margin-right: 0;
 		}
 	}
 }
@@ -59,20 +86,17 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		padding: 2.25em;
+		padding: 9%;
 		background: linear-gradient( #fff -2%, transparent 100% );
 		.has-post-thumbnail & {
 			opacity: 0;
 			pointer-events: none;
 		}
-		.portfolio-grid-col-4 & {
-			padding: 1em;
-		}
 	}
 }
 
 .project-title {
-	@include font-size( 1.125 );
+	@include font-size( 1 );
 	margin: 0;
 	a {
 		display: block;
@@ -80,48 +104,32 @@
 		line-height: 1.125;
 	}
 	.portfolio-grid-col-2 & {
-		@include font-size( 1.25 );
+		@media screen and ( min-width: $sm ) {
+			@include font-size( 1.25 );
+		}
 	}
-	.portfolio-grid-col-4 & {
-		@include font-size( 1 );
+	.portfolio-grid-col-3 & {
+		@media screen and ( min-width: $md ) {
+			@include font-size( 1.125 );
+		}
 	}
 }
 
 .project-categories {
+	@include font-size( 0.875 );
 	font-weight: normal;
 	a {
-		color: $color__text;
 		opacity: $opacity;
+		color: $color__text;
 	}
-	.portfolio-grid-col-4 & {
-		@include font-size( 0.875 );
-	}
-}
-
-// Grid Variations.
-.portfolio-grid-col-2 .project {
-	@media screen and ( min-width: $sm ) {
-		@include span( 6 );
-		&:nth-of-type(2n) {
-			margin-right: 0;
+	.portfolio-grid-col-2 & {
+		@media screen and ( min-width: $sm ) {
+			@include font-size( 1 );
 		}
 	}
-}
-
-.portfolio-grid-col-3 .project {
-	@media screen and ( min-width: $sm ) {
-		@include span( 4 );
-		&:nth-of-type(3n) {
-			margin-right: 0;
-		}
-	}
-}
-
-.portfolio-grid-col-4 .project {
-	@media screen and ( min-width: $sm ) {
-		@include span( 3 );
-		&:nth-of-type(4n) {
-			margin-right: 0;
+	.portfolio-grid-col-3 & {
+		@media screen and ( min-width: $sm ) {
+			@include font-size( 1 );
 		}
 	}
 }
