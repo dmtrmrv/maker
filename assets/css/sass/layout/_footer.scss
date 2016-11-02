@@ -10,8 +10,8 @@
 .site-info {
 	display: block;
 	margin-bottom: 1.5em;
-	@media screen and ( min-width: $xs ) {
-		@include span( 5 last );
+	@media screen and ( min-width: $md ) {
+		@include span( 4 last );
 		text-align: right;
 	}
 }

@@ -13,27 +13,12 @@
 		max-width: 100%;
 		margin-right: 0;
 	}
-	.entry-header {
-		@include with-layout( $susy-static ) {
-			max-width: span( 6 );
-		}
-		width: 100%;
-		margin: 0 auto;
-		@media screen and ( min-width: $md ) {
-			max-width: 100%;
-		}
-	}
+
+	.entry-header,
 	.entry-content {
-		@include with-layout( $susy-static ) {
-			max-width: span( 6 );
-		}
 		width: 100%;
-		margin: 0 auto;
-		@media screen and ( min-width: $md ) {
-			max-width: 100%;
-			margin: 0;
-		}
 	}
+
 	.project-excerpt,
 	.project-meta {
 		margin-bottom: 1.5em;
@@ -41,6 +26,7 @@
 			@include span( 6 );
 		}
 	}
+
 	.project-meta {
 		table {
 			display: block;
@@ -90,10 +76,15 @@
 	.project-meta-tags {
 		color: $color__accent;
 	}
-	.comments-area {
+	.comments-area,
+	.project-excerpt {
 		@include with-layout( $susy-static ) {
 			max-width: span( 6 );
 		}
+	}
+
+	.pagination {
+		max-width: 100%;
 	}
 }
 

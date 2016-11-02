@@ -1458,7 +1458,6 @@ a.custom-logo-link img {
 	padding-left: 0.625em;
 	border: 2px solid;
 	border-color: rgba(88, 88, 88, 0.2);
-	border-color: transparent;
 	border-radius: 3px;
 	-webkit-appearance: none;
 	color: #585858;
@@ -1512,6 +1511,14 @@ a.custom-logo-link img {
 	color: transparent;
 }
 
+.pagination .page-numbers.prev:hover,
+.pagination .page-numbers.prev:focus,
+.pagination .page-numbers.next:hover,
+.pagination .page-numbers.next:focus {
+	background-color: rgba(88, 88, 88, 0.2);
+	box-shadow: none;
+}
+
 .pagination .page-numbers.prev {
 	right: 3.75em;
 }
@@ -1540,7 +1547,6 @@ a.custom-logo-link img {
 
 .pagination .page-numbers.all {
 	width: 3em;
-	border-color: transparent;
 }
 
 .pagination .page-numbers.all span {
@@ -1549,7 +1555,7 @@ a.custom-logo-link img {
 
 .pagination .page-numbers.all:hover,
 .pagination .page-numbers.all:focus {
-	border-color: rgba(88, 88, 88, 0.2);
+	background-color: rgba(88, 88, 88, 0.2);
 	box-shadow: none;
 }
 
@@ -2117,11 +2123,6 @@ a.custom-logo-link img {
 
 /* Portfolio Grid */
 
-.portfolio-grid {
-	max-width: 480px;
-	margin: 0 auto;
-}
-
 .project {
 	position: relative;
 	margin-bottom: 1.5em;
@@ -2159,8 +2160,8 @@ a.custom-logo-link img {
 
 .project-title {
 	margin: 0;
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 .project-title a {
@@ -2169,28 +2170,15 @@ a.custom-logo-link img {
 	line-height: 1.125;
 }
 
-.portfolio-grid-col-2 .project-title {
-	font-size: 20px;
-	font-size: 1.25rem;
-}
-
-.portfolio-grid-col-4 .project-title {
-	font-size: 16px;
-	font-size: 1rem;
-}
-
 .project-categories {
+	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: normal;
 }
 
 .project-categories a {
 	opacity: 0.5;
 	color: #585858;
-}
-
-.portfolio-grid-col-4 .project-categories {
-	font-size: 14px;
-	font-size: 0.875rem;
 }
 
 /**
@@ -2311,17 +2299,10 @@ a.custom-logo-link img {
 }
 
 .single-portfolio .entry-header,
-.single-jetpack-portfolio .entry-header {
-	width: 100%;
-	max-width: 480px;
-	margin: 0 auto;
-}
-
 .single-portfolio .entry-content,
+.single-jetpack-portfolio .entry-header,
 .single-jetpack-portfolio .entry-content {
 	width: 100%;
-	max-width: 480px;
-	margin: 0 auto;
 }
 
 .single-portfolio .project-excerpt,
@@ -2377,8 +2358,15 @@ a.custom-logo-link img {
 }
 
 .single-portfolio .comments-area,
-.single-jetpack-portfolio .comments-area {
+.single-portfolio .project-excerpt,
+.single-jetpack-portfolio .comments-area,
+.single-jetpack-portfolio .project-excerpt {
 	max-width: 480px;
+}
+
+.single-portfolio .pagination,
+.single-jetpack-portfolio .pagination {
+	max-width: 100%;
 }
 
 /* Portfolio */
@@ -2515,18 +2503,6 @@ input[type='submit'].wpcf7-submit {
  */
 
 @media screen and (min-width: 415px) {
-	.site-info {
-		float: right;
-		width: 39.55823%;
-		margin-right: 0;
-		text-align: right;
-	}
-
-	.footer-navigation {
-		float: left;
-		width: 60.44177%;
-	}
-
 	.footer-navigation ul {
 		float: left;
 		margin-left: -0.75em;
@@ -2534,6 +2510,7 @@ input[type='submit'].wpcf7-submit {
 
 	.footer-navigation li {
 		float: left;
+		margin-bottom: 0;
 	}
 
 	.footer-navigation a {
@@ -2542,6 +2519,16 @@ input[type='submit'].wpcf7-submit {
 
 	.pagination .page-numbers {
 		display: inline-block;
+	}
+
+	.project {
+		float: left;
+		width: 48.19277%;
+		margin-right: 3.61446%;
+	}
+
+	.project:nth-of-type(2n) {
+		margin-right: 0;
 	}
 }
 
@@ -2708,10 +2695,6 @@ input[type='submit'].wpcf7-submit {
 		margin-bottom: 3em;
 	}
 
-	.portfolio-grid {
-		max-width: 100%;
-	}
-
 	.project {
 		margin-bottom: 3.61446%;
 	}
@@ -2719,25 +2702,6 @@ input[type='submit'].wpcf7-submit {
 	.project:hover .project-header,
 	.project.focus .project-header {
 		opacity: 1;
-	}
-
-	.project-header {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		padding: 2.25em;
-		background: linear-gradient(#fff -2%, transparent 100%);
-	}
-
-	.has-post-thumbnail .project-header {
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	.portfolio-grid-col-4 .project-header {
-		padding: 1em;
 	}
 
 	.portfolio-grid-col-2 .project {
@@ -2768,6 +2732,66 @@ input[type='submit'].wpcf7-submit {
 
 	.portfolio-grid-col-4 .project:nth-of-type(4n) {
 		margin-right: 0;
+	}
+
+	.portfolio-grid-col-2 .project {
+		float: left;
+		width: 48.19277%;
+		margin-right: 3.61446%;
+	}
+
+	.portfolio-grid-col-2 .project:nth-of-type(2n) {
+		margin-right: 0;
+	}
+
+	.portfolio-grid-col-3 .project {
+		float: left;
+		width: 30.92369%;
+		margin-right: 3.61446%;
+	}
+
+	.portfolio-grid-col-3 .project:nth-of-type(3n) {
+		margin-right: 0;
+	}
+
+	.portfolio-grid-col-4 .project {
+		float: left;
+		width: 22.28916%;
+		margin-right: 3.61446%;
+	}
+
+	.portfolio-grid-col-4 .project:nth-of-type(4n) {
+		margin-right: 0;
+	}
+
+	.project-header {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 9%;
+		background: linear-gradient(#fff -2%, transparent 100%);
+	}
+
+	.has-post-thumbnail .project-header {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.portfolio-grid-col-2 .project-title {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+
+	.portfolio-grid-col-2 .project-categories {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+
+	.portfolio-grid-col-3 .project-categories {
+		font-size: 16px;
+		font-size: 1rem;
 	}
 
 	.blog .post,
@@ -2816,6 +2840,22 @@ input[type='submit'].wpcf7-submit {
 		margin-right: 0;
 	}
 
+	.site-info {
+		float: right;
+		width: 30.92369%;
+		margin-right: 0;
+		text-align: right;
+	}
+
+	.footer-navigation {
+		float: left;
+		width: 69.07631%;
+	}
+
+	.footer-navigation ul {
+		margin-top: 0;
+	}
+
 	.pagination {
 		max-width: 100%;
 	}
@@ -2828,6 +2868,11 @@ input[type='submit'].wpcf7-submit {
 	.comment-list,
 	.form-submit {
 		margin-bottom: 3em;
+	}
+
+	.portfolio-grid-col-3 .project-title {
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 
 	.blog .entry-header,
@@ -2916,17 +2961,6 @@ input[type='submit'].wpcf7-submit {
 	.page-template-centered .hentry,
 	.page-template-blog-archives .hentry {
 		margin-bottom: 1.5em;
-	}
-
-	.single-portfolio .entry-header,
-	.single-jetpack-portfolio .entry-header {
-		max-width: 100%;
-	}
-
-	.single-portfolio .entry-content,
-	.single-jetpack-portfolio .entry-content {
-		max-width: 100%;
-		margin: 0;
 	}
 
 	.single-portfolio .project-excerpt,
