@@ -26,12 +26,12 @@
 		min-width: 2em;
 		padding-right: em_minus_px( 0.75em, 2px );
 		padding-left: em_minus_px( 0.75em, 2px );
-		// border-color: transparent;
 		background-color: transparent;
 		&:hover,
 		&:focus {
 			border-color: $color__gray;
 			box-shadow: none;
+			background-color: $color__gray;
 		}
 		@media screen and (min-width: $xs) {
 			display: inline-block;
@@ -51,7 +51,6 @@
 		&:hover,
 		&:focus {
 			box-shadow: none;
-			background-color: $color__gray;
 		}
 	}
 
@@ -88,7 +87,6 @@
 		&:hover,
 		&:focus {
 			box-shadow: none;
-			background-color: $color__gray;
 		}
 		&:before {
 			@extend %icon;

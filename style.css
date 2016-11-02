@@ -1499,6 +1499,7 @@ a.custom-logo-link img {
 .pagination .page-numbers:hover,
 .pagination .page-numbers:focus {
 	border-color: rgba(88, 88, 88, 0.2);
+	background-color: rgba(88, 88, 88, 0.2);
 	box-shadow: none;
 }
 
@@ -1515,7 +1516,6 @@ a.custom-logo-link img {
 .pagination .page-numbers.prev:focus,
 .pagination .page-numbers.next:hover,
 .pagination .page-numbers.next:focus {
-	background-color: rgba(88, 88, 88, 0.2);
 	box-shadow: none;
 }
 
@@ -1555,7 +1555,6 @@ a.custom-logo-link img {
 
 .pagination .page-numbers.all:hover,
 .pagination .page-numbers.all:focus {
-	background-color: rgba(88, 88, 88, 0.2);
 	box-shadow: none;
 }
 
