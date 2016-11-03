@@ -6,10 +6,9 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 
 ##Installation
 
-1. In your admin panel, go to `Appearance` → `Themes` and click the `Add New` button.
-2. Type in **Maker** in the search form and press the `Enter` key on your keyboard.
-3. Click on the `Activate` button to use your new theme right away.
-4. Navigate to `Appearance` → `Customize` in your admin panel and customize to your taste.
+1. In your admin panel, go to *Appearance* → *Themes* and click the **Add New** button.
+2. Type in *Maker* in the search form and press the **Enter** key on your keyboard.
+3. Click on the **Activate** button to use your new theme right away.
 
 ##Tested With
 1. Jetpack ( Carousel, Custom Content Types(Portfolio), Infinite Scroll )
@@ -20,6 +19,9 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 
 ##FAQ
 
+**Is there documentation available?**  
+Yes, https://docs.themepatio.com/maker-getting-started
+
 **Who is this theme for?**  
 Web and graphic designers, illustrators, artists, photographers, and other folks who make things.
 
@@ -27,7 +29,7 @@ Web and graphic designers, illustrators, artists, photographers, and other folks
 Yes. And if you are already using it you can switch to Maker regenerate thumbnails and keep creating content.
 
 **Why use Portfolio Toolkit then?**  
-Usually, when creating a portfolio, you want to display typical information about the project, like the name of the client, the release date and a link to the live version. Portfolio Toolkit has custom fields for this data.
+Usually, when creating a portfolio, you may want to display the typical information about the project, like the name of the client, the release date, and a link to the live version. Portfolio Toolkit has custom custom meta fields for that.
 
 Client - Client name for the project (e.g. ThemePatio)  
 Date - Release date of the project (e.g. June 2016)  
