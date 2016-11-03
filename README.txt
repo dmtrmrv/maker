@@ -73,6 +73,13 @@ URL:     https://unsplash.com/@aleccutter?photo=Sfn8f32ZIj0
 
 == Changelog ==
 
+= 0.3.2 =
+
+Improvement: Better Single project layout
+Change: Replace Fitvids with Jetpack Responsive videos
+Fix: Restore the border on pagination buttons
+Fix: Replace closures with regular functions for PHP 5.2 support
+
 = 0.3.1 =
 
 Addition: Built-in dark color scheme

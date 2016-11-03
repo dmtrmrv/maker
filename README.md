@@ -4,8 +4,6 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 
 [![Build Status](https://travis-ci.org/dmtrmrv/maker.svg?branch=master)](https://travis-ci.org/dmtrmrv/maker)
 
----
-
 ##Installation
 
 1. In your admin panel, go to `Appearance` → `Themes` and click the `Add New` button.
@@ -13,16 +11,12 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 3. Click on the `Activate` button to use your new theme right away.
 4. Navigate to `Appearance` → `Customize` in your admin panel and customize to your taste.
 
----
-
 ##Tested With
 1. Jetpack ( Carousel, Custom Content Types(Portfolio), Infinite Scroll )
 2. Portfolio Toolkit
 3. Contact Form 7
 4. Intuitive Custom Post Order
 5. Pageviews
-
----
 
 ##FAQ
 
@@ -39,9 +33,14 @@ Client - Client name for the project (e.g. ThemePatio)
 Date - Release date of the project (e.g. June 2016)  
 URL - Link to a live project (e.g. https://themepatio.com/)
 
----
-
 ##Changelog
+
+**0.3.2**
+
+Improvement: Better Single project layout  
+Change: Replace Fitvids with Jetpack Responsive videos  
+Fix: Restore the border on pagination buttons  
+Fix: Replace closures with regular functions for PHP 5.2 support
 
 **0.3.1**
 
