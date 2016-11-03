@@ -29,7 +29,7 @@ Absolutely, https://maker.themepatio.com
 Web and graphic designers, illustrators, artists, photographers, and other folks who make things.
 
 **Does this theme support Jetpack Portfolio Custom Post Type?**  
-Yes. And if you are already using it you can switch to Maker regenerate thumbnails and keep creating content.
+Yes. And if you are already using it, you can switch to Maker, regenerate thumbnails, and keep working on your portfolio.
 
 **Why use Portfolio Toolkit then?**  
 Usually, when creating a portfolio, you may want to display the typical information about the project, like the name of the client, the release date, and a link to the live version. Portfolio Toolkit has custom custom meta fields for that.
