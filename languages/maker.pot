@@ -158,103 +158,103 @@ msgid ""
 "don't show again.</a>"
 msgstr ""
 
-#: inc/jetpack.php:50
+#: inc/jetpack.php:49
 msgid "Load More"
 msgstr ""
 
-#: inc/template-tags.php:65
+#: inc/template-tags.php:63
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:185
+#: inc/template-tags.php:183
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:186
+#: inc/template-tags.php:184
 msgid "One Comment"
 msgstr ""
 
-#: inc/template-tags.php:187
+#: inc/template-tags.php:185
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:212 inc/template-tags.php:343
+#: inc/template-tags.php:210 inc/template-tags.php:341
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:281
+#: inc/template-tags.php:279
 msgid "Client"
 msgstr ""
 
-#: inc/template-tags.php:290
+#: inc/template-tags.php:288
 msgid "Date"
 msgstr ""
 
-#: inc/template-tags.php:301
+#: inc/template-tags.php:299
 msgid "Link"
 msgstr ""
 
-#: inc/template-tags.php:310
+#: inc/template-tags.php:308
 msgid "Category"
 msgstr ""
 
-#: inc/template-tags.php:319
+#: inc/template-tags.php:317
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:391
+#: inc/template-tags.php:389
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:392
+#: inc/template-tags.php:390
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:393
+#: inc/template-tags.php:391
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:407
+#: inc/template-tags.php:405
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:410
+#: inc/template-tags.php:408
 msgid "Older:"
 msgstr ""
 
-#: inc/template-tags.php:411
+#: inc/template-tags.php:409
 msgid "Newer:"
 msgstr ""
 
-#: inc/template-tags.php:446
+#: inc/template-tags.php:444
 msgid "All Projects"
 msgstr ""
 
-#: inc/template-tags.php:467
+#: inc/template-tags.php:465
 msgid "Prev"
 msgstr ""
 
-#: inc/template-tags.php:475
+#: inc/template-tags.php:473
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:481
+#: inc/template-tags.php:479
 msgid "Portfolio navigation"
 msgstr ""
 
-#: inc/template-tags.php:493
+#: inc/template-tags.php:491
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/template-tags.php:496
+#: inc/template-tags.php:494
 msgid "Older Comments"
 msgstr ""
 
-#: inc/template-tags.php:497
+#: inc/template-tags.php:495
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/template-tags.php:511
+#: inc/template-tags.php:509
 msgid "%1$s theme by %2$s"
 msgstr ""
 

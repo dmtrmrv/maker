@@ -1,7 +1,6 @@
 <?php
 /**
- * Jetpack Compatibility File
- * See: http://jetpack.me/
+ * Jetpack Compatibility File.
  *
  * @package Maker
  */

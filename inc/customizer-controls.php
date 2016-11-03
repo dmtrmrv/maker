@@ -1,6 +1,6 @@
 <?php
 /**
- * Maker Theme Customizer Custom Controls
+ * Maker Customizer Custom Controls.
  *
  * @package Maker
  */
