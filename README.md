@@ -22,6 +22,9 @@ Maker is a portfolio WordPress theme that features classic grid-based layout, cl
 **Is there documentation available?**  
 Yes, https://docs.themepatio.com/maker-getting-started
 
+**Live demo?**  
+Absolutely, https://maker.themepatio.com
+
 **Who is this theme for?**  
 Web and graphic designers, illustrators, artists, photographers, and other folks who make things.
 
