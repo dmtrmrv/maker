@@ -40,9 +40,14 @@ URL - Link to a live project (e.g. https://themepatio.com/)
 
 ##Changelog
 
+**0.3.3**
+
+Fix: Safari gradient issue  
+Fix: Post thumbnail size
+
 **0.3.2**
 
-Improvement: Better Single project layout  
+Improvement: Better single project layout  
 Change: Replace Fitvids with Jetpack Responsive videos  
 Fix: Restore the border on pagination buttons  
 Fix: Replace closures with regular functions for PHP 5.2 support

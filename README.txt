@@ -73,6 +73,11 @@ URL:     https://unsplash.com/@aleccutter?photo=Sfn8f32ZIj0
 
 == Changelog ==
 
+= 0.3.3 =
+
+Fix: Safari gradient issue
+Fix: Post thumbnail size
+
 = 0.3.2 =
 
 Improvement: Better Single project layout
