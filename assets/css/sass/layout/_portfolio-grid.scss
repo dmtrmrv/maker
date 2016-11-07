@@ -60,34 +60,6 @@
 	}
 }
 
-// Grid Variations.
-.portfolio-grid-col-2 .project {
-	@media screen and ( min-width: $sm ) {
-		@include span( 6 );
-		&:nth-of-type(2n) {
-			margin-right: 0;
-		}
-	}
-}
-
-.portfolio-grid-col-3 .project {
-	@media screen and ( min-width: $sm ) {
-		@include span( 4 );
-		&:nth-of-type(3n) {
-			margin-right: 0;
-		}
-	}
-}
-
-.portfolio-grid-col-4 .project {
-	@media screen and ( min-width: $sm ) {
-		@include span( 3 );
-		&:nth-of-type(4n) {
-			margin-right: 0;
-		}
-	}
-}
-
 .project-thumbnail {
 	display: block;
 	position: absolute;
@@ -115,7 +87,7 @@
 		bottom: 0;
 		left: 0;
 		padding: 9%;
-		background: linear-gradient( #fff -2%, transparent 100% );
+		background: linear-gradient( #fff -2%, rgba( 255, 255, 255, 0) 100% );
 		.has-post-thumbnail & {
 			opacity: 0;
 			pointer-events: none;

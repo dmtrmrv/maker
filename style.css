@@ -2734,36 +2734,6 @@ input[type='submit'].wpcf7-submit {
 		margin-right: 0;
 	}
 
-	.portfolio-grid-col-2 .project {
-		float: left;
-		width: 48.19277%;
-		margin-right: 3.61446%;
-	}
-
-	.portfolio-grid-col-2 .project:nth-of-type(2n) {
-		margin-right: 0;
-	}
-
-	.portfolio-grid-col-3 .project {
-		float: left;
-		width: 30.92369%;
-		margin-right: 3.61446%;
-	}
-
-	.portfolio-grid-col-3 .project:nth-of-type(3n) {
-		margin-right: 0;
-	}
-
-	.portfolio-grid-col-4 .project {
-		float: left;
-		width: 22.28916%;
-		margin-right: 3.61446%;
-	}
-
-	.portfolio-grid-col-4 .project:nth-of-type(4n) {
-		margin-right: 0;
-	}
-
 	.project-header {
 		position: absolute;
 		top: 0;
@@ -2771,7 +2741,7 @@ input[type='submit'].wpcf7-submit {
 		bottom: 0;
 		left: 0;
 		padding: 9%;
-		background: linear-gradient(#fff -2%, transparent 100%);
+		background: linear-gradient(#fff -2%, rgba(255, 255, 255, 0) 100%);
 	}
 
 	.has-post-thumbnail .project-header {
