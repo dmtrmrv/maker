@@ -40,6 +40,10 @@ URL - Link to a live project (e.g. https://themepatio.com/)
 
 ##Changelog
 
+**0.3.4**
+
+Change: Update upsell links
+
 **0.3.3**
 
 Fix: Safari gradient issue  
