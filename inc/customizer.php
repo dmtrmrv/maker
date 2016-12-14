@@ -141,7 +141,7 @@ function maker_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Maker_Message_Pro_Control( $wp_customize, 'maker_pro_colors', array(
 		'label'       => __( 'Custom Colors', 'maker' ),
 		'description' => __( 'Upgrade Maker and create your own color schemes, changing the color of links, text and background.', 'maker' ),
-		'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+		'url'         => 'https://themepatio.com/themes/maker/?utm_source=maker-lite&utm_medium=colors',
 		'cta'         => __( 'Upgrade Maker', 'maker' ),
 		'section'     => 'colors',
 		'settings'    => array(),
@@ -151,7 +151,7 @@ function maker_customize_register( $wp_customize ) {
 	$wp_customize -> add_control( new Maker_Message_Pro_Control( $wp_customize, 'maker_pro_portfolio_columns', array(
 		'label'           => __( 'Portfolio Columns', 'maker' ),
 		'description'     => __( 'Upgrade Maker and set <strong>2, 3</strong> or <strong>4</strong>-column layout for the portfolio grid page.', 'maker' ),
-		'url'             => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+		'url'             => 'https://themepatio.com/themes/maker/?utm_source=maker-lite&utm_medium=columns',
 		'cta'             => __( 'Upgrade Maker', 'maker' ),
 		'section'         => 'maker_portfolio',
 		'settings'        => array(),
@@ -166,7 +166,7 @@ function maker_customize_register( $wp_customize ) {
 	$wp_customize -> add_control( new Maker_Message_Pro_Control( $wp_customize, 'maker_pro_footer', array(
 		'label'       => __( 'Footer Message', 'maker' ),
 		'description' => __( 'Upgrade Maker and set your own custom footer message.', 'maker' ),
-		'url'         => 'https://creativemarket.com/ThemePatio/604561-Maker-%E2%80%93-Portfolio-WordPress-Theme',
+		'url'         => 'https://themepatio.com/themes/maker/?utm_source=maker-lite&utm_medium=footer-text',
 		'cta'         => __( 'Upgrade Maker', 'maker' ),
 		'section'     => 'maker_footer',
 		'settings'    => array(),
