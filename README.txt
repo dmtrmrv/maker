@@ -1,7 +1,7 @@
 === Maker ===
 Contributors:      iamdmitrymayorov
 Requires at least: WordPress 4.1
-Tested up to:      WordPress 4.7
+Tested up to:      WordPress 5.0
 Version:           0.3.5
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,10 @@ License: CC BY-NC 3.0
 URL:     https://unsplash.com/@aleccutter?photo=Sfn8f32ZIj0
 
 == Changelog ==
+
+= 0.3.5 =
+
+Addition: Initial support for the new editor blocks.
 
 = 0.3.4 =
 

@@ -40,6 +40,10 @@ URL - Link to a live project (e.g. https://themepatio.com/)
 
 ##Changelog
 
+**0.3.5**
+
+Addition: Initial support for the new editor blocks.
+
 **0.3.4**
 
 Change: Update upsell links
