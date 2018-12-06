@@ -935,11 +935,13 @@ p > video {
 	margin-left: 1rem;
 }
 
-.wp-block-cover.alignleft {
+.wp-block-cover.alignleft,
+.wp-block-cover-image.alignleft {
 	margin-right: 1rem;
 }
 
-.wp-block-cover.alignright {
+.wp-block-cover.alignright,
+.wp-block-cover-image.alignright {
 	margin-left: 1rem;
 }
 
@@ -1968,7 +1970,7 @@ a.custom-logo-link img {
 	        hyphens: auto;
 }
 
-.entry-content img {
+.entry-content > img {
 	display: block;
 	margin-bottom: 1.5em;
 }

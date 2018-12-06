@@ -36,7 +36,6 @@
 }
 
 // Buttons.
-
 .wp-block-button.alignleft {
 	margin-right: 1rem;
 }
@@ -46,24 +45,23 @@
 }
 
 // Cover Images.
-
-.wp-block-cover.alignleft {
+.wp-block-cover.alignleft,
+.wp-block-cover-image.alignleft {
 	margin-right: 1rem;
 }
 
-.wp-block-cover.alignright {
+.wp-block-cover.alignright,
+.wp-block-cover-image.alignright {
 	margin-left: 1rem;
 }
 
 // Galleries.
-
 .wp-block-gallery {
 	margin-left: 0;
 	margin-right: 0;
 }
 
 // Pull Quotes.
-
 .wp-block-pullquote {
 	padding: 0;
 }
