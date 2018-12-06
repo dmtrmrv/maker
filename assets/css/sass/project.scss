@@ -32,7 +32,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  */
 
 // Dependencies, variables, mixins and functions.
-@import 'susy';
+@import 'bower_components/susy/sass/_susy.scss';
 
 // Variables, mixins and functions.
 @import 'abstracts/variables';
@@ -65,6 +65,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'components/alerts';
 @import 'components/media';
 @import 'components/captions';
+@import 'components/blocks';
 @import 'components/accessibility';
 @import 'components/clearings';
 

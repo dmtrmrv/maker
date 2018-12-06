@@ -1,9 +1,12 @@
+var sass = require('node-sass');
+
 module.exports = {
 	default: {
 		options: {
 			style:     'expanded',
 			sourcemap: 'none',
-			require:   'susy'
+			implementation: sass,
+			precision: 5
 		},
 		files: {
 			'style.css':                    'assets/css/sass/project.scss',

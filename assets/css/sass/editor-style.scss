@@ -26,13 +26,13 @@ Description: Used to style the TinyMCE editor.
  *     Galleries
  */
 
- // Dependencies
- @import 'susy';
+// Dependencies
+@import 'bower_components/susy/sass/_susy.scss';
 
- // Variables, mixins and functions
- @import 'abstracts/variables';
- @import 'abstracts/functions';
- @import 'abstracts/mixins';
+// Variables, mixins and functions
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
 
 // Editor styles start here.
 @import 'editor/editor-normalize';
