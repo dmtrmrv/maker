@@ -23,7 +23,6 @@ release:
 
 # Run CSS and JS tasks
 - 'css'
-# - 'js'
 
 # Update .pot file
 - 'makepot'

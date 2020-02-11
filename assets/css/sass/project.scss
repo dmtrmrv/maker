@@ -4,7 +4,7 @@ Theme URI:   https://themepatio.com/themes/maker/
 Author:      ThemePatio
 Author URI:  https://themepatio.com/
 Description: Maker is a portfolio WordPress theme that features classic grid-based layout, clean typography, and minimalistic style, that allows you to create a website that is both modern and timeless. Works great for web and graphic designers, illustrators, photographers, and other creative folks who make beautiful things. Info and demo at https://themepatio.com/themes/maker
-Version:     0.3.5
+Version:     0.3.6
 License:     GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: maker
@@ -60,6 +60,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'components/forms';
 @import 'components/alignments';
 @import 'components/images';
+@import 'components/block-image';
 @import 'components/icons';
 @import 'components/lines';
 @import 'components/alerts';

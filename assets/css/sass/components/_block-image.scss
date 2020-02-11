@@ -1,0 +1,17 @@
+.wp-block-image {
+	max-width: 100%;
+	margin: 2em 0;
+
+	img {
+		display: block;
+		margin-bottom: 0;
+	}
+
+	figcaption {
+		@include font-size( 0.75 );
+		display: block;
+		margin: 0.75em 0;
+		font-weight: normal;
+		font-style: normal;
+	}
+}

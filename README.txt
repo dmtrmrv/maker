@@ -2,7 +2,7 @@
 Contributors:      iamdmitrymayorov
 Requires at least: WordPress 4.1
 Tested up to:      WordPress 5.0
-Version:           0.3.5
+Version:           0.3.6
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 Tags:              one-column, three-columns, right-sidebar, custom-menu, editor-style, featured-images, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -72,6 +72,10 @@ License: CC BY-NC 3.0
 URL:     https://unsplash.com/@aleccutter?photo=Sfn8f32ZIj0
 
 == Changelog ==
+
+= 0.3.6 =
+
+Fix: Appearance of Image captions on Image block.
 
 = 0.3.5 =
 

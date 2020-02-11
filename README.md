@@ -109,7 +109,7 @@ Fix: Grunt config to autoprefix and combine media queiries
 **0.2.5**
 
 Change: Customizer wording improvements
-Fix: Broken path to customizer.js  
+Fix: Broken path to customizer.js
 
 **0.2.4**
 
@@ -131,7 +131,7 @@ Change: Better blockquotes look
 Change: Better gallery captions  
 Change: Remove content width restriction for single portfolio project  
 Fix: Typo on theme info screen
-Fix: Pagination styling issue with custom colors    
+Fix: Pagination styling issue with custom colors
 
 **0.2.0**
 
@@ -142,7 +142,7 @@ Change: New screenshot
 Change: Minor code improvements
 Fix: Project meta alignment  
 Fix: Issue with the text color on project meta  
-Fix: Incorrect theme and author URLs in theme description  
+Fix: Incorrect theme and author URLs in theme description
 
 **0.1.7**
 
